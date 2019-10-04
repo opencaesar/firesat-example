@@ -1,2 +1,7 @@
-# examples-firesat
-Develop an example of a Fire Satellite model using OML
+# Fire Satellite Example
+An OML example describing a Fire Satellite mission
+
+## Clone
+```
+  git clone --recursive https://github.com/opencaesar/example-firesat.git
+```
