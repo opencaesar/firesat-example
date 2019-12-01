@@ -1,18 +1,18 @@
-@rdfs:label="Fire Satellite Mission Description"
-@rdfs:comment="A description of a mission to develop a fire satellite"
-final description <http://opencaesar.io/firesat/mission#> as fs-mission {
+@rdfs:label "Fire Satellite Mission Description"
+@rdfs:comment "A description of a mission to develop a fire satellite"
+description <http://opencaesar.io/firesat/mission> with # as fs-mission {
 	
 	uses <../../../../../vocabularies/src/main/oml/opencaesar.io/foundation/mission.oml>
 	
-	concept instance FireSatMission : mission:Mission {
-		mission:hasRationale = "Create a fire satellite"
-	}
+	ci FireSatMission : mission:Mission [
+		mission:hasRationale "Create a fire satellite"
+	]
 	
-	concept instance DevelopFireSatellite : mission:Objective
+	ci DevelopFireSatellite : mission:Objective
 
-	relationship instance pursues : mission:Pursues {
-		source FireSatMission
-		target DevelopFireSatellite
-	}
+	ri pursues : mission:Pursues [
+		from FireSatMission
+		to DevelopFireSatellite
+	]
 
 } 
