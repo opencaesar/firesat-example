@@ -1,0 +1,90 @@
+@dc:title "Fire Satellite Model"
+description <http://opencaesar.io/example/firesat> with # as firesat {
+	
+	extends <firesat/wp5.oml>
+	extends <firesat/wp6.4.oml>
+	extends <firesat/wp6.4.4.oml>
+	extends <firesat/wp6.4.5.oml>
+	extends <firesat/wp6.4.6.oml>
+	extends <firesat/wp6.4.7.oml>
+	extends <firesat/wp6.4.8.oml>
+	extends <firesat/wp6.4.9.oml>
+	extends <firesat/wp6.4.10.oml>
+	
+	@rdfs:label "FireSat Project"
+	ci FireSatProject : project:Project
+	
+	@rdfs:label "Forest Fire Detection"
+	ci ForestFireDetection : mission:Objective
+
+	@rdfs:label "FireSat Mission"
+	ci FireSatMission : mission:Mission [
+		mission:hasRationale "Create a fire satellite"
+	]
+
+	@rdfs:label "Realizes FireSat Mission"
+	ri RealizesFireSatMission : project:Realizes [
+		from FireSatProject
+		to FireSatMission
+	]
+	
+	@rdfs:label "Pursues Forest Fire Detection"
+	ri PursuesForestFireDetection : mission:Pursues [
+		from FireSatMission
+		to ForestFireDetection
+	]
+
+	@rdfs:label "Authorizes WP 5"
+	ri AuthorizesWP5 : project:Authorizes [
+		from FireSatProject
+		to wp5:WP5
+	]
+
+	@rdfs:label "Authorizes WP 6.4"
+	ri SuppliesSpacecraft : project:Authorizes [
+		from FireSatProject
+		to wp6.4:WP6.4
+	]
+
+	@rdfs:label "Authorizes WP 6.4.4"
+	ri AuthorizesWP6.4.4 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.4:WP6.4.4
+	]
+
+	@rdfs:label "Authorizes WP 6.4.5"
+	ri AuthorizesWP6.4.5 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.5:WP6.4.5
+	]
+
+	@rdfs:label "Authorizes WP 6.4.6"
+	ri AuthorizesWP6.4.6 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.6:WP6.4.6
+	]
+
+	@rdfs:label "Authorizes WP 6.4.7"
+	ri AuthorizesWP6.4.7 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.7:WP6.4.7
+	]
+
+	@rdfs:label "Authorizes WP 6.4.8"
+	ri AuthorizesWP6.4.8 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.8:WP6.4.8
+	]
+	@rdfs:label "Authorizes WP 6.4.9"
+	ri AuthorizesWP6.4.9 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.9:WP6.4.9
+	]
+
+	@rdfs:label "Authorizes WP 6.4.10"
+	ri AuthorizesWP6.4.10 : project:Authorizes [
+		from FireSatProject
+		to wp6.4.10:WP6.4.10
+	]
+
+} 

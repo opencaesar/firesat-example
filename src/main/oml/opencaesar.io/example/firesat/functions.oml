@@ -1,0 +1,52 @@
+@dc:title "Fire Satellite Functions"
+description <http://opencaesar.io/example/firesat/functions> with # as fs-functions {
+
+	uses <../library/function.oml>
+
+	extends <wp5/payload/assemblies.oml>
+	extends <wp6.4.4/structures-and-mechanisms/assemblies.oml>
+
+	@rdfs:label "Power 5000 to 1000"
+	ci Power5000To1000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "1000-5000-001"
+		fse:hasEndCircuitType "Power"
+		fse:hasFunctionDirection "2to1"
+	]
+	
+	@rdfs:label "Connects Power5000To1000 to PayloadModule"
+	ri ConnectsPower5000To1000ToPayloadModule : fse:ConnectsAssembly1 [
+		from Power5000To1000
+		to pld-assemblies:PayloadModule
+	]
+
+	@rdfs:label "Connects Power5000To1000 to Sensor"
+	ri ConnectsPower5000To1000ToSensor : fse:ConnectsAssembly1 [
+		from Power5000To1000
+		to pld-assemblies:Sensor
+	]
+
+	@rdfs:label "Connects Power5000To1000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To1000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly2 [
+		from Power5000To1000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Joins Power5000To1000 to PayloadModulePowerIn"
+	ri JoinsPower5000To1000ToPayloadModulePowerIn : mission:Joins1 [
+		from Power5000To1000
+		to pld-assemblies:PayloadModulePowerIn
+	]
+
+	@rdfs:label "Joins Power5000To1000 to SensorPowerIn"
+	ri JoinsPower5000To1000ToSensorPowerIn : mission:Joins1 [
+		from Power5000To1000
+		to pld-assemblies:SensorPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To1000 to EPSRegulatorsAndConvertersUnitPowerOut3"
+	ri JoinsPower5000To1000ToEPSRegulatorsAndConvertersUnitPowerOut3 : mission:Joins2 [
+		from Power5000To1000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut3
+	]
+
+}

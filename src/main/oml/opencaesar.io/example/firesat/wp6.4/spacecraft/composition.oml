@@ -1,0 +1,333 @@
+@dc:title "Spacecraft Composition "
+description <http://opencaesar.io/example/firesat/wp6.4/spacecraft/composition> with # as spc-composition {
+
+	extends <assemblies.oml>
+	
+	extends <../../wp5/payload/assemblies.oml>
+	extends <../../wp6.4.10/command-and-data-handling/assemblies.oml>
+	extends <../../wp6.4.4/structures-and-mechanisms/assemblies.oml>
+	extends <../../wp6.4.5/thermal-control/assemblies.oml>
+	extends <../../wp6.4.6/eps/assemblies.oml>
+	extends <../../wp6.4.7/adcs-and-gnc/assemblies.oml>
+	extends <../../wp6.4.8/propulsion/assemblies.oml>
+	extends <../../wp6.4.9/communications/assemblies.oml>
+
+	@rdfs:label "Contains Primary Thruster"
+	ri ContainsPrimaryThruster : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:PrimaryThruster
+	]
+
+	@rdfs:label "Contains Propellant Handling Section"
+	ri ContainsPropellantHandlingSection : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:PropellantHandlingSection
+	]
+
+	@rdfs:label "Contains Receive Whip Antenna"
+	ri ContainsReceiveWhipAntenna : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cmn-assemblies:ReceiveWhipAntenna
+	]
+
+	@rdfs:label "Contains Payload Module"
+	ri ContainsPayloadModule : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to pld-assemblies:PayloadModule
+	]
+
+	@rdfs:label "Contains Pressurant Tank Mounting Panel"
+	ri ContainsPressurantTankMountingPanel : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PressurantTankMountingPanel
+	]
+
+	@rdfs:label "Contains Propellant Tank Mounting Panel"
+	ri ContainsPropellantTankMountingPanel : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PropellantTankMountingPanel
+	]
+
+	@rdfs:label "Contains GPS Antenna"
+	ri ContainsGPSAntenna : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:GPSAntenna
+	]
+
+	@rdfs:label "Contains Earth Sensor"
+	ri ContainsEarthSensor : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to ang-assemblies:EarthSensor
+	]
+
+	@rdfs:label "Contains GPS Receiver Unit"
+	ri ContainsGPSReceiverUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to ang-assemblies:GPSReceiverUnit
+	]
+
+	@rdfs:label "Contains Base Plate Module"
+	ri ContainsBasePlateModule : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:BasePlateModule
+	]
+
+	@rdfs:label "Contains Propulsion Module"
+	ri ContainsPropulsionModule : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to prp-assemblies:PropulsionModule
+	]
+
+	@rdfs:label "Contains Reaction Wheel 1"
+	ri ContainsReactionWheel1 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:ReactionWheel1
+	]
+
+	@rdfs:label "Contains Reaction Wheel 2"
+	ri ContainsReactionWheel2 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:ReactionWheel2
+	]
+
+	@rdfs:label "Contains Reaction Wheel 3"
+	ri ContainsReactionWheel3 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:ReactionWheel3
+	]
+
+	@rdfs:label "Contains Reaction Wheel 4"
+	ri ContainsReactionWheel4 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:ReactionWheel4
+	]
+
+	@rdfs:label "Contains Payload Structural Interface"
+	ri ContainsPayloadStructuralInterface : base:Contains [
+		from pld-assemblies:PayloadModule
+		to cdh-assemblies:PayloadStructuralInterface
+	]
+
+	@rdfs:label "Contains Propulsion Structure Post 1"
+	ri ContainsPropulsionStructurePost1 : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PropulsionStructurePost1
+	]
+
+	@rdfs:label "Contains Propulsion Structure Post 2"
+	ri ContainsPropulsionStructurePost2 : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PropulsionStructurePost2
+	]
+
+	@rdfs:label "Contains Propulsion Structure Post 3"
+	ri ContainsPropulsionStructurePost3 : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PropulsionStructurePost3
+	]
+
+	@rdfs:label "Contains Propulsion Structure Post 4"
+	ri ContainsPropulsionStructurePost4 : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to cdh-assemblies:PropulsionStructurePost4
+	]
+
+	@rdfs:label "Contains Launch Vehicle Interface Module"
+	ri ContainsLaunchVehicleInterfaceModule : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:LaunchVehicleInterfaceModule
+	]
+
+	@rdfs:label "Contains Magnetorquer 1"
+	ri ContainsMagnetorquer1 : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to ang-assemblies:Magnetorquer1
+	]
+
+	@rdfs:label "Contains Magnetorquer 2"
+	ri ContainsMagnetorquer2 : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to ang-assemblies:Magnetorquer2
+	]
+
+	@rdfs:label "Contains Magnetorquer 3"
+	ri ContainsMagnetorquer3 : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to ang-assemblies:Magnetorquer3
+	]
+
+	@rdfs:label "Contains EPS Regulators and Converters Unit"
+	ri ContainsEPSRegulatorsAndConvertersUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Contains Sun Sensor"
+	ri ContainsSunSensor : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to ang-assemblies:SunSensor
+	]
+
+	@rdfs:label "Contains Transmit Whip Antenna"
+	ri ContainsTransmitWhipAntenna : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cmn-assemblies:TransmitWhipAntenna
+	]
+
+	@rdfs:label "Contains ACS Thruster 1"
+	ri ContainsACSThruster1 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster1
+	]
+
+	@rdfs:label "Contains ACS Thruster 2"
+	ri ContainsACSThruster2 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster2
+	]
+
+	@rdfs:label "Contains ACS Thruster 3"
+	ri ContainsACSThruster3 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster3
+	]
+
+	@rdfs:label "Contains ACS Thruster 4"
+	ri ContainsACSThruster4 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster4
+	]
+
+	@rdfs:label "Contains ACS Thruster 5"
+	ri ContainsACSThruster5 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster5
+	]
+
+	@rdfs:label "Contains ACS Thruster 6"
+	ri ContainsACSThruster6 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to prp-assemblies:ACSThruster6
+	]
+
+	@rdfs:label "Contains Battery Pack 1"
+	ri ContainsBatteryPack1 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to eps-assemblies:BatteryPack1
+	]
+
+	@rdfs:label "Contains Battery Pack 2"
+	ri ContainsBatteryPack2 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to eps-assemblies:BatteryPack2
+	]
+
+	@rdfs:label "Contains Battery Pack 3"
+	ri ContainsBatteryPack3 : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to eps-assemblies:BatteryPack3
+	]
+
+	@rdfs:label "Contains Magnetometer"
+	ri ContainsMagnetometer : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to ang-assemblies:Magnetometer
+	]
+
+	@rdfs:label "Contains Power Control Unit"
+	ri ContainsPowerControlUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to sam-assemblies:PowerControlUnit
+	]
+
+	@rdfs:label "Contains Transmit Hi-Gain Antenna"
+	ri ContainsTransmitHiGainAntenna : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cmn-assemblies:TransmitHiGainAntenna
+	]
+
+	@rdfs:label "Contains ADCS Electronics Unit"
+	ri ContainsADCSElectronicsUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to ang-assemblies:ADCSElectronicsUnit
+	]
+
+	@rdfs:label "Contains Side Panel 1"
+	ri ContainsSidePanel1 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel1
+	]
+
+	@rdfs:label "Contains Side Panel 2"
+	ri ContainsSidePanel2 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel2
+	]
+
+	@rdfs:label "Contains Side Panel 3"
+	ri ContainsSidePanel3 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel3
+	]
+
+	@rdfs:label "Contains Side Panel 4"
+	ri ContainsSidePanel4 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel4
+	]
+
+	@rdfs:label "Contains Side Panel 5"
+	ri ContainsSidePanel5 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel5
+	]
+
+	@rdfs:label "Contains Side Panel 6"
+	ri ContainsSidePanel6 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:SidePanel6
+	]
+
+	@rdfs:label "Contains Solar Array With SADA 1"
+	ri ContainsSolarArrayWithSADA1 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to sam-assemblies:SolarArrayWithSADA1
+	]
+
+	@rdfs:label "Contains Solar Array With SADA 2"
+	ri ContainsSolarArrayWithSADA2 : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to sam-assemblies:SolarArrayWithSADA2
+	]
+
+	@rdfs:label "Contains Receiver Unit"
+	ri ContainsReceiverUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to cmn-assemblies:ReceiverUnit
+	]
+
+	@rdfs:label "Contains Transmitter Unit"
+	ri ContainsTransmitterUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to cmn-assemblies:TransmitterUnit
+	]
+
+	@rdfs:label "Contains Thermal Blankets"
+	ri ContainsThermalBlankets : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to thc-assemblies:ThermalBlankets
+	]
+
+	@rdfs:label "Contains Top Panel Module"
+	ri ContainsTopPanelModule : base:Contains [
+		from spc-assemblies:SpacecraftSystemSegment
+		to cdh-assemblies:TopPanelModule
+	]
+
+	@rdfs:label "Contains Propulsion System Control Unit"
+	ri ContainsPropulsionSystemControlUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to prp-assemblies:PropulsionSystemControlUnit
+	]
+
+}

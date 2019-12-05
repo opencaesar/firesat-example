@@ -1,0 +1,101 @@
+@dc:title "Propulsion"
+description <http://opencaesar.io/example/firesat/wp6.4.8/propulsion> with # as prp {
+
+	extends <propulsion/assemblies.oml>
+
+	@rdfs:label "Propulsion"
+	ci Propulsion : fse:Subsystem [
+		fse:hasSubsystemNumber "4000"
+		fse:hasSubsystemAcronym "PRP"
+	]
+
+	@rdfs:label "Aggregates Propulsion System Control Unit"
+	ri AggregatesPropulsionSystemControlUnit : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PropulsionSystemControlUnit
+	]
+
+	@rdfs:label "Aggregates Primary Thruster"
+	ri AggregatesPrimaryThruster : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PrimaryThruster
+	]
+
+	@rdfs:label "Aggregates Propellant Handling Section"
+	ri AggregatesPropellantHandlingSection : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PropellantHandlingSection
+	]
+
+	@rdfs:label "Aggregates Fill Drain Valve Unit"
+	ri AggregatesFillDrainValveUnit : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:FillDrainValveUnit
+	]
+
+	@rdfs:label "Aggregates BP Propellant Line Unit"
+	ri AggregatesBPPropellantLineUnit : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:BPPropellantLineUnit
+	]
+
+	@rdfs:label "Aggregates Propulsion Module"
+	ri AggregatesPropulsionModule : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PropulsionModule
+	]
+
+	@rdfs:label "Aggregates Propellant Tank"
+	ri AggregatesPropellantTank : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PropellantTank
+	]
+
+	@rdfs:label "Aggregates Pressurant Tank"
+	ri AggregatesPressurantTank : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PressurantTank
+	]
+
+	@rdfs:label "Aggregates PM Propellant Line Unit"
+	ri AggregatesPMPropellantLineUnit : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:PMPropellantLineUnit
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 1"
+	ri AggregatesACSThruster1 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster1
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 2"
+	ri AggregatesACSThruster2 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster2
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 3"
+	ri AggregatesACSThruster3 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster3
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 4"
+	ri AggregatesACSThruster4 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster4
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 5"
+	ri AggregatesACSThruster5 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster5
+	]
+
+	@rdfs:label "Aggregates ACS Thruster 6"
+	ri AggregatesACSThruster6 : base:Aggregates [
+		from Propulsion
+		to prp-assemblies:ACSThruster6
+	]
+}

@@ -1,0 +1,589 @@
+@dc:title "Spacecraft Functions"
+description <http://opencaesar.io/example/firesat/wp6.4/spacecraft/functions> with # as spc-functions {
+
+	uses <../../../library/function.oml>
+
+	extends <../../wp6.4.10/command-and-data-handling/assemblies.oml>
+	extends <../../wp6.4.4/structures-and-mechanisms/assemblies.oml>
+	extends <../../wp6.4.6/eps/assemblies.oml>
+	extends <../../wp6.4.7/adcs-and-gnc/assemblies.oml>
+	extends <../../wp6.4.8/propulsion/assemblies.oml>
+	extends <../../wp6.4.9/communications/assemblies.oml>
+
+	/* 
+	 * Functions
+	 */
+
+	@rdfs:label "Power 3000 to 5000"
+	ci Power3000To5000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "3000-5000-001"
+		fse:hasFunctionDirection "1to2"
+		fse:hasEndCircuitType "Power"
+	]
+
+	@rdfs:label "Power 5000 to 2000"
+	ci Power5000To2000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "2000-5000-001"
+		fse:hasFunctionDirection "2to1"
+		fse:hasEndCircuitType "Power"
+	]
+
+	@rdfs:label "Power 5000 to 3000"
+	ci Power5000To3000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "3000-5000-002"
+		fse:hasFunctionDirection "2to1"
+		fse:hasEndCircuitType "Power"
+	]
+
+	@rdfs:label "Power 5000 to 4000"
+	ci Power5000To4000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "4000-5000-001"
+		fse:hasFunctionDirection "2to1"
+		fse:hasEndCircuitType "Power"
+	]
+
+	@rdfs:label "Power 5000 to 6000"
+	ci Power5000To6000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "5000-6000-001"
+		fse:hasFunctionDirection "1to2"
+		fse:hasEndCircuitType "Power"
+	]
+
+	@rdfs:label "Power 5000 to 7000"
+	ci Power5000To7000 : function:UnidirectionalPower [
+		fse:hasFunctionNumber "5000-7000-001"
+		fse:hasFunctionDirection "1to2"
+		fse:hasEndCircuitType "Power"
+	]
+
+	/*
+	 * Connects
+	 */
+
+	@rdfs:label "Connects Power5000To2000 to Magnetometer"
+	ri ConnectsPower5000To2000ToMagnetometer : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetometer
+	]
+
+	@rdfs:label "Connects Power5000To2000 to ReactionWheel1"
+	ri ConnectsPower5000To2000ToReactionWheel1 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel1
+	]
+
+	@rdfs:label "Connects Power5000To2000 to ReactionWheel2"
+	ri ConnectsPower5000To2000ToReactionWheel2 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel2
+	]
+
+	@rdfs:label "Connects Power5000To2000 to ReactionWheel3"
+	ri ConnectsPower5000To2000ToReactionWheel3 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel3
+	]
+
+	@rdfs:label "Connects Power5000To2000 to ReactionWheel4"
+	ri ConnectsPower5000To2000ToReactionWheel4 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel4
+	]
+
+	@rdfs:label "Connects Power5000To2000 to GPSAntenna"
+	ri ConnectsPower5000To2000ToGPSAntenna : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:GPSAntenna
+	]
+
+	@rdfs:label "Connects Power5000To2000 to GPSReceiverUnit"
+	ri ConnectsPower5000To2000ToGPSReceiverUnit : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:GPSReceiverUnit
+	]
+
+	@rdfs:label "Connects Power5000To2000 to ADCSElectronicsUnit"
+	ri ConnectsPower5000To2000ToADCSElectronicsUnit : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:ADCSElectronicsUnit
+	]
+
+	@rdfs:label "Connects Power5000To2000 to Magnetorquer1"
+	ri ConnectsPower5000To2000ToMagnetorquer1 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer1
+	]
+
+	@rdfs:label "Connects Power5000To2000 to Magnetorquer2"
+	ri ConnectsPower5000To2000ToMagnetorquer2 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer2
+	]
+
+	@rdfs:label "Connects Power5000To2000 to Magnetorquer3"
+	ri ConnectsPower5000To2000ToMagnetorquer3 : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer3
+	]
+
+	@rdfs:label "Connects Power5000To2000 to SunSensor"
+	ri ConnectsPower5000To2000ToSunSensor : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:SunSensor
+	]
+
+	@rdfs:label "Connects Power5000To2000 to EarthSensor"
+	ri ConnectsPower5000To2000ToEarthSensor : fse:ConnectsAssembly1 [
+		from Power5000To2000
+		to ang-assemblies:EarthSensor
+	]
+
+	@rdfs:label "Connects Power5000To2000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To2000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly2 [
+		from Power5000To2000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power3000To5000 to BatteryPack1"
+	ri ConnectsPower3000To5000ToBatteryPack1 : fse:ConnectsAssembly1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack1
+	]
+
+	@rdfs:label "Connects Power3000To5000 to BatteryPack2"
+	ri ConnectsPower3000To5000ToBatteryPack2 : fse:ConnectsAssembly1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack2
+	]
+
+	@rdfs:label "Connects Power3000To5000 to BatteryPack3"
+	ri ConnectsPower3000To5000ToBatteryPack3 : fse:ConnectsAssembly1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack3
+	]
+
+	@rdfs:label "Connects Power5000To3000 to BatteryPack1"
+	ri ConnectsPower5000To3000ToBatteryPack1 : fse:ConnectsAssembly1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack1
+	]
+
+	@rdfs:label "Connects Power5000To3000 to BatteryPack2"
+	ri ConnectsPower5000To3000ToBatteryPack2 : fse:ConnectsAssembly1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack2
+	]
+
+	@rdfs:label "Connects Power5000To3000 to BatteryPack3"
+	ri ConnectsPower5000To3000ToBatteryPack3 : fse:ConnectsAssembly1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack3
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster1"
+	ri ConnectsPower5000To4000ToACSThruster1 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster1
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster2"
+	ri ConnectsPower5000To4000ToACSThruster2 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster2
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster3"
+	ri ConnectsPower5000To4000ToACSThruster3 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster3
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster4"
+	ri ConnectsPower5000To4000ToACSThruster4 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster4
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster5"
+	ri ConnectsPower5000To4000ToACSThruster5 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster5
+	]
+
+	@rdfs:label "Connects Power5000To4000 to ACSThruster6"
+	ri ConnectsPower5000To4000ToACSThruster6 : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:ACSThruster6
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PropulsionSystemControlUnit"
+	ri ConnectsPower5000To4000ToPropulsionSystemControlUnit : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PropulsionSystemControlUnit
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PrimaryThruster"
+	ri ConnectsPower5000To4000ToPrimaryThruster : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PrimaryThruster
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PropellantHandlingSection"
+	ri ConnectsPower5000To4000ToPropellantHandlingSection : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PropellantHandlingSection
+	]
+
+	@rdfs:label "Connects Power5000To4000 to FillDrainValveUnit"
+	ri ConnectsPower5000To4000ToFillDrainValveUnit : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:FillDrainValveUnit
+	]
+
+	@rdfs:label "Connects Power5000To4000 to BPPropellantLineUnit"
+	ri ConnectsPower5000To4000ToBPPropellantLineUnit : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:BPPropellantLineUnit
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PropulsionModule"
+	ri ConnectsPower5000To4000ToPropulsionModule : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PropulsionModule
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PropellantTank"
+	ri ConnectsPower5000To4000ToPropellantTank : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PropellantTank
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PressurantTank"
+	ri ConnectsPower5000To4000ToPressurantTank : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PressurantTank
+	]
+
+	@rdfs:label "Connects Power5000To4000 to PMPropellantLineUnit"
+	ri ConnectsPower5000To4000ToPMPropellantLineUnit : fse:ConnectsAssembly1 [
+		from Power5000To4000
+		to prp-assemblies:PMPropellantLineUnit
+	]
+
+	@rdfs:label "Connects Power5000To6000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To6000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly1 [
+		from Power5000To6000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power5000To7000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To7000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly1 [
+		from Power5000To7000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power3000To5000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower3000To5000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly2 [
+		from Power3000To5000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power5000To3000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To3000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly2 [
+		from Power5000To3000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power5000To4000 to EPSRegulatorsAndConvertersUnit"
+	ri ConnectsPower5000To4000ToEPSRegulatorsAndConvertersUnit : fse:ConnectsAssembly2 [
+		from Power5000To4000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+	@rdfs:label "Connects Power5000To6000 to TransmitterUnit"
+	ri ConnectsPower5000To6000ToTransmitterUnit : fse:ConnectsAssembly2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitterUnit
+	]
+
+	@rdfs:label "Connects Power5000To6000 to ReceiverUnit"
+	ri ConnectsPower5000To6000ToReceiverUnit : fse:ConnectsAssembly2 [
+		from Power5000To6000
+		to cmn-assemblies:ReceiverUnit
+	]
+
+	@rdfs:label "Connects Power5000To6000 to TransmitWhipAntenna"
+	ri ConnectsPower5000To6000ToTransmitWhipAntenna : fse:ConnectsAssembly2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitWhipAntenna
+	]
+
+	@rdfs:label "Connects Power5000To6000 to TransmitHiGainAntenna"
+	ri ConnectsPower5000To6000ToTransmitHiGainAntenna : fse:ConnectsAssembly2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitHiGainAntenna
+	]
+
+	@rdfs:label "Connects Power5000To6000 to ReceiveWhipAntenna"
+	ri ConnectsPower5000To6000ToReceiveWhipAntenna : fse:ConnectsAssembly2 [
+		from Power5000To6000
+		to cmn-assemblies:ReceiveWhipAntenna
+	]
+
+	@rdfs:label "Connects Power5000To7000 to AvionicsStackSection"
+	ri ConnectsPower5000To7000ToAvionicsStackSection : fse:ConnectsAssembly2 [
+		from Power5000To7000
+		to cdh-assemblies:AvionicsStackSection
+	]
+
+	@rdfs:label "Connects Power5000To7000 to PrimaryFlightComputerUnit"
+	ri ConnectsPower5000To7000ToPrimaryFlightComputerUnit : fse:ConnectsAssembly2 [
+		from Power5000To7000
+		to cdh-assemblies:PrimaryFlightComputerUnit
+	]
+
+	@rdfs:label "Connects Power5000To7000 to LaunchVehicleInterfaceModule"
+	ri ConnectsPower5000To7000ToLaunchVehicleInterfaceModule : fse:ConnectsAssembly2 [
+		from Power5000To7000
+		to cdh-assemblies:LaunchVehicleInterfaceModule
+	]
+
+	@rdfs:label "Connects Power5000To7000 to SeparationSystem"
+	ri ConnectsPower5000To7000ToSeparationSystem : fse:ConnectsAssembly2 [
+		from Power5000To7000
+		to cdh-assemblies:SeparationSystem
+	]
+
+	/*
+	 * Joins
+	 */
+
+	@rdfs:label "Joins Power5000To2000 to EPSRegulatorsAndConvertersUnitPowerOut4"
+	ri JoinsPower5000To2000ToEPSRegulatorsAndConvertersUnitPowerOut4 : mission:Joins2 [
+		from Power5000To2000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut4
+	]
+
+	@rdfs:label "Joins Power5000To2000 to ReactionWheel1PowerIn"
+	ri JoinsPower5000To2000ToReactionWheel1PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel1PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to MagnetometerPowerIn"
+	ri JoinsPower5000To2000ToMagnetometerPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:MagnetometerPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to ReactionWheel2PowerIn"
+	ri JoinsPower5000To2000ToReactionWheel2PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel2PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to ReactionWheel3PowerIn"
+	ri JoinsPower5000To2000ToReactionWheel3PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel3PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to ReactionWheel4PowerIn"
+	ri JoinsPower5000To2000ToReactionWheel4PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:ReactionWheel4PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to GPSAntennaPowerIn"
+	ri JoinsPower5000To2000ToGPSAntennaPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:GPSAntennaPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to GPSReceiverUnitPowerIn"
+	ri JoinsPower5000To2000ToGPSReceiverUnitPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:GPSReceiverUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to ADCSElectronicsUnitPowerIn"
+	ri JoinsPower5000To2000ToADCSElectronicsUnitPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:ADCSElectronicsUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to Magnetorquer1PowerIn"
+	ri JoinsPower5000To2000ToMagnetorquer1PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer1PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to Magnetorquer2PowerIn"
+	ri JoinsPower5000To2000ToMagnetorquer2PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer2PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to Magnetorquer3PowerIn"
+	ri JoinsPower5000To2000ToMagnetorquer3PowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:Magnetorquer3PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to SunSensorPowerIn"
+	ri JoinsPower5000To2000ToSunSensorPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:SunSensorPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To2000 to EarthSensorPowerIn"
+	ri JoinsPower5000To2000ToEarthSensorPowerIn : mission:Joins1 [
+		from Power5000To2000
+		to ang-assemblies:EarthSensorPowerIn
+	]
+
+	@rdfs:label "Joins Power3000To5000 to EPSRegulatorsAndConvertersUnitPowerIn1"
+	ri JoinsPower3000To5000ToEPSRegulatorsAndConvertersUnitPowerIn1 : mission:Joins2 [
+		from Power3000To5000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerIn1
+	]
+
+	@rdfs:label "Joins Power5000To3000 to BatteryPack1PowerIn"
+	ri JoinsPower5000To3000ToBatteryPack1PowerIn : mission:Joins1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack1PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To3000 to BatteryPack2PowerIn"
+	ri JoinsPower5000To3000ToBatteryPack2PowerIn : mission:Joins1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack2PowerIn
+	]
+
+	@rdfs:label "Joins Power5000To3000 to BatteryPack3PowerIn"
+	ri JoinsPower5000To3000ToBatteryPack3PowerIn : mission:Joins1 [
+		from Power5000To3000
+		to eps-assemblies:BatteryPack3PowerIn
+	]
+
+	@rdfs:label "Joins Power3000To5000 to BatteryPack1PowerOut"
+	ri JoinsPower3000To5000ToBatteryPack1PowerOut : mission:Joins1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack1PowerOut
+	]
+
+	@rdfs:label "Joins Power3000To5000 to BatteryPack3PowerOut"
+	ri JoinsPower3000To5000ToBatteryPack3PowerOut : mission:Joins1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack3PowerOut
+	]
+
+	@rdfs:label "Joins Power3000To5000 to BatteryPack2PowerOut"
+	ri JoinsPower3000To5000ToBatteryPack2PowerOut : mission:Joins1 [
+		from Power3000To5000
+		to eps-assemblies:BatteryPack2PowerOut
+	]
+
+	@rdfs:label "Joins Power5000To3000 to EPSRegulatorsAndConvertersUnitPowerOut3"
+	ri JoinsPower5000To3000ToEPSRegulatorsAndConvertersUnitPowerOut3 : mission:Joins2 [
+		from Power5000To3000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut3
+	]
+
+	@rdfs:label "Joins Power5000To4000 to EPSRegulatorsAndConvertersUnitPowerOut6"
+	ri JoinsPower5000To4000ToEPSRegulatorsAndConvertersUnitPowerOut6 : mission:Joins2 [
+		from Power5000To4000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut6
+	]
+
+	@rdfs:label "Joins Power5000To6000 to EPSRegulatorsAndConvertersUnitPowerOut8"
+	ri JoinsPower5000To6000ToEPSRegulatorsAndConvertersUnitPowerOut8 : mission:Joins1 [
+		from Power5000To6000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut8
+	]
+
+	@rdfs:label "Joins Power5000To7000 to EPSRegulatorsAndConvertersUnitPowerOut9"
+	ri JoinsPower5000To7000ToEPSRegulatorsAndConvertersUnitPowerOut9 : mission:Joins1 [
+		from Power5000To7000
+		to sam-assemblies:EPSRegulatorsAndConvertersUnitPowerOut9
+	]
+
+	@rdfs:label "Joins Power5000To6000 to TransmitterUnitPowerIn"
+	ri JoinsPower5000To6000ToTransmitterUnitPowerIn : mission:Joins2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitterUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To6000 to ReceiverUnitPowerIn"
+	ri JoinsPower5000To6000ToReceiverUnitPowerIn : mission:Joins2 [
+		from Power5000To6000
+		to cmn-assemblies:ReceiverUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To6000 to TransmitWhipAntennaPowerIn"
+	ri JoinsPower5000To6000ToTransmitWhipAntennaPowerIn : mission:Joins2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To6000 to TransmitHiGainAntennaPowerIn"
+	ri JoinsPower5000To6000ToTransmitHiGainAntennaPowerIn : mission:Joins2 [
+		from Power5000To6000
+		to cmn-assemblies:TransmitHiGainAntennaPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To6000 to ReceiveWhipAntennaPowerIn"
+	ri JoinsPower5000To6000ToReceiveWhipAntennaPowerIn : mission:Joins2 [
+		from Power5000To6000
+		to cmn-assemblies:ReceiveWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To4000 to PropulsionSystemControlUnitPowerIn"
+	ri JoinsPower5000To4000ToPropulsionSystemControlUnitPowerIn : mission:Joins1 [
+		from Power5000To4000
+		to prp-assemblies:PropulsionSystemControlUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To4000 to PropellantHandlingSectionPowerIn"
+	ri JoinsPower5000To4000ToPropellantHandlingSectionPowerIn : mission:Joins1 [
+		from Power5000To4000
+		to prp-assemblies:PropellantHandlingSectionPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To4000 to FillDrainValveUnitPowerIn"
+	ri JoinsPower5000To4000ToFillDrainValveUnitPowerIn : mission:Joins1 [
+		from Power5000To4000
+		to prp-assemblies:FillDrainValveUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To4000 to PropulsionModulePowerIn"
+	ri JoinsPower5000To4000ToPropulsionModulePowerIn : mission:Joins1 [
+		from Power5000To4000
+		to prp-assemblies:PropulsionModulePowerIn
+	]
+
+	@rdfs:label "Joins Power5000To7000 to AvionicsStackSectionPowerIn"
+	ri JoinsPower5000To7000ToAvionicsStackSectionPowerIn : mission:Joins2 [
+		from Power5000To7000
+		to cdh-assemblies:AvionicsStackSectionPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To7000 to PrimaryFlightComputerUnitPowerIn"
+	ri JoinsPower5000To7000ToPrimaryFlightComputerUnitPowerIn : mission:Joins2 [
+		from Power5000To7000
+		to cdh-assemblies:PrimaryFlightComputerUnitPowerIn
+	]
+
+	@rdfs:label "Joins Power5000To7000 to LaunchVehicleInterfaceModulePowerIn"
+	ri JoinsPower5000To7000ToLaunchVehicleInterfaceModulePowerIn : mission:Joins2 [
+		from Power5000To7000
+		to cdh-assemblies:LaunchVehicleInterfaceModulePowerIn
+	]
+
+	@rdfs:label "Joins Power5000To7000 to SeparationSystemPowerIn"
+	ri JoinsPower5000To7000ToSeparationSystemPowerIn : mission:Joins2 [
+		from Power5000To7000
+		to cdh-assemblies:SeparationSystemPowerIn
+	]
+
+}

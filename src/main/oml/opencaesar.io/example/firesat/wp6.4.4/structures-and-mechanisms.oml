@@ -1,0 +1,37 @@
+@dc:title "Structures and Mechanisms"
+description <http://opencaesar.io/example/firesat/wp6.4.4/structures-and-mechanisms> with # as sam {
+
+	extends <structures-and-mechanisms/assemblies.oml>
+
+	@rdfs:label "Structures and Mechanisms"
+	ci StructuresAndMechanisms : fse:Subsystem [
+		fse:hasSubsystemNumber "5000"
+		fse:hasSubsystemAcronym "SAM"
+	]
+
+	@rdfs:label "Aggregates Power Control Unit"
+	ri AggregatesPowerControlUnit : base:Aggregates [
+		from StructuresAndMechanisms
+		to sam-assemblies:PowerControlUnit
+	]
+
+	@rdfs:label "Aggregates EPS Regulators and Converters Unit"
+	ri AggregatesEPSRegulatorsAndConvertersUnit : base:Aggregates [
+		from StructuresAndMechanisms
+		to sam-assemblies:EPSRegulatorsAndConvertersUnit
+	]
+
+
+	@rdfs:label "Aggregates Solar Array With SADA 1"
+	ri AggregatesSolarArrayWithSADA1 : base:Aggregates [
+		from StructuresAndMechanisms
+		to sam-assemblies:SolarArrayWithSADA1
+	]
+
+	@rdfs:label "Aggregates Solar Array With SADA 2"
+	ri AggregatesSolarArrayWithSADA2 : base:Aggregates [
+		from StructuresAndMechanisms
+		to sam-assemblies:SolarArrayWithSADA2
+	]
+
+}

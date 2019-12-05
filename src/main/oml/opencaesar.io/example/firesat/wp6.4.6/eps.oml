@@ -1,0 +1,30 @@
+@dc:title "EPS"
+description <http://opencaesar.io/example/firesat/wp6.4.6/eps> with # as eps {
+
+	extends <eps/assemblies.oml>
+
+	@rdfs:label "EPS"
+	ci EPS : fse:Subsystem [
+		fse:hasSubsystemNumber "3000"
+		fse:hasSubsystemAcronym "EPS"
+	]
+
+	@rdfs:label "Aggregates Battery Pack 1"
+	ri AggregatesBatteryPack1 : base:Aggregates [
+		from EPS
+		to eps-assemblies:BatteryPack1
+	]
+
+	@rdfs:label "Aggregates Battery Pack 2"
+	ri AggregatesBatteryPack2 : base:Aggregates [
+		from EPS
+		to eps-assemblies:BatteryPack2
+	]
+
+	@rdfs:label "Aggregates Battery Pack 3"
+	ri AggregatesBatteryPack3 : base:Aggregates [
+		from EPS
+		to eps-assemblies:BatteryPack3
+	]
+
+}

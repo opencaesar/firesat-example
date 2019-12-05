@@ -1,0 +1,182 @@
+@dc:title "Propulsion Mass Characterizations"
+description <http://opencaesar.io/example/firesat/wp6.4.8/propulsion/mass> with # as prp-mass {
+
+	extends <../propulsion.oml>
+
+	@rdfs:label "Propulsion Mass Limit Constraint"
+	ci PropulsionMassLimitConstraint : fse:MassLimitConstraint [
+		fse:hasMassConstraintValue "44.14"
+	]
+
+	@rdfs:label "Propulsion System Control Unit CBE Mass Constraint"
+	ci PropulsionSystemControlUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "1.0"
+	]
+
+	@rdfs:label "Primary Thruster CBE Mass Constraint"
+	ci PrimaryThrusterCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "1.0"
+	]
+
+	@rdfs:label "A CS Thruster 1 CBE Mass Constraint"
+	ci ACSThruster1CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "A CS Thruster 2 CBE Mass Constraint"
+	ci ACSThruster2CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "A CS Thruster 3 CBE Mass Constraint"
+	ci ACSThruster3CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "A CS Thruster 4 CBE Mass Constraint"
+	ci ACSThruster4CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "A CS Thruster 5 CBE Mass Constraint"
+	ci ACSThruster5CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "A CS Thruster 6 CBE Mass Constraint"
+	ci ACSThruster6CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "Propellant Handling Section CBE Mass Constraint"
+	ci PropellantHandlingSectionCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.6"
+	]
+
+	@rdfs:label "Fill Drain Valve Unit CBE Mass Constraint"
+	ci FillDrainValveUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "3.75"
+	]
+
+	@rdfs:label "BP Propellant Line Unit CBE Mass Constraint"
+	ci BPPropellantLineUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "2.695"
+	]
+
+	@rdfs:label "Propulsion Module CBE Mass Constraint"
+	ci PropulsionModuleCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.6"
+	]
+
+	@rdfs:label "Propellant Tank CBE Mass Constraint"
+	ci PropellantTankCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "20.0"
+	]
+
+	@rdfs:label "Pressurant Tank CBE Mass Constraint"
+	ci PressurantTankCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "10.0"
+	]
+
+	@rdfs:label "PM Propellant Line Unit CBE Mass Constraint"
+	ci PMPropellantLineUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "2.695"
+	]
+
+	@rdfs:label "Characterizes Propulsion Mass Limit"
+	ri CharacterizesPropulsionMassLimit : analysis:Characterizes [
+		from PropulsionMassLimitConstraint
+		to prp:Propulsion
+	]
+
+	@rdfs:label "Characterizes Propulsion System Control Unit CBE Mass"
+	ri CharacterizesPropulsionSystemControlUnitCBEMass : analysis:Characterizes [
+		from PropulsionSystemControlUnitCBEMassConstraint
+		to prp-assemblies:PropulsionSystemControlUnit
+	]
+
+	@rdfs:label "Characterizes Primary Thruster CBE Mass"
+	ri CharacterizesPrimaryThrusterCBEMass : analysis:Characterizes [
+		from PrimaryThrusterCBEMassConstraint
+		to prp-assemblies:PrimaryThruster
+	]
+
+	@rdfs:label "Characterizes AC SThruster 1 CBE Mass"
+	ri CharacterizesACSThruster1CBEMass : analysis:Characterizes [
+		from ACSThruster1CBEMassConstraint
+		to prp-assemblies:ACSThruster1
+	]
+
+	@rdfs:label "Characterizes AC SThruster 2 CBE Mass"
+	ri CharacterizesACSThruster2CBEMass : analysis:Characterizes [
+		from ACSThruster2CBEMassConstraint
+		to prp-assemblies:ACSThruster2
+	]
+
+	@rdfs:label "Characterizes AC SThruster 3 CBE Mass"
+	ri CharacterizesACSThruster3CBEMass : analysis:Characterizes [
+		from ACSThruster3CBEMassConstraint
+		to prp-assemblies:ACSThruster3
+	]
+
+	@rdfs:label "Characterizes AC SThruster 4 CBE Mass"
+	ri CharacterizesACSThruster4CBEMass : analysis:Characterizes [
+		from ACSThruster4CBEMassConstraint
+		to prp-assemblies:ACSThruster4
+	]
+
+	@rdfs:label "Characterizes AC SThruster 5 CBE Mass"
+	ri CharacterizesACSThruster5CBEMass : analysis:Characterizes [
+		from ACSThruster5CBEMassConstraint
+		to prp-assemblies:ACSThruster5
+	]
+
+	@rdfs:label "Characterizes AC SThruster 6 CBE Mass"
+	ri CharacterizesACSThruster6CBEMass : analysis:Characterizes [
+		from ACSThruster6CBEMassConstraint
+		to prp-assemblies:ACSThruster6
+	]
+
+	@rdfs:label "Characterizes Propellant Handling Section CBE Mass"
+	ri CharacterizesPropellantHandlingSectionCBEMass : analysis:Characterizes [
+		from PropellantHandlingSectionCBEMassConstraint
+		to prp-assemblies:PropellantHandlingSection
+	]
+
+	@rdfs:label "Characterizes Fill Drain Valve Unit CBE Mass"
+	ri CharacterizesFillDrainValveUnitCBEMass : analysis:Characterizes [
+		from FillDrainValveUnitCBEMassConstraint
+		to prp-assemblies:FillDrainValveUnit
+	]
+
+	@rdfs:label "Characterizes BP Propellant Line Unit CBE Mass"
+	ri CharacterizesBPPropellantLineUnitCBEMass : analysis:Characterizes [
+		from BPPropellantLineUnitCBEMassConstraint
+		to prp-assemblies:BPPropellantLineUnit
+	]
+
+	@rdfs:label "Characterizes Propulsion Module CBE Mass"
+	ri CharacterizesPropulsionModuleCBEMass : analysis:Characterizes [
+		from PropulsionModuleCBEMassConstraint
+		to prp-assemblies:PropulsionModule
+	]
+
+	@rdfs:label "Characterizes Propellant Tank CBE Mass"
+	ri CharacterizesPropellantTankCBEMass : analysis:Characterizes [
+		from PropellantTankCBEMassConstraint
+		to prp-assemblies:PropellantTank
+	]
+
+	@rdfs:label "Characterizes Pressurant Tank CBE Mass"
+	ri CharacterizesPressurantTankCBEMass : analysis:Characterizes [
+		from PressurantTankCBEMassConstraint
+		to prp-assemblies:PressurantTank
+	]
+
+	@rdfs:label "Characterizes PM Propellant Line Unit CBE Mass"
+	ri CharacterizesPMPropellantLineUnitCBEMass : analysis:Characterizes [
+		from PMPropellantLineUnitCBEMassConstraint
+		to prp-assemblies:PMPropellantLineUnit
+	]
+
+}

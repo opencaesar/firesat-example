@@ -1,0 +1,78 @@
+@dc:title "Command and Data Handling Composition"
+description <http://opencaesar.io/example/firesat/wp6.4.10/command-and-data-handling/composition> with # as cdh-composition {
+
+	extends <assemblies.oml>
+
+	@rdfs:label "Contains Top Panel"
+	ri ContainsTopPanel : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:TopPanel
+	]
+
+	@rdfs:label "Contains Avionics Stack Section"
+	ri ContainsAvionicsStackSection : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to cdh-assemblies:AvionicsStackSection
+	]
+
+	@rdfs:label "Contains Primary Flight Computer Unitt"
+	ri ContainsPrimaryFlightComputerUnit : base:Contains [
+		from cdh-assemblies:AvionicsStackSection
+		to cdh-assemblies:PrimaryFlightComputerUnit
+	]
+
+	@rdfs:label "Contains Launch Vehicle Adapter"
+	ri ContainsLaunchVehicleAdapter : base:Contains [
+		from cdh-assemblies:LaunchVehicleInterfaceModule
+		to cdh-assemblies:LaunchVehicleAdapter
+	]
+
+	@rdfs:label "Contains Separation System"
+	ri ContainsSeparationSystem : base:Contains [
+		from cdh-assemblies:LaunchVehicleInterfaceModule
+		to cdh-assemblies:SeparationSystem
+	]
+
+	@rdfs:label "Contains Base Plate"
+	ri ContainsBasePlate : base:Contains [
+		from cdh-assemblies:BasePlateModule
+		to cdh-assemblies:BasePlate
+	]
+
+	@rdfs:label "Contains Structure Post 1"
+	ri ContainsStructurePost1 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost1
+	]
+
+	@rdfs:label "Contains Structure Post 2"
+	ri ContainsStructurePost2 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost2
+	]
+
+	@rdfs:label "Contains Structure Post 3"
+	ri ContainsStructurePost3 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost3
+	]
+
+	@rdfs:label "Contains Structure Post 4"
+	ri ContainsStructurePost4 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost4
+	]
+
+	@rdfs:label "Contains Structure Post 5"
+	ri ContainsStructurePost5 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost5
+	]
+
+	@rdfs:label "Contains Structure Post 6"
+	ri ContainsStructurePost6 : base:Contains [
+		from cdh-assemblies:TopPanelModule
+		to cdh-assemblies:StructurePost6
+	]
+
+}

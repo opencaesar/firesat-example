@@ -1,0 +1,18 @@
+@dc:title "Thermal Control"
+description <http://opencaesar.io/example/firesat/wp6.4.5/thermal-control> with # as thc {
+
+	extends <thermal-control/assemblies.oml>
+
+	@rdfs:label "Thermal Control"
+	ci ThermalControl : fse:Subsystem [
+		fse:hasSubsystemNumber "8000"
+		fse:hasSubsystemAcronym "THC"
+	]
+
+	@rdfs:label "Aggregates Thermal Blankets"
+	ri AggregatesThermalBlankets : base:Aggregates [
+		from ThermalControl
+		to thc-assemblies:ThermalBlankets
+	]
+
+}

@@ -1,0 +1,36 @@
+@dc:title "Propulsion Composition"
+description <http://opencaesar.io/example/firesat/wp6.4.8/propulsion/composition> with # as prp-composition {
+
+	extends <../propulsion.oml>
+
+	@rdfs:label "Contains BP Propellant Line Unit"
+	ri ContainsBPPropellantLineUnit : base:Contains [
+		from prp-assemblies:PropellantHandlingSection
+		to prp-assemblies:BPPropellantLineUnit
+	]
+
+	@rdfs:label "Contains Fill Drain Valve Unit"
+	ri ContainsFillDrainValveUnit : base:Contains [
+		from prp-assemblies:PropellantHandlingSection
+		to prp-assemblies:FillDrainValveUnit
+	]
+
+	@rdfs:label "Contains PM Propellant Line Unit"
+	ri ContainsPMPropellantLineUnit : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to prp-assemblies:PMPropellantLineUnit
+	]
+
+	@rdfs:label "Contains Pressurant Tank"
+	ri ContainsPressurantTank : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to prp-assemblies:PressurantTank
+	]
+
+	@rdfs:label "Contains Propellant Tank"
+	ri ContainsPropellantTank : base:Contains [
+		from prp-assemblies:PropulsionModule
+		to prp-assemblies:PropellantTank
+	]
+
+}

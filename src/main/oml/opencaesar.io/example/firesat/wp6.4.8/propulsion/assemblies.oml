@@ -1,0 +1,125 @@
+@dc:title "Propulsion Assemblies"
+description <http://opencaesar.io/example/firesat/wp6.4.8/propulsion/assemblies> with # as prp-assemblies {
+
+	uses <../../../library/assembly.oml>
+
+	@rdfs:label "Propulsion System Control Unit"
+	ci PropulsionSystemControlUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516700"
+	]
+
+	@rdfs:label "Primary Thruster"
+	ci PrimaryThruster : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "517000"
+	]
+
+	@rdfs:label "ACS Thruster 1"
+	ci ACSThruster1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-1"
+	]
+
+	@rdfs:label "ACS Thruster 2"
+	ci ACSThruster2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-2"
+	]
+
+	@rdfs:label "ACS Thruster 3"
+	ci ACSThruster3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-3"
+	]
+
+	@rdfs:label "ACS Thruster 4"
+	ci ACSThruster4 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-4"
+	]
+
+	@rdfs:label "ACS Thruster 5"
+	ci ACSThruster5 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-5"
+	]
+
+	@rdfs:label "ACS Thruster 6"
+	ci ACSThruster6 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "518000-6"
+	]
+
+	@rdfs:label "Propellant Handling Section"
+	ci PropellantHandlingSection : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "519000"
+	]
+
+	@rdfs:label "Fill/Drain Valve Unit"
+	ci FillDrainValveUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "519100"
+	]
+
+	@rdfs:label "BP Propellant Line Unit"
+	ci BPPropellantLineUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "519200"
+	]
+
+	@rdfs:label "Propulsion Module"
+	ci PropulsionModule : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "530000"
+	]
+
+	@rdfs:label "Propellant Tank"
+	ci PropellantTank : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "532000"
+	]
+
+	@rdfs:label "Pressurant Tank"
+	ci PressurantTank : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "535000"
+	]
+
+	@rdfs:label "PM Propellant Line Unit"
+	ci PMPropellantLineUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "536000"
+	]
+
+	@rdfs:label "Propulsion System Control Unit Power In"
+	ci PropulsionSystemControlUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Propellant Handling Section Power In"
+	ci PropellantHandlingSectionPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Fill Drain Valve Unit Power In"
+	ci FillDrainValveUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Propulsion Module Power In"
+	ci PropulsionModulePowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Propulsion System Control Unit Power In"
+	ri PresentsPropulsionSystemControlUnitPowerIn : mission:Presents [
+		from PropulsionSystemControlUnit
+		to PropulsionSystemControlUnitPowerIn
+	]
+
+	@rdfs:label "Presents Propellant Handling Section Power In"
+	ri PresentsPropellantHandlingSectionPowerIn : mission:Presents [
+		from PropellantHandlingSection
+		to PropellantHandlingSectionPowerIn
+	]
+
+	@rdfs:label "Presents Fill Drain Valve Unit Power In"
+	ri PresentsFillDrainValveUnitPowerIn : mission:Presents [
+		from FillDrainValveUnit
+		to FillDrainValveUnitPowerIn
+	]
+
+	@rdfs:label "Presents Propulsion Module Power In"
+	ri PresentsPropulsionModulePowerIn : mission:Presents [
+		from PropulsionModule
+		to PropulsionModulePowerIn
+	]
+
+}

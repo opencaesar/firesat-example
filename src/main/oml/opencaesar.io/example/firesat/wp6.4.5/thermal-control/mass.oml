@@ -1,0 +1,28 @@
+@dc:title "Thermal Control Mass Characterizations"
+description <http://opencaesar.io/example/firesat/wp6.4.5/thermal-control/mass> with # as thc-mass {
+
+	extends <../thermal-control.oml>
+
+	@rdfs:label "Thermal Control Mass Limit Constraint"
+	ci ThermalControlMassLimitConstraint : fse:MassLimitConstraint [
+		fse:hasMassConstraintValue "3.9"
+	]
+
+	@rdfs:label "Thermal Blankets CBE Mass Constraint"
+	ci ThermalBlanketsCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "3.9"
+	]
+
+	@rdfs:label "Characterizes Thermal Control Mass Limit"
+	ri CharacterizesThermalControlMassLimit : analysis:Characterizes [
+		from ThermalControlMassLimitConstraint
+		to thc:ThermalControl
+	]
+
+	@rdfs:label "Characterizes Thermal Blankets CBE Mass"
+	ri CharacterizesThermalBlanketsCBEMass : analysis:Characterizes [
+		from ThermalBlanketsCBEMassConstraint
+		to thc-assemblies:ThermalBlankets
+	]
+
+}

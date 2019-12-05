@@ -1,0 +1,160 @@
+@dc:title "ADCS and GNC Mass Characterizations"
+description <http://opencaesar.io/example/firesat/wp6.4.7/adcs-and-gnc/mass> with # as ang-mass {
+
+	extends <../adcs-and-gnc.oml>
+
+	@rdfs:label "ADCS and GNC Mass Limit Constraint"
+	ci ADCSAndGNCMassLimitConstraint : fse:MassLimitConstraint [
+		fse:hasMassConstraintValue "9.74"
+	]
+
+	@rdfs:label "Magnetometer CBE Mass Constraint"
+	ci MagnetometerCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.85"
+	]
+
+	@rdfs:label "GPS Antenna CBE Mass Constraint"
+	ci GPSAntennaCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.25"
+	]
+
+	@rdfs:label "GPS Receiver Unit CBE Mass Constraint"
+	ci GPSReceiverUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "1.0"
+	]
+
+	@rdfs:label "ADCS Electronics Unit CBE Mass Constraint"
+	ci ADCSElectronicsUnitCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "2.0"
+	]
+
+	@rdfs:label "Sun Sensor CBE Mass Constraint"
+	ci SunSensorCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.6"
+	]
+
+	@rdfs:label "Earth Sensor CBE Mass Constraint"
+	ci EarthSensorCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "2.75"
+	]
+
+	@rdfs:label "Reaction Wheel 1 CBE Mass Constraint"
+	ci ReactionWheel1CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.1975"
+	]
+
+	@rdfs:label "Reaction Wheel 2 CBE Mass Constraint"
+	ci ReactionWheel2CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.1975"
+	]
+
+	@rdfs:label "Reaction Wheel 3 CBE Mass Constraint"
+	ci ReactionWheel3CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.1975"
+	]
+
+	@rdfs:label "Reaction Wheel 4 CBE Mass Constraint"
+	ci ReactionWheel4CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.1975"
+	]
+
+	@rdfs:label "Magnetorquer 1 CBE Mass Constraint"
+	ci Magnetorquer1CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "Magnetorquer 2 CBE Mass Constraint"
+	ci Magnetorquer2CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "Magnetorquer 3 CBE Mass Constraint"
+	ci Magnetorquer3CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.5"
+	]
+
+	@rdfs:label "Characterizes ADCS and GNC Mass Limit"
+	ri CharacterizesADCSAndGNCMassLimit : analysis:Characterizes [
+		from ADCSAndGNCMassLimitConstraint
+		to ang:ADCSAndGNC
+	]
+
+	@rdfs:label "Characterizes Magnetometer CBE Mass"
+	ri CharacterizesMagnetometerCBEMass : analysis:Characterizes [
+		from MagnetometerCBEMassConstraint
+		to ang-assemblies:Magnetometer
+	]
+
+	@rdfs:label "Characterizes GPS Antenna CBE Mass"
+	ri CharacterizesGPSAntennaCBEMass : analysis:Characterizes [
+		from GPSAntennaCBEMassConstraint
+		to ang-assemblies:GPSAntenna
+	]
+
+	@rdfs:label "Characterizes GPS Receiver Unit CBE Mass"
+	ri CharacterizesGPSReceiverUnitCBEMass : analysis:Characterizes [
+		from GPSReceiverUnitCBEMassConstraint
+		to ang-assemblies:GPSReceiverUnit
+	]
+
+	@rdfs:label "Characterizes ADCS Electronics Unit CBE Mass"
+	ri CharacterizesADCSElectronicsUnitCBEMass : analysis:Characterizes [
+		from ADCSElectronicsUnitCBEMassConstraint
+		to ang-assemblies:ADCSElectronicsUnit
+	]
+
+	@rdfs:label "Characterizes Sun Sensor CBE Mass"
+	ri CharacterizesSunSensorCBEMass : analysis:Characterizes [
+		from SunSensorCBEMassConstraint
+		to ang-assemblies:SunSensor
+	]
+
+	@rdfs:label "Characterizes Earth Sensor CBE Mass"
+	ri CharacterizesEarthSensorCBEMass : analysis:Characterizes [
+		from EarthSensorCBEMassConstraint
+		to ang-assemblies:EarthSensor
+	]
+
+	@rdfs:label "Characterizes Reaction Wheel 1 CBE Mass"
+	ri CharacterizesReactionWheel1CBEMass : analysis:Characterizes [
+		from ReactionWheel1CBEMassConstraint
+		to ang-assemblies:ReactionWheel1
+	]
+
+	@rdfs:label "Characterizes Reaction Wheel 2 CBE Mass"
+	ri CharacterizesReactionWheel2CBEMass : analysis:Characterizes [
+		from ReactionWheel2CBEMassConstraint
+		to ang-assemblies:ReactionWheel2
+	]
+
+	@rdfs:label "Characterizes Reaction Wheel 3 CBE Mass"
+	ri CharacterizesReactionWheel3CBEMass : analysis:Characterizes [
+		from ReactionWheel3CBEMassConstraint
+		to ang-assemblies:ReactionWheel3
+	]
+
+	@rdfs:label "Characterizes Reaction Wheel 4 CBE Mass"
+	ri CharacterizesReactionWheel4CBEMass : analysis:Characterizes [
+		from ReactionWheel4CBEMassConstraint
+		to ang-assemblies:ReactionWheel4
+	]
+
+	@rdfs:label "Characterizes Magnetorquer 1 CBE Mass"
+	ri CharacterizesMagnetorquer1CBEMass : analysis:Characterizes [
+		from Magnetorquer1CBEMassConstraint
+		to ang-assemblies:Magnetorquer1
+	]
+
+	@rdfs:label "Characterizes Magnetorquer 2 CBE Mass"
+	ri CharacterizesMagnetorquer2CBEMass : analysis:Characterizes [
+		from Magnetorquer2CBEMassConstraint
+		to ang-assemblies:Magnetorquer2
+	]
+
+	@rdfs:label "Characterizes Magnetorquer 3 CBE Mass"
+	ri CharacterizesMagnetorquer3CBEMass : analysis:Characterizes [
+		from Magnetorquer3CBEMassConstraint
+		to ang-assemblies:Magnetorquer3
+	]
+
+}

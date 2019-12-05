@@ -1,0 +1,214 @@
+@dc:title "ADCS and GNC Assemblies"
+description <http://opencaesar.io/example/firesat/wp6.4.7/adcs-and-gnc/assemblies> with # as ang-assemblies {
+
+	uses <../../../library/assembly.oml>
+
+	@rdfs:label "Magnetometer"
+	ci Magnetometer : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "513000"
+	]
+
+	@rdfs:label "GPS Antenna"
+	ci GPSAntenna : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "515000"
+	]
+
+	@rdfs:label "GPS Receiver Unit"
+	ci GPSReceiverUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516600"
+	]
+
+	@rdfs:label "ADCS Electronics Unit"
+	ci ADCSElectronicsUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516800"
+	]
+
+	@rdfs:label "Sun Sensor"
+	ci SunSensor : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "556000"
+	]
+
+	@rdfs:label "Earth Sensor"
+	ci EarthSensor : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "557000"
+	]
+
+	@rdfs:label "Reaction Wheel 1"
+	ci ReactionWheel1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "514000-1"
+	]
+
+	@rdfs:label "Reaction Wheel 2"
+	ci ReactionWheel2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "514000-2"
+	]
+
+	@rdfs:label "Reaction Wheel 3"
+	ci ReactionWheel3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "514000-3"
+	]
+
+	@rdfs:label "Reaction Wheel 4"
+	ci ReactionWheel4 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "514000-4"
+	]
+
+	@rdfs:label "Magnetorquer 1"
+	ci Magnetorquer1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516900-1"
+	]
+
+	@rdfs:label "Magnetorquer 2"
+	ci Magnetorquer2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516900-2"
+	]
+
+	@rdfs:label "Magnetorquer 3"
+	ci Magnetorquer3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516900-3"
+	]
+
+	@rdfs:label "Reaction Wheel Power In"
+	ci ReactionWheel1PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Reaction Wheel Power In"
+	ci ReactionWheel2PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Reaction Wheel Power In"
+	ci ReactionWheel3PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Reaction Wheel Power In"
+	ci ReactionWheel4PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Magnetometer Power In"
+	ci MagnetometerPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "GPS Antenna Power In"
+	ci GPSAntennaPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "GPS Receiver Unit Power In"
+	ci GPSReceiverUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "ADCS Electronics Unit Power In"
+	ci ADCSElectronicsUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Magnetorquer Power In"
+	ci Magnetorquer1PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Magnetorquer Power In"
+	ci Magnetorquer2PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Magnetorquer Power In"
+	ci Magnetorquer3PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Sun Sensor Power In"
+	ci SunSensorPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Earth Sensor Power In"
+	ci EarthSensorPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Reaction Wheel Power In"
+	ri PresentsReactionWheel1PowerIn : mission:Presents [
+		from ReactionWheel1
+		to ReactionWheel1PowerIn
+	]
+
+	@rdfs:label "Presents Magnetometer Power In"
+	ri PresentsMagnetometerPowerIn : mission:Presents [
+		from Magnetometer
+		to MagnetometerPowerIn
+	]
+
+	@rdfs:label "Presents Reaction Wheel Power In"
+	ri PresentsReactionWheel2PowerIn : mission:Presents [
+		from ReactionWheel2
+		to ReactionWheel2PowerIn
+	]
+
+	@rdfs:label "Presents Reaction Wheel Power In"
+	ri PresentsReactionWheel3PowerIn : mission:Presents [
+		from ReactionWheel3
+		to ReactionWheel3PowerIn
+	]
+
+	@rdfs:label "Presents Reaction Wheel Power In"
+	ri PresentsReactionWheel4PowerIn : mission:Presents [
+		from ReactionWheel4
+		to ReactionWheel4PowerIn
+	]
+
+	@rdfs:label "Presents GP SAntenna Power In"
+	ri PresentsGPSAntennaPowerIn : mission:Presents [
+		from GPSAntenna
+		to GPSAntennaPowerIn
+	]
+
+	@rdfs:label "Presents GP SReceiver Unit Power In"
+	ri PresentsGPSReceiverUnitPowerIn : mission:Presents [
+		from GPSReceiverUnit
+		to GPSReceiverUnitPowerIn
+	]
+
+	@rdfs:label "Presents AD CS Electronics Unit Power In"
+	ri PresentsADCSElectronicsUnitPowerIn : mission:Presents [
+		from ADCSElectronicsUnit
+		to ADCSElectronicsUnitPowerIn
+	]
+
+	@rdfs:label "Presents Magnetorquer Power In"
+	ri PresentsMagnetorquer1PowerIn : mission:Presents [
+		from Magnetorquer1
+		to Magnetorquer1PowerIn
+	]
+
+	@rdfs:label "Presents Magnetorquer Power In"
+	ri PresentsMagnetorquer2PowerIn : mission:Presents [
+		from Magnetorquer2
+		to Magnetorquer2PowerIn
+	]
+
+	@rdfs:label "Presents Magnetorquer Power In"
+	ri PresentsMagnetorquer3PowerIn : mission:Presents [
+		from Magnetorquer3
+		to Magnetorquer3PowerIn
+	]
+
+	@rdfs:label "Presents Sun Sensor Power In"
+	ri PresentsSunSensorPowerIn : mission:Presents [
+		from SunSensor
+		to SunSensorPowerIn
+	]
+
+	@rdfs:label "Presents Earth Sensor Power In"
+	ri PresentsEarthSensorPowerIn : mission:Presents [
+		from EarthSensor
+		to EarthSensorPowerIn
+	]
+	 
+}

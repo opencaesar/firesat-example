@@ -1,0 +1,190 @@
+@dc:title "Command and Data Handling Assemblies"
+description <http://opencaesar.io/example/firesat/wp6.4.10/command-and-data-handling/assemblies> with # as cdh-assemblies {
+
+	uses <../../../library/assembly.oml>
+
+	@rdfs:label "Propulsion Structure Post 1"
+	ci PropulsionStructurePost1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "533000-1"
+	]
+
+	@rdfs:label "Propulsion Structure Post 2"
+	ci PropulsionStructurePost2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "533000-2"
+	]
+
+	@rdfs:label "Propulsion Structure Post 3"
+	ci PropulsionStructurePost3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "533000-3"
+	]
+
+	@rdfs:label "Propulsion Structure Post 4"
+	ci PropulsionStructurePost4 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "533000-4"
+	]
+
+	@rdfs:label "Structure Post 1"
+	ci StructurePost1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-1"
+	]
+
+	@rdfs:label "Structure Post 2"
+	ci StructurePost2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-2"
+	]
+
+	@rdfs:label "Structure Post 3"
+	ci StructurePost3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-3"
+	]
+
+	@rdfs:label "Structure Post 4"
+	ci StructurePost4 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-4"
+	]
+
+	@rdfs:label "Structure Post 5"
+	ci StructurePost5 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-5"
+	]
+
+	@rdfs:label "Structure Post 6"
+	ci StructurePost6 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "552000-6"
+	]
+
+	@rdfs:label "Side Panel 1"
+	ci SidePanel1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-1"
+	]
+
+	@rdfs:label "Side Panel 2"
+	ci SidePanel2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-2"
+	]
+
+	@rdfs:label "Side Panel 3"
+	ci SidePanel3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-3"
+	]
+
+	@rdfs:label "Side Panel 4"
+	ci SidePanel4 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-4"
+	]
+
+	@rdfs:label "Side Panel 5"
+	ci SidePanel5 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-5"
+	]
+
+	@rdfs:label "Side Panel 6"
+	ci SidePanel6 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "560000-6"
+	]
+
+	@rdfs:label "Base Plate Module"
+	ci BasePlateModule : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "510000"
+	]
+
+	@rdfs:label "Base Plate"
+	ci BasePlate : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "511000"
+	]
+
+	@rdfs:label "Avionics Stack Section"
+	ci AvionicsStackSection : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516000"
+	]
+
+	@rdfs:label "Primary Flight Computer Unit"
+	ci PrimaryFlightComputerUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516300"
+	]
+
+	@rdfs:label "Launch Vehicle Interface Module"
+	ci LaunchVehicleInterfaceModule : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "520000"
+	]
+
+	@rdfs:label "Launch Vehicle Adapter"
+	ci LaunchVehicleAdapter : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "521000"
+	]
+
+	@rdfs:label "Separation System"
+	ci SeparationSystem : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "522000"
+	]
+
+	@rdfs:label "Propellant Tank Mounting Panel"
+	ci PropellantTankMountingPanel : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "531000"
+	]
+
+	@rdfs:label "Pressurant Tank Mounting Panel"
+	ci PressurantTankMountingPanel : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "534000"
+	]
+
+	@rdfs:label "Payload Structural Interface"
+	ci PayloadStructuralInterface : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "542000"
+	]
+
+	@rdfs:label "Top Panel Module"
+	ci TopPanelModule : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "550000"
+	]
+
+	@rdfs:label "Top Panel"
+	ci TopPanel : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "551000"
+	]
+
+	@rdfs:label "Avionics Stack Section Power In"
+	ci AvionicsStackSectionPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Primary Flight Computer Unit Power In"
+	ci PrimaryFlightComputerUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Launch Vehicle Interface Module Power In"
+	ci LaunchVehicleInterfaceModulePowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Separation System Power In"
+	ci SeparationSystemPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Avionics Stack Section Power In"
+	ri PresentsAvionicsStackSectionPowerIn : mission:Presents [
+		from AvionicsStackSection
+		to AvionicsStackSectionPowerIn
+	]
+
+	@rdfs:label "Presents Primary Flight Computer Unit Power In"
+	ri PresentsPrimaryFlightComputerUnitPowerIn : mission:Presents [
+		from PrimaryFlightComputerUnit
+		to PrimaryFlightComputerUnitPowerIn
+	]
+
+	@rdfs:label "Presents Launch Vehicle Interface Module Power In"
+	ri PresentsLaunchVehicleInterfaceModulePowerIn : mission:Presents [
+		from LaunchVehicleInterfaceModule
+		to LaunchVehicleInterfaceModulePowerIn
+	]
+
+	@rdfs:label "Presents Separation System Power In"
+	ri PresentsSeparationSystemPowerIn : mission:Presents [
+		from SeparationSystem
+		to SeparationSystemPowerIn
+	]
+
+}

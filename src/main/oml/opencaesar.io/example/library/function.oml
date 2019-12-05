@@ -1,0 +1,29 @@
+@dc:title "Fire Satellite Function Library"
+vocabulary <http://opencaesar.io/example/firesat/library/function> with # as function {
+
+	extends <endcircuit.oml>
+
+	/*
+	 * Functions
+	 */
+
+	@rdfs:label "Base Function"
+	concept BaseFunction :> fse:Function
+
+	@rdfs:label "Power"
+	concept Power :> BaseFunction [
+		restricts all relation mission:joins to PowerEndCircuit
+	]
+
+	@rdfs:label "Unidirectional Power"
+	concept UnidirectionalPower :> Power [
+		restricts all relation mission:joins to UnidirectionalPowerEndCircuit
+	]
+
+	@rdfs:label "Power End Circuit"
+	aspect PowerEndCircuit
+
+	@rdfs:label "Unidirectional Power End Circuit"
+	aspect UnidirectionalPowerEndCircuit
+
+}

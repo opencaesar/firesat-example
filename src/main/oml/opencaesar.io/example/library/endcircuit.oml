@@ -1,0 +1,19 @@
+@dc:title "Fire Satellite End Ciruit Library"
+vocabulary <http://opencaesar.io/example/firesat/library/endcircuit> with # as endcircuit {
+
+	extends <../../discipline/fse.oml>
+
+	/*
+	 * End Circuit Types
+	 */
+
+	@rdfs:label "Power"
+	concept Power :> fse:EndCircuit
+
+	@rdfs:label "Power In"
+	concept PowerIn :> Power
+
+	@rdfs:label "Power Out"
+	concept PowerOut :> Power
+
+}

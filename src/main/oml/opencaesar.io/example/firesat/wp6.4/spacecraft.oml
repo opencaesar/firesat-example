@@ -1,0 +1,28 @@
+@dc:title "Spacecraft"
+description <http://opencaesar.io/example/firesat/wp6.4/spacecraft> with # as spc {
+
+	extends <spacecraft/assemblies.oml>
+
+	@rdfs:label "Spacecraft"
+	ci Spacecraft : fse:Subsystem [
+		fse:hasSubsystemNumber "0000"
+		fse:hasSubsystemAcronym "SPC"
+	]
+
+	@rdfs:label "Propellant"
+	ci Propellant : fse:ConsumableMass [
+		fse:hasMultiplicity "1"
+	]
+
+	@rdfs:label "Aggregates Spacecraft System Segment"
+	ri AggregatesSpacecraftSystemSegment : base:Aggregates [
+		from Spacecraft
+		to spc-assemblies:SpacecraftSystemSegment
+	]
+
+	@rdfs:label "Aggregates Propellant"
+	ri AggregatesPropellant : base:Aggregates [
+		from Spacecraft
+		to Propellant
+	]
+}
