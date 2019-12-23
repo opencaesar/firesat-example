@@ -1,0 +1,26 @@
+@dc:title "End Ciruit Library"
+@dc:type "Library"
+@dc:^description "A library for end circuits."
+@dc:rights """Copyright 2010-2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses,a or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@owl:versionInfo "0.5.0"
+@dc:creator "Jet Propulsion Laboratory"
+@dc:date "2019-11-25"
+vocabulary <http://imce.jpl.nasa.gov/example/firesat/library/endcircuits> with # as endcircuit {
+
+	extends <../discipline/fse.oml>
+
+	/*
+	 * End Circuit Types
+	 */
+
+	@rdfs:label "Power"
+	concept Power :> fse:EndCircuit
+
+	@rdfs:label "Power In"
+	concept PowerIn :> Power
+
+	@rdfs:label "Power Out"
+	concept PowerOut :> Power
+
+}

@@ -1,0 +1,36 @@
+@dc:title "Function Library"
+@dc:type "Library"
+@dc:^description "A library for functions."
+@dc:rights """Copyright 2010-2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses,a or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@owl:versionInfo "0.5.0"
+@dc:creator "Jet Propulsion Laboratory"
+@dc:date "2019-11-25"
+vocabulary <http://imce.jpl.nasa.gov/library/functions> with # as function {
+
+	extends <endcircuits.oml>
+
+	/*
+	 * Functions
+	 */
+
+	@rdfs:label "Base Function"
+	concept BaseFunction :> fse:Function
+
+	@rdfs:label "Power"
+	concept Power :> BaseFunction [
+		restricts all relation mission:joins to PowerEndCircuit
+	]
+
+	@rdfs:label "Unidirectional Power"
+	concept UnidirectionalPower :> Power [
+		restricts all relation mission:joins to UnidirectionalPowerEndCircuit
+	]
+
+	@rdfs:label "Power End Circuit"
+	aspect PowerEndCircuit
+
+	@rdfs:label "Unidirectional Power End Circuit"
+	aspect UnidirectionalPowerEndCircuit
+
+}
