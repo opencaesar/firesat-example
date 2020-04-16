@@ -1,5 +1,5 @@
 # Fire Satellite Example
-An OML example describing a Fire Satellite mission
+An example describing a Fire Satellite mission expressed in OML v0.6
 
 ## Clone
 ```

@@ -8,11 +8,11 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:date "2019-11-25"
 vocabulary <http://imce.jpl.nasa.gov/discipline/fse> with # as fse {
 
-	extends <../../../vocabularies/src/imce.jpl.nasa.gov/foundation/project.oml>
-	
-	extends <../../../vocabularies/src/iso.org/iso-80000-6.oml>
+	extends <http://imce.jpl.nasa.gov/foundation/project>
 
-	extends <../../../vocabularies/src/iso.org/iso-80000-5.oml>
+	extends <http://iso.org/iso-80000-6>
+
+	extends <http://iso.org/iso-80000-5>
 
 	annotation property hasProvenance
 
@@ -257,11 +257,11 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse> with # as fse {
 	]
 
 	rule gangAggregateFromMember [
-		Function(x1) & mission:joins(x1 -> x2) & isMemberOfGang(x2 -> x3) & hasGangAggregate(x3 -> x4) => mission:joins(x1 -> x4)
+		Function(x1) ^ mission:joins(x1, x2) ^ isMemberOfGang(x2, x3) ^ hasGangAggregate(x3, x4) -> mission:joins(x1, x4)
 	]
 
 	rule gangMemberFromAggregate [
-		Function(x1) & mission:joins(x1 -> x2) & isAggregateOfGang(x2 -> x3) & hasGangMember(x3 -> x4) => mission:joins(x1 -> x4)
+		Function(x1) ^ mission:joins(x1, x2) ^ isAggregateOfGang(x2, x3) ^ hasGangMember(x3, x4) -> mission:joins(x1, x4)
 	]
 
 	enumerated scalar endCircuitDirection :> xsd:string [
