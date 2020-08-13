@@ -1,0 +1,79 @@
+@dc:title "EPS Assemblies"
+description <http://opencaesar.io/example/firesat/system/eps/endcircuits> with # as eps-endcircuits {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+
+	extends <http://opencaesar.io/example/firesat/system/eps/subsystem>
+
+	// Battery Pack 1 End Circuits
+
+	@rdfs:label "Presents Battery Pack Power In"
+	ri PresentsBatteryPack1PowerIn : mission:Presents [
+		from eps:BatteryPack1
+		to BatteryPack1PowerIn
+	]
+
+	@rdfs:label "Battery Pack Power In"
+	ci BatteryPack1PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Battery Pack Power Out"
+	ri PresentsBatteryPack1PowerOut : mission:Presents [
+		from eps:BatteryPack1
+		to BatteryPack1PowerOut
+	]
+
+	@rdfs:label "Battery Pack Power Out"
+	ci BatteryPack1PowerOut : endcircuit:PowerOut [
+		fse:hasEndCircuitIdentifier "2"
+	]
+
+	// Battery Pack 2 End Circuits
+
+	@rdfs:label "Presents Battery Pack Power In"
+	ri PresentsBatteryPack2PowerIn : mission:Presents [
+		from eps:BatteryPack2
+		to BatteryPack2PowerIn
+	]
+
+	@rdfs:label "Battery Pack Power In"
+	ci BatteryPack2PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Battery Pack Power Out"
+	ri PresentsBatteryPack2PowerOut : mission:Presents [
+		from eps:BatteryPack2
+		to BatteryPack2PowerOut
+	]
+
+	@rdfs:label "Battery Pack Power Out"
+	ci BatteryPack2PowerOut : endcircuit:PowerOut [
+		fse:hasEndCircuitIdentifier "2"
+	]
+
+	// Battery Pack 3 End Circuits
+
+	@rdfs:label "Presents Battery Pack Power In"
+	ri PresentsBatteryPack3PowerIn : mission:Presents [
+		from eps:BatteryPack3
+		to BatteryPack3PowerIn
+	]
+
+	@rdfs:label "Battery Pack Power In"
+	ci BatteryPack3PowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	@rdfs:label "Presents Battery Pack Power Out"
+	ri PresentsBatteryPack3PowerOut : mission:Presents [
+		from eps:BatteryPack3
+		to BatteryPack3PowerOut
+	]
+
+	@rdfs:label "Battery Pack Power Out"
+	ci BatteryPack3PowerOut : endcircuit:PowerOut [
+		fse:hasEndCircuitIdentifier "2"
+	]
+}

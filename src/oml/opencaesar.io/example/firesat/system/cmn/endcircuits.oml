@@ -1,0 +1,72 @@
+@dc:title "Communications Assemblies"
+description <http://opencaesar.io/example/firesat/system/cmn/endcircuits> with # as cmn-endcircuits {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+
+	extends <http://opencaesar.io/example/firesat/system/cmn/subsystem>
+
+	// Transmitter Unit End Circuits
+
+	@rdfs:label "Presents Transmitter Unit Power In"
+	ri PresentsTransmitterUnitPowerIn : mission:Presents [
+		from cmn:TransmitterUnit
+		to TransmitterUnitPowerIn
+	]
+
+	@rdfs:label "Transmitter Unit Power In"
+	ci TransmitterUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Receiver Unit End Circuits
+
+	@rdfs:label "Presents Receiver Unit Power In"
+	ri PresentsReceiverUnitPowerIn : mission:Presents [
+		from cmn:ReceiverUnit
+		to ReceiverUnitPowerIn
+	]
+
+	@rdfs:label "Receiver Unit Power In"
+	ci ReceiverUnitPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Transmit Whip Antenna Circuits
+
+	@rdfs:label "Presents Transmit Whip Antenna Power In"
+	ri PresentsTransmitWhipAntennaPowerIn : mission:Presents [
+		from cmn:TransmitWhipAntenna
+		to TransmitWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Transmit Whip Antenna Power In"
+	ci TransmitWhipAntennaPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Transmit Hi-Gain Antenna Circuits
+
+	@rdfs:label "Presents Transmit Hi Gain Antenna Power In"
+	ri PresentsTransmitHiGainAntennaPowerIn : mission:Presents [
+		from cmn:TransmitHiGainAntenna
+		to TransmitHiGainAntennaPowerIn
+	]
+
+	@rdfs:label "Transmit Hi-Gain Antenna Power In"
+	ci TransmitHiGainAntennaPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Receive Whip Antenna Circuits
+
+	@rdfs:label "Presents Receive Whip Antenna Power In"
+	ri PresentsReceiveWhipAntennaPowerIn : mission:Presents [
+		from cmn:ReceiveWhipAntenna
+		to ReceiveWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Receive Whip Antenna Power In"
+	ci ReceiveWhipAntennaPowerIn : endcircuit:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+}

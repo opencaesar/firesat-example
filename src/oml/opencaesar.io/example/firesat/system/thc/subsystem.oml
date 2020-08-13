@@ -1,0 +1,26 @@
+@dc:title "Thermal Control"
+description <http://opencaesar.io/example/firesat/system/thc/subsystem> with # as thc {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+
+	// Thermal Control Subsystem
+
+	@rdfs:label "Thermal Control"
+	ci ThermalControl : fse:Subsystem [
+		fse:hasSubsystemNumber "8000"
+		fse:hasSubsystemAcronym "THC"
+	]
+
+	// Thermal Blankets Assembly
+
+	@rdfs:label "Aggregates Thermal Blankets"
+	ri AggregatesThermalBlankets : base:Aggregates [
+		from ThermalControl
+		to ThermalBlankets
+	]
+
+	@rdfs:label "Thermal Blankets"
+	ci ThermalBlankets : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "570000"
+	]
+}

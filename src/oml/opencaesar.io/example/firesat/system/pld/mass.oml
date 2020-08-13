@@ -1,0 +1,45 @@
+@dc:title "Payload Mass Characterizations"
+description <http://opencaesar.io/example/firesat/system/pld/mass> with # as pld-mass {
+
+	extends <http://opencaesar.io/example/firesat/system/pld/subsystem>
+
+	// Payload Mass
+
+	@rdfs:label "Payload Mass Limit Constraint"
+	ci PayloadMassLimitConstraint : fse:MassLimitConstraint [
+		fse:hasMassConstraintValue "28.1"
+	]
+
+	@rdfs:label "Characterizes Payload Mass Limit"
+	ri CharacterizesPayloadMassLimit : analysis:Characterizes [
+		from PayloadMassLimitConstraint
+		to pld:Payload
+	]
+	
+	// Payload Module Mass
+
+	@rdfs:label "Payload Module CBE Mass Constraint"
+	ci PayloadModuleCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "0.6"
+	]
+
+	@rdfs:label "Characterizes Payload Module CBE Mass"
+	ri CharacterizesPayloadModuleCBEMass : analysis:Characterizes [
+		from PayloadModuleCBEMassConstraint
+		to pld:PayloadModule
+	]
+
+	// Sensor Mass
+
+	@rdfs:label "Sensor CBE Mass Constraint"
+	ci SensorCBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "28.1"
+	]
+
+	@rdfs:label "Characterizes Sensor CBE Mass"
+	ri CharacterizesSensorCBEMass : analysis:Characterizes [
+		from SensorCBEMassConstraint
+		to pld:Sensor
+	]
+
+}

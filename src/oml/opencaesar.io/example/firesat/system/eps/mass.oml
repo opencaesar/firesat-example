@@ -1,0 +1,58 @@
+@dc:title "EPS Mass Characterizations"
+description <http://opencaesar.io/example/firesat/system/eps/mass> with # as eps-mass {
+
+	extends <http://opencaesar.io/example/firesat/system/eps/subsystem>
+
+	// EPS Mass
+
+	@rdfs:label "EPS Mass Limit Constraint"
+	ci EPSMassLimitConstraint : fse:MassLimitConstraint [
+		fse:hasMassConstraintValue "9.31"
+	]
+
+	@rdfs:label "Characterizes EPS Mass Limit"
+	ri CharacterizesEPSMassLimit : analysis:Characterizes [
+		from EPSMassLimitConstraint
+		to eps:EPS
+	]
+
+	// Battery Pack 1 Mass
+
+	@rdfs:label "Battery Pack 1 CBE Mass Constraint"
+	ci BatteryPack1CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "3.103"
+	]
+
+	@rdfs:label "Characterizes Battery Pack 1 CBE Mass"
+	ri CharacterizesBatteryPack1CBEMass : analysis:Characterizes [
+		from BatteryPack1CBEMassConstraint
+		to eps:BatteryPack1
+	]
+
+	// Battery Pack 2 Mass
+
+	@rdfs:label "Battery Pack 2 CBE Mass Constraint"
+	ci BatteryPack2CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "3.103"
+	]
+
+	@rdfs:label "Characterizes Battery Pack 2 CBE Mass"
+	ri CharacterizesBatteryPack2CBEMass : analysis:Characterizes [
+		from BatteryPack2CBEMassConstraint
+		to eps:BatteryPack2
+	]
+
+	// Battery Pack 3 Mass
+
+	@rdfs:label "Characterizes Battery Pack 3 CBE Mass"
+	ri CharacterizesBatteryPack3CBEMass : analysis:Characterizes [
+		from BatteryPack3CBEMassConstraint
+		to eps:BatteryPack3
+	]
+
+	@rdfs:label "Battery Pack 3 CBE Mass Constraint"
+	ci BatteryPack3CBEMassConstraint : fse:CBEMassConstraint [
+		fse:hasMassConstraintValue "3.103"
+	]
+
+}

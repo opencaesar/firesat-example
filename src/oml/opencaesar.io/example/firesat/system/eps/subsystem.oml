@@ -1,0 +1,53 @@
+@dc:title "EPS"
+description <http://opencaesar.io/example/firesat/system/eps/subsystem> with # as eps {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+
+	// EPS Subsystem
+
+	@rdfs:label "EPS"
+	ci EPS : fse:Subsystem [
+		fse:hasSubsystemNumber "3000"
+		fse:hasSubsystemAcronym "EPS"
+	]
+
+	// Battery Pack 1 Assembly
+
+	@rdfs:label "Aggregates Battery Pack 1"
+	ri AggregatesBatteryPack1 : base:Aggregates [
+		from EPS
+		to BatteryPack1
+	]
+
+	@rdfs:label "Battery Pack 1"
+	ci BatteryPack1 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "512000-1"
+	]
+
+	// Battery Pack 2 Assembly
+
+	@rdfs:label "Aggregates Battery Pack 2"
+	ri AggregatesBatteryPack2 : base:Aggregates [
+		from EPS
+		to BatteryPack2
+	]
+
+	@rdfs:label "Battery Pack 2"
+	ci BatteryPack2 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "512000-2"
+	]
+
+	// Battery Pack 3 Assembly
+
+	@rdfs:label "Aggregates Battery Pack 3"
+	ri AggregatesBatteryPack3 : base:Aggregates [
+		from EPS
+		to BatteryPack3
+	]
+
+	@rdfs:label "Battery Pack 3"
+	ci BatteryPack3 : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "512000-3"
+	]
+
+}

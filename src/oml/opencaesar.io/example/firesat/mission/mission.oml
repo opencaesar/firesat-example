@@ -1,0 +1,24 @@
+@dc:title "Fire Satellite Model"
+description <http://opencaesar.io/example/firesat/mission/mission> with # as firesat-mission {
+	
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	
+	// FireSat Mission
+	
+	@rdfs:label "FireSat Mission"
+	ci FireSatMission : mission:Mission [
+		mission:hasRationale "Create a fire satellite"
+	]
+
+	// FireSat Mission's Objective
+
+	@rdfs:label "Pursues Forest Fire Detection"
+	ri PursuesForestFireDetection : mission:Pursues [
+		from FireSatMission
+		to ForestFireDetection
+	]
+
+	@rdfs:label "Forest Fire Detection"
+	ci ForestFireDetection : mission:Objective
+
+} 

@@ -1,0 +1,78 @@
+@dc:title "Communications"
+description <http://opencaesar.io/example/firesat/system/cmn/subsystem> with # as cmn {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+
+	// Communications Subsystem
+
+	@rdfs:label "Communications"
+	ci Communications : fse:Subsystem [
+		fse:hasSubsystemNumber "6000"
+		fse:hasSubsystemAcronym "CMN"
+	]
+
+	// Transmitter Unit Assembly
+
+	@rdfs:label "Aggregates Transmitter Unit"
+	ri AggregatesTransmitterUnit : base:Aggregates [
+		from Communications
+		to TransmitterUnit
+	]
+
+	@rdfs:label "Transmitter Unit"
+	ci TransmitterUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516400"
+	]
+
+	// Receiver Unit Assembly
+
+	@rdfs:label "Aggregates Receiver Unit"
+	ri AggregatesReceiverUnit : base:Aggregates [
+		from Communications
+		to ReceiverUnit
+	]
+
+	@rdfs:label "Receiver Unit"
+	ci ReceiverUnit : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "516500"
+	]
+
+	// Transmit Whip Antenna Assembly
+
+	@rdfs:label "Aggregates Transmit Whip Antenna"
+	ri AggregatesTransmitWhipAntenna : base:Aggregates [
+		from Communications
+		to TransmitWhipAntenna
+	]
+
+	@rdfs:label "Transmit Whip Antenna"
+	ci TransmitWhipAntenna : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "553000"
+	]
+
+	// Transmit Hi-Gain Antenna Assembly
+
+	@rdfs:label "Aggregates Transmit Hi-Gain Antenna"
+	ri AggregatesTransmitHiGainAntenna : base:Aggregates [
+		from Communications
+		to TransmitHiGainAntenna
+	]
+
+	@rdfs:label "Transmit Hi-Gain Antenna"
+	ci TransmitHiGainAntenna : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "554000"
+	]
+
+	// Receive Whip Antenna Assembly
+
+	@rdfs:label "Aggregates Receive Whip Antenna"
+	ri AggregatesReceiveWhipAntenna : base:Aggregates [
+		from Communications
+		to ReceiveWhipAntenna
+	]
+
+	@rdfs:label "Receive Whip Antenna"
+	ci ReceiveWhipAntenna : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "555000"
+	]	
+}

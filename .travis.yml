@@ -1,0 +1,23 @@
+sudo: false
+
+language: python
+
+python:
+  - "3.7"
+
+services:
+  - xvfb
+
+before_install:
+  - sudo apt-get install graphviz
+
+install:
+  - pip3 install bikeshed && bikeshed update
+
+script:
+  - ./gradlew build
+
+env:
+  global:
+  - ENCRYPTION_LABEL: "26c87bd483ba"
+  - COMMIT_AUTHOR_EMAIL: "melaasar@gmail.com"
