@@ -1,0 +1,46 @@
+@dc:title "Spacecraft Logistical Requirements"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical> with # as spc-logistical-reqs {
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder>
+
+	@rdfs:label "Supply"
+	ci Supply : mission:Requirement
+
+	@rdfs:label "End of Life Disposal"
+	ci EndOfLifeDisposal : mission:Requirement
+
+	@rdfs:label "Fault Protection"
+	ci FaultProtection : mission:Requirement
+
+	@rdfs:label "Availability"
+	ci Availability : mission:Requirement
+
+	@rdfs:label "Transportation"
+	ci Transportation : mission:Requirement
+
+	@rdfs:label "Facilities"
+	ci Facilities : mission:Requirement
+
+	@rdfs:label "Training and Personel"
+	ci TrainingAndPersonel : mission:Requirement
+
+	@rdfs:label "Maintenance"
+	ci Maintenance : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:OnOrbitDesignLifetime
+	]
+
+	@rdfs:label "Reliability"
+	ci Reliability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:OnOrbitDesignLifetime
+	]
+
+	@rdfs:label "Maintainability"
+	ci Maintainability : mission:Requirement
+
+	@rdfs:label "Operability"
+	ci Operability : mission:Requirement
+
+	@rdfs:label "Supportability"
+	ci Supportability : mission:Requirement
+	
+}

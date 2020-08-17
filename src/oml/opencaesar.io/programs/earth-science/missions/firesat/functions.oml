@@ -1,0 +1,124 @@
+@dc:title "FireSat Functions"
+description <http://opencaesar.io/programs/earth-science/missions/firesat/functions> with # as firesat-functions {
+	
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	
+	@rdfs:label "Perform Mission"
+	ci PerformMission : mission:Function [
+		mission:invokes ReachOperationalOrbit
+		mission:invokes Communicate
+		mission:invokes Supply_Power_24_7
+		mission:invokes ApplyCommands
+		mission:invokes MonitorAndMaintainHealthAndsafety
+		mission:invokes DetectNewWildfires
+		mission:invokes MonitorExistingWildfires_24_7
+		mission:invokes Communicate911DownlinkWithRegionalFieldOffices
+		mission:invokes Release_SC_From_LV
+		mission:invokes DeployMechanisms
+	]
+
+	@rdfs:label "Reach Operational Orbit"
+	ci ReachOperationalOrbit : mission:Function [
+		mission:invokes ControlTrajectory
+	]
+
+	@rdfs:label "Communicate"
+	ci Communicate : mission:Function [
+		mission:invokes ReceiveTelecommandFromNOAAGroundStations
+		mission:invokes Communicate911DownlinkWithRegionalFieldOffices
+		mission:invokes SendTelemetryToNOAAGroundStations
+	]
+
+	@rdfs:label "Supply Power 24/7"
+	ci Supply_Power_24_7 : mission:Function [
+		mission:invokes TransformSolarRadiationsIntoEnergy
+		mission:invokes StoreEnergyDuringEclipses
+	]
+
+	@rdfs:label "Apply Commands"
+	ci ApplyCommands : mission:Function [
+		mission:invokes ReceiveTelecommandFromNOAAGroundStations
+	]
+
+	@rdfs:label "Monitor and Maintain Health & Safety"
+	ci MonitorAndMaintainHealthAndsafety : mission:Function [
+		mission:invokes MitigateFailures
+		mission:invokes AvoidCollisions
+	]
+
+	@rdfs:label "Detect New Wildfires"
+	ci DetectNewWildfires : mission:Function
+
+	@rdfs:label "Monitor Existing Wildfires 24/7"
+	ci MonitorExistingWildfires_24_7 : mission:Function
+
+	@rdfs:label "Communicate 911 Downlink With Regional Field Offices"
+	ci Communicate911DownlinkWithRegionalFieldOffices : mission:Function
+
+	@rdfs:label "Release S/C from L/V"
+	ci Release_SC_From_LV : mission:Function [
+		mission:invokes Launch_SC
+	]
+
+	@rdfs:label "Deploy Mechanisms"
+	ci DeployMechanisms : mission:Function
+
+	@rdfs:label "Control Trajectory"
+	ci ControlTrajectory : mission:Function [
+		mission:invokes AttitudeAwareness
+		mission:invokes PositionAwareness
+	]
+
+	@rdfs:label "Receive Telecommand Trom NOAA Ground Stations"
+	ci ReceiveTelecommandFromNOAAGroundStations : mission:Function
+
+	@rdfs:label "Send Telemetry NOAA Ground Stations"
+	ci SendTelemetryToNOAAGroundStations : mission:Function [
+		mission:invokes StoreDataBetweenTwoTelemetries
+		mission:invokes GenerateTelemetry
+	]
+
+	@rdfs:label "Transform Solar Radiations Into Energy"
+	ci TransformSolarRadiationsIntoEnergy : mission:Function
+
+	@rdfs:label "Store Energy During Eclipses"
+	ci StoreEnergyDuringEclipses : mission:Function
+
+	@rdfs:label "Mitigate Failures"
+	ci MitigateFailures : mission:Function [
+		mission:invokes HomogenizeTemperature
+		mission:invokes ProtectAgainstRadiations
+	]
+
+	@rdfs:label "Avoid Collisions"
+	ci AvoidCollisions : mission:Function [
+		mission:invokes ControlTrajectory
+	]
+
+	@rdfs:label "Launch S/C"
+	ci Launch_SC : mission:Function [
+		mission:invokes InsureMechanicalIntegrity
+	]
+
+	@rdfs:label "Attitude Awareness"
+	ci AttitudeAwareness : mission:Function
+
+	@rdfs:label "Position Awareness"
+	ci PositionAwareness : mission:Function
+
+	@rdfs:label "Store Data Between Two Telemetries"
+	ci StoreDataBetweenTwoTelemetries : mission:Function
+
+	@rdfs:label "Generate Telemetry"
+	ci GenerateTelemetry : mission:Function
+
+	@rdfs:label "Homogenize Temperature"
+	ci HomogenizeTemperature : mission:Function
+
+	@rdfs:label "Protect Against Radiations"
+	ci ProtectAgainstRadiations : mission:Function
+
+	@rdfs:label "Insure Mechanical Integrity"
+	ci InsureMechanicalIntegrity : mission:Function
+
+}

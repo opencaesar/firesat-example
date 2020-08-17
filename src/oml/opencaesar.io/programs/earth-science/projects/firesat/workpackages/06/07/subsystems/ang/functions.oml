@@ -1,0 +1,88 @@
+@dc:title "ADCS and GNC Functions"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions> with # as ang-functions {
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
+
+	// Magnetometer Functions
+
+	ref ci ang-assemblies:Magnetometer [
+		mission:performs firesat-functions:AttitudeAwareness
+	]
+
+	// GPS Antenna Functions
+
+	ri GPSAntennaPerformsPositionAwareness : mission:Performs [
+		from ang-assemblies:GPSAntenna
+		to firesat-functions:PositionAwareness
+	]
+
+	// GPS Receiver Unit Functions
+
+	ri GPSReceiverUnitPerformsPositionAwareness : mission:Performs [
+		from ang-assemblies:GPSReceiverUnit
+		to firesat-functions:PositionAwareness
+	]
+
+	// ADCS Electronics Unit Functions
+
+	ref ci ang-assemblies:ADCSElectronicsUnit [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Sun Sensor Functions
+
+	ref ci ang-assemblies:SunSensor [
+		mission:performs firesat-functions:AttitudeAwareness
+	]
+
+	// Earth Sensor Functions
+
+	ref ci ang-assemblies:EarthSensor [
+		mission:performs firesat-functions:AttitudeAwareness
+	]
+
+	// Reaction Wheel 1 Functions
+
+	ref ci ang-assemblies:ReactionWheel1 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 2 Functions
+
+	ref ci ang-assemblies:ReactionWheel2 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 3 Functions
+
+	ref ci ang-assemblies:ReactionWheel3 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 4 Functions
+
+	ref ci ang-assemblies:ReactionWheel4 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 1 Functions
+
+	ref ci ang-assemblies:Magnetorquer1 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 2 Functions
+
+	ref ci ang-assemblies:Magnetorquer2 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 3 Functions
+
+	ref ci ang-assemblies:Magnetorquer3 [
+		mission:performs firesat-functions:ControlTrajectory
+	]
+
+}

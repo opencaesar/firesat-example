@@ -1,0 +1,22 @@
+@dc:title "FireSat Compositions"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/systems/compositions> with # as firesat-compositions {
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies>
+			
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies>
+
+	// Spacecraft System Segment Compositions
+
+	ref ci spc-assemblies:SpacecraftSystemSegment [
+		base:contains pld-assemblies:PayloadModule
+	]
+	
+	// Payload Module Compositions
+
+	ref ci pld-assemblies:PayloadModule [
+		base:contains cdh-assemblies:PayloadStructuralInterface
+	]
+
+}

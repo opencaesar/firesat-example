@@ -1,0 +1,66 @@
+@dc:title "Communications Requirements"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements> with # as cmn-requirements {
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies>
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical>
+
+	// Receiver Unit Requirements
+
+	ref ci cmn-assemblies:ReceiverUnit [
+		mission:isSpecifiedBy firesat-stakeholder-reqs:GroundSystemInterface
+		mission:isSpecifiedBy spc-system-reqs:UplinkDownlinkHardware
+		mission:isSpecifiedBy spc-system-reqs:Interoperability
+	]
+
+	// Transmit Whip Antenna Requirements
+
+	ref ci cmn-assemblies:TransmitWhipAntenna [
+		mission:isSpecifiedBy firesat-stakeholder-reqs:GroundSystemInterface
+		mission:isSpecifiedBy spc-system-reqs:UplinkDownlinkHardware
+		mission:isSpecifiedBy spc-system-reqs:Interoperability
+		mission:isSpecifiedBy spc-logistical-reqs:Supportability
+	]
+
+	// Receive Whip Antenna Requirements
+
+	ref ci cmn-assemblies:ReceiveWhipAntenna [
+		mission:isSpecifiedBy firesat-stakeholder-reqs:GroundSystemInterface
+		mission:isSpecifiedBy spc-system-reqs:UplinkDownlinkHardware
+		mission:isSpecifiedBy spc-system-reqs:Interoperability
+	]
+
+	// Transmitter Unit Requirements
+
+	ref ci cmn-assemblies:TransmitterUnit [
+		mission:isSpecifiedBy firesat-stakeholder-reqs:GroundSystemInterface
+		mission:isSpecifiedBy spc-system-reqs:UplinkDownlinkHardware
+		mission:isSpecifiedBy spc-system-reqs:Interoperability
+		mission:isSpecifiedBy spc-logistical-reqs:Supportability
+	]
+		
+	ref ri cmn-functions:TransmitterUnitPerformsGenerateTelemetry [
+		mission:isSpecifiedBy firesat-functional-reqs:DownwardsMessages
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationFor911MessageDownlink
+	]
+	
+	// Transmit Hi-Gain Antenna Requirements
+	
+	ref ci cmn-assemblies:TransmitHiGainAntenna [
+		mission:isSpecifiedBy spc-system-reqs:Interoperability
+	]
+	
+	ref ri cmn-functions:TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices [
+		mission:isSpecifiedBy firesat-functional-reqs:DownwardsMessages
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationFor911MessageDownlink
+	]
+	
+}

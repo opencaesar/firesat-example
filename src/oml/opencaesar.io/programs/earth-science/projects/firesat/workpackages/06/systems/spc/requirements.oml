@@ -1,0 +1,71 @@
+@dc:title "Spacecraft Requirements"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements> with # as spc-requirements {
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system>
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental>
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/operational>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/performance>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource>
+
+	// Spacecraft System Segment Requirements
+
+	ref ci spc-assemblies:SpacecraftSystemSegment [
+		mission:isSpecifiedBy firesat-stakeholder-reqs:LCCBudget
+		mission:isSpecifiedBy firesat-stakeholder-reqs:OnOrbitDesignLifetime
+		mission:isSpecifiedBy firesat-stakeholder-reqs:Initial_FullOperationalCapability
+		mission:isSpecifiedBy spc-system-reqs:PrimeItemDefinition
+		mission:isSpecifiedBy spc-system-reqs:StandardSample
+		mission:isSpecifiedBy spc-system-reqs:Manufacturability
+		mission:isSpecifiedBy spc-system-reqs:SecurityAndSafety
+		mission:isSpecifiedBy spc-environmental-reqs:QualificationOfHeritageFlightHardware
+		mission:isSpecifiedBy spc-environmental-reqs:StructuralQualification
+		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection
+		mission:isSpecifiedBy spc-environmental-reqs:SpaceVehicleNaturalFrequency
+		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironment
+		mission:isSpecifiedBy spc-environmental-reqs:LaunchEnvironment
+		mission:isSpecifiedBy spc-environmental-reqs:Environment
+		mission:isSpecifiedBy spc-logistical-reqs:Supply
+		mission:isSpecifiedBy spc-logistical-reqs:FaultProtection
+		mission:isSpecifiedBy spc-logistical-reqs:Availability
+		mission:isSpecifiedBy spc-logistical-reqs:Transportation
+		mission:isSpecifiedBy spc-logistical-reqs:Facilities
+		mission:isSpecifiedBy spc-logistical-reqs:TrainingAndPersonel
+		mission:isSpecifiedBy spc-logistical-reqs:Reliability
+		mission:isSpecifiedBy spc-logistical-reqs:Maintainability
+		mission:isSpecifiedBy spc-operational-reqs:OrbitInclination
+		mission:isSpecifiedBy spc-operational-reqs:Altitude
+		mission:isSpecifiedBy spc-operational-reqs:MinimumElevationAngle
+		mission:isSpecifiedBy spc-performance-reqs:TimeError
+		mission:isSpecifiedBy spc-performance-reqs:AltitudeError
+		mission:isSpecifiedBy spc-resource-reqs:PowerBudget
+		mission:isSpecifiedBy spc-resource-reqs:SpaceVehicleMass
+		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+		mission:isSpecifiedBy spc-resource-reqs:MaturityOfNewTechnologies
+		mission:isSpecifiedBy spc-resource-reqs:NumberOfSatellites
+	]
+	
+	ref ri spc-functions:SpacecraftSystemSegmentPerformsDetectNewWildfires [
+		mission:isSpecifiedBy firesat-functional-reqs:Coverage
+		mission:isSpecifiedBy firesat-functional-reqs:Persistence
+	]
+
+	ref ri spc-functions:SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 [
+		mission:isSpecifiedBy firesat-functional-reqs:Coverage
+		mission:isSpecifiedBy firesat-functional-reqs:Persistence
+	]
+
+}

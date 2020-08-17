@@ -1,0 +1,38 @@
+@dc:title "Command and Data Handling Compositions"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/compositions> with # as cdh-compositions {
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies>
+
+	// Top Panel Module Compositions
+
+	ref ci cdh-assemblies:TopPanelModule [
+		base:contains cdh-assemblies:TopPanel
+		base:contains cdh-assemblies:StructurePost1
+		base:contains cdh-assemblies:StructurePost2
+		base:contains cdh-assemblies:StructurePost3
+		base:contains cdh-assemblies:StructurePost4
+		base:contains cdh-assemblies:StructurePost5
+		base:contains cdh-assemblies:StructurePost6
+	]
+
+	// Base Plate Module Compositions
+
+	ref ci cdh-assemblies:BasePlateModule [
+		base:contains cdh-assemblies:AvionicsStackSection
+		base:contains cdh-assemblies:BasePlate
+	]
+	
+	// Avionics Stack Section Compositions
+
+	ref ci cdh-assemblies:AvionicsStackSection [
+		base:contains cdh-assemblies:PrimaryFlightComputerUnit
+	]
+	
+	// Launch Vehicle Interface Module Compositions
+
+	ref ci cdh-assemblies:LaunchVehicleInterfaceModule [
+		base:contains cdh-assemblies:LaunchVehicleAdapter
+		base:contains cdh-assemblies:SeparationSystem
+	]
+
+}

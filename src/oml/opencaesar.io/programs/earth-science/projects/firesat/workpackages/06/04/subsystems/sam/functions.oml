@@ -1,0 +1,34 @@
+@dc:title "Structures and Mechanisms Functions"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions> with # as sam-functions {
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
+
+	// Power Control Unit Functions
+
+	ref ci sam-assemblies:PowerControlUnit [
+		mission:performs firesat-functions:Supply_Power_24_7
+	]
+
+	// EPS Regulators And Converters Unit Functions
+
+	ref ci sam-assemblies:EPSRegulatorsAndConvertersUnit [
+		mission:performs firesat-functions:Supply_Power_24_7
+	]
+
+	// Solar Array With SADA 1 Functions
+
+	ref ci sam-assemblies:SolarArrayWithSADA1 [
+		mission:performs firesat-functions:TransformSolarRadiationsIntoEnergy
+		mission:performs firesat-functions:DeployMechanisms
+	]
+
+	// Solar Array With SADA 2 Functions
+
+	ref ci sam-assemblies:SolarArrayWithSADA2 [
+		mission:performs firesat-functions:TransformSolarRadiationsIntoEnergy
+		mission:performs firesat-functions:DeployMechanisms
+	]
+
+}

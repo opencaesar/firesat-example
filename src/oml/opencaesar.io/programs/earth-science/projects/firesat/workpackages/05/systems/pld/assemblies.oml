@@ -1,0 +1,27 @@
+@dc:title "Payload Assemblies"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies> with # as pld-assemblies {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/pld/pld>
+
+	ref ci pld:Payload [
+		base:aggregates PayloadModule
+		base:aggregates Sensor
+	]
+
+	// Payload Module
+
+	@rdfs:label "Payload Module"
+	ci PayloadModule : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "540000"
+	]
+
+	// Sensor
+
+	@rdfs:label "Sensor"
+	ci Sensor : assembly:BaseAssembly [
+		fse:hasAssemblyAcronym "541000"
+	]
+
+}

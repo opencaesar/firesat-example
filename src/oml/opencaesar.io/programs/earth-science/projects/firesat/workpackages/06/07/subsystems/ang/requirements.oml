@@ -1,0 +1,105 @@
+@dc:title "ADCS and GNC Requirements"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/requirements> with # as ang-requirements {
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical>
+
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource>
+
+	// GPS Antenna Requirements
+
+	ref ci ang-assemblies:GPSAntenna [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
+		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+	]
+
+	ref ri ang-functions:GPSAntennaPerformsPositionAwareness [
+		mission:isSpecifiedBy firesat-functional-reqs:GeoLocation
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForFireGeoLocation
+		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
+		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+	]
+
+	// GPS Receiver Unit Requirements
+
+	ref ri ang-functions:GPSReceiverUnitPerformsPositionAwareness [
+		mission:isSpecifiedBy firesat-functional-reqs:GeoLocation
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
+		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForFireGeoLocation
+		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
+		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+	]
+
+	// ADCS Electronics Unit Requirements
+
+	ref ci ang-assemblies:ADCSElectronicsUnit [
+		mission:isSpecifiedBy spc-logistical-reqs:Maintenance
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Magnetometer Requirements
+
+	ref ci ang-assemblies:Magnetometer [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Magnetorquer 1 Requirements
+
+	ref ci ang-assemblies:Magnetorquer1 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Magnetorquer 2 Requirements
+
+	ref ci ang-assemblies:Magnetorquer2 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Magnetorquer 3 Requirements
+
+	ref ci ang-assemblies:Magnetorquer3 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Reaction Wheel 1 Requirements
+
+	ref ci ang-assemblies:ReactionWheel1 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Reaction Wheel 2 Requirements
+
+	ref ci ang-assemblies:ReactionWheel2 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Reaction Wheel 3 Requirements
+
+	ref ci ang-assemblies:ReactionWheel3 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Reaction Wheel 4 Requirements
+
+	ref ci ang-assemblies:ReactionWheel4 [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+
+	// Sun Sensor Requirements
+
+	ref ci ang-assemblies:SunSensor [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+	
+	// Earth Sensor Requirements
+
+	ref ci ang-assemblies:EarthSensor [
+		mission:isSpecifiedBy spc-logistical-reqs:Operability
+	]
+
+}

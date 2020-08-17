@@ -1,0 +1,25 @@
+@dc:title "Payload Requirements"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/requirements> with # as pld-requirements {
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/pld/requirements/system>
+
+	// Sensor Requirements
+
+	ref ri pld-functions:SensorPerformsDetectNewWildfires [
+		mission:isSpecifiedBy firesat-functional-reqs:Detection
+		mission:isSpecifiedBy firesat-functional-reqs:GeoLocation
+	]
+	
+	ref ci pld-assemblies:Sensor [
+		mission:isSpecifiedBy pld-system-reqs:ApertureSize
+		mission:isSpecifiedBy pld-system-reqs:SpectralResolution
+		mission:isSpecifiedBy pld-system-reqs:FOR
+		mission:isSpecifiedBy pld-system-reqs:SpatialResolution
+		mission:isSpecifiedBy pld-system-reqs:WavelenghtRange
+	]
+
+}

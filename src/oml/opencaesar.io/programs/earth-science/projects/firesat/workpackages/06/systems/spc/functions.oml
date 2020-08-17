@@ -1,0 +1,33 @@
+@dc:title "Spacecraft Functions"
+description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions> with # as spc-functions {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/firesat>
+	
+	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies>
+
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
+
+	// Spacecraft System Segment Functions
+
+	ref ci spc-assemblies:SpacecraftSystemSegment [
+		mission:performs firesat-functions:PerformMission
+		mission:performs firesat-functions:MonitorExistingWildfires_24_7
+		mission:isInfluencedBy firesat-mission:Endoatmosphere
+		mission:isInfluencedBy firesat-mission:SpaceDebris
+		mission:isInfluencedBy firesat-mission:Stars
+		mission:isInfluencedBy firesat-mission:Sun
+	]
+
+	ri SpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Performs [
+		from spc-assemblies:SpacecraftSystemSegment
+		to firesat-functions:DetectNewWildfires
+	]
+
+	ri SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Performs [
+		from spc-assemblies:SpacecraftSystemSegment
+		to firesat-functions:MonitorExistingWildfires_24_7
+	]
+
+}
