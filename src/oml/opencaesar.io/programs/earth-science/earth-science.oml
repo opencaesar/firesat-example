@@ -1,4 +1,5 @@
 @dc:title "Fire Satellite Model"
+@dc:^description "Defines the top of the FireSat project."
 description <http://opencaesar.io/programs/earth-science/earth-science> with # as earth-science {
 	
 	uses <http://imce.jpl.nasa.gov/foundation/project>
@@ -7,7 +8,8 @@ description <http://opencaesar.io/programs/earth-science/earth-science> with # a
 	
 	extends <http://opencaesar.io/organizations/nasa>
 
-	// Earth Science Program
+	// Earth Science Program authorizes the project. Expressed here by proxy so that the program doesn't have to be updated 
+	// every time a new project is authorized.
 	
 	@rdfs:label "Earth Science Program"
 	ci EarthScienceProgram : project:Program [
@@ -15,7 +17,7 @@ description <http://opencaesar.io/programs/earth-science/earth-science> with # a
 	]
 
 	// FireSat Project
-	
+	// should probably be authorized by a specific NASA directorate like SMD
 	@rdfs:label "FireSat Project"
 	ci FireSatProject : project:Project [
 		project:supplies firesat-mission:FireSatMission

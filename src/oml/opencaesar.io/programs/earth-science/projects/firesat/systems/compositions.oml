@@ -1,3 +1,4 @@
+@dc:^description "Describes the functional composition of the spacecraft"
 @dc:title "FireSat Compositions"
 description <http://opencaesar.io/programs/earth-science/projects/firesat/systems/compositions> with # as firesat-compositions {
 	
@@ -7,6 +8,16 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/system
 			
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies>
 
+
+	// DW: not clear what is intended here. You probably want to decompose the flight system into a set of functional
+	// subsystems: Power, Propulsion, Attitude Control, Telecom, Mechanical, Thermal, Avionics
+	// Need to be clear that this functional decomposition is not a physical decomposition.
+	
+	// Sometimes a large project will prescribe a particular physical composition to facilitate a work breakdown.
+	// e.g., a project might define a payload module as a physical assembly that composes all of the payload subsystems
+	// in a way that facilitates separate assembly and test. But firestat is not likely to be large enough to warrant that level of
+	// decomposition.
+ 	
 	// Spacecraft System Segment Compositions
 
 	ref ci spc-assemblies:SpacecraftSystemSegment [
