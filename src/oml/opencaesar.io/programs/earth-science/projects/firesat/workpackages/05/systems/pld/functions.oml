@@ -5,21 +5,33 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
 
-	// Payload Module Functions
+	// Payload Module
 
 	ref ci pld-assemblies:PayloadModule [
-		mission:performs firesat-functions:InsureMechanicalIntegrity
+		mission:performs InsureMechanicalIntegrityByPayloadModule
 	]
 
-	// Sensor Functions
+	ci InsureMechanicalIntegrityByPayloadModule  : mission:Function [
+		project:realizes firesat-functions:InsureMechanicalIntegrity
+	]
+
+	// Sensor
 
 	ref ci pld-assemblies:Sensor [
-		mission:performs firesat-functions:MonitorExistingWildfires_24_7
+		mission:performs MonitorExistingWildfires_24_7BySensor
 	]
 	
 	ri SensorPerformsDetectNewWildfires : mission:Performs [
 		from pld-assemblies:Sensor
-		to firesat-functions:DetectNewWildfires
+		to DetectNewWildfiresBySensor
+	]
+
+	ci MonitorExistingWildfires_24_7BySensor  : mission:Function [
+		project:realizes firesat-functions:MonitorExistingWildfires_24_7
+	]
+
+	ci DetectNewWildfiresBySensor  : mission:Function [
+		project:realizes firesat-functions:DetectNewWildfires
 	]
 
 }

@@ -5,82 +5,134 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
 
-	// Propulsion System Control Unit Functions
+	// Propulsion System Control Unit
 
 	ref ci prp-assemblies:PropulsionSystemControlUnit [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByPropulsionSystemControlUnit
+	]
+	
+	ci ControlTrajectoryByPropulsionSystemControlUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
 	]
 
-	// Primary Thruster Functions
+	// Primary Thruster
 
 	ref ci prp-assemblies:PrimaryThruster [
-		mission:performs firesat-functions:Launch_SC
+		mission:performs Launch_SCByPrimaryThruster
 	]
 
-	// ACS Thruster 1 Functions
+	ci Launch_SCByPrimaryThruster : mission:Function [
+		project:realizes firesat-functions:Launch_SC
+	]
+
+	// ACS Thruster 1
 
 	ref ci prp-assemblies:ACSThruster1 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster1
 	]
 
-	// ACS Thruster 2 Functions
+	ci ControlTrajectoryByACSThruster1 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 2
 
 	ref ci prp-assemblies:ACSThruster2 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster2
 	]
 
-	// ACS Thruster 3 Functions
+	ci ControlTrajectoryByACSThruster2 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 3
 
 	ref ci prp-assemblies:ACSThruster3 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster3
 	]
 
-	// ACS Thruster 4 Functions
+	ci ControlTrajectoryByACSThruster3 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 4
 
 	ref ci prp-assemblies:ACSThruster4 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster4
 	]
 
-	// ACS Thruster 5 Functions
+	ci ControlTrajectoryByACSThruster4 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 5
 
 	ref ci prp-assemblies:ACSThruster5 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster5
 	]
 
-	// ACS Thruster 6 Functions
+	ci ControlTrajectoryByACSThruster5 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 6
 
 	ref ci prp-assemblies:ACSThruster6 [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByACSThruster6
 	]
 
-	// FillDrain Valve Unit Functions
+	ci ControlTrajectoryByACSThruster6 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// FillDrain Valve Unit
 
 	ref ci prp-assemblies:FillDrainValveUnit [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByFillDrainValveUnit
 	]
 
-	// BP Propellant Line Unit Functions
+	ci ControlTrajectoryByFillDrainValveUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// BP Propellant Line Unit
 
 	ref ci prp-assemblies:BPPropellantLineUnit [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByBPPropellantLineUnit
 	]
 
-	// Propellant Tank Functions
+	ci ControlTrajectoryByBPPropellantLineUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Propellant Tank
 
 	ref ci prp-assemblies:PropellantTank [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByPropellantTank
 	]
 
-	// Pressurant Tank Functions
+	ci ControlTrajectoryByPropellantTank : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Pressurant Tank
 
 	ref ci prp-assemblies:PressurantTank [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByPressurantTank
 	]
 
-	// PM Propellant Line Unit Functions
+	ci ControlTrajectoryByPressurantTank : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// PM Propellant Line Unit
 
 	ref ci prp-assemblies:PMPropellantLineUnit [
-		mission:performs firesat-functions:ControlTrajectory
+		mission:performs ControlTrajectoryByPMPropellantLineUnit
+	]
+
+	ci ControlTrajectoryByPMPropellantLineUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
 	]
 
 }

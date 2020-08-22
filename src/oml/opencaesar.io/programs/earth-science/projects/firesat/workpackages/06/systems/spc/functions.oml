@@ -9,11 +9,10 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
 
-	// Spacecraft System Segment Functions
+	// Spacecraft System Segment
 
-	ref ci spc-assemblies:SpacecraftSystemSegment [
-		mission:performs firesat-functions:PerformMission
-		mission:performs firesat-functions:MonitorExistingWildfires_24_7
+ 	ref ci spc-assemblies:SpacecraftSystemSegment [
+		mission:performs PerformMissionBySpacecraftSystemSegment
 		mission:isInfluencedBy firesat-mission:Endoatmosphere
 		mission:isInfluencedBy firesat-mission:SpaceDebris
 		mission:isInfluencedBy firesat-mission:Stars
@@ -22,12 +21,24 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	ri SpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Performs [
 		from spc-assemblies:SpacecraftSystemSegment
-		to firesat-functions:DetectNewWildfires
+		to DetectNewWildfiresBySpacecraftSystemSegment
 	]
 
 	ri SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Performs [
 		from spc-assemblies:SpacecraftSystemSegment
-		to firesat-functions:MonitorExistingWildfires_24_7
+		to MonitorExistingWildfires_24_7BySpacecraftSystemSegment
+	]
+
+	ci PerformMissionBySpacecraftSystemSegment : mission:Function [
+		project:realizes firesat-functions:PerformMission
+	]
+
+	ci DetectNewWildfiresBySpacecraftSystemSegment : mission:Function [
+		project:realizes firesat-functions:DetectNewWildfires
+	]
+
+	ci MonitorExistingWildfires_24_7BySpacecraftSystemSegment : mission:Function [
+		project:realizes firesat-functions:MonitorExistingWildfires_24_7
 	]
 
 }

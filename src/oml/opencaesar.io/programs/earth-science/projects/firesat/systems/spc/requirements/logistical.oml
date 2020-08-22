@@ -22,25 +22,33 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/system
 	ci Facilities : mission:Requirement
 
 	@rdfs:label "Training and Personel"
-	ci TrainingAndPersonel : mission:Requirement
+	ci TrainingAndPersonel : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
 
 	@rdfs:label "Maintenance"
 	ci Maintenance : mission:Requirement [
-		mission:refines firesat-stakeholder-reqs:OnOrbitDesignLifetime
+		mission:refines firesat-stakeholder-reqs:LCCBudget
 	]
 
 	@rdfs:label "Reliability"
 	ci Reliability : mission:Requirement [
-		mission:refines firesat-stakeholder-reqs:OnOrbitDesignLifetime
+		mission:refines firesat-stakeholder-reqs:LCCBudget
 	]
 
 	@rdfs:label "Maintainability"
-	ci Maintainability : mission:Requirement
+	ci Maintainability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
 
 	@rdfs:label "Operability"
-	ci Operability : mission:Requirement
+	ci Operability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
 
 	@rdfs:label "Supportability"
-	ci Supportability : mission:Requirement
+	ci Supportability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
 	
 }

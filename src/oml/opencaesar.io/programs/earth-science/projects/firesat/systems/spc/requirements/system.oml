@@ -3,9 +3,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/system
 	
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder>
 	
+	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
+
 	@rdfs:label "Uplink/downlink hardware"
 	ci UplinkDownlinkHardware : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:GroundSystemInterface
+		mission:refines firesat-functional-reqs:DownwardsMessages
+		mission:refines firesat-functional-reqs:TimeAllocationFor911MessageDownlink
+	]
+
+	ci IncidentProcessing : mission:Requirement [
+		mission:refines firesat-functional-reqs:TimeAllocationForDetectingANewWildfire
+		mission:refines firesat-functional-reqs:TimeAllocationForOnboardValidation
+		mission:refines firesat-functional-reqs:TimeAllocationForFireGeoLocation
 	]
 
 	@rdfs:label "Precedence"

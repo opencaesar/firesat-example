@@ -5,22 +5,34 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
 
-	// Battery Pack 1 Functions
+	// Battery Pack 1
 
 	ref ci eps-assemblies:BatteryPack1 [
-		mission:performs firesat-functions:StoreEnergyDuringEclipses
+		mission:performs StoreEnergyDuringEclipsesByBatteryPack1
 	]
 
-	// Battery Pack 2 Functions
+	ci StoreEnergyDuringEclipsesByBatteryPack1 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
+	]
+
+	// Battery Pack 2
 
 	ref ci eps-assemblies:BatteryPack2 [
-		mission:performs firesat-functions:StoreEnergyDuringEclipses
+		mission:performs StoreEnergyDuringEclipsesByBatteryPack2
 	]
 
-	// Battery Pack 3 Functions
+	ci StoreEnergyDuringEclipsesByBatteryPack2 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
+	]
+
+	// Battery Pack 3
 
 	ref ci eps-assemblies:BatteryPack3 [
-		mission:performs firesat-functions:StoreEnergyDuringEclipses
+		mission:performs StoreEnergyDuringEclipsesByBatteryPack3
+	]
+
+	ci StoreEnergyDuringEclipsesByBatteryPack3 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
 	]
 
 }

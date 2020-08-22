@@ -18,10 +18,27 @@ Run reasoner, generate docs, and archive sources
 ./gradlew build
 ```
 
+## Download Dependencies
+```
+./gradlew omldependencies
+```
+
 ## Run Reasoner
 ```
 ./gradlew owlreason
 ```
+
+## Load to Fuseki
+```
+./gradlew owlload
+```
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
+
+## Run Query
+```
+./gradlew owlquery
+```
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
 
 ## Generate Docs
 You must first have Bikeshed installed from [here](https://tabatkins.github.io/bikeshed/#installing)
@@ -33,3 +50,18 @@ You must first have Bikeshed installed from [here](https://tabatkins.github.io/b
 ```
 ./gradlew publishToMavenLocal
 ```
+
+## Run Fuseki Locally
+Download the [Jena Fuseki](https://jena.apache.org/download/index.cgi) distribution and run the server locally:
+
+MacOS/Linux:
+```
+cd fuseki-distribution-folder
+./fuseki-server
+```
+Windows:
+```
+cd fuseki-distribution-folder
+fuseki-server.bat
+```
+By default, the server will be running at http://localhost:3030

@@ -5,9 +5,14 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/missions/firesat/functions>
 
-	// Thermal Blankets Functions
+	// Thermal Blankets
 
 	ref ci thc-assemblies:ThermalBlankets [
-		mission:performs firesat-functions:HomogenizeTemperature
+		mission:performs HomogenizeTemperatureByThermalBlankets
 	]
+
+	ci HomogenizeTemperatureByThermalBlankets : mission:Function [
+		project:realizes firesat-functions:HomogenizeTemperature
+	]
+
 }
