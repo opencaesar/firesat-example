@@ -6,21 +6,33 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental>
 
 	// Battery Pack 1 Requirements
-
+ 
 	ref ci eps-assemblies:BatteryPack1 [
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironment
+		mission:isSpecifiedBy SpaceEnvironmentForBatteryPack1
 	]
 	
+	ci SpaceEnvironmentForBatteryPack1 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
 	// Battery Pack 2 Requirements
 
 	ref ci eps-assemblies:BatteryPack2 [
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironment
+		mission:isSpecifiedBy SpaceEnvironmentForBatteryPack2
 	]
 	
+	ci SpaceEnvironmentForBatteryPack2 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
 	// Battery Pack 3 Requirements
 
 	ref ci eps-assemblies:BatteryPack3 [
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironment
+		mission:isSpecifiedBy SpaceEnvironmentForBatteryPack3
 	]
-	
+
+	ci SpaceEnvironmentForBatteryPack3 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
 }

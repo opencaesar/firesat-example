@@ -3,7 +3,7 @@
  */
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '1.1.0'
+version = '1.2.0'
 
 /* 
  * The Gradle task dependencies 
@@ -18,6 +18,8 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
+		classpath 'io.opencaesar.owl:owl-query-gradle:+'
+		classpath 'io.opencaesar.owl:owl-load-gradle:+'
 		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
 		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
@@ -59,7 +61,7 @@ dependencies {
 /*
  * A task to extract and merge the OML dependencies
  */
-task omlunzip(type: Copy) {
+task omldependencies(type: Copy) {
     from configurations.oml.files.collect { zipTree(it) }
     into file('build/dependencies')
 }
@@ -67,7 +69,7 @@ task omlunzip(type: Copy) {
 /*
  * A task to convert the OML catalog to OWL catalog
  */
-task oml2owl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: omlunzip) {
+task oml2owl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: omldependencies) {
 	// OML catalog
 	inputCatalogPath = file('catalog.xml')
 	// OWL catalog
@@ -81,21 +83,33 @@ task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) 
 	// OWL catalog
 	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/firesat-bundle'
+	inputOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
-		'http://imce.jpl.nasa.gov/foundation/bundle/classes = ALL_SUBCLASS',
-		'http://imce.jpl.nasa.gov/foundation/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://imce.jpl.nasa.gov/foundation/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes = ALL_SUBCLASS',
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
 	reportPath = file('build/reports/reasoning.xml')
 }
 
+task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
+	catalogPath = file('build/owl/catalog.xml')
+	endpointURL = 'http://localhost:3030/firesat'
+    fileExtensions = ['owl', 'ttl']
+}
+
+task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
+	endpointURL = 'http://localhost:3030/firesat'
+	queryPath = file('src/sparql/compositions.sparql')
+	resultPath = file('build/frames')
+}
+
 /*
  * A task to generate Bikeshed specification for the OML catalog
  */
-task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: omlunzip) {
+task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: omldependencies) {
 	// OML catalog
 	inputCatalogPath = file('catalog.xml')
 	// OWL folder

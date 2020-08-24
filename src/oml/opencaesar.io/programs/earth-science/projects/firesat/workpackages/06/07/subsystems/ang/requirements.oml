@@ -1,105 +1,163 @@
-@dc:title "ADCS and GNC Requirements"
+@dc:title "ADCS and GNC"
 description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/requirements> with # as ang-requirements {
 	
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions>
-
-	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical>
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource>
 
-	// GPS Antenna Requirements
+	// GPS Antenna
 
 	ref ci ang-assemblies:GPSAntenna [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
-		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
-		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+		mission:isSpecifiedBy OperabilityForGPSAntenna
 	]
 
 	ref ri ang-functions:GPSAntennaPerformsPositionAwareness [
-		mission:isSpecifiedBy firesat-functional-reqs:GeoLocation
-		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
-		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForFireGeoLocation
-		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
-		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+		mission:isSpecifiedBy AltitudeDeterminationForGPSAntenna
+		mission:isSpecifiedBy OrbitDeterminationForGPSAntenna
 	]
 
-	// GPS Receiver Unit Requirements
+	ci OperabilityForGPSAntenna : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	ci AltitudeDeterminationForGPSAntenna : mission:Requirement [
+		mission:refines spc-resource-reqs:AltitudeDetermination
+	]
+
+	ci OrbitDeterminationForGPSAntenna : mission:Requirement [
+		mission:refines spc-resource-reqs:OrbitDetermination
+	]
+
+	// GPS Receiver Unit
 
 	ref ri ang-functions:GPSReceiverUnitPerformsPositionAwareness [
-		mission:isSpecifiedBy firesat-functional-reqs:GeoLocation
-		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
-		mission:isSpecifiedBy firesat-functional-reqs:TimeAllocationForFireGeoLocation
-		mission:isSpecifiedBy spc-resource-reqs:AltitudeDetermination
-		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
+		mission:isSpecifiedBy AltitudeDeterminationForGPSReceiverUnit
+		mission:isSpecifiedBy OrbitDeterminationForGPSReceiverUnit
 	]
 
-	// ADCS Electronics Unit Requirements
+	ci AltitudeDeterminationForGPSReceiverUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:AltitudeDetermination
+	]
+
+	ci OrbitDeterminationForGPSReceiverUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:OrbitDetermination
+	]
+
+	// ADCS Electronics Unit
 
 	ref ci ang-assemblies:ADCSElectronicsUnit [
-		mission:isSpecifiedBy spc-logistical-reqs:Maintenance
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy MaintenanceForADCSElectronicsUnit
+		mission:isSpecifiedBy OperabilityForADCSElectronicsUnit
 	]
 	
-	// Magnetometer Requirements
+	ci MaintenanceForADCSElectronicsUnit : mission:Requirement [
+		mission:refines spc-logistical-reqs:Maintenance
+	]
+
+	ci OperabilityForADCSElectronicsUnit : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetometer
 
 	ref ci ang-assemblies:Magnetometer [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForMagnetometer
 	]
 	
-	// Magnetorquer 1 Requirements
+	ci OperabilityForMagnetometer : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 1
 
 	ref ci ang-assemblies:Magnetorquer1 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForMagnetorquer1
 	]
 	
-	// Magnetorquer 2 Requirements
+	ci OperabilityForMagnetorquer1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 2
 
 	ref ci ang-assemblies:Magnetorquer2 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForMagnetorquer2
 	]
 	
-	// Magnetorquer 3 Requirements
+	ci OperabilityForMagnetorquer2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 3
 
 	ref ci ang-assemblies:Magnetorquer3 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForMagnetorquer3
 	]
 	
-	// Reaction Wheel 1 Requirements
+	ci OperabilityForMagnetorquer3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 1
 
 	ref ci ang-assemblies:ReactionWheel1 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForReactionWheel1
 	]
 	
-	// Reaction Wheel 2 Requirements
+	ci OperabilityForReactionWheel1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 2
 
 	ref ci ang-assemblies:ReactionWheel2 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForReactionWheel2
 	]
 	
-	// Reaction Wheel 3 Requirements
+	ci OperabilityForReactionWheel2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 3
 
 	ref ci ang-assemblies:ReactionWheel3 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForReactionWheel3
 	]
 	
-	// Reaction Wheel 4 Requirements
+	ci OperabilityForReactionWheel3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 4
 
 	ref ci ang-assemblies:ReactionWheel4 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForReactionWheel4
 	]
 
-	// Sun Sensor Requirements
+	ci OperabilityForReactionWheel4 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Sun Sensor
 
 	ref ci ang-assemblies:SunSensor [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForSunSensor
 	]
 	
-	// Earth Sensor Requirements
+	ci OperabilityForSunSensor : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Earth Sensor
 
 	ref ci ang-assemblies:EarthSensor [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForEarthSensor
+	]
+
+	ci OperabilityForEarthSensor : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
 	]
 
 }

@@ -1,4 +1,4 @@
-@dc:title "Propulsion Requirements"
+@dc:title "Propulsion"
 description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/requirements> with # as prp-requirements {
 	
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies>
@@ -9,97 +9,179 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource>
 
-	// Propellant Tank Requirements
+	// Propellant Tank
 
 	ref ci prp-assemblies:PropellantTank [
-		mission:isSpecifiedBy spc-logistical-reqs:EndOfLifeDisposal
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPropellantTank
+		mission:isSpecifiedBy DeltaVBudgetForPropellantTank
 	]
 	
-	// Pressurant Tank Requirements
+	ci AltitudeForPropellantTank : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPropellantTank : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Pressurant Tank
 
 	ref ci prp-assemblies:PressurantTank[
-		mission:isSpecifiedBy spc-logistical-reqs:EndOfLifeDisposal
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPressurantTank
+		mission:isSpecifiedBy DeltaVBudgetForPressurantTank
 	]
 
-	// ACS Thruster 1 Requirements
+	ci AltitudeForPressurantTank : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPressurantTank : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// ACS Thruster 1
 
 	ref ci prp-assemblies:ACSThruster1 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster1
 	]
 	
-	// ACS Thruster 2 Requirements
+	ci OperabilityForACSThruster1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 2
 
 	ref ci prp-assemblies:ACSThruster2 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster2
 	]
 	
-	// ACS Thruster 3 Requirements
+	ci OperabilityForACSThruster2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 3
 
 	ref ci prp-assemblies:ACSThruster3 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster3
 	]
 	
-	// ACS Thruster 4 Requirements
+	ci OperabilityForACSThruster3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 4
 
 	ref ci prp-assemblies:ACSThruster4 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster4
 	]
 	
-	// ACS Thruster 5 Requirements
+	ci OperabilityForACSThruster4 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 5
 
 	ref ci prp-assemblies:ACSThruster5 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster5
 	]
 	
-	// ACS Thruster 6 Requirements
+	ci OperabilityForACSThruster5 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 6
 
 	ref ci prp-assemblies:ACSThruster6 [
-		mission:isSpecifiedBy spc-logistical-reqs:Operability
+		mission:isSpecifiedBy OperabilityForACSThruster6
 	]
 		
-	// Primary Thruster Requirements
+	ci OperabilityForACSThruster6 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Primary Thruster
 
 	ref ci prp-assemblies:PrimaryThruster [
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPrimaryThruster
+		mission:isSpecifiedBy DeltaVBudgetForPrimaryThruster
 	]
 
-	// Propulsion System Control Unit Requirements
+	ci AltitudeForPrimaryThruster : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPrimaryThruster : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Propulsion System Control Unit
 
 	ref ci prp-assemblies:PropulsionSystemControlUnit [
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPropulsionSystemControlUnit
+		mission:isSpecifiedBy DeltaVBudgetForPropulsionSystemControlUnit
 	]
 
-	// Propulsion Module Requirements
+	ci AltitudeForPropulsionSystemControlUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPropulsionSystemControlUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Propulsion Module
 
 	ref ci prp-assemblies:PropulsionModule [
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPropulsionModule
+		mission:isSpecifiedBy DeltaVBudgetForPropulsionModule
 	]
 
-	// PM Propellant Line Unit Requirements
+	ci AltitudeForPropulsionModule : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPropulsionModule : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// PM Propellant Line Unit
 
 	ref ci prp-assemblies:PMPropellantLineUnit [
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForPMPropellantLineUnit
+		mission:isSpecifiedBy DeltaVBudgetForPMPropellantLineUnit
 	]
 
-	// BP Propellant Line Unit Requirements
+	ci AltitudeForPMPropellantLineUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForPMPropellantLineUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// BP Propellant Line Unit
 
 	ref ci prp-assemblies:BPPropellantLineUnit [
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy AltitudeForBPPropellantLineUnit
+		mission:isSpecifiedBy DeltaVBudgetForBPPropellantLineUnit
 	]
 	
-	// :Fill Drain Valve Unit Requirements
+	ci AltitudeForBPPropellantLineUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	ci DeltaVBudgetForBPPropellantLineUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// :Fill Drain Valve Unit
 
 	ref ci prp-assemblies:FillDrainValveUnit [
-		mission:isSpecifiedBy spc-resource-reqs:DeltaVBudget
+		mission:isSpecifiedBy DeltaVBudgetForFillDrainValveUnit
+	]
+
+	ci DeltaVBudgetForFillDrainValveUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
 	]
 
 }

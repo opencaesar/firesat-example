@@ -1,13 +1,9 @@
-@dc:title "Spacecraft Requirements"
+@dc:title "Spacecraft"
 description <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements> with # as spc-requirements {
 	
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies>
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions>
-
-	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder>
-
-	extends <http://opencaesar.io/programs/earth-science/missions/firesat/requirements/functional>
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system>
 	
@@ -21,51 +17,145 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource>
 
-	// Spacecraft System Segment Requirements
+	// Spacecraft System Segment
 
 	ref ci spc-assemblies:SpacecraftSystemSegment [
-		mission:isSpecifiedBy firesat-stakeholder-reqs:LCCBudget
-		mission:isSpecifiedBy firesat-stakeholder-reqs:OnOrbitDesignLifetime
-		mission:isSpecifiedBy firesat-stakeholder-reqs:Initial_FullOperationalCapability
-		mission:isSpecifiedBy spc-system-reqs:PrimeItemDefinition
-		mission:isSpecifiedBy spc-system-reqs:StandardSample
-		mission:isSpecifiedBy spc-system-reqs:Manufacturability
-		mission:isSpecifiedBy spc-system-reqs:SecurityAndSafety
-		mission:isSpecifiedBy spc-environmental-reqs:QualificationOfHeritageFlightHardware
-		mission:isSpecifiedBy spc-environmental-reqs:StructuralQualification
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceVehicleNaturalFrequency
-		mission:isSpecifiedBy spc-environmental-reqs:SpaceEnvironment
-		mission:isSpecifiedBy spc-environmental-reqs:LaunchEnvironment
-		mission:isSpecifiedBy spc-environmental-reqs:Environment
-		mission:isSpecifiedBy spc-logistical-reqs:Supply
-		mission:isSpecifiedBy spc-logistical-reqs:FaultProtection
-		mission:isSpecifiedBy spc-logistical-reqs:Availability
-		mission:isSpecifiedBy spc-logistical-reqs:Transportation
-		mission:isSpecifiedBy spc-logistical-reqs:Facilities
-		mission:isSpecifiedBy spc-logistical-reqs:TrainingAndPersonel
-		mission:isSpecifiedBy spc-logistical-reqs:Reliability
-		mission:isSpecifiedBy spc-logistical-reqs:Maintainability
-		mission:isSpecifiedBy spc-operational-reqs:OrbitInclination
-		mission:isSpecifiedBy spc-operational-reqs:Altitude
-		mission:isSpecifiedBy spc-operational-reqs:MinimumElevationAngle
-		mission:isSpecifiedBy spc-performance-reqs:TimeError
-		mission:isSpecifiedBy spc-performance-reqs:AltitudeError
-		mission:isSpecifiedBy spc-resource-reqs:PowerBudget
-		mission:isSpecifiedBy spc-resource-reqs:SpaceVehicleMass
-		mission:isSpecifiedBy spc-resource-reqs:OrbitDetermination
-		mission:isSpecifiedBy spc-resource-reqs:MaturityOfNewTechnologies
-		mission:isSpecifiedBy spc-resource-reqs:NumberOfSatellites
+		mission:isSpecifiedBy PrimeItemDefinitionForSpacecraftSystemSegment
+		mission:isSpecifiedBy StandardSampleForSpacecraftSystemSegment
+		mission:isSpecifiedBy ManufacturabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy SecurityAndSafetyForSpacecraftSystemSegment
+		mission:isSpecifiedBy QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment
+		mission:isSpecifiedBy StructuralQualificationForSpacecraftSystemSegment
+		mission:isSpecifiedBy SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment
+		mission:isSpecifiedBy SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment
+		mission:isSpecifiedBy SupplyForSpacecraftSystemSegment
+		mission:isSpecifiedBy FaultProtectionForSpacecraftSystemSegment
+		mission:isSpecifiedBy AvailabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy TransportationForSpacecraftSystemSegment
+		mission:isSpecifiedBy FacilitiesForSpacecraftSystemSegment
+		mission:isSpecifiedBy TrainingAndPersonelForSpacecraftSystemSegment
+		mission:isSpecifiedBy ReliabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy MaintainabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy TimeErrorForSpacecraftSystemSegment
+		mission:isSpecifiedBy AltitudeErrorForSpacecraftSystemSegment
+		mission:isSpecifiedBy PowerBudgetForSpacecraftSystemSegment
+		mission:isSpecifiedBy SpaceVehicleMassForSpacecraftSystemSegment
+		mission:isSpecifiedBy MaturityOfNewTechnologiesForSpacecraftSystemSegment
+		mission:isSpecifiedBy NumberOfSatellitesForSpacecraftSystemSegment
 	]
 	
 	ref ri spc-functions:SpacecraftSystemSegmentPerformsDetectNewWildfires [
-		mission:isSpecifiedBy firesat-functional-reqs:Coverage
-		mission:isSpecifiedBy firesat-functional-reqs:Persistence
+		mission:isSpecifiedBy OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires
+		mission:isSpecifiedBy MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires
 	]
 
 	ref ri spc-functions:SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 [
-		mission:isSpecifiedBy firesat-functional-reqs:Coverage
-		mission:isSpecifiedBy firesat-functional-reqs:Persistence
+		mission:isSpecifiedBy OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7
+		mission:isSpecifiedBy MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7
+	]
+
+	ci PrimeItemDefinitionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:PrimeItemDefinition
+	]
+
+	ci StandardSampleForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:StandardSample
+	]
+
+	ci ManufacturabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:Manufacturability
+	]
+
+	ci SecurityAndSafetyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:SecurityAndSafety
+	]
+
+	ci QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:QualificationOfHeritageFlightHardware
+	]
+
+	ci StructuralQualificationForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:StructuralQualification
+	]
+
+	ci SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection
+	]
+
+	ci SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceVehicleNaturalFrequency
+	]
+
+	ci SupplyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Supply
+	]
+
+	ci FaultProtectionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:FaultProtection
+	]
+
+	ci AvailabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Availability
+	]
+
+	ci TransportationForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Transportation
+	]
+
+	ci FacilitiesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Facilities
+	]
+
+	ci TrainingAndPersonelForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:TrainingAndPersonel
+	]
+
+	ci ReliabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Reliability
+	]
+
+	ci MaintainabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Maintainability
+	]
+
+	ci TimeErrorForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-performance-reqs:TimeError
+	]
+
+	ci AltitudeErrorForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:PowerBudget
+	]
+
+	ci PowerBudgetForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:PowerBudget
+	]
+
+	ci SpaceVehicleMassForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:SpaceVehicleMass
+	]
+
+	ci MaturityOfNewTechnologiesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:MaturityOfNewTechnologies
+	]
+
+	ci NumberOfSatellitesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:NumberOfSatellites
+	]
+
+	ci OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Requirement [
+		mission:refines spc-operational-reqs:OrbitInclination
+	]
+
+	ci MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Requirement [
+		mission:refines spc-operational-reqs:MinimumElevationAngle
+	]
+
+	ci OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Requirement [
+		mission:refines spc-operational-reqs:OrbitInclination
+	]
+
+	ci MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Requirement [
+		mission:refines spc-operational-reqs:MinimumElevationAngle
 	]
 
 }
