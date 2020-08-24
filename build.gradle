@@ -22,6 +22,9 @@ buildscript {
 		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
+		classpath 'io.opencaesar.owl:owl-load-gradle:0.4.1'
+		classpath 'io.opencaesar.owl:owl-query-gradle:0.4.1'
+		classpath 'io.opencaesar.docbook:docbook-adapter-gradle:+'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
@@ -32,6 +35,8 @@ buildscript {
  */
 configurations {
 	oml // Include the oml dependencies only
+	stylesheets // Include the docbook stylesheets
+	fuseki //Include fuseki server
 }
 
 /*
@@ -40,6 +45,7 @@ configurations {
 repositories {
 	mavenLocal()
 	maven { url 'https://dl.bintray.com/opencaesar/vocabularies' }
+	mavenCentral()
 }
 
 /*
@@ -47,8 +53,9 @@ repositories {
  */
 dependencies {
 	oml 'io.opencaesar.ontologies:vocabularies:1.0.+'
+	stylesheets "io.opencaesar.docbook:docbook-stylesheets:+"
+	fuseki "org.apache.jena:jena-fuseki-server:3.16.0"
 }
-
 /*
  * A task to extract and merge the OML dependencies
  */
@@ -118,12 +125,103 @@ task omlzip(type: Zip) {
 }
 
 /*
+ * Zips stylesheets from docbook-stylesheets (local maven)
+ * Places them in build/stylesheets-gen 
+ */
+task stylesheetUnzip(type: Copy) {
+  from configurations.stylesheets.files.collect { zipTree(it) }
+  into file("build/stylesheets-gen")
+}
+
+/*
+ * Gets a fuseki jar to create a server
+ */
+task fusekiGet(type: Copy) {
+	// java -jar jena-fuseki-server-3.16.0.jar --mem firesat
+	from configurations.fuseki
+	into file("build/fuseki")
+}
+
+/*
+ * Load the vocabulary into the Fuseki Server
+ */
+task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask) {
+	catalogPath = file('build/owl/catalog.xml')
+	//endpointURL = 'http://localhost:3030/firesat'
+	endpointURL = 'http://localhost:8080/fuseki/firesat'
+	fileExtensions = ['owl', 'ttl']
+}          
+
+/*
+ * Queries a SPARQL server and places the results in the specified folder 
+ */
+task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask) {
+	endpointURL = 'http://localhost:8080/fuseki/firesat'
+	queryPath = file('src/document/queries')
+	resultPath = file('build/frames')
+    format = 'xml'
+}
+
+owlQuery.mustRunAfter(owlLoad)
+/* Run server through docker? 
+task fusekiStart() {
+	doLast {
+		exec {
+			// exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
+	 		commandLine 'java', '-jar', 'build/fuseki/jena-fuseki-server-3.16.0.jar',
+	 		 '--mem', 'firesat'
+		}	}
+}
+*/
+
+/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
 	dependsOn omlzip
 	dependsOn owlreason
-	dependsOn bikeshed2html
+	//dependsOn bikeshed2html
+	dependsOn stylesheetUnzip
+	dependsOn fusekiGet
+}
+
+task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	//input = file('src/document/docbook/docbook.xml')
+	input = file('src/document/docbook/docbook.xml')
+	type = 'tag'
+	//xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
+	xsl = file ('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/tag/all_transformations.xsl')
+	original = file('build/stylesheets-gen/docbook_xsl')
+	frame = file('build/frames')	
+}
+
+task dbPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/document/src-gen/docbook.xml')
+	type = 'pdf'
+	xsl = file('src/document/src-gen/pdf/pdf_ext.xsl')
+}
+
+task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/document/src-gen/docbook.xml')
+	type = 'html'
+	xsl = file('src/document/src-gen/html/html_ext.xsl')
+	css = file('build/stylesheet-gen/default.css')
+}
+
+dbTag.mustRunAfter(owlQuery)
+dbHTML.mustRunAfter(dbTag)
+dbPDF.mustRunAfter(dbTag)
+
+task dbRender() {
+	dependsOn dbTag
+	dependsOn dbPDF
+	dependsOn dbHTML
+}
+
+task createDoc() {
+	dependsOn owlLoad
+	dependsOn owlQuery
+	dependsOn dbRender
 }
 
 /*

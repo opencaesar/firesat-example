@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+     <title> Organizations</title>
+     <para>Here are the list of organizations working on this satellite system and their workers</para>
+    <getTable title="List of organizations" frame = "organization.frame">
+        <column name="Organizations" target="org"/>
+        <nestedTable title="Nasa Workers" frame="nasa_workers.frame">
+            <column name="Name" target="people"/>
+            <column name="Role" target="role"/>
+        </nestedTable>
+    </getTable>
+    
+    <mirrorSection frame="organization.frame" title="_org_" varList="_org_">
+        <varText message="_org_ is one of the organizations involved in this satellite system"/>
+        <getTable title="_org_ Worker List" frame="workers.frame">
+            <filter target="org" val="_org_"/>
+            <column name="Name" target="person"/>
+            <column name="Role" target="role"/>
+        </getTable>
+    </mirrorSection>
+</chapter>
