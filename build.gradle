@@ -201,7 +201,7 @@ task build() {
 
 task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 	//input = file('src/document/docbook/docbook.xml')
-	input = file('src/document/docbook/wbs/src/work_breakdown_structure.xml')
+	input = file('src/document/docbook/physical_decomp/src/physical_structure.xml')
 	type = 'tag'
 	//xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
 	xsl = file ('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/tag/all_transformations.xsl')
@@ -210,15 +210,15 @@ task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 }
 
 task dbPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
-	input = file('src/document/docbook/wbs/src-gen/work_breakdown_structure.xml')
+	input = file('src/document/docbook/physical_decomp/src-gen/physical_structure.xml')
 	type = 'pdf'
-	xsl = file('src/document/src-gen/pdf/pdf_ext.xsl')
+	xsl = file('src/document/docbook/physical_decomp/src-gen/pdf/pdf_ext.xsl')
 }
 
 task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
-	input = file('src/document/docbook/wbs/src-gen/work_breakdown_structure.xml')
+	input = file('src/document/docbook/physical_decomp/src-gen/physical_structure.xml')
 	type = 'html'
-	xsl = file('src/document/src-gen/html/html_ext.xsl')
+	xsl = file('src/document/docbook/physical_decomp/src-gen/html/html_ext.xsl')
 	css = file('build/stylesheet-gen/default.css')
 }
 
