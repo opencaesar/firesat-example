@@ -65,3 +65,11 @@ cd fuseki-distribution-folder
 fuseki-server.bat
 ```
 By default, the server will be running at http://localhost:3030
+
+## Create Dataset in Fuseki
+To create a datset in Fuseki, do the following:
+
+1. click on the `manage datasets` link
+1. click on the `add new dataset` link
+1. type the dataset name
+1. click on the `create dataset` button
