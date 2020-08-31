@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:oc="https://opencaesar.github.io/" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <title> Organizations</title>
+    <para>In this system, there are various organizations providing support. Listed below are those organizations
+    along with their supporting employees.</para>
+    <oc:section frame="organization.frame" title="_org_">
+        <oc:var name="org" target="org"/>
+        <para>_org_ is one of the organizations involved in this satellite system.</para>
+        <oc:table title="_org_ Worker List" frame="workers.frame" filter="org = _org_">
+            <oc:column name="Name" target="person"/>
+            <oc:column name="Role" target="role"/>
+        </oc:table>
+    </oc:section>
+</chapter>
