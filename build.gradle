@@ -171,7 +171,7 @@ task MyOwlLoad(type:io.opencaesar.owl.load.OwlLoadTask) {
  */
 task MyOwlQuery(type:io.opencaesar.owl.query.OwlQueryTask) {
 	endpointURL = 'http://localhost:8080/fuseki/firesat'
-	queryPath = file('src/document/queries')
+	queryPath = file('src/document/physical/queries')
 	resultPath = file('build/frames')
     format = 'xml'
 }
@@ -201,7 +201,7 @@ task build() {
 
 task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 	//input = file('src/document/docbook/docbook.xml')
-	input = file('src/document/docbook/physical_decomp/src/physical_structure.xml')
+	input = file('src/document/physical/src/physical_structure.xml')
 	type = 'tag'
 	//xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
 	xsl = file ('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/tag/all_transformations.xsl')
@@ -210,15 +210,15 @@ task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 }
 
 task dbPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
-	input = file('src/document/docbook/physical_decomp/src-gen/physical_structure.xml')
+	input = file('src/document/physical/src-gen/physical_structure.xml')
 	type = 'pdf'
-	xsl = file('src/document/docbook/physical_decomp/src-gen/pdf/pdf_ext.xsl')
+	xsl = file('src/document/physical/src-gen/pdf/pdf_ext.xsl')
 }
 
 task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
-	input = file('src/document/docbook/physical_decomp/src-gen/physical_structure.xml')
+	input = file('src/document/physical/src-gen/physical_structure.xml')
 	type = 'html'
-	xsl = file('src/document/docbook/physical_decomp/src-gen/html/html_ext.xsl')
+	xsl = file('src/document/physical/src-gen/html/html_ext.xsl')
 	css = file('build/stylesheet-gen/default.css')
 }
 

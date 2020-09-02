@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:oc="https://opencaesar.github.io/" version="5.1">
+    <title>Assemblies</title>
+    <para>The FireSat system is composed of multiple assemblies that have a mass constraint that must
+        be met. Some assemblies are built by multiple base assemblies put together.</para>
+    <oc:table title="Subsystems" frame="subsystem.frame">
+        <oc:column name="Subsystem" target="subsystem"/>
+        <oc:column name="Mass" target="mass"/>
+        <oc:interleaveTable frame="sub_assembly.frame" filter="subsystem=_subsystem_">
+            <oc:column name="assembly" target="assembly" link="_assemblyIri_"/>
+            <oc:column name="mass" target="assemblyMass"/>
+        </oc:interleaveTable>
+    </oc:table>
+    <oc:table title="Assemblies" frame="assembly.frame">
+        <oc:column name="Assembly" target="assembly" link="_iri_"/>
+        <oc:column name="Mass Constraint" target="mass"/>
+    </oc:table>
+    <oc:section title="_assembly_" frame="assembly.frame" id="_iri_">
+        <oc:var name="assembly" target="assembly"/>
+        <oc:var name="mass" target="mass"/>
+        <oc:var name="desc" target="description"/>
+        <oc:var name="iri" target="iri"/>
+        <para>_desc_</para>
+        <para>The mass of _assembly_ is _mass_.</para>
+        <oc:table title="_assembly_ Contained Assemblies" frame="base.frame" 
+            filter="assembly=_assembly_">
+            <oc:column name="Assembly" target="sub" link="_subIri_"/>
+            <oc:column name="Mass" target="subMass"/>
+        </oc:table>
+    </oc:section>
+</chapter>

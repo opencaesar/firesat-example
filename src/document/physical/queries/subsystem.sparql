@@ -9,11 +9,12 @@ PREFIX pro: <http://purl.org/hpi/patchr#>
 PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+PREFIX assemblies: <http://imce.jpl.nasa.gov/discipline/fse/assemblies#>
 
-Select ?assembly ?mass
+Select ?subsystem ?mass ?s
 WHERE {
-  ?s a fse:Assembly.
-  ?s rdfs:label ?assembly.
+  ?s a fse:Subsystem. 
+  ?s rdfs:label ?subsystem.
   ?m analysis:characterizes ?s.
-  ?m fse:hasMassConstraintValue ?mass
-}
+  ?m fse:hasMassConstraintValue ?mass.
+} ORDER BY ?subsystem

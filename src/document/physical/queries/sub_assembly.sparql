@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX project: <http://imce.jpl.nasa.gov/foundation/project#>
+PREFIX mission: <http://imce.jpl.nasa.gov/foundation/mission#>
+PREFIX org: <http://opencaesar.io/organizations/nasa#>
+PREFIX pr: <http://purl.org/ontology/prv/core#>
+PREFIX pro: <http://purl.org/hpi/patchr#>
+PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+PREFIX assemblies: <http://imce.jpl.nasa.gov/discipline/fse/assemblies#>
+
+Select ?subsystem ?mass ?assembly ?assemblyMass ?s ?assemblyIri
+WHERE {
+  ?s a fse:Subsystem. 
+  ?s rdfs:label ?subsystem.
+  ?m analysis:characterizes ?s.
+  ?m fse:hasMassConstraintValue ?mass.
+  ?s base:aggregates ?assemblyIri.
+  ?assemblyIri rdfs:label ?assembly.
+  ?m2 analysis:characterizes ?assemblyIri.
+  ?m2 fse:hasMassConstraintValue ?assemblyMass.
+} ORDER BY ?subsystem
