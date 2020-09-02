@@ -219,7 +219,7 @@ task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 	input = file('src/document/physical/src-gen/physical_structure.xml')
 	type = 'html'
 	xsl = file('src/document/physical/src-gen/html/html_ext.xsl')
-	css = file('build/stylesheet-gen/default.css')
+	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
 }
 
 dbTag.mustRunAfter(MyOwlQuery)

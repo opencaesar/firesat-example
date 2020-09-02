@@ -11,10 +11,12 @@ PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 PREFIX assemblies: <http://imce.jpl.nasa.gov/discipline/fse/assemblies#>
 
-Select ?subsystem ?mass ?s
+Select ?subsystem ?mass ?systemIri ?num ?desc
 WHERE {
-  ?s a fse:Subsystem. 
-  ?s rdfs:label ?subsystem.
-  ?m analysis:characterizes ?s.
+  ?systemIri a fse:Subsystem. 
+  ?systemIri rdfs:label ?subsystem.
+  optional {?systemIri dc:description ?desc}.
+  ?m analysis:characterizes ?systemIri.
   ?m fse:hasMassConstraintValue ?mass.
+  ?systemIri fse:hasSubsystemNumber ?num
 } ORDER BY ?subsystem

@@ -10,14 +10,21 @@ PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 PREFIX assemblies: <http://imce.jpl.nasa.gov/discipline/fse/assemblies#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-Select ?subsystem ?mass ?assembly ?assemblyMass ?s ?assemblyIri
+Select ?subsystem ?mass ?assembly ?assemblyMass ?s ?assemblyIri ?subNum 
+?assemNum ?systemDesc ?assemDesc
 WHERE {
   ?s a fse:Subsystem. 
   ?s rdfs:label ?subsystem.
+  optional {?s dc:description ?systemDesc}.
   ?m analysis:characterizes ?s.
   ?m fse:hasMassConstraintValue ?mass.
+  ?s fse:hasSubsystemNumber ?subNum.
   ?s base:aggregates ?assemblyIri.
+  ?assemblyIri a fse:Assembly.
+  optional {?assemblyIri dc:description ?assemDesc}.
+  ?assemblyIri fse:hasAssemblyAcronym ?assemNum.
   ?assemblyIri rdfs:label ?assembly.
   ?m2 analysis:characterizes ?assemblyIri.
   ?m2 fse:hasMassConstraintValue ?assemblyMass.

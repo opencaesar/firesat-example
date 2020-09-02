@@ -11,11 +11,12 @@ PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-Select ?assembly ?mass ?description ?iri
+Select ?assembly ?mass ?description ?iri ?num
 WHERE {
   ?iri a fse:Assembly.
   ?iri rdfs:label ?assembly.
+  ?iri fse:hasAssemblyAcronym ?num.
   ?m analysis:characterizes ?iri.
   ?m fse:hasMassConstraintValue ?mass.
   optional {?iri dc:description ?description}.
-} ORDER  BY ?assembly
+} ORDER  BY ?assembly 
