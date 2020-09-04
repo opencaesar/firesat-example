@@ -15,6 +15,7 @@ buildscript {
 		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
+		maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
 		jcenter()
 	}
 	dependencies {
@@ -23,10 +24,19 @@ buildscript {
 		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
 		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
+		classpath 'com.wiredforcode:gradle-spawn-plugin:+'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
+}
+
+/*
+ * Dependency versions
+ */
+ext { 
+	vocabulariesVersion = '1.0.+' 
+	fusekiVersion = '3.16.0' 
 }
 
 /*
@@ -34,6 +44,7 @@ buildscript {
  */
 configurations {
 	oml // Include the oml dependencies only
+    fuseki //Include fuseki server
 }
 
 /*
@@ -42,13 +53,15 @@ configurations {
 repositories {
 	mavenLocal()
 	maven { url 'https://dl.bintray.com/opencaesar/vocabularies' }
+	jcenter()
 }
 
 /*
  * The OML dependencies
  */
 dependencies {
-	oml 'io.opencaesar.ontologies:vocabularies:1.0.+'
+	oml "io.opencaesar.ontologies:vocabularies:$vocabulariesVersion"
+    fuseki "org.apache.jena:jena-fuseki-server:$fusekiVersion"
 }
 
 /*
@@ -95,7 +108,7 @@ task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
 
 task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
 	endpointURL = 'http://localhost:3030/firesat'
-	queryPath = file('src/sparql/compositions.sparql')
+	queryPath = file('src/sparql')
 	resultPath = file('build/frames')
 }
 
@@ -107,6 +120,8 @@ task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: 
 	inputCatalogPath = file('catalog.xml')
 	// OWL folder
 	outputFolderPath = file('build/bikeshed')
+	// Input Ontology Iri
+	rootOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
 	// Publish URL
 	publishUrl = 'https://opencaesar.github.io/vocabularies/'
 }
@@ -196,3 +211,21 @@ bintray {
 	}
 
 }
+
+/*
+ * Start and stop the Fuseki server
+ */
+apply plugin: 'com.wiredforcode.spawn'
+
+task downloadFuseki(type: Copy) {
+    from configurations.fuseki
+    into file("build/libs")
+}
+
+task startFuseki(type: SpawnProcessTask, dependsOn: downloadFuseki) {
+	command "java -jar ${projectDir}/build/libs/jena-fuseki-server-${fusekiVersion}.jar --mem firesat"
+	ready "Apache Jena Fuseki ${fusekiVersion}"
+}
+
+task stopFuseki(type: KillProcessTask)
+
