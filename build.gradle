@@ -1,37 +1,95 @@
-@@ -8,6 +8,7 @@ version = '1.2.0'
+/* 
+ * The Maven coordinates for the project artifact
+ */
+description='The FireSat example project'
+group = 'io.opencaesar.ontologies'
+version = '1.2.0'
+
 /* 
  * The Gradle task dependencies 
  */
-import com.wiredforcode.gradle.spawn.*
 buildscript {
 	repositories {
 		mavenLocal()
-@ -15,6 +16,7 @@ buildscript {
+		maven { url 'https://dl.bintray.com/opencaesar/owl-adapter' }
 		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
-		maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
 		jcenter()
 	}
 	dependencies {
-@ -27,6 +29,7 @@ buildscript {
+		classpath 'io.opencaesar.owl:owl-query-gradle:+'
+		classpath 'io.opencaesar.owl:owl-load-gradle:+'
+		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
+		classpath 'io.opencaesar.owl:oml2owl-gradle:+'
+		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
 		classpath 'io.opencaesar.owl:owl-load-gradle:0.4.1'
 		classpath 'io.opencaesar.owl:owl-query-gradle:0.4.1'
 		classpath 'io.opencaesar.docbook:docbook-adapter-gradle:+'
-		classpath 'com.wiredforcode:gradle-spawn-plugin:0.8.1'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
-@ -56,7 +59,7 @@ repositories {
+}
+
+/*
+ * The configuration of OML dependencies
+ */
+configurations {
+	oml // Include the oml dependencies only
+	stylesheets // Include the docbook stylesheets
+	fuseki //Include fuseki server
+}
+
+/*
+ * The repositories to look up OML dependencies in
+ */
+repositories {
+	mavenLocal()
+	maven { url 'https://dl.bintray.com/opencaesar/vocabularies' }
+	mavenCentral()
+}
+
+/*
+ * The OML dependencies
+ */
 dependencies {
 	oml 'io.opencaesar.ontologies:vocabularies:1.0.+'
 	stylesheets "io.opencaesar.docbook:docbook-stylesheets:+"
 	fuseki "org.apache.jena:jena-fuseki-server:3.16.0"
-	fuseki "org.apache.jena:jena-fuseki-war:3.16.0"
 }
 /*
  * A task to extract and merge the OML dependencies
-@ -93,19 +96,7 @@ task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl)
+ */
+task omldependencies(type: Copy) {
+    from configurations.oml.files.collect { zipTree(it) }
+    into file('build/dependencies')
+}
+
+/*
+ * A task to convert the OML catalog to OWL catalog
+ */
+task oml2owl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: omldependencies) {
+	// OML catalog
+	inputCatalogPath = file('catalog.xml')
+	// OWL catalog
+	outputCatalogPath = file('build/owl/catalog.xml')
+}
+
+/*
+ * A task to run the Openllet reasoner on the OWL catalog
+ */
+task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) {
+	// OWL catalog
+	catalogPath = file('build/owl/catalog.xml')
+	// Input ontology IRI to reason on
+	inputOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
+	// Entailment statements to generate and the ontologies to persist them in
+	specs = [
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes = ALL_SUBCLASS',
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+	]
 	// Junit error report
 	reportPath = file('build/reports/reasoning.xml')
 }
@@ -51,7 +109,50 @@ task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
 /*
  * A task to generate Bikeshed specification for the OML catalog
  */
-@ -156,54 +147,31 @@ task fusekiGet(type: Copy) {
+task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: omldependencies) {
+	// OML catalog
+	inputCatalogPath = file('catalog.xml')
+	// OWL folder
+	outputFolderPath = file('build/bikeshed')
+	// Publish URL
+	publishUrl = 'https://opencaesar.github.io/vocabularies/'
+}
+
+/*
+ * A task to render the Bikeshed specification to HTML
+ */
+task bikeshed2html(dependsOn: oml2bikeshed) {
+	doLast {
+		exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
+		exec { commandLine 'build/bikeshed/publish.sh' }
+	}
+}
+
+/*
+ * A task to generate a publishable Zip archive for the OML sources of this project
+ */
+task omlzip(type: Zip) {
+	from file('src/oml')
+	destinationDir(file('build/libs'))
+	archiveBaseName = project.name
+	archiveVersion = project.version
+}
+
+/*
+ * Zips stylesheets from docbook-stylesheets (local maven)
+ * Places them in build/stylesheets-gen 
+ */
+task stylesheetUnzip(type: Copy) {
+  from configurations.stylesheets.files.collect { zipTree(it) }
+  into file("build/stylesheets-gen")
+}
+
+/*
+ * Gets a fuseki jar to create a server
+ */
+task fusekiGet(type: Copy) {
+	// java -jar jena-fuseki-server-3.16.0.jar --mem firesat
+	from configurations.fuseki
 	into file("build/fuseki")
 }
 
@@ -59,29 +160,16 @@ task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
  * Load the vocabulary into the Fuseki Server
  */
 task MyOwlLoad(type:io.opencaesar.owl.load.OwlLoadTask) {
-apply plugin: 'com.wiredforcode.spawn'
-
-task startServer(type: SpawnProcessTask, dependsOn: fusekiGet) {
-	command "java -jar ${projectDir}/build/fuseki/jena-fuseki-server-3.16.0.jar --mem firesat"
-	//command "build/fuseki/fuseki-server.bat"
-	ready "Apache Jena Fuseki 3.16.0"
-}
-task stopServer(type: KillProcessTask)
-
-task owlload(type:io.opencaesar.owl.load.OwlLoadTask) {
 	catalogPath = file('build/owl/catalog.xml')
 	//endpointURL = 'http://localhost:3030/firesat'
 	endpointURL = 'http://localhost:8080/fuseki/firesat'
 	fileExtensions = ['owl', 'ttl']
 }          
-    fileExtensions = ['owl', 'ttl']
-}
 
 /*
  * Queries a SPARQL server and places the results in the specified folder 
  */
 task MyOwlQuery(type:io.opencaesar.owl.query.OwlQueryTask) {
-task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
 	endpointURL = 'http://localhost:8080/fuseki/firesat'
 	queryPath = file('src/document/physical/queries')
 	resultPath = file('build/frames')
@@ -109,7 +197,6 @@ task build() {
 	//dependsOn bikeshed2html
 	dependsOn stylesheetUnzip
 	dependsOn fusekiGet
-	format = 'xml'
 }
 
 task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
@@ -120,43 +207,90 @@ task dbTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
 	xsl = file ('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/tag/all_transformations.xsl')
 	original = file('build/stylesheets-gen/docbook_xsl')
 	frame = file('build/frames')	
-@ -222,7 +190,7 @@ task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+}
+
+task dbPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/document/physical/src-gen/physical_structure.xml')
+	type = 'pdf'
+	xsl = file('src/document/physical/src-gen/pdf/pdf_ext.xsl')
+}
+
+task dbHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/document/physical/src-gen/physical_structure.xml')
+	type = 'html'
+	xsl = file('src/document/physical/src-gen/html/html_ext.xsl')
 	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
 }
 
 dbTag.mustRunAfter(MyOwlQuery)
-dbTag.mustRunAfter(owlquery)
 dbHTML.mustRunAfter(dbTag)
 dbPDF.mustRunAfter(dbTag)
 
-@ -233,11 +201,28 @@ task dbRender() {
+task dbRender() {
+	dependsOn dbTag
+	dependsOn dbPDF
+	dependsOn dbHTML
 }
 
 task createDoc() {
 	dependsOn MyOwlLoad
 	dependsOn MyOwlQuery
-	dependsOn owlload
-	dependsOn owlquery
 	dependsOn dbRender
-}
-
-createDoc.mustRunAfter(startServer)
-createDoc.mustRunAfter(stylesheetUnzip)
-createDoc.mustRunAfter(owlreason)
-/*
- * A task to build the project, which executes several tasks together
- */
-task build() {
-	dependsOn omlzip
-	dependsOn owlreason
-	//dependsOn bikeshed2html
-	dependsOn stylesheetUnzip
-	dependsOn fusekiGet
-	//dependsOn startServer
-	//dependsOn createDoc
-	//dependsOn stopServer
 }
 
 /*
  * A task to delete the build artifacts
  */
+task clean(type: Delete) {
+	delete 'build'
+}
+
+/*
+ * Publish to Maven spec
+ */
+apply plugin: 'maven-publish'
+
+publishToMavenLocal.dependsOn omlzip
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact omlzip
+        }
+    }
+}
+
+/*
+ * Publish to Bintrary Spec
+ */
+apply plugin: 'com.jfrog.bintray'
+
+ext.gh = [
+	dep: 'https://github.com',
+	org: 'opencaesar',
+	rep: 'example-firesat'
+]
+
+bintray {
+	user = System.getenv('BINTRAY_USER')
+	key = System.getenv('BINTRAY_API_KEY')
+	publications = ['maven']
+	publish = true
+	override = true
+	pkg {
+		name = project.name
+		repo = gh.rep
+		userOrg = gh.org
+		desc = project.description
+		licenses = ['Apache-2.0']
+		websiteUrl = gh.dep+'/'+gh.org+'/'+gh.rep
+        issueTrackerUrl = gh.dep+'/'+gh.org+'/'+gh.rep+'/issues'
+		vcsUrl = gh.dep+'/'+gh.org+'/'+gh.rep+'.git'
+		version {
+			name = project.version
+			desc = project.version
+			released  = new Date()
+		}
+	}
+
+}
