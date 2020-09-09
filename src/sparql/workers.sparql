@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+PREFIX org: <http://opencaesar.io/organizations/nasa#>
+
+Select ?person ?role ?org
+WHERE {
+	?p rdf:type proj:Person .
+    ?p rdfs:label ?person .
+    ?p proj:hasRole ?r .
+    ?r rdfs:label ?role.
+    ?p proj:belongsTo ?o.
+    ?o rdfs:label ?org
+}
