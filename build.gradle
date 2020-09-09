@@ -26,6 +26,7 @@ buildscript {
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
 		classpath 'com.wiredforcode:gradle-spawn-plugin:+'
+		classpath 'io.opencaesar.docbook:docbook-adapter-gradle:+'
 		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
@@ -45,6 +46,7 @@ ext {
 configurations {
 	oml // Include the oml dependencies only
     fuseki //Include fuseki server
+    stylesheets // Include the docbook stylesheets
 }
 
 /*
@@ -62,6 +64,7 @@ repositories {
 dependencies {
 	oml "io.opencaesar.ontologies:vocabularies:$vocabulariesVersion"
     fuseki "org.apache.jena:jena-fuseki-server:$fusekiVersion"
+    stylesheets "io.opencaesar.docbook:docbook-stylesheets:+"
 }
 
 /*
@@ -106,7 +109,7 @@ task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
     fileExtensions = ['owl', 'ttl']
 }
 
-task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
+task owlquery(type:io.opencaesar.owl.query.OwlQueryTask) {
 	endpointURL = 'http://localhost:3030/firesat'
 	queryPath = file('src/sparql')
 	resultPath = file('build/frames')
@@ -147,12 +150,92 @@ task omlzip(type: Zip) {
 }
 
 /*
+ * Zips stylesheets from docbook-stylesheets (local maven)
+ * Places them in build/stylesheets-gen 
+ */
+task stylesheetUnzip(type: Copy) {
+  from configurations.stylesheets.files.collect { zipTree(it) }
+  into file("build/stylesheets-gen")
+}
+/*
+ * Gradle tasks to render the docbook physical_structure
+ */
+task physicalTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/physical/src/physical_structure.xml')
+	type = 'tag'
+	xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
+	original = file('build/stylesheets-gen/docbook_xsl')
+	frame = file('build/frames')	
+}
+
+task physicalPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/physical/src-gen/physical_structure.xml')
+	type = 'pdf'
+	xsl = file('src/docbook/physical/src-gen/pdf/pdf_ext.xsl')
+}
+
+task physicalHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/physical/src-gen/physical_structure.xml')
+	type = 'html'
+	xsl = file('src/docbook/physical/src-gen/html/html_ext.xsl')
+	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
+}
+
+physicalTag.mustRunAfter(owlquery)
+physicalHTML.mustRunAfter(physicalTag)
+physicalPDF.mustRunAfter(physicalTag)
+
+task physicalRender() {
+	dependsOn owlquery
+	dependsOn physicalTag
+	dependsOn physicalPDF
+	dependsOn physicalHTML
+}
+
+/*
+ * Gradle tasks to render the docbook wbs document
+ */
+task wbsTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/wbs/src/wbs.xml')
+	type = 'tag'
+	xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
+	original = file('build/stylesheets-gen/docbook_xsl')
+	frame = file('build/frames')	
+}
+
+task wbsPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/wbs/src-gen/wbs.xml')
+	type = 'pdf'
+	xsl = file('src/docbook/wbs/src-gen/pdf/pdf_ext.xsl')
+}
+
+task wbsHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+	input = file('src/docbook/wbs/src-gen/wbs.xml')
+	type = 'html'
+	xsl = file('src/docbook/wbs/src-gen/html/html_ext.xsl')
+	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
+}
+
+wbsTag.mustRunAfter(owlquery)
+wbsPDF.mustRunAfter(wbsTag)
+wbsHTML.mustRunAfter(wbsTag)
+
+task wbsRender() {
+	dependsOn owlquery
+	dependsOn wbsTag
+	dependsOn wbsPDF
+	dependsOn wbsHTML
+}
+
+
+/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
 	dependsOn omlzip
 	dependsOn owlreason
-	dependsOn bikeshed2html
+	// dependsOn bikeshed2html
+	dependsOn stylesheetUnzip
 }
 
 /*

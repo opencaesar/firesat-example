@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:oc="https://opencaesar.github.io/" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>FireSat</title>
+    </info>
+    <section>
+        <title>FireSat Mission</title>
+        <para>The FireSat Mission pursues <oc:value of="pursues" 
+            where="mission" equalsTo="FireSat Mission" frame="firesat_mission.frame"/>,
+            which has the objective: <oc:value of="objective" 
+                where="mission" equalsTo="FireSat Mission" frame="firesat_mission.frame"/>.
+            The FireSat project operates in these environments:
+            <oc:table frame="env.frame" title="FireSat Enviroments">
+                <oc:column name="Environment" target="env"/>
+            </oc:table> </para>
+        <para>
+            The stakeholders of this mission are:
+            <oc:table frame="stakeholder.frame"
+                filter="mission = FireSat Mission">
+                <oc:column name="Stakeholder" target="holder"/>
+            </oc:table> 
+        </para>
+    </section>
+    <section>
+        <title>FireSat Project</title>
+        <para>The FireSat project deploys multiple work packages in pursuit of the FireSat Mission.
+        These work packages contain data on the products needed for this project and describes how these
+        products should be built.</para>
+        <oc:table frame="workpackages.frame" title="Main Work Packages" filter="project = FireSat Project">
+            <oc:column name="Work Package" target="wp"/>
+            <oc:column name="Supplies" target="supplies"/>
+            <oc:column name="Providing Organization" target="org"/>
+        </oc:table>
+        <para>Some work packages authorize other work packages to further break down the work and 
+        details needed to supply a certain part. These sub work packages often deal with subsystems
+        that make up the whole system that the main work package focsues on. The following sections
+        go over the main work packages and note any sub work packages.</para>
+        <oc:section title="_wp_" frame="workpackages.frame" filter="project = FireSat Project">
+            <oc:var name="wp" target="wp"/>
+            <oc:var name="mainSup" target="supplies"/>
+            <oc:var name="mainOrg" target="org"/>
+            <para>_wp_ focuses on the _mainSup_ and is the responsibility of _mainOrg_.</para>
+            <oc:table title="_wp_'s Sub Work Packages" frame="subpackage.frame" filter="wp = _wp_">
+                <oc:column name="Sub Work Package" target="subpackage"/>
+                <oc:column name="Supplies" target="subSupply"/>
+                <oc:column name="Providing Organization" target="subOrg"/>
+            </oc:table>
+            
+        </oc:section>
+    </section>
+</chapter>
