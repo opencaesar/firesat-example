@@ -160,7 +160,7 @@ task stylesheetUnzip(type: Copy) {
 /*
  * Gradle tasks to render the docbook physical_structure
  */
-task physicalTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+task physicalTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
 	input = file('src/docbook/physical/src/physical_structure.xml')
 	type = 'tag'
 	xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
@@ -195,7 +195,7 @@ task physicalRender() {
 /*
  * Gradle tasks to render the docbook wbs document
  */
-task wbsTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask) {
+task wbsTag(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
 	input = file('src/docbook/wbs/src/wbs.xml')
 	type = 'tag'
 	xsl = file('build/stylesheets-gen/tag/all_transformations.xsl')
@@ -235,7 +235,6 @@ task build() {
 	dependsOn omlzip
 	dependsOn owlreason
 	dependsOn bikeshed2html
-	dependsOn stylesheetUnzip
 }
 
 /*
