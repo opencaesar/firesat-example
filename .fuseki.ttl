@@ -1,0 +1,19 @@
+@prefix fuseki:  <http://jena.apache.org/fuseki#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tdb:     <http://jena.hpl.hp.com/2008/tdb#> .
+@prefix ja:      <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix :        <#> .
+
+[] rdf:type fuseki:Server .
+
+<#service> rdf:type fuseki:Service ;
+    rdfs:label          "Dataset with SHACL validation" ;
+    fuseki:name         "firesat" ;														# See the endpoint url in build.gradle
+    fuseki:serviceReadWriteGraphStore "data" ;											# SPARQL Graph store protocol (read and write)
+    fuseki:endpoint 	[ fuseki:operation fuseki:query ;	fuseki:name "sparql"  ] ;	# SPARQL query service
+    fuseki:endpoint 	[ fuseki:operation fuseki:shacl ;	fuseki:name "shacl" ] ;		# SHACL query service
+    fuseki:dataset      <#dataset> .
+
+## In memory transactional dataset
+<#dataset> rdf:type ja:MemoryDataset.

@@ -52,12 +52,12 @@ You must first have Bikeshed installed from [here](https://tabatkins.github.io/b
 ```
 
 ## Run Fuseki Locally
-Download the [Jena Fuseki](https://jena.apache.org/download/index.cgi) distribution and run the server locally:
+Download the [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi) distribution and run the server locally:
 
 MacOS/Linux:
 ```
 cd fuseki-distribution-folder
-./fuseki-server
+./fuseki-server --config=
 ```
 Windows:
 ```
