@@ -34,6 +34,83 @@ Run reasoner, generate docs, and archive sources
 ```
 Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
 
+## Run SHACL Query (curl)
+
+```
+curl -XPOST --data-binary @src/shacl/fse-shapes.ttl  \
+	--header 'Content-type: text/turtle' \
+	--header 'Accept: text/turtle' \
+	'http://localhost:3030/firesat/shacl?graph=default'
+@prefix :      <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrl:  <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix project: <http://imce.jpl.nasa.gov/foundation/project#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix analysis: <http://imce.jpl.nasa.gov/foundation/analysis#> .
+@prefix oml:   <http://opencaesar.io/oml#> .
+@prefix mission: <http://imce.jpl.nasa.gov/foundation/mission#> .
+@prefix fse-shapes: <http://imce.jpl.nasa.gov/discipline/fse/fse-shapes#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fse:   <http://imce.jpl.nasa.gov/discipline/fse/fse#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix base:  <http://imce.jpl.nasa.gov/foundation/base#> .
+
+[ a            sh:ValidationReport ;
+  sh:conforms  false ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  <http://opencaesar.io/programs/earth-science/projects/firesat/firesat#WP07-incomplete> ;
+                 sh:resultMessage              "<http://opencaesar.io/programs/earth-science/projects/firesat/firesat#WP07-incomplete>, a project:WorkPackage, must supply some fse:Subsystem." ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                fse-shapes:WorkPackage_supplies_some_Subsystem_sparql ;
+                 sh:value                      <http://opencaesar.io/programs/earth-science/projects/firesat/firesat#WP07-incomplete>
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  :Spacecraft ;
+                 sh:resultMessage              "maxCount[1]: Invalid cardinality: expected max 1: Got count = 2" ;
+                 sh:resultPath                 project:isSuppliedBy ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:MaxCountConstraintComponent ;
+                 sh:sourceShape                _:b0
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  :Lander ;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0" ;
+                 sh:resultPath                 project:isSuppliedBy ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent ;
+                 sh:sourceShape                _:b0
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  <http://opencaesar.io/programs/earth-science/projects/firesat/firesat#WP07-incomplete> ;
+                 sh:resultMessage              "minCount[1]: Invalid cardinality: expected min 1: Got count = 0" ;
+                 sh:resultPath                 project:supplies ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:MinCountConstraintComponent ;
+                 sh:sourceShape                [] 
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  :Spacecraft ;
+                 sh:resultMessage              "<http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc#Spacecraft>, an fse:Subsystem, must be supplied by exactly 1 project:WorkPackage instead of 2." ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                fse-shapes:Susbystem_supplied_by_one_WorkPackage_sparql ;
+                 sh:value                      :Spacecraft
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  :Lander ;
+                 sh:resultMessage              "<http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc#Lander>, an fse:Subsystem, must be supplied by exactly 1 project:WorkPackage instead of 0." ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:SPARQLConstraintComponent ;
+                 sh:sourceShape                fse-shapes:Susbystem_supplied_by_one_WorkPackage_sparql ;
+                 sh:value                      :Lander
+               ]
+] .
+```
+
 ## Run Query
 ```
 ./gradlew owlquery
@@ -57,12 +134,12 @@ Download the [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi) di
 MacOS/Linux:
 ```
 cd fuseki-distribution-folder
-./fuseki-server --config=
+./fuseki-server --config=<path to this project>/.fuseki.ttl
 ```
 Windows:
 ```
 cd fuseki-distribution-folder
-fuseki-server.bat
+fuseki-server.bat --config=<path to this project>\.fuseki.ttl
 ```
 By default, the server will be running at http://localhost:3030
 

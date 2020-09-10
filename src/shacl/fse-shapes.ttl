@@ -1,0 +1,118 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+@prefix project: <http://imce.jpl.nasa.gov/foundation/project#> .
+@prefix fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#> .
+
+# The namespace for fse shacl shapes.
+@prefix fse-shapes: <http://imce.jpl.nasa.gov/discipline/fse/fse-shapes#> .
+
+
+# SHACL-SPARQL supports writing SPARQL by separating two parts:
+# 1) the SPARQL prologue corresponding to instances of sh:declare individuals available in the sh:prefixes ontology.
+#    See: https://www.w3.org/TR/sparql11-query/#rPrologue 
+# 2) the SPARQL query statement: select or ask. 
+#    See: https://www.w3.org/TR/sparql11-query/#rSelectQuery
+#    See: https://www.w3.org/TR/sparql11-query/#rAskQuery
+
+# The following defines `fse-shapes` as the ontology for sh:declare prefixes to be added to each SPARQL query.
+fse-shapes:
+	a owl:Ontology ;
+	owl:imports sh: ;
+	sh:declare [
+		sh:prefix "project" ;
+		sh:namespace "http://imce.jpl.nasa.gov/foundation/project#"^^xsd:anyURI ;
+	] ;
+	sh:declare [
+		sh:prefix "fse" ;
+		sh:namespace "http://imce.jpl.nasa.gov/discipline/fse/fse#"^^xsd:anyURI ;
+	]  ;
+	sh:declare [
+		sh:prefix "rdf" ;
+		sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+	] .
+	
+# -------------------------------------------------------------
+# Constraint 1 (SHACL-CORE): A project:WorkPackage must project:supply some fse:Subsystem.
+# -------------------------------------------------------------
+
+fse-shapes:WorkPackage_supplies_some_Subsystem_shacl
+	a sh:NodeShape ;
+	sh:targetClass project:WorkPackage ;
+	sh:property [
+		sh:path project:supplies ;
+		sh:class fse:Subsystem ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 1 ;
+	] ;
+	sh:closed false .
+	
+# -------------------------------------------------------------
+# Constraint 1 (SHACL-SPARQL): A project:WorkPackage must project:supply some fse:Subsystem.
+# -------------------------------------------------------------
+
+fse-shapes:WorkPackage_supplies_some_Subsystem_sparql
+	a sh:NodeShape ;
+	sh:targetClass project:WorkPackage ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "{$this}, a project:WorkPackage, must supply some fse:Subsystem." ;
+		sh:prefixes fse-shapes: ;
+		sh:select """
+			SELECT DISTINCT $this ?sub
+			WHERE {
+				$this rdf:type project:WorkPackage .
+				FILTER NOT EXISTS { 
+					$this project:supplies ?sub .
+					?sub rdf:type fse:Subsystem .
+				}
+			}
+			""" ;
+	] ;
+	sh:closed false .
+	
+	
+# -------------------------------------------------------------
+# Constraint 2 (SHACL-CORE): An fse:Subsystem must be project:isSuppliedBy exactly 1 project:WorkPackage.
+# -------------------------------------------------------------
+
+fse-shapes:Susbystem_supplied_by_one_WorkPackage_shacl
+	a sh:NodeShape ;
+	sh:targetClass fse:Subsystem ;
+	sh:property [
+		sh:path project:isSuppliedBy ;
+		sh:class project:WorkPackage ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
+	
+# -------------------------------------------------------------
+# Constraint 2 (SHACL-SPARQL): An fse:Subsystem must be project:isSuppliedBy exactly 1 project:WorkPackage.
+# -------------------------------------------------------------
+	
+fse-shapes:Susbystem_supplied_by_one_WorkPackage_sparql
+	a sh:NodeShape ;
+	sh:targetClass fse:Subsystem ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "{$this}, an fse:Subsystem, must be supplied by exactly 1 project:WorkPackage instead of {?c}." ;
+		sh:prefixes fse-shapes: ;
+		sh:select """
+			SELECT DISTINCT $this (COUNT(?wp) AS ?c)
+			WHERE {
+				$this rdf:type fse:Subsystem .
+				OPTIONAL {
+					$this project:isSuppliedBy ?wp .
+				}
+			}
+			GROUP BY $this
+			HAVING (COUNT(?wp) != 1)
+			""" ;
+	] ;
+	sh:closed false .
+	
