@@ -1221,9 +1221,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 6cf40e14, updated Fri Aug 14 17:42:41 2020 -0700" name="generator">
+  <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/vocabularies//build/dependencies/imce.jpl.nasa.gov/foundation/metrology" rel="canonical">
-  <meta content="e871f22ddf101959727101e1d39b935e61aded1f" name="document-revision">
+  <meta content="e92fb7e4a4546b96277350d251900ca24dc907a3" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1417,7 +1417,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Metrology</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-08-17">17 August 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-09-14">14 September 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1453,37 +1453,37 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#Thing"><span class="secno">3.1</span> <span class="content"><span>Thing</span></span></a>
-      <li><a href="#Component"><span class="secno">3.2</span> <span class="content"><span>Component</span></span></a>
+      <li><a href="#MetrologicalEntity"><span class="secno">3.1</span> <span class="content"><span>MetrologicalEntity</span></span></a>
+      <li><a href="#Number"><span class="secno">3.2</span> <span class="content"><span>Number</span></span></a>
+      <li><a href="#QuantityKind"><span class="secno">3.3</span> <span class="content"><span>QuantityKind</span></span></a>
+      <li><a href="#OrdinalQuantityKind"><span class="secno">3.4</span> <span class="content"><span>OrdinalQuantityKind</span></span></a>
+      <li><a href="#UnitaryQuantityKind"><span class="secno">3.5</span> <span class="content"><span>UnitaryQuantityKind</span></span></a>
+      <li><a href="#BaseQuantityKind"><span class="secno">3.6</span> <span class="content"><span>BaseQuantityKind</span></span></a>
+      <li><a href="#DerivedQuantityKind"><span class="secno">3.7</span> <span class="content"><span>DerivedQuantityKind</span></span></a>
+      <li><a href="#SystemOfQuantities"><span class="secno">3.8</span> <span class="content"><span>SystemOfQuantities</span></span></a>
+      <li><a href="#Reference"><span class="secno">3.9</span> <span class="content"><span>Reference</span></span></a>
+      <li><a href="#MeasurementProcedure"><span class="secno">3.10</span> <span class="content"><span>MeasurementProcedure</span></span></a>
+      <li><a href="#ReferenceMaterial"><span class="secno">3.11</span> <span class="content"><span>ReferenceMaterial</span></span></a>
+      <li><a href="#MeasurementUnit"><span class="secno">3.12</span> <span class="content"><span>MeasurementUnit</span></span></a>
+      <li><a href="#SimpleMeasurementUnit"><span class="secno">3.13</span> <span class="content"><span>SimpleMeasurementUnit</span></span></a>
+      <li><a href="#DerivedMeasurementUnit"><span class="secno">3.14</span> <span class="content"><span>DerivedMeasurementUnit</span></span></a>
+      <li><a href="#SystemOfUnits"><span class="secno">3.15</span> <span class="content"><span>SystemOfUnits</span></span></a>
+      <li><a href="#QuantityValue"><span class="secno">3.16</span> <span class="content"><span>QuantityValue</span></span></a>
+      <li><a href="#OrdinalQuantityValue"><span class="secno">3.17</span> <span class="content"><span>OrdinalQuantityValue</span></span></a>
+      <li><a href="#UnitaryQuantityValue"><span class="secno">3.18</span> <span class="content"><span>UnitaryQuantityValue</span></span></a>
      </ol>
     <li>
-     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
+     <a href="#Aspects"><span class="secno">4</span> <span class="content">Aspects</span></a>
      <ol class="toc">
-      <li><a href="#MetrologicalEntity"><span class="secno">4.1</span> <span class="content"><span>MetrologicalEntity</span></span></a>
-      <li><a href="#Number"><span class="secno">4.2</span> <span class="content"><span>Number</span></span></a>
-      <li><a href="#QuantityKind"><span class="secno">4.3</span> <span class="content"><span>QuantityKind</span></span></a>
-      <li><a href="#OrdinalQuantityKind"><span class="secno">4.4</span> <span class="content"><span>OrdinalQuantityKind</span></span></a>
-      <li><a href="#UnitaryQuantityKind"><span class="secno">4.5</span> <span class="content"><span>UnitaryQuantityKind</span></span></a>
-      <li><a href="#BaseQuantityKind"><span class="secno">4.6</span> <span class="content"><span>BaseQuantityKind</span></span></a>
-      <li><a href="#DerivedQuantityKind"><span class="secno">4.7</span> <span class="content"><span>DerivedQuantityKind</span></span></a>
-      <li><a href="#SystemOfQuantities"><span class="secno">4.8</span> <span class="content"><span>SystemOfQuantities</span></span></a>
-      <li><a href="#Reference"><span class="secno">4.9</span> <span class="content"><span>Reference</span></span></a>
-      <li><a href="#MeasurementProcedure"><span class="secno">4.10</span> <span class="content"><span>MeasurementProcedure</span></span></a>
-      <li><a href="#ReferenceMaterial"><span class="secno">4.11</span> <span class="content"><span>ReferenceMaterial</span></span></a>
-      <li><a href="#MeasurementUnit"><span class="secno">4.12</span> <span class="content"><span>MeasurementUnit</span></span></a>
-      <li><a href="#SimpleMeasurementUnit"><span class="secno">4.13</span> <span class="content"><span>SimpleMeasurementUnit</span></span></a>
-      <li><a href="#DerivedMeasurementUnit"><span class="secno">4.14</span> <span class="content"><span>DerivedMeasurementUnit</span></span></a>
-      <li><a href="#SystemOfUnits"><span class="secno">4.15</span> <span class="content"><span>SystemOfUnits</span></span></a>
-      <li><a href="#QuantityValue"><span class="secno">4.16</span> <span class="content"><span>QuantityValue</span></span></a>
-      <li><a href="#OrdinalQuantityValue"><span class="secno">4.17</span> <span class="content"><span>OrdinalQuantityValue</span></span></a>
-      <li><a href="#UnitaryQuantityValue"><span class="secno">4.18</span> <span class="content"><span>UnitaryQuantityValue</span></span></a>
+      <li><a href="#Thing"><span class="secno">4.1</span> <span class="content"><span>Thing</span></span></a>
+      <li><a href="#Component"><span class="secno">4.2</span> <span class="content"><span>Component</span></span></a>
      </ol>
     <li>
-     <a href="#Relations"><span class="secno">5</span> <span class="content">Relations</span></a>
+     <a href="#Relations"><span class="secno">5</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
       <li><a href="#HasGeneralQuantityKind"><span class="secno">5.1</span> <span class="content"><span>HasGeneralQuantityKind</span></span></a>
       <li><a href="#HasQuantityFactor"><span class="secno">5.2</span> <span class="content"><span>HasQuantityFactor</span></span></a>
@@ -1520,80 +1520,55 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <li data-md>
       <p>metrology: <a href="metrology.html">http://imce.jpl.nasa.gov/foundation/metrology</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
       <p>owl: <a href="http://www.w3.org/2002/07/owl.html">http://www.w3.org/2002/07/owl</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Thing"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thing">Thing<a class="self-link" href="#thing"></a></dfn></span><a class="self-link" href="#Thing"></a></h3>
-    <p>metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling.</p>
-    <p>metrology:Thing is defined as an OML aspect with the intent that it should be the disjoint union
-    of the toplevel categories of entities involved in metrological modeling.</p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#component" id="ref-for-component">Component</a>, <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity">MetrologicalEntity</a>, <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number">Number</a></p>
-    <h3 class="heading settled" data-level="3.2" id="Component"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="component">Component<a class="self-link" href="#component"></a></dfn></span><a class="self-link" href="#Component"></a></h3>
-    <p>metrology:Component is the root of the taxonomy of OML entities corresponding to a phenomenon, body or substance that
-    can be the subject of:</p>
-    <ul>
-     <li data-md>
-      <p>metrological characterizations via quantity properties</p>
-     <li data-md>
-      <p>metrological measurement processes for obtaining quantity values for such quantity properties.</p>
-    </ul>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing">Thing</a></p>
-    <p><em>Relations having Component as domain:</em></p>
-    <ul>
-     <li data-md>
-      <p>Component <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity">ordinalQuantity</a> <a data-link-type="dfn" href="metrology.html#ordinalquantityvalue" id="ref-for-ordinalquantityvalue">OrdinalQuantityValue</a></p>
-     <li data-md>
-      <p>Component <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity">quantity</a> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue">QuantityValue</a></p>
-     <li data-md>
-      <p>Component <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity">unitaryQuantity</a> <a data-link-type="dfn" href="metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue">UnitaryQuantityValue</a></p>
-    </ul>
-    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="MetrologicalEntity"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metrologicalentity">MetrologicalEntity<a class="self-link" href="#metrologicalentity"></a></dfn></span><a class="self-link" href="#MetrologicalEntity"></a></h3>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="MetrologicalEntity"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metrologicalentity">MetrologicalEntity<a class="self-link" href="#metrologicalentity"></a></dfn></span><a class="self-link" href="#MetrologicalEntity"></a></h3>
     <p>metrology:MetrologicalEntity is the root of the toplevel category of OML concepts corresponding to VIM3 definitions.</p>
     <p class="note" role="note"><span>Note:</span> The SysML 1.4 QUDV library is sufficiently expressive to cover VIM3 chapter 1
     (See: http://www.omg.org/cgi-bin/doc?syseng/2014-03-08). Even though the QUDV constructs
     are definied as SysML Blocks, the modeling in OML involves different kinds of constructs, including
     OML concepts and relation entities. Those QUDV constructs that map to OML Concepts are defined
     as specializations of mbase:MetrologicalEntity.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing①">Thing</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind">QuantityKind</a>, <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue①">QuantityValue</a>, <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference">Reference</a>, <a data-link-type="dfn" href="metrology.html#systemofquantities" id="ref-for-systemofquantities">SystemOfQuantities</a>, <a data-link-type="dfn" href="metrology.html#systemofunits" id="ref-for-systemofunits">SystemOfUnits</a></p>
-    <h3 class="heading settled" data-level="4.2" id="Number"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="number">Number<a class="self-link" href="#number"></a></dfn></span><a class="self-link" href="#Number"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing">Thing</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind">QuantityKind</a>, <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue">QuantityValue</a>, <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference">Reference</a>, <a data-link-type="dfn" href="metrology.html#systemofquantities" id="ref-for-systemofquantities">SystemOfQuantities</a>, <a data-link-type="dfn" href="metrology.html#systemofunits" id="ref-for-systemofunits">SystemOfUnits</a></p>
+    <h3 class="heading settled" data-level="3.2" id="Number"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="number">Number<a class="self-link" href="#number"></a></dfn></span><a class="self-link" href="#Number"></a></h3>
     <p>metrology:Number is the root of the taxonomy of OML entities corresponding to a representation of the numerical value of a quantity [VIM3-1.20].
     A numerical quantity value is an OML entity instead of an OML datatype because it can be referenced in the context of a numerical value equation [VIM3-1.25].</p>
     <p class="note" role="note"><span>Note:</span> The representation of the numerical quantity value is deliberately left open to be specified in library extensions.
     This strategy provides ample latitude for choosing suitable datatypes for representing a numerical quantity value
     optionally with additional information such as measurement precision [VIM3-2.15].</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing②">Thing</a></p>
-    <p><em>Relations having Number as range:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing①">Thing</a></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue②">QuantityValue</a> <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber">hasNumber</a> Number</p>
+      <p><a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue①">QuantityValue</a> <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber">hasNumber</a> Number</p>
     </ul>
-    <h3 class="heading settled" data-level="4.3" id="QuantityKind"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantitykind">QuantityKind<a class="self-link" href="#quantitykind"></a></dfn></span><a class="self-link" href="#QuantityKind"></a></h3>
+    <h3 class="heading settled" data-level="3.3" id="QuantityKind"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantitykind">QuantityKind<a class="self-link" href="#quantitykind"></a></dfn></span><a class="self-link" href="#QuantityKind"></a></h3>
     <p>common defining aspect of mutually comparable properties having a magnitude.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity①">MetrologicalEntity</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantitykind" id="ref-for-ordinalquantitykind">OrdinalQuantityKind</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind">UnitaryQuantityKind</a></p>
-    <p><em>Relations having QuantityKind as range:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity">MetrologicalEntity</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantitykind" id="ref-for-ordinalquantitykind">OrdinalQuantityKind</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind">UnitaryQuantityKind</a></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity①">Quantity</a> <a data-link-type="dfn" href="metrology.html#hasquantitykind" id="ref-for-hasquantitykind">hasQuantityKind</a> QuantityKind</p>
+      <p><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity">Quantity</a> <a data-link-type="dfn" href="metrology.html#hasquantitykind" id="ref-for-hasquantitykind">hasQuantityKind</a> QuantityKind</p>
     </ul>
-    <h3 class="heading settled" data-level="4.4" id="OrdinalQuantityKind"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantitykind">OrdinalQuantityKind<a class="self-link" href="#ordinalquantitykind"></a></dfn></span><a class="self-link" href="#OrdinalQuantityKind"></a></h3>
+    <h3 class="heading settled" data-level="3.4" id="OrdinalQuantityKind"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantitykind">OrdinalQuantityKind<a class="self-link" href="#ordinalquantitykind"></a></dfn></span><a class="self-link" href="#OrdinalQuantityKind"></a></h3>
     <p>A QuantityKind for Quantities that are rankable by magnitude, but are neither subtractive nor divisible.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind①">QuantityKind</a></p>
-    <h3 class="heading settled" data-level="4.5" id="UnitaryQuantityKind"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantitykind">UnitaryQuantityKind<a class="self-link" href="#unitaryquantitykind"></a></dfn></span><a class="self-link" href="#UnitaryQuantityKind"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind①">QuantityKind</a></p>
+    <h3 class="heading settled" data-level="3.5" id="UnitaryQuantityKind"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantitykind">UnitaryQuantityKind<a class="self-link" href="#unitaryquantitykind"></a></dfn></span><a class="self-link" href="#UnitaryQuantityKind"></a></h3>
     <p>A QuantityKind for Quantities with magnitudes expressed as a measurement unit multiplied by a number.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind②">QuantityKind</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#basequantitykind" id="ref-for-basequantitykind">BaseQuantityKind</a>, <a data-link-type="dfn" href="metrology.html#derivedquantitykind" id="ref-for-derivedquantitykind">DerivedQuantityKind</a></p>
-    <p><em>Relations having UnitaryQuantityKind as domain:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind②">QuantityKind</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#basequantitykind" id="ref-for-basequantitykind">BaseQuantityKind</a>, <a data-link-type="dfn" href="metrology.html#derivedquantitykind" id="ref-for-derivedquantitykind">DerivedQuantityKind</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
       <p>UnitaryQuantityKind <a data-link-type="dfn" href="metrology.html#hasgeneralquantitykind" id="ref-for-hasgeneralquantitykind">hasGeneralQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①">UnitaryQuantityKind</a></p>
     </ul>
-    <p><em>Relations having UnitaryQuantityKind as range:</em></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind②">UnitaryQuantityKind</a> <a data-link-type="dfn" href="metrology.html#hasgeneralquantitykind" id="ref-for-hasgeneralquantitykind①">hasGeneralQuantityKind</a> UnitaryQuantityKind</p>
@@ -1602,192 +1577,210 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <li data-md>
       <p><a data-link-type="dfn" href="metrology.html#systemofquantities" id="ref-for-systemofquantities①">SystemOfQuantities</a> <a data-link-type="dfn" href="metrology.html#systemhasquantitykind" id="ref-for-systemhasquantitykind">systemHasQuantityKind</a> UnitaryQuantityKind</p>
     </ul>
-    <h3 class="heading settled" data-level="4.6" id="BaseQuantityKind"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="basequantitykind">BaseQuantityKind<a class="self-link" href="#basequantitykind"></a></dfn></span><a class="self-link" href="#BaseQuantityKind"></a></h3>
+    <h3 class="heading settled" data-level="3.6" id="BaseQuantityKind"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="basequantitykind">BaseQuantityKind<a class="self-link" href="#basequantitykind"></a></dfn></span><a class="self-link" href="#BaseQuantityKind"></a></h3>
     <p>A BaseQuantityKind is a QuantityKind that is defined independently of any other UnitaryQuantityKind.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind③">UnitaryQuantityKind</a></p>
-    <p><em>Supertype Relations having BaseQuantityKind as domain:</em></p>
-    <ul>
-     <li data-md>
-      <p>BaseQuantityKind <a data-link-type="dfn" href="metrology.html#hasgeneralquantitykind" id="ref-for-hasgeneralquantitykind②">hasGeneralQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind④">UnitaryQuantityKind</a></p>
-    </ul>
-    <h3 class="heading settled" data-level="4.7" id="DerivedQuantityKind"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedquantitykind">DerivedQuantityKind<a class="self-link" href="#derivedquantitykind"></a></dfn></span><a class="self-link" href="#DerivedQuantityKind"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind③">UnitaryQuantityKind</a></p>
+    <h3 class="heading settled" data-level="3.7" id="DerivedQuantityKind"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedquantitykind">DerivedQuantityKind<a class="self-link" href="#derivedquantitykind"></a></dfn></span><a class="self-link" href="#DerivedQuantityKind"></a></h3>
     <p>A DerivedQuantityKind is a UnitaryQuantityKind defined as the product of powers of UnitaryQuantityKinds.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑤">UnitaryQuantityKind</a></p>
-    <p><em>Relations having DerivedQuantityKind as domain:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind④">UnitaryQuantityKind</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>DerivedQuantityKind <a data-link-type="dfn" href="metrology.html#hasquantityfactor" id="ref-for-hasquantityfactor①">hasQuantityFactor</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑥">UnitaryQuantityKind</a></p>
+      <p>DerivedQuantityKind <a data-link-type="dfn" href="metrology.html#hasquantityfactor" id="ref-for-hasquantityfactor①">hasQuantityFactor</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑤">UnitaryQuantityKind</a></p>
     </ul>
-    <p><em>Supertype Relations having DerivedQuantityKind as domain:</em></p>
-    <ul>
-     <li data-md>
-      <p>DerivedQuantityKind <a data-link-type="dfn" href="metrology.html#hasgeneralquantitykind" id="ref-for-hasgeneralquantitykind③">hasGeneralQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑦">UnitaryQuantityKind</a></p>
-    </ul>
-    <h3 class="heading settled" data-level="4.8" id="SystemOfQuantities"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities">SystemOfQuantities<a class="self-link" href="#systemofquantities"></a></dfn></span><a class="self-link" href="#SystemOfQuantities"></a></h3>
+    <h3 class="heading settled" data-level="3.8" id="SystemOfQuantities"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities">SystemOfQuantities<a class="self-link" href="#systemofquantities"></a></dfn></span><a class="self-link" href="#SystemOfQuantities"></a></h3>
     <p>A SystemOfQuantities is a collection of UnitaryQuantityKinds that can be partitioned into two groups:
     base and derived quantity kinds. Note that this partitioning is independent of how the UnitaryQuantityKinds are defined.
     For example, a BaseQuantityKind may be a base quantity kind for one SystemOfQuantities and a derived quantity kind for another one.
     Similarly, a DerivedQuantityKind may be a base quantity kind for one SystemOfQuantities and a derived quantity kind for another one.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity②">MetrologicalEntity</a></p>
-    <p><em>Relations having SystemOfQuantities as domain:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity①">MetrologicalEntity</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>SystemOfQuantities <a data-link-type="dfn" href="metrology.html#systemhasquantitykind" id="ref-for-systemhasquantitykind①">systemHasQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑧">UnitaryQuantityKind</a></p>
+      <p>SystemOfQuantities <a data-link-type="dfn" href="metrology.html#systemhasquantitykind" id="ref-for-systemhasquantitykind①">systemHasQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑥">UnitaryQuantityKind</a></p>
     </ul>
-    <h3 class="heading settled" data-level="4.9" id="Reference"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reference">Reference<a class="self-link" href="#reference"></a></dfn></span><a class="self-link" href="#Reference"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity③">MetrologicalEntity</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure">MeasurementProcedure</a>, <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit">MeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#referencematerial" id="ref-for-referencematerial">ReferenceMaterial</a></p>
-    <p><em>Relations having Reference as range:</em></p>
+    <h3 class="heading settled" data-level="3.9" id="Reference"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reference">Reference<a class="self-link" href="#reference"></a></dfn></span><a class="self-link" href="#Reference"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity②">MetrologicalEntity</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure">MeasurementProcedure</a>, <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit">MeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#referencematerial" id="ref-for-referencematerial">ReferenceMaterial</a></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue③">QuantityValue</a> <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference">hasReference</a> Reference</p>
+      <p><a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue②">QuantityValue</a> <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference">hasReference</a> Reference</p>
     </ul>
-    <h3 class="heading settled" data-level="4.10" id="MeasurementProcedure"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementprocedure">MeasurementProcedure<a class="self-link" href="#measurementprocedure"></a></dfn></span><a class="self-link" href="#MeasurementProcedure"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference①">Reference</a></p>
-    <h3 class="heading settled" data-level="4.11" id="ReferenceMaterial"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="referencematerial">ReferenceMaterial<a class="self-link" href="#referencematerial"></a></dfn></span><a class="self-link" href="#ReferenceMaterial"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference②">Reference</a></p>
-    <h3 class="heading settled" data-level="4.12" id="MeasurementUnit"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementunit">MeasurementUnit<a class="self-link" href="#measurementunit"></a></dfn></span><a class="self-link" href="#MeasurementUnit"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference③">Reference</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#simplemeasurementunit" id="ref-for-simplemeasurementunit">SimpleMeasurementUnit</a></p>
-    <p><em>Relations having MeasurementUnit as range:</em></p>
+    <h3 class="heading settled" data-level="3.10" id="MeasurementProcedure"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementprocedure">MeasurementProcedure<a class="self-link" href="#measurementprocedure"></a></dfn></span><a class="self-link" href="#MeasurementProcedure"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference①">Reference</a></p>
+    <h3 class="heading settled" data-level="3.11" id="ReferenceMaterial"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="referencematerial">ReferenceMaterial<a class="self-link" href="#referencematerial"></a></dfn></span><a class="self-link" href="#ReferenceMaterial"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference②">Reference</a></p>
+    <h3 class="heading settled" data-level="3.12" id="MeasurementUnit"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementunit">MeasurementUnit<a class="self-link" href="#measurementunit"></a></dfn></span><a class="self-link" href="#MeasurementUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference③">Reference</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#simplemeasurementunit" id="ref-for-simplemeasurementunit">SimpleMeasurementUnit</a></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="metrology.html#systemofunits" id="ref-for-systemofunits①">SystemOfUnits</a> <a data-link-type="dfn" href="metrology.html#hasunit" id="ref-for-hasunit">hasUnit</a> MeasurementUnit</p>
      <li data-md>
       <p><a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">DerivedMeasurementUnit</a> <a data-link-type="dfn" href="metrology.html#hasunitfactor" id="ref-for-hasunitfactor">hasUnitFactor</a> MeasurementUnit</p>
     </ul>
-    <h3 class="heading settled" data-level="4.13" id="SimpleMeasurementUnit"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="simplemeasurementunit">SimpleMeasurementUnit<a class="self-link" href="#simplemeasurementunit"></a></dfn></span><a class="self-link" href="#SimpleMeasurementUnit"></a></h3>
+    <h3 class="heading settled" data-level="3.13" id="SimpleMeasurementUnit"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="simplemeasurementunit">SimpleMeasurementUnit<a class="self-link" href="#simplemeasurementunit"></a></dfn></span><a class="self-link" href="#SimpleMeasurementUnit"></a></h3>
     <p>A SimpleMeasurementUnit is a MeasurementUnit that is defined independently of any other MeasurementUnits.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①">MeasurementUnit</a></p>
-    <h3 class="heading settled" data-level="4.14" id="DerivedMeasurementUnit"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedmeasurementunit">DerivedMeasurementUnit<a class="self-link" href="#derivedmeasurementunit"></a></dfn></span><a class="self-link" href="#DerivedMeasurementUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①">MeasurementUnit</a></p>
+    <h3 class="heading settled" data-level="3.14" id="DerivedMeasurementUnit"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedmeasurementunit">DerivedMeasurementUnit<a class="self-link" href="#derivedmeasurementunit"></a></dfn></span><a class="self-link" href="#DerivedMeasurementUnit"></a></h3>
     <p>A DerivedMeasurementUnit is a MeasurementUnit that is defined as the product of powers of other MeasurementUnits.</p>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit②">MeasurementUnit</a></p>
-    <p><em>Relations having DerivedMeasurementUnit as domain:</em></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit②">MeasurementUnit</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
       <p>DerivedMeasurementUnit <a data-link-type="dfn" href="metrology.html#hasunitfactor" id="ref-for-hasunitfactor①">hasUnitFactor</a> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit③">MeasurementUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="4.15" id="SystemOfUnits"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits">SystemOfUnits<a class="self-link" href="#systemofunits"></a></dfn></span><a class="self-link" href="#SystemOfUnits"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity④">MetrologicalEntity</a></p>
-    <p><em>Relations having SystemOfUnits as domain:</em></p>
+    <h3 class="heading settled" data-level="3.15" id="SystemOfUnits"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits">SystemOfUnits<a class="self-link" href="#systemofunits"></a></dfn></span><a class="self-link" href="#SystemOfUnits"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity③">MetrologicalEntity</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
       <p>SystemOfUnits <a data-link-type="dfn" href="metrology.html#hasunit" id="ref-for-hasunit①">hasUnit</a> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit④">MeasurementUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="4.16" id="QuantityValue"><span class="secno">4.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantityvalue">QuantityValue<a class="self-link" href="#quantityvalue"></a></dfn></span><a class="self-link" href="#QuantityValue"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑤">MetrologicalEntity</a></p>
-    <p><em>Specializations:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantityvalue" id="ref-for-ordinalquantityvalue①">OrdinalQuantityValue</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue①">UnitaryQuantityValue</a></p>
-    <p><em>Relations having QuantityValue as domain:</em></p>
+    <h3 class="heading settled" data-level="3.16" id="QuantityValue"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantityvalue">QuantityValue<a class="self-link" href="#quantityvalue"></a></dfn></span><a class="self-link" href="#QuantityValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity④">MetrologicalEntity</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantityvalue" id="ref-for-ordinalquantityvalue">OrdinalQuantityValue</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue">UnitaryQuantityValue</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>QuantityValue <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber①">hasNumber</a> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number①">Number</a></p>
+      <p>QuantityValue <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber①">hasNumber</a> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number">Number</a></p>
      <li data-md>
       <p>QuantityValue <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference①">hasReference</a> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference④">Reference</a></p>
     </ul>
-    <p><em>Relations having QuantityValue as range:</em></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component①">Component</a> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity②">quantity</a> QuantityValue</p>
+      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component">Component</a> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity①">quantity</a> QuantityValue</p>
     </ul>
-    <h3 class="heading settled" data-level="4.17" id="OrdinalQuantityValue"><span class="secno">4.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantityvalue">OrdinalQuantityValue<a class="self-link" href="#ordinalquantityvalue"></a></dfn></span><a class="self-link" href="#OrdinalQuantityValue"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue④">QuantityValue</a></p>
-    <p><em>Supertype Relations having OrdinalQuantityValue as domain:</em></p>
+    <h3 class="heading settled" data-level="3.17" id="OrdinalQuantityValue"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantityvalue">OrdinalQuantityValue<a class="self-link" href="#ordinalquantityvalue"></a></dfn></span><a class="self-link" href="#OrdinalQuantityValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue③">QuantityValue</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>OrdinalQuantityValue <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber②">hasNumber</a> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number②">Number</a></p>
-     <li data-md>
-      <p>OrdinalQuantityValue <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference②">hasReference</a> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑤">Reference</a></p>
+      <p>OrdinalQuantityValue <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference②">hasReference</a> <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure①">MeasurementProcedure</a></p>
     </ul>
-    <p><em>Relations having OrdinalQuantityValue as range:</em></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component②">Component</a> <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity①">ordinalQuantity</a> OrdinalQuantityValue</p>
+      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component①">Component</a> <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity">ordinalQuantity</a> OrdinalQuantityValue</p>
     </ul>
+    <h3 class="heading settled" data-level="3.18" id="UnitaryQuantityValue"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantityvalue">UnitaryQuantityValue<a class="self-link" href="#unitaryquantityvalue"></a></dfn></span><a class="self-link" href="#UnitaryQuantityValue"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue④">QuantityValue</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>Restricts range of <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference③">hasReference</a> to be an instance of <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure①">MeasurementProcedure</a></p>
+      <p>UnitaryQuantityValue <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference③">hasReference</a> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑤">MeasurementUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="4.18" id="UnitaryQuantityValue"><span class="secno">4.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantityvalue">UnitaryQuantityValue<a class="self-link" href="#unitaryquantityvalue"></a></dfn></span><a class="self-link" href="#UnitaryQuantityValue"></a></h3>
-    <p><em>Super entities:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue⑤">QuantityValue</a></p>
-    <p><em>Supertype Relations having UnitaryQuantityValue as domain:</em></p>
+    <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p>UnitaryQuantityValue <a data-link-type="dfn" href="metrology.html#hasnumber" id="ref-for-hasnumber③">hasNumber</a> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number③">Number</a></p>
-     <li data-md>
-      <p>UnitaryQuantityValue <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference④">hasReference</a> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑥">Reference</a></p>
+      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component②">Component</a> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity">unitaryQuantity</a> UnitaryQuantityValue</p>
     </ul>
-    <p><em>Relations having UnitaryQuantityValue as range:</em></p>
+    <h2 class="heading settled" data-level="4" id="Aspects"><span class="secno">4. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Thing"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thing">Thing<a class="self-link" href="#thing"></a></dfn></span><a class="self-link" href="#Thing"></a></h3>
+    <p>metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling.</p>
+    <p>metrology:Thing is defined as an OML aspect with the intent that it should be the disjoint union
+    of the toplevel categories of entities involved in metrological modeling.</p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#component" id="ref-for-component③">Component</a>, <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑤">MetrologicalEntity</a>, <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number①">Number</a></p>
+    <h3 class="heading settled" data-level="4.2" id="Component"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="component">Component<a class="self-link" href="#component"></a></dfn></span><a class="self-link" href="#Component"></a></h3>
+    <p>metrology:Component is the root of the taxonomy of OML entities corresponding to a phenomenon, body or substance that
+    can be the subject of:</p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#component" id="ref-for-component③">Component</a> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">unitaryQuantity</a> UnitaryQuantityValue</p>
+      <p>metrological characterizations via quantity properties</p>
+     <li data-md>
+      <p>metrological measurement processes for obtaining quantity values for such quantity properties.</p>
     </ul>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing②">Thing</a></p>
+    <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>Restricts range of <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference⑤">hasReference</a> to be an instance of <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑤">MeasurementUnit</a></p>
+      <p>Component <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity①">ordinalQuantity</a> <a data-link-type="dfn" href="metrology.html#ordinalquantityvalue" id="ref-for-ordinalquantityvalue①">OrdinalQuantityValue</a></p>
+     <li data-md>
+      <p>Component <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity②">quantity</a> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue⑤">QuantityValue</a></p>
+     <li data-md>
+      <p>Component <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">unitaryQuantity</a> <a data-link-type="dfn" href="metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue①">UnitaryQuantityValue</a></p>
     </ul>
-    <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relations</span><a class="self-link" href="#Relations"></a></h2>
+    <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="5.1" id="HasGeneralQuantityKind"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasgeneralquantitykind">HasGeneralQuantityKind<a class="self-link" href="#hasgeneralquantitykind"></a></dfn></span><a class="self-link" href="#HasGeneralQuantityKind"></a></h3>
     <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑨">UnitaryQuantityKind</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①⓪">UnitaryQuantityKind</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasGeneralQuantityKind" data-dfn-type="attribute" data-export id="dom-hasgeneralquantitykind-hasgeneralquantitykind"><code>hasGeneralQuantityKind</code><a class="self-link" href="#dom-hasgeneralquantitykind-hasgeneralquantitykind"></a></dfn></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑦">UnitaryQuantityKind</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑧">UnitaryQuantityKind</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasGeneralQuantityKind" data-dfn-type="attribute" data-export id="dom-hasgeneralquantitykind-hasgeneralquantitykind"><code>hasGeneralQuantityKind</code><a class="self-link" href="#dom-hasgeneralquantitykind-hasgeneralquantitykind"></a></dfn></p>
     <h3 class="heading settled" data-level="5.2" id="HasQuantityFactor"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasquantityfactor">HasQuantityFactor<a class="self-link" href="#hasquantityfactor"></a></dfn></span><a class="self-link" href="#HasQuantityFactor"></a></h3>
     <p><em>Attributes:</em> Irreflexive</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#derivedquantitykind" id="ref-for-derivedquantitykind②">DerivedQuantityKind</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①①">UnitaryQuantityKind</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasQuantityFactor" data-dfn-type="attribute" data-export id="dom-hasquantityfactor-hasquantityfactor"><code>hasQuantityFactor</code><a class="self-link" href="#dom-hasquantityfactor-hasquantityfactor"></a></dfn></p>
-    <p><em>Direct Properties:</em> <a data-link-type="dfn" href="metrology.html#exponentofquantityfactor" id="ref-for-exponentofquantityfactor">ExponentOfQuantityFactor</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind⑨">UnitaryQuantityKind</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasQuantityFactor" data-dfn-type="attribute" data-export id="dom-hasquantityfactor-hasquantityfactor"><code>hasQuantityFactor</code><a class="self-link" href="#dom-hasquantityfactor-hasquantityfactor"></a></dfn></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="metrology.html#exponentofquantityfactor" id="ref-for-exponentofquantityfactor">ExponentOfQuantityFactor</a></p>
     <h3 class="heading settled" data-level="5.3" id="SystemHasQuantityKind"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemhasquantitykind">SystemHasQuantityKind<a class="self-link" href="#systemhasquantitykind"></a></dfn></span><a class="self-link" href="#SystemHasQuantityKind"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#systemofquantities" id="ref-for-systemofquantities②">SystemOfQuantities</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①②">UnitaryQuantityKind</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="SystemHasQuantityKind" data-dfn-type="attribute" data-export id="dom-systemhasquantitykind-systemhasquantitykind"><code>systemHasQuantityKind</code><a class="self-link" href="#dom-systemhasquantitykind-systemhasquantitykind"></a></dfn></p>
-    <p><em>Direct Properties:</em> <a data-link-type="dfn" href="metrology.html#isbasequantitykind" id="ref-for-isbasequantitykind">IsBaseQuantityKind</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①⓪">UnitaryQuantityKind</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="SystemHasQuantityKind" data-dfn-type="attribute" data-export id="dom-systemhasquantitykind-systemhasquantitykind"><code>systemHasQuantityKind</code><a class="self-link" href="#dom-systemhasquantitykind-systemhasquantitykind"></a></dfn></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="metrology.html#isbasequantitykind" id="ref-for-isbasequantitykind">IsBaseQuantityKind</a></p>
     <h3 class="heading settled" data-level="5.4" id="HasUnitFactor"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasunitfactor">HasUnitFactor<a class="self-link" href="#hasunitfactor"></a></dfn></span><a class="self-link" href="#HasUnitFactor"></a></h3>
     <p><em>Attributes:</em> Irreflexive</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">DerivedMeasurementUnit</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑥">MeasurementUnit</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasUnitFactor" data-dfn-type="attribute" data-export id="dom-hasunitfactor-hasunitfactor"><code>hasUnitFactor</code><a class="self-link" href="#dom-hasunitfactor-hasunitfactor"></a></dfn></p>
-    <p><em>Direct Properties:</em> <a data-link-type="dfn" href="metrology.html#exponentofunitfactor" id="ref-for-exponentofunitfactor">ExponentOfUnitFactor</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasUnitFactor" data-dfn-type="attribute" data-export id="dom-hasunitfactor-hasunitfactor"><code>hasUnitFactor</code><a class="self-link" href="#dom-hasunitfactor-hasunitfactor"></a></dfn></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="metrology.html#exponentofunitfactor" id="ref-for-exponentofunitfactor">ExponentOfUnitFactor</a></p>
     <h3 class="heading settled" data-level="5.5" id="HasUnit"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasunit">HasUnit<a class="self-link" href="#hasunit"></a></dfn></span><a class="self-link" href="#HasUnit"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#systemofunits" id="ref-for-systemofunits②">SystemOfUnits</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑦">MeasurementUnit</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasUnit" data-dfn-type="attribute" data-export id="dom-hasunit-hasunit"><code>hasUnit</code><a class="self-link" href="#dom-hasunit-hasunit"></a></dfn></p>
-    <p><em>Direct Properties:</em> <a data-link-type="dfn" href="metrology.html#isbaseunit" id="ref-for-isbaseunit">IsBaseUnit</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasUnit" data-dfn-type="attribute" data-export id="dom-hasunit-hasunit"><code>hasUnit</code><a class="self-link" href="#dom-hasunit-hasunit"></a></dfn></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="metrology.html#isbaseunit" id="ref-for-isbaseunit">IsBaseUnit</a></p>
     <h3 class="heading settled" data-level="5.6" id="HasNumber"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnumber">HasNumber<a class="self-link" href="#hasnumber"></a></dfn></span><a class="self-link" href="#HasNumber"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue⑥">QuantityValue</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number④">Number</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasNumber" data-dfn-type="attribute" data-export id="dom-hasnumber-hasnumber"><code>hasNumber</code><a class="self-link" href="#dom-hasnumber-hasnumber"></a></dfn></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#number" id="ref-for-number②">Number</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasNumber" data-dfn-type="attribute" data-export id="dom-hasnumber-hasnumber"><code>hasNumber</code><a class="self-link" href="#dom-hasnumber-hasnumber"></a></dfn></p>
     <h3 class="heading settled" data-level="5.7" id="HasReference"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasreference">HasReference<a class="self-link" href="#hasreference"></a></dfn></span><a class="self-link" href="#HasReference"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue⑦">QuantityValue</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑦">Reference</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasReference" data-dfn-type="attribute" data-export id="dom-hasreference-hasreference"><code>hasReference</code><a class="self-link" href="#dom-hasreference-hasreference"></a></dfn></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑤">Reference</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasReference" data-dfn-type="attribute" data-export id="dom-hasreference-hasreference"><code>hasReference</code><a class="self-link" href="#dom-hasreference-hasreference"></a></dfn></p>
     <h3 class="heading settled" data-level="5.8" id="Quantity"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantity">Quantity<a class="self-link" href="#quantity"></a></dfn></span><a class="self-link" href="#Quantity"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#component" id="ref-for-component④">Component</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#quantityvalue" id="ref-for-quantityvalue⑧">QuantityValue</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="Quantity" data-dfn-type="attribute" data-export id="dom-quantity-quantity"><code>quantity</code><a class="self-link" href="#dom-quantity-quantity"></a></dfn></p>
-    <p><em>Sub terms:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity②">OrdinalQuantity</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">UnitaryQuantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Quantity" data-dfn-type="attribute" data-export id="dom-quantity-quantity"><code>quantity</code><a class="self-link" href="#dom-quantity-quantity"></a></dfn></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity②">OrdinalQuantity</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">UnitaryQuantity</a></p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>Quantity <a data-link-type="dfn" href="metrology.html#hasquantitykind" id="ref-for-hasquantitykind①">hasQuantityKind</a> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind③">QuantityKind</a></p>
+    </ul>
     <h3 class="heading settled" data-level="5.9" id="HasQuantityKind"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasquantitykind">HasQuantityKind<a class="self-link" href="#hasquantitykind"></a></dfn></span><a class="self-link" href="#HasQuantityKind"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity③">Quantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind③">QuantityKind</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="HasQuantityKind" data-dfn-type="attribute" data-export id="dom-hasquantitykind-hasquantitykind"><code>hasQuantityKind</code><a class="self-link" href="#dom-hasquantitykind-hasquantitykind"></a></dfn></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#quantitykind" id="ref-for-quantitykind④">QuantityKind</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasQuantityKind" data-dfn-type="attribute" data-export id="dom-hasquantitykind-hasquantitykind"><code>hasQuantityKind</code><a class="self-link" href="#dom-hasquantitykind-hasquantitykind"></a></dfn></p>
     <h3 class="heading settled" data-level="5.10" id="OrdinalQuantity"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantity">OrdinalQuantity<a class="self-link" href="#ordinalquantity"></a></dfn></span><a class="self-link" href="#OrdinalQuantity"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#component" id="ref-for-component⑤">Component</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantityvalue" id="ref-for-ordinalquantityvalue②">OrdinalQuantityValue</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="OrdinalQuantity" data-dfn-type="attribute" data-export id="dom-ordinalquantity-ordinalquantity"><code>ordinalQuantity</code><a class="self-link" href="#dom-ordinalquantity-ordinalquantity"></a></dfn></p>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity④">Quantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="OrdinalQuantity" data-dfn-type="attribute" data-export id="dom-ordinalquantity-ordinalquantity"><code>ordinalQuantity</code><a class="self-link" href="#dom-ordinalquantity-ordinalquantity"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity④">Quantity</a></p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>OrdinalQuantity <a data-link-type="dfn" href="metrology.html#hasquantitykind" id="ref-for-hasquantitykind②">hasQuantityKind</a> <a data-link-type="dfn" href="metrology.html#ordinalquantitykind" id="ref-for-ordinalquantitykind①">OrdinalQuantityKind</a></p>
+    </ul>
     <h3 class="heading settled" data-level="5.11" id="UnitaryQuantity"><span class="secno">5.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantity">UnitaryQuantity<a class="self-link" href="#unitaryquantity"></a></dfn></span><a class="self-link" href="#UnitaryQuantity"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#component" id="ref-for-component⑥">Component</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantityvalue" id="ref-for-unitaryquantityvalue②">UnitaryQuantityValue</a></p>
-    <p><em>Forward:</em> <dfn class="idl-code" data-dfn-for="UnitaryQuantity" data-dfn-type="attribute" data-export id="dom-unitaryquantity-unitaryquantity"><code>unitaryQuantity</code><a class="self-link" href="#dom-unitaryquantity-unitaryquantity"></a></dfn></p>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑤">Quantity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="UnitaryQuantity" data-dfn-type="attribute" data-export id="dom-unitaryquantity-unitaryquantity"><code>unitaryQuantity</code><a class="self-link" href="#dom-unitaryquantity-unitaryquantity"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑤">Quantity</a></p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>UnitaryQuantity <a data-link-type="dfn" href="metrology.html#hasquantitykind" id="ref-for-hasquantitykind③">hasQuantityKind</a> <a data-link-type="dfn" href="metrology.html#unitaryquantitykind" id="ref-for-unitaryquantitykind①①">UnitaryQuantityKind</a></p>
+    </ul>
     <h2 class="heading settled" data-level="6" id="ScalarProperties"><span class="secno">6. </span><span class="content">Scalar Properties</span><a class="self-link" href="#ScalarProperties"></a></h2>
     <h3 class="heading settled" data-level="6.1" id="ExponentOfQuantityFactor"><span class="secno">6.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="exponentofquantityfactor">ExponentOfQuantityFactor<a class="self-link" href="#exponentofquantityfactor"></a></dfn></span><a class="self-link" href="#ExponentOfQuantityFactor"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#hasquantityfactor" id="ref-for-hasquantityfactor②">HasQuantityFactor</a></p>
@@ -1935,10 +1928,10 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#basequantitykind">BaseQuantityKind</a><span>, in §4.6</span>
-   <li><a href="#component">Component</a><span>, in §3.2</span>
-   <li><a href="#derivedmeasurementunit">DerivedMeasurementUnit</a><span>, in §4.14</span>
-   <li><a href="#derivedquantitykind">DerivedQuantityKind</a><span>, in §4.7</span>
+   <li><a href="#basequantitykind">BaseQuantityKind</a><span>, in §3.6</span>
+   <li><a href="#component">Component</a><span>, in §4.2</span>
+   <li><a href="#derivedmeasurementunit">DerivedMeasurementUnit</a><span>, in §3.14</span>
+   <li><a href="#derivedquantitykind">DerivedQuantityKind</a><span>, in §3.7</span>
    <li><a href="#exponentofquantityfactor">ExponentOfQuantityFactor</a><span>, in §6.1</span>
    <li><a href="#exponentofunitfactor">ExponentOfUnitFactor</a><span>, in §6.3</span>
    <li><a href="#hasgeneralquantitykind">HasGeneralQuantityKind</a><span>, in §5.1</span>
@@ -1957,44 +1950,44 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <li><a href="#dom-hasunitfactor-hasunitfactor">hasUnitFactor</a><span>, in §5.4</span>
    <li><a href="#isbasequantitykind">IsBaseQuantityKind</a><span>, in §6.2</span>
    <li><a href="#isbaseunit">IsBaseUnit</a><span>, in §6.4</span>
-   <li><a href="#measurementprocedure">MeasurementProcedure</a><span>, in §4.10</span>
-   <li><a href="#measurementunit">MeasurementUnit</a><span>, in §4.12</span>
-   <li><a href="#metrologicalentity">MetrologicalEntity</a><span>, in §4.1</span>
-   <li><a href="#number">Number</a><span>, in §4.2</span>
+   <li><a href="#measurementprocedure">MeasurementProcedure</a><span>, in §3.10</span>
+   <li><a href="#measurementunit">MeasurementUnit</a><span>, in §3.12</span>
+   <li><a href="#metrologicalentity">MetrologicalEntity</a><span>, in §3.1</span>
+   <li><a href="#number">Number</a><span>, in §3.2</span>
    <li><a href="#ordinalquantity">OrdinalQuantity</a><span>, in §5.10</span>
    <li><a href="#dom-ordinalquantity-ordinalquantity">ordinalQuantity</a><span>, in §5.10</span>
-   <li><a href="#ordinalquantitykind">OrdinalQuantityKind</a><span>, in §4.4</span>
-   <li><a href="#ordinalquantityvalue">OrdinalQuantityValue</a><span>, in §4.17</span>
+   <li><a href="#ordinalquantitykind">OrdinalQuantityKind</a><span>, in §3.4</span>
+   <li><a href="#ordinalquantityvalue">OrdinalQuantityValue</a><span>, in §3.17</span>
    <li><a href="#quantity">Quantity</a><span>, in §5.8</span>
    <li><a href="#dom-quantity-quantity">quantity</a><span>, in §5.8</span>
-   <li><a href="#quantitykind">QuantityKind</a><span>, in §4.3</span>
-   <li><a href="#quantityvalue">QuantityValue</a><span>, in §4.16</span>
-   <li><a href="#reference">Reference</a><span>, in §4.9</span>
-   <li><a href="#referencematerial">ReferenceMaterial</a><span>, in §4.11</span>
-   <li><a href="#simplemeasurementunit">SimpleMeasurementUnit</a><span>, in §4.13</span>
+   <li><a href="#quantitykind">QuantityKind</a><span>, in §3.3</span>
+   <li><a href="#quantityvalue">QuantityValue</a><span>, in §3.16</span>
+   <li><a href="#reference">Reference</a><span>, in §3.9</span>
+   <li><a href="#referencematerial">ReferenceMaterial</a><span>, in §3.11</span>
+   <li><a href="#simplemeasurementunit">SimpleMeasurementUnit</a><span>, in §3.13</span>
    <li><a href="#systemhasquantitykind">SystemHasQuantityKind</a><span>, in §5.3</span>
    <li><a href="#dom-systemhasquantitykind-systemhasquantitykind">systemHasQuantityKind</a><span>, in §5.3</span>
-   <li><a href="#systemofquantities">SystemOfQuantities</a><span>, in §4.8</span>
-   <li><a href="#systemofunits">SystemOfUnits</a><span>, in §4.15</span>
-   <li><a href="#thing">Thing</a><span>, in §3.1</span>
+   <li><a href="#systemofquantities">SystemOfQuantities</a><span>, in §3.8</span>
+   <li><a href="#systemofunits">SystemOfUnits</a><span>, in §3.15</span>
+   <li><a href="#thing">Thing</a><span>, in §4.1</span>
    <li><a href="#unitaryquantity">UnitaryQuantity</a><span>, in §5.11</span>
    <li><a href="#dom-unitaryquantity-unitaryquantity">unitaryQuantity</a><span>, in §5.11</span>
-   <li><a href="#unitaryquantitykind">UnitaryQuantityKind</a><span>, in §4.5</span>
-   <li><a href="#unitaryquantityvalue">UnitaryQuantityValue</a><span>, in §4.18</span>
+   <li><a href="#unitaryquantitykind">UnitaryQuantityKind</a><span>, in §3.5</span>
+   <li><a href="#unitaryquantityvalue">UnitaryQuantityValue</a><span>, in §3.18</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-basequantitykind">
    <a href="metrology.html#basequantitykind">metrology.html#basequantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-basequantitykind">4.5. UnitaryQuantityKind</a>
+    <li><a href="#ref-for-basequantitykind">3.5. UnitaryQuantityKind</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-component">
    <a href="metrology.html#component">metrology.html#component</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-component">3.1. Thing</a>
-    <li><a href="#ref-for-component①">4.16. QuantityValue</a>
-    <li><a href="#ref-for-component②">4.17. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-component③">4.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-component">3.16. QuantityValue</a>
+    <li><a href="#ref-for-component①">3.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-component②">3.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-component③">4.1. Thing</a>
     <li><a href="#ref-for-component④">5.8. Quantity</a>
     <li><a href="#ref-for-component⑤">5.10. OrdinalQuantity</a>
     <li><a href="#ref-for-component⑥">5.11. UnitaryQuantity</a>
@@ -2003,14 +1996,14 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-derivedmeasurementunit">
    <a href="metrology.html#derivedmeasurementunit">metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-derivedmeasurementunit">4.12. MeasurementUnit</a> <a href="#ref-for-derivedmeasurementunit①">(2)</a>
+    <li><a href="#ref-for-derivedmeasurementunit">3.12. MeasurementUnit</a> <a href="#ref-for-derivedmeasurementunit①">(2)</a>
     <li><a href="#ref-for-derivedmeasurementunit②">5.4. HasUnitFactor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-derivedquantitykind">
    <a href="metrology.html#derivedquantitykind">metrology.html#derivedquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-derivedquantitykind">4.5. UnitaryQuantityKind</a> <a href="#ref-for-derivedquantitykind①">(2)</a>
+    <li><a href="#ref-for-derivedquantitykind">3.5. UnitaryQuantityKind</a> <a href="#ref-for-derivedquantitykind①">(2)</a>
     <li><a href="#ref-for-derivedquantitykind②">5.2. HasQuantityFactor</a>
    </ul>
   </aside>
@@ -2029,56 +2022,55 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-hasgeneralquantitykind">
    <a href="metrology.html#hasgeneralquantitykind">metrology.html#hasgeneralquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasgeneralquantitykind">4.5. UnitaryQuantityKind</a> <a href="#ref-for-hasgeneralquantitykind①">(2)</a>
-    <li><a href="#ref-for-hasgeneralquantitykind②">4.6. BaseQuantityKind</a>
-    <li><a href="#ref-for-hasgeneralquantitykind③">4.7. DerivedQuantityKind</a>
+    <li><a href="#ref-for-hasgeneralquantitykind">3.5. UnitaryQuantityKind</a> <a href="#ref-for-hasgeneralquantitykind①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasnumber">
    <a href="metrology.html#hasnumber">metrology.html#hasnumber</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasnumber">4.2. Number</a>
-    <li><a href="#ref-for-hasnumber①">4.16. QuantityValue</a>
-    <li><a href="#ref-for-hasnumber②">4.17. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-hasnumber③">4.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-hasnumber">3.2. Number</a>
+    <li><a href="#ref-for-hasnumber①">3.16. QuantityValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasquantityfactor">
    <a href="metrology.html#hasquantityfactor">metrology.html#hasquantityfactor</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasquantityfactor">4.5. UnitaryQuantityKind</a>
-    <li><a href="#ref-for-hasquantityfactor①">4.7. DerivedQuantityKind</a>
+    <li><a href="#ref-for-hasquantityfactor">3.5. UnitaryQuantityKind</a>
+    <li><a href="#ref-for-hasquantityfactor①">3.7. DerivedQuantityKind</a>
     <li><a href="#ref-for-hasquantityfactor②">6.1. ExponentOfQuantityFactor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasquantitykind">
    <a href="metrology.html#hasquantitykind">metrology.html#hasquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasquantitykind">4.3. QuantityKind</a>
+    <li><a href="#ref-for-hasquantitykind">3.3. QuantityKind</a>
+    <li><a href="#ref-for-hasquantitykind①">5.8. Quantity</a>
+    <li><a href="#ref-for-hasquantitykind②">5.10. OrdinalQuantity</a>
+    <li><a href="#ref-for-hasquantitykind③">5.11. UnitaryQuantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasreference">
    <a href="metrology.html#hasreference">metrology.html#hasreference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasreference">4.9. Reference</a>
-    <li><a href="#ref-for-hasreference①">4.16. QuantityValue</a>
-    <li><a href="#ref-for-hasreference②">4.17. OrdinalQuantityValue</a> <a href="#ref-for-hasreference③">(2)</a>
-    <li><a href="#ref-for-hasreference④">4.18. UnitaryQuantityValue</a> <a href="#ref-for-hasreference⑤">(2)</a>
+    <li><a href="#ref-for-hasreference">3.9. Reference</a>
+    <li><a href="#ref-for-hasreference①">3.16. QuantityValue</a>
+    <li><a href="#ref-for-hasreference②">3.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-hasreference③">3.18. UnitaryQuantityValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasunit">
    <a href="metrology.html#hasunit">metrology.html#hasunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasunit">4.12. MeasurementUnit</a>
-    <li><a href="#ref-for-hasunit①">4.15. SystemOfUnits</a>
+    <li><a href="#ref-for-hasunit">3.12. MeasurementUnit</a>
+    <li><a href="#ref-for-hasunit①">3.15. SystemOfUnits</a>
     <li><a href="#ref-for-hasunit②">6.4. IsBaseUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasunitfactor">
    <a href="metrology.html#hasunitfactor">metrology.html#hasunitfactor</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasunitfactor">4.12. MeasurementUnit</a>
-    <li><a href="#ref-for-hasunitfactor①">4.14. DerivedMeasurementUnit</a>
+    <li><a href="#ref-for-hasunitfactor">3.12. MeasurementUnit</a>
+    <li><a href="#ref-for-hasunitfactor①">3.14. DerivedMeasurementUnit</a>
     <li><a href="#ref-for-hasunitfactor②">6.3. ExponentOfUnitFactor</a>
    </ul>
   </aside>
@@ -2097,18 +2089,18 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-measurementprocedure">
    <a href="metrology.html#measurementprocedure">metrology.html#measurementprocedure</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-measurementprocedure">4.9. Reference</a>
-    <li><a href="#ref-for-measurementprocedure①">4.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-measurementprocedure">3.9. Reference</a>
+    <li><a href="#ref-for-measurementprocedure①">3.17. OrdinalQuantityValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-measurementunit">
    <a href="metrology.html#measurementunit">metrology.html#measurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-measurementunit">4.9. Reference</a>
-    <li><a href="#ref-for-measurementunit①">4.13. SimpleMeasurementUnit</a>
-    <li><a href="#ref-for-measurementunit②">4.14. DerivedMeasurementUnit</a> <a href="#ref-for-measurementunit③">(2)</a>
-    <li><a href="#ref-for-measurementunit④">4.15. SystemOfUnits</a>
-    <li><a href="#ref-for-measurementunit⑤">4.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-measurementunit">3.9. Reference</a>
+    <li><a href="#ref-for-measurementunit①">3.13. SimpleMeasurementUnit</a>
+    <li><a href="#ref-for-measurementunit②">3.14. DerivedMeasurementUnit</a> <a href="#ref-for-measurementunit③">(2)</a>
+    <li><a href="#ref-for-measurementunit④">3.15. SystemOfUnits</a>
+    <li><a href="#ref-for-measurementunit⑤">3.18. UnitaryQuantityValue</a>
     <li><a href="#ref-for-measurementunit⑥">5.4. HasUnitFactor</a>
     <li><a href="#ref-for-measurementunit⑦">5.5. HasUnit</a>
    </ul>
@@ -2116,52 +2108,51 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-metrologicalentity">
    <a href="metrology.html#metrologicalentity">metrology.html#metrologicalentity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metrologicalentity">3.1. Thing</a>
-    <li><a href="#ref-for-metrologicalentity①">4.3. QuantityKind</a>
-    <li><a href="#ref-for-metrologicalentity②">4.8. SystemOfQuantities</a>
-    <li><a href="#ref-for-metrologicalentity③">4.9. Reference</a>
-    <li><a href="#ref-for-metrologicalentity④">4.15. SystemOfUnits</a>
-    <li><a href="#ref-for-metrologicalentity⑤">4.16. QuantityValue</a>
+    <li><a href="#ref-for-metrologicalentity">3.3. QuantityKind</a>
+    <li><a href="#ref-for-metrologicalentity①">3.8. SystemOfQuantities</a>
+    <li><a href="#ref-for-metrologicalentity②">3.9. Reference</a>
+    <li><a href="#ref-for-metrologicalentity③">3.15. SystemOfUnits</a>
+    <li><a href="#ref-for-metrologicalentity④">3.16. QuantityValue</a>
+    <li><a href="#ref-for-metrologicalentity⑤">4.1. Thing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-number">
    <a href="metrology.html#number">metrology.html#number</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-number">3.1. Thing</a>
-    <li><a href="#ref-for-number①">4.16. QuantityValue</a>
-    <li><a href="#ref-for-number②">4.17. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-number③">4.18. UnitaryQuantityValue</a>
-    <li><a href="#ref-for-number④">5.6. HasNumber</a>
+    <li><a href="#ref-for-number">3.16. QuantityValue</a>
+    <li><a href="#ref-for-number①">4.1. Thing</a>
+    <li><a href="#ref-for-number②">5.6. HasNumber</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ordinalquantity">
    <a href="metrology.html#ordinalquantity">metrology.html#ordinalquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ordinalquantity">3.2. Component</a>
-    <li><a href="#ref-for-ordinalquantity①">4.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-ordinalquantity">3.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-ordinalquantity①">4.2. Component</a>
     <li><a href="#ref-for-ordinalquantity②">5.8. Quantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ordinalquantitykind">
    <a href="metrology.html#ordinalquantitykind">metrology.html#ordinalquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ordinalquantitykind">4.3. QuantityKind</a>
+    <li><a href="#ref-for-ordinalquantitykind">3.3. QuantityKind</a>
+    <li><a href="#ref-for-ordinalquantitykind①">5.10. OrdinalQuantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ordinalquantityvalue">
    <a href="metrology.html#ordinalquantityvalue">metrology.html#ordinalquantityvalue</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ordinalquantityvalue">3.2. Component</a>
-    <li><a href="#ref-for-ordinalquantityvalue①">4.16. QuantityValue</a>
+    <li><a href="#ref-for-ordinalquantityvalue">3.16. QuantityValue</a>
+    <li><a href="#ref-for-ordinalquantityvalue①">4.2. Component</a>
     <li><a href="#ref-for-ordinalquantityvalue②">5.10. OrdinalQuantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-quantity">
    <a href="metrology.html#quantity">metrology.html#quantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-quantity">3.2. Component</a>
-    <li><a href="#ref-for-quantity①">4.3. QuantityKind</a>
-    <li><a href="#ref-for-quantity②">4.16. QuantityValue</a>
+    <li><a href="#ref-for-quantity">3.3. QuantityKind</a>
+    <li><a href="#ref-for-quantity①">3.16. QuantityValue</a>
+    <li><a href="#ref-for-quantity②">4.2. Component</a>
     <li><a href="#ref-for-quantity③">5.9. HasQuantityKind</a>
     <li><a href="#ref-for-quantity④">5.10. OrdinalQuantity</a>
     <li><a href="#ref-for-quantity⑤">5.11. UnitaryQuantity</a>
@@ -2170,21 +2161,22 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-quantitykind">
    <a href="metrology.html#quantitykind">metrology.html#quantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-quantitykind">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-quantitykind①">4.4. OrdinalQuantityKind</a>
-    <li><a href="#ref-for-quantitykind②">4.5. UnitaryQuantityKind</a>
-    <li><a href="#ref-for-quantitykind③">5.9. HasQuantityKind</a>
+    <li><a href="#ref-for-quantitykind">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-quantitykind①">3.4. OrdinalQuantityKind</a>
+    <li><a href="#ref-for-quantitykind②">3.5. UnitaryQuantityKind</a>
+    <li><a href="#ref-for-quantitykind③">5.8. Quantity</a>
+    <li><a href="#ref-for-quantitykind④">5.9. HasQuantityKind</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-quantityvalue">
    <a href="metrology.html#quantityvalue">metrology.html#quantityvalue</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-quantityvalue">3.2. Component</a>
-    <li><a href="#ref-for-quantityvalue①">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-quantityvalue②">4.2. Number</a>
-    <li><a href="#ref-for-quantityvalue③">4.9. Reference</a>
-    <li><a href="#ref-for-quantityvalue④">4.17. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-quantityvalue⑤">4.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-quantityvalue">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-quantityvalue①">3.2. Number</a>
+    <li><a href="#ref-for-quantityvalue②">3.9. Reference</a>
+    <li><a href="#ref-for-quantityvalue③">3.17. OrdinalQuantityValue</a>
+    <li><a href="#ref-for-quantityvalue④">3.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-quantityvalue⑤">4.2. Component</a>
     <li><a href="#ref-for-quantityvalue⑥">5.6. HasNumber</a>
     <li><a href="#ref-for-quantityvalue⑦">5.7. HasReference</a>
     <li><a href="#ref-for-quantityvalue⑧">5.8. Quantity</a>
@@ -2193,86 +2185,85 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <aside class="dfn-panel" data-for="term-for-reference">
    <a href="metrology.html#reference">metrology.html#reference</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reference">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-reference①">4.10. MeasurementProcedure</a>
-    <li><a href="#ref-for-reference②">4.11. ReferenceMaterial</a>
-    <li><a href="#ref-for-reference③">4.12. MeasurementUnit</a>
-    <li><a href="#ref-for-reference④">4.16. QuantityValue</a>
-    <li><a href="#ref-for-reference⑤">4.17. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-reference⑥">4.18. UnitaryQuantityValue</a>
-    <li><a href="#ref-for-reference⑦">5.7. HasReference</a>
+    <li><a href="#ref-for-reference">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-reference①">3.10. MeasurementProcedure</a>
+    <li><a href="#ref-for-reference②">3.11. ReferenceMaterial</a>
+    <li><a href="#ref-for-reference③">3.12. MeasurementUnit</a>
+    <li><a href="#ref-for-reference④">3.16. QuantityValue</a>
+    <li><a href="#ref-for-reference⑤">5.7. HasReference</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-referencematerial">
    <a href="metrology.html#referencematerial">metrology.html#referencematerial</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-referencematerial">4.9. Reference</a>
+    <li><a href="#ref-for-referencematerial">3.9. Reference</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-simplemeasurementunit">
    <a href="metrology.html#simplemeasurementunit">metrology.html#simplemeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-simplemeasurementunit">4.12. MeasurementUnit</a>
+    <li><a href="#ref-for-simplemeasurementunit">3.12. MeasurementUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-systemhasquantitykind">
    <a href="metrology.html#systemhasquantitykind">metrology.html#systemhasquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-systemhasquantitykind">4.5. UnitaryQuantityKind</a>
-    <li><a href="#ref-for-systemhasquantitykind①">4.8. SystemOfQuantities</a>
+    <li><a href="#ref-for-systemhasquantitykind">3.5. UnitaryQuantityKind</a>
+    <li><a href="#ref-for-systemhasquantitykind①">3.8. SystemOfQuantities</a>
     <li><a href="#ref-for-systemhasquantitykind②">6.2. IsBaseQuantityKind</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-systemofquantities">
    <a href="metrology.html#systemofquantities">metrology.html#systemofquantities</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-systemofquantities">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-systemofquantities①">4.5. UnitaryQuantityKind</a>
+    <li><a href="#ref-for-systemofquantities">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-systemofquantities①">3.5. UnitaryQuantityKind</a>
     <li><a href="#ref-for-systemofquantities②">5.3. SystemHasQuantityKind</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-systemofunits">
    <a href="metrology.html#systemofunits">metrology.html#systemofunits</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-systemofunits">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-systemofunits①">4.12. MeasurementUnit</a>
+    <li><a href="#ref-for-systemofunits">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-systemofunits①">3.12. MeasurementUnit</a>
     <li><a href="#ref-for-systemofunits②">5.5. HasUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-thing">
    <a href="metrology.html#thing">metrology.html#thing</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-thing">3.2. Component</a>
-    <li><a href="#ref-for-thing①">4.1. MetrologicalEntity</a>
-    <li><a href="#ref-for-thing②">4.2. Number</a>
+    <li><a href="#ref-for-thing">3.1. MetrologicalEntity</a>
+    <li><a href="#ref-for-thing①">3.2. Number</a>
+    <li><a href="#ref-for-thing②">4.2. Component</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitaryquantity">
    <a href="metrology.html#unitaryquantity">metrology.html#unitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitaryquantity">3.2. Component</a>
-    <li><a href="#ref-for-unitaryquantity①">4.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-unitaryquantity">3.18. UnitaryQuantityValue</a>
+    <li><a href="#ref-for-unitaryquantity①">4.2. Component</a>
     <li><a href="#ref-for-unitaryquantity②">5.8. Quantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitaryquantitykind">
    <a href="metrology.html#unitaryquantitykind">metrology.html#unitaryquantitykind</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitaryquantitykind">4.3. QuantityKind</a>
-    <li><a href="#ref-for-unitaryquantitykind①">4.5. UnitaryQuantityKind</a> <a href="#ref-for-unitaryquantitykind②">(2)</a>
-    <li><a href="#ref-for-unitaryquantitykind③">4.6. BaseQuantityKind</a> <a href="#ref-for-unitaryquantitykind④">(2)</a>
-    <li><a href="#ref-for-unitaryquantitykind⑤">4.7. DerivedQuantityKind</a> <a href="#ref-for-unitaryquantitykind⑥">(2)</a> <a href="#ref-for-unitaryquantitykind⑦">(3)</a>
-    <li><a href="#ref-for-unitaryquantitykind⑧">4.8. SystemOfQuantities</a>
-    <li><a href="#ref-for-unitaryquantitykind⑨">5.1. HasGeneralQuantityKind</a> <a href="#ref-for-unitaryquantitykind①⓪">(2)</a>
-    <li><a href="#ref-for-unitaryquantitykind①①">5.2. HasQuantityFactor</a>
-    <li><a href="#ref-for-unitaryquantitykind①②">5.3. SystemHasQuantityKind</a>
+    <li><a href="#ref-for-unitaryquantitykind">3.3. QuantityKind</a>
+    <li><a href="#ref-for-unitaryquantitykind①">3.5. UnitaryQuantityKind</a> <a href="#ref-for-unitaryquantitykind②">(2)</a>
+    <li><a href="#ref-for-unitaryquantitykind③">3.6. BaseQuantityKind</a>
+    <li><a href="#ref-for-unitaryquantitykind④">3.7. DerivedQuantityKind</a> <a href="#ref-for-unitaryquantitykind⑤">(2)</a>
+    <li><a href="#ref-for-unitaryquantitykind⑥">3.8. SystemOfQuantities</a>
+    <li><a href="#ref-for-unitaryquantitykind⑦">5.1. HasGeneralQuantityKind</a> <a href="#ref-for-unitaryquantitykind⑧">(2)</a>
+    <li><a href="#ref-for-unitaryquantitykind⑨">5.2. HasQuantityFactor</a>
+    <li><a href="#ref-for-unitaryquantitykind①⓪">5.3. SystemHasQuantityKind</a>
+    <li><a href="#ref-for-unitaryquantitykind①①">5.11. UnitaryQuantity</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unitaryquantityvalue">
    <a href="metrology.html#unitaryquantityvalue">metrology.html#unitaryquantityvalue</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitaryquantityvalue">3.2. Component</a>
-    <li><a href="#ref-for-unitaryquantityvalue①">4.16. QuantityValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue">3.16. QuantityValue</a>
+    <li><a href="#ref-for-unitaryquantityvalue①">4.2. Component</a>
     <li><a href="#ref-for-unitaryquantityvalue②">5.11. UnitaryQuantity</a>
    </ul>
   </aside>
