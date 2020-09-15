@@ -3,7 +3,7 @@
  */
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '1.2.0'
+version = '1.3.0'
 
 /* 
  * The Gradle task dependencies 
@@ -19,6 +19,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
+		classpath 'io.opencaesar.owl:owl-shacl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-query-gradle:+'
 		classpath 'io.opencaesar.owl:owl-load-gradle:+'
 		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
@@ -104,6 +105,12 @@ task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
 	catalogPath = file('build/owl/catalog.xml')
 	endpointURL = 'http://localhost:3030/firesat'
     fileExtensions = ['owl', 'ttl']
+}
+
+task owlshacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlload) {
+	endpointURL = 'http://localhost:3030/firesat/shacl?graph=default'
+	queryPath = file('src/shacl')
+	resultPath = file('build/reports')
 }
 
 task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
