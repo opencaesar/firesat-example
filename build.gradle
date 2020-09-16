@@ -27,7 +27,8 @@ buildscript {
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
 		classpath 'com.wiredforcode:gradle-spawn-plugin:+'
-		// needed since gradle bintray brings an old version of xerces
+
+		// needed since gradle-bintray-plugin brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
 }
@@ -70,7 +71,7 @@ dependencies {
  */
 task omldependencies(type: Copy) {
     from configurations.oml.files.collect { zipTree(it) }
-    into file('build/dependencies')
+    into file('build/oml')
 }
 
 /*
@@ -101,22 +102,31 @@ task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) 
 	reportPath = file('build/reports/reasoning.xml')
 }
 
+/*
+ * A task to load an OWL catalog to a Fuseki dataset endpoint
+ */
 task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
 	catalogPath = file('build/owl/catalog.xml')
 	endpointURL = 'http://localhost:3030/firesat'
     fileExtensions = ['owl', 'ttl']
 }
 
-task owlshacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlload) {
-	endpointURL = 'http://localhost:3030/firesat/shacl?graph=default'
-	queryPath = file('src/shacl')
-	resultPath = file('build/reports')
-}
-
+/*
+ * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
+ */
 task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
 	endpointURL = 'http://localhost:3030/firesat'
 	queryPath = file('src/sparql')
 	resultPath = file('build/frames')
+}
+
+/*
+ * A task to run a set of SHACL validation rules on a Fuseki dataset endpoint
+ */
+task owlshacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlload) {
+	endpointURL = 'http://localhost:3030/firesat/shacl?graph=default'
+	queryPath = file('src/shacl')
+	resultPath = file('build/reports')
 }
 
 /*
