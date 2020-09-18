@@ -47,7 +47,7 @@ Pre-req: A Fuseki server with a firesat dataset must be running at http://localh
 Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
 
 ## Generate Docs
-You must first have Bikeshed installed from [here](https://tabatkins.github.io/bikeshed/#installing)
+You must first have Bikeshed (the app itself) installed from [here](https://tabatkins.github.io/bikeshed/#install-final)
 ```
 ./gradlew bikeshed2html
 ```
