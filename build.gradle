@@ -15,7 +15,7 @@ buildscript {
 		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
-		maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
+		maven { url 'https://dl.bintray.com/vermeulen-mp/gradle-plugins' }
 		jcenter()
 	}
 	dependencies {
@@ -176,7 +176,7 @@ apply plugin: 'maven-publish'
 task omlzip(type: Zip) {
 	from file('src/oml')
 	include "**/*.oml"
-	destinationDir(file('build/libs'))
+	destinationDirectory = file('build/libs')
 	archiveBaseName = project.name
 	archiveVersion = project.version
 }
@@ -242,4 +242,3 @@ task startFuseki(type: SpawnProcessTask, dependsOn: downloadFuseki) {
 }
 
 task stopFuseki(type: KillProcessTask)
-
