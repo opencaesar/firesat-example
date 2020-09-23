@@ -154,20 +154,9 @@ task bikeshed2html(dependsOn: oml2bikeshed) {
 }
 
 /*
- * A task to generate a publishable Zip archive for the OML sources of this project
- */
-task omlzip(type: Zip) {
-	from file('src/oml')
-	destinationDir(file('build/libs'))
-	archiveBaseName = project.name
-	archiveVersion = project.version
-}
-
-/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
-	dependsOn omlzip
 	dependsOn owlreason
 	dependsOn bikeshed2html
 }
@@ -183,6 +172,14 @@ task clean(type: Delete) {
  * Publish to Maven spec
  */
 apply plugin: 'maven-publish'
+
+task omlzip(type: Zip) {
+	from file('src/oml')
+	include "**/*.oml"
+	destinationDir(file('build/libs'))
+	archiveBaseName = project.name
+	archiveVersion = project.version
+}
 
 publishToMavenLocal.dependsOn omlzip
 
