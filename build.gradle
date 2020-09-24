@@ -242,8 +242,7 @@ task downloadFuseki(type: Copy) {
 }
 
 task startFuseki(type: SpawnProcessTask, dependsOn: downloadFuseki) {
-	// Need to get the path of .fuseki.ttl
-	command "java -jar ${projectDir}/build/libs/jena-fuseki-server-${fusekiVersion}.jar --config=.fuseki.ttl /firesat"
+	command "java -jar ${projectDir}/build/libs/jena-fuseki-server-${fusekiVersion}.jar --config=${projectDir}/.fuseki.ttl"
 	ready "Apache Jena Fuseki ${fusekiVersion}"
 }
 
