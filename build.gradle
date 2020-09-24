@@ -106,6 +106,11 @@ task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) 
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
 task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
+	iris = [
+		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes',
+	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties',
+	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals'
+	]
 	catalogPath = file('build/owl/catalog.xml')
 	endpointURL = 'http://localhost:3030/firesat'
     fileExtensions = ['owl', 'ttl']
