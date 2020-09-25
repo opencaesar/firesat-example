@@ -69,15 +69,39 @@ dependencies {
 /*
  * A task to extract and merge the OML dependencies
  */
-task omldependencies(type: Copy) {
+task downloadDependencies(type: Copy) {
     from configurations.oml.files.collect { zipTree(it) }
     into file('build/oml')
 }
 
 /*
+ * A task to generate Bikeshed specification for the OML catalog
+ */
+task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: downloadDependencies) {
+	// OML catalog
+	inputCatalogPath = file('catalog.xml')
+	// OWL folder
+	outputFolderPath = file('build/bikeshed')
+	// Input Ontology Iri
+	rootOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
+	// Publish URL
+	publishUrl = 'https://opencaesar.github.io/vocabularies/'
+}
+
+/*
+ * A task to generate the model documentation in HTML
+ */
+task generateDocs(dependsOn: omlToBikeshed) {
+	doLast {
+		exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
+		exec { commandLine 'build/bikeshed/publish.sh' }
+	}
+}
+
+/*
  * A task to convert the OML catalog to OWL catalog
  */
-task oml2owl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: omldependencies) {
+task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: downloadDependencies) {
 	// OML catalog
 	inputCatalogPath = file('catalog.xml')
 	// OWL catalog
@@ -87,7 +111,7 @@ task oml2owl(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: omldependencies)
 /*
  * A task to run the Openllet reasoner on the OWL catalog
  */
-task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) {
+task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
 	// OWL catalog
 	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
@@ -105,7 +129,7 @@ task owlreason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: oml2owl) 
 /*
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
-task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
+task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 	iris = [
 		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes',
 	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties',
@@ -119,7 +143,7 @@ task owlload(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlreason) {
 /*
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
-task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
+task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
 	endpointURL = 'http://localhost:3030/firesat'
 	queryPath = file('src/sparql')
 	resultPath = file('build/frames')
@@ -128,42 +152,17 @@ task owlquery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlload) {
 /*
  * A task to run a set of SHACL validation rules on a Fuseki dataset endpoint
  */
-task owlshacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlload) {
+task owlShacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlLoad) {
 	endpointURL = 'http://localhost:3030/firesat/shacl?graph=default'
 	queryPath = file('src/shacl')
 	resultPath = file('build/reports')
 }
 
 /*
- * A task to generate Bikeshed specification for the OML catalog
- */
-task oml2bikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: omldependencies) {
-	// OML catalog
-	inputCatalogPath = file('catalog.xml')
-	// OWL folder
-	outputFolderPath = file('build/bikeshed')
-	// Input Ontology Iri
-	rootOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
-	// Publish URL
-	publishUrl = 'https://opencaesar.github.io/vocabularies/'
-}
-
-/*
- * A task to render the Bikeshed specification to HTML
- */
-task bikeshed2html(dependsOn: oml2bikeshed) {
-	doLast {
-		exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
-		exec { commandLine 'build/bikeshed/publish.sh' }
-	}
-}
-
-/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
-	dependsOn owlreason
-	dependsOn bikeshed2html
+	dependsOn owlReason
 }
 
 /*
@@ -178,7 +177,7 @@ task clean(type: Delete) {
  */
 apply plugin: 'maven-publish'
 
-task omlzip(type: Zip) {
+task omlZip(type: Zip) {
 	from file('src/oml')
 	include "**/*.oml"
 	destinationDirectory = file('build/libs')
@@ -186,12 +185,12 @@ task omlzip(type: Zip) {
 	archiveVersion = project.version
 }
 
-publishToMavenLocal.dependsOn omlzip
+publishToMavenLocal.dependsOn omlZip
 
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact omlzip
+            artifact omlZip
         }
     }
 }

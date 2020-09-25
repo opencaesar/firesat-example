@@ -20,37 +20,37 @@ Run reasoner, generate docs, and archive sources
 
 ## Download Dependencies
 ```
-./gradlew omldependencies
+./gradlew downloadDependencies
 ```
-
-## Run Reasoner
-```
-./gradlew owlreason
-```
-
-## Load to Fuseki
-```
-./gradlew owlload
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
-
-## Run SPARQL Queries
-```
-./gradlew owlquery
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
-
-## Run SHACL Rules
-```
-./gradlew owlshacl
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat  
 
 ## Generate Docs
 You must first have Bikeshed (the app itself) installed from [here](https://tabatkins.github.io/bikeshed/#install-final)
 ```
-./gradlew bikeshed2html
+./gradlew generateDocs
 ```
+
+## Run OWL Reasoner
+```
+./gradlew owlReason
+```
+
+## Load to Fuseki Dataset
+```
+./gradlew owlLoad
+```
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below)  
+
+## Run SPARQL Queries
+```
+./gradlew owlQuery
+```
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below)  
+
+## Run SHACL Rules
+```
+./gradlew owlShacl
+```
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below) 
 
 ## Publish to Maven Local
 ```
