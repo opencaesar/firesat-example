@@ -13,7 +13,7 @@ This is a description of a FireSat project expressed in [OML](https://github.com
 ```
 
 ## Build
-Run reasoner, generate docs, and archive sources
+Equivalent to owlReason task
 ```
 ./gradlew build
 ```
