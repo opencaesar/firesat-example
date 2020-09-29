@@ -153,7 +153,7 @@ task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
  * A task to run a set of SHACL validation rules on a Fuseki dataset endpoint
  */
 task owlShacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlLoad) {
-	endpointURL = 'http://localhost:3030/firesat/shacl?graph=default'
+	endpointURL = 'http://localhost:3030/firesat'
 	queryPath = file('src/shacl')
 	resultPath = file('build/reports')
 }
