@@ -68,9 +68,18 @@
  *
  ******************************************************************************/
 
+/* color variables included separately for reliability */
+
 /******************************************************************************/
 /*                                   Body                                     */
 /******************************************************************************/
+
+	html {
+		color: black;
+		color: var(--text);
+		background-color: white;
+		background-color: var(--bg);
+	}
 
 	body {
 		counter-reset: example figure issue;
@@ -90,9 +99,7 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		/* Colors */
-		color: black;
-		background: white top left fixed no-repeat;
+		background: transparent top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -124,10 +131,13 @@
 	.head img[src*="logos/W3C"] {
 		display: block;
 		border: solid #1a5e9a;
+		border: solid var(--logo-bg);
 		border-width: .65rem .7rem .6rem;
 		border-radius: .4rem;
 		background: #1a5e9a;
+		background: var(--logo-bg);
 		color: white;
+		color: var(--logo-text);
 		font-weight: bold;
 	}
 
@@ -138,7 +148,9 @@
 
 	.head a:active > img[src*="logos/W3C"] {
 		background: #c00;
+		background: var(--logo-active-bg);
 		border-color: #c00;
+		border-color: var(--logo-active-bg);
 	}
 
 	/* see also additional rules in Link Styling section */
@@ -165,7 +177,6 @@
 			border-top-right-radius: 2rem;
 			box-shadow: 0 0 2px;
 			font-size: 1.5em;
-			color: black;
 		}
 		#toc-nav > a {
 			display: block;
@@ -175,23 +186,32 @@
 			padding: .1em 0.3em;
 			margin: 0;
 
-			background: white;
 			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
+
+			color: #707070;
+			color: var(--tocnav-normal-text);
 			background: white;
+			background: var(--tocnav-normal-bg);
 		}
+		#toc-nav > a:hover,
+		#toc-nav > a:focus {
+			color: black;
+			color: var(--tocnav-hover-text);
+			background: #f8f8f8;
+			background: var(--tocnav-hover-bg);
+		}
+		#toc-nav > a:active {
+			color: #c00;
+			color: var(--tocnav-active-text);
+			background: white;
+			background: var(--tocnav-active-bg);
+		}
+
 		#toc-nav > #toc-jump {
 			padding-bottom: 2em;
 			margin-bottom: -1.9em;
-		}
-
-		#toc-nav > a:hover,
-		#toc-nav > a:focus {
-			background: #f8f8f8;
-		}
-		#toc-nav > a:not(:hover):not(:focus) {
-			color: #707070;
 		}
 
 		/* statusbar gets in the way on keyboard focus; remove once browsers fix */
@@ -205,26 +225,6 @@
 		}
 		#toc-nav > a > span + span {
 			padding-right: 0.2em;
-		}
-
-		#toc-toggle-inline {
-			vertical-align: 0.05em;
-			font-size: 80%;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
-			border-style: none;
-			background: transparent;
-			position: relative;
-		}
-		#toc-toggle-inline:hover:not(:active),
-		#toc-toggle-inline:focus:not(:active) {
-			text-shadow: 1px 1px silver;
-			top: -1px;
-			left: -1px;
-		}
-
-		#toc-nav :active {
-			color: #C00;
 		}
 	}
 
@@ -243,10 +243,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
@@ -256,6 +260,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--tocsidebar-heading-text);
 		}
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
@@ -283,10 +288,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
@@ -296,6 +305,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--tocsidebar-heading-text);
 		}
 
 		body:not(.toc-inline) {
@@ -338,7 +348,7 @@
 
 	h1, h2, h3 {
 		color: #005A9C;
-		background: transparent;
+		color: var(--heading-text);
 	}
 
 	h1 { font-size: 170%; }
@@ -365,11 +375,13 @@
 
 /** Section divider ***********************************************************/
 
-	:not(.head) > hr {
+	:not(.head) > :not(.head) + hr {
 		font-size: 1.5em;
 		text-align: center;
 		margin: 1em auto;
 		height: auto;
+		color: black;
+		color: var(--hr-text);
 		border: transparent solid 0;
 		background: transparent;
 	}
@@ -412,12 +424,15 @@
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
 	 border-left: 0.5em solid #DEF;
+	 border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
 	  padding: .5em;
-	  border: thin solid #ddd; border-radius: .5em;
+	  border: thin solid #ddd;
+	  border: thin solid var(--algo-border);
+	  border-radius: .5em;
 	  margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
@@ -478,8 +493,20 @@
 
 /** Change Marking ************************************************************/
 
-	del { color: red;  text-decoration: line-through; }
-	ins { color: #080; text-decoration: underline;    }
+	del {
+		color: red;
+		color: var(--del-text);
+		background: transparent;
+		background: var(--del-bg);
+		text-decoration: line-through;
+	}
+	ins {
+		color: #080;
+		color: var(--ins-text);
+		background: transparent;
+		background: var(--ins-bg);
+		text-decoration: underline;
+	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -497,9 +524,14 @@
 	pre, code, samp {
 		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
-		page-break-inside: avoid;
 		hyphens: none;
 		text-transform: none;
+		text-align: left;
+		text-align: start;
+		font-variant: normal;
+		orphans: 3;
+		widows: 3;
+		page-break-before: avoid;
 	}
 	pre code,
 	code code {
@@ -525,14 +557,19 @@
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
 		color: #034575;
+		color: var(--a-normal-text);
 		text-decoration: none;
 		border-bottom: 1px solid #707070;
+		border-bottom: 1px solid var(--a-normal-underline);
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
 	a:visited {
-		border-bottom-color: #BBB;
+		color: #034575;
+		color: var(--a-visited-text);
+		border-bottom-color: #bbb;
+		border-bottom-color: var(--a-visited-underline);
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
@@ -540,12 +577,15 @@
 	a[href]:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
+		background: var(--a-hover-bg);
 		border-bottom-width: 3px;
 		margin-bottom: -2px;
 	}
 	a[href]:active {
-		color: #C00;
-		border-color: #C00;
+		color: #c00;
+		color: var(--a-active-text);
+		border-color: #c00;
+		border-color: var(--a-active-underline);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -564,6 +604,11 @@
 		border-style: none;
 	}
 
+	img, svg {
+		/* Intentionally not color-scheme aware. */
+		background: white;
+	}
+
 	/* For autogen numbers, add
 	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
@@ -577,6 +622,7 @@
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
+		height: auto;
 	}
 	.figure pre, .sidefigure pre, figure pre {
 		text-align: left;
@@ -639,25 +685,46 @@
 		margin-bottom: 0;
 	}
 
+
+	.issue::before, .issue > .marker,
+	.example::before, .example > .marker,
+	.note::before, .note > .marker,
+	details.note > summary > .marker {
+		text-transform: uppercase;
+		padding-right: 1em;
+	}
+
+	.example::before, .example > .marker {
+		display: block;
+		padding-right: 0em;
+	}
+
 /** Blockquotes ***************************************************************/
 
 	blockquote {
 		border-color: silver;
+		border-color: var(--blockquote-border);
+		background: transparent;
+		background: var(--blockquote-bg);
+		color: currentcolor;
+		color: var(--blockquote-text);
 	}
 
 /** Open issue ****************************************************************/
 
 	.issue {
-		border-color: #E05252;
-		background: #FBE9E9;
+		border-color: #e05252;
+		border-color: var(--issue-border);
+		background: #fbe9e9;
+		background: var(--issue-bg);
+		color: black;
+		color: var(--issue-text);
 		counter-increment: issue;
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
-		text-transform: uppercase;
-		color: #AE1E1E;
-		padding-right: 1em;
-		text-transform: uppercase;
+		color: #831616;
+		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
 	   or use class="marker" to mark up the issue number in source. */
@@ -665,17 +732,19 @@
 /** Example *******************************************************************/
 
 	.example {
-		border-color: #E0CB52;
-		background: #FCFAEE;
+		border-color: #e0cb52;
+		border-color: var(--example-border);
+		background: #fcfaee;
+		background: var(--example-bg);
+		color: black;
+		color: var(--example-text);
 		counter-increment: example;
 		overflow: auto;
 		clear: both;
 	}
 	.example::before, .example > .marker {
-		text-transform: uppercase;
-		color: #827017;
-		min-width: 7.5em;
-		display: block;
+		color: #574b0f;
+		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
 	   or use class="marker" to mark up the example number in source. */
@@ -683,27 +752,26 @@
 /** Non-normative Note ********************************************************/
 
 	.note {
-		border-color: #52E052;
-		background: #E9FBE9;
+		border-color: #52e052;
+		border-color: var(--note-border);
+		background: #e9fbe9;
+		background: var(--note-bg);
+		color: black;
+		color: var(--note-text);
 		overflow: auto;
 	}
 
 	.note::before, .note > .marker,
-	details.note > summary::before,
-	details.note > summary > .marker {
-		text-transform: uppercase;
-		display: block;
+	details.note > summary {
 		color: hsl(120, 70%, 30%);
+		color: var(--noteheading-text);
 	}
-	/* Add .note::before { content: "Note"; } for autogen label,
+	/* Add .note::before { content: "Note "; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
 
-	details.note > summary {
-		display: block;
-		color: hsl(120, 70%, 30%);
-	}
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
+		border-bottom: 1px var(--notesummary-underline) solid;
 	}
 
 /** Assertion Box *************************************************************/
@@ -711,7 +779,11 @@
 
 	.assertion {
 		border-color: #AAA;
+		border-color: var(--assertion-border);
 		background: #EEE;
+		background: var(--assertion-bg);
+		color: black;
+		color: var(--assertion-text);
 	}
 
 /** Advisement Box ************************************************************/
@@ -719,15 +791,20 @@
 
 	.advisement {
 		border-color: orange;
+		border-color: var(--advisement-border);
 		border-style: none solid;
-		background: #FFEECC;
+		background: #fec;
+		background: var(--advisement-bg);
+		color: black;
+		color: var(--advisement-text);
 	}
 	strong.advisement {
 		display: block;
 		text-align: center;
 	}
-	.advisement > .marker {
-		color: #B35F00;
+	.advisement::before, .advisement > .marker {
+		color: #b35f00;
+		color: var(--advisementheading-text);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
@@ -743,27 +820,30 @@
 	.annoying-warning:not(details),
 	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
-		background: #fdd;
-		color: red;
-		font-weight: bold;
+		background: hsla(40,100%,50%,0.95);
+		background: var(--warning-bg);
+		color: black;
+		color: var(--warning-text);
 		padding: .75em 1em;
-		border: thick red;
-		border-style: solid;
-		border-radius: 1em;
+		border: red;
+		border: var(--warning-border);
+		border-style: solid none;
+		box-shadow: 0 2px 8px black;
+		text-align: center;
 	}
 	.annoying-warning :last-child {
 		margin-bottom: 0;
 	}
 
-@media not print {
-	details.annoying-warning[open] {
-		position: fixed;
-		left: 1em;
-		right: 1em;
-		bottom: 1em;
-		z-index: 1000;
+	@media not print {
+		details.annoying-warning[open] {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 2em;
+			z-index: 1000;
+		}
 	}
-}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -773,9 +853,13 @@
 
 	.def {
 		padding: .5em 1em;
-		background: #DEF;
+		background: #def;
+		background: var(--def-bg);
 		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
+		border-left: 0.5em solid #8ccbf2;
+		border-left: 0.5em solid var(--def-border);
+		color: black;
+		color: var(--def-text);
 	}
 
 /******************************************************************************/
@@ -800,6 +884,7 @@
 		padding: 0.5em;
 		vertical-align: baseline;
 		border-bottom: 1px solid #bbd7e9;
+		border-bottom: 1px solid var(--defrow-border);
 	}
 
 	table.def > tbody > tr:last-child th,
@@ -820,10 +905,10 @@
 	}
 
 	/* A footnote at the bottom of a def table */
-	table.def           td.footnote {
+	table.def td.footnote {
 		padding-top: 0.6em;
 	}
-	table.def           td.footnote::before {
+	table.def td.footnote::before {
 		content: " ";
 		display: block;
 		height: 0.6em;
@@ -868,6 +953,7 @@
 		padding: 0.5em 1em;
 		border-width: 1px;
 		border-color: silver;
+		border-color: var(--datacell-border);
 		border-top-style: solid;
 	}
 
@@ -892,6 +978,7 @@
 	table.index tbody th:first-child  {
 		border-right: 2px solid;
 		border-top: 1px solid silver;
+		border-top: 1px solid var(--datacell-border);
 		padding-right: 1em;
 	}
 
@@ -903,13 +990,14 @@
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
+		border: 1px solid var(--datacell-border);
 		text-align: center;
 	}
 
 	table.data.longlastcol td:last-child,
 	table.data td.long {
-	 vertical-align: baseline;
-	 text-align: left;
+		vertical-align: baseline;
+		text-align: left;
 	}
 
 	table.data img {
@@ -967,12 +1055,15 @@ Possible extra rowspan handling
 		display: block;
 		/* Reverse color scheme */
 		color: black;
-		border-color: #3980B5;
-		border-bottom-width: 3px !important;
-		margin-bottom: 0px !important;
+		color: var(--toclink-text);
+		border-color: #3980b5;
+		border-color: var(--toclink-underline);
 	}
 	.toc a:visited {
+		color: black;
+		color: var(--toclink-visited-text);
 		border-color: #054572;
+		border-color: var(--toclink-visited-underline);
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -1027,6 +1118,15 @@ Possible extra rowspan handling
 			.toc > li li li li .secno    { margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
+		/* Loosen it on wide screens */
+		@media screen and (min-width: 78em) {
+			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
+	}
 	/* } */
 
 	@supports (display:grid) and (display:contents) {
@@ -1068,9 +1168,12 @@ Possible extra rowspan handling
 			width: auto;
 			margin-right: 1rem;
 		}
-		#toc .content:hover {
+		#toc .content:hover,
+		#toc .content:focus {
 			background: rgba(75%, 75%, 75%, .25);
+			background: var(--a-hover-bg);
 			border-bottom: 3px solid #054572;
+			border-bottom: 3px solid var(--toclink-underline);
 			margin-bottom: -3px;
 		}
 		#toc li li li .content {
@@ -1101,6 +1204,7 @@ Possible extra rowspan handling
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: #707070;
+			color: var(--indexinfo-text);
 		}
 	}
 
@@ -1122,7 +1226,10 @@ Possible extra rowspan handling
 
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
+		color: black;
+		color: var(--indextable-hover-text);
 		background: #f7f8f9;
+		background: var(--indextable-hover-bg);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
@@ -1147,13 +1254,6 @@ Possible extra rowspan handling
 	@page {
 		margin: 1.5cm 1.1cm;
 	}
-
-/******************************************************************************/
-/*                                    Legacy                                  */
-/******************************************************************************/
-
-	/* This rule is inherited from past style sheets. No idea what it's for. */
-	.hide { display: none }
 
 
 
@@ -1221,14 +1321,14 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
+  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/vocabularies/" rel="canonical">
   <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
-  <meta content="e92fb7e4a4546b96277350d251900ca24dc907a3" name="document-revision">
+  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
-    color: #005a9c;
+    color: var(--a-normal-text);
     font-size: inherit;
     font-family: inherit;
 }
@@ -1287,6 +1387,114 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-colors */
+
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
+html {
+    color: black;
+    color: var(--text);
+    background-color: white;
+    background-color: var(--bg);
+}
+:root {
+    color-scheme: light dark;
+
+    --text: black;
+    --bg: white;
+
+    --logo-bg: #1a5e9a;
+    --logo-active-bg: #c00;
+    --logo-text: white;
+
+    --tocnav-normal-text: #707070;
+    --tocnav-normal-bg: var(--bg);
+    --tocnav-hover-text: var(--tocnav-normal-text);
+    --tocnav-hover-bg: #f8f8f8;
+    --tocnav-active-text: #c00;
+    --tocnav-active-bg: var(--tocnav-normal-bg);
+
+    --tocsidebar-text: var(--text);
+    --tocsidebar-bg: #f7f8f9;
+    --tocsidebar-shadow: rgba(0,0,0,.1);
+    --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+    --toclink-text: var(--text);
+    --toclink-underline: #3980b5;
+    --toclink-visited-text: var(--toclink-text);
+    --toclink-visited-underline: #054572;
+
+    --heading-text: #005a9c;
+
+    --hr-text: var(--text);
+
+    --algo-border: #def;
+
+    --del-text: red;
+    --del-bg: transparent;
+    --ins-text: #080;
+    --ins-bg: transparent;
+
+    --a-normal-text: #034575;
+    --a-normal-underline: #707070;
+    --a-visited-text: var(--a-normal-text);
+    --a-visited-underline: #bbb;
+    --a-hover-bg: rgba(75%, 75%, 75%, .25);
+    --a-active-text: #c00;
+    --a-active-underline: #c00;
+
+    --blockquote-border: silver;
+    --blockquote-bg: transparent;
+    --blockquote-text: currentcolor;
+
+    --issue-border: #e05252;
+    --issue-bg: #fbe9e9;
+    --issue-text: var(--text);
+    --issueheading-text: #831616;
+
+    --example-border: #e0cb52;
+    --example-bg: #fcfaee;
+    --example-text: var(--text);
+    --exampleheading-text: #574b0f;
+
+    --note-border: #52e052;
+    --note-bg: #e9fbe9;
+    --note-text: var(--text);
+    --noteheading-text: hsl(120, 70%, 30%);
+    --notesummary-underline: silver;
+
+    --assertion-border: #aaa;
+    --assertion-bg: #eee;
+    --assertion-text: black;
+
+    --advisement-border: orange;
+    --advisement-bg: #fec;
+    --advisement-text: var(--text);
+    --advisementheading-text: #b35f00;
+
+    --warning-border: red;
+    --warning-bg: hsla(40,100%,50%,0.95);
+    --warning-text: var(--text);
+
+    --def-border: #8ccbf2;
+    --def-bg: #def;
+    --def-text: var(--text);
+    --defrow-border: #bbd7e9;
+
+    --datacell-border: silver;
+
+    --indexinfo-text: #707070;
+
+    --indextable-hover-text: black;
+    --indextable-hover-bg: #f7f8f9;
+
+    --outdatedspec-bg: rgba(0, 0, 0, .5);
+    --outdatedspec-text: black;
+    --outdated-bg: maroon;
+    --outdated-text: white;
+    --outdated-shadow: red;
+
+    --editedrec-bg: darkorange;
+}</style>
 <style>/* style-counters */
 
 body {
@@ -1328,6 +1536,11 @@ figcaption:not(.no-marker)::before {
 }</style>
 <style>/* style-selflinks */
 
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
 .heading, .issue, .note, .example, li, dt {
     position: relative;
 }
@@ -1357,8 +1570,8 @@ dfn > a.self-link {
     opacity: 0;
     width: 1.5em;
     height: 1.5em;
-    background: gray;
-    color: white;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
     font-style: normal;
     transition: opacity .2s, background-color .2s, color .2s;
 }
@@ -1366,17 +1579,132 @@ dfn:hover > a.self-link {
     opacity: 1;
 }
 dfn > a.self-link:hover {
-    color: black;
+    color: var(--selflink-hover-text);
 }
 
 a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
+dfn > a.self-link::before      { content: "#"; }
+</style>
+<style>/* style-darkmode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">OML Vocabularies Index</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-09-14">14 September 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-09-29">29 September 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1440,89 +1768,89 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <li>
      <a href="#heading-domain-opencaesar.io"><span class="secno">5</span> <span class="content">opencaesar.io</span></a>
      <ol class="toc">
-      <li><a href="#heading-boeing-22"><span class="secno">5.1</span> <span class="content"><span>boeing</span></span></a>
-      <li><a href="#heading-cw-23"><span class="secno">5.2</span> <span class="content"><span>cw</span></span></a>
-      <li><a href="#heading-jpl-24"><span class="secno">5.3</span> <span class="content"><span>jpl</span></span></a>
-      <li><a href="#heading-lm-25"><span class="secno">5.4</span> <span class="content"><span>lm</span></span></a>
-      <li><a href="#heading-nasa-26"><span class="secno">5.5</span> <span class="content"><span>nasa</span></span></a>
-      <li><a href="#heading-ng-27"><span class="secno">5.6</span> <span class="content"><span>ng</span></span></a>
-      <li><a href="#heading-raytheon-28"><span class="secno">5.7</span> <span class="content"><span>raytheon</span></span></a>
-      <li><a href="#heading-earth-science-29"><span class="secno">5.8</span> <span class="content"><span>Fire Satellite Model</span></span></a>
+      <li><a href="#heading-boeing-22"><span class="secno">5.1</span> <span class="content"><span>Boeing</span></span></a>
+      <li><a href="#heading-cw-23"><span class="secno">5.2</span> <span class="content"><span>Curtiss Wright</span></span></a>
+      <li><a href="#heading-jpl-24"><span class="secno">5.3</span> <span class="content"><span>JPL</span></span></a>
+      <li><a href="#heading-lm-25"><span class="secno">5.4</span> <span class="content"><span>Lockheed Martin</span></span></a>
+      <li><a href="#heading-nasa-26"><span class="secno">5.5</span> <span class="content"><span>NASA</span></span></a>
+      <li><a href="#heading-ng-27"><span class="secno">5.6</span> <span class="content"><span>Northrop Grumman</span></span></a>
+      <li><a href="#heading-raytheon-28"><span class="secno">5.7</span> <span class="content"><span>Raytheon</span></span></a>
+      <li><a href="#heading-earth-science-29"><span class="secno">5.8</span> <span class="content"><span>Earth Science Program</span></span></a>
       <li><a href="#heading-firesat-mission-30"><span class="secno">5.9</span> <span class="content"><span>FireSat Mission</span></span></a>
       <li><a href="#heading-firesat-functions-31"><span class="secno">5.10</span> <span class="content"><span>FireSat Functions</span></span></a>
       <li><a href="#heading-firesat-functional-reqs-32"><span class="secno">5.11</span> <span class="content"><span>FireSat Functional Requirements</span></span></a>
       <li><a href="#heading-firesat-stakeholder-reqs-33"><span class="secno">5.12</span> <span class="content"><span>FireSat Stakeholder Requirements</span></span></a>
-      <li><a href="#heading-firesat-bundle-34"><span class="secno">5.13</span> <span class="content"><span>foundation-bundle</span></span></a>
+      <li><a href="#heading-firesat-bundle-34"><span class="secno">5.13</span> <span class="content"><span>FireSat Bundle</span></span></a>
       <li><a href="#heading-firesat-project-35"><span class="secno">5.14</span> <span class="content"><span>FireSat Project</span></span></a>
       <li><a href="#heading-firesat-compositions-36"><span class="secno">5.15</span> <span class="content"><span>FireSat Compositions</span></span></a>
-      <li><a href="#heading-pld-masses-37"><span class="secno">5.16</span> <span class="content"><span>ADCS and GNC Mass</span></span></a>
-      <li><a href="#heading-pld-38"><span class="secno">5.17</span> <span class="content"><span>Fire Satellite Payload</span></span></a>
+      <li><a href="#heading-pld-masses-37"><span class="secno">5.16</span> <span class="content"><span>Payload Masses</span></span></a>
+      <li><a href="#heading-pld-38"><span class="secno">5.17</span> <span class="content"><span>Payload</span></span></a>
       <li><a href="#heading-pld-system-reqs-39"><span class="secno">5.18</span> <span class="content"><span>Payload System Requirements</span></span></a>
-      <li><a href="#heading-firesat-signals-40"><span class="secno">5.19</span> <span class="content"><span>FireSat Functions</span></span></a>
-      <li><a href="#heading-spc-masses-41"><span class="secno">5.20</span> <span class="content"><span>ADCS and GNC Mass</span></span></a>
+      <li><a href="#heading-firesat-signals-40"><span class="secno">5.19</span> <span class="content"><span>FireSat Signals</span></span></a>
+      <li><a href="#heading-spc-masses-41"><span class="secno">5.20</span> <span class="content"><span>Spacecraft Masses</span></span></a>
       <li><a href="#heading-spc-environmental-reqs-42"><span class="secno">5.21</span> <span class="content"><span>Spacecraft Environmental Requirements</span></span></a>
       <li><a href="#heading-spc-logistical-reqs-43"><span class="secno">5.22</span> <span class="content"><span>Spacecraft Logistical Requirements</span></span></a>
       <li><a href="#heading-spc-operational-reqs-44"><span class="secno">5.23</span> <span class="content"><span>Spacecraft Operational Requirements</span></span></a>
       <li><a href="#heading-spc-performance-reqs-45"><span class="secno">5.24</span> <span class="content"><span>Spacecraft Performance Requirements</span></span></a>
       <li><a href="#heading-spc-resource-reqs-46"><span class="secno">5.25</span> <span class="content"><span>Spacecraft Resource Requirements</span></span></a>
       <li><a href="#heading-spc-system-reqs-47"><span class="secno">5.26</span> <span class="content"><span>Spacecraft System Requirements</span></span></a>
-      <li><a href="#heading-spc-48"><span class="secno">5.27</span> <span class="content"><span>Fire Satellite Spacecraft</span></span></a>
+      <li><a href="#heading-spc-48"><span class="secno">5.27</span> <span class="content"><span>Spacecraft</span></span></a>
       <li><a href="#heading-pld-assemblies-49"><span class="secno">5.28</span> <span class="content"><span>Payload Assemblies</span></span></a>
-      <li><a href="#heading-pld-compositions-50"><span class="secno">5.29</span> <span class="content"><span>Payload Composition</span></span></a>
-      <li><a href="#heading-pld-endcircuits-51"><span class="secno">5.30</span> <span class="content"><span>Payload Assemblies</span></span></a>
+      <li><a href="#heading-pld-compositions-50"><span class="secno">5.29</span> <span class="content"><span>Payload Compositions</span></span></a>
+      <li><a href="#heading-pld-endcircuits-51"><span class="secno">5.30</span> <span class="content"><span>Payload Endcircuits</span></span></a>
       <li><a href="#heading-pld-functions-52"><span class="secno">5.31</span> <span class="content"><span>Payload Functions</span></span></a>
-      <li><a href="#heading-pld-masses-53"><span class="secno">5.32</span> <span class="content"><span>Payload Mass Characterizations</span></span></a>
+      <li><a href="#heading-pld-masses-53"><span class="secno">5.32</span> <span class="content"><span>Payload Masses</span></span></a>
       <li><a href="#heading-pld-requirements-54"><span class="secno">5.33</span> <span class="content"><span>Payload Requirements</span></span></a>
       <li><a href="#heading-sam-assemblies-55"><span class="secno">5.34</span> <span class="content"><span>Structures and Mechanisms Assemblies</span></span></a>
-      <li><a href="#heading-sam-endcircuits-56"><span class="secno">5.35</span> <span class="content"><span>Structures and Mechanisms End Circuits</span></span></a>
+      <li><a href="#heading-sam-endcircuits-56"><span class="secno">5.35</span> <span class="content"><span>Structures and Mechanisms Endcircuits</span></span></a>
       <li><a href="#heading-sam-functions-57"><span class="secno">5.36</span> <span class="content"><span>Structures and Mechanisms Functions</span></span></a>
       <li><a href="#heading-sam-masses-58"><span class="secno">5.37</span> <span class="content"><span>Structures and Mechanisms Masses</span></span></a>
-      <li><a href="#heading-sam-requirements-59"><span class="secno">5.38</span> <span class="content"><span>Structures and Mechanisms</span></span></a>
-      <li><a href="#heading-sam-signals-60"><span class="secno">5.39</span> <span class="content"><span>Fire Satellite Functions</span></span></a>
+      <li><a href="#heading-sam-requirements-59"><span class="secno">5.38</span> <span class="content"><span>Structures and Mechanisms Requirements</span></span></a>
+      <li><a href="#heading-sam-signals-60"><span class="secno">5.39</span> <span class="content"><span>Fire Satellite Signals</span></span></a>
       <li><a href="#heading-thc-assemblies-61"><span class="secno">5.40</span> <span class="content"><span>Thermal Control Assemblies</span></span></a>
       <li><a href="#heading-thc-functions-62"><span class="secno">5.41</span> <span class="content"><span>Thermal Control Functions</span></span></a>
-      <li><a href="#heading-thc-masses-63"><span class="secno">5.42</span> <span class="content"><span>Thermal Control Mass Characterizations</span></span></a>
-      <li><a href="#heading-thc-requirements-64"><span class="secno">5.43</span> <span class="content"><span>Thermal Control</span></span></a>
-      <li><a href="#heading-eps-assemblies-65"><span class="secno">5.44</span> <span class="content"><span>Electic Power System Assemblies</span></span></a>
+      <li><a href="#heading-thc-masses-63"><span class="secno">5.42</span> <span class="content"><span>Thermal Control Masses</span></span></a>
+      <li><a href="#heading-thc-requirements-64"><span class="secno">5.43</span> <span class="content"><span>Thermal Control Requirements</span></span></a>
+      <li><a href="#heading-eps-assemblies-65"><span class="secno">5.44</span> <span class="content"><span>Electric Power System Assemblies</span></span></a>
       <li><a href="#heading-eps-endcircuits-66"><span class="secno">5.45</span> <span class="content"><span>Electric Power System Endcircuits</span></span></a>
-      <li><a href="#heading-eps-functions-67"><span class="secno">5.46</span> <span class="content"><span>Electic Power System Functions</span></span></a>
+      <li><a href="#heading-eps-functions-67"><span class="secno">5.46</span> <span class="content"><span>Electric Power System Functions</span></span></a>
       <li><a href="#heading-eps-masses-68"><span class="secno">5.47</span> <span class="content"><span>Electric Power System Masses</span></span></a>
       <li><a href="#heading-eps-requirements-69"><span class="secno">5.48</span> <span class="content"><span>Electric Power System Requirements</span></span></a>
       <li><a href="#heading-ang-assemblies-70"><span class="secno">5.49</span> <span class="content"><span>ADCS and GNC Assemblies</span></span></a>
-      <li><a href="#heading-ang-endcircuits-71"><span class="secno">5.50</span> <span class="content"><span>ADCS and GNC End Circuits</span></span></a>
+      <li><a href="#heading-ang-endcircuits-71"><span class="secno">5.50</span> <span class="content"><span>ADCS and GNC Endcircuits</span></span></a>
       <li><a href="#heading-ang-functions-72"><span class="secno">5.51</span> <span class="content"><span>ADCS and GNC Functions</span></span></a>
       <li><a href="#heading-ang-masses-73"><span class="secno">5.52</span> <span class="content"><span>ADCS and GNC Masses</span></span></a>
-      <li><a href="#heading-ang-requirements-74"><span class="secno">5.53</span> <span class="content"><span>ADCS and GNC</span></span></a>
+      <li><a href="#heading-ang-requirements-74"><span class="secno">5.53</span> <span class="content"><span>ADCS and GNC Requirements</span></span></a>
       <li><a href="#heading-prp-assemblies-75"><span class="secno">5.54</span> <span class="content"><span>Propulsion Assemblies</span></span></a>
       <li><a href="#heading-prp-composition-76"><span class="secno">5.55</span> <span class="content"><span>Propulsion Compositions</span></span></a>
-      <li><a href="#heading-prp-endcircuits-77"><span class="secno">5.56</span> <span class="content"><span>Propulsion End Circuits</span></span></a>
+      <li><a href="#heading-prp-endcircuits-77"><span class="secno">5.56</span> <span class="content"><span>Propulsion Endcircuits</span></span></a>
       <li><a href="#heading-prp-functions-78"><span class="secno">5.57</span> <span class="content"><span>Propulsion Functions</span></span></a>
       <li><a href="#heading-prp-mass-79"><span class="secno">5.58</span> <span class="content"><span>Propulsion Masses</span></span></a>
-      <li><a href="#heading-prp-requirements-80"><span class="secno">5.59</span> <span class="content"><span>Propulsion</span></span></a>
+      <li><a href="#heading-prp-requirements-80"><span class="secno">5.59</span> <span class="content"><span>Propulsion Requirements</span></span></a>
       <li><a href="#heading-cmn-assemblies-81"><span class="secno">5.60</span> <span class="content"><span>Communications Assemblies</span></span></a>
-      <li><a href="#heading-cmn-endcircuits-82"><span class="secno">5.61</span> <span class="content"><span>Communications End Circuits</span></span></a>
+      <li><a href="#heading-cmn-endcircuits-82"><span class="secno">5.61</span> <span class="content"><span>Communications Endcircuits</span></span></a>
       <li><a href="#heading-cmn-functions-83"><span class="secno">5.62</span> <span class="content"><span>Communications Functions</span></span></a>
       <li><a href="#heading-cmn-masses-84"><span class="secno">5.63</span> <span class="content"><span>Communications Masses</span></span></a>
-      <li><a href="#heading-cmn-requirements-85"><span class="secno">5.64</span> <span class="content"><span>Communications</span></span></a>
+      <li><a href="#heading-cmn-requirements-85"><span class="secno">5.64</span> <span class="content"><span>Communications Requirements</span></span></a>
       <li><a href="#heading-cdh-assemblies-86"><span class="secno">5.65</span> <span class="content"><span>Command and Data Handling Assemblies</span></span></a>
       <li><a href="#heading-cdh-compositions-87"><span class="secno">5.66</span> <span class="content"><span>Command and Data Handling Compositions</span></span></a>
-      <li><a href="#heading-cdh-endcircuits-88"><span class="secno">5.67</span> <span class="content"><span>Command and Data Handling End Circuits</span></span></a>
+      <li><a href="#heading-cdh-endcircuits-88"><span class="secno">5.67</span> <span class="content"><span>Command and Data Handling Endcircuits</span></span></a>
       <li><a href="#heading-cdh-functions-89"><span class="secno">5.68</span> <span class="content"><span>Command and Data Handling Functions</span></span></a>
       <li><a href="#heading-cdh-masses-90"><span class="secno">5.69</span> <span class="content"><span>Command and Data Handling Masses</span></span></a>
-      <li><a href="#heading-cdh-requirements-91"><span class="secno">5.70</span> <span class="content"><span>Command and Data Handling</span></span></a>
+      <li><a href="#heading-cdh-requirements-91"><span class="secno">5.70</span> <span class="content"><span>Command and Data Handling Requirements</span></span></a>
       <li><a href="#heading-spc-assemblies-92"><span class="secno">5.71</span> <span class="content"><span>Spacecraft Assemblies</span></span></a>
       <li><a href="#heading-spc-compositions-93"><span class="secno">5.72</span> <span class="content"><span>Spacecraft Compositions</span></span></a>
       <li><a href="#heading-spc-functions-94"><span class="secno">5.73</span> <span class="content"><span>Spacecraft Functions</span></span></a>
       <li><a href="#heading-spc-masses-95"><span class="secno">5.74</span> <span class="content"><span>Spacecraft Masses</span></span></a>
-      <li><a href="#heading-spc-requirements-96"><span class="secno">5.75</span> <span class="content"><span>Spacecraft</span></span></a>
-      <li><a href="#heading-spc-signals-97"><span class="secno">5.76</span> <span class="content"><span>Spacecraft Functions</span></span></a>
+      <li><a href="#heading-spc-requirements-96"><span class="secno">5.75</span> <span class="content"><span>Spacecraft Requirements</span></span></a>
+      <li><a href="#heading-spc-signals-97"><span class="secno">5.76</span> <span class="content"><span>Spacecraft Signals</span></span></a>
       <li><a href="#heading-ang-98"><span class="secno">5.77</span> <span class="content"><span>ADCS and GNC</span></span></a>
       <li><a href="#heading-ang-masses-99"><span class="secno">5.78</span> <span class="content"><span>ADCS and GNC Masses</span></span></a>
       <li><a href="#heading-cdh-100"><span class="secno">5.79</span> <span class="content"><span>Command and Data Handling</span></span></a>
       <li><a href="#heading-cdh-masses-101"><span class="secno">5.80</span> <span class="content"><span>Command and Data Handling Masses</span></span></a>
       <li><a href="#heading-cmn-102"><span class="secno">5.81</span> <span class="content"><span>Communications</span></span></a>
-      <li><a href="#heading-cmn-masses-103"><span class="secno">5.82</span> <span class="content"><span>Communications Mass</span></span></a>
-      <li><a href="#heading-eps-104"><span class="secno">5.83</span> <span class="content"><span>EPS</span></span></a>
+      <li><a href="#heading-cmn-masses-103"><span class="secno">5.82</span> <span class="content"><span>Communications Masses</span></span></a>
+      <li><a href="#heading-eps-104"><span class="secno">5.83</span> <span class="content"><span>Electric Power System</span></span></a>
       <li><a href="#heading-eps-masses-105"><span class="secno">5.84</span> <span class="content"><span>Electric Power System Masses</span></span></a>
       <li><a href="#heading-prp-masses-106"><span class="secno">5.85</span> <span class="content"><span>Propulsion Masses</span></span></a>
       <li><a href="#heading-prp-107"><span class="secno">5.86</span> <span class="content"><span>Propulsion</span></span></a>
@@ -1530,18 +1858,18 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <li><a href="#heading-sam-109"><span class="secno">5.88</span> <span class="content"><span>Structures and Mechanisms</span></span></a>
       <li><a href="#heading-thc-masses-110"><span class="secno">5.89</span> <span class="content"><span>Thermal Control Masses</span></span></a>
       <li><a href="#heading-thc-111"><span class="secno">5.90</span> <span class="content"><span>Thermal Control</span></span></a>
-      <li><a href="#heading-wp06-112"><span class="secno">5.91</span> <span class="content"><span>WP06</span></span></a>
+      <li><a href="#heading-wp06-112"><span class="secno">5.91</span> <span class="content"><span>Workpackage 06</span></span></a>
      </ol>
    </ol>
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="heading-domain-imce.jpl.nasa.gov"><span class="secno">1. </span><span class="content">imce.jpl.nasa.gov</span><a class="self-link" href="#heading-domain-imce.jpl.nasa.gov"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="heading-analysis-1"><span class="secno">1.1. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html">Analysis</a></span><a class="self-link" href="#heading-analysis-1"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="heading-analysis-1"><span class="secno">1.1. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/analysis.html">Analysis</a></span><a class="self-link" href="#heading-analysis-1"></a></h3>
     The Analysis Ontology defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts. 
-   <h3 class="heading settled" data-level="1.2" id="heading-base-2"><span class="secno">1.2. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/base.html">Base</a></span><a class="self-link" href="#heading-base-2"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="heading-base-2"><span class="secno">1.2. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/base.html">Base</a></span><a class="self-link" href="#heading-base-2"></a></h3>
     The Base Ontology defines foundation concepts that are common to multiple specialized ontologies. 
-   <h3 class="heading settled" data-level="1.3" id="heading-foundation-bundle-3"><span class="secno">1.3. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/bundle.html">foundation-bundle</a></span><a class="self-link" href="#heading-foundation-bundle-3"></a></h3>
-   <h3 class="heading settled" data-level="1.4" id="heading-metrology-4"><span class="secno">1.4. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/metrology.html">Metrology</a></span><a class="self-link" href="#heading-metrology-4"></a></h3>
+   <h3 class="heading settled" data-level="1.3" id="heading-foundation-bundle-3"><span class="secno">1.3. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/bundle.html">foundation-bundle</a></span><a class="self-link" href="#heading-foundation-bundle-3"></a></h3>
+   <h3 class="heading settled" data-level="1.4" id="heading-metrology-4"><span class="secno">1.4. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/metrology.html">Metrology</a></span><a class="self-link" href="#heading-metrology-4"></a></h3>
     The Metology vocabulary defines the concepts of metrology according to VIM3.
 See https://jcgm.bipm.org/vim/en/index.html
 See https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf 
@@ -1553,9 +1881,9 @@ such that their respective semantics become interoperable in a practically meani
 That is, the goal is to achieve a level of semantic compatibility such that
 the representation of metrology in OML or in SysMLv2 becomes a difference of concrete syntax representation
 (i.e, in OML or in Alf) with an equivalent logical semantics in OWL2 DL + SWRL and in SysMLv2’s logical semantics.</p>
-   <h3 class="heading settled" data-level="1.5" id="heading-mission-5"><span class="secno">1.5. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/mission.html">Mission</a></span><a class="self-link" href="#heading-mission-5"></a></h3>
+   <h3 class="heading settled" data-level="1.5" id="heading-mission-5"><span class="secno">1.5. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/mission.html">Mission</a></span><a class="self-link" href="#heading-mission-5"></a></h3>
     The Mission Ontology defines concepts and properties for describing missions in terms of their objectives, their constituent components, the functions those components perform, and the requirements that specify them. 
-   <h3 class="heading settled" data-level="1.6" id="heading-project-6"><span class="secno">1.6. </span><span class="content"><a href="./build/dependencies/imce.jpl.nasa.gov/foundation/project.html">Project</a></span><a class="self-link" href="#heading-project-6"></a></h3>
+   <h3 class="heading settled" data-level="1.6" id="heading-project-6"><span class="secno">1.6. </span><span class="content"><a href="./build/oml/imce.jpl.nasa.gov/foundation/project.html">Project</a></span><a class="self-link" href="#heading-project-6"></a></h3>
     The Project Ontology defines concepts and properties for describing a project in terms of its stakeholders, concerns, work breakdown, and deliverables. It provides a basis for specialization by domain experts. 
    <h3 class="heading settled" data-level="1.7" id="heading-fse-assemblies-17"><span class="secno">1.7. </span><span class="content"><a href="./src/oml/imce.jpl.nasa.gov/discipline/fse/assemblies.html">Assembly Library</a></span><a class="self-link" href="#heading-fse-assemblies-17"></a></h3>
     A library for assemblies. 
@@ -1567,112 +1895,112 @@ the representation of metrology in OML or in SysMLv2 becomes a difference of con
    <h3 class="heading settled" data-level="1.11" id="heading-fse-functions-21"><span class="secno">1.11. </span><span class="content"><a href="./src/oml/imce.jpl.nasa.gov/discipline/fse/functions.html">Function Library</a></span><a class="self-link" href="#heading-fse-functions-21"></a></h3>
     A library for functions. 
    <h2 class="heading settled" data-level="2" id="heading-domain-iso.org"><span class="secno">2. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-iso-80000-2-7"><span class="secno">2.1. </span><span class="content"><a href="./build/dependencies/iso.org/iso-80000-2.html">ISO-80000-2</a></span><a class="self-link" href="#heading-iso-80000-2-7"></a></h3>
+   <h3 class="heading settled" data-level="2.1" id="heading-iso-80000-2-7"><span class="secno">2.1. </span><span class="content"><a href="./build/oml/iso.org/iso-80000-2.html">ISO-80000-2</a></span><a class="self-link" href="#heading-iso-80000-2-7"></a></h3>
     The ISO 80000 Part 2 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards. 
-   <h3 class="heading settled" data-level="2.2" id="heading-iso-80000-3-8"><span class="secno">2.2. </span><span class="content"><a href="./build/dependencies/iso.org/iso-80000-3.html">ISO-80000-3</a></span><a class="self-link" href="#heading-iso-80000-3-8"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="heading-iso-80000-3-8"><span class="secno">2.2. </span><span class="content"><a href="./build/oml/iso.org/iso-80000-3.html">ISO-80000-3</a></span><a class="self-link" href="#heading-iso-80000-3-8"></a></h3>
     The ISO 80000 Part 3 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards. 
-   <h3 class="heading settled" data-level="2.3" id="heading-iso-80000-4-9"><span class="secno">2.3. </span><span class="content"><a href="./build/dependencies/iso.org/iso-80000-4.html">ISO-80000-4</a></span><a class="self-link" href="#heading-iso-80000-4-9"></a></h3>
+   <h3 class="heading settled" data-level="2.3" id="heading-iso-80000-4-9"><span class="secno">2.3. </span><span class="content"><a href="./build/oml/iso.org/iso-80000-4.html">ISO-80000-4</a></span><a class="self-link" href="#heading-iso-80000-4-9"></a></h3>
     The ISO 80000 Part 4 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards. 
-   <h3 class="heading settled" data-level="2.4" id="heading-iso-80000-5-10"><span class="secno">2.4. </span><span class="content"><a href="./build/dependencies/iso.org/iso-80000-5.html">ISO-80000-5</a></span><a class="self-link" href="#heading-iso-80000-5-10"></a></h3>
+   <h3 class="heading settled" data-level="2.4" id="heading-iso-80000-5-10"><span class="secno">2.4. </span><span class="content"><a href="./build/oml/iso.org/iso-80000-5.html">ISO-80000-5</a></span><a class="self-link" href="#heading-iso-80000-5-10"></a></h3>
     The ISO 80000 Part 5 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards. 
-   <h3 class="heading settled" data-level="2.5" id="heading-iso-80000-6-11"><span class="secno">2.5. </span><span class="content"><a href="./build/dependencies/iso.org/iso-80000-6.html">ISO-80000-6</a></span><a class="self-link" href="#heading-iso-80000-6-11"></a></h3>
+   <h3 class="heading settled" data-level="2.5" id="heading-iso-80000-6-11"><span class="secno">2.5. </span><span class="content"><a href="./build/oml/iso.org/iso-80000-6.html">ISO-80000-6</a></span><a class="self-link" href="#heading-iso-80000-6-11"></a></h3>
     The ISO 80000 Part 6 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards. 
    <h2 class="heading settled" data-level="3" id="heading-domain-purl.org"><span class="secno">3. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-dc-12"><span class="secno">3.1. </span><span class="content"><a href="./build/dependencies/purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-12"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="heading-dc-12"><span class="secno">3.1. </span><span class="content"><a href="./build/oml/purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-12"></a></h3>
     The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
    <h2 class="heading settled" data-level="4" id="heading-domain-www.w3.org"><span class="secno">4. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-rdf-13"><span class="secno">4.1. </span><span class="content"><a href="./build/dependencies/www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-13"></a></h3>
+   <h3 class="heading settled" data-level="4.1" id="heading-rdf-13"><span class="secno">4.1. </span><span class="content"><a href="./build/oml/www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-13"></a></h3>
     The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="4.2" id="heading-rdfs-14"><span class="secno">4.2. </span><span class="content"><a href="./build/dependencies/www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-14"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="heading-rdfs-14"><span class="secno">4.2. </span><span class="content"><a href="./build/oml/www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-14"></a></h3>
     The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="4.3" id="heading-xsd-15"><span class="secno">4.3. </span><span class="content"><a href="./build/dependencies/www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-15"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="heading-xsd-15"><span class="secno">4.3. </span><span class="content"><a href="./build/oml/www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-15"></a></h3>
     The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="4.4" id="heading-owl-16"><span class="secno">4.4. </span><span class="content"><a href="./build/dependencies/www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-16"></a></h3>
+   <h3 class="heading settled" data-level="4.4" id="heading-owl-16"><span class="secno">4.4. </span><span class="content"><a href="./build/oml/www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-16"></a></h3>
     The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
    <h2 class="heading settled" data-level="5" id="heading-domain-opencaesar.io"><span class="secno">5. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-boeing-22"><span class="secno">5.1. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/boeing.html">boeing</a></span><a class="self-link" href="#heading-boeing-22"></a></h3>
-   <h3 class="heading settled" data-level="5.2" id="heading-cw-23"><span class="secno">5.2. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/curtiss-wright.html">cw</a></span><a class="self-link" href="#heading-cw-23"></a></h3>
-   <h3 class="heading settled" data-level="5.3" id="heading-jpl-24"><span class="secno">5.3. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/jpl.html">jpl</a></span><a class="self-link" href="#heading-jpl-24"></a></h3>
-   <h3 class="heading settled" data-level="5.4" id="heading-lm-25"><span class="secno">5.4. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/lockheed-martin.html">lm</a></span><a class="self-link" href="#heading-lm-25"></a></h3>
-   <h3 class="heading settled" data-level="5.5" id="heading-nasa-26"><span class="secno">5.5. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/nasa.html">nasa</a></span><a class="self-link" href="#heading-nasa-26"></a></h3>
-   <h3 class="heading settled" data-level="5.6" id="heading-ng-27"><span class="secno">5.6. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/northrop-grumman.html">ng</a></span><a class="self-link" href="#heading-ng-27"></a></h3>
-   <h3 class="heading settled" data-level="5.7" id="heading-raytheon-28"><span class="secno">5.7. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/raytheon.html">raytheon</a></span><a class="self-link" href="#heading-raytheon-28"></a></h3>
-   <h3 class="heading settled" data-level="5.8" id="heading-earth-science-29"><span class="secno">5.8. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/earth-science.html">Fire Satellite Model</a></span><a class="self-link" href="#heading-earth-science-29"></a></h3>
+   <h3 class="heading settled" data-level="5.1" id="heading-boeing-22"><span class="secno">5.1. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/boeing.html">Boeing</a></span><a class="self-link" href="#heading-boeing-22"></a></h3>
+   <h3 class="heading settled" data-level="5.2" id="heading-cw-23"><span class="secno">5.2. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/curtiss-wright.html">Curtiss Wright</a></span><a class="self-link" href="#heading-cw-23"></a></h3>
+   <h3 class="heading settled" data-level="5.3" id="heading-jpl-24"><span class="secno">5.3. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/jpl.html">JPL</a></span><a class="self-link" href="#heading-jpl-24"></a></h3>
+   <h3 class="heading settled" data-level="5.4" id="heading-lm-25"><span class="secno">5.4. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/lockheed-martin.html">Lockheed Martin</a></span><a class="self-link" href="#heading-lm-25"></a></h3>
+   <h3 class="heading settled" data-level="5.5" id="heading-nasa-26"><span class="secno">5.5. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/nasa.html">NASA</a></span><a class="self-link" href="#heading-nasa-26"></a></h3>
+   <h3 class="heading settled" data-level="5.6" id="heading-ng-27"><span class="secno">5.6. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/northrop-grumman.html">Northrop Grumman</a></span><a class="self-link" href="#heading-ng-27"></a></h3>
+   <h3 class="heading settled" data-level="5.7" id="heading-raytheon-28"><span class="secno">5.7. </span><span class="content"><a href="./src/oml/opencaesar.io/organizations/raytheon.html">Raytheon</a></span><a class="self-link" href="#heading-raytheon-28"></a></h3>
+   <h3 class="heading settled" data-level="5.8" id="heading-earth-science-29"><span class="secno">5.8. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/earth-science.html">Earth Science Program</a></span><a class="self-link" href="#heading-earth-science-29"></a></h3>
    <h3 class="heading settled" data-level="5.9" id="heading-firesat-mission-30"><span class="secno">5.9. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/missions/firesat/firesat.html">FireSat Mission</a></span><a class="self-link" href="#heading-firesat-mission-30"></a></h3>
    <h3 class="heading settled" data-level="5.10" id="heading-firesat-functions-31"><span class="secno">5.10. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/missions/firesat/functions.html">FireSat Functions</a></span><a class="self-link" href="#heading-firesat-functions-31"></a></h3>
    <h3 class="heading settled" data-level="5.11" id="heading-firesat-functional-reqs-32"><span class="secno">5.11. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/missions/firesat/requirements/functional.html">FireSat Functional Requirements</a></span><a class="self-link" href="#heading-firesat-functional-reqs-32"></a></h3>
    <h3 class="heading settled" data-level="5.12" id="heading-firesat-stakeholder-reqs-33"><span class="secno">5.12. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/missions/firesat/requirements/stakeholder.html">FireSat Stakeholder Requirements</a></span><a class="self-link" href="#heading-firesat-stakeholder-reqs-33"></a></h3>
-   <h3 class="heading settled" data-level="5.13" id="heading-firesat-bundle-34"><span class="secno">5.13. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/bundle.html">foundation-bundle</a></span><a class="self-link" href="#heading-firesat-bundle-34"></a></h3>
+   <h3 class="heading settled" data-level="5.13" id="heading-firesat-bundle-34"><span class="secno">5.13. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/bundle.html">FireSat Bundle</a></span><a class="self-link" href="#heading-firesat-bundle-34"></a></h3>
    <h3 class="heading settled" data-level="5.14" id="heading-firesat-project-35"><span class="secno">5.14. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/firesat.html">FireSat Project</a></span><a class="self-link" href="#heading-firesat-project-35"></a></h3>
    <h3 class="heading settled" data-level="5.15" id="heading-firesat-compositions-36"><span class="secno">5.15. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/compositions.html">FireSat Compositions</a></span><a class="self-link" href="#heading-firesat-compositions-36"></a></h3>
-   <h3 class="heading settled" data-level="5.16" id="heading-pld-masses-37"><span class="secno">5.16. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/pld/masses.html">ADCS and GNC Mass</a></span><a class="self-link" href="#heading-pld-masses-37"></a></h3>
-   <h3 class="heading settled" data-level="5.17" id="heading-pld-38"><span class="secno">5.17. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/pld/pld.html">Fire Satellite Payload</a></span><a class="self-link" href="#heading-pld-38"></a></h3>
+   <h3 class="heading settled" data-level="5.16" id="heading-pld-masses-37"><span class="secno">5.16. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/pld/masses.html">Payload Masses</a></span><a class="self-link" href="#heading-pld-masses-37"></a></h3>
+   <h3 class="heading settled" data-level="5.17" id="heading-pld-38"><span class="secno">5.17. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/pld/pld.html">Payload</a></span><a class="self-link" href="#heading-pld-38"></a></h3>
    <h3 class="heading settled" data-level="5.18" id="heading-pld-system-reqs-39"><span class="secno">5.18. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/pld/requirements/system.html">Payload System Requirements</a></span><a class="self-link" href="#heading-pld-system-reqs-39"></a></h3>
-   <h3 class="heading settled" data-level="5.19" id="heading-firesat-signals-40"><span class="secno">5.19. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/signals.html">FireSat Functions</a></span><a class="self-link" href="#heading-firesat-signals-40"></a></h3>
-   <h3 class="heading settled" data-level="5.20" id="heading-spc-masses-41"><span class="secno">5.20. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/masses.html">ADCS and GNC Mass</a></span><a class="self-link" href="#heading-spc-masses-41"></a></h3>
+   <h3 class="heading settled" data-level="5.19" id="heading-firesat-signals-40"><span class="secno">5.19. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/signals.html">FireSat Signals</a></span><a class="self-link" href="#heading-firesat-signals-40"></a></h3>
+   <h3 class="heading settled" data-level="5.20" id="heading-spc-masses-41"><span class="secno">5.20. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/masses.html">Spacecraft Masses</a></span><a class="self-link" href="#heading-spc-masses-41"></a></h3>
    <h3 class="heading settled" data-level="5.21" id="heading-spc-environmental-reqs-42"><span class="secno">5.21. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental.html">Spacecraft Environmental Requirements</a></span><a class="self-link" href="#heading-spc-environmental-reqs-42"></a></h3>
    <h3 class="heading settled" data-level="5.22" id="heading-spc-logistical-reqs-43"><span class="secno">5.22. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical.html">Spacecraft Logistical Requirements</a></span><a class="self-link" href="#heading-spc-logistical-reqs-43"></a></h3>
    <h3 class="heading settled" data-level="5.23" id="heading-spc-operational-reqs-44"><span class="secno">5.23. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/operational.html">Spacecraft Operational Requirements</a></span><a class="self-link" href="#heading-spc-operational-reqs-44"></a></h3>
    <h3 class="heading settled" data-level="5.24" id="heading-spc-performance-reqs-45"><span class="secno">5.24. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/performance.html">Spacecraft Performance Requirements</a></span><a class="self-link" href="#heading-spc-performance-reqs-45"></a></h3>
    <h3 class="heading settled" data-level="5.25" id="heading-spc-resource-reqs-46"><span class="secno">5.25. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource.html">Spacecraft Resource Requirements</a></span><a class="self-link" href="#heading-spc-resource-reqs-46"></a></h3>
    <h3 class="heading settled" data-level="5.26" id="heading-spc-system-reqs-47"><span class="secno">5.26. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system.html">Spacecraft System Requirements</a></span><a class="self-link" href="#heading-spc-system-reqs-47"></a></h3>
-   <h3 class="heading settled" data-level="5.27" id="heading-spc-48"><span class="secno">5.27. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc.html">Fire Satellite Spacecraft</a></span><a class="self-link" href="#heading-spc-48"></a></h3>
+   <h3 class="heading settled" data-level="5.27" id="heading-spc-48"><span class="secno">5.27. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc.html">Spacecraft</a></span><a class="self-link" href="#heading-spc-48"></a></h3>
    <h3 class="heading settled" data-level="5.28" id="heading-pld-assemblies-49"><span class="secno">5.28. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies.html">Payload Assemblies</a></span><a class="self-link" href="#heading-pld-assemblies-49"></a></h3>
-   <h3 class="heading settled" data-level="5.29" id="heading-pld-compositions-50"><span class="secno">5.29. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/compositions.html">Payload Composition</a></span><a class="self-link" href="#heading-pld-compositions-50"></a></h3>
-   <h3 class="heading settled" data-level="5.30" id="heading-pld-endcircuits-51"><span class="secno">5.30. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits.html">Payload Assemblies</a></span><a class="self-link" href="#heading-pld-endcircuits-51"></a></h3>
+   <h3 class="heading settled" data-level="5.29" id="heading-pld-compositions-50"><span class="secno">5.29. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/compositions.html">Payload Compositions</a></span><a class="self-link" href="#heading-pld-compositions-50"></a></h3>
+   <h3 class="heading settled" data-level="5.30" id="heading-pld-endcircuits-51"><span class="secno">5.30. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits.html">Payload Endcircuits</a></span><a class="self-link" href="#heading-pld-endcircuits-51"></a></h3>
    <h3 class="heading settled" data-level="5.31" id="heading-pld-functions-52"><span class="secno">5.31. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions.html">Payload Functions</a></span><a class="self-link" href="#heading-pld-functions-52"></a></h3>
-   <h3 class="heading settled" data-level="5.32" id="heading-pld-masses-53"><span class="secno">5.32. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/masses.html">Payload Mass Characterizations</a></span><a class="self-link" href="#heading-pld-masses-53"></a></h3>
+   <h3 class="heading settled" data-level="5.32" id="heading-pld-masses-53"><span class="secno">5.32. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/masses.html">Payload Masses</a></span><a class="self-link" href="#heading-pld-masses-53"></a></h3>
    <h3 class="heading settled" data-level="5.33" id="heading-pld-requirements-54"><span class="secno">5.33. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/requirements.html">Payload Requirements</a></span><a class="self-link" href="#heading-pld-requirements-54"></a></h3>
    <h3 class="heading settled" data-level="5.34" id="heading-sam-assemblies-55"><span class="secno">5.34. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies.html">Structures and Mechanisms Assemblies</a></span><a class="self-link" href="#heading-sam-assemblies-55"></a></h3>
-   <h3 class="heading settled" data-level="5.35" id="heading-sam-endcircuits-56"><span class="secno">5.35. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits.html">Structures and Mechanisms End Circuits</a></span><a class="self-link" href="#heading-sam-endcircuits-56"></a></h3>
+   <h3 class="heading settled" data-level="5.35" id="heading-sam-endcircuits-56"><span class="secno">5.35. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits.html">Structures and Mechanisms Endcircuits</a></span><a class="self-link" href="#heading-sam-endcircuits-56"></a></h3>
    <h3 class="heading settled" data-level="5.36" id="heading-sam-functions-57"><span class="secno">5.36. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions.html">Structures and Mechanisms Functions</a></span><a class="self-link" href="#heading-sam-functions-57"></a></h3>
    <h3 class="heading settled" data-level="5.37" id="heading-sam-masses-58"><span class="secno">5.37. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/masses.html">Structures and Mechanisms Masses</a></span><a class="self-link" href="#heading-sam-masses-58"></a></h3>
-   <h3 class="heading settled" data-level="5.38" id="heading-sam-requirements-59"><span class="secno">5.38. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/requirements.html">Structures and Mechanisms</a></span><a class="self-link" href="#heading-sam-requirements-59"></a></h3>
-   <h3 class="heading settled" data-level="5.39" id="heading-sam-signals-60"><span class="secno">5.39. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals.html">Fire Satellite Functions</a></span><a class="self-link" href="#heading-sam-signals-60"></a></h3>
+   <h3 class="heading settled" data-level="5.38" id="heading-sam-requirements-59"><span class="secno">5.38. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/requirements.html">Structures and Mechanisms Requirements</a></span><a class="self-link" href="#heading-sam-requirements-59"></a></h3>
+   <h3 class="heading settled" data-level="5.39" id="heading-sam-signals-60"><span class="secno">5.39. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals.html">Fire Satellite Signals</a></span><a class="self-link" href="#heading-sam-signals-60"></a></h3>
    <h3 class="heading settled" data-level="5.40" id="heading-thc-assemblies-61"><span class="secno">5.40. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies.html">Thermal Control Assemblies</a></span><a class="self-link" href="#heading-thc-assemblies-61"></a></h3>
    <h3 class="heading settled" data-level="5.41" id="heading-thc-functions-62"><span class="secno">5.41. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions.html">Thermal Control Functions</a></span><a class="self-link" href="#heading-thc-functions-62"></a></h3>
-   <h3 class="heading settled" data-level="5.42" id="heading-thc-masses-63"><span class="secno">5.42. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/masses.html">Thermal Control Mass Characterizations</a></span><a class="self-link" href="#heading-thc-masses-63"></a></h3>
-   <h3 class="heading settled" data-level="5.43" id="heading-thc-requirements-64"><span class="secno">5.43. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/requirements.html">Thermal Control</a></span><a class="self-link" href="#heading-thc-requirements-64"></a></h3>
-   <h3 class="heading settled" data-level="5.44" id="heading-eps-assemblies-65"><span class="secno">5.44. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies.html">Electic Power System Assemblies</a></span><a class="self-link" href="#heading-eps-assemblies-65"></a></h3>
+   <h3 class="heading settled" data-level="5.42" id="heading-thc-masses-63"><span class="secno">5.42. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/masses.html">Thermal Control Masses</a></span><a class="self-link" href="#heading-thc-masses-63"></a></h3>
+   <h3 class="heading settled" data-level="5.43" id="heading-thc-requirements-64"><span class="secno">5.43. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/requirements.html">Thermal Control Requirements</a></span><a class="self-link" href="#heading-thc-requirements-64"></a></h3>
+   <h3 class="heading settled" data-level="5.44" id="heading-eps-assemblies-65"><span class="secno">5.44. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies.html">Electric Power System Assemblies</a></span><a class="self-link" href="#heading-eps-assemblies-65"></a></h3>
    <h3 class="heading settled" data-level="5.45" id="heading-eps-endcircuits-66"><span class="secno">5.45. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/endcircuits.html">Electric Power System Endcircuits</a></span><a class="self-link" href="#heading-eps-endcircuits-66"></a></h3>
-   <h3 class="heading settled" data-level="5.46" id="heading-eps-functions-67"><span class="secno">5.46. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/functions.html">Electic Power System Functions</a></span><a class="self-link" href="#heading-eps-functions-67"></a></h3>
+   <h3 class="heading settled" data-level="5.46" id="heading-eps-functions-67"><span class="secno">5.46. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/functions.html">Electric Power System Functions</a></span><a class="self-link" href="#heading-eps-functions-67"></a></h3>
    <h3 class="heading settled" data-level="5.47" id="heading-eps-masses-68"><span class="secno">5.47. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/masses.html">Electric Power System Masses</a></span><a class="self-link" href="#heading-eps-masses-68"></a></h3>
    <h3 class="heading settled" data-level="5.48" id="heading-eps-requirements-69"><span class="secno">5.48. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements.html">Electric Power System Requirements</a></span><a class="self-link" href="#heading-eps-requirements-69"></a></h3>
    <h3 class="heading settled" data-level="5.49" id="heading-ang-assemblies-70"><span class="secno">5.49. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies.html">ADCS and GNC Assemblies</a></span><a class="self-link" href="#heading-ang-assemblies-70"></a></h3>
-   <h3 class="heading settled" data-level="5.50" id="heading-ang-endcircuits-71"><span class="secno">5.50. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits.html">ADCS and GNC End Circuits</a></span><a class="self-link" href="#heading-ang-endcircuits-71"></a></h3>
+   <h3 class="heading settled" data-level="5.50" id="heading-ang-endcircuits-71"><span class="secno">5.50. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits.html">ADCS and GNC Endcircuits</a></span><a class="self-link" href="#heading-ang-endcircuits-71"></a></h3>
    <h3 class="heading settled" data-level="5.51" id="heading-ang-functions-72"><span class="secno">5.51. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions.html">ADCS and GNC Functions</a></span><a class="self-link" href="#heading-ang-functions-72"></a></h3>
    <h3 class="heading settled" data-level="5.52" id="heading-ang-masses-73"><span class="secno">5.52. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/masses.html">ADCS and GNC Masses</a></span><a class="self-link" href="#heading-ang-masses-73"></a></h3>
-   <h3 class="heading settled" data-level="5.53" id="heading-ang-requirements-74"><span class="secno">5.53. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/requirements.html">ADCS and GNC</a></span><a class="self-link" href="#heading-ang-requirements-74"></a></h3>
+   <h3 class="heading settled" data-level="5.53" id="heading-ang-requirements-74"><span class="secno">5.53. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/requirements.html">ADCS and GNC Requirements</a></span><a class="self-link" href="#heading-ang-requirements-74"></a></h3>
    <h3 class="heading settled" data-level="5.54" id="heading-prp-assemblies-75"><span class="secno">5.54. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies.html">Propulsion Assemblies</a></span><a class="self-link" href="#heading-prp-assemblies-75"></a></h3>
    <h3 class="heading settled" data-level="5.55" id="heading-prp-composition-76"><span class="secno">5.55. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/compositions.html">Propulsion Compositions</a></span><a class="self-link" href="#heading-prp-composition-76"></a></h3>
-   <h3 class="heading settled" data-level="5.56" id="heading-prp-endcircuits-77"><span class="secno">5.56. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits.html">Propulsion End Circuits</a></span><a class="self-link" href="#heading-prp-endcircuits-77"></a></h3>
+   <h3 class="heading settled" data-level="5.56" id="heading-prp-endcircuits-77"><span class="secno">5.56. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits.html">Propulsion Endcircuits</a></span><a class="self-link" href="#heading-prp-endcircuits-77"></a></h3>
    <h3 class="heading settled" data-level="5.57" id="heading-prp-functions-78"><span class="secno">5.57. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/functions.html">Propulsion Functions</a></span><a class="self-link" href="#heading-prp-functions-78"></a></h3>
    <h3 class="heading settled" data-level="5.58" id="heading-prp-mass-79"><span class="secno">5.58. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/masses.html">Propulsion Masses</a></span><a class="self-link" href="#heading-prp-mass-79"></a></h3>
-   <h3 class="heading settled" data-level="5.59" id="heading-prp-requirements-80"><span class="secno">5.59. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/requirements.html">Propulsion</a></span><a class="self-link" href="#heading-prp-requirements-80"></a></h3>
+   <h3 class="heading settled" data-level="5.59" id="heading-prp-requirements-80"><span class="secno">5.59. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/requirements.html">Propulsion Requirements</a></span><a class="self-link" href="#heading-prp-requirements-80"></a></h3>
    <h3 class="heading settled" data-level="5.60" id="heading-cmn-assemblies-81"><span class="secno">5.60. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">Communications Assemblies</a></span><a class="self-link" href="#heading-cmn-assemblies-81"></a></h3>
-   <h3 class="heading settled" data-level="5.61" id="heading-cmn-endcircuits-82"><span class="secno">5.61. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits.html">Communications End Circuits</a></span><a class="self-link" href="#heading-cmn-endcircuits-82"></a></h3>
+   <h3 class="heading settled" data-level="5.61" id="heading-cmn-endcircuits-82"><span class="secno">5.61. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits.html">Communications Endcircuits</a></span><a class="self-link" href="#heading-cmn-endcircuits-82"></a></h3>
    <h3 class="heading settled" data-level="5.62" id="heading-cmn-functions-83"><span class="secno">5.62. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions.html">Communications Functions</a></span><a class="self-link" href="#heading-cmn-functions-83"></a></h3>
    <h3 class="heading settled" data-level="5.63" id="heading-cmn-masses-84"><span class="secno">5.63. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses.html">Communications Masses</a></span><a class="self-link" href="#heading-cmn-masses-84"></a></h3>
-   <h3 class="heading settled" data-level="5.64" id="heading-cmn-requirements-85"><span class="secno">5.64. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements.html">Communications</a></span><a class="self-link" href="#heading-cmn-requirements-85"></a></h3>
+   <h3 class="heading settled" data-level="5.64" id="heading-cmn-requirements-85"><span class="secno">5.64. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements.html">Communications Requirements</a></span><a class="self-link" href="#heading-cmn-requirements-85"></a></h3>
    <h3 class="heading settled" data-level="5.65" id="heading-cdh-assemblies-86"><span class="secno">5.65. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies.html">Command and Data Handling Assemblies</a></span><a class="self-link" href="#heading-cdh-assemblies-86"></a></h3>
    <h3 class="heading settled" data-level="5.66" id="heading-cdh-compositions-87"><span class="secno">5.66. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/compositions.html">Command and Data Handling Compositions</a></span><a class="self-link" href="#heading-cdh-compositions-87"></a></h3>
-   <h3 class="heading settled" data-level="5.67" id="heading-cdh-endcircuits-88"><span class="secno">5.67. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/endcircuits.html">Command and Data Handling End Circuits</a></span><a class="self-link" href="#heading-cdh-endcircuits-88"></a></h3>
+   <h3 class="heading settled" data-level="5.67" id="heading-cdh-endcircuits-88"><span class="secno">5.67. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/endcircuits.html">Command and Data Handling Endcircuits</a></span><a class="self-link" href="#heading-cdh-endcircuits-88"></a></h3>
    <h3 class="heading settled" data-level="5.68" id="heading-cdh-functions-89"><span class="secno">5.68. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions.html">Command and Data Handling Functions</a></span><a class="self-link" href="#heading-cdh-functions-89"></a></h3>
    <h3 class="heading settled" data-level="5.69" id="heading-cdh-masses-90"><span class="secno">5.69. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses.html">Command and Data Handling Masses</a></span><a class="self-link" href="#heading-cdh-masses-90"></a></h3>
-   <h3 class="heading settled" data-level="5.70" id="heading-cdh-requirements-91"><span class="secno">5.70. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/requirements.html">Command and Data Handling</a></span><a class="self-link" href="#heading-cdh-requirements-91"></a></h3>
+   <h3 class="heading settled" data-level="5.70" id="heading-cdh-requirements-91"><span class="secno">5.70. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/requirements.html">Command and Data Handling Requirements</a></span><a class="self-link" href="#heading-cdh-requirements-91"></a></h3>
    <h3 class="heading settled" data-level="5.71" id="heading-spc-assemblies-92"><span class="secno">5.71. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies.html">Spacecraft Assemblies</a></span><a class="self-link" href="#heading-spc-assemblies-92"></a></h3>
    <h3 class="heading settled" data-level="5.72" id="heading-spc-compositions-93"><span class="secno">5.72. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/compositions.html">Spacecraft Compositions</a></span><a class="self-link" href="#heading-spc-compositions-93"></a></h3>
    <h3 class="heading settled" data-level="5.73" id="heading-spc-functions-94"><span class="secno">5.73. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions.html">Spacecraft Functions</a></span><a class="self-link" href="#heading-spc-functions-94"></a></h3>
    <h3 class="heading settled" data-level="5.74" id="heading-spc-masses-95"><span class="secno">5.74. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/masses.html">Spacecraft Masses</a></span><a class="self-link" href="#heading-spc-masses-95"></a></h3>
-   <h3 class="heading settled" data-level="5.75" id="heading-spc-requirements-96"><span class="secno">5.75. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements.html">Spacecraft</a></span><a class="self-link" href="#heading-spc-requirements-96"></a></h3>
-   <h3 class="heading settled" data-level="5.76" id="heading-spc-signals-97"><span class="secno">5.76. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/signals.html">Spacecraft Functions</a></span><a class="self-link" href="#heading-spc-signals-97"></a></h3>
+   <h3 class="heading settled" data-level="5.75" id="heading-spc-requirements-96"><span class="secno">5.75. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements.html">Spacecraft Requirements</a></span><a class="self-link" href="#heading-spc-requirements-96"></a></h3>
+   <h3 class="heading settled" data-level="5.76" id="heading-spc-signals-97"><span class="secno">5.76. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/signals.html">Spacecraft Signals</a></span><a class="self-link" href="#heading-spc-signals-97"></a></h3>
    <h3 class="heading settled" data-level="5.77" id="heading-ang-98"><span class="secno">5.77. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/ang.html">ADCS and GNC</a></span><a class="self-link" href="#heading-ang-98"></a></h3>
    <h3 class="heading settled" data-level="5.78" id="heading-ang-masses-99"><span class="secno">5.78. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/masses.html">ADCS and GNC Masses</a></span><a class="self-link" href="#heading-ang-masses-99"></a></h3>
    <h3 class="heading settled" data-level="5.79" id="heading-cdh-100"><span class="secno">5.79. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh.html">Command and Data Handling</a></span><a class="self-link" href="#heading-cdh-100"></a></h3>
    <h3 class="heading settled" data-level="5.80" id="heading-cdh-masses-101"><span class="secno">5.80. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/masses.html">Command and Data Handling Masses</a></span><a class="self-link" href="#heading-cdh-masses-101"></a></h3>
    <h3 class="heading settled" data-level="5.81" id="heading-cmn-102"><span class="secno">5.81. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn.html">Communications</a></span><a class="self-link" href="#heading-cmn-102"></a></h3>
-   <h3 class="heading settled" data-level="5.82" id="heading-cmn-masses-103"><span class="secno">5.82. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/masses.html">Communications Mass</a></span><a class="self-link" href="#heading-cmn-masses-103"></a></h3>
-   <h3 class="heading settled" data-level="5.83" id="heading-eps-104"><span class="secno">5.83. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps.html">EPS</a></span><a class="self-link" href="#heading-eps-104"></a></h3>
+   <h3 class="heading settled" data-level="5.82" id="heading-cmn-masses-103"><span class="secno">5.82. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/masses.html">Communications Masses</a></span><a class="self-link" href="#heading-cmn-masses-103"></a></h3>
+   <h3 class="heading settled" data-level="5.83" id="heading-eps-104"><span class="secno">5.83. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps.html">Electric Power System</a></span><a class="self-link" href="#heading-eps-104"></a></h3>
    <h3 class="heading settled" data-level="5.84" id="heading-eps-masses-105"><span class="secno">5.84. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/masses.html">Electric Power System Masses</a></span><a class="self-link" href="#heading-eps-masses-105"></a></h3>
    <h3 class="heading settled" data-level="5.85" id="heading-prp-masses-106"><span class="secno">5.85. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/masses.html">Propulsion Masses</a></span><a class="self-link" href="#heading-prp-masses-106"></a></h3>
    <h3 class="heading settled" data-level="5.86" id="heading-prp-107"><span class="secno">5.86. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp.html">Propulsion</a></span><a class="self-link" href="#heading-prp-107"></a></h3>
@@ -1680,7 +2008,7 @@ the representation of metrology in OML or in SysMLv2 becomes a difference of con
    <h3 class="heading settled" data-level="5.88" id="heading-sam-109"><span class="secno">5.88. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/sam/sam.html">Structures and Mechanisms</a></span><a class="self-link" href="#heading-sam-109"></a></h3>
    <h3 class="heading settled" data-level="5.89" id="heading-thc-masses-110"><span class="secno">5.89. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/masses.html">Thermal Control Masses</a></span><a class="self-link" href="#heading-thc-masses-110"></a></h3>
    <h3 class="heading settled" data-level="5.90" id="heading-thc-111"><span class="secno">5.90. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc.html">Thermal Control</a></span><a class="self-link" href="#heading-thc-111"></a></h3>
-   <h3 class="heading settled" data-level="5.91" id="heading-wp06-112"><span class="secno">5.91. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/wp06.html">WP06</a></span><a class="self-link" href="#heading-wp06-112"></a></h3>
+   <h3 class="heading settled" data-level="5.91" id="heading-wp06-112"><span class="secno">5.91. </span><span class="content"><a href="./src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/wp06.html">Workpackage 06</a></span><a class="self-link" href="#heading-wp06-112"></a></h3>
   </main>
 <script>
 (function() {

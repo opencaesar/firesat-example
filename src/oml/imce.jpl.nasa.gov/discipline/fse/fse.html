@@ -68,9 +68,18 @@
  *
  ******************************************************************************/
 
+/* color variables included separately for reliability */
+
 /******************************************************************************/
 /*                                   Body                                     */
 /******************************************************************************/
+
+	html {
+		color: black;
+		color: var(--text);
+		background-color: white;
+		background-color: var(--bg);
+	}
 
 	body {
 		counter-reset: example figure issue;
@@ -90,9 +99,7 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		/* Colors */
-		color: black;
-		background: white top left fixed no-repeat;
+		background: transparent top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -124,10 +131,13 @@
 	.head img[src*="logos/W3C"] {
 		display: block;
 		border: solid #1a5e9a;
+		border: solid var(--logo-bg);
 		border-width: .65rem .7rem .6rem;
 		border-radius: .4rem;
 		background: #1a5e9a;
+		background: var(--logo-bg);
 		color: white;
+		color: var(--logo-text);
 		font-weight: bold;
 	}
 
@@ -138,7 +148,9 @@
 
 	.head a:active > img[src*="logos/W3C"] {
 		background: #c00;
+		background: var(--logo-active-bg);
 		border-color: #c00;
+		border-color: var(--logo-active-bg);
 	}
 
 	/* see also additional rules in Link Styling section */
@@ -165,7 +177,6 @@
 			border-top-right-radius: 2rem;
 			box-shadow: 0 0 2px;
 			font-size: 1.5em;
-			color: black;
 		}
 		#toc-nav > a {
 			display: block;
@@ -175,23 +186,32 @@
 			padding: .1em 0.3em;
 			margin: 0;
 
-			background: white;
 			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
+
+			color: #707070;
+			color: var(--tocnav-normal-text);
 			background: white;
+			background: var(--tocnav-normal-bg);
 		}
+		#toc-nav > a:hover,
+		#toc-nav > a:focus {
+			color: black;
+			color: var(--tocnav-hover-text);
+			background: #f8f8f8;
+			background: var(--tocnav-hover-bg);
+		}
+		#toc-nav > a:active {
+			color: #c00;
+			color: var(--tocnav-active-text);
+			background: white;
+			background: var(--tocnav-active-bg);
+		}
+
 		#toc-nav > #toc-jump {
 			padding-bottom: 2em;
 			margin-bottom: -1.9em;
-		}
-
-		#toc-nav > a:hover,
-		#toc-nav > a:focus {
-			background: #f8f8f8;
-		}
-		#toc-nav > a:not(:hover):not(:focus) {
-			color: #707070;
 		}
 
 		/* statusbar gets in the way on keyboard focus; remove once browsers fix */
@@ -205,26 +225,6 @@
 		}
 		#toc-nav > a > span + span {
 			padding-right: 0.2em;
-		}
-
-		#toc-toggle-inline {
-			vertical-align: 0.05em;
-			font-size: 80%;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
-			border-style: none;
-			background: transparent;
-			position: relative;
-		}
-		#toc-toggle-inline:hover:not(:active),
-		#toc-toggle-inline:focus:not(:active) {
-			text-shadow: 1px 1px silver;
-			top: -1px;
-			left: -1px;
-		}
-
-		#toc-nav :active {
-			color: #C00;
 		}
 	}
 
@@ -243,10 +243,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
@@ -256,6 +260,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--tocsidebar-heading-text);
 		}
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
@@ -283,10 +288,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
@@ -296,6 +305,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--tocsidebar-heading-text);
 		}
 
 		body:not(.toc-inline) {
@@ -338,7 +348,7 @@
 
 	h1, h2, h3 {
 		color: #005A9C;
-		background: transparent;
+		color: var(--heading-text);
 	}
 
 	h1 { font-size: 170%; }
@@ -365,11 +375,13 @@
 
 /** Section divider ***********************************************************/
 
-	:not(.head) > hr {
+	:not(.head) > :not(.head) + hr {
 		font-size: 1.5em;
 		text-align: center;
 		margin: 1em auto;
 		height: auto;
+		color: black;
+		color: var(--hr-text);
 		border: transparent solid 0;
 		background: transparent;
 	}
@@ -412,12 +424,15 @@
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
 	 border-left: 0.5em solid #DEF;
+	 border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
 	  padding: .5em;
-	  border: thin solid #ddd; border-radius: .5em;
+	  border: thin solid #ddd;
+	  border: thin solid var(--algo-border);
+	  border-radius: .5em;
 	  margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
@@ -478,8 +493,20 @@
 
 /** Change Marking ************************************************************/
 
-	del { color: red;  text-decoration: line-through; }
-	ins { color: #080; text-decoration: underline;    }
+	del {
+		color: red;
+		color: var(--del-text);
+		background: transparent;
+		background: var(--del-bg);
+		text-decoration: line-through;
+	}
+	ins {
+		color: #080;
+		color: var(--ins-text);
+		background: transparent;
+		background: var(--ins-bg);
+		text-decoration: underline;
+	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -497,9 +524,14 @@
 	pre, code, samp {
 		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
-		page-break-inside: avoid;
 		hyphens: none;
 		text-transform: none;
+		text-align: left;
+		text-align: start;
+		font-variant: normal;
+		orphans: 3;
+		widows: 3;
+		page-break-before: avoid;
 	}
 	pre code,
 	code code {
@@ -525,14 +557,19 @@
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
 		color: #034575;
+		color: var(--a-normal-text);
 		text-decoration: none;
 		border-bottom: 1px solid #707070;
+		border-bottom: 1px solid var(--a-normal-underline);
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
 	a:visited {
-		border-bottom-color: #BBB;
+		color: #034575;
+		color: var(--a-visited-text);
+		border-bottom-color: #bbb;
+		border-bottom-color: var(--a-visited-underline);
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
@@ -540,12 +577,15 @@
 	a[href]:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
+		background: var(--a-hover-bg);
 		border-bottom-width: 3px;
 		margin-bottom: -2px;
 	}
 	a[href]:active {
-		color: #C00;
-		border-color: #C00;
+		color: #c00;
+		color: var(--a-active-text);
+		border-color: #c00;
+		border-color: var(--a-active-underline);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -564,6 +604,11 @@
 		border-style: none;
 	}
 
+	img, svg {
+		/* Intentionally not color-scheme aware. */
+		background: white;
+	}
+
 	/* For autogen numbers, add
 	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
@@ -577,6 +622,7 @@
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
+		height: auto;
 	}
 	.figure pre, .sidefigure pre, figure pre {
 		text-align: left;
@@ -639,25 +685,46 @@
 		margin-bottom: 0;
 	}
 
+
+	.issue::before, .issue > .marker,
+	.example::before, .example > .marker,
+	.note::before, .note > .marker,
+	details.note > summary > .marker {
+		text-transform: uppercase;
+		padding-right: 1em;
+	}
+
+	.example::before, .example > .marker {
+		display: block;
+		padding-right: 0em;
+	}
+
 /** Blockquotes ***************************************************************/
 
 	blockquote {
 		border-color: silver;
+		border-color: var(--blockquote-border);
+		background: transparent;
+		background: var(--blockquote-bg);
+		color: currentcolor;
+		color: var(--blockquote-text);
 	}
 
 /** Open issue ****************************************************************/
 
 	.issue {
-		border-color: #E05252;
-		background: #FBE9E9;
+		border-color: #e05252;
+		border-color: var(--issue-border);
+		background: #fbe9e9;
+		background: var(--issue-bg);
+		color: black;
+		color: var(--issue-text);
 		counter-increment: issue;
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
-		text-transform: uppercase;
-		color: #AE1E1E;
-		padding-right: 1em;
-		text-transform: uppercase;
+		color: #831616;
+		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
 	   or use class="marker" to mark up the issue number in source. */
@@ -665,17 +732,19 @@
 /** Example *******************************************************************/
 
 	.example {
-		border-color: #E0CB52;
-		background: #FCFAEE;
+		border-color: #e0cb52;
+		border-color: var(--example-border);
+		background: #fcfaee;
+		background: var(--example-bg);
+		color: black;
+		color: var(--example-text);
 		counter-increment: example;
 		overflow: auto;
 		clear: both;
 	}
 	.example::before, .example > .marker {
-		text-transform: uppercase;
-		color: #827017;
-		min-width: 7.5em;
-		display: block;
+		color: #574b0f;
+		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
 	   or use class="marker" to mark up the example number in source. */
@@ -683,27 +752,26 @@
 /** Non-normative Note ********************************************************/
 
 	.note {
-		border-color: #52E052;
-		background: #E9FBE9;
+		border-color: #52e052;
+		border-color: var(--note-border);
+		background: #e9fbe9;
+		background: var(--note-bg);
+		color: black;
+		color: var(--note-text);
 		overflow: auto;
 	}
 
 	.note::before, .note > .marker,
-	details.note > summary::before,
-	details.note > summary > .marker {
-		text-transform: uppercase;
-		display: block;
+	details.note > summary {
 		color: hsl(120, 70%, 30%);
+		color: var(--noteheading-text);
 	}
-	/* Add .note::before { content: "Note"; } for autogen label,
+	/* Add .note::before { content: "Note "; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
 
-	details.note > summary {
-		display: block;
-		color: hsl(120, 70%, 30%);
-	}
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
+		border-bottom: 1px var(--notesummary-underline) solid;
 	}
 
 /** Assertion Box *************************************************************/
@@ -711,7 +779,11 @@
 
 	.assertion {
 		border-color: #AAA;
+		border-color: var(--assertion-border);
 		background: #EEE;
+		background: var(--assertion-bg);
+		color: black;
+		color: var(--assertion-text);
 	}
 
 /** Advisement Box ************************************************************/
@@ -719,15 +791,20 @@
 
 	.advisement {
 		border-color: orange;
+		border-color: var(--advisement-border);
 		border-style: none solid;
-		background: #FFEECC;
+		background: #fec;
+		background: var(--advisement-bg);
+		color: black;
+		color: var(--advisement-text);
 	}
 	strong.advisement {
 		display: block;
 		text-align: center;
 	}
-	.advisement > .marker {
-		color: #B35F00;
+	.advisement::before, .advisement > .marker {
+		color: #b35f00;
+		color: var(--advisementheading-text);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
@@ -743,27 +820,30 @@
 	.annoying-warning:not(details),
 	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
-		background: #fdd;
-		color: red;
-		font-weight: bold;
+		background: hsla(40,100%,50%,0.95);
+		background: var(--warning-bg);
+		color: black;
+		color: var(--warning-text);
 		padding: .75em 1em;
-		border: thick red;
-		border-style: solid;
-		border-radius: 1em;
+		border: red;
+		border: var(--warning-border);
+		border-style: solid none;
+		box-shadow: 0 2px 8px black;
+		text-align: center;
 	}
 	.annoying-warning :last-child {
 		margin-bottom: 0;
 	}
 
-@media not print {
-	details.annoying-warning[open] {
-		position: fixed;
-		left: 1em;
-		right: 1em;
-		bottom: 1em;
-		z-index: 1000;
+	@media not print {
+		details.annoying-warning[open] {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 2em;
+			z-index: 1000;
+		}
 	}
-}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -773,9 +853,13 @@
 
 	.def {
 		padding: .5em 1em;
-		background: #DEF;
+		background: #def;
+		background: var(--def-bg);
 		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
+		border-left: 0.5em solid #8ccbf2;
+		border-left: 0.5em solid var(--def-border);
+		color: black;
+		color: var(--def-text);
 	}
 
 /******************************************************************************/
@@ -800,6 +884,7 @@
 		padding: 0.5em;
 		vertical-align: baseline;
 		border-bottom: 1px solid #bbd7e9;
+		border-bottom: 1px solid var(--defrow-border);
 	}
 
 	table.def > tbody > tr:last-child th,
@@ -820,10 +905,10 @@
 	}
 
 	/* A footnote at the bottom of a def table */
-	table.def           td.footnote {
+	table.def td.footnote {
 		padding-top: 0.6em;
 	}
-	table.def           td.footnote::before {
+	table.def td.footnote::before {
 		content: " ";
 		display: block;
 		height: 0.6em;
@@ -868,6 +953,7 @@
 		padding: 0.5em 1em;
 		border-width: 1px;
 		border-color: silver;
+		border-color: var(--datacell-border);
 		border-top-style: solid;
 	}
 
@@ -892,6 +978,7 @@
 	table.index tbody th:first-child  {
 		border-right: 2px solid;
 		border-top: 1px solid silver;
+		border-top: 1px solid var(--datacell-border);
 		padding-right: 1em;
 	}
 
@@ -903,13 +990,14 @@
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
+		border: 1px solid var(--datacell-border);
 		text-align: center;
 	}
 
 	table.data.longlastcol td:last-child,
 	table.data td.long {
-	 vertical-align: baseline;
-	 text-align: left;
+		vertical-align: baseline;
+		text-align: left;
 	}
 
 	table.data img {
@@ -967,12 +1055,15 @@ Possible extra rowspan handling
 		display: block;
 		/* Reverse color scheme */
 		color: black;
-		border-color: #3980B5;
-		border-bottom-width: 3px !important;
-		margin-bottom: 0px !important;
+		color: var(--toclink-text);
+		border-color: #3980b5;
+		border-color: var(--toclink-underline);
 	}
 	.toc a:visited {
+		color: black;
+		color: var(--toclink-visited-text);
 		border-color: #054572;
+		border-color: var(--toclink-visited-underline);
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -1027,6 +1118,15 @@ Possible extra rowspan handling
 			.toc > li li li li .secno    { margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
+		/* Loosen it on wide screens */
+		@media screen and (min-width: 78em) {
+			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
+	}
 	/* } */
 
 	@supports (display:grid) and (display:contents) {
@@ -1068,9 +1168,12 @@ Possible extra rowspan handling
 			width: auto;
 			margin-right: 1rem;
 		}
-		#toc .content:hover {
+		#toc .content:hover,
+		#toc .content:focus {
 			background: rgba(75%, 75%, 75%, .25);
+			background: var(--a-hover-bg);
 			border-bottom: 3px solid #054572;
+			border-bottom: 3px solid var(--toclink-underline);
 			margin-bottom: -3px;
 		}
 		#toc li li li .content {
@@ -1101,6 +1204,7 @@ Possible extra rowspan handling
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: #707070;
+			color: var(--indexinfo-text);
 		}
 	}
 
@@ -1122,7 +1226,10 @@ Possible extra rowspan handling
 
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
+		color: black;
+		color: var(--indextable-hover-text);
 		background: #f7f8f9;
+		background: var(--indextable-hover-bg);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
@@ -1147,13 +1254,6 @@ Possible extra rowspan handling
 	@page {
 		margin: 1.5cm 1.1cm;
 	}
-
-/******************************************************************************/
-/*                                    Legacy                                  */
-/******************************************************************************/
-
-	/* This rule is inherited from past style sheets. No idea what it's for. */
-	.hide { display: none }
 
 
 
@@ -1221,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
+  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/vocabularies//src/oml/imce.jpl.nasa.gov/discipline/fse/fse" rel="canonical">
-  <meta content="e92fb7e4a4546b96277350d251900ca24dc907a3" name="document-revision">
+  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1232,7 +1332,7 @@ a[data-link-type=biblio] {
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
-    color: #005a9c;
+    color: var(--a-normal-text);
     font-size: inherit;
     font-family: inherit;
 }
@@ -1291,6 +1391,114 @@ pre .property::before, pre .property::after {
 [data-link-type=biblio] {
     white-space: pre;
 }</style>
+<style>/* style-colors */
+
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
+html {
+    color: black;
+    color: var(--text);
+    background-color: white;
+    background-color: var(--bg);
+}
+:root {
+    color-scheme: light dark;
+
+    --text: black;
+    --bg: white;
+
+    --logo-bg: #1a5e9a;
+    --logo-active-bg: #c00;
+    --logo-text: white;
+
+    --tocnav-normal-text: #707070;
+    --tocnav-normal-bg: var(--bg);
+    --tocnav-hover-text: var(--tocnav-normal-text);
+    --tocnav-hover-bg: #f8f8f8;
+    --tocnav-active-text: #c00;
+    --tocnav-active-bg: var(--tocnav-normal-bg);
+
+    --tocsidebar-text: var(--text);
+    --tocsidebar-bg: #f7f8f9;
+    --tocsidebar-shadow: rgba(0,0,0,.1);
+    --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+    --toclink-text: var(--text);
+    --toclink-underline: #3980b5;
+    --toclink-visited-text: var(--toclink-text);
+    --toclink-visited-underline: #054572;
+
+    --heading-text: #005a9c;
+
+    --hr-text: var(--text);
+
+    --algo-border: #def;
+
+    --del-text: red;
+    --del-bg: transparent;
+    --ins-text: #080;
+    --ins-bg: transparent;
+
+    --a-normal-text: #034575;
+    --a-normal-underline: #707070;
+    --a-visited-text: var(--a-normal-text);
+    --a-visited-underline: #bbb;
+    --a-hover-bg: rgba(75%, 75%, 75%, .25);
+    --a-active-text: #c00;
+    --a-active-underline: #c00;
+
+    --blockquote-border: silver;
+    --blockquote-bg: transparent;
+    --blockquote-text: currentcolor;
+
+    --issue-border: #e05252;
+    --issue-bg: #fbe9e9;
+    --issue-text: var(--text);
+    --issueheading-text: #831616;
+
+    --example-border: #e0cb52;
+    --example-bg: #fcfaee;
+    --example-text: var(--text);
+    --exampleheading-text: #574b0f;
+
+    --note-border: #52e052;
+    --note-bg: #e9fbe9;
+    --note-text: var(--text);
+    --noteheading-text: hsl(120, 70%, 30%);
+    --notesummary-underline: silver;
+
+    --assertion-border: #aaa;
+    --assertion-bg: #eee;
+    --assertion-text: black;
+
+    --advisement-border: orange;
+    --advisement-bg: #fec;
+    --advisement-text: var(--text);
+    --advisementheading-text: #b35f00;
+
+    --warning-border: red;
+    --warning-bg: hsla(40,100%,50%,0.95);
+    --warning-text: var(--text);
+
+    --def-border: #8ccbf2;
+    --def-bg: #def;
+    --def-text: var(--text);
+    --defrow-border: #bbd7e9;
+
+    --datacell-border: silver;
+
+    --indexinfo-text: #707070;
+
+    --indextable-hover-text: black;
+    --indextable-hover-bg: #f7f8f9;
+
+    --outdatedspec-bg: rgba(0, 0, 0, .5);
+    --outdatedspec-text: black;
+    --outdated-bg: maroon;
+    --outdated-text: white;
+    --outdated-shadow: red;
+
+    --editedrec-bg: darkorange;
+}</style>
 <style>/* style-counters */
 
 body {
@@ -1322,6 +1530,10 @@ figcaption:not(.no-marker)::before {
 }</style>
 <style>/* style-dfn-panel */
 
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
 .dfn-panel {
     position: absolute;
     z-index: 35;
@@ -1333,8 +1545,8 @@ figcaption:not(.no-marker)::before {
     overflow: auto;
     padding: 0.5em 0.75em;
     font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
-    background: #DDDDDD;
-    color: black;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
     border: outset 0.2em;
 }
 .dfn-panel:not(.on) { display: none; }
@@ -1369,6 +1581,11 @@ figcaption:not(.no-marker)::before {
 }</style>
 <style>/* style-selflinks */
 
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
 .heading, .issue, .note, .example, li, dt {
     position: relative;
 }
@@ -1398,8 +1615,8 @@ dfn > a.self-link {
     opacity: 0;
     width: 1.5em;
     height: 1.5em;
-    background: gray;
-    color: white;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
     font-style: normal;
     transition: opacity .2s, background-color .2s, color .2s;
 }
@@ -1407,17 +1624,138 @@ dfn:hover > a.self-link {
     opacity: 1;
 }
 dfn > a.self-link:hover {
-    color: black;
+    color: var(--selflink-hover-text);
 }
 
 a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before      { content: "#"; }</style>
+dfn > a.self-link::before      { content: "#"; }
+</style>
+<style>/* style-darkmode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Flight System Electrical</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-09-14">14 September 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-09-29">29 September 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1609,7 +1947,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem">Subsystem</a> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates">base:aggregates</a> Assembly</p>
+      <p><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem">Subsystem</a> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates">base:aggregates</a> Assembly</p>
      <li data-md>
       <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function">Function</a> <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly">connectsAssembly</a> Assembly</p>
      <li data-md>
@@ -1622,15 +1960,15 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <h3 class="heading settled" data-level="3.3" id="ConsumableMass"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="consumablemass">ConsumableMass<a class="self-link" href="#consumablemass"></a></dfn></span><a class="self-link" href="#ConsumableMass"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy">MassProxy</a></p>
     <h3 class="heading settled" data-level="3.4" id="Drawing"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="drawing">Drawing<a class="self-link" href="#drawing"></a></dfn></span><a class="self-link" href="#Drawing"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#product" id="ref-for-product">project:Product</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#product" id="ref-for-product">project:Product</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasdrawingnumber" id="ref-for-hasdrawingnumber">hasDrawingNumber</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>Drawing <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#describes" id="ref-for-describes">project:describes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③">Function</a></p>
+      <p>Drawing <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#describes" id="ref-for-describes">project:describes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③">Function</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.5" id="EndCircuit"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuit">EndCircuit<a class="self-link" href="#endcircuit"></a></dfn></span><a class="self-link" href="#EndCircuit"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface">mission:Interface</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface">mission:Interface</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power">fse-endcircuits:Power</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">hasEndCircuitDirection</a>, <a data-link-type="dfn" href="fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier">hasEndCircuitIdentifier</a>, <a data-link-type="dfn" href="fse.html#hasendcircuitlocalname" id="ref-for-hasendcircuitlocalname">hasEndCircuitLocalName</a></p>
     <p><em>Relations with range:</em></p>
@@ -1640,36 +1978,36 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <li data-md>
       <p><a data-link-type="dfn" href="fse.html#gangconfiguration" id="ref-for-gangconfiguration①">GangConfiguration</a> <a data-link-type="dfn" href="fse.html#hasgangmember" id="ref-for-hasgangmember">hasGangMember</a> EndCircuit</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function④">Function</a> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:joins</a> EndCircuit</p>
+      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function④">Function</a> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:joins</a> EndCircuit</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement①">EndCircuitPresentingElement</a> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:presents</a> EndCircuit</p>
+      <p><a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement①">EndCircuitPresentingElement</a> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:presents</a> EndCircuit</p>
     </ul>
     <h3 class="heading settled" data-level="3.6" id="EndCircuitGroup"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuitgroup">EndCircuitGroup<a class="self-link" href="#endcircuitgroup"></a></dfn></span><a class="self-link" href="#EndCircuitGroup"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement②">EndCircuitPresentingElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface①">mission:Interface</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement②">EndCircuitPresentingElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface①">mission:Interface</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#powerswitchbank" id="ref-for-powerswitchbank">PowerSwitchBank</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>EndCircuitGroup <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents①">mission:presents</a> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">EndCircuit</a></p>
+      <p>EndCircuitGroup <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents①">mission:presents</a> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">EndCircuit</a></p>
     </ul>
     <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly">Assembly</a> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents②">mission:presents</a> EndCircuitGroup</p>
+      <p><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly">Assembly</a> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents②">mission:presents</a> EndCircuitGroup</p>
     </ul>
     <h3 class="heading settled" data-level="3.7" id="EngineeringChangeRequest"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="engineeringchangerequest">EngineeringChangeRequest<a class="self-link" href="#engineeringchangerequest"></a></dfn></span><a class="self-link" href="#EngineeringChangeRequest"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasecridentifier" id="ref-for-hasecridentifier">hasEcrIdentifier</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>EngineeringChangeRequest <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑤">Function</a></p>
+      <p>EngineeringChangeRequest <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑤">Function</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.8" id="FlightHardwareComponent"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="flighthardwarecomponent">FlightHardwareComponent<a class="self-link" href="#flighthardwarecomponent"></a></dfn></span><a class="self-link" href="#FlightHardwareComponent"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement">MassEstimatedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement">MassEstimatedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①">Assembly</a>, <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem①">Subsystem</a></p>
     <h3 class="heading settled" data-level="3.9" id="Function"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="function">Function<a class="self-link" href="#function"></a></dfn></span><a class="self-link" href="#Function"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction">mission:Junction</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction">mission:Junction</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">fse-functions:BaseFunction</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasassembly1boardschematicsignalnames" id="ref-for-hasassembly1boardschematicsignalnames">hasAssembly1BoardSchematicSignalNames</a>, <a data-link-type="dfn" href="fse.html#hasassembly2boardschematicsignalnames" id="ref-for-hasassembly2boardschematicsignalnames">hasAssembly2BoardSchematicSignalNames</a>, <a data-link-type="dfn" href="fse.html#haschannelname" id="ref-for-haschannelname">hasChannelName</a>, <a data-link-type="dfn" href="fse.html#hascomments" id="ref-for-hascomments">hasComments</a>, <a data-link-type="dfn" href="fse.html#hasconductorcount" id="ref-for-hasconductorcount">hasConductorCount</a>, <a data-link-type="dfn" href="fse.html#hascrossstrapped" id="ref-for-hascrossstrapped">hasCrossStrapped</a>, <a data-link-type="dfn" href="fse.html#hasendcircuit1partnumber" id="ref-for-hasendcircuit1partnumber">hasEndCircuit1PartNumber</a>, <a data-link-type="dfn" href="fse.html#hasendcircuit2partnumber" id="ref-for-hasendcircuit2partnumber">hasEndCircuit2PartNumber</a>, <a data-link-type="dfn" href="fse.html#hasendcircuitnamedrole1" id="ref-for-hasendcircuitnamedrole1">hasEndCircuitNamedRole1</a>, <a data-link-type="dfn" href="fse.html#hasendcircuitnamedrole2" id="ref-for-hasendcircuitnamedrole2">hasEndCircuitNamedRole2</a>, <a data-link-type="dfn" href="fse.html#hasendcircuittype" id="ref-for-hasendcircuittype">hasEndCircuitType</a>, <a data-link-type="dfn" href="fse.html#hasendconnector1typepartnumber" id="ref-for-hasendconnector1typepartnumber">hasEndConnector1TypePartNumber</a>, <a data-link-type="dfn" href="fse.html#hasendconnector2typepartnumber" id="ref-for-hasendconnector2typepartnumber">hasEndConnector2TypePartNumber</a>, <a data-link-type="dfn" href="fse.html#hasfunctiondirection" id="ref-for-hasfunctiondirection">hasFunctionDirection</a>, <a data-link-type="dfn" href="fse.html#hasfunctionnumber" id="ref-for-hasfunctionnumber">hasFunctionNumber</a>, <a data-link-type="dfn" href="fse.html#hasfunctionrev" id="ref-for-hasfunctionrev">hasFunctionRev</a>, <a data-link-type="dfn" href="fse.html#hasfunctionsperpage" id="ref-for-hasfunctionsperpage">hasFunctionsPerPage</a>, <a data-link-type="dfn" href="fse.html#hasgroundtreeref1" id="ref-for-hasgroundtreeref1">hasGroundTreeRef1</a>, <a data-link-type="dfn" href="fse.html#hasgroundtreeref2" id="ref-for-hasgroundtreeref2">hasGroundTreeRef2</a>, <a data-link-type="dfn" href="fse.html#hasnote1" id="ref-for-hasnote1">hasNote1</a>, <a data-link-type="dfn" href="fse.html#hasnote2" id="ref-for-hasnote2">hasNote2</a>, <a data-link-type="dfn" href="fse.html#hasnote3" id="ref-for-hasnote3">hasNote3</a>, <a data-link-type="dfn" href="fse.html#hasnote4" id="ref-for-hasnote4">hasNote4</a>, <a data-link-type="dfn" href="fse.html#hasnote5" id="ref-for-hasnote5">hasNote5</a>, <a data-link-type="dfn" href="fse.html#hasnote6" id="ref-for-hasnote6">hasNote6</a>, <a data-link-type="dfn" href="fse.html#hasview1" id="ref-for-hasview1">hasView1</a>, <a data-link-type="dfn" href="fse.html#hasview2" id="ref-for-hasview2">hasView2</a>, <a data-link-type="dfn" href="fse.html#hasview3" id="ref-for-hasview3">hasView3</a>, <a data-link-type="dfn" href="fse.html#namescavity1" id="ref-for-namescavity1">namesCavity1</a>, <a data-link-type="dfn" href="fse.html#namescavity2" id="ref-for-namescavity2">namesCavity2</a>, <a data-link-type="dfn" href="fse.html#namesconnector1" id="ref-for-namesconnector1">namesConnector1</a>, <a data-link-type="dfn" href="fse.html#namesconnector2" id="ref-for-namesconnector2">namesConnector2</a></p>
     <p><em>Relations with domain:</em></p>
@@ -1687,7 +2025,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
      <li data-md>
       <p>Function <a data-link-type="dfn" href="fse.html#connectssubsystem2" id="ref-for-connectssubsystem2">connectsSubsystem2</a> <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem④">Subsystem</a></p>
      <li data-md>
-      <p>Function <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:joins</a> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">EndCircuit</a></p>
+      <p>Function <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:joins</a> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">EndCircuit</a></p>
     </ul>
     <p><em>Relations with range:</em></p>
     <ul>
@@ -1695,15 +2033,15 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <p><a data-link-type="dfn" href="fse.html#net" id="ref-for-net">Net</a> <a data-link-type="dfn" href="fse.html#implementsfunction" id="ref-for-implementsfunction">implementsFunction</a> Function</p>
     </ul>
     <h3 class="heading settled" data-level="3.10" id="FunctionAnnotation"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="functionannotation">FunctionAnnotation<a class="self-link" href="#functionannotation"></a></dfn></span><a class="self-link" href="#FunctionAnnotation"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization①">analysis:Characterization</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization①">analysis:Characterization</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasannotationkey" id="ref-for-hasannotationkey">hasAnnotationKey</a>, <a data-link-type="dfn" href="fse.html#hasannotationvalue" id="ref-for-hasannotationvalue">hasAnnotationValue</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>FunctionAnnotation <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑥">Function</a></p>
+      <p>FunctionAnnotation <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑥">Function</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.11" id="GangConfiguration"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gangconfiguration">GangConfiguration<a class="self-link" href="#gangconfiguration"></a></dfn></span><a class="self-link" href="#GangConfiguration"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
@@ -1712,11 +2050,11 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <p>GangConfiguration <a data-link-type="dfn" href="fse.html#hasgangmember" id="ref-for-hasgangmember①">hasGangMember</a> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit③">EndCircuit</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.12" id="Implementer"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="implementer">Implementer<a class="self-link" href="#implementer"></a></dfn></span><a class="self-link" href="#Implementer"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization②">analysis:Characterization</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization②">analysis:Characterization</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>Implementer <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑦">Function</a></p>
+      <p>Implementer <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑦">Function</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.13" id="MEVMassConstraint"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="mevmassconstraint">MEVMassConstraint<a class="self-link" href="#mevmassconstraint"></a></dfn></span><a class="self-link" href="#MEVMassConstraint"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massestimationconstraint" id="ref-for-massestimationconstraint①">MassEstimationConstraint</a></p>
@@ -1728,16 +2066,16 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>MassAllocationConstraint <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes③">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement">MassAllocatedElement</a></p>
+      <p>MassAllocationConstraint <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes③">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement">MassAllocatedElement</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.16" id="MassConstraint"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massconstraint">MassConstraint<a class="self-link" href="#massconstraint"></a></dfn></span><a class="self-link" href="#MassConstraint"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization③">analysis:Characterization</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization③">analysis:Characterization</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#massallocationconstraint" id="ref-for-massallocationconstraint">MassAllocationConstraint</a>, <a data-link-type="dfn" href="fse.html#massestimationconstraint" id="ref-for-massestimationconstraint③">MassEstimationConstraint</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue">hasMassConstraintValue</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>MassConstraint <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes④">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">MassConstrainedElement</a></p>
+      <p>MassConstraint <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes④">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">MassConstrainedElement</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.17" id="MassEstimationConstraint"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massestimationconstraint">MassEstimationConstraint<a class="self-link" href="#massestimationconstraint"></a></dfn></span><a class="self-link" href="#MassEstimationConstraint"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massconstraint" id="ref-for-massconstraint①">MassConstraint</a></p>
@@ -1745,14 +2083,14 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>MassEstimationConstraint <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑤">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement①">MassEstimatedElement</a></p>
+      <p>MassEstimationConstraint <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑤">analysis:characterizes</a> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement①">MassEstimatedElement</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.18" id="MassLimitConstraint"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="masslimitconstraint">MassLimitConstraint<a class="self-link" href="#masslimitconstraint"></a></dfn></span><a class="self-link" href="#MassLimitConstraint"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massallocationconstraint" id="ref-for-massallocationconstraint①">MassAllocationConstraint</a></p>
     <h3 class="heading settled" data-level="3.19" id="MassReserveConstraint"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massreserveconstraint">MassReserveConstraint<a class="self-link" href="#massreserveconstraint"></a></dfn></span><a class="self-link" href="#MassReserveConstraint"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massallocationconstraint" id="ref-for-massallocationconstraint②">MassAllocationConstraint</a></p>
     <h3 class="heading settled" data-level="3.20" id="Net"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="net">Net<a class="self-link" href="#net"></a></dfn></span><a class="self-link" href="#Net"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction①">mission:Junction</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction①">mission:Junction</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hascableimpedance" id="ref-for-hascableimpedance">hasCableImpedance</a>, <a data-link-type="dfn" href="fse.html#hascablelength" id="ref-for-hascablelength">hasCableLength</a>, <a data-link-type="dfn" href="fse.html#hascabletreatment" id="ref-for-hascabletreatment">hasCableTreatment</a>, <a data-link-type="dfn" href="fse.html#hasnetindex" id="ref-for-hasnetindex">hasNetIndex</a>, <a data-link-type="dfn" href="fse.html#haswirecode" id="ref-for-haswirecode">hasWireCode</a>, <a data-link-type="dfn" href="fse.html#haswiregauge" id="ref-for-haswiregauge">hasWireGauge</a>, <a data-link-type="dfn" href="fse.html#haswiretreatment" id="ref-for-haswiretreatment">hasWireTreatment</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
@@ -1775,7 +2113,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
-      <p>Subsystem <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①">base:aggregates</a> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑤">Assembly</a></p>
+      <p>Subsystem <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①">base:aggregates</a> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑤">Assembly</a></p>
     </ul>
     <p><em>Relations with range:</em></p>
     <ul>
@@ -1787,10 +2125,10 @@ dfn > a.self-link::before      { content: "#"; }</style>
       <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function①①">Function</a> <a data-link-type="dfn" href="fse.html#connectssubsystem2" id="ref-for-connectssubsystem2①">connectsSubsystem2</a> Subsystem</p>
     </ul>
     <h3 class="heading settled" data-level="3.24" id="Telemetry"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="telemetry">Telemetry<a class="self-link" href="#telemetry"></a></dfn></span><a class="self-link" href="#Telemetry"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#flow" id="ref-for-flow">mission:Flow</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#flow" id="ref-for-flow">mission:Flow</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#haschannelidentifier" id="ref-for-haschannelidentifier">hasChannelIdentifier</a>, <a data-link-type="dfn" href="fse.html#hasdeviceidentifier" id="ref-for-hasdeviceidentifier">hasDeviceIdentifier</a>, <a data-link-type="dfn" href="fse.html#hastelemetrytype" id="ref-for-hastelemetrytype">hasTelemetryType</a></p>
     <h3 class="heading settled" data-level="3.25" id="Wire"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="wire">Wire<a class="self-link" href="#wire"></a></dfn></span><a class="self-link" href="#Wire"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction②">mission:Junction</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction②">mission:Junction</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
@@ -1798,22 +2136,22 @@ dfn > a.self-link::before      { content: "#"; }</style>
     </ul>
     <h2 class="heading settled" data-level="4" id="Aspects"><span class="secno">4. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="EndCircuitPresentingElement"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuitpresentingelement">EndCircuitPresentingElement<a class="self-link" href="#endcircuitpresentingelement"></a></dfn></span><a class="self-link" href="#EndCircuitPresentingElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑥">Assembly</a>, <a data-link-type="dfn" href="fse.html#endcircuitgroup" id="ref-for-endcircuitgroup①">EndCircuitGroup</a></p>
     <h3 class="heading settled" data-level="4.2" id="MassAllocatedElement"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massallocatedelement">MassAllocatedElement<a class="self-link" href="#massallocatedelement"></a></dfn></span><a class="self-link" href="#MassAllocatedElement"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement①">MassConstrainedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a></p>
     <h3 class="heading settled" data-level="4.3" id="MassConstrainedElement"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massconstrainedelement">MassConstrainedElement<a class="self-link" href="#massconstrainedelement"></a></dfn></span><a class="self-link" href="#MassConstrainedElement"></a></h3>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement①">MassAllocatedElement</a>, <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement②">MassEstimatedElement</a></p>
     <h3 class="heading settled" data-level="4.4" id="MassEstimatedElement"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massestimatedelement">MassEstimatedElement<a class="self-link" href="#massestimatedelement"></a></dfn></span><a class="self-link" href="#MassEstimatedElement"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement②">MassConstrainedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent②">FlightHardwareComponent</a>, <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy②">MassProxy</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage①">project:WorkPackage</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent②">FlightHardwareComponent</a>, <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy②">MassProxy</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage①">project:WorkPackage</a></p>
     <h3 class="heading settled" data-level="4.5" id="MassProxy"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massproxy">MassProxy<a class="self-link" href="#massproxy"></a></dfn></span><a class="self-link" href="#MassProxy"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement③">MassEstimatedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#consumablemass" id="ref-for-consumablemass">ConsumableMass</a>, <a data-link-type="dfn" href="fse.html#placeholdermass" id="ref-for-placeholdermass">PlaceholderMass</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasmultiplicity" id="ref-for-hasmultiplicity">hasMultiplicity</a></p>
     <h3 class="heading settled" data-level="4.6" id="ReferenceDesignatedElement"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="referencedesignatedelement">ReferenceDesignatedElement<a class="self-link" href="#referencedesignatedelement"></a></dfn></span><a class="self-link" href="#ReferenceDesignatedElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#identifiedelement" id="ref-for-identifiedelement">base:IdentifiedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#identifiedelement" id="ref-for-identifiedelement">base:IdentifiedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑦">Assembly</a>, <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem⑤">Subsystem</a></p>
     <p><em>Properties with domain:</em> <a data-link-type="dfn" href="fse.html#hasreferencedesignator" id="ref-for-hasreferencedesignator">hasReferenceDesignator</a></p>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
@@ -1822,7 +2160,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function①②">Function</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑧">Assembly</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="ConnectsAssembly" data-dfn-type="attribute" data-export id="dom-connectsassembly-connectsassembly"><code>connectsAssembly</code><a class="self-link" href="#dom-connectsassembly-connectsassembly"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1②">ConnectsAssembly1</a>, <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2②">ConnectsAssembly2</a></p>
     <h3 class="heading settled" data-level="5.2" id="ConnectsAssembly1"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="connectsassembly1">ConnectsAssembly1<a class="self-link" href="#connectsassembly1"></a></dfn></span><a class="self-link" href="#ConnectsAssembly1"></a></h3>
     <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
@@ -1841,7 +2179,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function①⑤">Function</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem⑥">Subsystem</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="ConnectsSubsystem" data-dfn-type="attribute" data-export id="dom-connectssubsystem-connectssubsystem"><code>connectsSubsystem</code><a class="self-link" href="#dom-connectssubsystem-connectssubsystem"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement①">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement①">analysis:CharacterizedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement①">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement①">analysis:CharacterizedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#connectssubsystem1" id="ref-for-connectssubsystem1②">ConnectsSubsystem1</a>, <a data-link-type="dfn" href="fse.html#connectssubsystem2" id="ref-for-connectssubsystem2②">ConnectsSubsystem2</a></p>
     <h3 class="heading settled" data-level="5.5" id="ConnectsSubsystem1"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="connectssubsystem1">ConnectsSubsystem1<a class="self-link" href="#connectssubsystem1"></a></dfn></span><a class="self-link" href="#ConnectsSubsystem1"></a></h3>
     <p><em>Attributes:</em> Functional, Asymmetric, Irreflexive</p>
@@ -1861,21 +2199,21 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit④">EndCircuit</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasGangAggregate" data-dfn-type="attribute" data-export id="dom-hasgangaggregate-hasgangaggregate"><code>hasGangAggregate</code><a class="self-link" href="#dom-hasgangaggregate-hasgangaggregate"></a></dfn></p>
     <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="HasGangAggregate" data-dfn-type="attribute" data-export id="dom-hasgangaggregate-isaggregateofgang"><code>isAggregateOfGang</code><a class="self-link" href="#dom-hasgangaggregate-isaggregateofgang"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement②">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement②">analysis:CharacterizedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explains" id="ref-for-explains">analysis:Explains</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement②">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement②">analysis:CharacterizedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explains" id="ref-for-explains">analysis:Explains</a></p>
     <h3 class="heading settled" data-level="5.8" id="HasGangMember"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasgangmember">HasGangMember<a class="self-link" href="#hasgangmember"></a></dfn></span><a class="self-link" href="#HasGangMember"></a></h3>
     <p><em>Attributes:</em> InverseFunctional, Asymmetric, Irreflexive</p>
     <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#gangconfiguration" id="ref-for-gangconfiguration③">GangConfiguration</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit⑤">EndCircuit</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasGangMember" data-dfn-type="attribute" data-export id="dom-hasgangmember-hasgangmember"><code>hasGangMember</code><a class="self-link" href="#dom-hasgangmember-hasgangmember"></a></dfn></p>
     <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="HasGangMember" data-dfn-type="attribute" data-export id="dom-hasgangmember-ismemberofgang"><code>isMemberOfGang</code><a class="self-link" href="#dom-hasgangmember-ismemberofgang"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement③">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzes" id="ref-for-analyzes">analysis:Analyzes</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement③">analysis:CharacterizedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement③">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzes" id="ref-for-analyzes">analysis:Analyzes</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement③">analysis:CharacterizedElement</a></p>
     <h3 class="heading settled" data-level="5.9" id="Implements"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="implements">Implements<a class="self-link" href="#implements"></a></dfn></span><a class="self-link" href="#Implements"></a></h3>
     <p><em>Attributes:</em> Functional, Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction③">mission:Junction</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction④">mission:Junction</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction③">mission:Junction</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction④">mission:Junction</a></p>
     <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Implements" data-dfn-type="attribute" data-export id="dom-implements-implements"><code>implements</code><a class="self-link" href="#dom-implements-implements"></a></dfn></p>
     <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="Implements" data-dfn-type="attribute" data-export id="dom-implements-isimplementedby"><code>isImplementedBy</code><a class="self-link" href="#dom-implements-isimplementedby"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement④">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement④">analysis:CharacterizedElement</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement④">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement④">analysis:CharacterizedElement</a></p>
     <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#implementsfunction" id="ref-for-implementsfunction②">ImplementsFunction</a>, <a data-link-type="dfn" href="fse.html#implementsnet" id="ref-for-implementsnet②">ImplementsNet</a></p>
     <h3 class="heading settled" data-level="5.10" id="ImplementsFunction"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="implementsfunction">ImplementsFunction<a class="self-link" href="#implementsfunction"></a></dfn></span><a class="self-link" href="#ImplementsFunction"></a></h3>
     <p><em>Attributes:</em> Functional, Asymmetric, Irreflexive</p>
@@ -1901,184 +2239,184 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <h2 class="heading settled" data-level="8" id="ScalarProperties"><span class="secno">8. </span><span class="content">Scalar Properties</span><a class="self-link" href="#ScalarProperties"></a></h2>
     <h3 class="heading settled" data-level="8.1" id="HasAnnotationKey"><span class="secno">8.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasannotationkey">hasAnnotationKey<a class="self-link" href="#hasannotationkey"></a></dfn></span><a class="self-link" href="#HasAnnotationKey"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#functionannotation" id="ref-for-functionannotation">FunctionAnnotation</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a></p>
     <h3 class="heading settled" data-level="8.2" id="HasAnnotationValue"><span class="secno">8.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasannotationvalue">hasAnnotationValue<a class="self-link" href="#hasannotationvalue"></a></dfn></span><a class="self-link" href="#HasAnnotationValue"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#functionannotation" id="ref-for-functionannotation①">FunctionAnnotation</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a></p>
     <h3 class="heading settled" data-level="8.3" id="HasAssembly1BoardSchematicSignalNames"><span class="secno">8.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasassembly1boardschematicsignalnames">hasAssembly1BoardSchematicSignalNames<a class="self-link" href="#hasassembly1boardschematicsignalnames"></a></dfn></span><a class="self-link" href="#HasAssembly1BoardSchematicSignalNames"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function①⑨">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a></p>
     <h3 class="heading settled" data-level="8.4" id="HasAssembly2BoardSchematicSignalNames"><span class="secno">8.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasassembly2boardschematicsignalnames">hasAssembly2BoardSchematicSignalNames<a class="self-link" href="#hasassembly2boardschematicsignalnames"></a></dfn></span><a class="self-link" href="#HasAssembly2BoardSchematicSignalNames"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⓪">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a></p>
     <h3 class="heading settled" data-level="8.5" id="HasAssemblyAcronym"><span class="secno">8.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasassemblyacronym">hasAssemblyAcronym<a class="self-link" href="#hasassemblyacronym"></a></dfn></span><a class="self-link" href="#HasAssemblyAcronym"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①①">Assembly</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④">string</a></p>
     <h3 class="heading settled" data-level="8.6" id="HasAssemblyReferenceDesignator"><span class="secno">8.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasassemblyreferencedesignator">hasAssemblyReferenceDesignator<a class="self-link" href="#hasassemblyreferencedesignator"></a></dfn></span><a class="self-link" href="#HasAssemblyReferenceDesignator"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①②">Assembly</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤">string</a></p>
     <h3 class="heading settled" data-level="8.7" id="HasCableImpedance"><span class="secno">8.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascableimpedance">hasCableImpedance<a class="self-link" href="#hascableimpedance"></a></dfn></span><a class="self-link" href="#HasCableImpedance"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net④">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/iso.org/iso-80000-6.html#ohm" id="ref-for-ohm">ohm</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/iso-80000-6.html#ohm" id="ref-for-ohm">ohm</a></p>
     <h3 class="heading settled" data-level="8.8" id="HasCableLength"><span class="secno">8.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascablelength">hasCableLength<a class="self-link" href="#hascablelength"></a></dfn></span><a class="self-link" href="#HasCableLength"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net⑤">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/iso.org/iso-80000-3.html#metre" id="ref-for-metre">metre</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/iso-80000-3.html#metre" id="ref-for-metre">metre</a></p>
     <h3 class="heading settled" data-level="8.9" id="HasCableTreatment"><span class="secno">8.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascabletreatment">hasCableTreatment<a class="self-link" href="#hascabletreatment"></a></dfn></span><a class="self-link" href="#HasCableTreatment"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net⑥">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑥">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑥">string</a></p>
     <h3 class="heading settled" data-level="8.10" id="HasChannelIdentifier"><span class="secno">8.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="haschannelidentifier">hasChannelIdentifier<a class="self-link" href="#haschannelidentifier"></a></dfn></span><a class="self-link" href="#HasChannelIdentifier"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#telemetry" id="ref-for-telemetry">Telemetry</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑦">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑦">string</a></p>
     <h3 class="heading settled" data-level="8.11" id="HasChannelName"><span class="secno">8.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="haschannelname">hasChannelName<a class="self-link" href="#haschannelname"></a></dfn></span><a class="self-link" href="#HasChannelName"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②①">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑧">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑧">string</a></p>
     <h3 class="heading settled" data-level="8.12" id="HasCogE"><span class="secno">8.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascoge">hasCogE<a class="self-link" href="#hascoge"></a></dfn></span><a class="self-link" href="#HasCogE"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①③">Assembly</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑨">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑨">string</a></p>
     <h3 class="heading settled" data-level="8.13" id="HasComments"><span class="secno">8.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascomments">hasComments<a class="self-link" href="#hascomments"></a></dfn></span><a class="self-link" href="#HasComments"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②②">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⓪">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⓪">string</a></p>
     <h3 class="heading settled" data-level="8.14" id="HasConductorCount"><span class="secno">8.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasconductorcount">hasConductorCount<a class="self-link" href="#hasconductorcount"></a></dfn></span><a class="self-link" href="#HasConductorCount"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②③">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer">integer</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer">integer</a></p>
     <h3 class="heading settled" data-level="8.15" id="HasCrossStrapped"><span class="secno">8.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascrossstrapped">hasCrossStrapped<a class="self-link" href="#hascrossstrapped"></a></dfn></span><a class="self-link" href="#HasCrossStrapped"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②④">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①①">string</a></p>
     <h3 class="heading settled" data-level="8.16" id="HasDeviceIdentifier"><span class="secno">8.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasdeviceidentifier">hasDeviceIdentifier<a class="self-link" href="#hasdeviceidentifier"></a></dfn></span><a class="self-link" href="#HasDeviceIdentifier"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#telemetry" id="ref-for-telemetry①">Telemetry</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①②">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①②">string</a></p>
     <h3 class="heading settled" data-level="8.17" id="HasDrawingNumber"><span class="secno">8.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasdrawingnumber">hasDrawingNumber<a class="self-link" href="#hasdrawingnumber"></a></dfn></span><a class="self-link" href="#HasDrawingNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#drawing" id="ref-for-drawing">Drawing</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①③">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①③">string</a></p>
     <h3 class="heading settled" data-level="8.18" id="HasEcrIdentifier"><span class="secno">8.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasecridentifier">hasEcrIdentifier<a class="self-link" href="#hasecridentifier"></a></dfn></span><a class="self-link" href="#HasEcrIdentifier"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#engineeringchangerequest" id="ref-for-engineeringchangerequest">EngineeringChangeRequest</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①④">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①④">string</a></p>
     <h3 class="heading settled" data-level="8.19" id="HasEndCircuit1PartNumber"><span class="secno">8.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuit1partnumber">hasEndCircuit1PartNumber<a class="self-link" href="#hasendcircuit1partnumber"></a></dfn></span><a class="self-link" href="#HasEndCircuit1PartNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⑤">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑤">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑤">string</a></p>
     <h3 class="heading settled" data-level="8.20" id="HasEndCircuit2PartNumber"><span class="secno">8.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuit2partnumber">hasEndCircuit2PartNumber<a class="self-link" href="#hasendcircuit2partnumber"></a></dfn></span><a class="self-link" href="#HasEndCircuit2PartNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⑥">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑥">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑥">string</a></p>
     <h3 class="heading settled" data-level="8.21" id="HasEndCircuitDirection"><span class="secno">8.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitdirection">hasEndCircuitDirection<a class="self-link" href="#hasendcircuitdirection"></a></dfn></span><a class="self-link" href="#HasEndCircuitDirection"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit⑥">EndCircuit</a></p>
     <p><em>Scalar value type:</em> <a data-link-type="dfn" href="fse.html#endcircuitdirection" id="ref-for-endcircuitdirection">endCircuitDirection</a></p>
     <h3 class="heading settled" data-level="8.22" id="HasEndCircuitIdentifier"><span class="secno">8.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitidentifier">hasEndCircuitIdentifier<a class="self-link" href="#hasendcircuitidentifier"></a></dfn></span><a class="self-link" href="#HasEndCircuitIdentifier"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit⑦">EndCircuit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑦">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑦">string</a></p>
     <h3 class="heading settled" data-level="8.23" id="HasEndCircuitLocalName"><span class="secno">8.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitlocalname">hasEndCircuitLocalName<a class="self-link" href="#hasendcircuitlocalname"></a></dfn></span><a class="self-link" href="#HasEndCircuitLocalName"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit⑧">EndCircuit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑧">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑧">string</a></p>
     <h3 class="heading settled" data-level="8.24" id="HasEndCircuitNamedRole1"><span class="secno">8.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitnamedrole1">hasEndCircuitNamedRole1<a class="self-link" href="#hasendcircuitnamedrole1"></a></dfn></span><a class="self-link" href="#HasEndCircuitNamedRole1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⑦">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑨">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①⑨">string</a></p>
     <h3 class="heading settled" data-level="8.25" id="HasEndCircuitNamedRole2"><span class="secno">8.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitnamedrole2">hasEndCircuitNamedRole2<a class="self-link" href="#hasendcircuitnamedrole2"></a></dfn></span><a class="self-link" href="#HasEndCircuitNamedRole2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⑧">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⓪">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⓪">string</a></p>
     <h3 class="heading settled" data-level="8.26" id="HasEndCircuitType"><span class="secno">8.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuittype">hasEndCircuitType<a class="self-link" href="#hasendcircuittype"></a></dfn></span><a class="self-link" href="#HasEndCircuitType"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function②⑨">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②①">string</a></p>
     <h3 class="heading settled" data-level="8.27" id="HasEndConnector1TypePartNumber"><span class="secno">8.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendconnector1typepartnumber">hasEndConnector1TypePartNumber<a class="self-link" href="#hasendconnector1typepartnumber"></a></dfn></span><a class="self-link" href="#HasEndConnector1TypePartNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⓪">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②②">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②②">string</a></p>
     <h3 class="heading settled" data-level="8.28" id="HasEndConnector2TypePartNumber"><span class="secno">8.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendconnector2typepartnumber">hasEndConnector2TypePartNumber<a class="self-link" href="#hasendconnector2typepartnumber"></a></dfn></span><a class="self-link" href="#HasEndConnector2TypePartNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③①">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②③">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②③">string</a></p>
     <h3 class="heading settled" data-level="8.29" id="HasFunctionDirection"><span class="secno">8.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctiondirection">hasFunctionDirection<a class="self-link" href="#hasfunctiondirection"></a></dfn></span><a class="self-link" href="#HasFunctionDirection"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③②">Function</a></p>
     <p><em>Scalar value type:</em> <a data-link-type="dfn" href="fse.html#functiondirection" id="ref-for-functiondirection">functionDirection</a></p>
     <h3 class="heading settled" data-level="8.30" id="HasFunctionNumber"><span class="secno">8.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctionnumber">hasFunctionNumber<a class="self-link" href="#hasfunctionnumber"></a></dfn></span><a class="self-link" href="#HasFunctionNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③③">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②④">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②④">string</a></p>
     <h3 class="heading settled" data-level="8.31" id="HasFunctionRev"><span class="secno">8.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctionrev">hasFunctionRev<a class="self-link" href="#hasfunctionrev"></a></dfn></span><a class="self-link" href="#HasFunctionRev"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③④">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑤">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑤">string</a></p>
     <h3 class="heading settled" data-level="8.32" id="HasFunctionsPerPage"><span class="secno">8.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctionsperpage">hasFunctionsPerPage<a class="self-link" href="#hasfunctionsperpage"></a></dfn></span><a class="self-link" href="#HasFunctionsPerPage"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⑤">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑥">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑥">string</a></p>
     <h3 class="heading settled" data-level="8.33" id="HasGroundTreeRef1"><span class="secno">8.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasgroundtreeref1">hasGroundTreeRef1<a class="self-link" href="#hasgroundtreeref1"></a></dfn></span><a class="self-link" href="#HasGroundTreeRef1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⑥">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑦">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑦">string</a></p>
     <h3 class="heading settled" data-level="8.34" id="HasGroundTreeRef2"><span class="secno">8.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasgroundtreeref2">hasGroundTreeRef2<a class="self-link" href="#hasgroundtreeref2"></a></dfn></span><a class="self-link" href="#HasGroundTreeRef2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⑦">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑧">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑧">string</a></p>
     <h3 class="heading settled" data-level="8.35" id="HasMassConstraintValue"><span class="secno">8.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasmassconstraintvalue">hasMassConstraintValue<a class="self-link" href="#hasmassconstraintvalue"></a></dfn></span><a class="self-link" href="#HasMassConstraintValue"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#massconstraint" id="ref-for-massconstraint②">MassConstraint</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/iso.org/iso-80000-4.html#kilogram" id="ref-for-kilogram">kilogram</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/iso-80000-4.html#kilogram" id="ref-for-kilogram">kilogram</a></p>
     <h3 class="heading settled" data-level="8.36" id="HasMultiplicity"><span class="secno">8.36. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasmultiplicity">hasMultiplicity<a class="self-link" href="#hasmultiplicity"></a></dfn></span><a class="self-link" href="#HasMultiplicity"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy③">MassProxy</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer①">integer</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer①">integer</a></p>
     <h3 class="heading settled" data-level="8.37" id="HasNetIndex"><span class="secno">8.37. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnetindex">hasNetIndex<a class="self-link" href="#hasnetindex"></a></dfn></span><a class="self-link" href="#HasNetIndex"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net⑦">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer②">integer</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer②">integer</a></p>
     <h3 class="heading settled" data-level="8.38" id="HasNote1"><span class="secno">8.38. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote1">hasNote1<a class="self-link" href="#hasnote1"></a></dfn></span><a class="self-link" href="#HasNote1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⑧">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑨">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②⑨">string</a></p>
     <h3 class="heading settled" data-level="8.39" id="HasNote2"><span class="secno">8.39. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote2">hasNote2<a class="self-link" href="#hasnote2"></a></dfn></span><a class="self-link" href="#HasNote2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function③⑨">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⓪">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⓪">string</a></p>
     <h3 class="heading settled" data-level="8.40" id="HasNote3"><span class="secno">8.40. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote3">hasNote3<a class="self-link" href="#hasnote3"></a></dfn></span><a class="self-link" href="#HasNote3"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⓪">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③①">string</a></p>
     <h3 class="heading settled" data-level="8.41" id="HasNote4"><span class="secno">8.41. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote4">hasNote4<a class="self-link" href="#hasnote4"></a></dfn></span><a class="self-link" href="#HasNote4"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④①">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③②">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③②">string</a></p>
     <h3 class="heading settled" data-level="8.42" id="HasNote5"><span class="secno">8.42. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote5">hasNote5<a class="self-link" href="#hasnote5"></a></dfn></span><a class="self-link" href="#HasNote5"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④②">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③③">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③③">string</a></p>
     <h3 class="heading settled" data-level="8.43" id="HasNote6"><span class="secno">8.43. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasnote6">hasNote6<a class="self-link" href="#hasnote6"></a></dfn></span><a class="self-link" href="#HasNote6"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④③">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③④">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③④">string</a></p>
     <h3 class="heading settled" data-level="8.44" id="HasReferenceDesignator"><span class="secno">8.44. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasreferencedesignator">hasReferenceDesignator<a class="self-link" href="#hasreferencedesignator"></a></dfn></span><a class="self-link" href="#HasReferenceDesignator"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement②">ReferenceDesignatedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑤">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑤">string</a></p>
     <h3 class="heading settled" data-level="8.45" id="HasSubsystemAcronym"><span class="secno">8.45. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hassubsystemacronym">hasSubsystemAcronym<a class="self-link" href="#hassubsystemacronym"></a></dfn></span><a class="self-link" href="#HasSubsystemAcronym"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem⑨">Subsystem</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑥">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑥">string</a></p>
     <h3 class="heading settled" data-level="8.46" id="HasSubsystemNumber"><span class="secno">8.46. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hassubsystemnumber">hasSubsystemNumber<a class="self-link" href="#hassubsystemnumber"></a></dfn></span><a class="self-link" href="#HasSubsystemNumber"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem①⓪">Subsystem</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑦">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑦">string</a></p>
     <h3 class="heading settled" data-level="8.47" id="HasSubsystemReferenceDesignator"><span class="secno">8.47. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hassubsystemreferencedesignator">hasSubsystemReferenceDesignator<a class="self-link" href="#hassubsystemreferencedesignator"></a></dfn></span><a class="self-link" href="#HasSubsystemReferenceDesignator"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem①①">Subsystem</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑧">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑧">string</a></p>
     <h3 class="heading settled" data-level="8.48" id="HasSwitchBankIdentifier"><span class="secno">8.48. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasswitchbankidentifier">hasSwitchBankIdentifier<a class="self-link" href="#hasswitchbankidentifier"></a></dfn></span><a class="self-link" href="#HasSwitchBankIdentifier"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#powerswitchbank" id="ref-for-powerswitchbank①">PowerSwitchBank</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑨">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③⑨">string</a></p>
     <h3 class="heading settled" data-level="8.49" id="HasSwitchBankLocalName"><span class="secno">8.49. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasswitchbanklocalname">hasSwitchBankLocalName<a class="self-link" href="#hasswitchbanklocalname"></a></dfn></span><a class="self-link" href="#HasSwitchBankLocalName"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#powerswitchbank" id="ref-for-powerswitchbank②">PowerSwitchBank</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⓪">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⓪">string</a></p>
     <h3 class="heading settled" data-level="8.50" id="HasTelemetryType"><span class="secno">8.50. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hastelemetrytype">hasTelemetryType<a class="self-link" href="#hastelemetrytype"></a></dfn></span><a class="self-link" href="#HasTelemetryType"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#telemetry" id="ref-for-telemetry②">Telemetry</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④①">string</a></p>
     <h3 class="heading settled" data-level="8.51" id="HasView1"><span class="secno">8.51. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasview1">hasView1<a class="self-link" href="#hasview1"></a></dfn></span><a class="self-link" href="#HasView1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④④">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④②">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④②">string</a></p>
     <h3 class="heading settled" data-level="8.52" id="HasView2"><span class="secno">8.52. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasview2">hasView2<a class="self-link" href="#hasview2"></a></dfn></span><a class="self-link" href="#HasView2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⑤">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④③">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④③">string</a></p>
     <h3 class="heading settled" data-level="8.53" id="HasView3"><span class="secno">8.53. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasview3">hasView3<a class="self-link" href="#hasview3"></a></dfn></span><a class="self-link" href="#HasView3"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⑥">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④④">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④④">string</a></p>
     <h3 class="heading settled" data-level="8.54" id="HasWireCode"><span class="secno">8.54. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="haswirecode">hasWireCode<a class="self-link" href="#haswirecode"></a></dfn></span><a class="self-link" href="#HasWireCode"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net⑧">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑤">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑤">string</a></p>
     <h3 class="heading settled" data-level="8.55" id="HasWireGauge"><span class="secno">8.55. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="haswiregauge">hasWireGauge<a class="self-link" href="#haswiregauge"></a></dfn></span><a class="self-link" href="#HasWireGauge"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net⑨">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑥">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑥">string</a></p>
     <h3 class="heading settled" data-level="8.56" id="HasWireTreatment"><span class="secno">8.56. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="haswiretreatment">hasWireTreatment<a class="self-link" href="#haswiretreatment"></a></dfn></span><a class="self-link" href="#HasWireTreatment"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#net" id="ref-for-net①⓪">Net</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑦">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑦">string</a></p>
     <h3 class="heading settled" data-level="8.57" id="NamesCavity1"><span class="secno">8.57. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="namescavity1">namesCavity1<a class="self-link" href="#namescavity1"></a></dfn></span><a class="self-link" href="#NamesCavity1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⑦">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑧">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑧">string</a></p>
     <h3 class="heading settled" data-level="8.58" id="NamesCavity2"><span class="secno">8.58. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="namescavity2">namesCavity2<a class="self-link" href="#namescavity2"></a></dfn></span><a class="self-link" href="#NamesCavity2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⑧">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑨">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④⑨">string</a></p>
     <h3 class="heading settled" data-level="8.59" id="NamesConnector1"><span class="secno">8.59. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="namesconnector1">namesConnector1<a class="self-link" href="#namesconnector1"></a></dfn></span><a class="self-link" href="#NamesConnector1"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④⑨">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤⓪">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤⓪">string</a></p>
     <h3 class="heading settled" data-level="8.60" id="NamesConnector2"><span class="secno">8.60. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="namesconnector2">namesConnector2<a class="self-link" href="#namesconnector2"></a></dfn></span><a class="self-link" href="#NamesConnector2"></a></h3>
     <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑤⓪">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤①">string</a></p>
+    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤①">string</a></p>
     <h2 class="heading settled" data-level="9" id="Rules"><span class="secno">9. </span><span class="content">Rules</span><a class="self-link" href="#Rules"></a></h2>
     <h3 class="heading settled" data-level="9.1" id="GangAggregateFromMember"><span class="secno">9.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gangaggregatefrommember">gangAggregateFromMember<a class="self-link" href="#gangaggregatefrommember"></a></dfn></span><a class="self-link" href="#GangAggregateFromMember"></a></h3>
     <p>Function(x1)
@@ -3121,7 +3459,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-analyzedelement">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzedelement">5.1. ConnectsAssembly</a>
     <li><a href="#ref-for-analyzedelement①">5.4. ConnectsSubsystem</a>
@@ -3131,13 +3469,13 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-analyzes">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzes">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#analyzes</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzes">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzes">5.8. HasGangMember</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-characterization">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterization</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterization</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterization">3.7. EngineeringChangeRequest</a>
     <li><a href="#ref-for-characterization①">3.10. FunctionAnnotation</a>
@@ -3146,7 +3484,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-characterizedelement">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizedelement">5.1. ConnectsAssembly</a>
     <li><a href="#ref-for-characterizedelement①">5.4. ConnectsSubsystem</a>
@@ -3156,7 +3494,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-characterizes">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#characterizes</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizes">3.7. EngineeringChangeRequest</a>
     <li><a href="#ref-for-characterizes①">3.10. FunctionAnnotation</a>
@@ -3167,58 +3505,58 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-explains">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explains">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explains</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explains">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explains</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explains">5.7. HasGangAggregate</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-explanation">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explanation">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/analysis.html#explanation</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explanation">../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#explanation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explanation">3.11. GangConfiguration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-aggregates">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#aggregates">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#aggregates</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates">../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-aggregates">3.1. Assembly</a>
     <li><a href="#ref-for-aggregates①">3.23. Subsystem</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-identifiedelement">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#identifiedelement">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/base.html#identifiedelement</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#identifiedelement">../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#identifiedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-identifiedelement">4.6. ReferenceDesignatedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-component">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#component">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#component</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#component">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#component</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-component">3.8. FlightHardwareComponent</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-flow">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#flow">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#flow</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#flow">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#flow</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-flow">3.24. Telemetry</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-interface">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#interface">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#interface</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-interface">3.5. EndCircuit</a>
     <li><a href="#ref-for-interface①">3.6. EndCircuitGroup</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-joins">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#joins">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#joins</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-joins">3.5. EndCircuit</a>
     <li><a href="#ref-for-joins①">3.9. Function</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-junction">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#junction</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-junction">3.9. Function</a>
     <li><a href="#ref-for-junction①">3.20. Net</a>
@@ -3227,57 +3565,57 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-presentingelement">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presentingelement">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presentingelement</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presentingelement">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presentingelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-presentingelement">4.1. EndCircuitPresentingElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-presents">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presents">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/mission.html#presents</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents">../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-presents">3.5. EndCircuit</a>
     <li><a href="#ref-for-presents①">3.6. EndCircuitGroup</a> <a href="#ref-for-presents②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-describes">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#describes">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#describes</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#describes">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#describes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-describes">3.4. Drawing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-product">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#product">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#product</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#product">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#product</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-product">3.4. Drawing</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-workpackage">
-   <a href="../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#workpackage">../../../../../build/dependencies/imce.jpl.nasa.gov/foundation/project.html#workpackage</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-workpackage">4.2. MassAllocatedElement</a>
     <li><a href="#ref-for-workpackage①">4.4. MassEstimatedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre">
-   <a href="../../../../../build/dependencies/iso.org/iso-80000-3.html#metre">../../../../../build/dependencies/iso.org/iso-80000-3.html#metre</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/iso.org/iso-80000-3.html#metre">../../../../../build/oml/iso.org/iso-80000-3.html#metre</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-metre">8.8. hasCableLength</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram">
-   <a href="../../../../../build/dependencies/iso.org/iso-80000-4.html#kilogram">../../../../../build/dependencies/iso.org/iso-80000-4.html#kilogram</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/iso.org/iso-80000-4.html#kilogram">../../../../../build/oml/iso.org/iso-80000-4.html#kilogram</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-kilogram">8.35. hasMassConstraintValue</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ohm">
-   <a href="../../../../../build/dependencies/iso.org/iso-80000-6.html#ohm">../../../../../build/dependencies/iso.org/iso-80000-6.html#ohm</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/iso.org/iso-80000-6.html#ohm">../../../../../build/oml/iso.org/iso-80000-6.html#ohm</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ohm">8.7. hasCableImpedance</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-integer">
-   <a href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#integer">../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#integer</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer">../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-integer">8.14. hasConductorCount</a>
     <li><a href="#ref-for-integer①">8.36. hasMultiplicity</a>
@@ -3285,7 +3623,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-string">
-   <a href="../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string">../../../../../build/dependencies/www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
+   <a href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string">../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-string">8.1. hasAnnotationKey</a>
     <li><a href="#ref-for-string①">8.2. hasAnnotationValue</a>
