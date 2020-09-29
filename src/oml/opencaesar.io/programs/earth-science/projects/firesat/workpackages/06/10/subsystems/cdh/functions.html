@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,53 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#InsureMechanicalIntegrityByPropulsionStructurePost1"><span class="secno">3.1</span> <span class="content"><span>InsureMechanicalIntegrityByPropulsionStructurePost1</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByPropulsionStructurePost2"><span class="secno">3.2</span> <span class="content"><span>InsureMechanicalIntegrityByPropulsionStructurePost2</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByPropulsionStructurePost3"><span class="secno">3.3</span> <span class="content"><span>InsureMechanicalIntegrityByPropulsionStructurePost3</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByPropulsionStructurePost4"><span class="secno">3.4</span> <span class="content"><span>InsureMechanicalIntegrityByPropulsionStructurePost4</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost1"><span class="secno">3.5</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost1</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost2"><span class="secno">3.6</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost2</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost3"><span class="secno">3.7</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost3</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost4"><span class="secno">3.8</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost4</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost5"><span class="secno">3.9</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost5</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByStructurePost6"><span class="secno">3.10</span> <span class="content"><span>InsureMechanicalIntegrityByStructurePost6</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel1"><span class="secno">3.11</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel1</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel1"><span class="secno">3.12</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel1</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel2"><span class="secno">3.13</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel2</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel2"><span class="secno">3.14</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel2</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel3"><span class="secno">3.15</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel3</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel3"><span class="secno">3.16</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel3</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel4"><span class="secno">3.17</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel4</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel4"><span class="secno">3.18</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel4</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel5"><span class="secno">3.19</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel5</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel5"><span class="secno">3.20</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel5</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityBySidePanel6"><span class="secno">3.21</span> <span class="content"><span>InsureMechanicalIntegrityBySidePanel6</span></span></a>
+      <li><a href="#ProtectAgainstRadiationsBySidePanel6"><span class="secno">3.22</span> <span class="content"><span>ProtectAgainstRadiationsBySidePanel6</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByBasePlate"><span class="secno">3.23</span> <span class="content"><span>InsureMechanicalIntegrityByBasePlate</span></span></a>
+      <li><a href="#ApplyCommandsByPrimaryFlightComputerUnit"><span class="secno">3.24</span> <span class="content"><span>ApplyCommandsByPrimaryFlightComputerUnit</span></span></a>
+      <li><a href="#StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"><span class="secno">3.25</span> <span class="content"><span>StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</span></span></a>
+      <li><a href="#GenerateTelemetryByPrimaryFlightComputerUnit"><span class="secno">3.26</span> <span class="content"><span>GenerateTelemetryByPrimaryFlightComputerUnit</span></span></a>
+      <li><a href="#DetectNewWildfiresByPrimaryFlightComputerUnit"><span class="secno">3.27</span> <span class="content"><span>DetectNewWildfiresByPrimaryFlightComputerUnit</span></span></a>
+      <li><a href="#Launch_SCByLaunchVehicleAdapter"><span class="secno">3.28</span> <span class="content"><span>Launch_SCByLaunchVehicleAdapter</span></span></a>
+      <li><a href="#Release_SC_From_LVBySeparationSystem"><span class="secno">3.29</span> <span class="content"><span>Release_SC_From_LVBySeparationSystem</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByPropellantTankMountingPanel"><span class="secno">3.30</span> <span class="content"><span>InsureMechanicalIntegrityByPropellantTankMountingPanel</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByPressurantTankMountingPanel"><span class="secno">3.31</span> <span class="content"><span>InsureMechanicalIntegrityByPressurantTankMountingPanel</span></span></a>
+      <li><a href="#InsureMechanicalIntegrityByTopPanel"><span class="secno">3.32</span> <span class="content"><span>InsureMechanicalIntegrityByTopPanel</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">4</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#PrimaryFlightComputerUnitPerformsDetectNewWildfires"><span class="secno">4.1</span> <span class="content"><span>PrimaryFlightComputerUnitPerformsDetectNewWildfires</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1746,6 +1840,241 @@ dfn > a.self-link::before      { content: "#"; }
       <p>cdh-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies</a></p>
      <li data-md>
       <p>firesat-functions: <a href="http://opencaesar.io/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/programs/earth-science/missions/firesat/functions</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="InsureMechanicalIntegrityByPropulsionStructurePost1"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypropulsionstructurepost1">InsureMechanicalIntegrityByPropulsionStructurePost1<a class="self-link" href="#insuremechanicalintegritybypropulsionstructurepost1"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPropulsionStructurePost1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="InsureMechanicalIntegrityByPropulsionStructurePost2"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypropulsionstructurepost2">InsureMechanicalIntegrityByPropulsionStructurePost2<a class="self-link" href="#insuremechanicalintegritybypropulsionstructurepost2"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPropulsionStructurePost2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="InsureMechanicalIntegrityByPropulsionStructurePost3"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypropulsionstructurepost3">InsureMechanicalIntegrityByPropulsionStructurePost3<a class="self-link" href="#insuremechanicalintegritybypropulsionstructurepost3"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPropulsionStructurePost3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity②">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="InsureMechanicalIntegrityByPropulsionStructurePost4"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypropulsionstructurepost4">InsureMechanicalIntegrityByPropulsionStructurePost4<a class="self-link" href="#insuremechanicalintegritybypropulsionstructurepost4"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPropulsionStructurePost4"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function③">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity③">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="InsureMechanicalIntegrityByStructurePost1"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost1">InsureMechanicalIntegrityByStructurePost1<a class="self-link" href="#insuremechanicalintegritybystructurepost1"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function④">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity④">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.6" id="InsureMechanicalIntegrityByStructurePost2"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost2">InsureMechanicalIntegrityByStructurePost2<a class="self-link" href="#insuremechanicalintegritybystructurepost2"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑤">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity⑤">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.7" id="InsureMechanicalIntegrityByStructurePost3"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost3">InsureMechanicalIntegrityByStructurePost3<a class="self-link" href="#insuremechanicalintegritybystructurepost3"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑥">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity⑥">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.8" id="InsureMechanicalIntegrityByStructurePost4"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost4">InsureMechanicalIntegrityByStructurePost4<a class="self-link" href="#insuremechanicalintegritybystructurepost4"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost4"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑦">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity⑦">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.9" id="InsureMechanicalIntegrityByStructurePost5"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost5">InsureMechanicalIntegrityByStructurePost5<a class="self-link" href="#insuremechanicalintegritybystructurepost5"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost5"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑧">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑧">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity⑧">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.10" id="InsureMechanicalIntegrityByStructurePost6"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybystructurepost6">InsureMechanicalIntegrityByStructurePost6<a class="self-link" href="#insuremechanicalintegritybystructurepost6"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByStructurePost6"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑨">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑨">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity⑨">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.11" id="InsureMechanicalIntegrityBySidePanel1"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel1">InsureMechanicalIntegrityBySidePanel1<a class="self-link" href="#insuremechanicalintegritybysidepanel1"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⓪">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⓪">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⓪">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.12" id="ProtectAgainstRadiationsBySidePanel1"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel1">ProtectAgainstRadiationsBySidePanel1<a class="self-link" href="#protectagainstradiationsbysidepanel1"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.13" id="InsureMechanicalIntegrityBySidePanel2"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel2">InsureMechanicalIntegrityBySidePanel2<a class="self-link" href="#insuremechanicalintegritybysidepanel2"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①①">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.14" id="ProtectAgainstRadiationsBySidePanel2"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel2">ProtectAgainstRadiationsBySidePanel2<a class="self-link" href="#protectagainstradiationsbysidepanel2"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①③">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations①">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.15" id="InsureMechanicalIntegrityBySidePanel3"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel3">InsureMechanicalIntegrityBySidePanel3<a class="self-link" href="#insuremechanicalintegritybysidepanel3"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①④">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①②">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.16" id="ProtectAgainstRadiationsBySidePanel3"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel3">ProtectAgainstRadiationsBySidePanel3<a class="self-link" href="#protectagainstradiationsbysidepanel3"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⑤">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations②">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.17" id="InsureMechanicalIntegrityBySidePanel4"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel4">InsureMechanicalIntegrityBySidePanel4<a class="self-link" href="#insuremechanicalintegritybysidepanel4"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel4"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⑥">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①③">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.18" id="ProtectAgainstRadiationsBySidePanel4"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel4">ProtectAgainstRadiationsBySidePanel4<a class="self-link" href="#protectagainstradiationsbysidepanel4"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel4"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⑦">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations③">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.19" id="InsureMechanicalIntegrityBySidePanel5"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel5">InsureMechanicalIntegrityBySidePanel5<a class="self-link" href="#insuremechanicalintegritybysidepanel5"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel5"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⑧">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⑧">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①④">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.20" id="ProtectAgainstRadiationsBySidePanel5"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel5">ProtectAgainstRadiationsBySidePanel5<a class="self-link" href="#protectagainstradiationsbysidepanel5"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel5"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①⑨">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⑨">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations④">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.21" id="InsureMechanicalIntegrityBySidePanel6"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybysidepanel6">InsureMechanicalIntegrityBySidePanel6<a class="self-link" href="#insuremechanicalintegritybysidepanel6"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityBySidePanel6"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⓪">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⓪">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⑤">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.22" id="ProtectAgainstRadiationsBySidePanel6"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="protectagainstradiationsbysidepanel6">ProtectAgainstRadiationsBySidePanel6<a class="self-link" href="#protectagainstradiationsbysidepanel6"></a></dfn></span><a class="self-link" href="#ProtectAgainstRadiationsBySidePanel6"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#protectagainstradiations" id="ref-for-protectagainstradiations⑤">firesat-functions:ProtectAgainstRadiations</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.23" id="InsureMechanicalIntegrityByBasePlate"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybybaseplate">InsureMechanicalIntegrityByBasePlate<a class="self-link" href="#insuremechanicalintegritybybaseplate"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByBasePlate"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⑥">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.24" id="ApplyCommandsByPrimaryFlightComputerUnit"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applycommandsbyprimaryflightcomputerunit">ApplyCommandsByPrimaryFlightComputerUnit<a class="self-link" href="#applycommandsbyprimaryflightcomputerunit"></a></dfn></span><a class="self-link" href="#ApplyCommandsByPrimaryFlightComputerUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②③">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#applycommands" id="ref-for-applycommands">firesat-functions:ApplyCommands</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.25" id="StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="storedatabetweentwotelemetriesbyprimaryflightcomputerunit">StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit<a class="self-link" href="#storedatabetweentwotelemetriesbyprimaryflightcomputerunit"></a></dfn></span><a class="self-link" href="#StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②④">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries" id="ref-for-storedatabetweentwotelemetries">firesat-functions:StoreDataBetweenTwoTelemetries</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.26" id="GenerateTelemetryByPrimaryFlightComputerUnit"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="generatetelemetrybyprimaryflightcomputerunit">GenerateTelemetryByPrimaryFlightComputerUnit<a class="self-link" href="#generatetelemetrybyprimaryflightcomputerunit"></a></dfn></span><a class="self-link" href="#GenerateTelemetryByPrimaryFlightComputerUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⑤">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#generatetelemetry" id="ref-for-generatetelemetry">firesat-functions:GenerateTelemetry</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.27" id="DetectNewWildfiresByPrimaryFlightComputerUnit"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="detectnewwildfiresbyprimaryflightcomputerunit">DetectNewWildfiresByPrimaryFlightComputerUnit<a class="self-link" href="#detectnewwildfiresbyprimaryflightcomputerunit"></a></dfn></span><a class="self-link" href="#DetectNewWildfiresByPrimaryFlightComputerUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⑥">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#detectnewwildfires" id="ref-for-detectnewwildfires">firesat-functions:DetectNewWildfires</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.28" id="Launch_SCByLaunchVehicleAdapter"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="launch_scbylaunchvehicleadapter">Launch_SCByLaunchVehicleAdapter<a class="self-link" href="#launch_scbylaunchvehicleadapter"></a></dfn></span><a class="self-link" href="#Launch_SCByLaunchVehicleAdapter"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⑦">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#launch_sc" id="ref-for-launch_sc">firesat-functions:Launch_SC</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.29" id="Release_SC_From_LVBySeparationSystem"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="release_sc_from_lvbyseparationsystem">Release_SC_From_LVBySeparationSystem<a class="self-link" href="#release_sc_from_lvbyseparationsystem"></a></dfn></span><a class="self-link" href="#Release_SC_From_LVBySeparationSystem"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⑧">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⑧">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#release_sc_from_lv" id="ref-for-release_sc_from_lv">firesat-functions:Release_SC_From_LV</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.30" id="InsureMechanicalIntegrityByPropellantTankMountingPanel"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypropellanttankmountingpanel">InsureMechanicalIntegrityByPropellantTankMountingPanel<a class="self-link" href="#insuremechanicalintegritybypropellanttankmountingpanel"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPropellantTankMountingPanel"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②⑨">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②⑨">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⑦">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.31" id="InsureMechanicalIntegrityByPressurantTankMountingPanel"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypressuranttankmountingpanel">InsureMechanicalIntegrityByPressurantTankMountingPanel<a class="self-link" href="#insuremechanicalintegritybypressuranttankmountingpanel"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPressurantTankMountingPanel"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function③⓪">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③⓪">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⑧">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.32" id="InsureMechanicalIntegrityByTopPanel"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybytoppanel">InsureMechanicalIntegrityByTopPanel<a class="self-link" href="#insuremechanicalintegritybytoppanel"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByTopPanel"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function③①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity①⑨">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="RelationInstances"><span class="secno">4. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="PrimaryFlightComputerUnitPerformsDetectNewWildfires"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primaryflightcomputerunitperformsdetectnewwildfires">PrimaryFlightComputerUnitPerformsDetectNewWildfires<a class="self-link" href="#primaryflightcomputerunitperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#PrimaryFlightComputerUnitPerformsDetectNewWildfires"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs">mission:Performs</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="assemblies.html#primaryflightcomputerunit" id="ref-for-primaryflightcomputerunit">cdh-assemblies:PrimaryFlightComputerUnit</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="functions.html#detectnewwildfiresbyprimaryflightcomputerunit" id="ref-for-detectnewwildfiresbyprimaryflightcomputerunit">DetectNewWildfiresByPrimaryFlightComputerUnit</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#incidentprocessing" id="ref-for-incidentprocessing">spc-system-reqs:IncidentProcessing</a></p>
     </ul>
    </div>
   </main>
@@ -1877,4 +2206,315 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#applycommandsbyprimaryflightcomputerunit">ApplyCommandsByPrimaryFlightComputerUnit</a><span>, in §3.24</span>
+   <li><a href="#detectnewwildfiresbyprimaryflightcomputerunit">DetectNewWildfiresByPrimaryFlightComputerUnit</a><span>, in §3.27</span>
+   <li><a href="#generatetelemetrybyprimaryflightcomputerunit">GenerateTelemetryByPrimaryFlightComputerUnit</a><span>, in §3.26</span>
+   <li><a href="#insuremechanicalintegritybybaseplate">InsureMechanicalIntegrityByBasePlate</a><span>, in §3.23</span>
+   <li><a href="#insuremechanicalintegritybypressuranttankmountingpanel">InsureMechanicalIntegrityByPressurantTankMountingPanel</a><span>, in §3.31</span>
+   <li><a href="#insuremechanicalintegritybypropellanttankmountingpanel">InsureMechanicalIntegrityByPropellantTankMountingPanel</a><span>, in §3.30</span>
+   <li><a href="#insuremechanicalintegritybypropulsionstructurepost1">InsureMechanicalIntegrityByPropulsionStructurePost1</a><span>, in §3.1</span>
+   <li><a href="#insuremechanicalintegritybypropulsionstructurepost2">InsureMechanicalIntegrityByPropulsionStructurePost2</a><span>, in §3.2</span>
+   <li><a href="#insuremechanicalintegritybypropulsionstructurepost3">InsureMechanicalIntegrityByPropulsionStructurePost3</a><span>, in §3.3</span>
+   <li><a href="#insuremechanicalintegritybypropulsionstructurepost4">InsureMechanicalIntegrityByPropulsionStructurePost4</a><span>, in §3.4</span>
+   <li><a href="#insuremechanicalintegritybysidepanel1">InsureMechanicalIntegrityBySidePanel1</a><span>, in §3.11</span>
+   <li><a href="#insuremechanicalintegritybysidepanel2">InsureMechanicalIntegrityBySidePanel2</a><span>, in §3.13</span>
+   <li><a href="#insuremechanicalintegritybysidepanel3">InsureMechanicalIntegrityBySidePanel3</a><span>, in §3.15</span>
+   <li><a href="#insuremechanicalintegritybysidepanel4">InsureMechanicalIntegrityBySidePanel4</a><span>, in §3.17</span>
+   <li><a href="#insuremechanicalintegritybysidepanel5">InsureMechanicalIntegrityBySidePanel5</a><span>, in §3.19</span>
+   <li><a href="#insuremechanicalintegritybysidepanel6">InsureMechanicalIntegrityBySidePanel6</a><span>, in §3.21</span>
+   <li><a href="#insuremechanicalintegritybystructurepost1">InsureMechanicalIntegrityByStructurePost1</a><span>, in §3.5</span>
+   <li><a href="#insuremechanicalintegritybystructurepost2">InsureMechanicalIntegrityByStructurePost2</a><span>, in §3.6</span>
+   <li><a href="#insuremechanicalintegritybystructurepost3">InsureMechanicalIntegrityByStructurePost3</a><span>, in §3.7</span>
+   <li><a href="#insuremechanicalintegritybystructurepost4">InsureMechanicalIntegrityByStructurePost4</a><span>, in §3.8</span>
+   <li><a href="#insuremechanicalintegritybystructurepost5">InsureMechanicalIntegrityByStructurePost5</a><span>, in §3.9</span>
+   <li><a href="#insuremechanicalintegritybystructurepost6">InsureMechanicalIntegrityByStructurePost6</a><span>, in §3.10</span>
+   <li><a href="#insuremechanicalintegritybytoppanel">InsureMechanicalIntegrityByTopPanel</a><span>, in §3.32</span>
+   <li><a href="#launch_scbylaunchvehicleadapter">Launch_SCByLaunchVehicleAdapter</a><span>, in §3.28</span>
+   <li><a href="#primaryflightcomputerunitperformsdetectnewwildfires">PrimaryFlightComputerUnitPerformsDetectNewWildfires</a><span>, in §4.1</span>
+   <li><a href="#protectagainstradiationsbysidepanel1">ProtectAgainstRadiationsBySidePanel1</a><span>, in §3.12</span>
+   <li><a href="#protectagainstradiationsbysidepanel2">ProtectAgainstRadiationsBySidePanel2</a><span>, in §3.14</span>
+   <li><a href="#protectagainstradiationsbysidepanel3">ProtectAgainstRadiationsBySidePanel3</a><span>, in §3.16</span>
+   <li><a href="#protectagainstradiationsbysidepanel4">ProtectAgainstRadiationsBySidePanel4</a><span>, in §3.18</span>
+   <li><a href="#protectagainstradiationsbysidepanel5">ProtectAgainstRadiationsBySidePanel5</a><span>, in §3.20</span>
+   <li><a href="#protectagainstradiationsbysidepanel6">ProtectAgainstRadiationsBySidePanel6</a><span>, in §3.22</span>
+   <li><a href="#release_sc_from_lvbyseparationsystem">Release_SC_From_LVBySeparationSystem</a><span>, in §3.29</span>
+   <li><a href="#storedatabetweentwotelemetriesbyprimaryflightcomputerunit">StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a><span>, in §3.25</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-function">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-function">3.1. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
+    <li><a href="#ref-for-function①">3.2. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
+    <li><a href="#ref-for-function②">3.3. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
+    <li><a href="#ref-for-function③">3.4. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
+    <li><a href="#ref-for-function④">3.5. InsureMechanicalIntegrityByStructurePost1</a>
+    <li><a href="#ref-for-function⑤">3.6. InsureMechanicalIntegrityByStructurePost2</a>
+    <li><a href="#ref-for-function⑥">3.7. InsureMechanicalIntegrityByStructurePost3</a>
+    <li><a href="#ref-for-function⑦">3.8. InsureMechanicalIntegrityByStructurePost4</a>
+    <li><a href="#ref-for-function⑧">3.9. InsureMechanicalIntegrityByStructurePost5</a>
+    <li><a href="#ref-for-function⑨">3.10. InsureMechanicalIntegrityByStructurePost6</a>
+    <li><a href="#ref-for-function①⓪">3.11. InsureMechanicalIntegrityBySidePanel1</a>
+    <li><a href="#ref-for-function①①">3.12. ProtectAgainstRadiationsBySidePanel1</a>
+    <li><a href="#ref-for-function①②">3.13. InsureMechanicalIntegrityBySidePanel2</a>
+    <li><a href="#ref-for-function①③">3.14. ProtectAgainstRadiationsBySidePanel2</a>
+    <li><a href="#ref-for-function①④">3.15. InsureMechanicalIntegrityBySidePanel3</a>
+    <li><a href="#ref-for-function①⑤">3.16. ProtectAgainstRadiationsBySidePanel3</a>
+    <li><a href="#ref-for-function①⑥">3.17. InsureMechanicalIntegrityBySidePanel4</a>
+    <li><a href="#ref-for-function①⑦">3.18. ProtectAgainstRadiationsBySidePanel4</a>
+    <li><a href="#ref-for-function①⑧">3.19. InsureMechanicalIntegrityBySidePanel5</a>
+    <li><a href="#ref-for-function①⑨">3.20. ProtectAgainstRadiationsBySidePanel5</a>
+    <li><a href="#ref-for-function②⓪">3.21. InsureMechanicalIntegrityBySidePanel6</a>
+    <li><a href="#ref-for-function②①">3.22. ProtectAgainstRadiationsBySidePanel6</a>
+    <li><a href="#ref-for-function②②">3.23. InsureMechanicalIntegrityByBasePlate</a>
+    <li><a href="#ref-for-function②③">3.24. ApplyCommandsByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-function②④">3.25. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-function②⑤">3.26. GenerateTelemetryByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-function②⑥">3.27. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-function②⑦">3.28. Launch_SCByLaunchVehicleAdapter</a>
+    <li><a href="#ref-for-function②⑧">3.29. Release_SC_From_LVBySeparationSystem</a>
+    <li><a href="#ref-for-function②⑨">3.30. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
+    <li><a href="#ref-for-function③⓪">3.31. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
+    <li><a href="#ref-for-function③①">3.32. InsureMechanicalIntegrityByTopPanel</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isspecifiedby">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isspecifiedby">4.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-performs">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-performs">4.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-realizes">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-realizes">3.1. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
+    <li><a href="#ref-for-realizes①">3.2. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
+    <li><a href="#ref-for-realizes②">3.3. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
+    <li><a href="#ref-for-realizes③">3.4. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
+    <li><a href="#ref-for-realizes④">3.5. InsureMechanicalIntegrityByStructurePost1</a>
+    <li><a href="#ref-for-realizes⑤">3.6. InsureMechanicalIntegrityByStructurePost2</a>
+    <li><a href="#ref-for-realizes⑥">3.7. InsureMechanicalIntegrityByStructurePost3</a>
+    <li><a href="#ref-for-realizes⑦">3.8. InsureMechanicalIntegrityByStructurePost4</a>
+    <li><a href="#ref-for-realizes⑧">3.9. InsureMechanicalIntegrityByStructurePost5</a>
+    <li><a href="#ref-for-realizes⑨">3.10. InsureMechanicalIntegrityByStructurePost6</a>
+    <li><a href="#ref-for-realizes①⓪">3.11. InsureMechanicalIntegrityBySidePanel1</a>
+    <li><a href="#ref-for-realizes①①">3.12. ProtectAgainstRadiationsBySidePanel1</a>
+    <li><a href="#ref-for-realizes①②">3.13. InsureMechanicalIntegrityBySidePanel2</a>
+    <li><a href="#ref-for-realizes①③">3.14. ProtectAgainstRadiationsBySidePanel2</a>
+    <li><a href="#ref-for-realizes①④">3.15. InsureMechanicalIntegrityBySidePanel3</a>
+    <li><a href="#ref-for-realizes①⑤">3.16. ProtectAgainstRadiationsBySidePanel3</a>
+    <li><a href="#ref-for-realizes①⑥">3.17. InsureMechanicalIntegrityBySidePanel4</a>
+    <li><a href="#ref-for-realizes①⑦">3.18. ProtectAgainstRadiationsBySidePanel4</a>
+    <li><a href="#ref-for-realizes①⑧">3.19. InsureMechanicalIntegrityBySidePanel5</a>
+    <li><a href="#ref-for-realizes①⑨">3.20. ProtectAgainstRadiationsBySidePanel5</a>
+    <li><a href="#ref-for-realizes②⓪">3.21. InsureMechanicalIntegrityBySidePanel6</a>
+    <li><a href="#ref-for-realizes②①">3.22. ProtectAgainstRadiationsBySidePanel6</a>
+    <li><a href="#ref-for-realizes②②">3.23. InsureMechanicalIntegrityByBasePlate</a>
+    <li><a href="#ref-for-realizes②③">3.24. ApplyCommandsByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-realizes②④">3.25. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-realizes②⑤">3.26. GenerateTelemetryByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-realizes②⑥">3.27. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
+    <li><a href="#ref-for-realizes②⑦">3.28. Launch_SCByLaunchVehicleAdapter</a>
+    <li><a href="#ref-for-realizes②⑧">3.29. Release_SC_From_LVBySeparationSystem</a>
+    <li><a href="#ref-for-realizes②⑨">3.30. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
+    <li><a href="#ref-for-realizes③⓪">3.31. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
+    <li><a href="#ref-for-realizes③①">3.32. InsureMechanicalIntegrityByTopPanel</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-applycommands">
+   <a href="../../../../../../../missions/firesat/functions.html#applycommands">../../../../../../../missions/firesat/functions.html#applycommands</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-applycommands">3.24. ApplyCommandsByPrimaryFlightComputerUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfires">
+   <a href="../../../../../../../missions/firesat/functions.html#detectnewwildfires">../../../../../../../missions/firesat/functions.html#detectnewwildfires</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfires">3.27. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-generatetelemetry">
+   <a href="../../../../../../../missions/firesat/functions.html#generatetelemetry">../../../../../../../missions/firesat/functions.html#generatetelemetry</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-generatetelemetry">3.26. GenerateTelemetryByPrimaryFlightComputerUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-insuremechanicalintegrity">
+   <a href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity">../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-insuremechanicalintegrity">3.1. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①">3.2. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
+    <li><a href="#ref-for-insuremechanicalintegrity②">3.3. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
+    <li><a href="#ref-for-insuremechanicalintegrity③">3.4. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
+    <li><a href="#ref-for-insuremechanicalintegrity④">3.5. InsureMechanicalIntegrityByStructurePost1</a>
+    <li><a href="#ref-for-insuremechanicalintegrity⑤">3.6. InsureMechanicalIntegrityByStructurePost2</a>
+    <li><a href="#ref-for-insuremechanicalintegrity⑥">3.7. InsureMechanicalIntegrityByStructurePost3</a>
+    <li><a href="#ref-for-insuremechanicalintegrity⑦">3.8. InsureMechanicalIntegrityByStructurePost4</a>
+    <li><a href="#ref-for-insuremechanicalintegrity⑧">3.9. InsureMechanicalIntegrityByStructurePost5</a>
+    <li><a href="#ref-for-insuremechanicalintegrity⑨">3.10. InsureMechanicalIntegrityByStructurePost6</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⓪">3.11. InsureMechanicalIntegrityBySidePanel1</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①①">3.13. InsureMechanicalIntegrityBySidePanel2</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①②">3.15. InsureMechanicalIntegrityBySidePanel3</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①③">3.17. InsureMechanicalIntegrityBySidePanel4</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①④">3.19. InsureMechanicalIntegrityBySidePanel5</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⑤">3.21. InsureMechanicalIntegrityBySidePanel6</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⑥">3.23. InsureMechanicalIntegrityByBasePlate</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⑦">3.30. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⑧">3.31. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
+    <li><a href="#ref-for-insuremechanicalintegrity①⑨">3.32. InsureMechanicalIntegrityByTopPanel</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-launch_sc">
+   <a href="../../../../../../../missions/firesat/functions.html#launch_sc">../../../../../../../missions/firesat/functions.html#launch_sc</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-launch_sc">3.28. Launch_SCByLaunchVehicleAdapter</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-protectagainstradiations">
+   <a href="../../../../../../../missions/firesat/functions.html#protectagainstradiations">../../../../../../../missions/firesat/functions.html#protectagainstradiations</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-protectagainstradiations">3.12. ProtectAgainstRadiationsBySidePanel1</a>
+    <li><a href="#ref-for-protectagainstradiations①">3.14. ProtectAgainstRadiationsBySidePanel2</a>
+    <li><a href="#ref-for-protectagainstradiations②">3.16. ProtectAgainstRadiationsBySidePanel3</a>
+    <li><a href="#ref-for-protectagainstradiations③">3.18. ProtectAgainstRadiationsBySidePanel4</a>
+    <li><a href="#ref-for-protectagainstradiations④">3.20. ProtectAgainstRadiationsBySidePanel5</a>
+    <li><a href="#ref-for-protectagainstradiations⑤">3.22. ProtectAgainstRadiationsBySidePanel6</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-release_sc_from_lv">
+   <a href="../../../../../../../missions/firesat/functions.html#release_sc_from_lv">../../../../../../../missions/firesat/functions.html#release_sc_from_lv</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-release_sc_from_lv">3.29. Release_SC_From_LVBySeparationSystem</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-storedatabetweentwotelemetries">
+   <a href="../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries">../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-storedatabetweentwotelemetries">3.25. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-incidentprocessing">
+   <a href="../../../../../systems/spc/requirements/system.html#incidentprocessing">../../../../../systems/spc/requirements/system.html#incidentprocessing</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-incidentprocessing">4.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-primaryflightcomputerunit">
+   <a href="assemblies.html#primaryflightcomputerunit">assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-primaryflightcomputerunit">4.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfiresbyprimaryflightcomputerunit">
+   <a href="functions.html#detectnewwildfiresbyprimaryflightcomputerunit">functions.html#detectnewwildfiresbyprimaryflightcomputerunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfiresbyprimaryflightcomputerunit">4.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-applycommands" style="color:initial">applycommands</span>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfires" style="color:initial">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-generatetelemetry" style="color:initial">generatetelemetry</span>
+     <li><span class="dfn-paneled" id="term-for-insuremechanicalintegrity" style="color:initial">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="term-for-launch_sc" style="color:initial">launch_sc</span>
+     <li><span class="dfn-paneled" id="term-for-protectagainstradiations" style="color:initial">protectagainstradiations</span>
+     <li><span class="dfn-paneled" id="term-for-release_sc_from_lv" style="color:initial">release_sc_from_lv</span>
+     <li><span class="dfn-paneled" id="term-for-storedatabetweentwotelemetries" style="color:initial">storedatabetweentwotelemetries</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-incidentprocessing" style="color:initial">incidentprocessing</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit" style="color:initial">primaryflightcomputerunit</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfiresbyprimaryflightcomputerunit" style="color:initial">detectnewwildfiresbyprimaryflightcomputerunit</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/masses</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,44 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#PropulsionStructurePost1CBEMassConstraint"><span class="secno">3.1</span> <span class="content"><span>PropulsionStructurePost1CBEMassConstraint</span></span></a>
+      <li><a href="#PropulsionStructurePost2CBEMassConstraint"><span class="secno">3.2</span> <span class="content"><span>PropulsionStructurePost2CBEMassConstraint</span></span></a>
+      <li><a href="#PropulsionStructurePost3CBEMassConstraint"><span class="secno">3.3</span> <span class="content"><span>PropulsionStructurePost3CBEMassConstraint</span></span></a>
+      <li><a href="#PropulsionStructurePost4CBEMassConstraint"><span class="secno">3.4</span> <span class="content"><span>PropulsionStructurePost4CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost1CBEMassConstraint"><span class="secno">3.5</span> <span class="content"><span>StructurePost1CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost2CBEMassConstraint"><span class="secno">3.6</span> <span class="content"><span>StructurePost2CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost3CBEMassConstraint"><span class="secno">3.7</span> <span class="content"><span>StructurePost3CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost4CBEMassConstraint"><span class="secno">3.8</span> <span class="content"><span>StructurePost4CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost5CBEMassConstraint"><span class="secno">3.9</span> <span class="content"><span>StructurePost5CBEMassConstraint</span></span></a>
+      <li><a href="#StructurePost6CBEMassConstraint"><span class="secno">3.10</span> <span class="content"><span>StructurePost6CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel1CBEMassConstraint"><span class="secno">3.11</span> <span class="content"><span>SidePanel1CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel2CBEMassConstraint"><span class="secno">3.12</span> <span class="content"><span>SidePanel2CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel3CBEMassConstraint"><span class="secno">3.13</span> <span class="content"><span>SidePanel3CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel4CBEMassConstraint"><span class="secno">3.14</span> <span class="content"><span>SidePanel4CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel5CBEMassConstraint"><span class="secno">3.15</span> <span class="content"><span>SidePanel5CBEMassConstraint</span></span></a>
+      <li><a href="#SidePanel6CBEMassConstraint"><span class="secno">3.16</span> <span class="content"><span>SidePanel6CBEMassConstraint</span></span></a>
+      <li><a href="#BasePlateModuleCBEMassConstraint"><span class="secno">3.17</span> <span class="content"><span>BasePlateModuleCBEMassConstraint</span></span></a>
+      <li><a href="#BasePlateCBEMassConstraint"><span class="secno">3.18</span> <span class="content"><span>BasePlateCBEMassConstraint</span></span></a>
+      <li><a href="#AvionicsStackSectionCBEMassConstraint"><span class="secno">3.19</span> <span class="content"><span>AvionicsStackSectionCBEMassConstraint</span></span></a>
+      <li><a href="#PrimaryFlightComputerUnitCBEMassConstraint"><span class="secno">3.20</span> <span class="content"><span>PrimaryFlightComputerUnitCBEMassConstraint</span></span></a>
+      <li><a href="#LaunchVehicleInterfaceModuleCBEMassConstraint"><span class="secno">3.21</span> <span class="content"><span>LaunchVehicleInterfaceModuleCBEMassConstraint</span></span></a>
+      <li><a href="#LaunchVehicleAdapterCBEMassConstraint"><span class="secno">3.22</span> <span class="content"><span>LaunchVehicleAdapterCBEMassConstraint</span></span></a>
+      <li><a href="#SeparationSystemCBEMassConstraint"><span class="secno">3.23</span> <span class="content"><span>SeparationSystemCBEMassConstraint</span></span></a>
+      <li><a href="#PropellantTankMountingPanelCBEMassConstraint"><span class="secno">3.24</span> <span class="content"><span>PropellantTankMountingPanelCBEMassConstraint</span></span></a>
+      <li><a href="#PressurantTankMountingPanelCBEMassConstraint"><span class="secno">3.25</span> <span class="content"><span>PressurantTankMountingPanelCBEMassConstraint</span></span></a>
+      <li><a href="#PayloadStructuralInterfaceCBEMassConstraint"><span class="secno">3.26</span> <span class="content"><span>PayloadStructuralInterfaceCBEMassConstraint</span></span></a>
+      <li><a href="#TopPanelModuleCBEMassConstraint"><span class="secno">3.27</span> <span class="content"><span>TopPanelModuleCBEMassConstraint</span></span></a>
+      <li><a href="#TopPanelCBEMassConstraint"><span class="secno">3.28</span> <span class="content"><span>TopPanelCBEMassConstraint</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1744,6 +1829,343 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>cdh-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="PropulsionStructurePost1CBEMassConstraint"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionstructurepost1cbemassconstraint">PropulsionStructurePost1CBEMassConstraint<a class="self-link" href="#propulsionstructurepost1cbemassconstraint"></a></dfn></span><a class="self-link" href="#PropulsionStructurePost1CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionstructurepost1" id="ref-for-propulsionstructurepost1">cdh-assemblies:PropulsionStructurePost1</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="PropulsionStructurePost2CBEMassConstraint"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionstructurepost2cbemassconstraint">PropulsionStructurePost2CBEMassConstraint<a class="self-link" href="#propulsionstructurepost2cbemassconstraint"></a></dfn></span><a class="self-link" href="#PropulsionStructurePost2CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionstructurepost2" id="ref-for-propulsionstructurepost2">cdh-assemblies:PropulsionStructurePost2</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="PropulsionStructurePost3CBEMassConstraint"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionstructurepost3cbemassconstraint">PropulsionStructurePost3CBEMassConstraint<a class="self-link" href="#propulsionstructurepost3cbemassconstraint"></a></dfn></span><a class="self-link" href="#PropulsionStructurePost3CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionstructurepost3" id="ref-for-propulsionstructurepost3">cdh-assemblies:PropulsionStructurePost3</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="PropulsionStructurePost4CBEMassConstraint"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionstructurepost4cbemassconstraint">PropulsionStructurePost4CBEMassConstraint<a class="self-link" href="#propulsionstructurepost4cbemassconstraint"></a></dfn></span><a class="self-link" href="#PropulsionStructurePost4CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint③">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue③">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes③">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionstructurepost4" id="ref-for-propulsionstructurepost4">cdh-assemblies:PropulsionStructurePost4</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="StructurePost1CBEMassConstraint"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost1cbemassconstraint">StructurePost1CBEMassConstraint<a class="self-link" href="#structurepost1cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost1CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint④">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue④">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes④">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost1" id="ref-for-structurepost1">cdh-assemblies:StructurePost1</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.6" id="StructurePost2CBEMassConstraint"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost2cbemassconstraint">StructurePost2CBEMassConstraint<a class="self-link" href="#structurepost2cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost2CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑤">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue⑤">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑤">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost2" id="ref-for-structurepost2">cdh-assemblies:StructurePost2</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.7" id="StructurePost3CBEMassConstraint"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost3cbemassconstraint">StructurePost3CBEMassConstraint<a class="self-link" href="#structurepost3cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost3CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑥">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue⑥">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑥">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost3" id="ref-for-structurepost3">cdh-assemblies:StructurePost3</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.8" id="StructurePost4CBEMassConstraint"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost4cbemassconstraint">StructurePost4CBEMassConstraint<a class="self-link" href="#structurepost4cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost4CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑦">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue⑦">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑦">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost4" id="ref-for-structurepost4">cdh-assemblies:StructurePost4</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.9" id="StructurePost5CBEMassConstraint"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost5cbemassconstraint">StructurePost5CBEMassConstraint<a class="self-link" href="#structurepost5cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost5CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑧">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue⑧">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑧">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost5" id="ref-for-structurepost5">cdh-assemblies:StructurePost5</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.10" id="StructurePost6CBEMassConstraint"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structurepost6cbemassconstraint">StructurePost6CBEMassConstraint<a class="self-link" href="#structurepost6cbemassconstraint"></a></dfn></span><a class="self-link" href="#StructurePost6CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑨">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue⑨">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑨">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#structurepost6" id="ref-for-structurepost6">cdh-assemblies:StructurePost6</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.11" id="SidePanel1CBEMassConstraint"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel1cbemassconstraint">SidePanel1CBEMassConstraint<a class="self-link" href="#sidepanel1cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel1CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⓪">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⓪">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⓪">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel1" id="ref-for-sidepanel1">cdh-assemblies:SidePanel1</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.12" id="SidePanel2CBEMassConstraint"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel2cbemassconstraint">SidePanel2CBEMassConstraint<a class="self-link" href="#sidepanel2cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel2CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①①">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①①">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①①">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel2" id="ref-for-sidepanel2">cdh-assemblies:SidePanel2</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.13" id="SidePanel3CBEMassConstraint"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel3cbemassconstraint">SidePanel3CBEMassConstraint<a class="self-link" href="#sidepanel3cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel3CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①②">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①②">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①②">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel3" id="ref-for-sidepanel3">cdh-assemblies:SidePanel3</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.14" id="SidePanel4CBEMassConstraint"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel4cbemassconstraint">SidePanel4CBEMassConstraint<a class="self-link" href="#sidepanel4cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel4CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①③">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①③">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①③">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel4" id="ref-for-sidepanel4">cdh-assemblies:SidePanel4</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.15" id="SidePanel5CBEMassConstraint"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel5cbemassconstraint">SidePanel5CBEMassConstraint<a class="self-link" href="#sidepanel5cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel5CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①④">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①④">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①④">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel5" id="ref-for-sidepanel5">cdh-assemblies:SidePanel5</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.16" id="SidePanel6CBEMassConstraint"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sidepanel6cbemassconstraint">SidePanel6CBEMassConstraint<a class="self-link" href="#sidepanel6cbemassconstraint"></a></dfn></span><a class="self-link" href="#SidePanel6CBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⑤">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⑤">fse:hasMassConstraintValue</a> 0.8</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⑤">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#sidepanel6" id="ref-for-sidepanel6">cdh-assemblies:SidePanel6</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.17" id="BasePlateModuleCBEMassConstraint"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="baseplatemodulecbemassconstraint">BasePlateModuleCBEMassConstraint<a class="self-link" href="#baseplatemodulecbemassconstraint"></a></dfn></span><a class="self-link" href="#BasePlateModuleCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⑥">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⑥">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⑥">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#baseplatemodule" id="ref-for-baseplatemodule">cdh-assemblies:BasePlateModule</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.18" id="BasePlateCBEMassConstraint"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="baseplatecbemassconstraint">BasePlateCBEMassConstraint<a class="self-link" href="#baseplatecbemassconstraint"></a></dfn></span><a class="self-link" href="#BasePlateCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⑦">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⑦">fse:hasMassConstraintValue</a> 1.32</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⑦">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#baseplate" id="ref-for-baseplate">cdh-assemblies:BasePlate</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.19" id="AvionicsStackSectionCBEMassConstraint"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="avionicsstacksectioncbemassconstraint">AvionicsStackSectionCBEMassConstraint<a class="self-link" href="#avionicsstacksectioncbemassconstraint"></a></dfn></span><a class="self-link" href="#AvionicsStackSectionCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⑧">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⑧">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⑧">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#avionicsstacksection" id="ref-for-avionicsstacksection">cdh-assemblies:AvionicsStackSection</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.20" id="PrimaryFlightComputerUnitCBEMassConstraint"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primaryflightcomputerunitcbemassconstraint">PrimaryFlightComputerUnitCBEMassConstraint<a class="self-link" href="#primaryflightcomputerunitcbemassconstraint"></a></dfn></span><a class="self-link" href="#PrimaryFlightComputerUnitCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⑨">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue①⑨">fse:hasMassConstraintValue</a> 2.35</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⑨">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#primaryflightcomputerunit" id="ref-for-primaryflightcomputerunit">cdh-assemblies:PrimaryFlightComputerUnit</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.21" id="LaunchVehicleInterfaceModuleCBEMassConstraint"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="launchvehicleinterfacemodulecbemassconstraint">LaunchVehicleInterfaceModuleCBEMassConstraint<a class="self-link" href="#launchvehicleinterfacemodulecbemassconstraint"></a></dfn></span><a class="self-link" href="#LaunchVehicleInterfaceModuleCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②⓪">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②⓪">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②⓪">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#launchvehicleinterfacemodule" id="ref-for-launchvehicleinterfacemodule">cdh-assemblies:LaunchVehicleInterfaceModule</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.22" id="LaunchVehicleAdapterCBEMassConstraint"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="launchvehicleadaptercbemassconstraint">LaunchVehicleAdapterCBEMassConstraint<a class="self-link" href="#launchvehicleadaptercbemassconstraint"></a></dfn></span><a class="self-link" href="#LaunchVehicleAdapterCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②①">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②①">fse:hasMassConstraintValue</a> 5.0</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②①">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#launchvehicleadapter" id="ref-for-launchvehicleadapter">cdh-assemblies:LaunchVehicleAdapter</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.23" id="SeparationSystemCBEMassConstraint"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="separationsystemcbemassconstraint">SeparationSystemCBEMassConstraint<a class="self-link" href="#separationsystemcbemassconstraint"></a></dfn></span><a class="self-link" href="#SeparationSystemCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②②">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②②">fse:hasMassConstraintValue</a> 3.0</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②②">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#separationsystem" id="ref-for-separationsystem">cdh-assemblies:SeparationSystem</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.24" id="PropellantTankMountingPanelCBEMassConstraint"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanttankmountingpanelcbemassconstraint">PropellantTankMountingPanelCBEMassConstraint<a class="self-link" href="#propellanttankmountingpanelcbemassconstraint"></a></dfn></span><a class="self-link" href="#PropellantTankMountingPanelCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②③">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②③">fse:hasMassConstraintValue</a> 2.7</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②③">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propellanttankmountingpanel" id="ref-for-propellanttankmountingpanel">cdh-assemblies:PropellantTankMountingPanel</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.25" id="PressurantTankMountingPanelCBEMassConstraint"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pressuranttankmountingpanelcbemassconstraint">PressurantTankMountingPanelCBEMassConstraint<a class="self-link" href="#pressuranttankmountingpanelcbemassconstraint"></a></dfn></span><a class="self-link" href="#PressurantTankMountingPanelCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②④">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②④">fse:hasMassConstraintValue</a> 2.7</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②④">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#pressuranttankmountingpanel" id="ref-for-pressuranttankmountingpanel">cdh-assemblies:PressurantTankMountingPanel</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.26" id="PayloadStructuralInterfaceCBEMassConstraint"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="payloadstructuralinterfacecbemassconstraint">PayloadStructuralInterfaceCBEMassConstraint<a class="self-link" href="#payloadstructuralinterfacecbemassconstraint"></a></dfn></span><a class="self-link" href="#PayloadStructuralInterfaceCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②⑤">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②⑤">fse:hasMassConstraintValue</a> 3.5</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②⑤">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#payloadstructuralinterface" id="ref-for-payloadstructuralinterface">cdh-assemblies:PayloadStructuralInterface</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.27" id="TopPanelModuleCBEMassConstraint"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="toppanelmodulecbemassconstraint">TopPanelModuleCBEMassConstraint<a class="self-link" href="#toppanelmodulecbemassconstraint"></a></dfn></span><a class="self-link" href="#TopPanelModuleCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②⑥">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②⑥">fse:hasMassConstraintValue</a> 0.6</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②⑥">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#toppanelmodule" id="ref-for-toppanelmodule">cdh-assemblies:TopPanelModule</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.28" id="TopPanelCBEMassConstraint"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="toppanelcbemassconstraint">TopPanelCBEMassConstraint<a class="self-link" href="#toppanelcbemassconstraint"></a></dfn></span><a class="self-link" href="#TopPanelCBEMassConstraint"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②⑦">fse:CBEMassConstraint</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue" id="ref-for-hasmassconstraintvalue②⑦">fse:hasMassConstraintValue</a> 2.7</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②⑦">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#toppanel" id="ref-for-toppanel">cdh-assemblies:TopPanel</a></p>
     </ul>
    </div>
   </main>
@@ -1875,4 +2297,405 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#avionicsstacksectioncbemassconstraint">AvionicsStackSectionCBEMassConstraint</a><span>, in §3.19</span>
+   <li><a href="#baseplatecbemassconstraint">BasePlateCBEMassConstraint</a><span>, in §3.18</span>
+   <li><a href="#baseplatemodulecbemassconstraint">BasePlateModuleCBEMassConstraint</a><span>, in §3.17</span>
+   <li><a href="#launchvehicleadaptercbemassconstraint">LaunchVehicleAdapterCBEMassConstraint</a><span>, in §3.22</span>
+   <li><a href="#launchvehicleinterfacemodulecbemassconstraint">LaunchVehicleInterfaceModuleCBEMassConstraint</a><span>, in §3.21</span>
+   <li><a href="#payloadstructuralinterfacecbemassconstraint">PayloadStructuralInterfaceCBEMassConstraint</a><span>, in §3.26</span>
+   <li><a href="#pressuranttankmountingpanelcbemassconstraint">PressurantTankMountingPanelCBEMassConstraint</a><span>, in §3.25</span>
+   <li><a href="#primaryflightcomputerunitcbemassconstraint">PrimaryFlightComputerUnitCBEMassConstraint</a><span>, in §3.20</span>
+   <li><a href="#propellanttankmountingpanelcbemassconstraint">PropellantTankMountingPanelCBEMassConstraint</a><span>, in §3.24</span>
+   <li><a href="#propulsionstructurepost1cbemassconstraint">PropulsionStructurePost1CBEMassConstraint</a><span>, in §3.1</span>
+   <li><a href="#propulsionstructurepost2cbemassconstraint">PropulsionStructurePost2CBEMassConstraint</a><span>, in §3.2</span>
+   <li><a href="#propulsionstructurepost3cbemassconstraint">PropulsionStructurePost3CBEMassConstraint</a><span>, in §3.3</span>
+   <li><a href="#propulsionstructurepost4cbemassconstraint">PropulsionStructurePost4CBEMassConstraint</a><span>, in §3.4</span>
+   <li><a href="#separationsystemcbemassconstraint">SeparationSystemCBEMassConstraint</a><span>, in §3.23</span>
+   <li><a href="#sidepanel1cbemassconstraint">SidePanel1CBEMassConstraint</a><span>, in §3.11</span>
+   <li><a href="#sidepanel2cbemassconstraint">SidePanel2CBEMassConstraint</a><span>, in §3.12</span>
+   <li><a href="#sidepanel3cbemassconstraint">SidePanel3CBEMassConstraint</a><span>, in §3.13</span>
+   <li><a href="#sidepanel4cbemassconstraint">SidePanel4CBEMassConstraint</a><span>, in §3.14</span>
+   <li><a href="#sidepanel5cbemassconstraint">SidePanel5CBEMassConstraint</a><span>, in §3.15</span>
+   <li><a href="#sidepanel6cbemassconstraint">SidePanel6CBEMassConstraint</a><span>, in §3.16</span>
+   <li><a href="#structurepost1cbemassconstraint">StructurePost1CBEMassConstraint</a><span>, in §3.5</span>
+   <li><a href="#structurepost2cbemassconstraint">StructurePost2CBEMassConstraint</a><span>, in §3.6</span>
+   <li><a href="#structurepost3cbemassconstraint">StructurePost3CBEMassConstraint</a><span>, in §3.7</span>
+   <li><a href="#structurepost4cbemassconstraint">StructurePost4CBEMassConstraint</a><span>, in §3.8</span>
+   <li><a href="#structurepost5cbemassconstraint">StructurePost5CBEMassConstraint</a><span>, in §3.9</span>
+   <li><a href="#structurepost6cbemassconstraint">StructurePost6CBEMassConstraint</a><span>, in §3.10</span>
+   <li><a href="#toppanelcbemassconstraint">TopPanelCBEMassConstraint</a><span>, in §3.28</span>
+   <li><a href="#toppanelmodulecbemassconstraint">TopPanelModuleCBEMassConstraint</a><span>, in §3.27</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-cbemassconstraint">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-cbemassconstraint">3.1. PropulsionStructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①">3.2. PropulsionStructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②">3.3. PropulsionStructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint③">3.4. PropulsionStructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint④">3.5. StructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint⑤">3.6. StructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint⑥">3.7. StructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint⑦">3.8. StructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint⑧">3.9. StructurePost5CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint⑨">3.10. StructurePost6CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⓪">3.11. SidePanel1CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①①">3.12. SidePanel2CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①②">3.13. SidePanel3CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①③">3.14. SidePanel4CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①④">3.15. SidePanel5CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⑤">3.16. SidePanel6CBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⑥">3.17. BasePlateModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⑦">3.18. BasePlateCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⑧">3.19. AvionicsStackSectionCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint①⑨">3.20. PrimaryFlightComputerUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②⓪">3.21. LaunchVehicleInterfaceModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②①">3.22. LaunchVehicleAdapterCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②②">3.23. SeparationSystemCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②③">3.24. PropellantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②④">3.25. PressurantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②⑤">3.26. PayloadStructuralInterfaceCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②⑥">3.27. TopPanelModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-cbemassconstraint②⑦">3.28. TopPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasmassconstraintvalue">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasmassconstraintvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasmassconstraintvalue">3.1. PropulsionStructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①">3.2. PropulsionStructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②">3.3. PropulsionStructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue③">3.4. PropulsionStructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue④">3.5. StructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue⑤">3.6. StructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue⑥">3.7. StructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue⑦">3.8. StructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue⑧">3.9. StructurePost5CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue⑨">3.10. StructurePost6CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⓪">3.11. SidePanel1CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①①">3.12. SidePanel2CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①②">3.13. SidePanel3CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①③">3.14. SidePanel4CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①④">3.15. SidePanel5CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⑤">3.16. SidePanel6CBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⑥">3.17. BasePlateModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⑦">3.18. BasePlateCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⑧">3.19. AvionicsStackSectionCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue①⑨">3.20. PrimaryFlightComputerUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②⓪">3.21. LaunchVehicleInterfaceModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②①">3.22. LaunchVehicleAdapterCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②②">3.23. SeparationSystemCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②③">3.24. PropellantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②④">3.25. PressurantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②⑤">3.26. PayloadStructuralInterfaceCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②⑥">3.27. TopPanelModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-hasmassconstraintvalue②⑦">3.28. TopPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-characterizes">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-characterizes">3.1. PropulsionStructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①">3.2. PropulsionStructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②">3.3. PropulsionStructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes③">3.4. PropulsionStructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes④">3.5. StructurePost1CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes⑤">3.6. StructurePost2CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes⑥">3.7. StructurePost3CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes⑦">3.8. StructurePost4CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes⑧">3.9. StructurePost5CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes⑨">3.10. StructurePost6CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⓪">3.11. SidePanel1CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①①">3.12. SidePanel2CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①②">3.13. SidePanel3CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①③">3.14. SidePanel4CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①④">3.15. SidePanel5CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⑤">3.16. SidePanel6CBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⑥">3.17. BasePlateModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⑦">3.18. BasePlateCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⑧">3.19. AvionicsStackSectionCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes①⑨">3.20. PrimaryFlightComputerUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②⓪">3.21. LaunchVehicleInterfaceModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②①">3.22. LaunchVehicleAdapterCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②②">3.23. SeparationSystemCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②③">3.24. PropellantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②④">3.25. PressurantTankMountingPanelCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②⑤">3.26. PayloadStructuralInterfaceCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②⑥">3.27. TopPanelModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-characterizes②⑦">3.28. TopPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-avionicsstacksection">
+   <a href="assemblies.html#avionicsstacksection">assemblies.html#avionicsstacksection</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-avionicsstacksection">3.19. AvionicsStackSectionCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-baseplate">
+   <a href="assemblies.html#baseplate">assemblies.html#baseplate</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-baseplate">3.18. BasePlateCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-baseplatemodule">
+   <a href="assemblies.html#baseplatemodule">assemblies.html#baseplatemodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-baseplatemodule">3.17. BasePlateModuleCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-launchvehicleadapter">
+   <a href="assemblies.html#launchvehicleadapter">assemblies.html#launchvehicleadapter</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-launchvehicleadapter">3.22. LaunchVehicleAdapterCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-launchvehicleinterfacemodule">
+   <a href="assemblies.html#launchvehicleinterfacemodule">assemblies.html#launchvehicleinterfacemodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-launchvehicleinterfacemodule">3.21. LaunchVehicleInterfaceModuleCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-payloadstructuralinterface">
+   <a href="assemblies.html#payloadstructuralinterface">assemblies.html#payloadstructuralinterface</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-payloadstructuralinterface">3.26. PayloadStructuralInterfaceCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pressuranttankmountingpanel">
+   <a href="assemblies.html#pressuranttankmountingpanel">assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pressuranttankmountingpanel">3.25. PressurantTankMountingPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-primaryflightcomputerunit">
+   <a href="assemblies.html#primaryflightcomputerunit">assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-primaryflightcomputerunit">3.20. PrimaryFlightComputerUnitCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propellanttankmountingpanel">
+   <a href="assemblies.html#propellanttankmountingpanel">assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propellanttankmountingpanel">3.24. PropellantTankMountingPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost1">
+   <a href="assemblies.html#propulsionstructurepost1">assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost1">3.1. PropulsionStructurePost1CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost2">
+   <a href="assemblies.html#propulsionstructurepost2">assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost2">3.2. PropulsionStructurePost2CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost3">
+   <a href="assemblies.html#propulsionstructurepost3">assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost3">3.3. PropulsionStructurePost3CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost4">
+   <a href="assemblies.html#propulsionstructurepost4">assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost4">3.4. PropulsionStructurePost4CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-separationsystem">
+   <a href="assemblies.html#separationsystem">assemblies.html#separationsystem</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-separationsystem">3.23. SeparationSystemCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel1">
+   <a href="assemblies.html#sidepanel1">assemblies.html#sidepanel1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel1">3.11. SidePanel1CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel2">
+   <a href="assemblies.html#sidepanel2">assemblies.html#sidepanel2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel2">3.12. SidePanel2CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel3">
+   <a href="assemblies.html#sidepanel3">assemblies.html#sidepanel3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel3">3.13. SidePanel3CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel4">
+   <a href="assemblies.html#sidepanel4">assemblies.html#sidepanel4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel4">3.14. SidePanel4CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel5">
+   <a href="assemblies.html#sidepanel5">assemblies.html#sidepanel5</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel5">3.15. SidePanel5CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel6">
+   <a href="assemblies.html#sidepanel6">assemblies.html#sidepanel6</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel6">3.16. SidePanel6CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost1">
+   <a href="assemblies.html#structurepost1">assemblies.html#structurepost1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost1">3.5. StructurePost1CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost2">
+   <a href="assemblies.html#structurepost2">assemblies.html#structurepost2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost2">3.6. StructurePost2CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost3">
+   <a href="assemblies.html#structurepost3">assemblies.html#structurepost3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost3">3.7. StructurePost3CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost4">
+   <a href="assemblies.html#structurepost4">assemblies.html#structurepost4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost4">3.8. StructurePost4CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost5">
+   <a href="assemblies.html#structurepost5">assemblies.html#structurepost5</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost5">3.9. StructurePost5CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost6">
+   <a href="assemblies.html#structurepost6">assemblies.html#structurepost6</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost6">3.10. StructurePost6CBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-toppanel">
+   <a href="assemblies.html#toppanel">assemblies.html#toppanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-toppanel">3.28. TopPanelCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-toppanelmodule">
+   <a href="assemblies.html#toppanelmodule">assemblies.html#toppanelmodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-toppanelmodule">3.27. TopPanelModuleCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-cbemassconstraint" style="color:initial">cbemassconstraint</span>
+     <li><span class="dfn-paneled" id="term-for-hasmassconstraintvalue" style="color:initial">hasmassconstraintvalue</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/analysis]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-characterizes" style="color:initial">characterizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-avionicsstacksection" style="color:initial">avionicsstacksection</span>
+     <li><span class="dfn-paneled" id="term-for-baseplate" style="color:initial">baseplate</span>
+     <li><span class="dfn-paneled" id="term-for-baseplatemodule" style="color:initial">baseplatemodule</span>
+     <li><span class="dfn-paneled" id="term-for-launchvehicleadapter" style="color:initial">launchvehicleadapter</span>
+     <li><span class="dfn-paneled" id="term-for-launchvehicleinterfacemodule" style="color:initial">launchvehicleinterfacemodule</span>
+     <li><span class="dfn-paneled" id="term-for-payloadstructuralinterface" style="color:initial">payloadstructuralinterface</span>
+     <li><span class="dfn-paneled" id="term-for-pressuranttankmountingpanel" style="color:initial">pressuranttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit" style="color:initial">primaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="term-for-propellanttankmountingpanel" style="color:initial">propellanttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost1" style="color:initial">propulsionstructurepost1</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost2" style="color:initial">propulsionstructurepost2</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost3" style="color:initial">propulsionstructurepost3</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost4" style="color:initial">propulsionstructurepost4</span>
+     <li><span class="dfn-paneled" id="term-for-separationsystem" style="color:initial">separationsystem</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel1" style="color:initial">sidepanel1</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel2" style="color:initial">sidepanel2</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel3" style="color:initial">sidepanel3</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel4" style="color:initial">sidepanel4</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel5" style="color:initial">sidepanel5</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel6" style="color:initial">sidepanel6</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost1" style="color:initial">structurepost1</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost2" style="color:initial">structurepost2</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost3" style="color:initial">structurepost3</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost4" style="color:initial">structurepost4</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost5" style="color:initial">structurepost5</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost6" style="color:initial">structurepost6</span>
+     <li><span class="dfn-paneled" id="term-for-toppanel" style="color:initial">toppanel</span>
+     <li><span class="dfn-paneled" id="term-for-toppanelmodule" style="color:initial">toppanelmodule</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/requirements</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,19 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SpaceEnvironmentForBatteryPack1"><span class="secno">3.1</span> <span class="content"><span>SpaceEnvironmentForBatteryPack1</span></span></a>
+      <li><a href="#SpaceEnvironmentForBatteryPack2"><span class="secno">3.2</span> <span class="content"><span>SpaceEnvironmentForBatteryPack2</span></span></a>
+      <li><a href="#SpaceEnvironmentForBatteryPack3"><span class="secno">3.3</span> <span class="content"><span>SpaceEnvironmentForBatteryPack3</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1746,6 +1806,28 @@ dfn > a.self-link::before      { content: "#"; }
       <p>eps-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies</a></p>
      <li data-md>
       <p>spc-environmental-reqs: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental.html">http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="SpaceEnvironmentForBatteryPack1"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spaceenvironmentforbatterypack1">SpaceEnvironmentForBatteryPack1<a class="self-link" href="#spaceenvironmentforbatterypack1"></a></dfn></span><a class="self-link" href="#SpaceEnvironmentForBatteryPack1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement">mission:Requirement</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment" id="ref-for-spaceenvironment">spc-environmental-reqs:SpaceEnvironment</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="SpaceEnvironmentForBatteryPack2"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spaceenvironmentforbatterypack2">SpaceEnvironmentForBatteryPack2<a class="self-link" href="#spaceenvironmentforbatterypack2"></a></dfn></span><a class="self-link" href="#SpaceEnvironmentForBatteryPack2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①">mission:Requirement</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment" id="ref-for-spaceenvironment①">spc-environmental-reqs:SpaceEnvironment</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="SpaceEnvironmentForBatteryPack3"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spaceenvironmentforbatterypack3">SpaceEnvironmentForBatteryPack3<a class="self-link" href="#spaceenvironmentforbatterypack3"></a></dfn></span><a class="self-link" href="#SpaceEnvironmentForBatteryPack3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②">mission:Requirement</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment" id="ref-for-spaceenvironment②">spc-environmental-reqs:SpaceEnvironment</a></p>
     </ul>
    </div>
   </main>
@@ -1877,4 +1959,105 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#spaceenvironmentforbatterypack1">SpaceEnvironmentForBatteryPack1</a><span>, in §3.1</span>
+   <li><a href="#spaceenvironmentforbatterypack2">SpaceEnvironmentForBatteryPack2</a><span>, in §3.2</span>
+   <li><a href="#spaceenvironmentforbatterypack3">SpaceEnvironmentForBatteryPack3</a><span>, in §3.3</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-refines">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-refines">3.1. SpaceEnvironmentForBatteryPack1</a>
+    <li><a href="#ref-for-refines①">3.2. SpaceEnvironmentForBatteryPack2</a>
+    <li><a href="#ref-for-refines②">3.3. SpaceEnvironmentForBatteryPack3</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-requirement">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-requirement">3.1. SpaceEnvironmentForBatteryPack1</a>
+    <li><a href="#ref-for-requirement①">3.2. SpaceEnvironmentForBatteryPack2</a>
+    <li><a href="#ref-for-requirement②">3.3. SpaceEnvironmentForBatteryPack3</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-spaceenvironment">
+   <a href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment">../../../../../systems/spc/requirements/environmental.html#spaceenvironment</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-spaceenvironment">3.1. SpaceEnvironmentForBatteryPack1</a>
+    <li><a href="#ref-for-spaceenvironment①">3.2. SpaceEnvironmentForBatteryPack2</a>
+    <li><a href="#ref-for-spaceenvironment②">3.3. SpaceEnvironmentForBatteryPack3</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-refines" style="color:initial">refines</span>
+     <li><span class="dfn-paneled" id="term-for-requirement" style="color:initial">requirement</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-spaceenvironment" style="color:initial">spaceenvironment</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

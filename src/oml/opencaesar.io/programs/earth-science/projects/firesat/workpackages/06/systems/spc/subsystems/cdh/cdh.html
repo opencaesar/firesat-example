@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,17 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#CommandAndDataHandling"><span class="secno">3.1</span> <span class="content"><span>CommandAndDataHandling</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1744,6 +1802,75 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>fse-assemblies: <a href="http://imce.jpl.nasa.gov/discipline/fse/assemblies.html">http://imce.jpl.nasa.gov/discipline/fse/assemblies</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="CommandAndDataHandling"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="commandanddatahandling">CommandAndDataHandling<a class="self-link" href="#commandanddatahandling"></a></dfn></span><a class="self-link" href="#CommandAndDataHandling"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#subsystem" id="ref-for-subsystem">fse:Subsystem</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemacronym" id="ref-for-hassubsystemacronym">fse:hasSubsystemAcronym</a> CDH</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemnumber" id="ref-for-hassubsystemnumber">fse:hasSubsystemNumber</a> 7000</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1" id="ref-for-propulsionstructurepost1">cdh-assemblies:PropulsionStructurePost1</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2" id="ref-for-propulsionstructurepost2">cdh-assemblies:PropulsionStructurePost2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3" id="ref-for-propulsionstructurepost3">cdh-assemblies:PropulsionStructurePost3</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates③">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4" id="ref-for-propulsionstructurepost4">cdh-assemblies:PropulsionStructurePost4</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates④">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost1" id="ref-for-structurepost1">cdh-assemblies:StructurePost1</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates⑤">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost2" id="ref-for-structurepost2">cdh-assemblies:StructurePost2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates⑥">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost3" id="ref-for-structurepost3">cdh-assemblies:StructurePost3</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates⑦">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost4" id="ref-for-structurepost4">cdh-assemblies:StructurePost4</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates⑧">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost5" id="ref-for-structurepost5">cdh-assemblies:StructurePost5</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates⑨">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#structurepost6" id="ref-for-structurepost6">cdh-assemblies:StructurePost6</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⓪">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel1" id="ref-for-sidepanel1">cdh-assemblies:SidePanel1</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①①">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel2" id="ref-for-sidepanel2">cdh-assemblies:SidePanel2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①②">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel3" id="ref-for-sidepanel3">cdh-assemblies:SidePanel3</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①③">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel4" id="ref-for-sidepanel4">cdh-assemblies:SidePanel4</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①④">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel5" id="ref-for-sidepanel5">cdh-assemblies:SidePanel5</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⑤">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#sidepanel6" id="ref-for-sidepanel6">cdh-assemblies:SidePanel6</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⑥">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#baseplatemodule" id="ref-for-baseplatemodule">cdh-assemblies:BasePlateModule</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⑦">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#baseplate" id="ref-for-baseplate">cdh-assemblies:BasePlate</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⑧">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection" id="ref-for-avionicsstacksection">cdh-assemblies:AvionicsStackSection</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①⑨">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit" id="ref-for-primaryflightcomputerunit">cdh-assemblies:PrimaryFlightComputerUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②⓪">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule" id="ref-for-launchvehicleinterfacemodule">cdh-assemblies:LaunchVehicleInterfaceModule</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②①">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter" id="ref-for-launchvehicleadapter">cdh-assemblies:LaunchVehicleAdapter</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②②">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#separationsystem" id="ref-for-separationsystem">cdh-assemblies:SeparationSystem</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②③">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel" id="ref-for-propellanttankmountingpanel">cdh-assemblies:PropellantTankMountingPanel</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②④">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel" id="ref-for-pressuranttankmountingpanel">cdh-assemblies:PressurantTankMountingPanel</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②⑤">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface" id="ref-for-payloadstructuralinterface">cdh-assemblies:PayloadStructuralInterface</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②⑥">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#toppanelmodule" id="ref-for-toppanelmodule">cdh-assemblies:TopPanelModule</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates②⑦">base:aggregates</a> <a data-link-type="dfn" href="../../../../10/subsystems/cdh/assemblies.html#toppanel" id="ref-for-toppanel">cdh-assemblies:TopPanel</a></p>
     </ul>
    </div>
   </main>
@@ -1875,4 +2002,304 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#commandanddatahandling">CommandAndDataHandling</a><span>, in §3.1</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-hassubsystemacronym">
+   <a href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemacronym">../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemacronym</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hassubsystemacronym">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hassubsystemnumber">
+   <a href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemnumber">../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hassubsystemnumber</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hassubsystemnumber">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-subsystem">
+   <a href="../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#subsystem">../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#subsystem</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-subsystem">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-aggregates">
+   <a href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates">../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-aggregates">3.1. CommandAndDataHandling</a> <a href="#ref-for-aggregates①">(2)</a> <a href="#ref-for-aggregates②">(3)</a> <a href="#ref-for-aggregates③">(4)</a> <a href="#ref-for-aggregates④">(5)</a> <a href="#ref-for-aggregates⑤">(6)</a> <a href="#ref-for-aggregates⑥">(7)</a> <a href="#ref-for-aggregates⑦">(8)</a> <a href="#ref-for-aggregates⑧">(9)</a> <a href="#ref-for-aggregates⑨">(10)</a> <a href="#ref-for-aggregates①⓪">(11)</a> <a href="#ref-for-aggregates①①">(12)</a> <a href="#ref-for-aggregates①②">(13)</a> <a href="#ref-for-aggregates①③">(14)</a> <a href="#ref-for-aggregates①④">(15)</a> <a href="#ref-for-aggregates①⑤">(16)</a> <a href="#ref-for-aggregates①⑥">(17)</a> <a href="#ref-for-aggregates①⑦">(18)</a> <a href="#ref-for-aggregates①⑧">(19)</a> <a href="#ref-for-aggregates①⑨">(20)</a> <a href="#ref-for-aggregates②⓪">(21)</a> <a href="#ref-for-aggregates②①">(22)</a> <a href="#ref-for-aggregates②②">(23)</a> <a href="#ref-for-aggregates②③">(24)</a> <a href="#ref-for-aggregates②④">(25)</a> <a href="#ref-for-aggregates②⑤">(26)</a> <a href="#ref-for-aggregates②⑥">(27)</a> <a href="#ref-for-aggregates②⑦">(28)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-avionicsstacksection">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection">../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-avionicsstacksection">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-baseplate">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#baseplate">../../../../10/subsystems/cdh/assemblies.html#baseplate</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-baseplate">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-baseplatemodule">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#baseplatemodule">../../../../10/subsystems/cdh/assemblies.html#baseplatemodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-baseplatemodule">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-launchvehicleadapter">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter">../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-launchvehicleadapter">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-launchvehicleinterfacemodule">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule">../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-launchvehicleinterfacemodule">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-payloadstructuralinterface">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface">../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-payloadstructuralinterface">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-pressuranttankmountingpanel">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pressuranttankmountingpanel">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-primaryflightcomputerunit">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit">../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-primaryflightcomputerunit">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propellanttankmountingpanel">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propellanttankmountingpanel">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost1">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost1">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost2">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost2">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost3">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost3">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost4">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-propulsionstructurepost4">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-separationsystem">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#separationsystem">../../../../10/subsystems/cdh/assemblies.html#separationsystem</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-separationsystem">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel1">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel1">../../../../10/subsystems/cdh/assemblies.html#sidepanel1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel1">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel2">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel2">../../../../10/subsystems/cdh/assemblies.html#sidepanel2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel2">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel3">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel3">../../../../10/subsystems/cdh/assemblies.html#sidepanel3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel3">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel4">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel4">../../../../10/subsystems/cdh/assemblies.html#sidepanel4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel4">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel5">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel5">../../../../10/subsystems/cdh/assemblies.html#sidepanel5</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel5">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sidepanel6">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel6">../../../../10/subsystems/cdh/assemblies.html#sidepanel6</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sidepanel6">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost1">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost1">../../../../10/subsystems/cdh/assemblies.html#structurepost1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost1">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost2">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost2">../../../../10/subsystems/cdh/assemblies.html#structurepost2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost2">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost3">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost3">../../../../10/subsystems/cdh/assemblies.html#structurepost3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost3">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost4">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost4">../../../../10/subsystems/cdh/assemblies.html#structurepost4</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost4">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost5">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost5">../../../../10/subsystems/cdh/assemblies.html#structurepost5</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost5">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-structurepost6">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost6">../../../../10/subsystems/cdh/assemblies.html#structurepost6</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-structurepost6">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-toppanel">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#toppanel">../../../../10/subsystems/cdh/assemblies.html#toppanel</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-toppanel">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-toppanelmodule">
+   <a href="../../../../10/subsystems/cdh/assemblies.html#toppanelmodule">../../../../10/subsystems/cdh/assemblies.html#toppanelmodule</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-toppanelmodule">3.1. CommandAndDataHandling</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hassubsystemacronym" style="color:initial">hassubsystemacronym</span>
+     <li><span class="dfn-paneled" id="term-for-hassubsystemnumber" style="color:initial">hassubsystemnumber</span>
+     <li><span class="dfn-paneled" id="term-for-subsystem" style="color:initial">subsystem</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-aggregates" style="color:initial">aggregates</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-avionicsstacksection" style="color:initial">avionicsstacksection</span>
+     <li><span class="dfn-paneled" id="term-for-baseplate" style="color:initial">baseplate</span>
+     <li><span class="dfn-paneled" id="term-for-baseplatemodule" style="color:initial">baseplatemodule</span>
+     <li><span class="dfn-paneled" id="term-for-launchvehicleadapter" style="color:initial">launchvehicleadapter</span>
+     <li><span class="dfn-paneled" id="term-for-launchvehicleinterfacemodule" style="color:initial">launchvehicleinterfacemodule</span>
+     <li><span class="dfn-paneled" id="term-for-payloadstructuralinterface" style="color:initial">payloadstructuralinterface</span>
+     <li><span class="dfn-paneled" id="term-for-pressuranttankmountingpanel" style="color:initial">pressuranttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit" style="color:initial">primaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="term-for-propellanttankmountingpanel" style="color:initial">propellanttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost1" style="color:initial">propulsionstructurepost1</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost2" style="color:initial">propulsionstructurepost2</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost3" style="color:initial">propulsionstructurepost3</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost4" style="color:initial">propulsionstructurepost4</span>
+     <li><span class="dfn-paneled" id="term-for-separationsystem" style="color:initial">separationsystem</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel1" style="color:initial">sidepanel1</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel2" style="color:initial">sidepanel2</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel3" style="color:initial">sidepanel3</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel4" style="color:initial">sidepanel4</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel5" style="color:initial">sidepanel5</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel6" style="color:initial">sidepanel6</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost1" style="color:initial">structurepost1</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost2" style="color:initial">structurepost2</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost3" style="color:initial">structurepost3</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost4" style="color:initial">structurepost4</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost5" style="color:initial">structurepost5</span>
+     <li><span class="dfn-paneled" id="term-for-structurepost6" style="color:initial">structurepost6</span>
+     <li><span class="dfn-paneled" id="term-for-toppanel" style="color:initial">toppanel</span>
+     <li><span class="dfn-paneled" id="term-for-toppanelmodule" style="color:initial">toppanelmodule</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

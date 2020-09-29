@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,22 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#Supply_Power_24_7ByPowerControlUnit"><span class="secno">3.1</span> <span class="content"><span>Supply_Power_24_7ByPowerControlUnit</span></span></a>
+      <li><a href="#Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit"><span class="secno">3.2</span> <span class="content"><span>Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit</span></span></a>
+      <li><a href="#TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1"><span class="secno">3.3</span> <span class="content"><span>TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1</span></span></a>
+      <li><a href="#DeployMechanismsBySolarArrayWithSADA1"><span class="secno">3.4</span> <span class="content"><span>DeployMechanismsBySolarArrayWithSADA1</span></span></a>
+      <li><a href="#TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2"><span class="secno">3.5</span> <span class="content"><span>TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2</span></span></a>
+      <li><a href="#DeployMechanismsBySolarArrayWithSADA2"><span class="secno">3.6</span> <span class="content"><span>DeployMechanismsBySolarArrayWithSADA2</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1746,6 +1809,49 @@ dfn > a.self-link::before      { content: "#"; }
       <p>sam-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies</a></p>
      <li data-md>
       <p>firesat-functions: <a href="http://opencaesar.io/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/programs/earth-science/missions/firesat/functions</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Supply_Power_24_7ByPowerControlUnit"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supply_power_24_7bypowercontrolunit">Supply_Power_24_7ByPowerControlUnit<a class="self-link" href="#supply_power_24_7bypowercontrolunit"></a></dfn></span><a class="self-link" href="#Supply_Power_24_7ByPowerControlUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#supply_power_24_7" id="ref-for-supply_power_24_7">firesat-functions:Supply_Power_24_7</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supply_power_24_7byepsregulatorsandconvertersunit">Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit<a class="self-link" href="#supply_power_24_7byepsregulatorsandconvertersunit"></a></dfn></span><a class="self-link" href="#Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#supply_power_24_7" id="ref-for-supply_power_24_7①">firesat-functions:Supply_Power_24_7</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transformsolarradiationsintoenergybysolararraywithsada1">TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1<a class="self-link" href="#transformsolarradiationsintoenergybysolararraywithsada1"></a></dfn></span><a class="self-link" href="#TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#transformsolarradiationsintoenergy" id="ref-for-transformsolarradiationsintoenergy">firesat-functions:TransformSolarRadiationsIntoEnergy</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="DeployMechanismsBySolarArrayWithSADA1"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbysolararraywithsada1">DeployMechanismsBySolarArrayWithSADA1<a class="self-link" href="#deploymechanismsbysolararraywithsada1"></a></dfn></span><a class="self-link" href="#DeployMechanismsBySolarArrayWithSADA1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function③">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#deploymechanisms" id="ref-for-deploymechanisms">firesat-functions:DeployMechanisms</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transformsolarradiationsintoenergybysolararraywithsada2">TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2<a class="self-link" href="#transformsolarradiationsintoenergybysolararraywithsada2"></a></dfn></span><a class="self-link" href="#TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function④">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#transformsolarradiationsintoenergy" id="ref-for-transformsolarradiationsintoenergy①">firesat-functions:TransformSolarRadiationsIntoEnergy</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.6" id="DeployMechanismsBySolarArrayWithSADA2"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbysolararraywithsada2">DeployMechanismsBySolarArrayWithSADA2<a class="self-link" href="#deploymechanismsbysolararraywithsada2"></a></dfn></span><a class="self-link" href="#DeployMechanismsBySolarArrayWithSADA2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function⑤">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#deploymechanisms" id="ref-for-deploymechanisms①">firesat-functions:DeployMechanisms</a></p>
     </ul>
    </div>
   </main>
@@ -1877,4 +1983,133 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#deploymechanismsbysolararraywithsada1">DeployMechanismsBySolarArrayWithSADA1</a><span>, in §3.4</span>
+   <li><a href="#deploymechanismsbysolararraywithsada2">DeployMechanismsBySolarArrayWithSADA2</a><span>, in §3.6</span>
+   <li><a href="#supply_power_24_7byepsregulatorsandconvertersunit">Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit</a><span>, in §3.2</span>
+   <li><a href="#supply_power_24_7bypowercontrolunit">Supply_Power_24_7ByPowerControlUnit</a><span>, in §3.1</span>
+   <li><a href="#transformsolarradiationsintoenergybysolararraywithsada1">TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1</a><span>, in §3.3</span>
+   <li><a href="#transformsolarradiationsintoenergybysolararraywithsada2">TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2</a><span>, in §3.5</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-function">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-function">3.1. Supply_Power_24_7ByPowerControlUnit</a>
+    <li><a href="#ref-for-function①">3.2. Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit</a>
+    <li><a href="#ref-for-function②">3.3. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-function③">3.4. DeployMechanismsBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-function④">3.5. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2</a>
+    <li><a href="#ref-for-function⑤">3.6. DeployMechanismsBySolarArrayWithSADA2</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-realizes">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-realizes">3.1. Supply_Power_24_7ByPowerControlUnit</a>
+    <li><a href="#ref-for-realizes①">3.2. Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit</a>
+    <li><a href="#ref-for-realizes②">3.3. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-realizes③">3.4. DeployMechanismsBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-realizes④">3.5. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2</a>
+    <li><a href="#ref-for-realizes⑤">3.6. DeployMechanismsBySolarArrayWithSADA2</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-deploymechanisms">
+   <a href="../../../../../../../missions/firesat/functions.html#deploymechanisms">../../../../../../../missions/firesat/functions.html#deploymechanisms</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-deploymechanisms">3.4. DeployMechanismsBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-deploymechanisms①">3.6. DeployMechanismsBySolarArrayWithSADA2</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-supply_power_24_7">
+   <a href="../../../../../../../missions/firesat/functions.html#supply_power_24_7">../../../../../../../missions/firesat/functions.html#supply_power_24_7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-supply_power_24_7">3.1. Supply_Power_24_7ByPowerControlUnit</a>
+    <li><a href="#ref-for-supply_power_24_7①">3.2. Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-transformsolarradiationsintoenergy">
+   <a href="../../../../../../../missions/firesat/functions.html#transformsolarradiationsintoenergy">../../../../../../../missions/firesat/functions.html#transformsolarradiationsintoenergy</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-transformsolarradiationsintoenergy">3.3. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1</a>
+    <li><a href="#ref-for-transformsolarradiationsintoenergy①">3.5. TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-deploymechanisms" style="color:initial">deploymechanisms</span>
+     <li><span class="dfn-paneled" id="term-for-supply_power_24_7" style="color:initial">supply_power_24_7</span>
+     <li><span class="dfn-paneled" id="term-for-transformsolarradiationsintoenergy" style="color:initial">transformsolarradiationsintoenergy</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

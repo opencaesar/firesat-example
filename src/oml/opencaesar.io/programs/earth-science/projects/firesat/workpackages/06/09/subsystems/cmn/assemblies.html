@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,21 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#TransmitterUnit"><span class="secno">3.1</span> <span class="content"><span>TransmitterUnit</span></span></a>
+      <li><a href="#ReceiverUnit"><span class="secno">3.2</span> <span class="content"><span>ReceiverUnit</span></span></a>
+      <li><a href="#TransmitWhipAntenna"><span class="secno">3.3</span> <span class="content"><span>TransmitWhipAntenna</span></span></a>
+      <li><a href="#TransmitHiGainAntenna"><span class="secno">3.4</span> <span class="content"><span>TransmitHiGainAntenna</span></span></a>
+      <li><a href="#ReceiveWhipAntenna"><span class="secno">3.5</span> <span class="content"><span>ReceiveWhipAntenna</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1744,6 +1806,99 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>cmn: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="TransmitterUnit"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunit">TransmitterUnit<a class="self-link" href="#transmitterunit"></a></dfn></span><a class="self-link" href="#TransmitterUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly">fse-assemblies:BaseAssembly</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym" id="ref-for-hasassemblyacronym">fse:hasAssemblyAcronym</a> 516400</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#interoperabilityfortransmitterunit" id="ref-for-interoperabilityfortransmitterunit">cmn-requirements:InteroperabilityForTransmitterUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby①">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#supportabilityfortransmitterunit" id="ref-for-supportabilityfortransmitterunit">cmn-requirements:SupportabilityForTransmitterUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#transmitterunitpowerin" id="ref-for-transmitterunitpowerin">cmn-endcircuits:TransmitterUnitPowerIn</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="ReceiverUnit"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receiverunit">ReceiverUnit<a class="self-link" href="#receiverunit"></a></dfn></span><a class="self-link" href="#ReceiverUnit"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①">fse-assemblies:BaseAssembly</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym" id="ref-for-hasassemblyacronym①">fse:hasAssemblyAcronym</a> 516500</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby②">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#uplinkdownlinkhardwareforreceiverunit" id="ref-for-uplinkdownlinkhardwareforreceiverunit">cmn-requirements:UplinkDownlinkHardwareForReceiverUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby③">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#interoperabilityforreceiverunit" id="ref-for-interoperabilityforreceiverunit">cmn-requirements:InteroperabilityForReceiverUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs">mission:performs</a> <a data-link-type="dfn" href="functions.html#applycommandsbyreceiverunit" id="ref-for-applycommandsbyreceiverunit">cmn-functions:ApplyCommandsByReceiverUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents①">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#receiverunitpowerin" id="ref-for-receiverunitpowerin">cmn-endcircuits:ReceiverUnitPowerIn</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="TransmitWhipAntenna"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitwhipantenna">TransmitWhipAntenna<a class="self-link" href="#transmitwhipantenna"></a></dfn></span><a class="self-link" href="#TransmitWhipAntenna"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly②">fse-assemblies:BaseAssembly</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym" id="ref-for-hasassemblyacronym②">fse:hasAssemblyAcronym</a> 553000</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby④">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#uplinkdownlinkhardwarefortransmitwhipantenna" id="ref-for-uplinkdownlinkhardwarefortransmitwhipantenna">cmn-requirements:UplinkDownlinkHardwareForTransmitWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby⑤">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#interoperabilityfortransmitwhipantenna" id="ref-for-interoperabilityfortransmitwhipantenna">cmn-requirements:InteroperabilityForTransmitWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby⑥">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#supportabilityfortransmitwhipantenna" id="ref-for-supportabilityfortransmitwhipantenna">cmn-requirements:SupportabilityForTransmitWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs①">mission:performs</a> <a data-link-type="dfn" href="functions.html#sendtelemetrytonoaagroundstationsbytransmitwhipantenna" id="ref-for-sendtelemetrytonoaagroundstationsbytransmitwhipantenna">cmn-functions:SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs②">mission:performs</a> <a data-link-type="dfn" href="functions.html#deploymechanismsbytransmitwhipantenna" id="ref-for-deploymechanismsbytransmitwhipantenna">cmn-functions:DeployMechanismsByTransmitWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents②">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#transmitwhipantennapowerin" id="ref-for-transmitwhipantennapowerin">cmn-endcircuits:TransmitWhipAntennaPowerIn</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="TransmitHiGainAntenna"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantenna">TransmitHiGainAntenna<a class="self-link" href="#transmithigainantenna"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntenna"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly③">fse-assemblies:BaseAssembly</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym" id="ref-for-hasassemblyacronym③">fse:hasAssemblyAcronym</a> 554000</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby⑦">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#interoperabilityfortransmithigainantenna" id="ref-for-interoperabilityfortransmithigainantenna">cmn-requirements:InteroperabilityForTransmitHiGainAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs③">mission:performs</a> <a data-link-type="dfn" href="functions.html#deploymechanismsbytransmithigainantenna" id="ref-for-deploymechanismsbytransmithigainantenna">cmn-functions:DeployMechanismsByTransmitHiGainAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents③">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#transmithigainantennapowerin" id="ref-for-transmithigainantennapowerin">cmn-endcircuits:TransmitHiGainAntennaPowerIn</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.5" id="ReceiveWhipAntenna"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receivewhipantenna">ReceiveWhipAntenna<a class="self-link" href="#receivewhipantenna"></a></dfn></span><a class="self-link" href="#ReceiveWhipAntenna"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly④">fse-assemblies:BaseAssembly</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym" id="ref-for-hasassemblyacronym④">fse:hasAssemblyAcronym</a> 555000</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby⑧">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#uplinkdownlinkhardwareforreceivewhipantenna" id="ref-for-uplinkdownlinkhardwareforreceivewhipantenna">cmn-requirements:UplinkDownlinkHardwareForReceiveWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby⑨">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#interoperabilityforreceivewhipantenna" id="ref-for-interoperabilityforreceivewhipantenna">cmn-requirements:InteroperabilityForReceiveWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs④">mission:performs</a> <a data-link-type="dfn" href="functions.html#deploymechanismsbyreceivewhipantenna" id="ref-for-deploymechanismsbyreceivewhipantenna">cmn-functions:DeployMechanismsByReceiveWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs⑤">mission:performs</a> <a data-link-type="dfn" href="functions.html#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna" id="ref-for-communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">cmn-functions:Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents④">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#receivewhipantennapowerin" id="ref-for-receivewhipantennapowerin">cmn-endcircuits:ReceiveWhipAntennaPowerIn</a></p>
     </ul>
    </div>
   </main>
@@ -1875,4 +2030,297 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#receiverunit">ReceiverUnit</a><span>, in §3.2</span>
+   <li><a href="#receivewhipantenna">ReceiveWhipAntenna</a><span>, in §3.5</span>
+   <li><a href="#transmithigainantenna">TransmitHiGainAntenna</a><span>, in §3.4</span>
+   <li><a href="#transmitterunit">TransmitterUnit</a><span>, in §3.1</span>
+   <li><a href="#transmitwhipantenna">TransmitWhipAntenna</a><span>, in §3.3</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-baseassembly">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-baseassembly">3.1. TransmitterUnit</a>
+    <li><a href="#ref-for-baseassembly①">3.2. ReceiverUnit</a>
+    <li><a href="#ref-for-baseassembly②">3.3. TransmitWhipAntenna</a>
+    <li><a href="#ref-for-baseassembly③">3.4. TransmitHiGainAntenna</a>
+    <li><a href="#ref-for-baseassembly④">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasassemblyacronym">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasassemblyacronym</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasassemblyacronym">3.1. TransmitterUnit</a>
+    <li><a href="#ref-for-hasassemblyacronym①">3.2. ReceiverUnit</a>
+    <li><a href="#ref-for-hasassemblyacronym②">3.3. TransmitWhipAntenna</a>
+    <li><a href="#ref-for-hasassemblyacronym③">3.4. TransmitHiGainAntenna</a>
+    <li><a href="#ref-for-hasassemblyacronym④">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isspecifiedby">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isspecifiedby">3.1. TransmitterUnit</a> <a href="#ref-for-isspecifiedby①">(2)</a>
+    <li><a href="#ref-for-isspecifiedby②">3.2. ReceiverUnit</a> <a href="#ref-for-isspecifiedby③">(2)</a>
+    <li><a href="#ref-for-isspecifiedby④">3.3. TransmitWhipAntenna</a> <a href="#ref-for-isspecifiedby⑤">(2)</a> <a href="#ref-for-isspecifiedby⑥">(3)</a>
+    <li><a href="#ref-for-isspecifiedby⑦">3.4. TransmitHiGainAntenna</a>
+    <li><a href="#ref-for-isspecifiedby⑧">3.5. ReceiveWhipAntenna</a> <a href="#ref-for-isspecifiedby⑨">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-performs">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-performs">3.2. ReceiverUnit</a>
+    <li><a href="#ref-for-performs①">3.3. TransmitWhipAntenna</a> <a href="#ref-for-performs②">(2)</a>
+    <li><a href="#ref-for-performs③">3.4. TransmitHiGainAntenna</a>
+    <li><a href="#ref-for-performs④">3.5. ReceiveWhipAntenna</a> <a href="#ref-for-performs⑤">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-presents">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-presents">3.1. TransmitterUnit</a>
+    <li><a href="#ref-for-presents①">3.2. ReceiverUnit</a>
+    <li><a href="#ref-for-presents②">3.3. TransmitWhipAntenna</a>
+    <li><a href="#ref-for-presents③">3.4. TransmitHiGainAntenna</a>
+    <li><a href="#ref-for-presents④">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-receiverunitpowerin">
+   <a href="endcircuits.html#receiverunitpowerin">endcircuits.html#receiverunitpowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-receiverunitpowerin">3.2. ReceiverUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-receivewhipantennapowerin">
+   <a href="endcircuits.html#receivewhipantennapowerin">endcircuits.html#receivewhipantennapowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-receivewhipantennapowerin">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-transmithigainantennapowerin">
+   <a href="endcircuits.html#transmithigainantennapowerin">endcircuits.html#transmithigainantennapowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-transmithigainantennapowerin">3.4. TransmitHiGainAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-transmitterunitpowerin">
+   <a href="endcircuits.html#transmitterunitpowerin">endcircuits.html#transmitterunitpowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-transmitterunitpowerin">3.1. TransmitterUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-transmitwhipantennapowerin">
+   <a href="endcircuits.html#transmitwhipantennapowerin">endcircuits.html#transmitwhipantennapowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-transmitwhipantennapowerin">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-applycommandsbyreceiverunit">
+   <a href="functions.html#applycommandsbyreceiverunit">functions.html#applycommandsbyreceiverunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-applycommandsbyreceiverunit">3.2. ReceiverUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">
+   <a href="functions.html#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">functions.html#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-deploymechanismsbyreceivewhipantenna">
+   <a href="functions.html#deploymechanismsbyreceivewhipantenna">functions.html#deploymechanismsbyreceivewhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-deploymechanismsbyreceivewhipantenna">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-deploymechanismsbytransmithigainantenna">
+   <a href="functions.html#deploymechanismsbytransmithigainantenna">functions.html#deploymechanismsbytransmithigainantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-deploymechanismsbytransmithigainantenna">3.4. TransmitHiGainAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-deploymechanismsbytransmitwhipantenna">
+   <a href="functions.html#deploymechanismsbytransmitwhipantenna">functions.html#deploymechanismsbytransmitwhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-deploymechanismsbytransmitwhipantenna">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sendtelemetrytonoaagroundstationsbytransmitwhipantenna">
+   <a href="functions.html#sendtelemetrytonoaagroundstationsbytransmitwhipantenna">functions.html#sendtelemetrytonoaagroundstationsbytransmitwhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sendtelemetrytonoaagroundstationsbytransmitwhipantenna">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-interoperabilityforreceiverunit">
+   <a href="requirements.html#interoperabilityforreceiverunit">requirements.html#interoperabilityforreceiverunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-interoperabilityforreceiverunit">3.2. ReceiverUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-interoperabilityforreceivewhipantenna">
+   <a href="requirements.html#interoperabilityforreceivewhipantenna">requirements.html#interoperabilityforreceivewhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-interoperabilityforreceivewhipantenna">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-interoperabilityfortransmithigainantenna">
+   <a href="requirements.html#interoperabilityfortransmithigainantenna">requirements.html#interoperabilityfortransmithigainantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-interoperabilityfortransmithigainantenna">3.4. TransmitHiGainAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-interoperabilityfortransmitterunit">
+   <a href="requirements.html#interoperabilityfortransmitterunit">requirements.html#interoperabilityfortransmitterunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-interoperabilityfortransmitterunit">3.1. TransmitterUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-interoperabilityfortransmitwhipantenna">
+   <a href="requirements.html#interoperabilityfortransmitwhipantenna">requirements.html#interoperabilityfortransmitwhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-interoperabilityfortransmitwhipantenna">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-supportabilityfortransmitterunit">
+   <a href="requirements.html#supportabilityfortransmitterunit">requirements.html#supportabilityfortransmitterunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-supportabilityfortransmitterunit">3.1. TransmitterUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-supportabilityfortransmitwhipantenna">
+   <a href="requirements.html#supportabilityfortransmitwhipantenna">requirements.html#supportabilityfortransmitwhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-supportabilityfortransmitwhipantenna">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardwareforreceiverunit">
+   <a href="requirements.html#uplinkdownlinkhardwareforreceiverunit">requirements.html#uplinkdownlinkhardwareforreceiverunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-uplinkdownlinkhardwareforreceiverunit">3.2. ReceiverUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardwareforreceivewhipantenna">
+   <a href="requirements.html#uplinkdownlinkhardwareforreceivewhipantenna">requirements.html#uplinkdownlinkhardwareforreceivewhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-uplinkdownlinkhardwareforreceivewhipantenna">3.5. ReceiveWhipAntenna</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardwarefortransmitwhipantenna">
+   <a href="requirements.html#uplinkdownlinkhardwarefortransmitwhipantenna">requirements.html#uplinkdownlinkhardwarefortransmitwhipantenna</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-uplinkdownlinkhardwarefortransmitwhipantenna">3.3. TransmitWhipAntenna</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-baseassembly" style="color:initial">baseassembly</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hasassemblyacronym" style="color:initial">hasassemblyacronym</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+     <li><span class="dfn-paneled" id="term-for-presents" style="color:initial">presents</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-receiverunitpowerin" style="color:initial">receiverunitpowerin</span>
+     <li><span class="dfn-paneled" id="term-for-receivewhipantennapowerin" style="color:initial">receivewhipantennapowerin</span>
+     <li><span class="dfn-paneled" id="term-for-transmithigainantennapowerin" style="color:initial">transmithigainantennapowerin</span>
+     <li><span class="dfn-paneled" id="term-for-transmitterunitpowerin" style="color:initial">transmitterunitpowerin</span>
+     <li><span class="dfn-paneled" id="term-for-transmitwhipantennapowerin" style="color:initial">transmitwhipantennapowerin</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-applycommandsbyreceiverunit" style="color:initial">applycommandsbyreceiverunit</span>
+     <li><span class="dfn-paneled" id="term-for-communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna" style="color:initial">communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-deploymechanismsbyreceivewhipantenna" style="color:initial">deploymechanismsbyreceivewhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-deploymechanismsbytransmithigainantenna" style="color:initial">deploymechanismsbytransmithigainantenna</span>
+     <li><span class="dfn-paneled" id="term-for-deploymechanismsbytransmitwhipantenna" style="color:initial">deploymechanismsbytransmitwhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-sendtelemetrytonoaagroundstationsbytransmitwhipantenna" style="color:initial">sendtelemetrytonoaagroundstationsbytransmitwhipantenna</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-interoperabilityforreceiverunit" style="color:initial">interoperabilityforreceiverunit</span>
+     <li><span class="dfn-paneled" id="term-for-interoperabilityforreceivewhipantenna" style="color:initial">interoperabilityforreceivewhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-interoperabilityfortransmithigainantenna" style="color:initial">interoperabilityfortransmithigainantenna</span>
+     <li><span class="dfn-paneled" id="term-for-interoperabilityfortransmitterunit" style="color:initial">interoperabilityfortransmitterunit</span>
+     <li><span class="dfn-paneled" id="term-for-interoperabilityfortransmitwhipantenna" style="color:initial">interoperabilityfortransmitwhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-supportabilityfortransmitterunit" style="color:initial">supportabilityfortransmitterunit</span>
+     <li><span class="dfn-paneled" id="term-for-supportabilityfortransmitwhipantenna" style="color:initial">supportabilityfortransmitwhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-uplinkdownlinkhardwareforreceiverunit" style="color:initial">uplinkdownlinkhardwareforreceiverunit</span>
+     <li><span class="dfn-paneled" id="term-for-uplinkdownlinkhardwareforreceivewhipantenna" style="color:initial">uplinkdownlinkhardwareforreceivewhipantenna</span>
+     <li><span class="dfn-paneled" id="term-for-uplinkdownlinkhardwarefortransmitwhipantenna" style="color:initial">uplinkdownlinkhardwarefortransmitwhipantenna</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

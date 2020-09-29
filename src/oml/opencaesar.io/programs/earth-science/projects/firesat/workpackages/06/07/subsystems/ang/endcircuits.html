@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1732,6 +1779,29 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#ReactionWheel1PowerIn"><span class="secno">4.1</span> <span class="content"><span>ReactionWheel1PowerIn</span></span></a>
+      <li><a href="#ReactionWheel3PowerIn"><span class="secno">4.2</span> <span class="content"><span>ReactionWheel3PowerIn</span></span></a>
+      <li><a href="#ReactionWheel4PowerIn"><span class="secno">4.3</span> <span class="content"><span>ReactionWheel4PowerIn</span></span></a>
+      <li><a href="#MagnetometerPowerIn"><span class="secno">4.4</span> <span class="content"><span>MagnetometerPowerIn</span></span></a>
+      <li><a href="#ReactionWheel2PowerIn"><span class="secno">4.5</span> <span class="content"><span>ReactionWheel2PowerIn</span></span></a>
+      <li><a href="#GPSAntennaPowerIn"><span class="secno">4.6</span> <span class="content"><span>GPSAntennaPowerIn</span></span></a>
+      <li><a href="#GPSReceiverUnitPowerIn"><span class="secno">4.7</span> <span class="content"><span>GPSReceiverUnitPowerIn</span></span></a>
+      <li><a href="#ADCSElectronicsUnitPowerIn"><span class="secno">4.8</span> <span class="content"><span>ADCSElectronicsUnitPowerIn</span></span></a>
+      <li><a href="#Magnetorquer1PowerIn"><span class="secno">4.9</span> <span class="content"><span>Magnetorquer1PowerIn</span></span></a>
+      <li><a href="#Magnetorquer2PowerIn"><span class="secno">4.10</span> <span class="content"><span>Magnetorquer2PowerIn</span></span></a>
+      <li><a href="#Magnetorquer3PowerIn"><span class="secno">4.11</span> <span class="content"><span>Magnetorquer3PowerIn</span></span></a>
+      <li><a href="#SunSensorPowerIn"><span class="secno">4.12</span> <span class="content"><span>SunSensorPowerIn</span></span></a>
+      <li><a href="#EarthSensorPowerIn"><span class="secno">4.13</span> <span class="content"><span>EarthSensorPowerIn</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1750,6 +1820,98 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>fse-endcircuits: <a href="http://imce.jpl.nasa.gov/discipline/fse/endcircuits.html">http://imce.jpl.nasa.gov/discipline/fse/endcircuits</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ReactionWheel1PowerIn"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel1powerin">ReactionWheel1PowerIn<a class="self-link" href="#reactionwheel1powerin"></a></dfn></span><a class="self-link" href="#ReactionWheel1PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.2" id="ReactionWheel3PowerIn"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel3powerin">ReactionWheel3PowerIn<a class="self-link" href="#reactionwheel3powerin"></a></dfn></span><a class="self-link" href="#ReactionWheel3PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin①">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.3" id="ReactionWheel4PowerIn"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel4powerin">ReactionWheel4PowerIn<a class="self-link" href="#reactionwheel4powerin"></a></dfn></span><a class="self-link" href="#ReactionWheel4PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin②">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier②">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.4" id="MagnetometerPowerIn"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetometerpowerin">MagnetometerPowerIn<a class="self-link" href="#magnetometerpowerin"></a></dfn></span><a class="self-link" href="#MagnetometerPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin③">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier③">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.5" id="ReactionWheel2PowerIn"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel2powerin">ReactionWheel2PowerIn<a class="self-link" href="#reactionwheel2powerin"></a></dfn></span><a class="self-link" href="#ReactionWheel2PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin④">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier④">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.6" id="GPSAntennaPowerIn"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennapowerin">GPSAntennaPowerIn<a class="self-link" href="#gpsantennapowerin"></a></dfn></span><a class="self-link" href="#GPSAntennaPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin⑤">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑤">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.7" id="GPSReceiverUnitPowerIn"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitpowerin">GPSReceiverUnitPowerIn<a class="self-link" href="#gpsreceiverunitpowerin"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin⑥">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑥">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.8" id="ADCSElectronicsUnitPowerIn"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="adcselectronicsunitpowerin">ADCSElectronicsUnitPowerIn<a class="self-link" href="#adcselectronicsunitpowerin"></a></dfn></span><a class="self-link" href="#ADCSElectronicsUnitPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin⑦">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑦">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.9" id="Magnetorquer1PowerIn"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer1powerin">Magnetorquer1PowerIn<a class="self-link" href="#magnetorquer1powerin"></a></dfn></span><a class="self-link" href="#Magnetorquer1PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin⑧">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑧">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.10" id="Magnetorquer2PowerIn"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer2powerin">Magnetorquer2PowerIn<a class="self-link" href="#magnetorquer2powerin"></a></dfn></span><a class="self-link" href="#Magnetorquer2PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin⑨">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑨">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.11" id="Magnetorquer3PowerIn"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer3powerin">Magnetorquer3PowerIn<a class="self-link" href="#magnetorquer3powerin"></a></dfn></span><a class="self-link" href="#Magnetorquer3PowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin①⓪">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①⓪">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.12" id="SunSensorPowerIn"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sunsensorpowerin">SunSensorPowerIn<a class="self-link" href="#sunsensorpowerin"></a></dfn></span><a class="self-link" href="#SunSensorPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin①①">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①①">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.13" id="EarthSensorPowerIn"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="earthsensorpowerin">EarthSensorPowerIn<a class="self-link" href="#earthsensorpowerin"></a></dfn></span><a class="self-link" href="#EarthSensorPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin①②">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①②">fse:hasEndCircuitIdentifier</a> 1</p>
     </ul>
    </div>
   </main>
@@ -1881,4 +2043,126 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#adcselectronicsunitpowerin">ADCSElectronicsUnitPowerIn</a><span>, in §4.8</span>
+   <li><a href="#earthsensorpowerin">EarthSensorPowerIn</a><span>, in §4.13</span>
+   <li><a href="#gpsantennapowerin">GPSAntennaPowerIn</a><span>, in §4.6</span>
+   <li><a href="#gpsreceiverunitpowerin">GPSReceiverUnitPowerIn</a><span>, in §4.7</span>
+   <li><a href="#magnetometerpowerin">MagnetometerPowerIn</a><span>, in §4.4</span>
+   <li><a href="#magnetorquer1powerin">Magnetorquer1PowerIn</a><span>, in §4.9</span>
+   <li><a href="#magnetorquer2powerin">Magnetorquer2PowerIn</a><span>, in §4.10</span>
+   <li><a href="#magnetorquer3powerin">Magnetorquer3PowerIn</a><span>, in §4.11</span>
+   <li><a href="#reactionwheel1powerin">ReactionWheel1PowerIn</a><span>, in §4.1</span>
+   <li><a href="#reactionwheel2powerin">ReactionWheel2PowerIn</a><span>, in §4.5</span>
+   <li><a href="#reactionwheel3powerin">ReactionWheel3PowerIn</a><span>, in §4.2</span>
+   <li><a href="#reactionwheel4powerin">ReactionWheel4PowerIn</a><span>, in §4.3</span>
+   <li><a href="#sunsensorpowerin">SunSensorPowerIn</a><span>, in §4.12</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-powerin">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powerin">4.1. ReactionWheel1PowerIn</a>
+    <li><a href="#ref-for-powerin①">4.2. ReactionWheel3PowerIn</a>
+    <li><a href="#ref-for-powerin②">4.3. ReactionWheel4PowerIn</a>
+    <li><a href="#ref-for-powerin③">4.4. MagnetometerPowerIn</a>
+    <li><a href="#ref-for-powerin④">4.5. ReactionWheel2PowerIn</a>
+    <li><a href="#ref-for-powerin⑤">4.6. GPSAntennaPowerIn</a>
+    <li><a href="#ref-for-powerin⑥">4.7. GPSReceiverUnitPowerIn</a>
+    <li><a href="#ref-for-powerin⑦">4.8. ADCSElectronicsUnitPowerIn</a>
+    <li><a href="#ref-for-powerin⑧">4.9. Magnetorquer1PowerIn</a>
+    <li><a href="#ref-for-powerin⑨">4.10. Magnetorquer2PowerIn</a>
+    <li><a href="#ref-for-powerin①⓪">4.11. Magnetorquer3PowerIn</a>
+    <li><a href="#ref-for-powerin①①">4.12. SunSensorPowerIn</a>
+    <li><a href="#ref-for-powerin①②">4.13. EarthSensorPowerIn</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasendcircuitidentifier">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasendcircuitidentifier">4.1. ReactionWheel1PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①">4.2. ReactionWheel3PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier②">4.3. ReactionWheel4PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier③">4.4. MagnetometerPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier④">4.5. ReactionWheel2PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑤">4.6. GPSAntennaPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑥">4.7. GPSReceiverUnitPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑦">4.8. ADCSElectronicsUnitPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑧">4.9. Magnetorquer1PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑨">4.10. Magnetorquer2PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①⓪">4.11. Magnetorquer3PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①①">4.12. SunSensorPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①②">4.13. EarthSensorPowerIn</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/endcircuits]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-powerin" style="color:initial">powerin</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hasendcircuitidentifier" style="color:initial">hasendcircuitidentifier</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

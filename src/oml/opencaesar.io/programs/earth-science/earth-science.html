@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/earth-science" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/earth-science" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/earth-science">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/earth-science</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/earth-science">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/earth-science</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1732,6 +1779,18 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#EarthScienceProgram"><span class="secno">4.1</span> <span class="content"><span>EarthScienceProgram</span></span></a>
+      <li><a href="#FireSatProject"><span class="secno">4.2</span> <span class="content"><span>FireSatProject</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1752,6 +1811,27 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>project: <a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="EarthScienceProgram"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="earthscienceprogram">EarthScienceProgram<a class="self-link" href="#earthscienceprogram"></a></dfn></span><a class="self-link" href="#EarthScienceProgram"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#program" id="ref-for-program">project:Program</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#authorizes" id="ref-for-authorizes">project:authorizes</a> <a data-link-type="dfn" href="earth-science.html#firesatproject" id="ref-for-firesatproject">FireSatProject</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.2" id="FireSatProject"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="firesatproject">FireSatProject<a class="self-link" href="#firesatproject"></a></dfn></span><a class="self-link" href="#FireSatProject"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#project" id="ref-for-project">project:Project</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#authorizes" id="ref-for-authorizes①">project:authorizes</a> <a data-link-type="dfn" href="projects/firesat/firesat.html#wp05" id="ref-for-wp05">firesat-project:WP05</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#authorizes" id="ref-for-authorizes②">project:authorizes</a> <a data-link-type="dfn" href="projects/firesat/firesat.html#wp06" id="ref-for-wp06">firesat-project:WP06</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof" id="ref-for-isresponsibilityof">project:isResponsibilityOf</a> <a data-link-type="dfn" href="../../organizations/nasa.html#nasa" id="ref-for-nasa">nasa:NASA</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#supplies" id="ref-for-supplies">project:supplies</a> <a data-link-type="dfn" href="missions/firesat/firesat.html#firesatmission" id="ref-for-firesatmission">firesat-mission:FireSatMission</a></p>
     </ul>
    </div>
   </main>
@@ -1883,4 +1963,160 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#earthscienceprogram">EarthScienceProgram</a><span>, in §4.1</span>
+   <li><a href="#firesatproject">FireSatProject</a><span>, in §4.2</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-authorizes">
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#authorizes">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#authorizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-authorizes">4.1. EarthScienceProgram</a>
+    <li><a href="#ref-for-authorizes①">4.2. FireSatProject</a> <a href="#ref-for-authorizes②">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isresponsibilityof">
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isresponsibilityof">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-program">
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#program">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#program</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-program">4.1. EarthScienceProgram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-project">
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#project">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#project</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-project">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-supplies">
+   <a href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#supplies">../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#supplies</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-supplies">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-nasa">
+   <a href="../../organizations/nasa.html#nasa">../../organizations/nasa.html#nasa</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-nasa">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-firesatproject">
+   <a href="earth-science.html#firesatproject">earth-science.html#firesatproject</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-firesatproject">4.1. EarthScienceProgram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-firesatmission">
+   <a href="missions/firesat/firesat.html#firesatmission">missions/firesat/firesat.html#firesatmission</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-firesatmission">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-wp05">
+   <a href="projects/firesat/firesat.html#wp05">projects/firesat/firesat.html#wp05</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-wp05">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-wp06">
+   <a href="projects/firesat/firesat.html#wp06">projects/firesat/firesat.html#wp06</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-wp06">4.2. FireSatProject</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-authorizes" style="color:initial">authorizes</span>
+     <li><span class="dfn-paneled" id="term-for-isresponsibilityof" style="color:initial">isresponsibilityof</span>
+     <li><span class="dfn-paneled" id="term-for-program" style="color:initial">program</span>
+     <li><span class="dfn-paneled" id="term-for-project" style="color:initial">project</span>
+     <li><span class="dfn-paneled" id="term-for-supplies" style="color:initial">supplies</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/organizations/nasa]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-nasa" style="color:initial">nasa</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/earth-science]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-firesatproject" style="color:initial">firesatproject</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/firesat]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-firesatmission" style="color:initial">firesatmission</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/firesat]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-wp05" style="color:initial">wp05</span>
+     <li><span class="dfn-paneled" id="term-for-wp06" style="color:initial">wp06</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

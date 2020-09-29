@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1732,6 +1779,18 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#5000516200To5000Power"><span class="secno">4.1</span> <span class="content"><span>5000516200To5000Power</span></span></a>
+      <li><a href="#5000To5000516200Power"><span class="secno">4.2</span> <span class="content"><span>5000To5000516200Power</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1750,6 +1809,55 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>fse-functions: <a href="http://imce.jpl.nasa.gov/discipline/fse/functions.html">http://imce.jpl.nasa.gov/discipline/fse/functions</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="5000516200To5000Power"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="5000516200to5000power">5000516200To5000Power<a class="self-link" href="#5000516200to5000power"></a></dfn></span><a class="self-link" href="#5000516200To5000Power"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/functions.html#unidirectionalpower" id="ref-for-unidirectionalpower">fse-functions:UnidirectionalPower</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuittype" id="ref-for-hasendcircuittype">fse:hasEndCircuitType</a> Power</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctiondirection" id="ref-for-hasfunctiondirection">fse:hasFunctionDirection</a> 2to1</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctionnumber" id="ref-for-hasfunctionnumber">fse:hasFunctionNumber</a> 5000-5000-001</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly1" id="ref-for-connectsassembly1">fse:connectsAssembly1</a> <a data-link-type="dfn" href="assemblies.html#epsregulatorsandconvertersunit" id="ref-for-epsregulatorsandconvertersunit">sam-assemblies:EPSRegulatorsAndConvertersUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly2" id="ref-for-connectsassembly2">fse:connectsAssembly2</a> <a data-link-type="dfn" href="assemblies.html#solararraywithsada1" id="ref-for-solararraywithsada1">sam-assemblies:SolarArrayWithSADA1</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly2" id="ref-for-connectsassembly2①">fse:connectsAssembly2</a> <a data-link-type="dfn" href="assemblies.html#solararraywithsada2" id="ref-for-solararraywithsada2">sam-assemblies:SolarArrayWithSADA2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins1" id="ref-for-joins1">mission:joins1</a> <a data-link-type="dfn" href="endcircuits.html#epsregulatorsandconvertersunitpowerin2" id="ref-for-epsregulatorsandconvertersunitpowerin2">sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerIn2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins2" id="ref-for-joins2">mission:joins2</a> <a data-link-type="dfn" href="endcircuits.html#solararraywithsada1powerout" id="ref-for-solararraywithsada1powerout">sam-endcircuits:SolarArrayWithSADA1PowerOut</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins2" id="ref-for-joins2①">mission:joins2</a> <a data-link-type="dfn" href="endcircuits.html#solararraywithsada2powerout" id="ref-for-solararraywithsada2powerout">sam-endcircuits:SolarArrayWithSADA2PowerOut</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.2" id="5000To5000516200Power"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="5000to5000516200power">5000To5000516200Power<a class="self-link" href="#5000to5000516200power"></a></dfn></span><a class="self-link" href="#5000To5000516200Power"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/functions.html#unidirectionalpower" id="ref-for-unidirectionalpower①">fse-functions:UnidirectionalPower</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuittype" id="ref-for-hasendcircuittype①">fse:hasEndCircuitType</a> Power</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctiondirection" id="ref-for-hasfunctiondirection①">fse:hasFunctionDirection</a> 1to2</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctionnumber" id="ref-for-hasfunctionnumber①">fse:hasFunctionNumber</a> 5000-5000-002</p>
+    </ul>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly1" id="ref-for-connectsassembly1①">fse:connectsAssembly1</a> <a data-link-type="dfn" href="assemblies.html#epsregulatorsandconvertersunit" id="ref-for-epsregulatorsandconvertersunit①">sam-assemblies:EPSRegulatorsAndConvertersUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly2" id="ref-for-connectsassembly2②">fse:connectsAssembly2</a> <a data-link-type="dfn" href="assemblies.html#powercontrolunit" id="ref-for-powercontrolunit">sam-assemblies:PowerControlUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins1" id="ref-for-joins1①">mission:joins1</a> <a data-link-type="dfn" href="endcircuits.html#epsregulatorsandconvertersunitpowerout7" id="ref-for-epsregulatorsandconvertersunitpowerout7">sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut7</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins2" id="ref-for-joins2②">mission:joins2</a> <a data-link-type="dfn" href="endcircuits.html#powercontrolunitpowerin" id="ref-for-powercontrolunitpowerin">sam-endcircuits:PowerControlUnitPowerIn</a></p>
     </ul>
    </div>
   </main>
@@ -1881,4 +1989,217 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#5000516200to5000power">5000516200To5000Power</a><span>, in §4.1</span>
+   <li><a href="#5000to5000516200power">5000To5000516200Power</a><span>, in §4.2</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-connectsassembly1">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly1">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-connectsassembly1">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-connectsassembly1①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-connectsassembly2">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly2">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-connectsassembly2">4.1. 5000516200To5000Power</a> <a href="#ref-for-connectsassembly2①">(2)</a>
+    <li><a href="#ref-for-connectsassembly2②">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasendcircuittype">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuittype">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuittype</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasendcircuittype">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-hasendcircuittype①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasfunctiondirection">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctiondirection">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctiondirection</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasfunctiondirection">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-hasfunctiondirection①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasfunctionnumber">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctionnumber">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasfunctionnumber</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasfunctionnumber">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-hasfunctionnumber①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unidirectionalpower">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/functions.html#unidirectionalpower">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/functions.html#unidirectionalpower</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unidirectionalpower">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-unidirectionalpower①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-joins1">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins1">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-joins1">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-joins1①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-joins2">
+   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins2">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-joins2">4.1. 5000516200To5000Power</a> <a href="#ref-for-joins2①">(2)</a>
+    <li><a href="#ref-for-joins2②">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-epsregulatorsandconvertersunit">
+   <a href="assemblies.html#epsregulatorsandconvertersunit">assemblies.html#epsregulatorsandconvertersunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-epsregulatorsandconvertersunit">4.1. 5000516200To5000Power</a>
+    <li><a href="#ref-for-epsregulatorsandconvertersunit①">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-powercontrolunit">
+   <a href="assemblies.html#powercontrolunit">assemblies.html#powercontrolunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powercontrolunit">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-solararraywithsada1">
+   <a href="assemblies.html#solararraywithsada1">assemblies.html#solararraywithsada1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-solararraywithsada1">4.1. 5000516200To5000Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-solararraywithsada2">
+   <a href="assemblies.html#solararraywithsada2">assemblies.html#solararraywithsada2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-solararraywithsada2">4.1. 5000516200To5000Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-epsregulatorsandconvertersunitpowerin2">
+   <a href="endcircuits.html#epsregulatorsandconvertersunitpowerin2">endcircuits.html#epsregulatorsandconvertersunitpowerin2</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerin2">4.1. 5000516200To5000Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-epsregulatorsandconvertersunitpowerout7">
+   <a href="endcircuits.html#epsregulatorsandconvertersunitpowerout7">endcircuits.html#epsregulatorsandconvertersunitpowerout7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout7">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-powercontrolunitpowerin">
+   <a href="endcircuits.html#powercontrolunitpowerin">endcircuits.html#powercontrolunitpowerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powercontrolunitpowerin">4.2. 5000To5000516200Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-solararraywithsada1powerout">
+   <a href="endcircuits.html#solararraywithsada1powerout">endcircuits.html#solararraywithsada1powerout</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-solararraywithsada1powerout">4.1. 5000516200To5000Power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-solararraywithsada2powerout">
+   <a href="endcircuits.html#solararraywithsada2powerout">endcircuits.html#solararraywithsada2powerout</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-solararraywithsada2powerout">4.1. 5000516200To5000Power</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-connectsassembly1" style="color:initial">connectsassembly1</span>
+     <li><span class="dfn-paneled" id="term-for-connectsassembly2" style="color:initial">connectsassembly2</span>
+     <li><span class="dfn-paneled" id="term-for-hasendcircuittype" style="color:initial">hasendcircuittype</span>
+     <li><span class="dfn-paneled" id="term-for-hasfunctiondirection" style="color:initial">hasfunctiondirection</span>
+     <li><span class="dfn-paneled" id="term-for-hasfunctionnumber" style="color:initial">hasfunctionnumber</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-unidirectionalpower" style="color:initial">unidirectionalpower</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-joins1" style="color:initial">joins1</span>
+     <li><span class="dfn-paneled" id="term-for-joins2" style="color:initial">joins2</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunit" style="color:initial">epsregulatorsandconvertersunit</span>
+     <li><span class="dfn-paneled" id="term-for-powercontrolunit" style="color:initial">powercontrolunit</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada1" style="color:initial">solararraywithsada1</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada2" style="color:initial">solararraywithsada2</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunitpowerin2" style="color:initial">epsregulatorsandconvertersunitpowerin2</span>
+     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunitpowerout7" style="color:initial">epsregulatorsandconvertersunitpowerout7</span>
+     <li><span class="dfn-paneled" id="term-for-powercontrolunitpowerin" style="color:initial">powercontrolunitpowerin</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada1powerout" style="color:initial">solararraywithsada1powerout</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada2powerout" style="color:initial">solararraywithsada2powerout</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

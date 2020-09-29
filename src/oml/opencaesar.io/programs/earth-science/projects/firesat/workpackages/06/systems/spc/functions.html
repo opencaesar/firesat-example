@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1732,6 +1779,25 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#PerformMissionBySpacecraftSystemSegment"><span class="secno">4.1</span> <span class="content"><span>PerformMissionBySpacecraftSystemSegment</span></span></a>
+      <li><a href="#DetectNewWildfiresBySpacecraftSystemSegment"><span class="secno">4.2</span> <span class="content"><span>DetectNewWildfiresBySpacecraftSystemSegment</span></span></a>
+      <li><a href="#MonitorExistingWildfires_24_7BySpacecraftSystemSegment"><span class="secno">4.3</span> <span class="content"><span>MonitorExistingWildfires_24_7BySpacecraftSystemSegment</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">5.1</span> <span class="content"><span>SpacecraftSystemSegmentPerformsDetectNewWildfires</span></span></a>
+      <li><a href="#SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">5.2</span> <span class="content"><span>SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1754,6 +1820,51 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>fse-assemblies: <a href="http://imce.jpl.nasa.gov/discipline/fse/assemblies.html">http://imce.jpl.nasa.gov/discipline/fse/assemblies</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="PerformMissionBySpacecraftSystemSegment"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="performmissionbyspacecraftsystemsegment">PerformMissionBySpacecraftSystemSegment<a class="self-link" href="#performmissionbyspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#PerformMissionBySpacecraftSystemSegment"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#performmission" id="ref-for-performmission">firesat-functions:PerformMission</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.2" id="DetectNewWildfiresBySpacecraftSystemSegment"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="detectnewwildfiresbyspacecraftsystemsegment">DetectNewWildfiresBySpacecraftSystemSegment<a class="self-link" href="#detectnewwildfiresbyspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#DetectNewWildfiresBySpacecraftSystemSegment"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#detectnewwildfires" id="ref-for-detectnewwildfires">firesat-functions:DetectNewWildfires</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.3" id="MonitorExistingWildfires_24_7BySpacecraftSystemSegment"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="monitorexistingwildfires_24_7byspacecraftsystemsegment">MonitorExistingWildfires_24_7BySpacecraftSystemSegment<a class="self-link" href="#monitorexistingwildfires_24_7byspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#MonitorExistingWildfires_24_7BySpacecraftSystemSegment"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7" id="ref-for-monitorexistingwildfires_24_7">firesat-functions:MonitorExistingWildfires_24_7</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacecraftsystemsegmentperformsdetectnewwildfires">SpacecraftSystemSegmentPerformsDetectNewWildfires<a class="self-link" href="#spacecraftsystemsegmentperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#SpacecraftSystemSegmentPerformsDetectNewWildfires"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs">mission:Performs</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="assemblies.html#spacecraftsystemsegment" id="ref-for-spacecraftsystemsegment">spc-assemblies:SpacecraftSystemSegment</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="functions.html#detectnewwildfiresbyspacecraftsystemsegment" id="ref-for-detectnewwildfiresbyspacecraftsystemsegment">DetectNewWildfiresBySpacecraftSystemSegment</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires" id="ref-for-orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">spc-requirements:OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby①">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires" id="ref-for-minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">spc-requirements:MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7<a class="self-link" href="#spacecraftsystemsegmentperformsmonitorexistingwildfires_24_7"></a></dfn></span><a class="self-link" href="#SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs①">mission:Performs</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="assemblies.html#spacecraftsystemsegment" id="ref-for-spacecraftsystemsegment①">spc-assemblies:SpacecraftSystemSegment</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="functions.html#monitorexistingwildfires_24_7byspacecraftsystemsegment" id="ref-for-monitorexistingwildfires_24_7byspacecraftsystemsegment">MonitorExistingWildfires_24_7BySpacecraftSystemSegment</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby②">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7" id="ref-for-orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">spc-requirements:OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby③">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7" id="ref-for-minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">spc-requirements:MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a></p>
     </ul>
    </div>
   </main>
@@ -1885,4 +1996,201 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#detectnewwildfiresbyspacecraftsystemsegment">DetectNewWildfiresBySpacecraftSystemSegment</a><span>, in §4.2</span>
+   <li><a href="#monitorexistingwildfires_24_7byspacecraftsystemsegment">MonitorExistingWildfires_24_7BySpacecraftSystemSegment</a><span>, in §4.3</span>
+   <li><a href="#performmissionbyspacecraftsystemsegment">PerformMissionBySpacecraftSystemSegment</a><span>, in §4.1</span>
+   <li><a href="#spacecraftsystemsegmentperformsdetectnewwildfires">SpacecraftSystemSegmentPerformsDetectNewWildfires</a><span>, in §5.1</span>
+   <li><a href="#spacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a><span>, in §5.2</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-function">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-function">4.1. PerformMissionBySpacecraftSystemSegment</a>
+    <li><a href="#ref-for-function①">4.2. DetectNewWildfiresBySpacecraftSystemSegment</a>
+    <li><a href="#ref-for-function②">4.3. MonitorExistingWildfires_24_7BySpacecraftSystemSegment</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isspecifiedby">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isspecifiedby">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a> <a href="#ref-for-isspecifiedby①">(2)</a>
+    <li><a href="#ref-for-isspecifiedby②">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a> <a href="#ref-for-isspecifiedby③">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-performs">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-performs">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-performs①">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-realizes">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-realizes">4.1. PerformMissionBySpacecraftSystemSegment</a>
+    <li><a href="#ref-for-realizes①">4.2. DetectNewWildfiresBySpacecraftSystemSegment</a>
+    <li><a href="#ref-for-realizes②">4.3. MonitorExistingWildfires_24_7BySpacecraftSystemSegment</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfires">
+   <a href="../../../../../../missions/firesat/functions.html#detectnewwildfires">../../../../../../missions/firesat/functions.html#detectnewwildfires</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfires">4.2. DetectNewWildfiresBySpacecraftSystemSegment</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-monitorexistingwildfires_24_7">
+   <a href="../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7">../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-monitorexistingwildfires_24_7">4.3. MonitorExistingWildfires_24_7BySpacecraftSystemSegment</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-performmission">
+   <a href="../../../../../../missions/firesat/functions.html#performmission">../../../../../../missions/firesat/functions.html#performmission</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-performmission">4.1. PerformMissionBySpacecraftSystemSegment</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-spacecraftsystemsegment">
+   <a href="assemblies.html#spacecraftsystemsegment">assemblies.html#spacecraftsystemsegment</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-spacecraftsystemsegment">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-spacecraftsystemsegment①">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfiresbyspacecraftsystemsegment">
+   <a href="functions.html#detectnewwildfiresbyspacecraftsystemsegment">functions.html#detectnewwildfiresbyspacecraftsystemsegment</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfiresbyspacecraftsystemsegment">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-monitorexistingwildfires_24_7byspacecraftsystemsegment">
+   <a href="functions.html#monitorexistingwildfires_24_7byspacecraftsystemsegment">functions.html#monitorexistingwildfires_24_7byspacecraftsystemsegment</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-monitorexistingwildfires_24_7byspacecraftsystemsegment">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">
+   <a href="requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">
+   <a href="requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">requirements.html#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">
+   <a href="requirements.html#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">requirements.html#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">5.1. SpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">
+   <a href="requirements.html#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">requirements.html#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">5.2. SpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfires" style="color:initial">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-monitorexistingwildfires_24_7" style="color:initial">monitorexistingwildfires_24_7</span>
+     <li><span class="dfn-paneled" id="term-for-performmission" style="color:initial">performmission</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-spacecraftsystemsegment" style="color:initial">spacecraftsystemsegment</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfiresbyspacecraftsystemsegment" style="color:initial">detectnewwildfiresbyspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-monitorexistingwildfires_24_7byspacecraftsystemsegment" style="color:initial">monitorexistingwildfires_24_7byspacecraftsystemsegment</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires" style="color:initial">minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7" style="color:initial">minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7</span>
+     <li><span class="dfn-paneled" id="term-for-orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires" style="color:initial">orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7" style="color:initial">orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

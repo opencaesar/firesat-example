@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1732,6 +1779,28 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerIn1"><span class="secno">4.1</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerIn1</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerIn2"><span class="secno">4.2</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerIn2</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut3"><span class="secno">4.3</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut3</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut4"><span class="secno">4.4</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut4</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut5"><span class="secno">4.5</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut5</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut6"><span class="secno">4.6</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut6</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut7"><span class="secno">4.7</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut7</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut8"><span class="secno">4.8</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut8</span></span></a>
+      <li><a href="#EPSRegulatorsAndConvertersUnitPowerOut9"><span class="secno">4.9</span> <span class="content"><span>EPSRegulatorsAndConvertersUnitPowerOut9</span></span></a>
+      <li><a href="#PowerControlUnitPowerIn"><span class="secno">4.10</span> <span class="content"><span>PowerControlUnitPowerIn</span></span></a>
+      <li><a href="#SolarArrayWithSADA1PowerOut"><span class="secno">4.11</span> <span class="content"><span>SolarArrayWithSADA1PowerOut</span></span></a>
+      <li><a href="#SolarArrayWithSADA2PowerOut"><span class="secno">4.12</span> <span class="content"><span>SolarArrayWithSADA2PowerOut</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1750,6 +1819,91 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p>fse-endcircuits: <a href="http://imce.jpl.nasa.gov/discipline/fse/endcircuits.html">http://imce.jpl.nasa.gov/discipline/fse/endcircuits</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="EPSRegulatorsAndConvertersUnitPowerIn1"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerin1">EPSRegulatorsAndConvertersUnitPowerIn1<a class="self-link" href="#epsregulatorsandconvertersunitpowerin1"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerIn1"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.2" id="EPSRegulatorsAndConvertersUnitPowerIn2"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerin2">EPSRegulatorsAndConvertersUnitPowerIn2<a class="self-link" href="#epsregulatorsandconvertersunitpowerin2"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerIn2"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin①">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①">fse:hasEndCircuitIdentifier</a> 2</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.3" id="EPSRegulatorsAndConvertersUnitPowerOut3"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout3">EPSRegulatorsAndConvertersUnitPowerOut3<a class="self-link" href="#epsregulatorsandconvertersunitpowerout3"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut3"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier②">fse:hasEndCircuitIdentifier</a> 3</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.4" id="EPSRegulatorsAndConvertersUnitPowerOut4"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout4">EPSRegulatorsAndConvertersUnitPowerOut4<a class="self-link" href="#epsregulatorsandconvertersunitpowerout4"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut4"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout①">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier③">fse:hasEndCircuitIdentifier</a> 4</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.5" id="EPSRegulatorsAndConvertersUnitPowerOut5"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout5">EPSRegulatorsAndConvertersUnitPowerOut5<a class="self-link" href="#epsregulatorsandconvertersunitpowerout5"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut5"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout②">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier④">fse:hasEndCircuitIdentifier</a> 5</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.6" id="EPSRegulatorsAndConvertersUnitPowerOut6"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout6">EPSRegulatorsAndConvertersUnitPowerOut6<a class="self-link" href="#epsregulatorsandconvertersunitpowerout6"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut6"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout③">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑤">fse:hasEndCircuitIdentifier</a> 6</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.7" id="EPSRegulatorsAndConvertersUnitPowerOut7"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout7">EPSRegulatorsAndConvertersUnitPowerOut7<a class="self-link" href="#epsregulatorsandconvertersunitpowerout7"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut7"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout④">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑥">fse:hasEndCircuitIdentifier</a> 7</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.8" id="EPSRegulatorsAndConvertersUnitPowerOut8"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout8">EPSRegulatorsAndConvertersUnitPowerOut8<a class="self-link" href="#epsregulatorsandconvertersunitpowerout8"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut8"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout⑤">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑦">fse:hasEndCircuitIdentifier</a> 8</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.9" id="EPSRegulatorsAndConvertersUnitPowerOut9"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="epsregulatorsandconvertersunitpowerout9">EPSRegulatorsAndConvertersUnitPowerOut9<a class="self-link" href="#epsregulatorsandconvertersunitpowerout9"></a></dfn></span><a class="self-link" href="#EPSRegulatorsAndConvertersUnitPowerOut9"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout⑥">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑧">fse:hasEndCircuitIdentifier</a> 9</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.10" id="PowerControlUnitPowerIn"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powercontrolunitpowerin">PowerControlUnitPowerIn<a class="self-link" href="#powercontrolunitpowerin"></a></dfn></span><a class="self-link" href="#PowerControlUnitPowerIn"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin" id="ref-for-powerin②">fse-endcircuits:PowerIn</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier⑨">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.11" id="SolarArrayWithSADA1PowerOut"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="solararraywithsada1powerout">SolarArrayWithSADA1PowerOut<a class="self-link" href="#solararraywithsada1powerout"></a></dfn></span><a class="self-link" href="#SolarArrayWithSADA1PowerOut"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout⑦">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①⓪">fse:hasEndCircuitIdentifier</a> 1</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.12" id="SolarArrayWithSADA2PowerOut"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="solararraywithsada2powerout">SolarArrayWithSADA2PowerOut<a class="self-link" href="#solararraywithsada2powerout"></a></dfn></span><a class="self-link" href="#SolarArrayWithSADA2PowerOut"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout" id="ref-for-powerout⑧">fse-endcircuits:PowerOut</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier①①">fse:hasEndCircuitIdentifier</a> 1</p>
     </ul>
    </div>
   </main>
@@ -1881,4 +2035,129 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#epsregulatorsandconvertersunitpowerin1">EPSRegulatorsAndConvertersUnitPowerIn1</a><span>, in §4.1</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerin2">EPSRegulatorsAndConvertersUnitPowerIn2</a><span>, in §4.2</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout3">EPSRegulatorsAndConvertersUnitPowerOut3</a><span>, in §4.3</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout4">EPSRegulatorsAndConvertersUnitPowerOut4</a><span>, in §4.4</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout5">EPSRegulatorsAndConvertersUnitPowerOut5</a><span>, in §4.5</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout6">EPSRegulatorsAndConvertersUnitPowerOut6</a><span>, in §4.6</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout7">EPSRegulatorsAndConvertersUnitPowerOut7</a><span>, in §4.7</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout8">EPSRegulatorsAndConvertersUnitPowerOut8</a><span>, in §4.8</span>
+   <li><a href="#epsregulatorsandconvertersunitpowerout9">EPSRegulatorsAndConvertersUnitPowerOut9</a><span>, in §4.9</span>
+   <li><a href="#powercontrolunitpowerin">PowerControlUnitPowerIn</a><span>, in §4.10</span>
+   <li><a href="#solararraywithsada1powerout">SolarArrayWithSADA1PowerOut</a><span>, in §4.11</span>
+   <li><a href="#solararraywithsada2powerout">SolarArrayWithSADA2PowerOut</a><span>, in §4.12</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-powerin">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerin</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powerin">4.1. EPSRegulatorsAndConvertersUnitPowerIn1</a>
+    <li><a href="#ref-for-powerin①">4.2. EPSRegulatorsAndConvertersUnitPowerIn2</a>
+    <li><a href="#ref-for-powerin②">4.10. PowerControlUnitPowerIn</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-powerout">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/endcircuits.html#powerout</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powerout">4.3. EPSRegulatorsAndConvertersUnitPowerOut3</a>
+    <li><a href="#ref-for-powerout①">4.4. EPSRegulatorsAndConvertersUnitPowerOut4</a>
+    <li><a href="#ref-for-powerout②">4.5. EPSRegulatorsAndConvertersUnitPowerOut5</a>
+    <li><a href="#ref-for-powerout③">4.6. EPSRegulatorsAndConvertersUnitPowerOut6</a>
+    <li><a href="#ref-for-powerout④">4.7. EPSRegulatorsAndConvertersUnitPowerOut7</a>
+    <li><a href="#ref-for-powerout⑤">4.8. EPSRegulatorsAndConvertersUnitPowerOut8</a>
+    <li><a href="#ref-for-powerout⑥">4.9. EPSRegulatorsAndConvertersUnitPowerOut9</a>
+    <li><a href="#ref-for-powerout⑦">4.11. SolarArrayWithSADA1PowerOut</a>
+    <li><a href="#ref-for-powerout⑧">4.12. SolarArrayWithSADA2PowerOut</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasendcircuitidentifier">
+   <a href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier">../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasendcircuitidentifier</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasendcircuitidentifier">4.1. EPSRegulatorsAndConvertersUnitPowerIn1</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①">4.2. EPSRegulatorsAndConvertersUnitPowerIn2</a>
+    <li><a href="#ref-for-hasendcircuitidentifier②">4.3. EPSRegulatorsAndConvertersUnitPowerOut3</a>
+    <li><a href="#ref-for-hasendcircuitidentifier③">4.4. EPSRegulatorsAndConvertersUnitPowerOut4</a>
+    <li><a href="#ref-for-hasendcircuitidentifier④">4.5. EPSRegulatorsAndConvertersUnitPowerOut5</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑤">4.6. EPSRegulatorsAndConvertersUnitPowerOut6</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑥">4.7. EPSRegulatorsAndConvertersUnitPowerOut7</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑦">4.8. EPSRegulatorsAndConvertersUnitPowerOut8</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑧">4.9. EPSRegulatorsAndConvertersUnitPowerOut9</a>
+    <li><a href="#ref-for-hasendcircuitidentifier⑨">4.10. PowerControlUnitPowerIn</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①⓪">4.11. SolarArrayWithSADA1PowerOut</a>
+    <li><a href="#ref-for-hasendcircuitidentifier①①">4.12. SolarArrayWithSADA2PowerOut</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/endcircuits]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-powerin" style="color:initial">powerin</span>
+     <li><span class="dfn-paneled" id="term-for-powerout" style="color:initial">powerout</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hasendcircuitidentifier" style="color:initial">hasendcircuitidentifier</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>

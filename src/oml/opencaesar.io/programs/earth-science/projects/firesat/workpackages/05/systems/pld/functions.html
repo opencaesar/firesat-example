@@ -1322,8 +1322,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions" rel="canonical">
-  <meta content="939a757e6cf880d6d7381679696584cc36fc1e9b" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions" rel="canonical">
+  <meta content="93fc729d6e517d74de0667304fd6b8d64acb497b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: black; }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,7 +1744,13 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
@@ -1712,7 +1759,7 @@ dfn > a.self-link::before      { content: "#"; }
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions">https://opencaesar.github.io/vocabularies//src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1731,6 +1778,24 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <ol class="toc">
+      <li><a href="#InsureMechanicalIntegrityByPayloadModule"><span class="secno">3.1</span> <span class="content"><span>InsureMechanicalIntegrityByPayloadModule</span></span></a>
+      <li><a href="#MonitorExistingWildfires_24_7BySensor"><span class="secno">3.2</span> <span class="content"><span>MonitorExistingWildfires_24_7BySensor</span></span></a>
+      <li><a href="#DetectNewWildfiresBySensor"><span class="secno">3.3</span> <span class="content"><span>DetectNewWildfiresBySensor</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">4</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SensorPerformsDetectNewWildfires"><span class="secno">4.1</span> <span class="content"><span>SensorPerformsDetectNewWildfires</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1746,6 +1811,38 @@ dfn > a.self-link::before      { content: "#"; }
       <p>pld-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies</a></p>
      <li data-md>
       <p>firesat-functions: <a href="http://opencaesar.io/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/programs/earth-science/missions/firesat/functions</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="InsureMechanicalIntegrityByPayloadModule"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="insuremechanicalintegritybypayloadmodule">InsureMechanicalIntegrityByPayloadModule<a class="self-link" href="#insuremechanicalintegritybypayloadmodule"></a></dfn></span><a class="self-link" href="#InsureMechanicalIntegrityByPayloadModule"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#insuremechanicalintegrity" id="ref-for-insuremechanicalintegrity">firesat-functions:InsureMechanicalIntegrity</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="MonitorExistingWildfires_24_7BySensor"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="monitorexistingwildfires_24_7bysensor">MonitorExistingWildfires_24_7BySensor<a class="self-link" href="#monitorexistingwildfires_24_7bysensor"></a></dfn></span><a class="self-link" href="#MonitorExistingWildfires_24_7BySensor"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function①">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7" id="ref-for-monitorexistingwildfires_24_7">firesat-functions:MonitorExistingWildfires_24_7</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="DetectNewWildfiresBySensor"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="detectnewwildfiresbysensor">DetectNewWildfiresBySensor<a class="self-link" href="#detectnewwildfiresbysensor"></a></dfn></span><a class="self-link" href="#DetectNewWildfiresBySensor"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function②">mission:Function</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/functions.html#detectnewwildfires" id="ref-for-detectnewwildfires">firesat-functions:DetectNewWildfires</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="RelationInstances"><span class="secno">4. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="SensorPerformsDetectNewWildfires"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sensorperformsdetectnewwildfires">SensorPerformsDetectNewWildfires<a class="self-link" href="#sensorperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#SensorPerformsDetectNewWildfires"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs">mission:Performs</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="assemblies.html#sensor" id="ref-for-sensor">pld-assemblies:Sensor</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="functions.html#detectnewwildfiresbysensor" id="ref-for-detectnewwildfiresbysensor">DetectNewWildfiresBySensor</a></p>
+    <p><em>Links:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#sensingrangeforsensor" id="ref-for-sensingrangeforsensor">pld-requirements:SensingRangeForSensor</a></p>
     </ul>
    </div>
   </main>
@@ -1877,4 +1974,169 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#detectnewwildfiresbysensor">DetectNewWildfiresBySensor</a><span>, in §3.3</span>
+   <li><a href="#insuremechanicalintegritybypayloadmodule">InsureMechanicalIntegrityByPayloadModule</a><span>, in §3.1</span>
+   <li><a href="#monitorexistingwildfires_24_7bysensor">MonitorExistingWildfires_24_7BySensor</a><span>, in §3.2</span>
+   <li><a href="#sensorperformsdetectnewwildfires">SensorPerformsDetectNewWildfires</a><span>, in §4.1</span>
+  </ul>
+  <aside class="dfn-panel" data-for="term-for-function">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-function">3.1. InsureMechanicalIntegrityByPayloadModule</a>
+    <li><a href="#ref-for-function①">3.2. MonitorExistingWildfires_24_7BySensor</a>
+    <li><a href="#ref-for-function②">3.3. DetectNewWildfiresBySensor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isspecifiedby">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isspecifiedby">4.1. SensorPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-performs">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-performs">4.1. SensorPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-realizes">
+   <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-realizes">3.1. InsureMechanicalIntegrityByPayloadModule</a>
+    <li><a href="#ref-for-realizes①">3.2. MonitorExistingWildfires_24_7BySensor</a>
+    <li><a href="#ref-for-realizes②">3.3. DetectNewWildfiresBySensor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfires">
+   <a href="../../../../../../missions/firesat/functions.html#detectnewwildfires">../../../../../../missions/firesat/functions.html#detectnewwildfires</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfires">3.3. DetectNewWildfiresBySensor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-insuremechanicalintegrity">
+   <a href="../../../../../../missions/firesat/functions.html#insuremechanicalintegrity">../../../../../../missions/firesat/functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-insuremechanicalintegrity">3.1. InsureMechanicalIntegrityByPayloadModule</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-monitorexistingwildfires_24_7">
+   <a href="../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7">../../../../../../missions/firesat/functions.html#monitorexistingwildfires_24_7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-monitorexistingwildfires_24_7">3.2. MonitorExistingWildfires_24_7BySensor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sensor">
+   <a href="assemblies.html#sensor">assemblies.html#sensor</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sensor">4.1. SensorPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-detectnewwildfiresbysensor">
+   <a href="functions.html#detectnewwildfiresbysensor">functions.html#detectnewwildfiresbysensor</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-detectnewwildfiresbysensor">4.1. SensorPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-sensingrangeforsensor">
+   <a href="requirements.html#sensingrangeforsensor">requirements.html#sensingrangeforsensor</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-sensingrangeforsensor">4.1. SensorPerformsDetectNewWildfires</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfires" style="color:initial">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-insuremechanicalintegrity" style="color:initial">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="term-for-monitorexistingwildfires_24_7" style="color:initial">monitorexistingwildfires_24_7</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-sensor" style="color:initial">sensor</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfiresbysensor" style="color:initial">detectnewwildfiresbysensor</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/requirements]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-sensingrangeforsensor" style="color:initial">sensingrangeforsensor</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
 </script>
