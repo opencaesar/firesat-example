@@ -29,6 +29,16 @@ You must first have Bikeshed (the app itself) installed from [here](https://taba
 ./gradlew owlReason
 ```
 
+## Start Fuseki Server
+```
+./gradlew startFuseki
+```
+
+## Stop Fuseki Server
+```
+./gradlew stopFuseki
+```
+
 ## Load to Fuseki Dataset
 ```
 ./gradlew owlLoad
@@ -51,18 +61,3 @@ Pre-req: A Fuseki server with a firesat dataset must be running at http://localh
 ```
 ./gradlew publishToMavenLocal
 ```
-
-## Run Fuseki Locally
-Download the [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi) distribution and run the server locally using the project's `.fuseki.ttl` configuration.
-
-MacOS/Linux:
-```
-cd fuseki-distribution-folder
-./fuseki-server --config=<path to this project>/.fuseki.ttl
-```
-Windows:
-```
-cd fuseki-distribution-folder
-fuseki-server.bat --config=<path to this project>\.fuseki.ttl
-```
-The server should now be running and has a `firesat` dataset accessible at http://localhost:3030/fuseki

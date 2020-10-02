@@ -19,6 +19,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
+		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-shacl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-query-gradle:+'
 		classpath 'io.opencaesar.owl:owl-load-gradle:+'
@@ -27,7 +28,6 @@ buildscript {
 		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:+'
 		classpath 'io.opencaesar.oml:oml-merge-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
-		classpath 'com.wiredforcode:gradle-spawn-plugin:+'
 		// needed since gradle-bintray-plugin brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
@@ -37,8 +37,7 @@ buildscript {
  * Dependency versions
  */
 ext { 
-	jplVocabulariesVersion = '1.+' 
-	fusekiVersion = '3.16.0' 
+	jplVocabulariesVersion = '1.+'
 }
 
 /*
@@ -46,7 +45,6 @@ ext {
  */
 configurations {
 	oml
-    fuseki
 }
 
 /*
@@ -63,7 +61,6 @@ repositories {
  */
 dependencies {
 	oml "io.opencaesar.ontologies:jpl-vocabularies:$jplVocabulariesVersion"
-    fuseki "org.apache.jena:jena-fuseki-server:$fusekiVersion"
 }
 
 /*
@@ -247,16 +244,11 @@ bintray {
 /*
  * Start and stop the Fuseki server
  */
-apply plugin: 'com.wiredforcode.spawn'
-
-task downloadFuseki(type: Copy) {
-    from configurations.fuseki
-    into file("build/libs")
+task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
+	configurationPath = file('.fuseki.ttl')
+	outputFolderPath = file('.fuseki')
 }
 
-task startFuseki(type: SpawnProcessTask, dependsOn: downloadFuseki) {
-	command "java -jar ${projectDir}/build/libs/jena-fuseki-server-${fusekiVersion}.jar --config=${projectDir}/.fuseki.ttl"
-	ready "Apache Jena Fuseki ${fusekiVersion}"
+task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
+	outputFolderPath = file('.fuseki')
 }
-
-task stopFuseki(type: KillProcessTask)
