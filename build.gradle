@@ -3,7 +3,7 @@
  */
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '1.3.0'
+version = '1.4.0'
 
 /* 
  * The Gradle task dependencies 
@@ -28,7 +28,6 @@ buildscript {
 		classpath 'io.opencaesar.oml:oml-merge-gradle:+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
 		classpath 'com.wiredforcode:gradle-spawn-plugin:+'
-
 		// needed since gradle-bintray-plugin brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
@@ -38,7 +37,7 @@ buildscript {
  * Dependency versions
  */
 ext { 
-	vocabulariesVersion = '1.0.+' 
+	jplVocabulariesVersion = '1.+' 
 	fusekiVersion = '3.16.0' 
 }
 
@@ -46,8 +45,8 @@ ext {
  * The configuration of OML dependencies
  */
 configurations {
-	oml // Include the oml dependencies only
-    fuseki //Include fuseki server
+	oml
+    fuseki
 }
 
 /*
@@ -55,7 +54,7 @@ configurations {
  */
 repositories {
 	mavenLocal()
-	maven { url 'https://dl.bintray.com/opencaesar/vocabularies' }
+	maven { url 'https://dl.bintray.com/opencaesar/jpl-vocabularies' }
 	jcenter()
 }
 
@@ -63,7 +62,7 @@ repositories {
  * The OML dependencies
  */
 dependencies {
-	oml "io.opencaesar.ontologies:vocabularies:$vocabulariesVersion"
+	oml "io.opencaesar.ontologies:jpl-vocabularies:$jplVocabulariesVersion"
     fuseki "org.apache.jena:jena-fuseki-server:$fusekiVersion"
 }
 
@@ -92,10 +91,15 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn:
 /*
  * A task to generate the model documentation in HTML
  */
+import org.gradle.internal.os.OperatingSystem
 task generateDocs(dependsOn: omlToBikeshed) {
 	doLast {
-		exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
-		exec { commandLine 'build/bikeshed/publish.sh' }
+		if (OperatingSystem.current().isWindows()) {
+			exec { commandLine 'build/bikeshed/publish.bat' }
+		} else {
+			exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
+			exec { commandLine 'build/bikeshed/publish.sh' }
+		}
 	}
 }
 
@@ -131,14 +135,14 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
 task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
+	catalogPath = file('build/owl/catalog.xml')
+	endpointURL = 'http://localhost:3030/firesat'
+    fileExtensions = ['owl', 'ttl']
 	iris = [
 		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes',
 	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties',
 	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals'
 	]
-	catalogPath = file('build/owl/catalog.xml')
-	endpointURL = 'http://localhost:3030/firesat'
-    fileExtensions = ['owl', 'ttl']
 }
 
 /*
