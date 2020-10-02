@@ -245,10 +245,10 @@ bintray {
  * Start and stop the Fuseki server
  */
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
-	config = file('.fuseki.ttl')
-	outputDirectory = file('.fuseki')
+	configurationPath = file('.fuseki.ttl')
+	outputFolderPath = file('.fuseki')
 }
 
 task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
-	outputDirectory = file('.fuseki')
+	outputFolderPath = file('.fuseki')
 }
