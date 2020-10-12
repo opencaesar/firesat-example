@@ -10,9 +10,7 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	extends <http://imce.jpl.nasa.gov/foundation/project>
 
-	extends <http://iso.org/iso-80000-6>
-
-	extends <http://iso.org/iso-80000-5>
+	extends <http://iso.org/80000-6-kindsOfQuantities>
 
 	annotation property hasProvenance
 
@@ -100,7 +98,7 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	]
 
 	@rdfs:label "Mass Constraint"
-	concept MassConstraint :> analysis:Characterization [
+	concept MassConstraint :> analysis:Characterization, metrology:Object [
 		restricts all relation analysis:characterizes to MassConstrainedElement
 	]
 
@@ -116,7 +114,7 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	concept MassReserveConstraint :> MassAllocationConstraint
 
 	@rdfs:label "Net"
-	concept Net :> mission:Junction
+	concept Net :> mission:Junction, metrology:Object
 
 	@rdfs:label "Placeholder Mass"
 	concept PlaceholderMass :> MassProxy
@@ -320,16 +318,26 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	]
 
 	@rdfs:label "has cable impedance"
-	scalar property hasCableImpedance [
-		domain Net
-		range iso-80000-6:ohm
+	relation entity hasCableImpedance :> metrology:UnitaryQuantity [
+        from Net
+		to cableImpedance
+        forward hasCableImpedanceQ
+        functional
+        restricts all relation metrology:hasQuantityKind to 80000-6-kindsOfQuantities:resistance
 	]
 
+    concept cableImpedance :> metrology:UnitaryQuantityValue
+
 	@rdfs:label "has cable length (m)"
-	scalar property hasCableLength [
-		domain Net
-		range iso-80000-3:metre
+	relation entity hasCableLength :> metrology:UnitaryQuantity [
+		from Net
+        to cableLength
+        forward hasCableLengthQ
+        functional
+        restricts all relation metrology:hasQuantityKind to 80000-3-kindsOfQuantities:^length
 	]
+
+    concept cableLength :> metrology:UnitaryQuantityValue
 
 	@rdfs:label "has cable treatment"
 	scalar property hasCableTreatment [
@@ -488,10 +496,15 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	]
 
 	@rdfs:label "has mass constraint value"
-	scalar property hasMassConstraintValue [
-		domain MassConstraint
-		range iso-80000-4:kilogram
+	relation entity HasMassConstraintQuantity :> metrology:UnitaryQuantity [
+		from MassConstraint
+		to MassConstraintQ
+        forward hasMassConstraintQuantity
+        functional
+        restricts all relation metrology:hasQuantityKind to 80000-4-kindsOfQuantities:mass
 	]
+
+    concept MassConstraintQ :> metrology:UnitaryQuantityValue
 
 	@rdfs:label "has multiplicity"
 	scalar property hasMultiplicity [
