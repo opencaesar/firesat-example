@@ -95,13 +95,14 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	concept MassConstraint :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
 		restricts all relation analysis:characterizes to MassConstrainedElement
     restricts all relation metrology:isQuantityOf to MassConstrainedElement
+		restricts relation metrology:hasKindOfQuantity to 80000-4-instances:mass
 	]
 
-  rule MasConstraint-isA-Quantity-and-QuantityValue [
+  rule MassConstraint-isA-Quantity-and-QuantityValue [
     MassConstraint(x) -> metrology:hasMagnitude(x,x)
   ]
 
-  rule MasConstraint-characterizes-implies-isQuantityOf [
+  rule MassConstraint-characterizes-implies-isQuantityOf [
     MassConstraint(x) ^ analysis:characterizes(x,y) ^ MassConstrainedElement(y) -> metrology:isQuantityOf(x,y)
   ]
 
@@ -335,34 +336,35 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	]
 
 	@rdfs:label "has cable impedance"
-	relation entity hasCableImpedance :> metrology:UnitaryQuantity [
-		from Net
-		to cableImpedance
-		forward hasCableImpedanceQ
-		functional
-		restricts all relation metrology:hasKindOfQuantity to 80000-6-kindsOfQuantities:resistance
+	concept CableImpedance :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
+		restricts all relation analysis:characterizes to Net
+    restricts all relation metrology:isQuantityOf to Net
+		restricts relation metrology:hasKindOfQuantity to 80000-6-instances:resistance
 	]
 
-  rule hasCableImpedenceImpliesIsQuantityOf [
-    hasCableImpedanceQ(hci, net) -> metrology:isQuantityOf(hci,net)
+  rule CableImpedance-isA-Quantity-and-QuantityValue [
+    CableImpedance(x) -> metrology:hasMagnitude(x,x)
   ]
 
-	concept cableImpedance :> metrology:UnitaryQuantityValue
+  rule CableImpedance-characterizes-implies-isQuantityOf [
+    CableImpedance(x) ^ analysis:characterizes(x,y) ^ Net(y) -> metrology:isQuantityOf(x,y)
+  ]
 
 	@rdfs:label "has cable length (m)"
-	relation entity hasCableLength :> metrology:UnitaryQuantity [
-		from Net
-		to cableLength
-		forward hasCableLengthQ
-		functional
-		restricts all relation metrology:hasKindOfQuantity to 80000-3-kindsOfQuantities:^length
+	concept CableLength :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
+		restricts all relation analysis:characterizes to Net
+    restricts all relation metrology:isQuantityOf to Net
+		restricts relation metrology:hasKindOfQuantity to 80000-3-instances:^length
 	]
 
-  rule hasCableLengthImpliesIsQuantityOf [
-    hasCableLengthQ(hcl, net) -> metrology:isQuantityOf(hcl,net)
+  rule CableLength-isA-Quantity-and-QuantityValue [
+    CableLength(x) -> metrology:hasMagnitude(x,x)
   ]
 
-	concept cableLength :> metrology:UnitaryQuantityValue
+  rule CableLength-characterizes-implies-isQuantityOf [
+    CableLength(x) ^ analysis:characterizes(x,y) ^ Net(y) -> metrology:isQuantityOf(x,y)
+  ]
+
 
 	@rdfs:label "has cable treatment"
 	scalar property hasCableTreatment [
