@@ -21,7 +21,7 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	aspect MassAllocatedElement :> MassConstrainedElement
 
 	@rdfs:label "Mass Constrained Element"
-	aspect MassConstrainedElement
+	aspect MassConstrainedElement :> metrology:Object 
 
 	@rdfs:label "Mass Estimated Element"
 	aspect MassEstimatedElement :> MassConstrainedElement
@@ -86,6 +86,26 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		restricts all relation analysis:characterizes to Function
 	]
 
+	@rdfs:label "Mass Constraint"
+	concept MassConstraint :> analysis:Characterization, metrology:Quantity, metrology:QuantityValue [
+		restricts all relation analysis:characterizes to MassConstrainedElement
+    restricts all relation metrology:isQuantityOf to MassConstrainedElement
+	]
+
+  rule MasConstraint-isA-Quantity-and-QuantityValue [
+    MassConstraint(x) -> metrology:hasMagnitude(x,x)
+  ]
+
+  rule MasConstraint-characterizes-implies-isQuantityOf [
+    MassConstraint(x) ^ analysis:characterizes(x,y) ^ MassConstrainedElement(y) -> metrology:isQuantityOf(x,y)
+  ]
+
+	@rdfs:label "Mass Estimation Constraint"
+	concept MassEstimationConstraint :> MassConstraint [
+		restricts all relation analysis:characterizes to MassEstimatedElement
+    restricts all relation metrology:isQuantityOf to MassEstimatedElement
+	]
+
 	@rdfs:label "MEV Mass Constraint"
 	concept MEVMassConstraint :> MassEstimationConstraint
 
@@ -95,17 +115,9 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	@rdfs:label "Mass Allocation Constraint"
 	concept MassAllocationConstraint :> MassConstraint [
 		restricts all relation analysis:characterizes to MassAllocatedElement
+    restricts all relation metrology:isQuantityOf to MassAllocatedElement
 	]
 
-	@rdfs:label "Mass Constraint"
-	concept MassConstraint :> analysis:Characterization, metrology:Object [
-		restricts all relation analysis:characterizes to MassConstrainedElement
-	]
-
-	@rdfs:label "Mass Estimation Constraint"
-	concept MassEstimationConstraint :> MassConstraint [
-		restricts all relation analysis:characterizes to MassEstimatedElement
-	]
 
 	@rdfs:label "Mass Limit Constraint"
 	concept MassLimitConstraint :> MassAllocationConstraint
@@ -319,25 +331,33 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	@rdfs:label "has cable impedance"
 	relation entity hasCableImpedance :> metrology:UnitaryQuantity [
-        from Net
+		from Net
 		to cableImpedance
-        forward hasCableImpedanceQ
-        functional
-        restricts all relation metrology:hasQuantityKind to 80000-6-kindsOfQuantities:resistance
+		forward hasCableImpedanceQ
+		functional
+		restricts all relation metrology:hasKindOfQuantity to 80000-6-kindsOfQuantities:resistance
 	]
 
-    concept cableImpedance :> metrology:UnitaryQuantityValue
+  rule hasCableImpedenceImpliesIsQuantityOf [
+    hasCableImpedanceQ(hci, net) -> metrology:isQuantityOf(hci,net)
+  ]
+
+	concept cableImpedance :> metrology:UnitaryQuantityValue
 
 	@rdfs:label "has cable length (m)"
 	relation entity hasCableLength :> metrology:UnitaryQuantity [
 		from Net
-        to cableLength
-        forward hasCableLengthQ
-        functional
-        restricts all relation metrology:hasQuantityKind to 80000-3-kindsOfQuantities:^length
+		to cableLength
+		forward hasCableLengthQ
+		functional
+		restricts all relation metrology:hasKindOfQuantity to 80000-3-kindsOfQuantities:^length
 	]
 
-    concept cableLength :> metrology:UnitaryQuantityValue
+  rule hasCableLengthImpliesIsQuantityOf [
+    hasCableLengthQ(hcl, net) -> metrology:isQuantityOf(hcl,net)
+  ]
+
+	concept cableLength :> metrology:UnitaryQuantityValue
 
 	@rdfs:label "has cable treatment"
 	scalar property hasCableTreatment [
@@ -496,15 +516,11 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	]
 
 	@rdfs:label "has mass constraint value"
-	relation entity HasMassConstraintQuantity :> metrology:UnitaryQuantity [
-		from MassConstraint
-		to MassConstraintQ
-        forward hasMassConstraintQuantity
-        functional
-        restricts all relation metrology:hasQuantityKind to 80000-4-kindsOfQuantities:mass
+	scalar property hasMassConstraintValue :> metrology:hasDoubleNumber [
+		domain MassConstraint
+		range xsd:double
+		functional
 	]
-
-    concept MassConstraintQ :> metrology:UnitaryQuantityValue
 
 	@rdfs:label "has multiplicity"
 	scalar property hasMultiplicity [
