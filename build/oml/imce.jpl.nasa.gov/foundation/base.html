@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/build/oml/imce.jpl.nasa.gov/foundation/base" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Base</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1859,7 +1859,7 @@ dfn > a.self-link::before      { content: "#"; }
      s.
     </para>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement①">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement①">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="project.html#concern" id="ref-for-concern">project:Concern</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>, <a data-link-type="dfn" href="project.html#product" id="ref-for-product">project:Product</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product①">mission:Product</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="project.html#concern" id="ref-for-concern">project:Concern</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product">mission:Product</a>, <a data-link-type="dfn" href="project.html#product" id="ref-for-product①">project:Product</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
@@ -2473,7 +2473,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-product">
    <a href="mission.html#product">mission.html#product</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-product①">4.1. AggregatedElement</a>
+    <li><a href="#ref-for-product">4.1. AggregatedElement</a>
     <li><a href="#ref-for-product②">4.4. IdentifiedElement</a>
    </ul>
   </aside>
@@ -2541,7 +2541,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-product">
    <a href="project.html#product">project.html#product</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-product">4.1. AggregatedElement</a>
+    <li><a href="#ref-for-product①">4.1. AggregatedElement</a>
     <li><a href="#ref-for-product③">4.4. IdentifiedElement</a>
    </ul>
   </aside>
@@ -2582,76 +2582,76 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-referencedesignatedelement" style="color:initial">referencedesignatedelement</span>
+     <li><span class="dfn-paneled" id="term-for-referencedesignatedelement">referencedesignatedelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/analysis]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-analyzedelement" style="color:initial">analyzedelement</span>
-     <li><span class="dfn-paneled" id="term-for-characterization" style="color:initial">characterization</span>
-     <li><span class="dfn-paneled" id="term-for-characterizedelement" style="color:initial">characterizedelement</span>
-     <li><span class="dfn-paneled" id="term-for-criterion" style="color:initial">criterion</span>
-     <li><span class="dfn-paneled" id="term-for-explanation" style="color:initial">explanation</span>
-     <li><span class="dfn-paneled" id="term-for-metric" style="color:initial">metric</span>
+     <li><span class="dfn-paneled" id="term-for-analyzedelement">analyzedelement</span>
+     <li><span class="dfn-paneled" id="term-for-characterization">characterization</span>
+     <li><span class="dfn-paneled" id="term-for-characterizedelement">characterizedelement</span>
+     <li><span class="dfn-paneled" id="term-for-criterion">criterion</span>
+     <li><span class="dfn-paneled" id="term-for-explanation">explanation</span>
+     <li><span class="dfn-paneled" id="term-for-metric">metric</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-aggregatedelement" style="color:initial">aggregatedelement</span>
-     <li><span class="dfn-paneled" id="term-for-aggregates" style="color:initial">aggregates</span>
-     <li><span class="dfn-paneled" id="term-for-containedelement" style="color:initial">containedelement</span>
-     <li><span class="dfn-paneled" id="term-for-container" style="color:initial">container</span>
-     <li><span class="dfn-paneled" id="term-for-contains" style="color:initial">contains</span>
-     <li><span class="dfn-paneled" id="term-for-hasalternatename" style="color:initial">hasalternatename</span>
-     <li><span class="dfn-paneled" id="term-for-hascanonicalname" style="color:initial">hascanonicalname</span>
-     <li><span class="dfn-paneled" id="term-for-hascontainmentindex" style="color:initial">hascontainmentindex</span>
-     <li><span class="dfn-paneled" id="term-for-hasdescription" style="color:initial">hasdescription</span>
-     <li><span class="dfn-paneled" id="term-for-hasidentifier" style="color:initial">hasidentifier</span>
-     <li><span class="dfn-paneled" id="term-for-hasindexentry" style="color:initial">hasindexentry</span>
-     <li><span class="dfn-paneled" id="term-for-hasshortname" style="color:initial">hasshortname</span>
-     <li><span class="dfn-paneled" id="term-for-hassortkey" style="color:initial">hassortkey</span>
-     <li><span class="dfn-paneled" id="term-for-hasuuid" style="color:initial">hasuuid</span>
-     <li><span class="dfn-paneled" id="term-for-identifiedelement" style="color:initial">identifiedelement</span>
-     <li><span class="dfn-paneled" id="term-for-package" style="color:initial">package</span>
+     <li><span class="dfn-paneled" id="term-for-aggregatedelement">aggregatedelement</span>
+     <li><span class="dfn-paneled" id="term-for-aggregates">aggregates</span>
+     <li><span class="dfn-paneled" id="term-for-containedelement">containedelement</span>
+     <li><span class="dfn-paneled" id="term-for-container">container</span>
+     <li><span class="dfn-paneled" id="term-for-contains">contains</span>
+     <li><span class="dfn-paneled" id="term-for-hasalternatename">hasalternatename</span>
+     <li><span class="dfn-paneled" id="term-for-hascanonicalname">hascanonicalname</span>
+     <li><span class="dfn-paneled" id="term-for-hascontainmentindex">hascontainmentindex</span>
+     <li><span class="dfn-paneled" id="term-for-hasdescription">hasdescription</span>
+     <li><span class="dfn-paneled" id="term-for-hasidentifier">hasidentifier</span>
+     <li><span class="dfn-paneled" id="term-for-hasindexentry">hasindexentry</span>
+     <li><span class="dfn-paneled" id="term-for-hasshortname">hasshortname</span>
+     <li><span class="dfn-paneled" id="term-for-hassortkey">hassortkey</span>
+     <li><span class="dfn-paneled" id="term-for-hasuuid">hasuuid</span>
+     <li><span class="dfn-paneled" id="term-for-identifiedelement">identifiedelement</span>
+     <li><span class="dfn-paneled" id="term-for-package">package</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-component" style="color:initial">component</span>
-     <li><span class="dfn-paneled" id="term-for-environment" style="color:initial">environment</span>
-     <li><span class="dfn-paneled" id="term-for-flow" style="color:initial">flow</span>
-     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
-     <li><span class="dfn-paneled" id="term-for-interchange" style="color:initial">interchange</span>
-     <li><span class="dfn-paneled" id="term-for-interchangepoint" style="color:initial">interchangepoint</span>
-     <li><span class="dfn-paneled" id="term-for-interface" style="color:initial">interface</span>
-     <li><span class="dfn-paneled" id="term-for-item" style="color:initial">item</span>
-     <li><span class="dfn-paneled" id="term-for-junction" style="color:initial">junction</span>
-     <li><span class="dfn-paneled" id="term-for-mission" style="color:initial">mission</span>
-     <li><span class="dfn-paneled" id="term-for-objective" style="color:initial">objective</span>
-     <li><span class="dfn-paneled" id="term-for-product" style="color:initial">product</span>
-     <li><span class="dfn-paneled" id="term-for-requirement" style="color:initial">requirement</span>
-     <li><span class="dfn-paneled" id="term-for-specifiedelement" style="color:initial">specifiedelement</span>
+     <li><span class="dfn-paneled" id="term-for-component">component</span>
+     <li><span class="dfn-paneled" id="term-for-environment">environment</span>
+     <li><span class="dfn-paneled" id="term-for-flow">flow</span>
+     <li><span class="dfn-paneled" id="term-for-function">function</span>
+     <li><span class="dfn-paneled" id="term-for-interchange">interchange</span>
+     <li><span class="dfn-paneled" id="term-for-interchangepoint">interchangepoint</span>
+     <li><span class="dfn-paneled" id="term-for-interface">interface</span>
+     <li><span class="dfn-paneled" id="term-for-item">item</span>
+     <li><span class="dfn-paneled" id="term-for-junction">junction</span>
+     <li><span class="dfn-paneled" id="term-for-mission">mission</span>
+     <li><span class="dfn-paneled" id="term-for-objective">objective</span>
+     <li><span class="dfn-paneled" id="term-for-product">product</span>
+     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
+     <li><span class="dfn-paneled" id="term-for-specifiedelement">specifiedelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-authority" style="color:initial">authority</span>
-     <li><span class="dfn-paneled" id="term-for-concern" style="color:initial">concern</span>
-     <li><span class="dfn-paneled" id="term-for-deliverable" style="color:initial">deliverable</span>
-     <li><span class="dfn-paneled" id="term-for-facility" style="color:initial">facility</span>
-     <li><span class="dfn-paneled" id="term-for-interchange①" style="color:initial">interchange</span>
-     <li><span class="dfn-paneled" id="term-for-interchangepoint①" style="color:initial">interchangepoint</span>
-     <li><span class="dfn-paneled" id="term-for-person" style="color:initial">person</span>
-     <li><span class="dfn-paneled" id="term-for-process" style="color:initial">process</span>
-     <li><span class="dfn-paneled" id="term-for-product①" style="color:initial">product</span>
-     <li><span class="dfn-paneled" id="term-for-role" style="color:initial">role</span>
-     <li><span class="dfn-paneled" id="term-for-stakeholder" style="color:initial">stakeholder</span>
-     <li><span class="dfn-paneled" id="term-for-workpackage" style="color:initial">workpackage</span>
+     <li><span class="dfn-paneled" id="term-for-authority">authority</span>
+     <li><span class="dfn-paneled" id="term-for-concern">concern</span>
+     <li><span class="dfn-paneled" id="term-for-deliverable">deliverable</span>
+     <li><span class="dfn-paneled" id="term-for-facility">facility</span>
+     <li><span class="dfn-paneled" id="term-for-interchange①">interchange</span>
+     <li><span class="dfn-paneled" id="term-for-interchangepoint①">interchangepoint</span>
+     <li><span class="dfn-paneled" id="term-for-person">person</span>
+     <li><span class="dfn-paneled" id="term-for-process">process</span>
+     <li><span class="dfn-paneled" id="term-for-product①">product</span>
+     <li><span class="dfn-paneled" id="term-for-role">role</span>
+     <li><span class="dfn-paneled" id="term-for-stakeholder">stakeholder</span>
+     <li><span class="dfn-paneled" id="term-for-workpackage">workpackage</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://www.w3.org/2001/xmlschema]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-string" style="color:initial">string</span>
+     <li><span class="dfn-paneled" id="term-for-string">string</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

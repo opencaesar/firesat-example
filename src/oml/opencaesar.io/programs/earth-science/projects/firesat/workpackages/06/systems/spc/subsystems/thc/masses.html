@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/masses" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Thermal Control Masses</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1815,6 +1815,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:characterizes</a> <a data-link-type="dfn" href="thc.html#thermalcontrol" id="ref-for-thermalcontrol">thc:ThermalControl</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram">80000-4-instances:kilogram</a></p>
     </ul>
    </div>
   </main>
@@ -1970,6 +1972,18 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterizes">3.1. ThermalControlMassLimitConstraint</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="../../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram">../../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram">3.1. ThermalControlMassLimitConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasreference">
+   <a href="../../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference">../../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasreference">3.1. ThermalControlMassLimitConstraint</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-thermalcontrol">
    <a href="thc.html#thermalcontrol">thc.html#thermalcontrol</a><b>Referenced in:</b>
    <ul>
@@ -1981,18 +1995,28 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-hasmassconstraintvalue" style="color:initial">hasmassconstraintvalue</span>
-     <li><span class="dfn-paneled" id="term-for-masslimitconstraint" style="color:initial">masslimitconstraint</span>
+     <li><span class="dfn-paneled" id="term-for-hasmassconstraintvalue">hasmassconstraintvalue</span>
+     <li><span class="dfn-paneled" id="term-for-masslimitconstraint">masslimitconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/analysis]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-characterizes" style="color:initial">characterizes</span>
+     <li><span class="dfn-paneled" id="term-for-characterizes">characterizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-thermalcontrol" style="color:initial">thermalcontrol</span>
+     <li><span class="dfn-paneled" id="term-for-thermalcontrol">thermalcontrol</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

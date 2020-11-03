@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Command and Data Handling Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2425,41 +2425,41 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
-     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+     <li><span class="dfn-paneled" id="term-for-function">function</span>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs">performs</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
+     <li><span class="dfn-paneled" id="term-for-realizes">realizes</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-applycommands" style="color:initial">applycommands</span>
-     <li><span class="dfn-paneled" id="term-for-detectnewwildfires" style="color:initial">detectnewwildfires</span>
-     <li><span class="dfn-paneled" id="term-for-generatetelemetry" style="color:initial">generatetelemetry</span>
-     <li><span class="dfn-paneled" id="term-for-insuremechanicalintegrity" style="color:initial">insuremechanicalintegrity</span>
-     <li><span class="dfn-paneled" id="term-for-launch_sc" style="color:initial">launch_sc</span>
-     <li><span class="dfn-paneled" id="term-for-protectagainstradiations" style="color:initial">protectagainstradiations</span>
-     <li><span class="dfn-paneled" id="term-for-release_sc_from_lv" style="color:initial">release_sc_from_lv</span>
-     <li><span class="dfn-paneled" id="term-for-storedatabetweentwotelemetries" style="color:initial">storedatabetweentwotelemetries</span>
+     <li><span class="dfn-paneled" id="term-for-applycommands">applycommands</span>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfires">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="term-for-generatetelemetry">generatetelemetry</span>
+     <li><span class="dfn-paneled" id="term-for-insuremechanicalintegrity">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="term-for-launch_sc">launch_sc</span>
+     <li><span class="dfn-paneled" id="term-for-protectagainstradiations">protectagainstradiations</span>
+     <li><span class="dfn-paneled" id="term-for-release_sc_from_lv">release_sc_from_lv</span>
+     <li><span class="dfn-paneled" id="term-for-storedatabetweentwotelemetries">storedatabetweentwotelemetries</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-incidentprocessing" style="color:initial">incidentprocessing</span>
+     <li><span class="dfn-paneled" id="term-for-incidentprocessing">incidentprocessing</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit" style="color:initial">primaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit">primaryflightcomputerunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-detectnewwildfiresbyprimaryflightcomputerunit" style="color:initial">detectnewwildfiresbyprimaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="term-for-detectnewwildfiresbyprimaryflightcomputerunit">detectnewwildfiresbyprimaryflightcomputerunit</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

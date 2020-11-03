@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Spacecraft Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2394,55 +2394,55 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-refines" style="color:initial">refines</span>
-     <li><span class="dfn-paneled" id="term-for-requirement" style="color:initial">requirement</span>
+     <li><span class="dfn-paneled" id="term-for-refines">refines</span>
+     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/environmental]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-qualificationofheritageflighthardware" style="color:initial">qualificationofheritageflighthardware</span>
-     <li><span class="dfn-paneled" id="term-for-spaceenvironmenteffectsonmaterialselection" style="color:initial">spaceenvironmenteffectsonmaterialselection</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequency" style="color:initial">spacevehiclenaturalfrequency</span>
-     <li><span class="dfn-paneled" id="term-for-structuralqualification" style="color:initial">structuralqualification</span>
+     <li><span class="dfn-paneled" id="term-for-qualificationofheritageflighthardware">qualificationofheritageflighthardware</span>
+     <li><span class="dfn-paneled" id="term-for-spaceenvironmenteffectsonmaterialselection">spaceenvironmenteffectsonmaterialselection</span>
+     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequency">spacevehiclenaturalfrequency</span>
+     <li><span class="dfn-paneled" id="term-for-structuralqualification">structuralqualification</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/logistical]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-availability" style="color:initial">availability</span>
-     <li><span class="dfn-paneled" id="term-for-facilities" style="color:initial">facilities</span>
-     <li><span class="dfn-paneled" id="term-for-faultprotection" style="color:initial">faultprotection</span>
-     <li><span class="dfn-paneled" id="term-for-maintainability" style="color:initial">maintainability</span>
-     <li><span class="dfn-paneled" id="term-for-reliability" style="color:initial">reliability</span>
-     <li><span class="dfn-paneled" id="term-for-supply" style="color:initial">supply</span>
-     <li><span class="dfn-paneled" id="term-for-trainingandpersonel" style="color:initial">trainingandpersonel</span>
-     <li><span class="dfn-paneled" id="term-for-transportation" style="color:initial">transportation</span>
+     <li><span class="dfn-paneled" id="term-for-availability">availability</span>
+     <li><span class="dfn-paneled" id="term-for-facilities">facilities</span>
+     <li><span class="dfn-paneled" id="term-for-faultprotection">faultprotection</span>
+     <li><span class="dfn-paneled" id="term-for-maintainability">maintainability</span>
+     <li><span class="dfn-paneled" id="term-for-reliability">reliability</span>
+     <li><span class="dfn-paneled" id="term-for-supply">supply</span>
+     <li><span class="dfn-paneled" id="term-for-trainingandpersonel">trainingandpersonel</span>
+     <li><span class="dfn-paneled" id="term-for-transportation">transportation</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/operational]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-minimumelevationangle" style="color:initial">minimumelevationangle</span>
-     <li><span class="dfn-paneled" id="term-for-orbitinclination" style="color:initial">orbitinclination</span>
+     <li><span class="dfn-paneled" id="term-for-minimumelevationangle">minimumelevationangle</span>
+     <li><span class="dfn-paneled" id="term-for-orbitinclination">orbitinclination</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/performance]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-timeerror" style="color:initial">timeerror</span>
+     <li><span class="dfn-paneled" id="term-for-timeerror">timeerror</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-maturityofnewtechnologies" style="color:initial">maturityofnewtechnologies</span>
-     <li><span class="dfn-paneled" id="term-for-numberofsatellites" style="color:initial">numberofsatellites</span>
-     <li><span class="dfn-paneled" id="term-for-powerbudget" style="color:initial">powerbudget</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclemass" style="color:initial">spacevehiclemass</span>
+     <li><span class="dfn-paneled" id="term-for-maturityofnewtechnologies">maturityofnewtechnologies</span>
+     <li><span class="dfn-paneled" id="term-for-numberofsatellites">numberofsatellites</span>
+     <li><span class="dfn-paneled" id="term-for-powerbudget">powerbudget</span>
+     <li><span class="dfn-paneled" id="term-for-spacevehiclemass">spacevehiclemass</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/system]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-manufacturability" style="color:initial">manufacturability</span>
-     <li><span class="dfn-paneled" id="term-for-primeitemdefinition" style="color:initial">primeitemdefinition</span>
-     <li><span class="dfn-paneled" id="term-for-securityandsafety" style="color:initial">securityandsafety</span>
-     <li><span class="dfn-paneled" id="term-for-standardsample" style="color:initial">standardsample</span>
+     <li><span class="dfn-paneled" id="term-for-manufacturability">manufacturability</span>
+     <li><span class="dfn-paneled" id="term-for-primeitemdefinition">primeitemdefinition</span>
+     <li><span class="dfn-paneled" id="term-for-securityandsafety">securityandsafety</span>
+     <li><span class="dfn-paneled" id="term-for-standardsample">standardsample</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

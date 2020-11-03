@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/systems/signals" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">FireSat Signals</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2063,44 +2063,44 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-connectsassembly1" style="color:initial">connectsassembly1</span>
-     <li><span class="dfn-paneled" id="term-for-connectsassembly2" style="color:initial">connectsassembly2</span>
-     <li><span class="dfn-paneled" id="term-for-hasendcircuittype" style="color:initial">hasendcircuittype</span>
-     <li><span class="dfn-paneled" id="term-for-hasfunctiondirection" style="color:initial">hasfunctiondirection</span>
-     <li><span class="dfn-paneled" id="term-for-hasfunctionnumber" style="color:initial">hasfunctionnumber</span>
+     <li><span class="dfn-paneled" id="term-for-connectsassembly1">connectsassembly1</span>
+     <li><span class="dfn-paneled" id="term-for-connectsassembly2">connectsassembly2</span>
+     <li><span class="dfn-paneled" id="term-for-hasendcircuittype">hasendcircuittype</span>
+     <li><span class="dfn-paneled" id="term-for-hasfunctiondirection">hasfunctiondirection</span>
+     <li><span class="dfn-paneled" id="term-for-hasfunctionnumber">hasfunctionnumber</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/functions]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-unidirectionalpower" style="color:initial">unidirectionalpower</span>
+     <li><span class="dfn-paneled" id="term-for-unidirectionalpower">unidirectionalpower</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-joins1" style="color:initial">joins1</span>
-     <li><span class="dfn-paneled" id="term-for-joins2" style="color:initial">joins2</span>
+     <li><span class="dfn-paneled" id="term-for-joins1">joins1</span>
+     <li><span class="dfn-paneled" id="term-for-joins2">joins2</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-payloadmodule" style="color:initial">payloadmodule</span>
-     <li><span class="dfn-paneled" id="term-for-sensor" style="color:initial">sensor</span>
+     <li><span class="dfn-paneled" id="term-for-payloadmodule">payloadmodule</span>
+     <li><span class="dfn-paneled" id="term-for-sensor">sensor</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-payloadmodulepowerin" style="color:initial">payloadmodulepowerin</span>
-     <li><span class="dfn-paneled" id="term-for-sensorpowerin" style="color:initial">sensorpowerin</span>
+     <li><span class="dfn-paneled" id="term-for-payloadmodulepowerin">payloadmodulepowerin</span>
+     <li><span class="dfn-paneled" id="term-for-sensorpowerin">sensorpowerin</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunit" style="color:initial">epsregulatorsandconvertersunit</span>
+     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunit">epsregulatorsandconvertersunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunitpowerout3" style="color:initial">epsregulatorsandconvertersunitpowerout3</span>
+     <li><span class="dfn-paneled" id="term-for-epsregulatorsandconvertersunitpowerout3">epsregulatorsandconvertersunitpowerout3</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

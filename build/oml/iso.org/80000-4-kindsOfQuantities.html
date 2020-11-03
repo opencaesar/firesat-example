@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>ISO-80000-3</title>
+  <title>80000-4-kindsOfQuantities</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-3" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
+  <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-4-kindsOfQuantities" rel="canonical">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,20 +1744,26 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref allcaps" id="title">ISO-80000-3</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">80000-4-kindsOfQuantities</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-3">https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-3</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-4-kindsOfQuantities">https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-4-kindsOfQuantities</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">ISO</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
-     <dd>Copyright 2019 ISO.
+     <dd>
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1724,7 +1771,6 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>The ISO 80000 Part 3 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1733,16 +1779,28 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#Hertz"><span class="secno">3.1</span> <span class="content"><span>hertz</span></span></a>
-      <li><a href="#Metre"><span class="secno">3.2</span> <span class="content"><span>metre</span></span></a>
-      <li><a href="#Millisecond"><span class="secno">3.3</span> <span class="content"><span>millisecond</span></span></a>
+      <li><a href="#Mass"><span class="secno">3.1</span> <span class="content"><span>mass</span></span></a>
+      <li><a href="#Momentum"><span class="secno">3.2</span> <span class="content"><span>momentum</span></span></a>
+      <li><a href="#Force"><span class="secno">3.3</span> <span class="content"><span>force</span></span></a>
+      <li><a href="#Power"><span class="secno">3.4</span> <span class="content"><span>power</span></span></a>
+     </ol>
+    <li>
+     <a href="#Relations"><span class="secno">4</span> <span class="content">Relation Entities</span></a>
+     <ol class="toc">
+      <li><a href="#Momentum-of-mass"><span class="secno">4.1</span> <span class="content"><span>momentum-of-mass</span></span></a>
+      <li><a href="#Momentum-of-velocity"><span class="secno">4.2</span> <span class="content"><span>momentum-of-velocity</span></span></a>
+      <li><a href="#Force-of-momentum"><span class="secno">4.3</span> <span class="content"><span>force-of-momentum</span></span></a>
+      <li><a href="#Force-of-velocity"><span class="secno">4.4</span> <span class="content"><span>force-of-velocity</span></span></a>
+      <li><a href="#Power-of-force"><span class="secno">4.5</span> <span class="content"><span>power-of-force</span></span></a>
+      <li><a href="#Power-of-velocity"><span class="secno">4.6</span> <span class="content"><span>power-of-velocity</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
@@ -1751,17 +1809,120 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>iso-80000-3: <a href="iso-80000-3.html">http://iso.org/iso-80000-3</a></p>
+      <p>80000-4-kindsOfQuantities: <a href="80000-4-kindsOfQuantities.html">http://iso.org/80000-4-kindsOfQuantities</a></p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>iso-80000-2: <a href="http://iso.org/iso-80000-2.html">http://iso.org/iso-80000-2</a></p>
+      <p>80000-4-units: <a href="http://iso.org/80000-4-units.html">http://iso.org/80000-4-units</a></p>
+     <li data-md>
+      <p>80000-3-kindsOfQuantities: <a href="http://iso.org/80000-3-kindsOfQuantities.html">http://iso.org/80000-3-kindsOfQuantities</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Hertz"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
-    <h3 class="heading settled" data-level="3.2" id="Metre"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
-    <h3 class="heading settled" data-level="3.3" id="Millisecond"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Mass"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="mass">mass<a class="self-link" href="#mass"></a></dfn></span><a class="self-link" href="#Mass"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#independentunitarykindofquantity" id="ref-for-independentunitarykindofquantity">metrology:IndependentUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity" id="ref-for-isdimensionlesskindofquantity">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>mass <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-4-units.html#unitofmass" id="ref-for-unitofmass">80000-4-units:UnitOfMass</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum" id="ref-for-momentum">momentum</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum-of-mass-forward" id="ref-for-momentum-of-mass-forward">momentum-of-mass-forward</a> mass</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="Momentum"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum">momentum<a class="self-link" href="#momentum"></a></dfn></span><a class="self-link" href="#Momentum"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity" id="ref-for-isdimensionlesskindofquantity①">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>momentum <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity①">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-4-units.html#unitofmomentum" id="ref-for-unitofmomentum">80000-4-units:UnitOfMomentum</a></p>
+     <li data-md>
+      <p>momentum <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum-of-mass-forward" id="ref-for-momentum-of-mass-forward①">momentum-of-mass-forward</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#mass" id="ref-for-mass">mass</a></p>
+     <li data-md>
+      <p>momentum <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum-of-velocity-forward" id="ref-for-momentum-of-velocity-forward">momentum-of-velocity-forward</a> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity">80000-3-kindsOfQuantities:velocity</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force">force</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force-of-momentum-forward" id="ref-for-force-of-momentum-forward">force-of-momentum-forward</a> momentum</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.3" id="Force"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force">force<a class="self-link" href="#force"></a></dfn></span><a class="self-link" href="#Force"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity①">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity" id="ref-for-isdimensionlesskindofquantity②">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>force <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity②">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-4-units.html#unitofforce" id="ref-for-unitofforce">80000-4-units:UnitOfForce</a></p>
+     <li data-md>
+      <p>force <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force-of-momentum-forward" id="ref-for-force-of-momentum-forward①">force-of-momentum-forward</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum" id="ref-for-momentum①">momentum</a></p>
+     <li data-md>
+      <p>force <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force-of-velocity-forward" id="ref-for-force-of-velocity-forward">force-of-velocity-forward</a> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity①">80000-3-kindsOfQuantities:velocity</a></p>
+    </ul>
+    <p><em>Relations with range:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength" id="ref-for-electric-field-strength">80000-6-kindsOfQuantities:electric-field-strength</a> <a data-link-type="dfn" href="80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward" id="ref-for-electric-field-strength-of-force-forward">80000-6-kindsOfQuantities:electric-field-strength-of-force-forward</a> force</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power" id="ref-for-power">power</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power-of-force-forward" id="ref-for-power-of-force-forward">power-of-force-forward</a> force</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="Power"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity" id="ref-for-derivedunitarykindofquantity②">metrology:DerivedUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity" id="ref-for-isdimensionlesskindofquantity③">metrology:isDimensionlessKindOfQuantity</a> (must have value false)</p>
+    <p><em>Relations with domain:</em></p>
+    <ul>
+     <li data-md>
+      <p>power <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity" id="ref-for-forquantitiesofthesameunitarykindofquantity③">metrology:forQuantitiesOfTheSameUnitaryKindOfQuantity</a> <a data-link-type="dfn" href="80000-4-units.html#unitofpower" id="ref-for-unitofpower">80000-4-units:UnitOfPower</a></p>
+     <li data-md>
+      <p>power <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power-of-force-forward" id="ref-for-power-of-force-forward①">power-of-force-forward</a> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force①">force</a></p>
+     <li data-md>
+      <p>power <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power-of-velocity-forward" id="ref-for-power-of-velocity-forward">power-of-velocity-forward</a> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity②">80000-3-kindsOfQuantities:velocity</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Momentum-of-mass"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum-of-mass">momentum-of-mass<a class="self-link" href="#momentum-of-mass"></a></dfn></span><a class="self-link" href="#Momentum-of-mass"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum" id="ref-for-momentum②">momentum</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#mass" id="ref-for-mass①">mass</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="momentum-of-mass" data-dfn-type="attribute" data-export id="dom-momentum-of-mass-momentum-of-mass-forward"><code>momentum-of-mass-forward</code><a class="self-link" href="#dom-momentum-of-mass-momentum-of-mass-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.2" id="Momentum-of-velocity"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum-of-velocity">momentum-of-velocity<a class="self-link" href="#momentum-of-velocity"></a></dfn></span><a class="self-link" href="#Momentum-of-velocity"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum" id="ref-for-momentum③">momentum</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity③">80000-3-kindsOfQuantities:velocity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="momentum-of-velocity" data-dfn-type="attribute" data-export id="dom-momentum-of-velocity-momentum-of-velocity-forward"><code>momentum-of-velocity-forward</code><a class="self-link" href="#dom-momentum-of-velocity-momentum-of-velocity-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity①">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value -1/1)</p>
+    <h3 class="heading settled" data-level="4.3" id="Force-of-momentum"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force-of-momentum">force-of-momentum<a class="self-link" href="#force-of-momentum"></a></dfn></span><a class="self-link" href="#Force-of-momentum"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force②">force</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#momentum" id="ref-for-momentum④">momentum</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="force-of-momentum" data-dfn-type="attribute" data-export id="dom-force-of-momentum-force-of-momentum-forward"><code>force-of-momentum-forward</code><a class="self-link" href="#dom-force-of-momentum-force-of-momentum-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity②">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.4" id="Force-of-velocity"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force-of-velocity">force-of-velocity<a class="self-link" href="#force-of-velocity"></a></dfn></span><a class="self-link" href="#Force-of-velocity"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force③">force</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity④">80000-3-kindsOfQuantities:velocity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="force-of-velocity" data-dfn-type="attribute" data-export id="dom-force-of-velocity-force-of-velocity-forward"><code>force-of-velocity-forward</code><a class="self-link" href="#dom-force-of-velocity-force-of-velocity-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity③">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.5" id="Power-of-force"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power-of-force">power-of-force<a class="self-link" href="#power-of-force"></a></dfn></span><a class="self-link" href="#Power-of-force"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power" id="ref-for-power①">power</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#force" id="ref-for-force④">force</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="power-of-force" data-dfn-type="attribute" data-export id="dom-power-of-force-power-of-force-forward"><code>power-of-force-forward</code><a class="self-link" href="#dom-power-of-force-power-of-force-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity④">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value 1/1)</p>
+    <h3 class="heading settled" data-level="4.6" id="Power-of-velocity"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power-of-velocity">power-of-velocity<a class="self-link" href="#power-of-velocity"></a></dfn></span><a class="self-link" href="#Power-of-velocity"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-kindsOfQuantities.html#power" id="ref-for-power②">power</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity⑤">80000-3-kindsOfQuantities:velocity</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="power-of-velocity" data-dfn-type="attribute" data-export id="dom-power-of-velocity-power-of-velocity-forward"><code>power-of-velocity-forward</code><a class="self-link" href="#dom-power-of-velocity-power-of-velocity-forward"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity" id="ref-for-hasfactorforunitarykindofquantity⑤">metrology:HasFactorForUnitaryKindOfQuantity</a></p>
+    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value 1/1)</p>
    </div>
   </main>
 <script>
@@ -1896,7 +2057,297 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#hertz">hertz</a><span>, in §3.1</span>
-   <li><a href="#metre">metre</a><span>, in §3.2</span>
-   <li><a href="#millisecond">millisecond</a><span>, in §3.3</span>
+   <li><a href="#force">force</a><span>, in §3.3</span>
+   <li><a href="#force-of-momentum">force-of-momentum</a><span>, in §4.3</span>
+   <li><a href="#dom-force-of-momentum-force-of-momentum-forward">force-of-momentum-forward</a><span>, in §4.3</span>
+   <li><a href="#force-of-velocity">force-of-velocity</a><span>, in §4.4</span>
+   <li><a href="#dom-force-of-velocity-force-of-velocity-forward">force-of-velocity-forward</a><span>, in §4.4</span>
+   <li><a href="#mass">mass</a><span>, in §3.1</span>
+   <li><a href="#momentum">momentum</a><span>, in §3.2</span>
+   <li><a href="#momentum-of-mass">momentum-of-mass</a><span>, in §4.1</span>
+   <li><a href="#dom-momentum-of-mass-momentum-of-mass-forward">momentum-of-mass-forward</a><span>, in §4.1</span>
+   <li><a href="#momentum-of-velocity">momentum-of-velocity</a><span>, in §4.2</span>
+   <li><a href="#dom-momentum-of-velocity-momentum-of-velocity-forward">momentum-of-velocity-forward</a><span>, in §4.2</span>
+   <li><a href="#power">power</a><span>, in §3.4</span>
+   <li><a href="#power-of-force">power-of-force</a><span>, in §4.5</span>
+   <li><a href="#dom-power-of-force-power-of-force-forward">power-of-force-forward</a><span>, in §4.5</span>
+   <li><a href="#power-of-velocity">power-of-velocity</a><span>, in §4.6</span>
+   <li><a href="#dom-power-of-velocity-power-of-velocity-forward">power-of-velocity-forward</a><span>, in §4.6</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-velocity">
+   <a href="80000-3-kindsOfQuantities.html#velocity">80000-3-kindsOfQuantities.html#velocity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-velocity">3.2. momentum</a>
+    <li><a href="#ref-for-velocity①">3.3. force</a>
+    <li><a href="#ref-for-velocity②">3.4. power</a>
+    <li><a href="#ref-for-velocity③">4.2. momentum-of-velocity</a>
+    <li><a href="#ref-for-velocity④">4.4. force-of-velocity</a>
+    <li><a href="#ref-for-velocity⑤">4.6. power-of-velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-force">
+   <a href="80000-4-kindsOfQuantities.html#force">80000-4-kindsOfQuantities.html#force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-force">3.2. momentum</a>
+    <li><a href="#ref-for-force①">3.4. power</a>
+    <li><a href="#ref-for-force②">4.3. force-of-momentum</a>
+    <li><a href="#ref-for-force③">4.4. force-of-velocity</a>
+    <li><a href="#ref-for-force④">4.5. power-of-force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-force-of-momentum-forward">
+   <a href="80000-4-kindsOfQuantities.html#force-of-momentum-forward">80000-4-kindsOfQuantities.html#force-of-momentum-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-force-of-momentum-forward">3.2. momentum</a>
+    <li><a href="#ref-for-force-of-momentum-forward①">3.3. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-force-of-velocity-forward">
+   <a href="80000-4-kindsOfQuantities.html#force-of-velocity-forward">80000-4-kindsOfQuantities.html#force-of-velocity-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-force-of-velocity-forward">3.3. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-mass">
+   <a href="80000-4-kindsOfQuantities.html#mass">80000-4-kindsOfQuantities.html#mass</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-mass">3.2. momentum</a>
+    <li><a href="#ref-for-mass①">4.1. momentum-of-mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentum">
+   <a href="80000-4-kindsOfQuantities.html#momentum">80000-4-kindsOfQuantities.html#momentum</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentum">3.1. mass</a>
+    <li><a href="#ref-for-momentum①">3.3. force</a>
+    <li><a href="#ref-for-momentum②">4.1. momentum-of-mass</a>
+    <li><a href="#ref-for-momentum③">4.2. momentum-of-velocity</a>
+    <li><a href="#ref-for-momentum④">4.3. force-of-momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentum-of-mass-forward">
+   <a href="80000-4-kindsOfQuantities.html#momentum-of-mass-forward">80000-4-kindsOfQuantities.html#momentum-of-mass-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentum-of-mass-forward">3.1. mass</a>
+    <li><a href="#ref-for-momentum-of-mass-forward①">3.2. momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentum-of-velocity-forward">
+   <a href="80000-4-kindsOfQuantities.html#momentum-of-velocity-forward">80000-4-kindsOfQuantities.html#momentum-of-velocity-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentum-of-velocity-forward">3.2. momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-power">
+   <a href="80000-4-kindsOfQuantities.html#power">80000-4-kindsOfQuantities.html#power</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power">3.3. force</a>
+    <li><a href="#ref-for-power①">4.5. power-of-force</a>
+    <li><a href="#ref-for-power②">4.6. power-of-velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-power-of-force-forward">
+   <a href="80000-4-kindsOfQuantities.html#power-of-force-forward">80000-4-kindsOfQuantities.html#power-of-force-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power-of-force-forward">3.3. force</a>
+    <li><a href="#ref-for-power-of-force-forward①">3.4. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-power-of-velocity-forward">
+   <a href="80000-4-kindsOfQuantities.html#power-of-velocity-forward">80000-4-kindsOfQuantities.html#power-of-velocity-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power-of-velocity-forward">3.4. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofforce">
+   <a href="80000-4-units.html#unitofforce">80000-4-units.html#unitofforce</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofforce">3.3. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofmass">
+   <a href="80000-4-units.html#unitofmass">80000-4-units.html#unitofmass</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofmass">3.1. mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofmomentum">
+   <a href="80000-4-units.html#unitofmomentum">80000-4-units.html#unitofmomentum</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofmomentum">3.2. momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitofpower">
+   <a href="80000-4-units.html#unitofpower">80000-4-units.html#unitofpower</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitofpower">3.4. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
+   <a href="80000-6-kindsOfQuantities.html#electric-field-strength">80000-6-kindsOfQuantities.html#electric-field-strength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength">3.3. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-electric-field-strength-of-force-forward">
+   <a href="80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward">80000-6-kindsOfQuantities.html#electric-field-strength-of-force-forward</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-electric-field-strength-of-force-forward">3.3. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-derivedunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#derivedunitarykindofquantity">../ontology.iupac.org/metrology.html#derivedunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-derivedunitarykindofquantity">3.2. momentum</a>
+    <li><a href="#ref-for-derivedunitarykindofquantity①">3.3. force</a>
+    <li><a href="#ref-for-derivedunitarykindofquantity②">3.4. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-exponent">
+   <a href="../ontology.iupac.org/metrology.html#exponent">../ontology.iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-exponent">4.1. momentum-of-mass</a>
+    <li><a href="#ref-for-exponent①">4.2. momentum-of-velocity</a>
+    <li><a href="#ref-for-exponent②">4.3. force-of-momentum</a>
+    <li><a href="#ref-for-exponent③">4.4. force-of-velocity</a>
+    <li><a href="#ref-for-exponent④">4.5. power-of-force</a>
+    <li><a href="#ref-for-exponent⑤">4.6. power-of-velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-forquantitiesofthesameunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity">../ontology.iupac.org/metrology.html#forquantitiesofthesameunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity">3.1. mass</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity①">3.2. momentum</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity②">3.3. force</a>
+    <li><a href="#ref-for-forquantitiesofthesameunitarykindofquantity③">3.4. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasfactorforunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity">../ontology.iupac.org/metrology.html#hasfactorforunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity">4.1. momentum-of-mass</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity①">4.2. momentum-of-velocity</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity②">4.3. force-of-momentum</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity③">4.4. force-of-velocity</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity④">4.5. power-of-force</a>
+    <li><a href="#ref-for-hasfactorforunitarykindofquantity⑤">4.6. power-of-velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-independentunitarykindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#independentunitarykindofquantity">../ontology.iupac.org/metrology.html#independentunitarykindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-independentunitarykindofquantity">3.1. mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isdimensionlesskindofquantity">
+   <a href="../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity">../ontology.iupac.org/metrology.html#isdimensionlesskindofquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isdimensionlesskindofquantity">3.1. mass</a>
+    <li><a href="#ref-for-isdimensionlesskindofquantity①">3.2. momentum</a>
+    <li><a href="#ref-for-isdimensionlesskindofquantity②">3.3. force</a>
+    <li><a href="#ref-for-isdimensionlesskindofquantity③">3.4. power</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-velocity">velocity</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-force">force</span>
+     <li><span class="dfn-paneled" id="term-for-force-of-momentum-forward">force-of-momentum-forward</span>
+     <li><span class="dfn-paneled" id="term-for-force-of-velocity-forward">force-of-velocity-forward</span>
+     <li><span class="dfn-paneled" id="term-for-mass">mass</span>
+     <li><span class="dfn-paneled" id="term-for-momentum">momentum</span>
+     <li><span class="dfn-paneled" id="term-for-momentum-of-mass-forward">momentum-of-mass-forward</span>
+     <li><span class="dfn-paneled" id="term-for-momentum-of-velocity-forward">momentum-of-velocity-forward</span>
+     <li><span class="dfn-paneled" id="term-for-power">power</span>
+     <li><span class="dfn-paneled" id="term-for-power-of-force-forward">power-of-force-forward</span>
+     <li><span class="dfn-paneled" id="term-for-power-of-velocity-forward">power-of-velocity-forward</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-unitofforce">unitofforce</span>
+     <li><span class="dfn-paneled" id="term-for-unitofmass">unitofmass</span>
+     <li><span class="dfn-paneled" id="term-for-unitofmomentum">unitofmomentum</span>
+     <li><span class="dfn-paneled" id="term-for-unitofpower">unitofpower</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-6-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength">electric-field-strength</span>
+     <li><span class="dfn-paneled" id="term-for-electric-field-strength-of-force-forward">electric-field-strength-of-force-forward</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-derivedunitarykindofquantity">derivedunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
+     <li><span class="dfn-paneled" id="term-for-forquantitiesofthesameunitarykindofquantity">forquantitiesofthesameunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-hasfactorforunitarykindofquantity">hasfactorforunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-independentunitarykindofquantity">independentunitarykindofquantity</span>
+     <li><span class="dfn-paneled" id="term-for-isdimensionlesskindofquantity">isdimensionlesskindofquantity</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
+</script>

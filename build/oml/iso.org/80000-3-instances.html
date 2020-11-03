@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>ISO-80000-5</title>
+  <title>80000-3-instances</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-5" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
+  <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-3-instances" rel="canonical">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1528,6 +1528,47 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1703,20 +1744,26 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
-</style>
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref allcaps" id="title">ISO-80000-5</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h1 class="p-name no-ref" id="title">80000-3-instances</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-5">https://opencaesar.github.io/firesat-example/build/oml/iso.org/iso-80000-5</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-3-instances">https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-3-instances</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">ISO</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
-     <dd>Copyright 2019 ISO.
+     <dd>
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1724,23 +1771,57 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>The ISO 80000 Part 5 vocabulary is a subset of the vocabulary maintained by the International Organization for Standards.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
+    <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#Scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#DegreeCelsius"><span class="secno">3.1</span> <span class="content"><span>degreeCelsius</span></span></a>
+      <li><a href="#Length"><span class="secno">3.1</span> <span class="content"><span>length</span></span></a>
+      <li><a href="#Width"><span class="secno">3.2</span> <span class="content"><span>width</span></span></a>
+      <li><a href="#Breadth"><span class="secno">3.3</span> <span class="content"><span>breadth</span></span></a>
+      <li><a href="#Height"><span class="secno">3.4</span> <span class="content"><span>height</span></span></a>
+      <li><a href="#Depth"><span class="secno">3.5</span> <span class="content"><span>depth</span></span></a>
+      <li><a href="#Altitude"><span class="secno">3.6</span> <span class="content"><span>altitude</span></span></a>
+      <li><a href="#Thickness"><span class="secno">3.7</span> <span class="content"><span>thickness</span></span></a>
+      <li><a href="#Diameter"><span class="secno">3.8</span> <span class="content"><span>diameter</span></span></a>
+      <li><a href="#Radius"><span class="secno">3.9</span> <span class="content"><span>radius</span></span></a>
+      <li><a href="#Path-length"><span class="secno">3.10</span> <span class="content"><span>path-length</span></span></a>
+      <li><a href="#Arc-length"><span class="secno">3.11</span> <span class="content"><span>arc-length</span></span></a>
+      <li><a href="#Distance"><span class="secno">3.12</span> <span class="content"><span>distance</span></span></a>
+      <li><a href="#Radial-distance"><span class="secno">3.13</span> <span class="content"><span>radial-distance</span></span></a>
+      <li><a href="#Position-vector"><span class="secno">3.14</span> <span class="content"><span>position-vector</span></span></a>
+      <li><a href="#Displacement"><span class="secno">3.15</span> <span class="content"><span>displacement</span></span></a>
+      <li><a href="#Radius-of-curvature"><span class="secno">3.16</span> <span class="content"><span>radius-of-curvature</span></span></a>
+      <li><a href="#Metre"><span class="secno">3.17</span> <span class="content"><span>metre</span></span></a>
+      <li><a href="#Kilometre"><span class="secno">3.18</span> <span class="content"><span>kilometre</span></span></a>
+      <li><a href="#Angular-measure"><span class="secno">3.19</span> <span class="content"><span>angular-measure</span></span></a>
+      <li><a href="#Radian"><span class="secno">3.20</span> <span class="content"><span>radian</span></span></a>
+      <li><a href="#Rotational-displacement"><span class="secno">3.21</span> <span class="content"><span>rotational-displacement</span></span></a>
+      <li><a href="#Duration"><span class="secno">3.22</span> <span class="content"><span>duration</span></span></a>
+      <li><a href="#Second"><span class="secno">3.23</span> <span class="content"><span>second</span></span></a>
+      <li><a href="#Millisecond"><span class="secno">3.24</span> <span class="content"><span>millisecond</span></span></a>
+      <li><a href="#Minute"><span class="secno">3.25</span> <span class="content"><span>minute</span></span></a>
+      <li><a href="#Hour"><span class="secno">3.26</span> <span class="content"><span>hour</span></span></a>
+      <li><a href="#Velocity"><span class="secno">3.27</span> <span class="content"><span>velocity</span></span></a>
+      <li><a href="#Metre-per-second"><span class="secno">3.28</span> <span class="content"><span>metre-per-second</span></span></a>
+      <li><a href="#Kilometre-per-second"><span class="secno">3.29</span> <span class="content"><span>kilometre-per-second</span></span></a>
+      <li><a href="#Period-duration"><span class="secno">3.30</span> <span class="content"><span>period-duration</span></span></a>
+      <li><a href="#Rotation"><span class="secno">3.31</span> <span class="content"><span>rotation</span></span></a>
+      <li><a href="#Revolutions"><span class="secno">3.32</span> <span class="content"><span>revolutions</span></span></a>
+      <li><a href="#Frequency"><span class="secno">3.33</span> <span class="content"><span>frequency</span></span></a>
+      <li><a href="#Rotational-frequency"><span class="secno">3.34</span> <span class="content"><span>rotational-frequency</span></span></a>
+      <li><a href="#Hertz"><span class="secno">3.35</span> <span class="content"><span>hertz</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
@@ -1749,15 +1830,84 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>iso-80000-5: <a href="iso-80000-5.html">http://iso.org/iso-80000-5</a></p>
+      <p>80000-3-instances: <a href="80000-3-instances.html">http://iso.org/80000-3-instances</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Iclusions"><span class="secno">2. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
     <ul>
      <li data-md>
-      <p>iso-80000-4: <a href="http://iso.org/iso-80000-4.html">http://iso.org/iso-80000-4</a></p>
+      <p>80000-3-kindsOfQuantities: <a href="http://iso.org/80000-3-kindsOfQuantities.html">http://iso.org/80000-3-kindsOfQuantities</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="DegreeCelsius"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="degreecelsius">degreeCelsius<a class="self-link" href="#degreecelsius"></a></dfn></span><a class="self-link" href="#DegreeCelsius"></a></h3>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Length"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="length">length<a class="self-link" href="#length"></a></dfn></span><a class="self-link" href="#Length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#length" id="ref-for-length">80000-3-kindsOfQuantities:length</a></p>
+    <h3 class="heading settled" data-level="3.2" id="Width"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="width">width<a class="self-link" href="#width"></a></dfn></span><a class="self-link" href="#Width"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#width" id="ref-for-width">80000-3-kindsOfQuantities:width</a></p>
+    <h3 class="heading settled" data-level="3.3" id="Breadth"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="breadth">breadth<a class="self-link" href="#breadth"></a></dfn></span><a class="self-link" href="#Breadth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#breadth" id="ref-for-breadth">80000-3-kindsOfQuantities:breadth</a></p>
+    <h3 class="heading settled" data-level="3.4" id="Height"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="height">height<a class="self-link" href="#height"></a></dfn></span><a class="self-link" href="#Height"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#height" id="ref-for-height">80000-3-kindsOfQuantities:height</a></p>
+    <h3 class="heading settled" data-level="3.5" id="Depth"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="depth">depth<a class="self-link" href="#depth"></a></dfn></span><a class="self-link" href="#Depth"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#depth" id="ref-for-depth">80000-3-kindsOfQuantities:depth</a></p>
+    <h3 class="heading settled" data-level="3.6" id="Altitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="altitude">altitude<a class="self-link" href="#altitude"></a></dfn></span><a class="self-link" href="#Altitude"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#altitude" id="ref-for-altitude">80000-3-kindsOfQuantities:altitude</a></p>
+    <h3 class="heading settled" data-level="3.7" id="Thickness"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thickness">thickness<a class="self-link" href="#thickness"></a></dfn></span><a class="self-link" href="#Thickness"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#thickness" id="ref-for-thickness">80000-3-kindsOfQuantities:thickness</a></p>
+    <h3 class="heading settled" data-level="3.8" id="Diameter"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="diameter">diameter<a class="self-link" href="#diameter"></a></dfn></span><a class="self-link" href="#Diameter"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#diameter" id="ref-for-diameter">80000-3-kindsOfQuantities:diameter</a></p>
+    <h3 class="heading settled" data-level="3.9" id="Radius"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius">radius<a class="self-link" href="#radius"></a></dfn></span><a class="self-link" href="#Radius"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radius" id="ref-for-radius">80000-3-kindsOfQuantities:radius</a></p>
+    <h3 class="heading settled" data-level="3.10" id="Path-length"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="path-length">path-length<a class="self-link" href="#path-length"></a></dfn></span><a class="self-link" href="#Path-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#path-length" id="ref-for-path-length">80000-3-kindsOfQuantities:path-length</a></p>
+    <h3 class="heading settled" data-level="3.11" id="Arc-length"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="arc-length">arc-length<a class="self-link" href="#arc-length"></a></dfn></span><a class="self-link" href="#Arc-length"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#arc-length" id="ref-for-arc-length">80000-3-kindsOfQuantities:arc-length</a></p>
+    <h3 class="heading settled" data-level="3.12" id="Distance"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="distance">distance<a class="self-link" href="#distance"></a></dfn></span><a class="self-link" href="#Distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#distance" id="ref-for-distance">80000-3-kindsOfQuantities:distance</a></p>
+    <h3 class="heading settled" data-level="3.13" id="Radial-distance"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radial-distance">radial-distance<a class="self-link" href="#radial-distance"></a></dfn></span><a class="self-link" href="#Radial-distance"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radial-distance" id="ref-for-radial-distance">80000-3-kindsOfQuantities:radial-distance</a></p>
+    <h3 class="heading settled" data-level="3.14" id="Position-vector"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="position-vector">position-vector<a class="self-link" href="#position-vector"></a></dfn></span><a class="self-link" href="#Position-vector"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#position-vector" id="ref-for-position-vector">80000-3-kindsOfQuantities:position-vector</a></p>
+    <h3 class="heading settled" data-level="3.15" id="Displacement"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="displacement">displacement<a class="self-link" href="#displacement"></a></dfn></span><a class="self-link" href="#Displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#displacement" id="ref-for-displacement">80000-3-kindsOfQuantities:displacement</a></p>
+    <h3 class="heading settled" data-level="3.16" id="Radius-of-curvature"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radius-of-curvature">radius-of-curvature<a class="self-link" href="#radius-of-curvature"></a></dfn></span><a class="self-link" href="#Radius-of-curvature"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#radius-of-curvature" id="ref-for-radius-of-curvature">80000-3-kindsOfQuantities:radius-of-curvature</a></p>
+    <h3 class="heading settled" data-level="3.17" id="Metre"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre">metre<a class="self-link" href="#metre"></a></dfn></span><a class="self-link" href="#Metre"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a></p>
+    <h3 class="heading settled" data-level="3.18" id="Kilometre"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre">kilometre<a class="self-link" href="#kilometre"></a></dfn></span><a class="self-link" href="#Kilometre"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre" id="ref-for-kilometre">80000-3-units:kilometre</a></p>
+    <h3 class="heading settled" data-level="3.19" id="Angular-measure"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="angular-measure">angular-measure<a class="self-link" href="#angular-measure"></a></dfn></span><a class="self-link" href="#Angular-measure"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#angular-measure" id="ref-for-angular-measure">80000-3-kindsOfQuantities:angular-measure</a></p>
+    <h3 class="heading settled" data-level="3.20" id="Radian"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="radian">radian<a class="self-link" href="#radian"></a></dfn></span><a class="self-link" href="#Radian"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#radian" id="ref-for-radian">80000-3-units:radian</a></p>
+    <h3 class="heading settled" data-level="3.21" id="Rotational-displacement"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-displacement">rotational-displacement<a class="self-link" href="#rotational-displacement"></a></dfn></span><a class="self-link" href="#Rotational-displacement"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotational-displacement" id="ref-for-rotational-displacement">80000-3-kindsOfQuantities:rotational-displacement</a></p>
+    <h3 class="heading settled" data-level="3.22" id="Duration"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#Duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#duration" id="ref-for-duration">80000-3-kindsOfQuantities:duration</a></p>
+    <h3 class="heading settled" data-level="3.23" id="Second"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="second">second<a class="self-link" href="#second"></a></dfn></span><a class="self-link" href="#Second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
+    <h3 class="heading settled" data-level="3.24" id="Millisecond"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="millisecond">millisecond<a class="self-link" href="#millisecond"></a></dfn></span><a class="self-link" href="#Millisecond"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a></p>
+    <h3 class="heading settled" data-level="3.25" id="Minute"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minute">minute<a class="self-link" href="#minute"></a></dfn></span><a class="self-link" href="#Minute"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#minute" id="ref-for-minute">80000-3-units:minute</a></p>
+    <h3 class="heading settled" data-level="3.26" id="Hour"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hour">hour<a class="self-link" href="#hour"></a></dfn></span><a class="self-link" href="#Hour"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#hour" id="ref-for-hour">80000-3-units:hour</a></p>
+    <h3 class="heading settled" data-level="3.27" id="Velocity"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="velocity">velocity<a class="self-link" href="#velocity"></a></dfn></span><a class="self-link" href="#Velocity"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#velocity" id="ref-for-velocity">80000-3-kindsOfQuantities:velocity</a></p>
+    <h3 class="heading settled" data-level="3.28" id="Metre-per-second"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metre-per-second">metre-per-second<a class="self-link" href="#metre-per-second"></a></dfn></span><a class="self-link" href="#Metre-per-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a></p>
+    <h3 class="heading settled" data-level="3.29" id="Kilometre-per-second"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilometre-per-second">kilometre-per-second<a class="self-link" href="#kilometre-per-second"></a></dfn></span><a class="self-link" href="#Kilometre-per-second"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-units:kilometre-per-second</a></p>
+    <h3 class="heading settled" data-level="3.30" id="Period-duration"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="period-duration">period-duration<a class="self-link" href="#period-duration"></a></dfn></span><a class="self-link" href="#Period-duration"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#period-duration" id="ref-for-period-duration">80000-3-kindsOfQuantities:period-duration</a></p>
+    <h3 class="heading settled" data-level="3.31" id="Rotation"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotation">rotation<a class="self-link" href="#rotation"></a></dfn></span><a class="self-link" href="#Rotation"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotation" id="ref-for-rotation">80000-3-kindsOfQuantities:rotation</a></p>
+    <h3 class="heading settled" data-level="3.32" id="Revolutions"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="revolutions">revolutions<a class="self-link" href="#revolutions"></a></dfn></span><a class="self-link" href="#Revolutions"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#revolutions" id="ref-for-revolutions">80000-3-units:revolutions</a></p>
+    <h3 class="heading settled" data-level="3.33" id="Frequency"><span class="secno">3.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="frequency">frequency<a class="self-link" href="#frequency"></a></dfn></span><a class="self-link" href="#Frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#frequency" id="ref-for-frequency">80000-3-kindsOfQuantities:frequency</a></p>
+    <h3 class="heading settled" data-level="3.34" id="Rotational-frequency"><span class="secno">3.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rotational-frequency">rotational-frequency<a class="self-link" href="#rotational-frequency"></a></dfn></span><a class="self-link" href="#Rotational-frequency"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-kindsOfQuantities.html#rotational-frequency" id="ref-for-rotational-frequency">80000-3-kindsOfQuantities:rotational-frequency</a></p>
+    <h3 class="heading settled" data-level="3.35" id="Hertz"><span class="secno">3.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hertz">hertz<a class="self-link" href="#hertz"></a></dfn></span><a class="self-link" href="#Hertz"></a></h3>
+    <p><em>Types:</em> <a data-link-type="dfn" href="80000-3-units.html#hertz" id="ref-for-hertz">80000-3-units:hertz</a></p>
    </div>
   </main>
 <script>
@@ -1892,5 +2042,351 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#degreecelsius">degreeCelsius</a><span>, in §3.1</span>
+   <li><a href="#altitude">altitude</a><span>, in §3.6</span>
+   <li><a href="#angular-measure">angular-measure</a><span>, in §3.19</span>
+   <li><a href="#arc-length">arc-length</a><span>, in §3.11</span>
+   <li><a href="#breadth">breadth</a><span>, in §3.3</span>
+   <li><a href="#depth">depth</a><span>, in §3.5</span>
+   <li><a href="#diameter">diameter</a><span>, in §3.8</span>
+   <li><a href="#displacement">displacement</a><span>, in §3.15</span>
+   <li><a href="#distance">distance</a><span>, in §3.12</span>
+   <li><a href="#duration">duration</a><span>, in §3.22</span>
+   <li><a href="#frequency">frequency</a><span>, in §3.33</span>
+   <li><a href="#height">height</a><span>, in §3.4</span>
+   <li><a href="#hertz">hertz</a><span>, in §3.35</span>
+   <li><a href="#hour">hour</a><span>, in §3.26</span>
+   <li><a href="#kilometre">kilometre</a><span>, in §3.18</span>
+   <li><a href="#kilometre-per-second">kilometre-per-second</a><span>, in §3.29</span>
+   <li><a href="#length">length</a><span>, in §3.1</span>
+   <li><a href="#metre">metre</a><span>, in §3.17</span>
+   <li><a href="#metre-per-second">metre-per-second</a><span>, in §3.28</span>
+   <li><a href="#millisecond">millisecond</a><span>, in §3.24</span>
+   <li><a href="#minute">minute</a><span>, in §3.25</span>
+   <li><a href="#path-length">path-length</a><span>, in §3.10</span>
+   <li><a href="#period-duration">period-duration</a><span>, in §3.30</span>
+   <li><a href="#position-vector">position-vector</a><span>, in §3.14</span>
+   <li><a href="#radial-distance">radial-distance</a><span>, in §3.13</span>
+   <li><a href="#radian">radian</a><span>, in §3.20</span>
+   <li><a href="#radius">radius</a><span>, in §3.9</span>
+   <li><a href="#radius-of-curvature">radius-of-curvature</a><span>, in §3.16</span>
+   <li><a href="#revolutions">revolutions</a><span>, in §3.32</span>
+   <li><a href="#rotation">rotation</a><span>, in §3.31</span>
+   <li><a href="#rotational-displacement">rotational-displacement</a><span>, in §3.21</span>
+   <li><a href="#rotational-frequency">rotational-frequency</a><span>, in §3.34</span>
+   <li><a href="#second">second</a><span>, in §3.23</span>
+   <li><a href="#thickness">thickness</a><span>, in §3.7</span>
+   <li><a href="#velocity">velocity</a><span>, in §3.27</span>
+   <li><a href="#width">width</a><span>, in §3.2</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-altitude">
+   <a href="80000-3-kindsOfQuantities.html#altitude">80000-3-kindsOfQuantities.html#altitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-altitude">3.6. altitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-angular-measure">
+   <a href="80000-3-kindsOfQuantities.html#angular-measure">80000-3-kindsOfQuantities.html#angular-measure</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-angular-measure">3.19. angular-measure</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-arc-length">
+   <a href="80000-3-kindsOfQuantities.html#arc-length">80000-3-kindsOfQuantities.html#arc-length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-arc-length">3.11. arc-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-breadth">
+   <a href="80000-3-kindsOfQuantities.html#breadth">80000-3-kindsOfQuantities.html#breadth</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-breadth">3.3. breadth</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-depth">
+   <a href="80000-3-kindsOfQuantities.html#depth">80000-3-kindsOfQuantities.html#depth</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-depth">3.5. depth</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-diameter">
+   <a href="80000-3-kindsOfQuantities.html#diameter">80000-3-kindsOfQuantities.html#diameter</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-diameter">3.8. diameter</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-displacement">
+   <a href="80000-3-kindsOfQuantities.html#displacement">80000-3-kindsOfQuantities.html#displacement</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-displacement">3.15. displacement</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-distance">
+   <a href="80000-3-kindsOfQuantities.html#distance">80000-3-kindsOfQuantities.html#distance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-distance">3.12. distance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-duration">
+   <a href="80000-3-kindsOfQuantities.html#duration">80000-3-kindsOfQuantities.html#duration</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-duration">3.22. duration</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-frequency">
+   <a href="80000-3-kindsOfQuantities.html#frequency">80000-3-kindsOfQuantities.html#frequency</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-frequency">3.33. frequency</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-height">
+   <a href="80000-3-kindsOfQuantities.html#height">80000-3-kindsOfQuantities.html#height</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-height">3.4. height</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-length">
+   <a href="80000-3-kindsOfQuantities.html#length">80000-3-kindsOfQuantities.html#length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-length">3.1. length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-path-length">
+   <a href="80000-3-kindsOfQuantities.html#path-length">80000-3-kindsOfQuantities.html#path-length</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-path-length">3.10. path-length</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-period-duration">
+   <a href="80000-3-kindsOfQuantities.html#period-duration">80000-3-kindsOfQuantities.html#period-duration</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-period-duration">3.30. period-duration</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-position-vector">
+   <a href="80000-3-kindsOfQuantities.html#position-vector">80000-3-kindsOfQuantities.html#position-vector</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-position-vector">3.14. position-vector</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radial-distance">
+   <a href="80000-3-kindsOfQuantities.html#radial-distance">80000-3-kindsOfQuantities.html#radial-distance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radial-distance">3.13. radial-distance</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radius">
+   <a href="80000-3-kindsOfQuantities.html#radius">80000-3-kindsOfQuantities.html#radius</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radius">3.9. radius</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radius-of-curvature">
+   <a href="80000-3-kindsOfQuantities.html#radius-of-curvature">80000-3-kindsOfQuantities.html#radius-of-curvature</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radius-of-curvature">3.16. radius-of-curvature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotation">
+   <a href="80000-3-kindsOfQuantities.html#rotation">80000-3-kindsOfQuantities.html#rotation</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotation">3.31. rotation</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotational-displacement">
+   <a href="80000-3-kindsOfQuantities.html#rotational-displacement">80000-3-kindsOfQuantities.html#rotational-displacement</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotational-displacement">3.21. rotational-displacement</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-rotational-frequency">
+   <a href="80000-3-kindsOfQuantities.html#rotational-frequency">80000-3-kindsOfQuantities.html#rotational-frequency</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rotational-frequency">3.34. rotational-frequency</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-thickness">
+   <a href="80000-3-kindsOfQuantities.html#thickness">80000-3-kindsOfQuantities.html#thickness</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-thickness">3.7. thickness</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-velocity">
+   <a href="80000-3-kindsOfQuantities.html#velocity">80000-3-kindsOfQuantities.html#velocity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-velocity">3.27. velocity</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-width">
+   <a href="80000-3-kindsOfQuantities.html#width">80000-3-kindsOfQuantities.html#width</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-width">3.2. width</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hertz">
+   <a href="80000-3-units.html#hertz">80000-3-units.html#hertz</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hertz">3.35. hertz</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hour">
+   <a href="80000-3-units.html#hour">80000-3-units.html#hour</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hour">3.26. hour</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre">
+   <a href="80000-3-units.html#kilometre">80000-3-units.html#kilometre</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre">3.18. kilometre</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilometre-per-second">
+   <a href="80000-3-units.html#kilometre-per-second">80000-3-units.html#kilometre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilometre-per-second">3.29. kilometre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre">
+   <a href="80000-3-units.html#metre">80000-3-units.html#metre</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre">3.17. metre</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-metre-per-second">
+   <a href="80000-3-units.html#metre-per-second">80000-3-units.html#metre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-metre-per-second">3.28. metre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-millisecond">
+   <a href="80000-3-units.html#millisecond">80000-3-units.html#millisecond</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-millisecond">3.24. millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-minute">
+   <a href="80000-3-units.html#minute">80000-3-units.html#minute</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-minute">3.25. minute</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-radian">
+   <a href="80000-3-units.html#radian">80000-3-units.html#radian</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-radian">3.20. radian</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-revolutions">
+   <a href="80000-3-units.html#revolutions">80000-3-units.html#revolutions</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-revolutions">3.32. revolutions</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second">
+   <a href="80000-3-units.html#second">80000-3-units.html#second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second">3.23. second</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-kindsofquantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-altitude">altitude</span>
+     <li><span class="dfn-paneled" id="term-for-angular-measure">angular-measure</span>
+     <li><span class="dfn-paneled" id="term-for-arc-length">arc-length</span>
+     <li><span class="dfn-paneled" id="term-for-breadth">breadth</span>
+     <li><span class="dfn-paneled" id="term-for-depth">depth</span>
+     <li><span class="dfn-paneled" id="term-for-diameter">diameter</span>
+     <li><span class="dfn-paneled" id="term-for-displacement">displacement</span>
+     <li><span class="dfn-paneled" id="term-for-distance">distance</span>
+     <li><span class="dfn-paneled" id="term-for-duration">duration</span>
+     <li><span class="dfn-paneled" id="term-for-frequency">frequency</span>
+     <li><span class="dfn-paneled" id="term-for-height">height</span>
+     <li><span class="dfn-paneled" id="term-for-length">length</span>
+     <li><span class="dfn-paneled" id="term-for-path-length">path-length</span>
+     <li><span class="dfn-paneled" id="term-for-period-duration">period-duration</span>
+     <li><span class="dfn-paneled" id="term-for-position-vector">position-vector</span>
+     <li><span class="dfn-paneled" id="term-for-radial-distance">radial-distance</span>
+     <li><span class="dfn-paneled" id="term-for-radius">radius</span>
+     <li><span class="dfn-paneled" id="term-for-radius-of-curvature">radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="term-for-rotation">rotation</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-displacement">rotational-displacement</span>
+     <li><span class="dfn-paneled" id="term-for-rotational-frequency">rotational-frequency</span>
+     <li><span class="dfn-paneled" id="term-for-thickness">thickness</span>
+     <li><span class="dfn-paneled" id="term-for-velocity">velocity</span>
+     <li><span class="dfn-paneled" id="term-for-width">width</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hertz">hertz</span>
+     <li><span class="dfn-paneled" id="term-for-hour">hour</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre">kilometre</span>
+     <li><span class="dfn-paneled" id="term-for-kilometre-per-second">kilometre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-metre">metre</span>
+     <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-minute">minute</span>
+     <li><span class="dfn-paneled" id="term-for-radian">radian</span>
+     <li><span class="dfn-paneled" id="term-for-revolutions">revolutions</span>
+     <li><span class="dfn-paneled" id="term-for-second">second</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
+</script>

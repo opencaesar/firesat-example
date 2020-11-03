@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Spacecraft Assemblies</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1821,33 +1821,33 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains">base:contains</a> <a data-link-type="dfn" href="../../../05/systems/pld/assemblies.html#payloadmodule" id="ref-for-payloadmodule">pld-assemblies:PayloadModule</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains">base:contains</a> <a data-link-type="dfn" href="../../08/subsystems/prp/assemblies.html#propulsionmodule" id="ref-for-propulsionmodule">prp-assemblies:PropulsionModule</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①">base:contains</a> <a data-link-type="dfn" href="../../08/subsystems/prp/assemblies.html#propulsionmodule" id="ref-for-propulsionmodule">prp-assemblies:PropulsionModule</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①">base:contains</a> <a data-link-type="dfn" href="../../05/subsystems/thc/assemblies.html#thermalblankets" id="ref-for-thermalblankets">thc-assemblies:ThermalBlankets</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains②">base:contains</a> <a data-link-type="dfn" href="../../05/subsystems/thc/assemblies.html#thermalblankets" id="ref-for-thermalblankets">thc-assemblies:ThermalBlankets</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains②">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#toppanelmodule" id="ref-for-toppanelmodule">cdh-assemblies:TopPanelModule</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains③">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#toppanelmodule" id="ref-for-toppanelmodule">cdh-assemblies:TopPanelModule</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains③">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#baseplatemodule" id="ref-for-baseplatemodule">cdh-assemblies:BasePlateModule</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains④">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#baseplatemodule" id="ref-for-baseplatemodule">cdh-assemblies:BasePlateModule</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains④">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule" id="ref-for-launchvehicleinterfacemodule">cdh-assemblies:LaunchVehicleInterfaceModule</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑤">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule" id="ref-for-launchvehicleinterfacemodule">cdh-assemblies:LaunchVehicleInterfaceModule</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑤">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel1" id="ref-for-sidepanel1">cdh-assemblies:SidePanel1</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑥">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel1" id="ref-for-sidepanel1">cdh-assemblies:SidePanel1</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑥">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel2" id="ref-for-sidepanel2">cdh-assemblies:SidePanel2</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑦">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel2" id="ref-for-sidepanel2">cdh-assemblies:SidePanel2</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑦">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel3" id="ref-for-sidepanel3">cdh-assemblies:SidePanel3</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑧">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel3" id="ref-for-sidepanel3">cdh-assemblies:SidePanel3</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑧">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel4" id="ref-for-sidepanel4">cdh-assemblies:SidePanel4</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑨">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel4" id="ref-for-sidepanel4">cdh-assemblies:SidePanel4</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑨">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel5" id="ref-for-sidepanel5">cdh-assemblies:SidePanel5</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①⓪">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel5" id="ref-for-sidepanel5">cdh-assemblies:SidePanel5</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①⓪">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel6" id="ref-for-sidepanel6">cdh-assemblies:SidePanel6</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①①">base:contains</a> <a data-link-type="dfn" href="../../10/subsystems/cdh/assemblies.html#sidepanel6" id="ref-for-sidepanel6">cdh-assemblies:SidePanel6</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①①">base:contains</a> <a data-link-type="dfn" href="../../04/subsystems/sam/assemblies.html#solararraywithsada1" id="ref-for-solararraywithsada1">sam-assemblies:SolarArrayWithSADA1</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①②">base:contains</a> <a data-link-type="dfn" href="../../04/subsystems/sam/assemblies.html#solararraywithsada1" id="ref-for-solararraywithsada1">sam-assemblies:SolarArrayWithSADA1</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①②">base:contains</a> <a data-link-type="dfn" href="../../04/subsystems/sam/assemblies.html#solararraywithsada2" id="ref-for-solararraywithsada2">sam-assemblies:SolarArrayWithSADA2</a></p>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①③">base:contains</a> <a data-link-type="dfn" href="../../04/subsystems/sam/assemblies.html#solararraywithsada2" id="ref-for-solararraywithsada2">sam-assemblies:SolarArrayWithSADA2</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①③">base:contains</a> <a data-link-type="dfn" href="../../../05/systems/pld/assemblies.html#payloadmodule" id="ref-for-payloadmodule">pld-assemblies:PayloadModule</a></p>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#isinfluencedby" id="ref-for-isinfluencedby">mission:isInfluencedBy</a> <a data-link-type="dfn" href="../../../../../../missions/firesat/firesat.html#endoatmosphere" id="ref-for-endoatmosphere">firesat-mission:Endoatmosphere</a></p>
      <li data-md>
@@ -2346,99 +2346,99 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-baseassembly" style="color:initial">baseassembly</span>
+     <li><span class="dfn-paneled" id="term-for-baseassembly">baseassembly</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-consumablemass" style="color:initial">consumablemass</span>
-     <li><span class="dfn-paneled" id="term-for-hasassemblyacronym" style="color:initial">hasassemblyacronym</span>
-     <li><span class="dfn-paneled" id="term-for-hasmultiplicity" style="color:initial">hasmultiplicity</span>
+     <li><span class="dfn-paneled" id="term-for-consumablemass">consumablemass</span>
+     <li><span class="dfn-paneled" id="term-for-hasassemblyacronym">hasassemblyacronym</span>
+     <li><span class="dfn-paneled" id="term-for-hasmultiplicity">hasmultiplicity</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-contains" style="color:initial">contains</span>
+     <li><span class="dfn-paneled" id="term-for-contains">contains</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-isinfluencedby" style="color:initial">isinfluencedby</span>
-     <li><span class="dfn-paneled" id="term-for-isspecifiedby" style="color:initial">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
+     <li><span class="dfn-paneled" id="term-for-isinfluencedby">isinfluencedby</span>
+     <li><span class="dfn-paneled" id="term-for-isspecifiedby">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="term-for-performs">performs</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/firesat]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-endoatmosphere" style="color:initial">endoatmosphere</span>
-     <li><span class="dfn-paneled" id="term-for-spacedebris" style="color:initial">spacedebris</span>
-     <li><span class="dfn-paneled" id="term-for-stars" style="color:initial">stars</span>
-     <li><span class="dfn-paneled" id="term-for-sun" style="color:initial">sun</span>
+     <li><span class="dfn-paneled" id="term-for-endoatmosphere">endoatmosphere</span>
+     <li><span class="dfn-paneled" id="term-for-spacedebris">spacedebris</span>
+     <li><span class="dfn-paneled" id="term-for-stars">stars</span>
+     <li><span class="dfn-paneled" id="term-for-sun">sun</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-payloadmodule" style="color:initial">payloadmodule</span>
+     <li><span class="dfn-paneled" id="term-for-payloadmodule">payloadmodule</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-solararraywithsada1" style="color:initial">solararraywithsada1</span>
-     <li><span class="dfn-paneled" id="term-for-solararraywithsada2" style="color:initial">solararraywithsada2</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada1">solararraywithsada1</span>
+     <li><span class="dfn-paneled" id="term-for-solararraywithsada2">solararraywithsada2</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-thermalblankets" style="color:initial">thermalblankets</span>
+     <li><span class="dfn-paneled" id="term-for-thermalblankets">thermalblankets</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-propulsionmodule" style="color:initial">propulsionmodule</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionmodule">propulsionmodule</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-baseplatemodule" style="color:initial">baseplatemodule</span>
-     <li><span class="dfn-paneled" id="term-for-launchvehicleinterfacemodule" style="color:initial">launchvehicleinterfacemodule</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel1" style="color:initial">sidepanel1</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel2" style="color:initial">sidepanel2</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel3" style="color:initial">sidepanel3</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel4" style="color:initial">sidepanel4</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel5" style="color:initial">sidepanel5</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel6" style="color:initial">sidepanel6</span>
-     <li><span class="dfn-paneled" id="term-for-toppanelmodule" style="color:initial">toppanelmodule</span>
+     <li><span class="dfn-paneled" id="term-for-baseplatemodule">baseplatemodule</span>
+     <li><span class="dfn-paneled" id="term-for-launchvehicleinterfacemodule">launchvehicleinterfacemodule</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel1">sidepanel1</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel2">sidepanel2</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel3">sidepanel3</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel4">sidepanel4</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel5">sidepanel5</span>
+     <li><span class="dfn-paneled" id="term-for-sidepanel6">sidepanel6</span>
+     <li><span class="dfn-paneled" id="term-for-toppanelmodule">toppanelmodule</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/functions]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-performmissionbyspacecraftsystemsegment" style="color:initial">performmissionbyspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-performmissionbyspacecraftsystemsegment">performmissionbyspacecraftsystemsegment</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-altitudeerrorforspacecraftsystemsegment" style="color:initial">altitudeerrorforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-availabilityforspacecraftsystemsegment" style="color:initial">availabilityforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-facilitiesforspacecraftsystemsegment" style="color:initial">facilitiesforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-faultprotectionforspacecraftsystemsegment" style="color:initial">faultprotectionforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-maintainabilityforspacecraftsystemsegment" style="color:initial">maintainabilityforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-manufacturabilityforspacecraftsystemsegment" style="color:initial">manufacturabilityforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-maturityofnewtechnologiesforspacecraftsystemsegment" style="color:initial">maturityofnewtechnologiesforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-numberofsatellitesforspacecraftsystemsegment" style="color:initial">numberofsatellitesforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-powerbudgetforspacecraftsystemsegment" style="color:initial">powerbudgetforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-primeitemdefinitionforspacecraftsystemsegment" style="color:initial">primeitemdefinitionforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-qualificationofheritageflighthardwareforspacecraftsystemsegment" style="color:initial">qualificationofheritageflighthardwareforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-reliabilityforspacecraftsystemsegment" style="color:initial">reliabilityforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-securityandsafetyforspacecraftsystemsegment" style="color:initial">securityandsafetyforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment" style="color:initial">spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclemassforspacecraftsystemsegment" style="color:initial">spacevehiclemassforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequencyforspacecraftsystemsegment" style="color:initial">spacevehiclenaturalfrequencyforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-standardsampleforspacecraftsystemsegment" style="color:initial">standardsampleforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-structuralqualificationforspacecraftsystemsegment" style="color:initial">structuralqualificationforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-supplyforspacecraftsystemsegment" style="color:initial">supplyforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-timeerrorforspacecraftsystemsegment" style="color:initial">timeerrorforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-trainingandpersonelforspacecraftsystemsegment" style="color:initial">trainingandpersonelforspacecraftsystemsegment</span>
-     <li><span class="dfn-paneled" id="term-for-transportationforspacecraftsystemsegment" style="color:initial">transportationforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-altitudeerrorforspacecraftsystemsegment">altitudeerrorforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-availabilityforspacecraftsystemsegment">availabilityforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-facilitiesforspacecraftsystemsegment">facilitiesforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-faultprotectionforspacecraftsystemsegment">faultprotectionforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-maintainabilityforspacecraftsystemsegment">maintainabilityforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-manufacturabilityforspacecraftsystemsegment">manufacturabilityforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-maturityofnewtechnologiesforspacecraftsystemsegment">maturityofnewtechnologiesforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-numberofsatellitesforspacecraftsystemsegment">numberofsatellitesforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-powerbudgetforspacecraftsystemsegment">powerbudgetforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-primeitemdefinitionforspacecraftsystemsegment">primeitemdefinitionforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-qualificationofheritageflighthardwareforspacecraftsystemsegment">qualificationofheritageflighthardwareforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-reliabilityforspacecraftsystemsegment">reliabilityforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-securityandsafetyforspacecraftsystemsegment">securityandsafetyforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment">spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-spacevehiclemassforspacecraftsystemsegment">spacevehiclemassforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequencyforspacecraftsystemsegment">spacevehiclenaturalfrequencyforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-standardsampleforspacecraftsystemsegment">standardsampleforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-structuralqualificationforspacecraftsystemsegment">structuralqualificationforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-supplyforspacecraftsystemsegment">supplyforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-timeerrorforspacecraftsystemsegment">timeerrorforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-trainingandpersonelforspacecraftsystemsegment">trainingandpersonelforspacecraftsystemsegment</span>
+     <li><span class="dfn-paneled" id="term-for-transportationforspacecraftsystemsegment">transportationforspacecraftsystemsegment</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

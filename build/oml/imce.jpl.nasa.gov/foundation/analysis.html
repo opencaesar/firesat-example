@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/build/oml/imce.jpl.nasa.gov/foundation/analysis" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Analysis</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1881,7 +1881,7 @@ dfn > a.self-link::before      { content: "#"; }
       is a set of name/value pairs, but other characterizations (e.g., classification) are possible.
     </p>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement">AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement①">CharacterizedElement</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement">base:IdentifiedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="analysis.html#assumption" id="ref-for-assumption">Assumption</a>, <a data-link-type="dfn" href="project.html#developmentstate" id="ref-for-developmentstate">project:DevelopmentState</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#engineeringchangerequest" id="ref-for-engineeringchangerequest">fse:EngineeringChangeRequest</a>, <a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation①">Explanation</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#functionannotation" id="ref-for-functionannotation">fse:FunctionAnnotation</a>, <a data-link-type="dfn" href="analysis.html#glossaryentry" id="ref-for-glossaryentry">GlossaryEntry</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implementer" id="ref-for-implementer">fse:Implementer</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#massconstraint" id="ref-for-massconstraint">fse:MassConstraint</a>, <a data-link-type="dfn" href="analysis.html#quantity" id="ref-for-quantity">Quantity</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="analysis.html#assumption" id="ref-for-assumption">Assumption</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cableimpedance" id="ref-for-cableimpedance">fse:CableImpedance</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cablelength" id="ref-for-cablelength">fse:CableLength</a>, <a data-link-type="dfn" href="project.html#developmentstate" id="ref-for-developmentstate">project:DevelopmentState</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#engineeringchangerequest" id="ref-for-engineeringchangerequest">fse:EngineeringChangeRequest</a>, <a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation①">Explanation</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#functionannotation" id="ref-for-functionannotation">fse:FunctionAnnotation</a>, <a data-link-type="dfn" href="analysis.html#glossaryentry" id="ref-for-glossaryentry">GlossaryEntry</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implementer" id="ref-for-implementer">fse:Implementer</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#massconstraint" id="ref-for-massconstraint">fse:MassConstraint</a>, <a data-link-type="dfn" href="analysis.html#quantity" id="ref-for-quantity">Quantity</a></p>
     <p><em>Relations with domain:</em></p>
     <ul>
      <li data-md>
@@ -2114,14 +2114,14 @@ dfn > a.self-link::before      { content: "#"; }
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analysis" id="ref-for-analysis④">Analysis</a></p>
     <h2 class="heading settled" data-level="4" id="Aspects"><span class="secno">4. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="AnalyzedElement"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="analyzedelement">AnalyzedElement<a class="self-link" href="#analyzedelement"></a></dfn></span><a class="self-link" href="#AnalyzedElement"></a></h3>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement①">base:AggregatedElement</a>, <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates">base:Aggregates</a>, <a data-link-type="dfn" href="analysis.html#analyzes" id="ref-for-analyzes①">Analyzes</a>, <a data-link-type="dfn" href="project.html#approves" id="ref-for-approves">project:Approves</a>, <a data-link-type="dfn" href="project.html#assignedelement" id="ref-for-assignedelement">project:AssignedElement</a>, <a data-link-type="dfn" href="project.html#authorizes" id="ref-for-authorizes">project:Authorizes</a>, <a data-link-type="dfn" href="project.html#belongsto" id="ref-for-belongsto">project:BelongsTo</a>, <a data-link-type="dfn" href="project.html#binds" id="ref-for-binds">project:Binds</a>, <a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization④">Characterization</a>, <a data-link-type="dfn" href="analysis.html#characterizes" id="ref-for-characterizes①">Characterizes</a>, <a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="project.html#concurs" id="ref-for-concurs">project:Concurs</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly" id="ref-for-connectsassembly">fse:ConnectsAssembly</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectssubsystem" id="ref-for-connectssubsystem">fse:ConnectsSubsystem</a>, <a data-link-type="dfn" href="analysis.html#constrainedelement" id="ref-for-constrainedelement①">ConstrainedElement</a>, <a data-link-type="dfn" href="analysis.html#constrains" id="ref-for-constrains①">Constrains</a>, <a data-link-type="dfn" href="analysis.html#constraint" id="ref-for-constraint">Constraint</a>, <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement">base:ContainedElement</a>, <a data-link-type="dfn" href="base.html#container" id="ref-for-container">base:Container</a>, <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains">base:Contains</a>, <a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion①">Criterion</a>, <a data-link-type="dfn" href="project.html#delegatesto" id="ref-for-delegatesto">project:DelegatesTo</a>, <a data-link-type="dfn" href="project.html#delivers" id="ref-for-delivers">project:Delivers</a>, <a data-link-type="dfn" href="mission.html#deploys" id="ref-for-deploys">mission:Deploys</a>, <a data-link-type="dfn" href="project.html#describes" id="ref-for-describes">project:Describes</a>, <a data-link-type="dfn" href="project.html#developedelement" id="ref-for-developedelement">project:DevelopedElement</a>, <a data-link-type="dfn" href="mission.html#emits" id="ref-for-emits">mission:Emits</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explains" id="ref-for-explains③">Explains</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#function" id="ref-for-function">mission:Function</a>, <a data-link-type="dfn" href="project.html#hasassignment" id="ref-for-hasassignment">project:HasAssignment</a>, <a data-link-type="dfn" href="analysis.html#hascriterion" id="ref-for-hascriterion②">HasCriterion</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangaggregate" id="ref-for-hasgangaggregate">fse:HasGangAggregate</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangmember" id="ref-for-hasgangmember">fse:HasGangMember</a>, <a data-link-type="dfn" href="analysis.html#hasmetric" id="ref-for-hasmetric②">HasMetric</a>, <a data-link-type="dfn" href="mission.html#hasparticipant" id="ref-for-hasparticipant">mission:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasparticipant" id="ref-for-hasparticipant①">project:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasresponsibilityfor" id="ref-for-hasresponsibilityfor">project:HasResponsibilityFor</a>, <a data-link-type="dfn" href="project.html#hasrole" id="ref-for-hasrole">project:HasRole</a>, <a data-link-type="dfn" href="analysis.html#hasvalue" id="ref-for-hasvalue②">HasValue</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement③">base:IdentifiedElement</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implements" id="ref-for-implements">fse:Implements</a>, <a data-link-type="dfn" href="mission.html#induces" id="ref-for-induces">mission:Induces</a>, <a data-link-type="dfn" href="mission.html#influences" id="ref-for-influences">mission:Influences</a>, <a data-link-type="dfn" href="mission.html#ingests" id="ref-for-ingests">mission:Ingests</a>, <a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange">mission:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint">mission:InterchangePoint</a>, <a data-link-type="dfn" href="project.html#interchangesthrough" id="ref-for-interchangesthrough">project:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interchangesthrough" id="ref-for-interchangesthrough①">mission:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface">mission:Interface</a>, <a data-link-type="dfn" href="mission.html#invokes" id="ref-for-invokes">mission:Invokes</a>, <a data-link-type="dfn" href="project.html#invokes" id="ref-for-invokes①">project:Invokes</a>, <a data-link-type="dfn" href="project.html#involves" id="ref-for-involves">project:Involves</a>, <a data-link-type="dfn" href="mission.html#involves" id="ref-for-involves①">mission:Involves</a>, <a data-link-type="dfn" href="mission.html#istraversedby" id="ref-for-istraversedby">mission:IsTraversedBy</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item">mission:Item</a>, <a data-link-type="dfn" href="mission.html#joins" id="ref-for-joins">mission:Joins</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction">mission:Junction</a>, <a data-link-type="dfn" href="analysis.html#limits" id="ref-for-limits①">Limits</a>, <a data-link-type="dfn" href="project.html#manifests" id="ref-for-manifests">project:Manifests</a>, <a data-link-type="dfn" href="analysis.html#measuredelement" id="ref-for-measuredelement①">MeasuredElement</a>, <a data-link-type="dfn" href="analysis.html#measures" id="ref-for-measures①">Measures</a>, <a data-link-type="dfn" href="analysis.html#metric" id="ref-for-metric②">Metric</a>, <a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission">mission:Mission</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>, <a data-link-type="dfn" href="project.html#organization" id="ref-for-organization">project:Organization</a>, <a data-link-type="dfn" href="base.html#package" id="ref-for-package">base:Package</a>, <a data-link-type="dfn" href="mission.html#performingelement" id="ref-for-performingelement">mission:PerformingElement</a>, <a data-link-type="dfn" href="mission.html#performs" id="ref-for-performs">mission:Performs</a>, <a data-link-type="dfn" href="project.html#policy" id="ref-for-policy">project:Policy</a>, <a data-link-type="dfn" href="project.html#prepares" id="ref-for-prepares">project:Prepares</a>, <a data-link-type="dfn" href="mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a>, <a data-link-type="dfn" href="mission.html#presents" id="ref-for-presents">mission:Presents</a>, <a data-link-type="dfn" href="mission.html#produces" id="ref-for-produces">mission:Produces</a>, <a data-link-type="dfn" href="project.html#produces" id="ref-for-produces①">project:Produces</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product">mission:Product</a>, <a data-link-type="dfn" href="mission.html#pursues" id="ref-for-pursues">mission:Pursues</a>, <a data-link-type="dfn" href="analysis.html#quantifies" id="ref-for-quantifies①">Quantifies</a>, <a data-link-type="dfn" href="analysis.html#quantityvalue" id="ref-for-quantityvalue①">QuantityValue</a>, <a data-link-type="dfn" href="project.html#realizedelement" id="ref-for-realizedelement">project:RealizedElement</a>, <a data-link-type="dfn" href="project.html#realizes" id="ref-for-realizes">project:Realizes</a>, <a data-link-type="dfn" href="mission.html#receives" id="ref-for-receives">mission:Receives</a>, <a data-link-type="dfn" href="project.html#receives" id="ref-for-receives①">project:Receives</a>, <a data-link-type="dfn" href="mission.html#refines" id="ref-for-refines">mission:Refines</a>, <a data-link-type="dfn" href="project.html#relieson" id="ref-for-relieson">project:ReliesOn</a>, <a data-link-type="dfn" href="project.html#represents" id="ref-for-represents">project:Represents</a>, <a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement②">mission:Requirement</a>, <a data-link-type="dfn" href="mission.html#sends" id="ref-for-sends">mission:Sends</a>, <a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement①">mission:SpecifiedElement</a>, <a data-link-type="dfn" href="mission.html#specifies" id="ref-for-specifies">mission:Specifies</a>, <a data-link-type="dfn" href="project.html#suppliedelement" id="ref-for-suppliedelement">project:SuppliedElement</a>, <a data-link-type="dfn" href="project.html#supplies" id="ref-for-supplies">project:Supplies</a>, <a data-link-type="dfn" href="mission.html#transfers" id="ref-for-transfers">mission:Transfers</a>, <a data-link-type="dfn" href="mission.html#transfersin" id="ref-for-transfersin">mission:TransfersIn</a>, <a data-link-type="dfn" href="mission.html#transfersout" id="ref-for-transfersout">mission:TransfersOut</a>, <a data-link-type="dfn" href="mission.html#traversingelement" id="ref-for-traversingelement">mission:TraversingElement</a>, <a data-link-type="dfn" href="analysis.html#validates" id="ref-for-validates①">Validates</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement①">base:AggregatedElement</a>, <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates">base:Aggregates</a>, <a data-link-type="dfn" href="analysis.html#analyzes" id="ref-for-analyzes①">Analyzes</a>, <a data-link-type="dfn" href="project.html#approves" id="ref-for-approves">project:Approves</a>, <a data-link-type="dfn" href="project.html#assignedelement" id="ref-for-assignedelement">project:AssignedElement</a>, <a data-link-type="dfn" href="project.html#authorizes" id="ref-for-authorizes">project:Authorizes</a>, <a data-link-type="dfn" href="project.html#belongsto" id="ref-for-belongsto">project:BelongsTo</a>, <a data-link-type="dfn" href="project.html#binds" id="ref-for-binds">project:Binds</a>, <a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization④">Characterization</a>, <a data-link-type="dfn" href="analysis.html#characterizes" id="ref-for-characterizes①">Characterizes</a>, <a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="project.html#concurs" id="ref-for-concurs">project:Concurs</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly" id="ref-for-connectsassembly">fse:ConnectsAssembly</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectssubsystem" id="ref-for-connectssubsystem">fse:ConnectsSubsystem</a>, <a data-link-type="dfn" href="analysis.html#constrainedelement" id="ref-for-constrainedelement①">ConstrainedElement</a>, <a data-link-type="dfn" href="analysis.html#constrains" id="ref-for-constrains①">Constrains</a>, <a data-link-type="dfn" href="analysis.html#constraint" id="ref-for-constraint">Constraint</a>, <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement">base:ContainedElement</a>, <a data-link-type="dfn" href="base.html#container" id="ref-for-container">base:Container</a>, <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains">base:Contains</a>, <a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion①">Criterion</a>, <a data-link-type="dfn" href="project.html#delegatesto" id="ref-for-delegatesto">project:DelegatesTo</a>, <a data-link-type="dfn" href="project.html#delivers" id="ref-for-delivers">project:Delivers</a>, <a data-link-type="dfn" href="mission.html#deploys" id="ref-for-deploys">mission:Deploys</a>, <a data-link-type="dfn" href="project.html#describes" id="ref-for-describes">project:Describes</a>, <a data-link-type="dfn" href="project.html#developedelement" id="ref-for-developedelement">project:DevelopedElement</a>, <a data-link-type="dfn" href="mission.html#emits" id="ref-for-emits">mission:Emits</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explains" id="ref-for-explains③">Explains</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#function" id="ref-for-function">mission:Function</a>, <a data-link-type="dfn" href="project.html#hasassignment" id="ref-for-hasassignment">project:HasAssignment</a>, <a data-link-type="dfn" href="analysis.html#hascriterion" id="ref-for-hascriterion②">HasCriterion</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangaggregate" id="ref-for-hasgangaggregate">fse:HasGangAggregate</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangmember" id="ref-for-hasgangmember">fse:HasGangMember</a>, <a data-link-type="dfn" href="analysis.html#hasmetric" id="ref-for-hasmetric②">HasMetric</a>, <a data-link-type="dfn" href="mission.html#hasparticipant" id="ref-for-hasparticipant">mission:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasparticipant" id="ref-for-hasparticipant①">project:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasresponsibilityfor" id="ref-for-hasresponsibilityfor">project:HasResponsibilityFor</a>, <a data-link-type="dfn" href="project.html#hasrole" id="ref-for-hasrole">project:HasRole</a>, <a data-link-type="dfn" href="analysis.html#hasvalue" id="ref-for-hasvalue②">HasValue</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement③">base:IdentifiedElement</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implements" id="ref-for-implements">fse:Implements</a>, <a data-link-type="dfn" href="mission.html#induces" id="ref-for-induces">mission:Induces</a>, <a data-link-type="dfn" href="mission.html#influences" id="ref-for-influences">mission:Influences</a>, <a data-link-type="dfn" href="mission.html#ingests" id="ref-for-ingests">mission:Ingests</a>, <a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange">mission:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint">mission:InterchangePoint</a>, <a data-link-type="dfn" href="project.html#interchangesthrough" id="ref-for-interchangesthrough">project:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interchangesthrough" id="ref-for-interchangesthrough①">mission:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface">mission:Interface</a>, <a data-link-type="dfn" href="project.html#invokes" id="ref-for-invokes">project:Invokes</a>, <a data-link-type="dfn" href="mission.html#invokes" id="ref-for-invokes①">mission:Invokes</a>, <a data-link-type="dfn" href="project.html#involves" id="ref-for-involves">project:Involves</a>, <a data-link-type="dfn" href="mission.html#involves" id="ref-for-involves①">mission:Involves</a>, <a data-link-type="dfn" href="mission.html#istraversedby" id="ref-for-istraversedby">mission:IsTraversedBy</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item">mission:Item</a>, <a data-link-type="dfn" href="mission.html#joins" id="ref-for-joins">mission:Joins</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction">mission:Junction</a>, <a data-link-type="dfn" href="analysis.html#limits" id="ref-for-limits①">Limits</a>, <a data-link-type="dfn" href="project.html#manifests" id="ref-for-manifests">project:Manifests</a>, <a data-link-type="dfn" href="analysis.html#measuredelement" id="ref-for-measuredelement①">MeasuredElement</a>, <a data-link-type="dfn" href="analysis.html#measures" id="ref-for-measures①">Measures</a>, <a data-link-type="dfn" href="analysis.html#metric" id="ref-for-metric②">Metric</a>, <a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission">mission:Mission</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>, <a data-link-type="dfn" href="project.html#organization" id="ref-for-organization">project:Organization</a>, <a data-link-type="dfn" href="base.html#package" id="ref-for-package">base:Package</a>, <a data-link-type="dfn" href="mission.html#performingelement" id="ref-for-performingelement">mission:PerformingElement</a>, <a data-link-type="dfn" href="mission.html#performs" id="ref-for-performs">mission:Performs</a>, <a data-link-type="dfn" href="project.html#policy" id="ref-for-policy">project:Policy</a>, <a data-link-type="dfn" href="project.html#prepares" id="ref-for-prepares">project:Prepares</a>, <a data-link-type="dfn" href="mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a>, <a data-link-type="dfn" href="mission.html#presents" id="ref-for-presents">mission:Presents</a>, <a data-link-type="dfn" href="mission.html#produces" id="ref-for-produces">mission:Produces</a>, <a data-link-type="dfn" href="project.html#produces" id="ref-for-produces①">project:Produces</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product">mission:Product</a>, <a data-link-type="dfn" href="mission.html#pursues" id="ref-for-pursues">mission:Pursues</a>, <a data-link-type="dfn" href="analysis.html#quantifies" id="ref-for-quantifies①">Quantifies</a>, <a data-link-type="dfn" href="analysis.html#quantityvalue" id="ref-for-quantityvalue①">QuantityValue</a>, <a data-link-type="dfn" href="project.html#realizedelement" id="ref-for-realizedelement">project:RealizedElement</a>, <a data-link-type="dfn" href="project.html#realizes" id="ref-for-realizes">project:Realizes</a>, <a data-link-type="dfn" href="project.html#receives" id="ref-for-receives">project:Receives</a>, <a data-link-type="dfn" href="mission.html#receives" id="ref-for-receives①">mission:Receives</a>, <a data-link-type="dfn" href="mission.html#refines" id="ref-for-refines">mission:Refines</a>, <a data-link-type="dfn" href="project.html#relieson" id="ref-for-relieson">project:ReliesOn</a>, <a data-link-type="dfn" href="project.html#represents" id="ref-for-represents">project:Represents</a>, <a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement②">mission:Requirement</a>, <a data-link-type="dfn" href="mission.html#sends" id="ref-for-sends">mission:Sends</a>, <a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement①">mission:SpecifiedElement</a>, <a data-link-type="dfn" href="mission.html#specifies" id="ref-for-specifies">mission:Specifies</a>, <a data-link-type="dfn" href="project.html#suppliedelement" id="ref-for-suppliedelement">project:SuppliedElement</a>, <a data-link-type="dfn" href="project.html#supplies" id="ref-for-supplies">project:Supplies</a>, <a data-link-type="dfn" href="mission.html#transfers" id="ref-for-transfers">mission:Transfers</a>, <a data-link-type="dfn" href="mission.html#transfersin" id="ref-for-transfersin">mission:TransfersIn</a>, <a data-link-type="dfn" href="mission.html#transfersout" id="ref-for-transfersout">mission:TransfersOut</a>, <a data-link-type="dfn" href="mission.html#traversingelement" id="ref-for-traversingelement">mission:TraversingElement</a>, <a data-link-type="dfn" href="analysis.html#validates" id="ref-for-validates①">Validates</a></p>
     <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation②">Explanation</a> <a data-link-type="dfn" href="analysis.html#analyzes" id="ref-for-analyzes②">analyzes</a> AnalyzedElement</p>
     </ul>
     <h3 class="heading settled" data-level="4.2" id="CharacterizedElement"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="characterizedelement">CharacterizedElement<a class="self-link" href="#characterizedelement"></a></dfn></span><a class="self-link" href="#CharacterizedElement"></a></h3>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement②">base:AggregatedElement</a>, <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates①">base:Aggregates</a>, <a data-link-type="dfn" href="analysis.html#analyzes" id="ref-for-analyzes③">Analyzes</a>, <a data-link-type="dfn" href="project.html#approves" id="ref-for-approves①">project:Approves</a>, <a data-link-type="dfn" href="project.html#assignedelement" id="ref-for-assignedelement①">project:AssignedElement</a>, <a data-link-type="dfn" href="project.html#authorizes" id="ref-for-authorizes①">project:Authorizes</a>, <a data-link-type="dfn" href="project.html#belongsto" id="ref-for-belongsto①">project:BelongsTo</a>, <a data-link-type="dfn" href="project.html#binds" id="ref-for-binds①">project:Binds</a>, <a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization⑤">Characterization</a>, <a data-link-type="dfn" href="analysis.html#characterizes" id="ref-for-characterizes②">Characterizes</a>, <a data-link-type="dfn" href="mission.html#component" id="ref-for-component①">mission:Component</a>, <a data-link-type="dfn" href="project.html#concurs" id="ref-for-concurs①">project:Concurs</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly" id="ref-for-connectsassembly①">fse:ConnectsAssembly</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectssubsystem" id="ref-for-connectssubsystem①">fse:ConnectsSubsystem</a>, <a data-link-type="dfn" href="analysis.html#constrainedelement" id="ref-for-constrainedelement②">ConstrainedElement</a>, <a data-link-type="dfn" href="analysis.html#constrains" id="ref-for-constrains②">Constrains</a>, <a data-link-type="dfn" href="analysis.html#constraint" id="ref-for-constraint①">Constraint</a>, <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement①">base:ContainedElement</a>, <a data-link-type="dfn" href="base.html#container" id="ref-for-container①">base:Container</a>, <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains①">base:Contains</a>, <a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion②">Criterion</a>, <a data-link-type="dfn" href="project.html#delegatesto" id="ref-for-delegatesto①">project:DelegatesTo</a>, <a data-link-type="dfn" href="project.html#delivers" id="ref-for-delivers①">project:Delivers</a>, <a data-link-type="dfn" href="mission.html#deploys" id="ref-for-deploys①">mission:Deploys</a>, <a data-link-type="dfn" href="project.html#describes" id="ref-for-describes①">project:Describes</a>, <a data-link-type="dfn" href="project.html#developedelement" id="ref-for-developedelement①">project:DevelopedElement</a>, <a data-link-type="dfn" href="mission.html#emits" id="ref-for-emits①">mission:Emits</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment①">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explains" id="ref-for-explains④">Explains</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow①">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#function" id="ref-for-function①">mission:Function</a>, <a data-link-type="dfn" href="project.html#hasassignment" id="ref-for-hasassignment①">project:HasAssignment</a>, <a data-link-type="dfn" href="analysis.html#hascriterion" id="ref-for-hascriterion③">HasCriterion</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangaggregate" id="ref-for-hasgangaggregate①">fse:HasGangAggregate</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangmember" id="ref-for-hasgangmember①">fse:HasGangMember</a>, <a data-link-type="dfn" href="analysis.html#hasmetric" id="ref-for-hasmetric③">HasMetric</a>, <a data-link-type="dfn" href="mission.html#hasparticipant" id="ref-for-hasparticipant②">mission:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasparticipant" id="ref-for-hasparticipant③">project:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasresponsibilityfor" id="ref-for-hasresponsibilityfor①">project:HasResponsibilityFor</a>, <a data-link-type="dfn" href="project.html#hasrole" id="ref-for-hasrole①">project:HasRole</a>, <a data-link-type="dfn" href="analysis.html#hasvalue" id="ref-for-hasvalue③">HasValue</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement④">base:IdentifiedElement</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implements" id="ref-for-implements①">fse:Implements</a>, <a data-link-type="dfn" href="mission.html#induces" id="ref-for-induces①">mission:Induces</a>, <a data-link-type="dfn" href="mission.html#influences" id="ref-for-influences①">mission:Influences</a>, <a data-link-type="dfn" href="mission.html#ingests" id="ref-for-ingests①">mission:Ingests</a>, <a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange①">mission:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint①">mission:InterchangePoint</a>, <a data-link-type="dfn" href="mission.html#interchangesthrough" id="ref-for-interchangesthrough②">mission:InterchangesThrough</a>, <a data-link-type="dfn" href="project.html#interchangesthrough" id="ref-for-interchangesthrough③">project:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface①">mission:Interface</a>, <a data-link-type="dfn" href="mission.html#invokes" id="ref-for-invokes②">mission:Invokes</a>, <a data-link-type="dfn" href="project.html#invokes" id="ref-for-invokes③">project:Invokes</a>, <a data-link-type="dfn" href="mission.html#involves" id="ref-for-involves②">mission:Involves</a>, <a data-link-type="dfn" href="project.html#involves" id="ref-for-involves③">project:Involves</a>, <a data-link-type="dfn" href="mission.html#istraversedby" id="ref-for-istraversedby①">mission:IsTraversedBy</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item①">mission:Item</a>, <a data-link-type="dfn" href="mission.html#joins" id="ref-for-joins①">mission:Joins</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction①">mission:Junction</a>, <a data-link-type="dfn" href="analysis.html#limits" id="ref-for-limits②">Limits</a>, <a data-link-type="dfn" href="project.html#manifests" id="ref-for-manifests①">project:Manifests</a>, <a data-link-type="dfn" href="analysis.html#measuredelement" id="ref-for-measuredelement②">MeasuredElement</a>, <a data-link-type="dfn" href="analysis.html#measures" id="ref-for-measures②">Measures</a>, <a data-link-type="dfn" href="analysis.html#metric" id="ref-for-metric③">Metric</a>, <a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission①">mission:Mission</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective①">mission:Objective</a>, <a data-link-type="dfn" href="project.html#organization" id="ref-for-organization①">project:Organization</a>, <a data-link-type="dfn" href="base.html#package" id="ref-for-package①">base:Package</a>, <a data-link-type="dfn" href="mission.html#performingelement" id="ref-for-performingelement①">mission:PerformingElement</a>, <a data-link-type="dfn" href="mission.html#performs" id="ref-for-performs①">mission:Performs</a>, <a data-link-type="dfn" href="project.html#policy" id="ref-for-policy①">project:Policy</a>, <a data-link-type="dfn" href="project.html#prepares" id="ref-for-prepares①">project:Prepares</a>, <a data-link-type="dfn" href="mission.html#presentingelement" id="ref-for-presentingelement①">mission:PresentingElement</a>, <a data-link-type="dfn" href="mission.html#presents" id="ref-for-presents①">mission:Presents</a>, <a data-link-type="dfn" href="mission.html#produces" id="ref-for-produces②">mission:Produces</a>, <a data-link-type="dfn" href="project.html#produces" id="ref-for-produces③">project:Produces</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product①">mission:Product</a>, <a data-link-type="dfn" href="mission.html#pursues" id="ref-for-pursues①">mission:Pursues</a>, <a data-link-type="dfn" href="analysis.html#quantifies" id="ref-for-quantifies②">Quantifies</a>, <a data-link-type="dfn" href="analysis.html#quantityvalue" id="ref-for-quantityvalue②">QuantityValue</a>, <a data-link-type="dfn" href="project.html#realizedelement" id="ref-for-realizedelement①">project:RealizedElement</a>, <a data-link-type="dfn" href="project.html#realizes" id="ref-for-realizes①">project:Realizes</a>, <a data-link-type="dfn" href="mission.html#receives" id="ref-for-receives②">mission:Receives</a>, <a data-link-type="dfn" href="project.html#receives" id="ref-for-receives③">project:Receives</a>, <a data-link-type="dfn" href="mission.html#refines" id="ref-for-refines①">mission:Refines</a>, <a data-link-type="dfn" href="project.html#relieson" id="ref-for-relieson①">project:ReliesOn</a>, <a data-link-type="dfn" href="project.html#represents" id="ref-for-represents①">project:Represents</a>, <a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement③">mission:Requirement</a>, <a data-link-type="dfn" href="mission.html#sends" id="ref-for-sends①">mission:Sends</a>, <a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement②">mission:SpecifiedElement</a>, <a data-link-type="dfn" href="mission.html#specifies" id="ref-for-specifies①">mission:Specifies</a>, <a data-link-type="dfn" href="project.html#suppliedelement" id="ref-for-suppliedelement①">project:SuppliedElement</a>, <a data-link-type="dfn" href="project.html#supplies" id="ref-for-supplies①">project:Supplies</a>, <a data-link-type="dfn" href="mission.html#transfers" id="ref-for-transfers①">mission:Transfers</a>, <a data-link-type="dfn" href="mission.html#transfersin" id="ref-for-transfersin①">mission:TransfersIn</a>, <a data-link-type="dfn" href="mission.html#transfersout" id="ref-for-transfersout①">mission:TransfersOut</a>, <a data-link-type="dfn" href="mission.html#traversingelement" id="ref-for-traversingelement①">mission:TraversingElement</a>, <a data-link-type="dfn" href="analysis.html#validates" id="ref-for-validates②">Validates</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement②">base:AggregatedElement</a>, <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates①">base:Aggregates</a>, <a data-link-type="dfn" href="analysis.html#analyzes" id="ref-for-analyzes③">Analyzes</a>, <a data-link-type="dfn" href="project.html#approves" id="ref-for-approves①">project:Approves</a>, <a data-link-type="dfn" href="project.html#assignedelement" id="ref-for-assignedelement①">project:AssignedElement</a>, <a data-link-type="dfn" href="project.html#authorizes" id="ref-for-authorizes①">project:Authorizes</a>, <a data-link-type="dfn" href="project.html#belongsto" id="ref-for-belongsto①">project:BelongsTo</a>, <a data-link-type="dfn" href="project.html#binds" id="ref-for-binds①">project:Binds</a>, <a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization⑤">Characterization</a>, <a data-link-type="dfn" href="analysis.html#characterizes" id="ref-for-characterizes②">Characterizes</a>, <a data-link-type="dfn" href="mission.html#component" id="ref-for-component①">mission:Component</a>, <a data-link-type="dfn" href="project.html#concurs" id="ref-for-concurs①">project:Concurs</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly" id="ref-for-connectsassembly①">fse:ConnectsAssembly</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectssubsystem" id="ref-for-connectssubsystem①">fse:ConnectsSubsystem</a>, <a data-link-type="dfn" href="analysis.html#constrainedelement" id="ref-for-constrainedelement②">ConstrainedElement</a>, <a data-link-type="dfn" href="analysis.html#constrains" id="ref-for-constrains②">Constrains</a>, <a data-link-type="dfn" href="analysis.html#constraint" id="ref-for-constraint①">Constraint</a>, <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement①">base:ContainedElement</a>, <a data-link-type="dfn" href="base.html#container" id="ref-for-container①">base:Container</a>, <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains①">base:Contains</a>, <a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion②">Criterion</a>, <a data-link-type="dfn" href="project.html#delegatesto" id="ref-for-delegatesto①">project:DelegatesTo</a>, <a data-link-type="dfn" href="project.html#delivers" id="ref-for-delivers①">project:Delivers</a>, <a data-link-type="dfn" href="mission.html#deploys" id="ref-for-deploys①">mission:Deploys</a>, <a data-link-type="dfn" href="project.html#describes" id="ref-for-describes①">project:Describes</a>, <a data-link-type="dfn" href="project.html#developedelement" id="ref-for-developedelement①">project:DevelopedElement</a>, <a data-link-type="dfn" href="mission.html#emits" id="ref-for-emits①">mission:Emits</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment①">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explains" id="ref-for-explains④">Explains</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow①">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#function" id="ref-for-function①">mission:Function</a>, <a data-link-type="dfn" href="project.html#hasassignment" id="ref-for-hasassignment①">project:HasAssignment</a>, <a data-link-type="dfn" href="analysis.html#hascriterion" id="ref-for-hascriterion③">HasCriterion</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangaggregate" id="ref-for-hasgangaggregate①">fse:HasGangAggregate</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#hasgangmember" id="ref-for-hasgangmember①">fse:HasGangMember</a>, <a data-link-type="dfn" href="analysis.html#hasmetric" id="ref-for-hasmetric③">HasMetric</a>, <a data-link-type="dfn" href="mission.html#hasparticipant" id="ref-for-hasparticipant②">mission:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasparticipant" id="ref-for-hasparticipant③">project:HasParticipant</a>, <a data-link-type="dfn" href="project.html#hasresponsibilityfor" id="ref-for-hasresponsibilityfor①">project:HasResponsibilityFor</a>, <a data-link-type="dfn" href="project.html#hasrole" id="ref-for-hasrole①">project:HasRole</a>, <a data-link-type="dfn" href="analysis.html#hasvalue" id="ref-for-hasvalue③">HasValue</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement④">base:IdentifiedElement</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#implements" id="ref-for-implements①">fse:Implements</a>, <a data-link-type="dfn" href="mission.html#induces" id="ref-for-induces①">mission:Induces</a>, <a data-link-type="dfn" href="mission.html#influences" id="ref-for-influences①">mission:Influences</a>, <a data-link-type="dfn" href="mission.html#ingests" id="ref-for-ingests①">mission:Ingests</a>, <a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange①">mission:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint①">mission:InterchangePoint</a>, <a data-link-type="dfn" href="project.html#interchangesthrough" id="ref-for-interchangesthrough②">project:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interchangesthrough" id="ref-for-interchangesthrough③">mission:InterchangesThrough</a>, <a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface①">mission:Interface</a>, <a data-link-type="dfn" href="mission.html#invokes" id="ref-for-invokes②">mission:Invokes</a>, <a data-link-type="dfn" href="project.html#invokes" id="ref-for-invokes③">project:Invokes</a>, <a data-link-type="dfn" href="project.html#involves" id="ref-for-involves②">project:Involves</a>, <a data-link-type="dfn" href="mission.html#involves" id="ref-for-involves③">mission:Involves</a>, <a data-link-type="dfn" href="mission.html#istraversedby" id="ref-for-istraversedby①">mission:IsTraversedBy</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item①">mission:Item</a>, <a data-link-type="dfn" href="mission.html#joins" id="ref-for-joins①">mission:Joins</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction①">mission:Junction</a>, <a data-link-type="dfn" href="analysis.html#limits" id="ref-for-limits②">Limits</a>, <a data-link-type="dfn" href="project.html#manifests" id="ref-for-manifests①">project:Manifests</a>, <a data-link-type="dfn" href="analysis.html#measuredelement" id="ref-for-measuredelement②">MeasuredElement</a>, <a data-link-type="dfn" href="analysis.html#measures" id="ref-for-measures②">Measures</a>, <a data-link-type="dfn" href="analysis.html#metric" id="ref-for-metric③">Metric</a>, <a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission①">mission:Mission</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective①">mission:Objective</a>, <a data-link-type="dfn" href="project.html#organization" id="ref-for-organization①">project:Organization</a>, <a data-link-type="dfn" href="base.html#package" id="ref-for-package①">base:Package</a>, <a data-link-type="dfn" href="mission.html#performingelement" id="ref-for-performingelement①">mission:PerformingElement</a>, <a data-link-type="dfn" href="mission.html#performs" id="ref-for-performs①">mission:Performs</a>, <a data-link-type="dfn" href="project.html#policy" id="ref-for-policy①">project:Policy</a>, <a data-link-type="dfn" href="project.html#prepares" id="ref-for-prepares①">project:Prepares</a>, <a data-link-type="dfn" href="mission.html#presentingelement" id="ref-for-presentingelement①">mission:PresentingElement</a>, <a data-link-type="dfn" href="mission.html#presents" id="ref-for-presents①">mission:Presents</a>, <a data-link-type="dfn" href="mission.html#produces" id="ref-for-produces②">mission:Produces</a>, <a data-link-type="dfn" href="project.html#produces" id="ref-for-produces③">project:Produces</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product①">mission:Product</a>, <a data-link-type="dfn" href="mission.html#pursues" id="ref-for-pursues①">mission:Pursues</a>, <a data-link-type="dfn" href="analysis.html#quantifies" id="ref-for-quantifies②">Quantifies</a>, <a data-link-type="dfn" href="analysis.html#quantityvalue" id="ref-for-quantityvalue②">QuantityValue</a>, <a data-link-type="dfn" href="project.html#realizedelement" id="ref-for-realizedelement①">project:RealizedElement</a>, <a data-link-type="dfn" href="project.html#realizes" id="ref-for-realizes①">project:Realizes</a>, <a data-link-type="dfn" href="mission.html#receives" id="ref-for-receives②">mission:Receives</a>, <a data-link-type="dfn" href="project.html#receives" id="ref-for-receives③">project:Receives</a>, <a data-link-type="dfn" href="mission.html#refines" id="ref-for-refines①">mission:Refines</a>, <a data-link-type="dfn" href="project.html#relieson" id="ref-for-relieson①">project:ReliesOn</a>, <a data-link-type="dfn" href="project.html#represents" id="ref-for-represents①">project:Represents</a>, <a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement③">mission:Requirement</a>, <a data-link-type="dfn" href="mission.html#sends" id="ref-for-sends①">mission:Sends</a>, <a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement②">mission:SpecifiedElement</a>, <a data-link-type="dfn" href="mission.html#specifies" id="ref-for-specifies①">mission:Specifies</a>, <a data-link-type="dfn" href="project.html#suppliedelement" id="ref-for-suppliedelement①">project:SuppliedElement</a>, <a data-link-type="dfn" href="project.html#supplies" id="ref-for-supplies①">project:Supplies</a>, <a data-link-type="dfn" href="mission.html#transfers" id="ref-for-transfers①">mission:Transfers</a>, <a data-link-type="dfn" href="mission.html#transfersin" id="ref-for-transfersin①">mission:TransfersIn</a>, <a data-link-type="dfn" href="mission.html#transfersout" id="ref-for-transfersout①">mission:TransfersOut</a>, <a data-link-type="dfn" href="mission.html#traversingelement" id="ref-for-traversingelement①">mission:TraversingElement</a>, <a data-link-type="dfn" href="analysis.html#validates" id="ref-for-validates②">Validates</a></p>
     <p><em>Relations with range:</em></p>
     <ul>
      <li data-md>
@@ -2578,6 +2578,18 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#validates">Validates</a><span>, in §5.11</span>
    <li><a href="#dom-validates-validates">validates</a><span>, in §5.11</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-cableimpedance">
+   <a href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cableimpedance">../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cableimpedance</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-cableimpedance">3.3. Characterization</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-cablelength">
+   <a href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cablelength">../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#cablelength</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-cablelength">3.3. Characterization</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-connectsassembly">
    <a href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly">../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#connectsassembly</a><b>Referenced in:</b>
    <ul>
@@ -3112,7 +3124,7 @@ dfn > a.self-link::before      { content: "#"; }
    <a href="mission.html#interchangesthrough">mission.html#interchangesthrough</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-interchangesthrough①">4.1. AnalyzedElement</a>
-    <li><a href="#ref-for-interchangesthrough②">4.2. CharacterizedElement</a>
+    <li><a href="#ref-for-interchangesthrough③">4.2. CharacterizedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-interface">
@@ -3125,7 +3137,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-invokes">
    <a href="mission.html#invokes">mission.html#invokes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-invokes">4.1. AnalyzedElement</a>
+    <li><a href="#ref-for-invokes①">4.1. AnalyzedElement</a>
     <li><a href="#ref-for-invokes②">4.2. CharacterizedElement</a>
    </ul>
   </aside>
@@ -3133,7 +3145,7 @@ dfn > a.self-link::before      { content: "#"; }
    <a href="mission.html#involves">mission.html#involves</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-involves①">4.1. AnalyzedElement</a>
-    <li><a href="#ref-for-involves②">4.2. CharacterizedElement</a>
+    <li><a href="#ref-for-involves③">4.2. CharacterizedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-istraversedby">
@@ -3231,7 +3243,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-receives">
    <a href="mission.html#receives">mission.html#receives</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-receives">4.1. AnalyzedElement</a>
+    <li><a href="#ref-for-receives①">4.1. AnalyzedElement</a>
     <li><a href="#ref-for-receives②">4.2. CharacterizedElement</a>
    </ul>
   </aside>
@@ -3418,13 +3430,13 @@ dfn > a.self-link::before      { content: "#"; }
    <a href="project.html#interchangesthrough">project.html#interchangesthrough</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-interchangesthrough">4.1. AnalyzedElement</a>
-    <li><a href="#ref-for-interchangesthrough③">4.2. CharacterizedElement</a>
+    <li><a href="#ref-for-interchangesthrough②">4.2. CharacterizedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-invokes">
    <a href="project.html#invokes">project.html#invokes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-invokes①">4.1. AnalyzedElement</a>
+    <li><a href="#ref-for-invokes">4.1. AnalyzedElement</a>
     <li><a href="#ref-for-invokes③">4.2. CharacterizedElement</a>
    </ul>
   </aside>
@@ -3432,7 +3444,7 @@ dfn > a.self-link::before      { content: "#"; }
    <a href="project.html#involves">project.html#involves</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-involves">4.1. AnalyzedElement</a>
-    <li><a href="#ref-for-involves③">4.2. CharacterizedElement</a>
+    <li><a href="#ref-for-involves②">4.2. CharacterizedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-manifests">
@@ -3487,7 +3499,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-receives">
    <a href="project.html#receives">project.html#receives</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-receives①">4.1. AnalyzedElement</a>
+    <li><a href="#ref-for-receives">4.1. AnalyzedElement</a>
     <li><a href="#ref-for-receives③">4.2. CharacterizedElement</a>
    </ul>
   </aside>
@@ -3531,148 +3543,150 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-connectsassembly" style="color:initial">connectsassembly</span>
-     <li><span class="dfn-paneled" id="term-for-connectssubsystem" style="color:initial">connectssubsystem</span>
-     <li><span class="dfn-paneled" id="term-for-engineeringchangerequest" style="color:initial">engineeringchangerequest</span>
-     <li><span class="dfn-paneled" id="term-for-functionannotation" style="color:initial">functionannotation</span>
-     <li><span class="dfn-paneled" id="term-for-gangconfiguration" style="color:initial">gangconfiguration</span>
-     <li><span class="dfn-paneled" id="term-for-hasgangaggregate" style="color:initial">hasgangaggregate</span>
-     <li><span class="dfn-paneled" id="term-for-hasgangmember" style="color:initial">hasgangmember</span>
-     <li><span class="dfn-paneled" id="term-for-implementer" style="color:initial">implementer</span>
-     <li><span class="dfn-paneled" id="term-for-implements" style="color:initial">implements</span>
-     <li><span class="dfn-paneled" id="term-for-massconstraint" style="color:initial">massconstraint</span>
+     <li><span class="dfn-paneled" id="term-for-cableimpedance">cableimpedance</span>
+     <li><span class="dfn-paneled" id="term-for-cablelength">cablelength</span>
+     <li><span class="dfn-paneled" id="term-for-connectsassembly">connectsassembly</span>
+     <li><span class="dfn-paneled" id="term-for-connectssubsystem">connectssubsystem</span>
+     <li><span class="dfn-paneled" id="term-for-engineeringchangerequest">engineeringchangerequest</span>
+     <li><span class="dfn-paneled" id="term-for-functionannotation">functionannotation</span>
+     <li><span class="dfn-paneled" id="term-for-gangconfiguration">gangconfiguration</span>
+     <li><span class="dfn-paneled" id="term-for-hasgangaggregate">hasgangaggregate</span>
+     <li><span class="dfn-paneled" id="term-for-hasgangmember">hasgangmember</span>
+     <li><span class="dfn-paneled" id="term-for-implementer">implementer</span>
+     <li><span class="dfn-paneled" id="term-for-implements">implements</span>
+     <li><span class="dfn-paneled" id="term-for-massconstraint">massconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/analysis]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-analysis" style="color:initial">analysis</span>
-     <li><span class="dfn-paneled" id="term-for-analyzedelement" style="color:initial">analyzedelement</span>
-     <li><span class="dfn-paneled" id="term-for-analyzes" style="color:initial">analyzes</span>
-     <li><span class="dfn-paneled" id="term-for-assumption" style="color:initial">assumption</span>
-     <li><span class="dfn-paneled" id="term-for-characterization" style="color:initial">characterization</span>
-     <li><span class="dfn-paneled" id="term-for-characterizedelement" style="color:initial">characterizedelement</span>
-     <li><span class="dfn-paneled" id="term-for-characterizes" style="color:initial">characterizes</span>
-     <li><span class="dfn-paneled" id="term-for-constrainedelement" style="color:initial">constrainedelement</span>
-     <li><span class="dfn-paneled" id="term-for-constrains" style="color:initial">constrains</span>
-     <li><span class="dfn-paneled" id="term-for-constraint" style="color:initial">constraint</span>
-     <li><span class="dfn-paneled" id="term-for-costestimate" style="color:initial">costestimate</span>
-     <li><span class="dfn-paneled" id="term-for-criterion" style="color:initial">criterion</span>
-     <li><span class="dfn-paneled" id="term-for-drivingrequirementsanalysis" style="color:initial">drivingrequirementsanalysis</span>
-     <li><span class="dfn-paneled" id="term-for-drivingrequirementsexplanation" style="color:initial">drivingrequirementsexplanation</span>
-     <li><span class="dfn-paneled" id="term-for-explains" style="color:initial">explains</span>
-     <li><span class="dfn-paneled" id="term-for-explanation" style="color:initial">explanation</span>
-     <li><span class="dfn-paneled" id="term-for-fact" style="color:initial">fact</span>
-     <li><span class="dfn-paneled" id="term-for-glossaryentry" style="color:initial">glossaryentry</span>
-     <li><span class="dfn-paneled" id="term-for-hascriterion" style="color:initial">hascriterion</span>
-     <li><span class="dfn-paneled" id="term-for-hasglossarydefinition" style="color:initial">hasglossarydefinition</span>
-     <li><span class="dfn-paneled" id="term-for-hasglossaryterm" style="color:initial">hasglossaryterm</span>
-     <li><span class="dfn-paneled" id="term-for-hasmetric" style="color:initial">hasmetric</span>
-     <li><span class="dfn-paneled" id="term-for-hasvalue" style="color:initial">hasvalue</span>
-     <li><span class="dfn-paneled" id="term-for-keyrequirementsanalysis" style="color:initial">keyrequirementsanalysis</span>
-     <li><span class="dfn-paneled" id="term-for-keyrequirementsexplanation" style="color:initial">keyrequirementsexplanation</span>
-     <li><span class="dfn-paneled" id="term-for-limits" style="color:initial">limits</span>
-     <li><span class="dfn-paneled" id="term-for-measuredelement" style="color:initial">measuredelement</span>
-     <li><span class="dfn-paneled" id="term-for-measures" style="color:initial">measures</span>
-     <li><span class="dfn-paneled" id="term-for-metric" style="color:initial">metric</span>
-     <li><span class="dfn-paneled" id="term-for-quantifies" style="color:initial">quantifies</span>
-     <li><span class="dfn-paneled" id="term-for-quantity" style="color:initial">quantity</span>
-     <li><span class="dfn-paneled" id="term-for-quantityvalue" style="color:initial">quantityvalue</span>
-     <li><span class="dfn-paneled" id="term-for-tradestudy" style="color:initial">tradestudy</span>
-     <li><span class="dfn-paneled" id="term-for-validates" style="color:initial">validates</span>
+     <li><span class="dfn-paneled" id="term-for-analysis">analysis</span>
+     <li><span class="dfn-paneled" id="term-for-analyzedelement">analyzedelement</span>
+     <li><span class="dfn-paneled" id="term-for-analyzes">analyzes</span>
+     <li><span class="dfn-paneled" id="term-for-assumption">assumption</span>
+     <li><span class="dfn-paneled" id="term-for-characterization">characterization</span>
+     <li><span class="dfn-paneled" id="term-for-characterizedelement">characterizedelement</span>
+     <li><span class="dfn-paneled" id="term-for-characterizes">characterizes</span>
+     <li><span class="dfn-paneled" id="term-for-constrainedelement">constrainedelement</span>
+     <li><span class="dfn-paneled" id="term-for-constrains">constrains</span>
+     <li><span class="dfn-paneled" id="term-for-constraint">constraint</span>
+     <li><span class="dfn-paneled" id="term-for-costestimate">costestimate</span>
+     <li><span class="dfn-paneled" id="term-for-criterion">criterion</span>
+     <li><span class="dfn-paneled" id="term-for-drivingrequirementsanalysis">drivingrequirementsanalysis</span>
+     <li><span class="dfn-paneled" id="term-for-drivingrequirementsexplanation">drivingrequirementsexplanation</span>
+     <li><span class="dfn-paneled" id="term-for-explains">explains</span>
+     <li><span class="dfn-paneled" id="term-for-explanation">explanation</span>
+     <li><span class="dfn-paneled" id="term-for-fact">fact</span>
+     <li><span class="dfn-paneled" id="term-for-glossaryentry">glossaryentry</span>
+     <li><span class="dfn-paneled" id="term-for-hascriterion">hascriterion</span>
+     <li><span class="dfn-paneled" id="term-for-hasglossarydefinition">hasglossarydefinition</span>
+     <li><span class="dfn-paneled" id="term-for-hasglossaryterm">hasglossaryterm</span>
+     <li><span class="dfn-paneled" id="term-for-hasmetric">hasmetric</span>
+     <li><span class="dfn-paneled" id="term-for-hasvalue">hasvalue</span>
+     <li><span class="dfn-paneled" id="term-for-keyrequirementsanalysis">keyrequirementsanalysis</span>
+     <li><span class="dfn-paneled" id="term-for-keyrequirementsexplanation">keyrequirementsexplanation</span>
+     <li><span class="dfn-paneled" id="term-for-limits">limits</span>
+     <li><span class="dfn-paneled" id="term-for-measuredelement">measuredelement</span>
+     <li><span class="dfn-paneled" id="term-for-measures">measures</span>
+     <li><span class="dfn-paneled" id="term-for-metric">metric</span>
+     <li><span class="dfn-paneled" id="term-for-quantifies">quantifies</span>
+     <li><span class="dfn-paneled" id="term-for-quantity">quantity</span>
+     <li><span class="dfn-paneled" id="term-for-quantityvalue">quantityvalue</span>
+     <li><span class="dfn-paneled" id="term-for-tradestudy">tradestudy</span>
+     <li><span class="dfn-paneled" id="term-for-validates">validates</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-aggregatedelement" style="color:initial">aggregatedelement</span>
-     <li><span class="dfn-paneled" id="term-for-aggregates" style="color:initial">aggregates</span>
-     <li><span class="dfn-paneled" id="term-for-containedelement" style="color:initial">containedelement</span>
-     <li><span class="dfn-paneled" id="term-for-container" style="color:initial">container</span>
-     <li><span class="dfn-paneled" id="term-for-contains" style="color:initial">contains</span>
-     <li><span class="dfn-paneled" id="term-for-identifiedelement" style="color:initial">identifiedelement</span>
-     <li><span class="dfn-paneled" id="term-for-package" style="color:initial">package</span>
+     <li><span class="dfn-paneled" id="term-for-aggregatedelement">aggregatedelement</span>
+     <li><span class="dfn-paneled" id="term-for-aggregates">aggregates</span>
+     <li><span class="dfn-paneled" id="term-for-containedelement">containedelement</span>
+     <li><span class="dfn-paneled" id="term-for-container">container</span>
+     <li><span class="dfn-paneled" id="term-for-contains">contains</span>
+     <li><span class="dfn-paneled" id="term-for-identifiedelement">identifiedelement</span>
+     <li><span class="dfn-paneled" id="term-for-package">package</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-component" style="color:initial">component</span>
-     <li><span class="dfn-paneled" id="term-for-deploys" style="color:initial">deploys</span>
-     <li><span class="dfn-paneled" id="term-for-emits" style="color:initial">emits</span>
-     <li><span class="dfn-paneled" id="term-for-environment" style="color:initial">environment</span>
-     <li><span class="dfn-paneled" id="term-for-flow" style="color:initial">flow</span>
-     <li><span class="dfn-paneled" id="term-for-function" style="color:initial">function</span>
-     <li><span class="dfn-paneled" id="term-for-hasparticipant" style="color:initial">hasparticipant</span>
-     <li><span class="dfn-paneled" id="term-for-induces" style="color:initial">induces</span>
-     <li><span class="dfn-paneled" id="term-for-influences" style="color:initial">influences</span>
-     <li><span class="dfn-paneled" id="term-for-ingests" style="color:initial">ingests</span>
-     <li><span class="dfn-paneled" id="term-for-interchange" style="color:initial">interchange</span>
-     <li><span class="dfn-paneled" id="term-for-interchangepoint" style="color:initial">interchangepoint</span>
-     <li><span class="dfn-paneled" id="term-for-interchangesthrough" style="color:initial">interchangesthrough</span>
-     <li><span class="dfn-paneled" id="term-for-interface" style="color:initial">interface</span>
-     <li><span class="dfn-paneled" id="term-for-invokes" style="color:initial">invokes</span>
-     <li><span class="dfn-paneled" id="term-for-involves" style="color:initial">involves</span>
-     <li><span class="dfn-paneled" id="term-for-istraversedby" style="color:initial">istraversedby</span>
-     <li><span class="dfn-paneled" id="term-for-item" style="color:initial">item</span>
-     <li><span class="dfn-paneled" id="term-for-joins" style="color:initial">joins</span>
-     <li><span class="dfn-paneled" id="term-for-junction" style="color:initial">junction</span>
-     <li><span class="dfn-paneled" id="term-for-mission" style="color:initial">mission</span>
-     <li><span class="dfn-paneled" id="term-for-objective" style="color:initial">objective</span>
-     <li><span class="dfn-paneled" id="term-for-performingelement" style="color:initial">performingelement</span>
-     <li><span class="dfn-paneled" id="term-for-performs" style="color:initial">performs</span>
-     <li><span class="dfn-paneled" id="term-for-presentingelement" style="color:initial">presentingelement</span>
-     <li><span class="dfn-paneled" id="term-for-presents" style="color:initial">presents</span>
-     <li><span class="dfn-paneled" id="term-for-produces" style="color:initial">produces</span>
-     <li><span class="dfn-paneled" id="term-for-product" style="color:initial">product</span>
-     <li><span class="dfn-paneled" id="term-for-pursues" style="color:initial">pursues</span>
-     <li><span class="dfn-paneled" id="term-for-receives" style="color:initial">receives</span>
-     <li><span class="dfn-paneled" id="term-for-refines" style="color:initial">refines</span>
-     <li><span class="dfn-paneled" id="term-for-requirement" style="color:initial">requirement</span>
-     <li><span class="dfn-paneled" id="term-for-sends" style="color:initial">sends</span>
-     <li><span class="dfn-paneled" id="term-for-specifiedelement" style="color:initial">specifiedelement</span>
-     <li><span class="dfn-paneled" id="term-for-specifies" style="color:initial">specifies</span>
-     <li><span class="dfn-paneled" id="term-for-transfers" style="color:initial">transfers</span>
-     <li><span class="dfn-paneled" id="term-for-transfersin" style="color:initial">transfersin</span>
-     <li><span class="dfn-paneled" id="term-for-transfersout" style="color:initial">transfersout</span>
-     <li><span class="dfn-paneled" id="term-for-traversingelement" style="color:initial">traversingelement</span>
+     <li><span class="dfn-paneled" id="term-for-component">component</span>
+     <li><span class="dfn-paneled" id="term-for-deploys">deploys</span>
+     <li><span class="dfn-paneled" id="term-for-emits">emits</span>
+     <li><span class="dfn-paneled" id="term-for-environment">environment</span>
+     <li><span class="dfn-paneled" id="term-for-flow">flow</span>
+     <li><span class="dfn-paneled" id="term-for-function">function</span>
+     <li><span class="dfn-paneled" id="term-for-hasparticipant">hasparticipant</span>
+     <li><span class="dfn-paneled" id="term-for-induces">induces</span>
+     <li><span class="dfn-paneled" id="term-for-influences">influences</span>
+     <li><span class="dfn-paneled" id="term-for-ingests">ingests</span>
+     <li><span class="dfn-paneled" id="term-for-interchange">interchange</span>
+     <li><span class="dfn-paneled" id="term-for-interchangepoint">interchangepoint</span>
+     <li><span class="dfn-paneled" id="term-for-interchangesthrough">interchangesthrough</span>
+     <li><span class="dfn-paneled" id="term-for-interface">interface</span>
+     <li><span class="dfn-paneled" id="term-for-invokes">invokes</span>
+     <li><span class="dfn-paneled" id="term-for-involves">involves</span>
+     <li><span class="dfn-paneled" id="term-for-istraversedby">istraversedby</span>
+     <li><span class="dfn-paneled" id="term-for-item">item</span>
+     <li><span class="dfn-paneled" id="term-for-joins">joins</span>
+     <li><span class="dfn-paneled" id="term-for-junction">junction</span>
+     <li><span class="dfn-paneled" id="term-for-mission">mission</span>
+     <li><span class="dfn-paneled" id="term-for-objective">objective</span>
+     <li><span class="dfn-paneled" id="term-for-performingelement">performingelement</span>
+     <li><span class="dfn-paneled" id="term-for-performs">performs</span>
+     <li><span class="dfn-paneled" id="term-for-presentingelement">presentingelement</span>
+     <li><span class="dfn-paneled" id="term-for-presents">presents</span>
+     <li><span class="dfn-paneled" id="term-for-produces">produces</span>
+     <li><span class="dfn-paneled" id="term-for-product">product</span>
+     <li><span class="dfn-paneled" id="term-for-pursues">pursues</span>
+     <li><span class="dfn-paneled" id="term-for-receives">receives</span>
+     <li><span class="dfn-paneled" id="term-for-refines">refines</span>
+     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
+     <li><span class="dfn-paneled" id="term-for-sends">sends</span>
+     <li><span class="dfn-paneled" id="term-for-specifiedelement">specifiedelement</span>
+     <li><span class="dfn-paneled" id="term-for-specifies">specifies</span>
+     <li><span class="dfn-paneled" id="term-for-transfers">transfers</span>
+     <li><span class="dfn-paneled" id="term-for-transfersin">transfersin</span>
+     <li><span class="dfn-paneled" id="term-for-transfersout">transfersout</span>
+     <li><span class="dfn-paneled" id="term-for-traversingelement">traversingelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-approves" style="color:initial">approves</span>
-     <li><span class="dfn-paneled" id="term-for-assignedelement" style="color:initial">assignedelement</span>
-     <li><span class="dfn-paneled" id="term-for-authorizes" style="color:initial">authorizes</span>
-     <li><span class="dfn-paneled" id="term-for-belongsto" style="color:initial">belongsto</span>
-     <li><span class="dfn-paneled" id="term-for-binds" style="color:initial">binds</span>
-     <li><span class="dfn-paneled" id="term-for-concern" style="color:initial">concern</span>
-     <li><span class="dfn-paneled" id="term-for-concurs" style="color:initial">concurs</span>
-     <li><span class="dfn-paneled" id="term-for-delegatesto" style="color:initial">delegatesto</span>
-     <li><span class="dfn-paneled" id="term-for-delivers" style="color:initial">delivers</span>
-     <li><span class="dfn-paneled" id="term-for-describes" style="color:initial">describes</span>
-     <li><span class="dfn-paneled" id="term-for-developedelement" style="color:initial">developedelement</span>
-     <li><span class="dfn-paneled" id="term-for-developmentstate" style="color:initial">developmentstate</span>
-     <li><span class="dfn-paneled" id="term-for-hasassignment" style="color:initial">hasassignment</span>
-     <li><span class="dfn-paneled" id="term-for-hasparticipant①" style="color:initial">hasparticipant</span>
-     <li><span class="dfn-paneled" id="term-for-hasresponsibilityfor" style="color:initial">hasresponsibilityfor</span>
-     <li><span class="dfn-paneled" id="term-for-hasrole" style="color:initial">hasrole</span>
-     <li><span class="dfn-paneled" id="term-for-interchangesthrough①" style="color:initial">interchangesthrough</span>
-     <li><span class="dfn-paneled" id="term-for-invokes①" style="color:initial">invokes</span>
-     <li><span class="dfn-paneled" id="term-for-involves①" style="color:initial">involves</span>
-     <li><span class="dfn-paneled" id="term-for-manifests" style="color:initial">manifests</span>
-     <li><span class="dfn-paneled" id="term-for-organization" style="color:initial">organization</span>
-     <li><span class="dfn-paneled" id="term-for-policy" style="color:initial">policy</span>
-     <li><span class="dfn-paneled" id="term-for-prepares" style="color:initial">prepares</span>
-     <li><span class="dfn-paneled" id="term-for-produces①" style="color:initial">produces</span>
-     <li><span class="dfn-paneled" id="term-for-realizedelement" style="color:initial">realizedelement</span>
-     <li><span class="dfn-paneled" id="term-for-realizes" style="color:initial">realizes</span>
-     <li><span class="dfn-paneled" id="term-for-receives①" style="color:initial">receives</span>
-     <li><span class="dfn-paneled" id="term-for-relieson" style="color:initial">relieson</span>
-     <li><span class="dfn-paneled" id="term-for-represents" style="color:initial">represents</span>
-     <li><span class="dfn-paneled" id="term-for-suppliedelement" style="color:initial">suppliedelement</span>
-     <li><span class="dfn-paneled" id="term-for-supplies" style="color:initial">supplies</span>
+     <li><span class="dfn-paneled" id="term-for-approves">approves</span>
+     <li><span class="dfn-paneled" id="term-for-assignedelement">assignedelement</span>
+     <li><span class="dfn-paneled" id="term-for-authorizes">authorizes</span>
+     <li><span class="dfn-paneled" id="term-for-belongsto">belongsto</span>
+     <li><span class="dfn-paneled" id="term-for-binds">binds</span>
+     <li><span class="dfn-paneled" id="term-for-concern">concern</span>
+     <li><span class="dfn-paneled" id="term-for-concurs">concurs</span>
+     <li><span class="dfn-paneled" id="term-for-delegatesto">delegatesto</span>
+     <li><span class="dfn-paneled" id="term-for-delivers">delivers</span>
+     <li><span class="dfn-paneled" id="term-for-describes">describes</span>
+     <li><span class="dfn-paneled" id="term-for-developedelement">developedelement</span>
+     <li><span class="dfn-paneled" id="term-for-developmentstate">developmentstate</span>
+     <li><span class="dfn-paneled" id="term-for-hasassignment">hasassignment</span>
+     <li><span class="dfn-paneled" id="term-for-hasparticipant①">hasparticipant</span>
+     <li><span class="dfn-paneled" id="term-for-hasresponsibilityfor">hasresponsibilityfor</span>
+     <li><span class="dfn-paneled" id="term-for-hasrole">hasrole</span>
+     <li><span class="dfn-paneled" id="term-for-interchangesthrough①">interchangesthrough</span>
+     <li><span class="dfn-paneled" id="term-for-invokes①">invokes</span>
+     <li><span class="dfn-paneled" id="term-for-involves①">involves</span>
+     <li><span class="dfn-paneled" id="term-for-manifests">manifests</span>
+     <li><span class="dfn-paneled" id="term-for-organization">organization</span>
+     <li><span class="dfn-paneled" id="term-for-policy">policy</span>
+     <li><span class="dfn-paneled" id="term-for-prepares">prepares</span>
+     <li><span class="dfn-paneled" id="term-for-produces①">produces</span>
+     <li><span class="dfn-paneled" id="term-for-realizedelement">realizedelement</span>
+     <li><span class="dfn-paneled" id="term-for-realizes">realizes</span>
+     <li><span class="dfn-paneled" id="term-for-receives①">receives</span>
+     <li><span class="dfn-paneled" id="term-for-relieson">relieson</span>
+     <li><span class="dfn-paneled" id="term-for-represents">represents</span>
+     <li><span class="dfn-paneled" id="term-for-suppliedelement">suppliedelement</span>
+     <li><span class="dfn-paneled" id="term-for-supplies">supplies</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://www.w3.org/2001/xmlschema]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-string" style="color:initial">string</span>
+     <li><span class="dfn-paneled" id="term-for-string">string</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

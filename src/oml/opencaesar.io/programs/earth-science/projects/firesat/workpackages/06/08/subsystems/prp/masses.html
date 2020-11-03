@@ -1198,7 +1198,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li span:not(.dfn-paneled) {
 			white-space: nowrap;
 			color: transparent; }
 		ul.index li a:hover + span,
@@ -1321,9 +1321,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9f60c8f, updated Fri Sep 25 16:39:03 2020 -0700" name="generator">
+  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/masses" rel="canonical">
-  <meta content="b855669a8447796334ff9c0091cd922c1f18e604" name="document-revision">
+  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1552,7 +1552,7 @@ figcaption:not(.no-marker)::before {
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
 .dfn-panel > b { display: block; }
-.dfn-panel a { color: black; }
+.dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
 .dfn-panel ul { padding: 0; }
@@ -1755,7 +1755,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Masses</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-10-02">2 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1829,6 +1829,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionsystemcontrolunit" id="ref-for-propulsionsystemcontrolunit">prp-assemblies:PropulsionSystemControlUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.2" id="PrimaryThrusterCBEMassConstraint"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primarythrustercbemassconstraint">PrimaryThrusterCBEMassConstraint<a class="self-link" href="#primarythrustercbemassconstraint"></a></dfn></span><a class="self-link" href="#PrimaryThrusterCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①">fse:CBEMassConstraint</a></p>
@@ -1841,6 +1843,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#primarythruster" id="ref-for-primarythruster">prp-assemblies:PrimaryThruster</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.3" id="ACSThruster1CBEMassConstraint"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster1cbemassconstraint">ACSThruster1CBEMassConstraint<a class="self-link" href="#acsthruster1cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster1CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint②">fse:CBEMassConstraint</a></p>
@@ -1853,6 +1857,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes②">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster1" id="ref-for-acsthruster1">prp-assemblies:ACSThruster1</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram②">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.4" id="ACSThruster2CBEMassConstraint"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster2cbemassconstraint">ACSThruster2CBEMassConstraint<a class="self-link" href="#acsthruster2cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster2CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint③">fse:CBEMassConstraint</a></p>
@@ -1865,6 +1871,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes③">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster2" id="ref-for-acsthruster2">prp-assemblies:ACSThruster2</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram③">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.5" id="ACSThruster3CBEMassConstraint"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster3cbemassconstraint">ACSThruster3CBEMassConstraint<a class="self-link" href="#acsthruster3cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster3CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint④">fse:CBEMassConstraint</a></p>
@@ -1877,6 +1885,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes④">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster3" id="ref-for-acsthruster3">prp-assemblies:ACSThruster3</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram④">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.6" id="ACSThruster4CBEMassConstraint"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster4cbemassconstraint">ACSThruster4CBEMassConstraint<a class="self-link" href="#acsthruster4cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster4CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑤">fse:CBEMassConstraint</a></p>
@@ -1889,6 +1899,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑤">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster4" id="ref-for-acsthruster4">prp-assemblies:ACSThruster4</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑤">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram⑤">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.7" id="ACSThruster5CBEMassConstraint"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster5cbemassconstraint">ACSThruster5CBEMassConstraint<a class="self-link" href="#acsthruster5cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster5CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑥">fse:CBEMassConstraint</a></p>
@@ -1901,6 +1913,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑥">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster5" id="ref-for-acsthruster5">prp-assemblies:ACSThruster5</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑥">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram⑥">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.8" id="ACSThruster6CBEMassConstraint"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster6cbemassconstraint">ACSThruster6CBEMassConstraint<a class="self-link" href="#acsthruster6cbemassconstraint"></a></dfn></span><a class="self-link" href="#ACSThruster6CBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑦">fse:CBEMassConstraint</a></p>
@@ -1913,6 +1927,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑦">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#acsthruster6" id="ref-for-acsthruster6">prp-assemblies:ACSThruster6</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑦">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram⑦">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.9" id="PropellantHandlingSectionCBEMassConstraint"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanthandlingsectioncbemassconstraint">PropellantHandlingSectionCBEMassConstraint<a class="self-link" href="#propellanthandlingsectioncbemassconstraint"></a></dfn></span><a class="self-link" href="#PropellantHandlingSectionCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑧">fse:CBEMassConstraint</a></p>
@@ -1925,6 +1941,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑧">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propellanthandlingsection" id="ref-for-propellanthandlingsection">prp-assemblies:PropellantHandlingSection</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑧">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram⑧">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.10" id="FillDrainValveUnitCBEMassConstraint"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="filldrainvalveunitcbemassconstraint">FillDrainValveUnitCBEMassConstraint<a class="self-link" href="#filldrainvalveunitcbemassconstraint"></a></dfn></span><a class="self-link" href="#FillDrainValveUnitCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint⑨">fse:CBEMassConstraint</a></p>
@@ -1937,6 +1955,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes⑨">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#filldrainvalveunit" id="ref-for-filldrainvalveunit">prp-assemblies:FillDrainValveUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference⑨">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram⑨">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.11" id="BPPropellantLineUnitCBEMassConstraint"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="bppropellantlineunitcbemassconstraint">BPPropellantLineUnitCBEMassConstraint<a class="self-link" href="#bppropellantlineunitcbemassconstraint"></a></dfn></span><a class="self-link" href="#BPPropellantLineUnitCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①⓪">fse:CBEMassConstraint</a></p>
@@ -1949,6 +1969,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①⓪">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#bppropellantlineunit" id="ref-for-bppropellantlineunit">prp-assemblies:BPPropellantLineUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①⓪">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①⓪">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.12" id="PropulsionModuleCBEMassConstraint"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionmodulecbemassconstraint">PropulsionModuleCBEMassConstraint<a class="self-link" href="#propulsionmodulecbemassconstraint"></a></dfn></span><a class="self-link" href="#PropulsionModuleCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①①">fse:CBEMassConstraint</a></p>
@@ -1961,6 +1983,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①①">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propulsionmodule" id="ref-for-propulsionmodule">prp-assemblies:PropulsionModule</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①①">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①①">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.13" id="PropellantTankCBEMassConstraint"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanttankcbemassconstraint">PropellantTankCBEMassConstraint<a class="self-link" href="#propellanttankcbemassconstraint"></a></dfn></span><a class="self-link" href="#PropellantTankCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①②">fse:CBEMassConstraint</a></p>
@@ -1973,6 +1997,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①②">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#propellanttank" id="ref-for-propellanttank">prp-assemblies:PropellantTank</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①②">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①②">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.14" id="PressurantTankCBEMassConstraint"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pressuranttankcbemassconstraint">PressurantTankCBEMassConstraint<a class="self-link" href="#pressuranttankcbemassconstraint"></a></dfn></span><a class="self-link" href="#PressurantTankCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①③">fse:CBEMassConstraint</a></p>
@@ -1985,6 +2011,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①③">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#pressuranttank" id="ref-for-pressuranttank">prp-assemblies:PressurantTank</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①③">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①③">80000-4-instances:kilogram</a></p>
     </ul>
     <h3 class="heading settled" data-level="3.15" id="PMPropellantLineUnitCBEMassConstraint"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pmpropellantlineunitcbemassconstraint">PMPropellantLineUnitCBEMassConstraint<a class="self-link" href="#pmpropellantlineunitcbemassconstraint"></a></dfn></span><a class="self-link" href="#PMPropellantLineUnitCBEMassConstraint"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#cbemassconstraint" id="ref-for-cbemassconstraint①④">fse:CBEMassConstraint</a></p>
@@ -1997,6 +2025,8 @@ dfn > a.self-link::before      { content: "#"; }
     <ul>
      <li data-md>
       <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes①④">analysis:characterizes</a> <a data-link-type="dfn" href="assemblies.html#pmpropellantlineunit" id="ref-for-pmpropellantlineunit">prp-assemblies:PMPropellantLineUnit</a></p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference" id="ref-for-hasreference①④">metrology:hasReference</a> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram" id="ref-for-kilogram①④">80000-4-instances:kilogram</a></p>
     </ul>
    </div>
   </main>
@@ -2208,6 +2238,46 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterizes①④">3.15. PMPropellantLineUnitCBEMassConstraint</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram">../../../../../../../../../../../../build/oml/iso.org/80000-4-instances.html#kilogram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram">3.1. PropulsionSystemControlUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①">3.2. PrimaryThrusterCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram②">3.3. ACSThruster1CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram③">3.4. ACSThruster2CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram④">3.5. ACSThruster3CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram⑤">3.6. ACSThruster4CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram⑥">3.7. ACSThruster5CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram⑦">3.8. ACSThruster6CBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram⑧">3.9. PropellantHandlingSectionCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram⑨">3.10. FillDrainValveUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①⓪">3.11. BPPropellantLineUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①①">3.12. PropulsionModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①②">3.13. PropellantTankCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①③">3.14. PressurantTankCBEMassConstraint</a>
+    <li><a href="#ref-for-kilogram①④">3.15. PMPropellantLineUnitCBEMassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasreference">
+   <a href="../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference">../../../../../../../../../../../../build/oml/ontology.iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasreference">3.1. PropulsionSystemControlUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①">3.2. PrimaryThrusterCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference②">3.3. ACSThruster1CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference③">3.4. ACSThruster2CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference④">3.5. ACSThruster3CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference⑤">3.6. ACSThruster4CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference⑥">3.7. ACSThruster5CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference⑦">3.8. ACSThruster6CBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference⑧">3.9. PropellantHandlingSectionCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference⑨">3.10. FillDrainValveUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①⓪">3.11. BPPropellantLineUnitCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①①">3.12. PropulsionModuleCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①②">3.13. PropellantTankCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①③">3.14. PressurantTankCBEMassConstraint</a>
+    <li><a href="#ref-for-hasreference①④">3.15. PMPropellantLineUnitCBEMassConstraint</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-acsthruster1">
    <a href="assemblies.html#acsthruster1">assemblies.html#acsthruster1</a><b>Referenced in:</b>
    <ul>
@@ -2303,32 +2373,42 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-cbemassconstraint" style="color:initial">cbemassconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-hasmassconstraintvalue" style="color:initial">hasmassconstraintvalue</span>
+     <li><span class="dfn-paneled" id="term-for-cbemassconstraint">cbemassconstraint</span>
+     <li><span class="dfn-paneled" id="term-for-hasmassconstraintvalue">hasmassconstraintvalue</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/analysis]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-characterizes" style="color:initial">characterizes</span>
+     <li><span class="dfn-paneled" id="term-for-characterizes">characterizes</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-acsthruster1" style="color:initial">acsthruster1</span>
-     <li><span class="dfn-paneled" id="term-for-acsthruster2" style="color:initial">acsthruster2</span>
-     <li><span class="dfn-paneled" id="term-for-acsthruster3" style="color:initial">acsthruster3</span>
-     <li><span class="dfn-paneled" id="term-for-acsthruster4" style="color:initial">acsthruster4</span>
-     <li><span class="dfn-paneled" id="term-for-acsthruster5" style="color:initial">acsthruster5</span>
-     <li><span class="dfn-paneled" id="term-for-acsthruster6" style="color:initial">acsthruster6</span>
-     <li><span class="dfn-paneled" id="term-for-bppropellantlineunit" style="color:initial">bppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-filldrainvalveunit" style="color:initial">filldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="term-for-pmpropellantlineunit" style="color:initial">pmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-pressuranttank" style="color:initial">pressuranttank</span>
-     <li><span class="dfn-paneled" id="term-for-primarythruster" style="color:initial">primarythruster</span>
-     <li><span class="dfn-paneled" id="term-for-propellanthandlingsection" style="color:initial">propellanthandlingsection</span>
-     <li><span class="dfn-paneled" id="term-for-propellanttank" style="color:initial">propellanttank</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionmodule" style="color:initial">propulsionmodule</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionsystemcontrolunit" style="color:initial">propulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster1">acsthruster1</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster2">acsthruster2</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster3">acsthruster3</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster4">acsthruster4</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster5">acsthruster5</span>
+     <li><span class="dfn-paneled" id="term-for-acsthruster6">acsthruster6</span>
+     <li><span class="dfn-paneled" id="term-for-bppropellantlineunit">bppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="term-for-filldrainvalveunit">filldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="term-for-pmpropellantlineunit">pmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="term-for-pressuranttank">pressuranttank</span>
+     <li><span class="dfn-paneled" id="term-for-primarythruster">primarythruster</span>
+     <li><span class="dfn-paneled" id="term-for-propellanthandlingsection">propellanthandlingsection</span>
+     <li><span class="dfn-paneled" id="term-for-propellanttank">propellanttank</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionmodule">propulsionmodule</span>
+     <li><span class="dfn-paneled" id="term-for-propulsionsystemcontrolunit">propulsionsystemcontrolunit</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
