@@ -11,7 +11,7 @@ version = '1.5.0'
 buildscript {
 	repositories {
 		mavenLocal()
-		maven { url 'https://dl.bintray.com/opencaesar/owl-adapter' }
+		maven { url 'https://dl.bintray.com/opencaesar/adapters' }
 		maven { url 'https://dl.bintray.com/opencaesar/owl-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml-tools' }
 		maven { url 'https://dl.bintray.com/opencaesar/oml' }
@@ -24,9 +24,9 @@ buildscript {
 		classpath 'io.opencaesar.owl:owl-query-gradle:+'
 		classpath 'io.opencaesar.owl:owl-load-gradle:+'
 		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-		classpath 'io.opencaesar.owl:oml2owl-gradle:0.7.+'
-		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.7.+'
-		classpath 'io.opencaesar.oml:oml-merge-gradle:0.7.+'
+		classpath 'io.opencaesar.adapters:oml2owl-gradle:0.8.+'
+		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.8.+'
+		classpath 'io.opencaesar.oml:oml-merge-gradle:0.8.+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
 		// needed since gradle-bintray-plugin brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
@@ -37,7 +37,7 @@ buildscript {
  * Dependency versions
  */
 ext { 
-	jplVocabulariesVersion = '1.+'
+	jplVersion = '1.+'
 }
 
 /*
@@ -60,7 +60,7 @@ repositories {
  * The OML dependencies
  */
 dependencies {
-	oml "io.opencaesar.ontologies:jpl-vocabularies:$jplVocabulariesVersion"
+	oml "io.opencaesar.ontologies:jpl-vocabularies:$jplVersion"
 }
 
 /*
@@ -126,6 +126,18 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 	]
 	// Junit error report
 	reportPath = file('build/reports/reasoning.xml')
+}
+
+/*
+ * Start and stop the Fuseki server
+ */
+task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
+	configurationPath = file('.fuseki.ttl')
+	outputFolderPath = file('.fuseki')
+}
+
+task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
+	outputFolderPath = file('.fuseki')
 }
 
 /*
@@ -214,7 +226,8 @@ apply plugin: 'com.jfrog.bintray'
 ext.gh = [
 	dep: 'https://github.com',
 	org: 'opencaesar',
-	rep: 'ontologies'
+	rep: 'firesat-example',
+	bintray: 'ontologies'
 ]
 
 bintray {
@@ -225,7 +238,7 @@ bintray {
 	override = true
 	pkg {
 		name = project.name
-		repo = gh.rep
+		repo = gh.bintray
 		userOrg = gh.org
 		desc = project.description
 		licenses = ['Apache-2.0']
@@ -238,17 +251,13 @@ bintray {
 			released  = new Date()
 		}
 	}
-
 }
 
 /*
- * Start and stop the Fuseki server
- */
-task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
-	configurationPath = file('.fuseki.ttl')
-	outputFolderPath = file('.fuseki')
-}
+ * Integration with the Eclipse IDE
+ */ 
+apply plugin: 'eclipse'
 
-task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
-	outputFolderPath = file('.fuseki')
+eclipse {
+    synchronizationTasks downloadDependencies
 }
