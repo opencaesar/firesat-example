@@ -1,0 +1,82 @@
+vocabulary <http://opencaesar.io/document/document> with # as doc {
+	extends <http://www.w3.org/2001/XMLSchema>
+	extends <http://purl.org/dc/elements/1.1>
+	extends <http://imce.jpl.nasa.gov/foundation/project>
+	extends <./tree.oml>
+	
+	aspect Titled
+	
+	@tree:impliesBinding 'hasReleaseVersion'
+	annotation property hasReleaseVersion
+	
+	@tree:impliesBinding 'hasTitle'
+	annotation property hasTitle
+	
+	@tree:impliesBinding 'hasText'
+	annotation property hasText
+	
+	@tree:impliesBinding 'hasStyle'
+	annotation property hasStyle
+	
+	@tree:impliesBinding 'hasClass'
+	annotation property hasClass
+	
+	@tree:impliesBinding 'hasLink'
+	annotation property hasLink
+	
+	@tree:impliesBinding 'hasId'
+	annotation property hasId
+	
+	@tree:impliesBinding 'hasBorder'
+	annotation property hasBorder
+	
+	@tree:impliesBinding 'hasBodyColor'
+	annotation property hasBodyColor
+	
+	@tree:impliesBinding 'hasBackgroundColor'
+	annotation property hasBackgroundColor
+	
+	aspect Document :> tree:Element, Titled
+	
+	concept Block :> tree:Element
+	
+	concept Book :> Document
+	
+	concept Preface :> tree:Element, Titled
+	
+	concept Article :> tree:Element, Titled
+	
+	concept Chapter :> Titled, tree:Element
+	
+	concept Section :> Titled, tree:Element
+	
+	concept Table :> tree:Element
+	
+	concept InformalTable :> tree:Element
+	
+	concept TableRow :> tree:Element
+	
+	concept InterleavedTable :> tree:Element
+	
+	concept TableColumn :> tree:Element
+	
+	concept TableCell :> tree:Element
+	
+	concept Para :> tree:Element
+	
+	concept TitlePage :> tree:Element
+	
+	concept Preparer :> tree:Element
+	
+	relation entity PreparedBy [
+		from Document
+		to project:Person
+		forward preparedBy
+	]
+	
+	relation entity Describes [
+		from tree:Element
+		to base:IdentifiedElement
+		forward describes
+	]
+}

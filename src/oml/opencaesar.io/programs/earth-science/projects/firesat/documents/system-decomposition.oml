@@ -1,0 +1,277 @@
+description <http://opencaesar.io/programs/earth-science/projects/firesat/documents/system-decomposition> with # as system-decomposition {
+
+	extends <http://opencaesar.io/organizations/jpl>
+	extends <./common.oml>
+
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	uses <http://opencaesar.io/document/document> as doc
+	uses <http://purl.org/dc/elements/1.1>
+	
+	@doc:hasTitle 'FireSat Physical Structure'
+	@doc:hasReleaseVersion 'Development'
+	ci PhysicalDecomposition : doc:Book [
+		doc:preparedBy jpl:DavidTruong
+		doc:preparedBy jpl:PaulGaspardo
+		
+		tree:hasElement common:TitlePage
+		
+		tree:hasElement 0-Preface
+		tree:hasElement 1-SubsystemsAndAssemblies
+	]
+	
+	@doc:hasTitle 'Overview'
+	ci 0-Preface : doc:Preface [
+		tree:hasElement PrefaceText
+	]
+	
+	@doc:hasText '''
+		This document details the physical decomposition of the systems involved in the
+		example fire detection satellite system described by the OML vocabulary. This includes 
+		information about the assemblies used, what assemblies are used to create other assemblies,
+		and mass constraints for all the assemblies.
+	'''
+	ci PrefaceText : doc:Para
+	
+	@doc:hasTitle 'Subsystem and Assemblies'
+	ci 1-SubsystemsAndAssemblies : doc:Chapter [
+		tree:hasElement 0-SubsystemsAndAssembliesText
+		tree:hasElement 1-SubsystemsAndAssembliesTable
+		tree:hasElement 2-SubsystemSections
+	]
+	
+	@doc:hasText '''
+		The FireSat system is composed of multiple subsystems. These subsystems have a mass
+		constraint, and are the aggregate of multiple assemblies. These assemblies also have a 
+		mass constraint that must be met, and some assemblies contain multiple base 
+		assemblies put together.
+	'''
+	ci 0-SubsystemsAndAssembliesText : doc:Para
+	
+	@doc:hasTitle 'Subsystems'
+	@doc:hasClass 'getTable'
+	@doc:hasBorder '0'
+	ci 1-SubsystemsAndAssembliesTable : doc:Table [
+		tree:hasElement SubsystemTableContent
+	]
+	
+	@tree:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
+		  GRAPH ?ig {
+		    ?iri a fse:Subsystem .
+		    ?mc a fse:MassConstraint
+		  }
+		  GRAPH ?ssg {
+		    ?iri fse:hasSubsystemNumber ?identifier .
+		    ?iri rdfs:label ?name
+		  }
+		  GRAPH ?mcg {
+		    ?mc analysis:characterizes ?iri .
+		    ?mc fse:hasMassConstraintValue ?massNumber
+		  }
+		} ORDER BY ?name
+	'''
+	@tree:hasForwardedBinding '*'
+	ci SubsystemTableContent : doc:Block [
+		tree:hasElement 1-SubsystemTableSubsytemRow
+		tree:hasElement 2-SubsystemTableAssemblyRows
+	]
+	
+	@tree:hasForwardedBinding '*'
+	@doc:hasStyle 'background-color: #BFDFBF'
+	@doc:hasClass 'ocTable'
+	@doc:hasBackgroundColor '#BFDFBF'
+	ci 1-SubsystemTableSubsytemRow : doc:TableRow [
+		tree:hasElement 1-AcronymColumn
+		tree:hasElement 2-NameColumn
+		tree:hasElement 3-MassColumn
+	]
+	
+	@doc:hasTitle 'Identifier'
+	@tree:hasRequiredBinding 'identifier as hasText'
+	ci 1-AcronymColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Name'
+	@tree:hasRequiredBinding 'iri as hasLink'
+	@tree:hasRequiredBinding 'name as hasText'
+	ci 2-NameColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Mass'
+	@tree:hasRequiredBinding 'mass as hasText'
+	ci 3-MassColumn : doc:TableColumn
+	
+	@tree:hasRequiredBinding 'iri as ss'
+	@tree:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
+			GRAPH ?ag {
+				?ss base:aggregates ?iri .
+		        ?iri rdfs:label ?name .
+		        ?iri fse:hasAssemblyAcronym ?identifier
+		    }
+			GRAPH ?ig {
+				?iri a fse:Assembly .
+		        ?mc a fse:MassConstraint
+			}
+		    GRAPH ?mg {
+		   		?mc analysis:characterizes ?iri .
+		        ?mc fse:hasMassConstraintValue ?massNumber
+		    }
+		} ORDER BY ?identifier
+	'''
+	@tree:hasForwardedBinding '*'
+	@doc:hasClass 'interleaveTable'
+	@doc:hasStyle 'background-color: white'
+	@doc:hasBackgroundColor 'white'
+	ci 2-SubsystemTableAssemblyRows : doc:TableRow [
+		tree:hasElement 1-AcronymColumn
+		tree:hasElement 2-NameColumn
+		tree:hasElement 3-MassColumn
+	]
+	
+	@tree:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?ss ?ssName (?ssName as ?hasTitle) ?ssNumber (?ss AS ?hasId) WHERE {
+		  GRAPH ?ig {
+		    ?ss a fse:Subsystem
+		  }
+		  GRAPH ?ssg {
+		    ?ss rdfs:label ?ssName .
+		    ?ss fse:hasSubsystemNumber ?ssNumber
+		  }
+		} ORDER BY ?s
+	'''
+	@tree:hasForwardedBinding 'ss'
+	@tree:hasForwardedBinding 'ssName'
+	@tree:hasForwardedBinding 'ssNumber'
+	ci 2-SubsystemSections : doc:Section [
+		tree:hasElement 1-SubsystemDescription
+		tree:hasElement 2-AssemblySections
+	]
+	
+	@tree:hasRequiredBinding 'ss'
+	@tree:hasRequiredBinding 'ssName'
+	@tree:hasRequiredBinding 'ssNumber'
+	@tree:hasSparqlMapping '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT (CONCAT('The mass constraint of ', $ssName, ' (', $ssNumber, ') is ', STR(?mass), '.') as ?hasText) WHERE {
+		  GRAPH ?ig {
+		    ?mc a fse:MassLimitConstraint
+		  }
+		  GRAPH ?mcg {
+		    ?mc analysis:characterizes $ss .
+		    ?mc fse:hasMassConstraintValue ?mass .
+		  }
+		}
+	'''
+	ci 1-SubsystemDescription : doc:Para
+	
+	@tree:hasRequiredBinding 'ss'
+	@tree:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?assembly ?assemblyName (?assemblyName AS ?hasTitle) (?assembly as ?hasId) WHERE {
+		  GRAPH ?ig {
+		    ?assembly a fse:Assembly
+		  }
+		  GRAPH ?ag {
+		    $ss base:aggregates ?assembly .
+		    ?assembly rdfs:label ?assemblyName
+		  }
+		} ORDER BY ?assembly
+	'''
+	@tree:hasForwardedBinding 'assembly'
+	@tree:hasForwardedBinding 'assemblyName'
+	ci 2-AssemblySections : doc:Section [
+		tree:hasElement 1-AssemblyDescription
+		tree:hasElement 2-ContainedAssemblies
+	]
+	
+	@tree:hasRequiredBinding 'assembly'
+	@tree:hasRequiredBinding 'assemblyName'
+	@tree:hasSparqlMapping '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT (CONCAT('The mass of ', $assemblyName, ' is ', STR(?mass), '.') as ?hasText) WHERE {
+		  GRAPH ?ig {
+		    ?mc a fse:CBEMassConstraint
+		  }
+		  GRAPH ?mcg {
+		    ?mc analysis:characterizes $assembly .
+		    ?mc fse:hasMassConstraintValue ?mass .
+		  }
+		}
+	'''
+	ci 1-AssemblyDescription : doc:Para
+	
+	@tree:hasRequiredBinding 'assembly'
+	@tree:hasRequiredBinding 'assemblyName'
+	@tree:hasSparqlMapping '''
+		SELECT (CONCAT($assemblyName, ' Contained Assemblies') AS ?hasTitle) WHERE { }
+	'''
+	@tree:hasForwardedBinding 'assembly'
+	@doc:hasBorder '0'
+	ci 2-ContainedAssemblies : doc:Table [
+		tree:hasElement ContainedAssemblyRow
+	]
+	
+	@tree:hasRequiredBinding 'assembly as parent'
+	@tree:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?name (STR(?massNumber) AS ?mass) WHERE {
+			GRAPH ?cg {
+				$parent base:contains ?child .
+			}
+			GRAPH ?lg {
+		        ?child rdfs:label ?name .
+		    }
+			GRAPH ?ig {
+				?child a fse:Assembly .
+		        ?mc a fse:MassConstraint
+			}
+		    GRAPH ?mg {
+		   		?mc analysis:characterizes ?child .
+		        ?mc fse:hasMassConstraintValue ?massNumber
+		    }
+		} ORDER BY ?name
+	'''
+	@tree:hasForwardedBinding '*'
+	ci ContainedAssemblyRow : doc:TableRow [
+		tree:hasElement 1-AssemblyName
+		tree:hasElement 2-AssemblyMass
+	]
+	
+	@doc:hasTitle 'Assembly'
+	@tree:hasRequiredBinding 'name as hasText'
+	ci 1-AssemblyName : doc:TableColumn
+	
+	@doc:hasTitle 'Mass'
+	@tree:hasRequiredBinding 'mass as hasText'
+	ci 2-AssemblyMass : doc:TableColumn
+}
