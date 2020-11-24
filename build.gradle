@@ -191,20 +191,22 @@ task stylesheetUnzip(type: Copy) {
 task physicalGenerate(type:io.opencaesar.docbook.generator.DocbookGeneratorTask) {
 	endpoint = 'http://localhost:3030/firesat'
 	input = 'http://opencaesar.io/programs/earth-science/projects/firesat/documents/system-decomposition#PhysicalDecomposition'
-	output = file('src/docbook/physical/src-gen/physical_structure.xml')
+	output = file('build/reports/physical_structure/physical_structure.xml')
 }
 
 task physicalPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
-	input = file('src/docbook/physical/src-gen/physical_structure.xml')
+	input = file('build/reports/physical_structure/physical_structure.xml')
+	output = file('build/reports/physical_structure/physical_structure.pdf')
 	type = 'pdf'
-	xsl = file('src/docbook/physical/src-gen/pdf/pdf_ext.xsl')
+	xsl = file('build/stylesheets-gen/pdf/pdf.xsl')
 }
 
 task physicalHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
-	input = file('src/docbook/physical/src-gen/physical_structure.xml')
+	input = file('build/reports/physical_structure/physical_structure.xml')
+	output = file('build/reports/physical_structure/physical_structure.html')
 	type = 'html'
-	xsl = file('src/docbook/physical/src-gen/html/html_ext.xsl')
-	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
+	xsl = file('build/stylesheets-gen/html/html.xsl')
+	css = file('build/stylesheets-gen/default.css')
 }
 
 physicalGenerate.mustRunAfter(owlLoad)
@@ -224,20 +226,22 @@ task physicalRender() {
 task wbsGenerate(type:io.opencaesar.docbook.generator.DocbookGeneratorTask) {
 	endpoint = 'http://localhost:3030/firesat'
 	input = 'http://opencaesar.io/programs/earth-science/projects/firesat/documents/work-breakdown-structure#WorkBreakdownStructure'
-	output = file('src/docbook/wbs/src-gen/wbs.xml')
+	output = file('build/reports/wbs/wbs.xml')
 }
 
 task wbsPDF(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
-	input = file('src/docbook/wbs/src-gen/wbs.xml')
+	input = file('build/reports/wbs/wbs.xml')
+	output = file('build/reports/wbs/wbs.pdf')
 	type = 'pdf'
-	xsl = file('src/docbook/wbs/src-gen/pdf/pdf_ext.xsl')
+	xsl = file('build/stylesheets-gen/pdf/pdf.xsl')
 }
 
 task wbsHTML(type:io.opencaesar.docbook.adapter.DocbookAdapterTask, dependsOn: stylesheetUnzip) {
-	input = file('src/docbook/wbs/src-gen/wbs.xml')
+	input = file('build/reports/wbs/wbs.xml')
+	output = file('build/reports/wbs/wbs.html')
 	type = 'html'
-	xsl = file('src/docbook/wbs/src-gen/html/html_ext.xsl')
-	css = file('../docbook-tools/docbook-tools/docbook-stylesheets/src/stylesheets/default.css')
+	xsl = file('build/stylesheets-gen/html/html.xsl')
+	css = file('build/stylesheets-gen/default.css')
 }
 
 wbsGenerate.mustRunAfter(owlLoad)

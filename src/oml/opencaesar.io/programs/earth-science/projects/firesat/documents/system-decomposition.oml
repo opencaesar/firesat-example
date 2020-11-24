@@ -4,7 +4,7 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	extends <./common.oml>
 
 	uses <http://imce.jpl.nasa.gov/foundation/project>
-	uses <http://opencaesar.io/document/document> as doc
+	uses <http://opencaesar.io/document>
 	uses <http://purl.org/dc/elements/1.1>
 	
 	@doc:hasTitle 'FireSat Physical Structure'
@@ -13,15 +13,15 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		doc:preparedBy jpl:DavidTruong
 		doc:preparedBy jpl:PaulGaspardo
 		
-		tree:hasElement common:TitlePage
+		doc:hasElement common:TitlePage
 		
-		tree:hasElement 0-Preface
-		tree:hasElement 1-SubsystemsAndAssemblies
+		doc:hasElement 0-Preface
+		doc:hasElement 1-SubsystemsAndAssemblies
 	]
 	
 	@doc:hasTitle 'Overview'
 	ci 0-Preface : doc:Preface [
-		tree:hasElement PrefaceText
+		doc:hasElement PrefaceText
 	]
 	
 	@doc:hasText '''
@@ -34,9 +34,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	
 	@doc:hasTitle 'Subsystem and Assemblies'
 	ci 1-SubsystemsAndAssemblies : doc:Chapter [
-		tree:hasElement 0-SubsystemsAndAssembliesText
-		tree:hasElement 1-SubsystemsAndAssembliesTable
-		tree:hasElement 2-SubsystemSections
+		doc:hasElement 0-SubsystemsAndAssembliesText
+		doc:hasElement 1-SubsystemsAndAssembliesTable
+		doc:hasElement 2-SubsystemSections
 	]
 	
 	@doc:hasText '''
@@ -51,10 +51,10 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	@doc:hasClass 'getTable'
 	@doc:hasBorder '0'
 	ci 1-SubsystemsAndAssembliesTable : doc:Table [
-		tree:hasElement SubsystemTableContent
+		doc:hasElement SubsystemTableContent
 	]
 	
-	@tree:hasSparqlExpansion '''
+	@doc:hasSparqlExpansion '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -75,37 +75,37 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		  }
 		} ORDER BY ?name
 	'''
-	@tree:hasForwardedBinding '*'
+	@doc:hasForwardedBinding '*'
 	ci SubsystemTableContent : doc:Block [
-		tree:hasElement 1-SubsystemTableSubsytemRow
-		tree:hasElement 2-SubsystemTableAssemblyRows
+		doc:hasElement 1-SubsystemTableSubsytemRow
+		doc:hasElement 2-SubsystemTableAssemblyRows
 	]
 	
-	@tree:hasForwardedBinding '*'
+	@doc:hasForwardedBinding '*'
 	@doc:hasStyle 'background-color: #BFDFBF'
 	@doc:hasClass 'ocTable'
 	@doc:hasBackgroundColor '#BFDFBF'
 	ci 1-SubsystemTableSubsytemRow : doc:TableRow [
-		tree:hasElement 1-AcronymColumn
-		tree:hasElement 2-NameColumn
-		tree:hasElement 3-MassColumn
+		doc:hasElement 1-AcronymColumn
+		doc:hasElement 2-NameColumn
+		doc:hasElement 3-MassColumn
 	]
 	
 	@doc:hasTitle 'Identifier'
-	@tree:hasRequiredBinding 'identifier as hasText'
+	@doc:hasRequiredBinding 'identifier as hasText'
 	ci 1-AcronymColumn : doc:TableColumn
 	
 	@doc:hasTitle 'Name'
-	@tree:hasRequiredBinding 'iri as hasLink'
-	@tree:hasRequiredBinding 'name as hasText'
+	@doc:hasRequiredBinding 'iri as hasLink'
+	@doc:hasRequiredBinding 'name as hasText'
 	ci 2-NameColumn : doc:TableColumn
 	
 	@doc:hasTitle 'Mass'
-	@tree:hasRequiredBinding 'mass as hasText'
+	@doc:hasRequiredBinding 'mass as hasText'
 	ci 3-MassColumn : doc:TableColumn
 	
-	@tree:hasRequiredBinding 'iri as ss'
-	@tree:hasSparqlExpansion '''
+	@doc:hasRequiredBinding 'iri as ss'
+	@doc:hasSparqlExpansion '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -127,17 +127,17 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		    }
 		} ORDER BY ?identifier
 	'''
-	@tree:hasForwardedBinding '*'
+	@doc:hasForwardedBinding '*'
 	@doc:hasClass 'interleaveTable'
 	@doc:hasStyle 'background-color: white'
 	@doc:hasBackgroundColor 'white'
 	ci 2-SubsystemTableAssemblyRows : doc:TableRow [
-		tree:hasElement 1-AcronymColumn
-		tree:hasElement 2-NameColumn
-		tree:hasElement 3-MassColumn
+		doc:hasElement 1-AcronymColumn
+		doc:hasElement 2-NameColumn
+		doc:hasElement 3-MassColumn
 	]
 	
-	@tree:hasSparqlExpansion '''
+	@doc:hasSparqlExpansion '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -153,18 +153,18 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		  }
 		} ORDER BY ?s
 	'''
-	@tree:hasForwardedBinding 'ss'
-	@tree:hasForwardedBinding 'ssName'
-	@tree:hasForwardedBinding 'ssNumber'
+	@doc:hasForwardedBinding 'ss'
+	@doc:hasForwardedBinding 'ssName'
+	@doc:hasForwardedBinding 'ssNumber'
 	ci 2-SubsystemSections : doc:Section [
-		tree:hasElement 1-SubsystemDescription
-		tree:hasElement 2-AssemblySections
+		doc:hasElement 1-SubsystemDescription
+		doc:hasElement 2-AssemblySections
 	]
 	
-	@tree:hasRequiredBinding 'ss'
-	@tree:hasRequiredBinding 'ssName'
-	@tree:hasRequiredBinding 'ssNumber'
-	@tree:hasSparqlMapping '''
+	@doc:hasRequiredBinding 'ss'
+	@doc:hasRequiredBinding 'ssName'
+	@doc:hasRequiredBinding 'ssNumber'
+	@doc:hasSparqlMapping '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -182,8 +182,8 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	'''
 	ci 1-SubsystemDescription : doc:Para
 	
-	@tree:hasRequiredBinding 'ss'
-	@tree:hasSparqlExpansion '''
+	@doc:hasRequiredBinding 'ss'
+	@doc:hasSparqlExpansion '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -199,16 +199,16 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		  }
 		} ORDER BY ?assembly
 	'''
-	@tree:hasForwardedBinding 'assembly'
-	@tree:hasForwardedBinding 'assemblyName'
+	@doc:hasForwardedBinding 'assembly'
+	@doc:hasForwardedBinding 'assemblyName'
 	ci 2-AssemblySections : doc:Section [
-		tree:hasElement 1-AssemblyDescription
-		tree:hasElement 2-ContainedAssemblies
+		doc:hasElement 1-AssemblyDescription
+		doc:hasElement 2-ContainedAssemblies
 	]
 	
-	@tree:hasRequiredBinding 'assembly'
-	@tree:hasRequiredBinding 'assemblyName'
-	@tree:hasSparqlMapping '''
+	@doc:hasRequiredBinding 'assembly'
+	@doc:hasRequiredBinding 'assemblyName'
+	@doc:hasSparqlMapping '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -226,19 +226,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	'''
 	ci 1-AssemblyDescription : doc:Para
 	
-	@tree:hasRequiredBinding 'assembly'
-	@tree:hasRequiredBinding 'assemblyName'
-	@tree:hasSparqlMapping '''
+	@doc:hasRequiredBinding 'assembly'
+	@doc:hasRequiredBinding 'assemblyName'
+	@doc:hasSparqlMapping '''
 		SELECT (CONCAT($assemblyName, ' Contained Assemblies') AS ?hasTitle) WHERE { }
 	'''
-	@tree:hasForwardedBinding 'assembly'
+	@doc:hasForwardedBinding 'assembly'
 	@doc:hasBorder '0'
 	ci 2-ContainedAssemblies : doc:Table [
-		tree:hasElement ContainedAssemblyRow
+		doc:hasElement ContainedAssemblyRow
 	]
 	
-	@tree:hasRequiredBinding 'assembly as parent'
-	@tree:hasSparqlExpansion '''
+	@doc:hasRequiredBinding 'assembly as parent'
+	@doc:hasSparqlExpansion '''
 		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
@@ -261,17 +261,17 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		    }
 		} ORDER BY ?name
 	'''
-	@tree:hasForwardedBinding '*'
+	@doc:hasForwardedBinding '*'
 	ci ContainedAssemblyRow : doc:TableRow [
-		tree:hasElement 1-AssemblyName
-		tree:hasElement 2-AssemblyMass
+		doc:hasElement 1-AssemblyName
+		doc:hasElement 2-AssemblyMass
 	]
 	
 	@doc:hasTitle 'Assembly'
-	@tree:hasRequiredBinding 'name as hasText'
+	@doc:hasRequiredBinding 'name as hasText'
 	ci 1-AssemblyName : doc:TableColumn
 	
 	@doc:hasTitle 'Mass'
-	@tree:hasRequiredBinding 'mass as hasText'
+	@doc:hasRequiredBinding 'mass as hasText'
 	ci 2-AssemblyMass : doc:TableColumn
 }

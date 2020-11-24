@@ -1,22 +1,22 @@
 
 description <http://opencaesar.io/programs/earth-science/projects/firesat/documents/common> with # as common {
-	uses <http://opencaesar.io/document/document> as doc
+	uses <http://opencaesar.io/document> as doc
 	
-	@tree:hasRequiredBinding 'DOCUMENT'
-	@tree:hasSparqlMapping '''
+	@doc:hasRequiredBinding 'DOCUMENT'
+	@doc:hasSparqlMapping '''
 		SELECT (CONCAT(STR(YEAR(NOW())), '-', STR(MONTH(NOW())), '-', STR(DAY(NOW()))) AS ?hasDate) ?hasReleaseVersion WHERE {
 			GRAPH ?docGraph {
-				$DOCUMENT <http://opencaesar.io/document/document#hasReleaseVersion> ?hasReleaseVersion
+				$DOCUMENT <http://opencaesar.io/document#hasReleaseVersion> ?hasReleaseVersion
 			}
 		}
 	'''
 	ci TitlePage : doc:TitlePage [
-		tree:hasElement Preparer
+		doc:hasElement Preparer
 	]
 	
-	@tree:hasRequiredBinding 'DOCUMENT'
-	@tree:hasSparqlExpansion '''
-		PREFIX doc: <http://opencaesar.io/document/document#>
+	@doc:hasRequiredBinding 'DOCUMENT'
+	@doc:hasSparqlExpansion '''
+		PREFIX doc: <http://opencaesar.io/document#>
 		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
