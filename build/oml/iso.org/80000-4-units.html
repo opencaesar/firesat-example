@@ -26,6 +26,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
+ *     -> ins/del.c### for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -34,9 +35,12 @@
  *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
- *   - .assertion  for assertions                    (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
+ *   - .correction for "candidate corrections"       (div, aside, details, section)
+ *   - .addition   for "candidate additions"         (div, aside, details, section)
+ *   - .correction.proposed for "proposed corrections" (div, aside, details, section)
+ *   - .addition.proposed   for "proposed additions"   (div, aside, details, section)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
@@ -57,6 +61,8 @@
  *   - .head for the header
  *   - .copyright for the copyright
  *
+ * Outdated warning for old specs
+ *
  * Miscellaneous
  *   - .overlarge for things that should be as wide as possible, even if
  *     that overflows the body text area. This can be used on an item or
@@ -64,6 +70,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
+ *
  *   - js-added ToC jump links (see fixup.js)
  *
  ******************************************************************************/
@@ -71,24 +78,20 @@
 /* color variables included separately for reliability */
 
 /******************************************************************************/
-/*                                   Body                                     */
+/*                                    Body                                    */
 /******************************************************************************/
 
 	html {
-		color: black;
-		color: var(--text);
-		background-color: white;
-		background-color: var(--bg);
 	}
 
 	body {
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;               /* limit line length to 50em for readability   */
-		margin: 0 auto;                /* center text within page                     */
+		max-width: 50em;			  /* limit line length to 50em for readability   */
+		margin: 0 auto;				/* center text within page                    */
 		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
+		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.5;
@@ -99,7 +102,10 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		background: transparent top left fixed no-repeat;
+		color: black;
+		color: var(--text);
+		background: white top left fixed no-repeat;
+		background: var(--bg) top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -110,7 +116,7 @@
 
 /** Header ********************************************************************/
 
-	div.head { margin-bottom: 1em }
+	div.head { margin-bottom: 1em; }
 	div.head hr { border-style: solid; }
 
 	div.head h1 {
@@ -158,7 +164,7 @@
 /** Copyright *****************************************************************/
 
 	p.copyright,
-	p.copyright small { font-size: small }
+	p.copyright small { font-size: small; }
 
 /** Back to Top / ToC Toggle **************************************************/
 
@@ -170,7 +176,7 @@
 	@media not print {
 		#toc-nav {
 			position: fixed;
-			z-index: 2;
+			z-index: 3;
 			bottom: 0; left: 0;
 			margin: 0;
 			min-width: 1.33em;
@@ -337,9 +343,9 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
-		font-family: inherit;    /* Inherit the font family. */
-		line-height: 1.2;        /* Keep wrapped headings compact */
-		hyphens: manual;         /* Hyphenated headings look weird */
+		font-family: inherit;	/* Inherit the font family. */
+		line-height: 1.2;		/* Keep wrapped headings compact */
+		hyphens: manual;		/* Hyphenated headings look weird */
 	}
 
 	h2, h3, h4, h5, h6 {
@@ -423,51 +429,51 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
-	 border-left: 0.5em solid var(--algo-border);
+	border-left: 0.5em solid #DEF;
+	border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
-	  padding: .5em;
-	  border: thin solid #ddd;
-	  border: thin solid var(--algo-border);
-	  border-radius: .5em;
-	  margin: .5em calc(-0.5em - 1px);
+	 padding: .5em;
+	 border: thin solid #ddd;
+	 border: thin solid var(--algo-border);
+	 border-radius: .5em;
+	 margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
-	  margin-top: 0;
+	 margin-top: 0;
 	}
 	[data-algorithm]:not(.heading) > :last-child {
-	  margin-bottom: 0;
+	 margin-bottom: 0;
 	}
 
 	/* Style for switch/case <dl>s */
 	dl.switch > dd > ol.only,
 	dl.switch > dd > .only > ol {
-	 margin-left: 0;
+	margin-left: 0;
 	}
 	dl.switch > dd > ol.algorithm,
 	dl.switch > dd > .algorithm > ol {
-	 margin-left: -2em;
+	margin-left: -2em;
 	}
 	dl.switch {
-	 padding-left: 2em;
+	padding-left: 2em;
 	}
 	dl.switch > dt {
-	 text-indent: -1.5em;
-	 margin-top: 1em;
+	text-indent: -1.5em;
+	margin-top: 1em;
 	}
 	dl.switch > dt + dt {
-	 margin-top: 0;
+	margin-top: 0;
 	}
 	dl.switch > dt::before {
-	 content: '\21AA';
-	 padding: 0 0.5em 0 0;
-	 display: inline-block;
-	 width: 1em;
-	 text-align: right;
-	 line-height: 0.5em;
+	content: '\21AA';
+	padding: 0 0.5em 0 0;
+	display: inline-block;
+	width: 1em;
+	text-align: right;
+	line-height: 0.5em;
 	}
 
 /** Terminology Markup ********************************************************/
@@ -485,7 +491,7 @@
 		font-style: normal;
 	}
 	dt dfn code, code.idl {
-		font-size: medium;
+		font-size: inherit;
 	}
 	dfn var {
 		font-style: normal;
@@ -494,18 +500,37 @@
 /** Change Marking ************************************************************/
 
 	del {
-		color: red;
+		color: #aa0000;
 		color: var(--del-text);
 		background: transparent;
 		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
-		color: #080;
+		color: #006100;
 		color: var(--ins-text);
 		background: transparent;
 		background: var(--ins-bg);
 		text-decoration: underline;
+	}
+
+	/* for amendments (candidate/proposed changes) */
+
+	.amendment ins, .correction ins, .addition ins,
+	ins[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment del, .correction del, .addition del,
+	del[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
+	ins[class^=c].proposed {
+		text-decoration-style: double;
+	}
+	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
+	del[class^=c].proposed {
+		text-decoration-style: double;
 	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
@@ -546,7 +571,7 @@
 
 /** Inline Code fragments *****************************************************/
 
-  /* Do something nice. */
+	/* Do something nice. */
 
 /******************************************************************************/
 /*                                    Links                                   */
@@ -610,7 +635,7 @@
 	}
 
 	/* For autogen numbers, add
-	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
+	  .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
 
 	figure, .figure, .sidefigure {
@@ -618,7 +643,7 @@
 		text-align: center;
 		margin: 2.5em 0;
 	}
-	.figure img,    .sidefigure img,    figure img,
+	.figure img,	.sidefigure img,	figure img,
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
@@ -636,7 +661,7 @@
 		.sidefigure {
 			float: right;
 			width: 50%;
-			margin: 0 0 0.5em 0.5em
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 	.caption, figcaption, caption {
@@ -651,13 +676,15 @@
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > .figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em; }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .assertion, .advisement, blockquote {
+	.issue, .note, .example, .assertion, .advisement, blockquote,
+	.amendment, .correction, .addition {
+		margin: 1em auto;
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -668,20 +695,20 @@
 		border-right-style: solid;
 	}
 
-	.issue,
-	.note,
-	.example,
-	.advisement,
-	.assertion,
-	blockquote {
-		margin: 1em auto;
-	}
+	blockquote > :first-child,
 	.note  > p:first-child,
 	.issue > p:first-child,
-	blockquote > :first-child {
+	.amendment > p:first-child,
+	.correction > p:first-child,
+	.addition > p:first-child {
 		margin-top: 0;
 	}
-	blockquote > :last-child {
+	blockquote > :last-child,
+	.note  > p:last-child,
+	.issue > p:last-child,
+	.amendment > p:last-child,
+	.correction > p:last-child,
+	.addition > p:last-child {
 		margin-bottom: 0;
 	}
 
@@ -689,7 +716,14 @@
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
 	.note::before, .note > .marker,
-	details.note > summary > .marker {
+	details.note > summary > .marker,
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary > .marker,
+	.addition::before, .addition > .marker,
+	addition.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	correction.amendment > summary > .marker
+	{
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
@@ -727,7 +761,7 @@
 		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
-	   or use class="marker" to mark up the issue number in source. */
+	  or use class="marker" to mark up the issue number in source. */
 
 /** Example *******************************************************************/
 
@@ -747,7 +781,7 @@
 		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
-	   or use class="marker" to mark up the example number in source. */
+	  or use class="marker" to mark up the example number in source. */
 
 /** Non-normative Note ********************************************************/
 
@@ -767,7 +801,7 @@
 		color: var(--noteheading-text);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
-	   or use class="marker" to mark up the label in source. */
+	  or use class="marker" to mark up the label in source. */
 
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
@@ -807,6 +841,38 @@
 		color: var(--advisementheading-text);
 	}
 
+/** Amendment Box *************************************************************/
+
+	.amendment, .correction, .addition {
+		border-color: #330099;
+		border-color: var(--amendment-border);
+		background: #F5F0FF;
+		background: var(--amendment-bg);
+		color: black;
+		color: var(--amendment-text);
+	}
+	.amendment.proposed, .correction.proposed, .addition.proposed {
+		border-style: solid;
+		border-block-width: 0.25em;
+	}
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary::before, details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary::before, details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary::before, details.addition > summary > .marker {
+		color: #220066;
+		color: var(--amendmentheading-text);
+	}
+	.amendment.proposed::before, .amendment.proposed > .marker,
+	details.amendment.proposed > summary::before, details.amendment.proposed > summary > .marker,
+	.correction.proposed::before, .correction.proposed > .marker,
+	details.correction.proposed > summary::before, details.correction.proposed > summary > .marker,
+	.addition.proposed::before, .addition.proposed > .marker,
+	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
+		font-weight: bold;
+	}
+
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
@@ -835,15 +901,15 @@
 		margin-bottom: 0;
 	}
 
-	@media not print {
-		details.annoying-warning[open] {
-			position: fixed;
-			left: 0;
-			right: 0;
-			bottom: 2em;
-			z-index: 1000;
-		}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 2em;
+		z-index: 1000;
 	}
+}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -918,15 +984,15 @@
 
 /** Data tables (and properly marked-up index tables) *************************/
 	/*
-		 <table class="data"> highlights structural relationships in a table
-		 when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+		<table class="data"> highlights structural relationships in a table
+		when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
 
-		 Use class="complex data" for particularly complicated tables --
-		 (This will draw more lines: busier, but clearer.)
+		Use class="complex data" for particularly complicated tables --
+		(This will draw more lines: busier, but clearer.)
 
-		 Use class="long" on table cells with paragraph-like contents
-		 (This will adjust text alignment accordingly.)
-		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
+		Use class="long" on table cells with paragraph-like contents
+		(This will adjust text alignment accordingly.)
+		Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
 	table {
@@ -1075,22 +1141,22 @@ Possible extra rowspan handling
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.1rem; /* consistent spacing */
+	}
+	.toc {
+		line-height: 1.1em;
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li             { font-weight: bold;   }
-	.toc > li li          { font-weight: normal; }
-	.toc > li li li       { font-size:   95%;    }
-	.toc > li li li li    { font-size:   90%;    }
-	.toc > li li li li .secno { font-size: 85%; }
-	.toc > li li li li li { font-size:   85%;    }
-	.toc > li li li li li .secno { font-size: 100%; }
+	.toc > li			{ font-weight: bold;   }
+	.toc > li li		 { font-weight: normal; }
+	.toc > li li li	  { font-size:   95%;	}
+	.toc > li li li li	{ font-size:   90%;	}
+	.toc > li li li li li { font-size:   85%;	}
 
 	/* @supports not (display:grid) { */
-		.toc > li             { margin: 1.5rem 0;    }
-		.toc > li li          { margin: 0.3rem 0;    }
-		.toc > li li li       { margin-left: 2rem;   }
+		.toc > li			{ margin: 1.5rem 0;	}
+		.toc > li li		 { margin: 0.3rem 0;	}
+		.toc > li li li	  { margin-left: 2rem;   }
 
 		/* Section numbers in a column of their own */
 		.toc .secno {
@@ -1098,33 +1164,35 @@ Possible extra rowspan handling
 			width: 4rem;
 			white-space: nowrap;
 		}
+		.toc > li li li li .secno { font-size: 85%; }
+		.toc > li li li li li .secno { font-size: 100%; }
 
 		.toc li {
 			clear: both;
 		}
 
-		:not(li) > .toc              { margin-left:  5rem; }
-		.toc .secno                  { margin-left: -5rem; }
-		.toc > li li li .secno       { margin-left: -7rem; }
-		.toc > li li li li .secno    { margin-left: -9rem; }
+		:not(li) > .toc			 { margin-left:  5rem; }
+		.toc .secno				 { margin-left: -5rem; }
+		.toc > li li li .secno	  { margin-left: -7rem; }
+		.toc > li li li li .secno	{ margin-left: -9rem; }
 		.toc > li li li li li .secno { margin-left: -11rem; }
 
 		/* Tighten up indentation in narrow ToCs */
 		@media (max-width: 30em) {
-			:not(li) > .toc              { margin-left:  4rem; }
-			.toc .secno                  { margin-left: -4rem; }
-			.toc > li li li              { margin-left:  1rem; }
-			.toc > li li li .secno       { margin-left: -5rem; }
-			.toc > li li li li .secno    { margin-left: -6rem; }
+			:not(li) > .toc			 { margin-left:  4rem; }
+			.toc .secno				 { margin-left: -4rem; }
+			.toc > li li li			 { margin-left:  1rem; }
+			.toc > li li li .secno	  { margin-left: -5rem; }
+			.toc > li li li li .secno	{ margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
 		/* Loosen it on wide screens */
 		@media screen and (min-width: 78em) {
-			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
-			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
-			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
-			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
-			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) :not(li) > .toc			 { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno				 { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li			 { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno	  { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno	{ margin-left: -6rem; }
 			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
 	}
 	/* } */
@@ -1155,7 +1223,7 @@ Possible extra rowspan handling
 		}
 		#toc > .toc > li > a > span {
 			/* The spans of the top-level list,
-			   comprising the first items of each top-level section. */
+			  comprising the first items of each top-level section. */
 			margin-top: 1.1rem;
 		}
 		#toc#toc .secno { /* Ugh, need more specificity to override base.css */
@@ -1188,12 +1256,12 @@ Possible extra rowspan handling
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
-	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
-	ul.index li li { margin-left: 1em }
-	ul.index dl    { margin-top: 0; }
-	ul.index dt    { margin: .2em 0 .2em 20px;}
-	ul.index dd    { margin: .2em 0 .2em 40px;}
+	ul.index	  { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
+	ul.index li	{ margin-left: 0; list-style: none; break-inside: avoid; }
+	ul.index li li { margin-left: 1em; }
+	ul.index dl	{ margin-top: 0; }
+	ul.index dt	{ margin: .2em 0 .2em 20px;}
+	ul.index dd	{ margin: .2em 0 .2em 40px;}
 	/* Index Lists: Typography */
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
@@ -1237,6 +1305,91 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
+/** Outdated warning **********************************************************/
+
+.outdated-spec {
+	color: black;
+	color: var(--outdatedspec-text);
+	background-color: rgba(0,0,0,0.5);
+	background-color: var(--outdatedspec-bg);
+}
+
+.outdated-warning {
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 50%;
+	background: maroon;
+	background: var(--outdated-bg);
+	color: white;
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	position: absolute;
+	top: 0;
+	right:0;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: white;
+	color: var(--outdated-text);
+	font:1em sans-serif;
+	text-align:center;
+}
+
+.outdated-warning span {
+	display: block;
+}
+
+.outdated-collapsed {
+	bottom: 0;
+	border-radius: 0;
+	width: 100%;
+	padding: 0;
+}
+
 /******************************************************************************/
 /*                                    Print                                   */
 /******************************************************************************/
@@ -1249,6 +1402,16 @@ Possible extra rowspan handling
 		/* Serif for print. */
 		body {
 			font-family: serif;
+		}
+
+		.outdated-warning {
+			position: absolute;
+			border-style: solid;
+			border-color: red;
+		}
+
+		.outdated-warning input {
+			display: none;
 		}
 	}
 	@page {
@@ -1268,13 +1431,13 @@ Possible extra rowspan handling
 		margin-right: auto;
 	}
 	.overlarge {
-		/* Magic to create good table positioning:
-		   "content column" is 50ems wide at max; less on smaller screens.
-		   Extra space (after ToC + content) is empty on the right.
+		/* Magic to create good item positioning:
+		  "content column" is 50ems wide at max; less on smaller screens.
+		  Extra space (after ToC + content) is empty on the right.
 
-		   1. When table < content column, centers table in column.
-		   2. When content < table < available, left-aligns.
-		   3. When table > available, fills available + scroll bar.
+		  1. When item < content column, centers item in column.
+		  2. When content < item < available, left-aligns.
+		  3. When item > available, fills available + scroll bar.
 		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
@@ -1309,21 +1472,21 @@ Possible extra rowspan handling
 		.overlarge {
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
-			 * http://lea.verou.me/2012/04/background-attachment-local/
-			 *
+			* http://lea.verou.me/2012/04/background-attachment-local/
+			*
 			background: top left  / 4em 100% linear-gradient(to right,  #ffffff, rgba(255, 255, 255, 0)) local,
-			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
-			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            white;
+						top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
+						top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						white;
 			background-repeat: no-repeat;
 			*/
 		}
 	}
 </style>
-  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
+  <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-4-units" rel="canonical">
-  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
+  <meta content="3490f980914a4a56ac6b10fa283bd3b3005b23bd" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1394,17 +1557,13 @@ pre .property::before, pre .property::after {
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
-html {
-    color: black;
-    color: var(--text);
-    background-color: white;
-    background-color: var(--bg);
-}
 :root {
     color-scheme: light dark;
 
     --text: black;
     --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 
     --logo-bg: #1a5e9a;
     --logo-active-bg: #c00;
@@ -1478,6 +1637,11 @@ html {
     --warning-border: red;
     --warning-bg: hsla(40,100%,50%,0.95);
     --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
 
     --def-border: #8ccbf2;
     --def-bg: #def;
@@ -1638,6 +1802,8 @@ dfn > a.self-link::before      { content: "#"; }
         --text: #ddd;
         --bg: black;
 
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
         --logo-bg: #1a5e9a;
         --logo-active-bg: #c00;
         --logo-text: white;
@@ -1713,6 +1879,11 @@ dfn > a.self-link::before      { content: "#"; }
         --warning-bg: hsla(40,100%,20%,0.95);
         --warning-text: var(--text);
 
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
         --def-border: #8ccbf2;
         --def-bg: #080818;
         --def-text: var(--text);
@@ -1755,7 +1926,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">80000-4-units</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1779,31 +1950,43 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
      <ol class="toc">
-      <li><a href="#Gram"><span class="secno">3.1</span> <span class="content"><span>gram</span></span></a>
-      <li><a href="#Kilogram"><span class="secno">3.2</span> <span class="content"><span>kilogram</span></span></a>
-      <li><a href="#Kilogram-metre-per-second"><span class="secno">3.3</span> <span class="content"><span>kilogram-metre-per-second</span></span></a>
-      <li><a href="#Newton"><span class="secno">3.4</span> <span class="content"><span>newton</span></span></a>
-      <li><a href="#Watt"><span class="secno">3.5</span> <span class="content"><span>watt</span></span></a>
+      <li><a href="#ForceMagnitude"><span class="secno">3.1</span> <span class="content"><span>ForceMagnitude</span></span></a>
+      <li><a href="#ImpulseMagnitude"><span class="secno">3.2</span> <span class="content"><span>ImpulseMagnitude</span></span></a>
+      <li><a href="#MassMagnitude"><span class="secno">3.3</span> <span class="content"><span>MassMagnitude</span></span></a>
+      <li><a href="#MomentumMagnitude"><span class="secno">3.4</span> <span class="content"><span>MomentumMagnitude</span></span></a>
+      <li><a href="#PowerMagnitude"><span class="secno">3.5</span> <span class="content"><span>PowerMagnitude</span></span></a>
      </ol>
     <li>
-     <a href="#Aspects"><span class="secno">4</span> <span class="content">Aspects</span></a>
+     <a href="#concepts"><span class="secno">4</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#UnitOfMass"><span class="secno">4.1</span> <span class="content"><span>UnitOfMass</span></span></a>
-      <li><a href="#UnitOfMomentum"><span class="secno">4.2</span> <span class="content"><span>UnitOfMomentum</span></span></a>
-      <li><a href="#UnitOfForce"><span class="secno">4.3</span> <span class="content"><span>UnitOfForce</span></span></a>
-      <li><a href="#UnitOfPower"><span class="secno">4.4</span> <span class="content"><span>UnitOfPower</span></span></a>
+      <li><a href="#ForceUnit"><span class="secno">4.1</span> <span class="content"><span>ForceUnit</span></span></a>
+      <li><a href="#ImpulseUnit"><span class="secno">4.2</span> <span class="content"><span>ImpulseUnit</span></span></a>
+      <li><a href="#MassUnit"><span class="secno">4.3</span> <span class="content"><span>MassUnit</span></span></a>
+      <li><a href="#MomentumUnit"><span class="secno">4.4</span> <span class="content"><span>MomentumUnit</span></span></a>
+      <li><a href="#PowerUnit"><span class="secno">4.5</span> <span class="content"><span>PowerUnit</span></span></a>
+      <li><a href="#Gram"><span class="secno">4.6</span> <span class="content"><span>gram</span></span></a>
+      <li><a href="#Kilogram"><span class="secno">4.7</span> <span class="content"><span>kilogram</span></span></a>
+      <li><a href="#Kilogram-metre-per-second"><span class="secno">4.8</span> <span class="content"><span>kilogram-metre-per-second</span></span></a>
+      <li><a href="#Newton"><span class="secno">4.9</span> <span class="content"><span>newton</span></span></a>
+      <li><a href="#Newton-millisecond"><span class="secno">4.10</span> <span class="content"><span>newton-millisecond</span></span></a>
+      <li><a href="#Newton-second"><span class="secno">4.11</span> <span class="content"><span>newton-second</span></span></a>
+      <li><a href="#Watt"><span class="secno">4.12</span> <span class="content"><span>watt</span></span></a>
      </ol>
     <li>
      <a href="#Relations"><span class="secno">5</span> <span class="content">Relation Entities</span></a>
      <ol class="toc">
-      <li><a href="#Kilogram-metre-per-second-of-kilogram"><span class="secno">5.1</span> <span class="content"><span>kilogram-metre-per-second-of-kilogram</span></span></a>
-      <li><a href="#Kilogram-metre-per-second-of-metre-per-second"><span class="secno">5.2</span> <span class="content"><span>kilogram-metre-per-second-of-metre-per-second</span></span></a>
-      <li><a href="#Newton-of-kilogram"><span class="secno">5.3</span> <span class="content"><span>newton-of-kilogram</span></span></a>
-      <li><a href="#Newton-of-metre-per-second"><span class="secno">5.4</span> <span class="content"><span>newton-of-metre-per-second</span></span></a>
-      <li><a href="#Watt-of-newton"><span class="secno">5.5</span> <span class="content"><span>watt-of-newton</span></span></a>
-      <li><a href="#Watt-of-metre-per-second"><span class="secno">5.6</span> <span class="content"><span>watt-of-metre-per-second</span></span></a>
+      <li><a href="#Kilogram-Metre-Per-Second-Has-Kilogram"><span class="secno">5.1</span> <span class="content"><span>Kilogram-Metre-Per-Second-Has-Kilogram</span></span></a>
+      <li><a href="#Kilogram-Metre-Per-Second-Has-Metre-Per-Second"><span class="secno">5.2</span> <span class="content"><span>Kilogram-Metre-Per-Second-Has-Metre-Per-Second</span></span></a>
+      <li><a href="#Newton-Has-Kilogram"><span class="secno">5.3</span> <span class="content"><span>Newton-Has-Kilogram</span></span></a>
+      <li><a href="#Newton-Has-Metre-Per-Second"><span class="secno">5.4</span> <span class="content"><span>Newton-Has-Metre-Per-Second</span></span></a>
+      <li><a href="#Newton-Millisecond-Has-Millisecond"><span class="secno">5.5</span> <span class="content"><span>Newton-Millisecond-Has-Millisecond</span></span></a>
+      <li><a href="#Newton-Millisecond-Has-Newton"><span class="secno">5.6</span> <span class="content"><span>Newton-Millisecond-Has-Newton</span></span></a>
+      <li><a href="#Newton-Second-Has-Newton"><span class="secno">5.7</span> <span class="content"><span>Newton-Second-Has-Newton</span></span></a>
+      <li><a href="#Newton-Second-Has-Second"><span class="secno">5.8</span> <span class="content"><span>Newton-Second-Has-Second</span></span></a>
+      <li><a href="#Watt-Has-Metre-Per-Second"><span class="secno">5.9</span> <span class="content"><span>Watt-Has-Metre-Per-Second</span></span></a>
+      <li><a href="#Watt-Has-Newton"><span class="secno">5.10</span> <span class="content"><span>Watt-Has-Newton</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1825,117 +2008,272 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p>80000-3-units: <a href="http://iso.org/80000-3-units.html">http://iso.org/80000-3-units</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Gram"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gram">gram<a class="self-link" href="#gram"></a></dfn></span><a class="self-link" href="#Gram"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#unitofmass" id="ref-for-unitofmass">UnitOfMass</a></p>
-    <h3 class="heading settled" data-level="3.2" id="Kilogram"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram">kilogram<a class="self-link" href="#kilogram"></a></dfn></span><a class="self-link" href="#Kilogram"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#unitofmass" id="ref-for-unitofmass①">UnitOfMass</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="ForceMagnitude"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="forcemagnitude">ForceMagnitude<a class="self-link" href="#forcemagnitude"></a></dfn></span><a class="self-link" href="#ForceMagnitude"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude">metrology:UnitaryMagnitude</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-magnitudes1.html#newton-magnitude" id="ref-for-newton-magnitude">80000-4-magnitudes1:newton-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>kilogram <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix">metrology:hasPrefix</a> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#prefix" id="ref-for-prefix">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#kilo" id="ref-for-kilo">80000-1:kilo</a>)</p>
+      <p>ForceMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-4-units.html#forceunit" id="ref-for-forceunit">ForceUnit</a></p>
     </ul>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="3.2" id="ImpulseMagnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulsemagnitude">ImpulseMagnitude<a class="self-link" href="#impulsemagnitude"></a></dfn></span><a class="self-link" href="#ImpulseMagnitude"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude①">metrology:UnitaryMagnitude</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-magnitudes1.html#newton-millisecond-magnitude" id="ref-for-newton-millisecond-magnitude">80000-4-magnitudes1:newton-millisecond-magnitude</a>, <a data-link-type="dfn" href="80000-4-magnitudes1.html#newton-second-magnitude" id="ref-for-newton-second-magnitude">80000-4-magnitudes1:newton-second-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">kilogram-metre-per-second</a> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-of-kilogram-factor" id="ref-for-kilogram-metre-per-second-of-kilogram-factor">kilogram-metre-per-second-of-kilogram-factor</a> kilogram</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton">newton</a> <a data-link-type="dfn" href="80000-4-units.html#newton-of-kilogram-factor" id="ref-for-newton-of-kilogram-factor">newton-of-kilogram-factor</a> kilogram</p>
+      <p>ImpulseMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference①">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-4-units.html#impulseunit" id="ref-for-impulseunit">ImpulseUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.3" id="Kilogram-metre-per-second"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second">kilogram-metre-per-second<a class="self-link" href="#kilogram-metre-per-second"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#unitofmomentum" id="ref-for-unitofmomentum">UnitOfMomentum</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="3.3" id="MassMagnitude"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massmagnitude">MassMagnitude<a class="self-link" href="#massmagnitude"></a></dfn></span><a class="self-link" href="#MassMagnitude"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude②">metrology:UnitaryMagnitude</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-magnitudes1.html#gram-magnitude" id="ref-for-gram-magnitude">80000-4-magnitudes1:gram-magnitude</a>, <a data-link-type="dfn" href="80000-4-magnitudes1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">80000-4-magnitudes1:kilogram-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>kilogram-metre-per-second <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-of-kilogram-factor" id="ref-for-kilogram-metre-per-second-of-kilogram-factor①">kilogram-metre-per-second-of-kilogram-factor</a> <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram">kilogram</a></p>
-     <li data-md>
-      <p>kilogram-metre-per-second <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor" id="ref-for-kilogram-metre-per-second-of-metre-per-second-factor">kilogram-metre-per-second-of-metre-per-second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a></p>
+      <p>MassMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference②">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-4-units.html#massunit" id="ref-for-massunit">MassUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.4" id="Newton"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton">newton<a class="self-link" href="#newton"></a></dfn></span><a class="self-link" href="#Newton"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#unitofforce" id="ref-for-unitofforce">UnitOfForce</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h3 class="heading settled" data-level="3.4" id="MomentumMagnitude"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentummagnitude">MomentumMagnitude<a class="self-link" href="#momentummagnitude"></a></dfn></span><a class="self-link" href="#MomentumMagnitude"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude③">metrology:UnitaryMagnitude</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-magnitudes1.html#kilogram-metre-per-second-magnitude" id="ref-for-kilogram-metre-per-second-magnitude">80000-4-magnitudes1:kilogram-metre-per-second-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p>newton <a data-link-type="dfn" href="80000-4-units.html#newton-of-kilogram-factor" id="ref-for-newton-of-kilogram-factor①">newton-of-kilogram-factor</a> <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram①">kilogram</a></p>
-     <li data-md>
-      <p>newton <a data-link-type="dfn" href="80000-4-units.html#newton-of-metre-per-second-factor" id="ref-for-newton-of-metre-per-second-factor">newton-of-metre-per-second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second①">80000-3-units:metre-per-second</a></p>
+      <p>MomentumMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference③">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-4-units.html#momentumunit" id="ref-for-momentumunit">MomentumUnit</a></p>
     </ul>
-    <p><em>Relations with range:</em></p>
+    <h3 class="heading settled" data-level="3.5" id="PowerMagnitude"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powermagnitude">PowerMagnitude<a class="self-link" href="#powermagnitude"></a></dfn></span><a class="self-link" href="#PowerMagnitude"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude④">metrology:UnitaryMagnitude</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-magnitudes1.html#watt-magnitude" id="ref-for-watt-magnitude">80000-4-magnitudes1:watt-magnitude</a></p>
+    <p><em>Relations with source:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:newton-per-coulomb</a> <a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb-of-newton-factor" id="ref-for-newton-per-coulomb-of-newton-factor">80000-6-units:newton-per-coulomb-of-newton-factor</a> newton</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt">watt</a> <a data-link-type="dfn" href="80000-4-units.html#watt-of-newton-factor" id="ref-for-watt-of-newton-factor">watt-of-newton-factor</a> newton</p>
+      <p>PowerMagnitude ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasreference" id="ref-for-hasreference④">metrology:HasReference</a> → <a data-link-type="dfn" href="80000-4-units.html#powerunit" id="ref-for-powerunit">PowerUnit</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.5" id="Watt"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt">watt<a class="self-link" href="#watt"></a></dfn></span><a class="self-link" href="#Watt"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#unitofpower" id="ref-for-unitofpower">UnitOfPower</a></p>
-    <p><em>Relations with domain:</em></p>
+    <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ForceUnit"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="forceunit">ForceUnit<a class="self-link" href="#forceunit"></a></dfn></span><a class="self-link" href="#ForceUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton">newton</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p>watt <a data-link-type="dfn" href="80000-4-units.html#watt-of-metre-per-second-factor" id="ref-for-watt-of-metre-per-second-factor">watt-of-metre-per-second-factor</a> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second②">80000-3-units:metre-per-second</a></p>
-     <li data-md>
-      <p>watt <a data-link-type="dfn" href="80000-4-units.html#watt-of-newton-factor" id="ref-for-watt-of-newton-factor①">watt-of-newton-factor</a> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton①">newton</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
     </ul>
-    <h2 class="heading settled" data-level="4" id="Aspects"><span class="secno">4. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="UnitOfMass"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofmass">UnitOfMass<a class="self-link" href="#unitofmass"></a></dfn></span><a class="self-link" href="#UnitOfMass"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#gram" id="ref-for-gram">gram</a>, <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram②">kilogram</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.2" id="UnitOfMomentum"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofmomentum">UnitOfMomentum<a class="self-link" href="#unitofmomentum"></a></dfn></span><a class="self-link" href="#UnitOfMomentum"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second①">kilogram-metre-per-second</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.3" id="UnitOfForce"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofforce">UnitOfForce<a class="self-link" href="#unitofforce"></a></dfn></span><a class="self-link" href="#UnitOfForce"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton②">newton</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit②">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
-    <h3 class="heading settled" data-level="4.4" id="UnitOfPower"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitofpower">UnitOfPower<a class="self-link" href="#unitofpower"></a></dfn></span><a class="self-link" href="#UnitOfPower"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">metrology:CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt①">watt</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit③">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    <h3 class="heading settled" data-level="4.2" id="ImpulseUnit"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulseunit">ImpulseUnit<a class="self-link" href="#impulseunit"></a></dfn></span><a class="self-link" href="#ImpulseUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond">newton-millisecond</a>, <a data-link-type="dfn" href="80000-4-units.html#newton-second" id="ref-for-newton-second">newton-second</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit①">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.3" id="MassUnit"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massunit">MassUnit<a class="self-link" href="#massunit"></a></dfn></span><a class="self-link" href="#MassUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#gram" id="ref-for-gram">gram</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit②">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.4" id="MomentumUnit"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentumunit">MomentumUnit<a class="self-link" href="#momentumunit"></a></dfn></span><a class="self-link" href="#MomentumUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">kilogram-metre-per-second</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit③">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.5" id="PowerUnit"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerunit">PowerUnit<a class="self-link" href="#powerunit"></a></dfn></span><a class="self-link" href="#PowerUnit"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit④">metrology:CoherentMeasurementUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt">watt</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit④">metrology:isDimensionlessMeasurementUnit</a> (must have value false)</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.6" id="Gram"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gram">gram<a class="self-link" href="#gram"></a></dfn></span><a class="self-link" href="#Gram"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">metrology:IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#massunit" id="ref-for-massunit①">MassUnit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram">kilogram</a></p>
+    <h3 class="heading settled" data-level="4.7" id="Kilogram"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram">kilogram<a class="self-link" href="#kilogram"></a></dfn></span><a class="self-link" href="#Kilogram"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">metrology:PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#gram" id="ref-for-gram①">gram</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>kilogram ← <a data-link-type="dfn" href="../iupac.org/metrology.html#hasprefix" id="ref-for-hasprefix">metrology:HasPrefix</a> → <a data-link-type="dfn" href="../iupac.org/metrology.html#prefix" id="ref-for-prefix">metrology:Prefix</a> (range restricted to instance <a data-link-type="dfn" href="80000-1.html#kilo" id="ref-for-kilo">80000-1:kilo</a>)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second①">kilogram-metre-per-second</a> ← <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-has-kilogram" id="ref-for-kilogram-metre-per-second-has-kilogram">Kilogram-Metre-Per-Second-Has-Kilogram</a> → kilogram</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton①">newton</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-has-kilogram" id="ref-for-newton-has-kilogram">Newton-Has-Kilogram</a> → kilogram</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.8" id="Kilogram-metre-per-second"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second">kilogram-metre-per-second<a class="self-link" href="#kilogram-metre-per-second"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#momentumunit" id="ref-for-momentumunit①">MomentumUnit</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>kilogram-metre-per-second ← <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-has-kilogram" id="ref-for-kilogram-metre-per-second-has-kilogram①">Kilogram-Metre-Per-Second-Has-Kilogram</a> → <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram①">kilogram</a></p>
+     <li data-md>
+      <p>kilogram-metre-per-second ← <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second-has-metre-per-second" id="ref-for-kilogram-metre-per-second-has-metre-per-second">Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a> → <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.9" id="Newton"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton">newton<a class="self-link" href="#newton"></a></dfn></span><a class="self-link" href="#Newton"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#forceunit" id="ref-for-forceunit①">ForceUnit</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>newton ← <a data-link-type="dfn" href="80000-4-units.html#newton-has-kilogram" id="ref-for-newton-has-kilogram①">Newton-Has-Kilogram</a> → <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram②">kilogram</a></p>
+     <li data-md>
+      <p>newton ← <a data-link-type="dfn" href="80000-4-units.html#newton-has-metre-per-second" id="ref-for-newton-has-metre-per-second">Newton-Has-Metre-Per-Second</a> → <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second①">80000-3-units:metre-per-second</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond①">newton-millisecond</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond-has-newton" id="ref-for-newton-millisecond-has-newton">Newton-Millisecond-Has-Newton</a> → newton</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:newton-per-coulomb</a> ← <a data-link-type="dfn" href="80000-6-units.html#newton-per-coulomb-has-newton" id="ref-for-newton-per-coulomb-has-newton">80000-6-units:Newton-Per-Coulomb-Has-Newton</a> → newton</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#newton-second" id="ref-for-newton-second①">newton-second</a> ← <a data-link-type="dfn" href="80000-4-units.html#newton-second-has-newton" id="ref-for-newton-second-has-newton">Newton-Second-Has-Newton</a> → newton</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt①">watt</a> ← <a data-link-type="dfn" href="80000-4-units.html#watt-has-newton" id="ref-for-watt-has-newton">Watt-Has-Newton</a> → newton</p>
+    </ul>
+    <h3 class="heading settled" data-level="4.10" id="Newton-millisecond"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond">newton-millisecond<a class="self-link" href="#newton-millisecond"></a></dfn></span><a class="self-link" href="#Newton-millisecond"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#impulseunit" id="ref-for-impulseunit①">ImpulseUnit</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>newton-millisecond ← <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond-has-millisecond" id="ref-for-newton-millisecond-has-millisecond">Newton-Millisecond-Has-Millisecond</a> → <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a></p>
+     <li data-md>
+      <p>newton-millisecond ← <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond-has-newton" id="ref-for-newton-millisecond-has-newton①">Newton-Millisecond-Has-Newton</a> → <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton②">newton</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.11" id="Newton-second"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second">newton-second<a class="self-link" href="#newton-second"></a></dfn></span><a class="self-link" href="#Newton-second"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit③">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#impulseunit" id="ref-for-impulseunit②">ImpulseUnit</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>newton-second ← <a data-link-type="dfn" href="80000-4-units.html#newton-second-has-newton" id="ref-for-newton-second-has-newton①">Newton-Second-Has-Newton</a> → <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton③">newton</a></p>
+     <li data-md>
+      <p>newton-second ← <a data-link-type="dfn" href="80000-4-units.html#newton-second-has-second" id="ref-for-newton-second-has-second">Newton-Second-Has-Second</a> → <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
+    </ul>
+    <h3 class="heading settled" data-level="4.12" id="Watt"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt">watt<a class="self-link" href="#watt"></a></dfn></span><a class="self-link" href="#Watt"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit④">metrology:DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="80000-4-units.html#powerunit" id="ref-for-powerunit①">PowerUnit</a></p>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>watt ← <a data-link-type="dfn" href="80000-4-units.html#watt-has-metre-per-second" id="ref-for-watt-has-metre-per-second">Watt-Has-Metre-Per-Second</a> → <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second②">80000-3-units:metre-per-second</a></p>
+     <li data-md>
+      <p>watt ← <a data-link-type="dfn" href="80000-4-units.html#watt-has-newton" id="ref-for-watt-has-newton①">Watt-Has-Newton</a> → <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton④">newton</a></p>
+    </ul>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="5.1" id="Kilogram-metre-per-second-of-kilogram"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-of-kilogram">kilogram-metre-per-second-of-kilogram<a class="self-link" href="#kilogram-metre-per-second-of-kilogram"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second-of-kilogram"></a></h3>
+    <h3 class="heading settled" data-level="5.1" id="Kilogram-Metre-Per-Second-Has-Kilogram"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-has-kilogram">Kilogram-Metre-Per-Second-Has-Kilogram<a class="self-link" href="#kilogram-metre-per-second-has-kilogram"></a></dfn></span><a class="self-link" href="#Kilogram-Metre-Per-Second-Has-Kilogram"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second②">kilogram-metre-per-second</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram③">kilogram</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilogram-metre-per-second-of-kilogram" data-dfn-type="attribute" data-export id="dom-kilogram-metre-per-second-of-kilogram-kilogram-metre-per-second-of-kilogram-factor"><code>kilogram-metre-per-second-of-kilogram-factor</code><a class="self-link" href="#dom-kilogram-metre-per-second-of-kilogram-kilogram-metre-per-second-of-kilogram-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.2" id="Kilogram-metre-per-second-of-metre-per-second"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-of-metre-per-second">kilogram-metre-per-second-of-metre-per-second<a class="self-link" href="#kilogram-metre-per-second-of-metre-per-second"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second-of-metre-per-second"></a></h3>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Kilogram-Metre-Per-Second-Has-Kilogram" data-dfn-type="attribute" data-export id="dom-kilogram-metre-per-second-has-kilogram-kilogram-metre-per-second-has-kilogram"><code>kilogram-metre-per-second-has-kilogram</code><a class="self-link" href="#dom-kilogram-metre-per-second-has-kilogram-kilogram-metre-per-second-has-kilogram"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.2" id="Kilogram-Metre-Per-Second-Has-Metre-Per-Second"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second-has-metre-per-second">Kilogram-Metre-Per-Second-Has-Metre-Per-Second<a class="self-link" href="#kilogram-metre-per-second-has-metre-per-second"></a></dfn></span><a class="self-link" href="#Kilogram-Metre-Per-Second-Has-Metre-Per-Second"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second③">kilogram-metre-per-second</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second③">80000-3-units:metre-per-second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="kilogram-metre-per-second-of-metre-per-second" data-dfn-type="attribute" data-export id="dom-kilogram-metre-per-second-of-metre-per-second-kilogram-metre-per-second-of-metre-per-second-factor"><code>kilogram-metre-per-second-of-metre-per-second-factor</code><a class="self-link" href="#dom-kilogram-metre-per-second-of-metre-per-second-kilogram-metre-per-second-of-metre-per-second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value -1/1)</p>
-    <h3 class="heading settled" data-level="5.3" id="Newton-of-kilogram"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-of-kilogram">newton-of-kilogram<a class="self-link" href="#newton-of-kilogram"></a></dfn></span><a class="self-link" href="#Newton-of-kilogram"></a></h3>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Kilogram-Metre-Per-Second-Has-Metre-Per-Second" data-dfn-type="attribute" data-export id="dom-kilogram-metre-per-second-has-metre-per-second-kilogram-metre-per-second-has-metre-per-second"><code>kilogram-metre-per-second-has-metre-per-second</code><a class="self-link" href="#dom-kilogram-metre-per-second-has-metre-per-second-kilogram-metre-per-second-has-metre-per-second"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.3" id="Newton-Has-Kilogram"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-has-kilogram">Newton-Has-Kilogram<a class="self-link" href="#newton-has-kilogram"></a></dfn></span><a class="self-link" href="#Newton-Has-Kilogram"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton③">newton</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑤">newton</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#kilogram" id="ref-for-kilogram④">kilogram</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="newton-of-kilogram" data-dfn-type="attribute" data-export id="dom-newton-of-kilogram-newton-of-kilogram-factor"><code>newton-of-kilogram-factor</code><a class="self-link" href="#dom-newton-of-kilogram-newton-of-kilogram-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.4" id="Newton-of-metre-per-second"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-of-metre-per-second">newton-of-metre-per-second<a class="self-link" href="#newton-of-metre-per-second"></a></dfn></span><a class="self-link" href="#Newton-of-metre-per-second"></a></h3>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Has-Kilogram" data-dfn-type="attribute" data-export id="dom-newton-has-kilogram-newton-has-kilogram"><code>newton-has-kilogram</code><a class="self-link" href="#dom-newton-has-kilogram-newton-has-kilogram"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.4" id="Newton-Has-Metre-Per-Second"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-has-metre-per-second">Newton-Has-Metre-Per-Second<a class="self-link" href="#newton-has-metre-per-second"></a></dfn></span><a class="self-link" href="#Newton-Has-Metre-Per-Second"></a></h3>
     <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton④">newton</a></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑥">newton</a></p>
     <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second④">80000-3-units:metre-per-second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="newton-of-metre-per-second" data-dfn-type="attribute" data-export id="dom-newton-of-metre-per-second-newton-of-metre-per-second-factor"><code>newton-of-metre-per-second-factor</code><a class="self-link" href="#dom-newton-of-metre-per-second-newton-of-metre-per-second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit③">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value -1/1)</p>
-    <h3 class="heading settled" data-level="5.5" id="Watt-of-newton"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-of-newton">watt-of-newton<a class="self-link" href="#watt-of-newton"></a></dfn></span><a class="self-link" href="#Watt-of-newton"></a></h3>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Has-Metre-Per-Second" data-dfn-type="attribute" data-export id="dom-newton-has-metre-per-second-newton-has-metre-per-second"><code>newton-has-metre-per-second</code><a class="self-link" href="#dom-newton-has-metre-per-second-newton-has-metre-per-second"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit③">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value -1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.5" id="Newton-Millisecond-Has-Millisecond"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond-has-millisecond">Newton-Millisecond-Has-Millisecond<a class="self-link" href="#newton-millisecond-has-millisecond"></a></dfn></span><a class="self-link" href="#Newton-Millisecond-Has-Millisecond"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond②">newton-millisecond</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#millisecond" id="ref-for-millisecond①">80000-3-units:millisecond</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Millisecond-Has-Millisecond" data-dfn-type="attribute" data-export id="dom-newton-millisecond-has-millisecond-newton-millisecond-has-millisecond"><code>newton-millisecond-has-millisecond</code><a class="self-link" href="#dom-newton-millisecond-has-millisecond-newton-millisecond-has-millisecond"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit④">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.6" id="Newton-Millisecond-Has-Newton"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond-has-newton">Newton-Millisecond-Has-Newton<a class="self-link" href="#newton-millisecond-has-newton"></a></dfn></span><a class="self-link" href="#Newton-Millisecond-Has-Newton"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond③">newton-millisecond</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑦">newton</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Millisecond-Has-Newton" data-dfn-type="attribute" data-export id="dom-newton-millisecond-has-newton-newton-millisecond-has-newton"><code>newton-millisecond-has-newton</code><a class="self-link" href="#dom-newton-millisecond-has-newton-newton-millisecond-has-newton"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑤">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.7" id="Newton-Second-Has-Newton"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second-has-newton">Newton-Second-Has-Newton<a class="self-link" href="#newton-second-has-newton"></a></dfn></span><a class="self-link" href="#Newton-Second-Has-Newton"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton-second" id="ref-for-newton-second②">newton-second</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑧">newton</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Second-Has-Newton" data-dfn-type="attribute" data-export id="dom-newton-second-has-newton-newton-second-has-newton"><code>newton-second-has-newton</code><a class="self-link" href="#dom-newton-second-has-newton-newton-second-has-newton"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑥">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑥">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.8" id="Newton-Second-Has-Second"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second-has-second">Newton-Second-Has-Second<a class="self-link" href="#newton-second-has-second"></a></dfn></span><a class="self-link" href="#Newton-Second-Has-Second"></a></h3>
+    <p><em>Attributes:</em></p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#newton-second" id="ref-for-newton-second③">newton-second</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#second" id="ref-for-second①">80000-3-units:second</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Newton-Second-Has-Second" data-dfn-type="attribute" data-export id="dom-newton-second-has-second-newton-second-has-second"><code>newton-second-has-second</code><a class="self-link" href="#dom-newton-second-has-second-newton-second-has-second"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑦">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑦">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.9" id="Watt-Has-Metre-Per-Second"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-has-metre-per-second">Watt-Has-Metre-Per-Second<a class="self-link" href="#watt-has-metre-per-second"></a></dfn></span><a class="self-link" href="#Watt-Has-Metre-Per-Second"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt②">watt</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑤">newton</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="watt-of-newton" data-dfn-type="attribute" data-export id="dom-watt-of-newton-watt-of-newton-factor"><code>watt-of-newton-factor</code><a class="self-link" href="#dom-watt-of-newton-watt-of-newton-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit④">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value 1/1)</p>
-    <h3 class="heading settled" data-level="5.6" id="Watt-of-metre-per-second"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-of-metre-per-second">watt-of-metre-per-second<a class="self-link" href="#watt-of-metre-per-second"></a></dfn></span><a class="self-link" href="#Watt-of-metre-per-second"></a></h3>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑤">80000-3-units:metre-per-second</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Watt-Has-Metre-Per-Second" data-dfn-type="attribute" data-export id="dom-watt-has-metre-per-second-watt-has-metre-per-second"><code>watt-has-metre-per-second</code><a class="self-link" href="#dom-watt-has-metre-per-second-watt-has-metre-per-second"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑧">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑧">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
+    <h3 class="heading settled" data-level="5.10" id="Watt-Has-Newton"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt-has-newton">Watt-Has-Newton<a class="self-link" href="#watt-has-newton"></a></dfn></span><a class="self-link" href="#Watt-Has-Newton"></a></h3>
     <p><em>Attributes:</em></p>
     <p><em>Source:</em> <a data-link-type="dfn" href="80000-4-units.html#watt" id="ref-for-watt③">watt</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="80000-3-units.html#metre-per-second" id="ref-for-metre-per-second⑤">80000-3-units:metre-per-second</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="watt-of-metre-per-second" data-dfn-type="attribute" data-export id="dom-watt-of-metre-per-second-watt-of-metre-per-second-factor"><code>watt-of-metre-per-second-factor</code><a class="self-link" href="#dom-watt-of-metre-per-second-watt-of-metre-per-second-factor"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑤">metrology:HasFactorForMeasurementUnit</a></p>
-    <p><em>Properties with domain:</em> <a data-link-type="dfn" href="../ontology.iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value 1/1)</p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-4-units.html#newton" id="ref-for-newton⑨">newton</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Watt-Has-Newton" data-dfn-type="attribute" data-export id="dom-watt-has-newton-watt-has-newton"><code>watt-has-newton</code><a class="self-link" href="#dom-watt-has-newton-watt-has-newton"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit⑨">metrology:HasFactorForMeasurementUnit</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑨">metrology:exponent</a> (must have value 1/1)</p>
+    </ul>
    </div>
   </main>
 <script>
@@ -2070,236 +2408,400 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#gram">gram</a><span>, in §3.1</span>
-   <li><a href="#kilogram">kilogram</a><span>, in §3.2</span>
-   <li><a href="#kilogram-metre-per-second">kilogram-metre-per-second</a><span>, in §3.3</span>
-   <li><a href="#kilogram-metre-per-second-of-kilogram">kilogram-metre-per-second-of-kilogram</a><span>, in §5.1</span>
-   <li><a href="#dom-kilogram-metre-per-second-of-kilogram-kilogram-metre-per-second-of-kilogram-factor">kilogram-metre-per-second-of-kilogram-factor</a><span>, in §5.1</span>
-   <li><a href="#kilogram-metre-per-second-of-metre-per-second">kilogram-metre-per-second-of-metre-per-second</a><span>, in §5.2</span>
-   <li><a href="#dom-kilogram-metre-per-second-of-metre-per-second-kilogram-metre-per-second-of-metre-per-second-factor">kilogram-metre-per-second-of-metre-per-second-factor</a><span>, in §5.2</span>
-   <li><a href="#newton">newton</a><span>, in §3.4</span>
-   <li><a href="#newton-of-kilogram">newton-of-kilogram</a><span>, in §5.3</span>
-   <li><a href="#dom-newton-of-kilogram-newton-of-kilogram-factor">newton-of-kilogram-factor</a><span>, in §5.3</span>
-   <li><a href="#newton-of-metre-per-second">newton-of-metre-per-second</a><span>, in §5.4</span>
-   <li><a href="#dom-newton-of-metre-per-second-newton-of-metre-per-second-factor">newton-of-metre-per-second-factor</a><span>, in §5.4</span>
-   <li><a href="#unitofforce">UnitOfForce</a><span>, in §4.3</span>
-   <li><a href="#unitofmass">UnitOfMass</a><span>, in §4.1</span>
-   <li><a href="#unitofmomentum">UnitOfMomentum</a><span>, in §4.2</span>
-   <li><a href="#unitofpower">UnitOfPower</a><span>, in §4.4</span>
-   <li><a href="#watt">watt</a><span>, in §3.5</span>
-   <li><a href="#watt-of-metre-per-second">watt-of-metre-per-second</a><span>, in §5.6</span>
-   <li><a href="#dom-watt-of-metre-per-second-watt-of-metre-per-second-factor">watt-of-metre-per-second-factor</a><span>, in §5.6</span>
-   <li><a href="#watt-of-newton">watt-of-newton</a><span>, in §5.5</span>
-   <li><a href="#dom-watt-of-newton-watt-of-newton-factor">watt-of-newton-factor</a><span>, in §5.5</span>
+   <li><a href="#forcemagnitude">ForceMagnitude</a><span>, in §3.1</span>
+   <li><a href="#forceunit">ForceUnit</a><span>, in §4.1</span>
+   <li><a href="#gram">gram</a><span>, in §4.6</span>
+   <li><a href="#impulsemagnitude">ImpulseMagnitude</a><span>, in §3.2</span>
+   <li><a href="#impulseunit">ImpulseUnit</a><span>, in §4.2</span>
+   <li><a href="#kilogram">kilogram</a><span>, in §4.7</span>
+   <li><a href="#kilogram-metre-per-second">kilogram-metre-per-second</a><span>, in §4.8</span>
+   <li><a href="#kilogram-metre-per-second-has-kilogram">Kilogram-Metre-Per-Second-Has-Kilogram</a><span>, in §5.1</span>
+   <li><a href="#dom-kilogram-metre-per-second-has-kilogram-kilogram-metre-per-second-has-kilogram">kilogram-metre-per-second-has-kilogram</a><span>, in §5.1</span>
+   <li><a href="#kilogram-metre-per-second-has-metre-per-second">Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a><span>, in §5.2</span>
+   <li><a href="#dom-kilogram-metre-per-second-has-metre-per-second-kilogram-metre-per-second-has-metre-per-second">kilogram-metre-per-second-has-metre-per-second</a><span>, in §5.2</span>
+   <li><a href="#massmagnitude">MassMagnitude</a><span>, in §3.3</span>
+   <li><a href="#massunit">MassUnit</a><span>, in §4.3</span>
+   <li><a href="#momentummagnitude">MomentumMagnitude</a><span>, in §3.4</span>
+   <li><a href="#momentumunit">MomentumUnit</a><span>, in §4.4</span>
+   <li><a href="#newton">newton</a><span>, in §4.9</span>
+   <li><a href="#newton-has-kilogram">Newton-Has-Kilogram</a><span>, in §5.3</span>
+   <li><a href="#dom-newton-has-kilogram-newton-has-kilogram">newton-has-kilogram</a><span>, in §5.3</span>
+   <li><a href="#newton-has-metre-per-second">Newton-Has-Metre-Per-Second</a><span>, in §5.4</span>
+   <li><a href="#dom-newton-has-metre-per-second-newton-has-metre-per-second">newton-has-metre-per-second</a><span>, in §5.4</span>
+   <li><a href="#newton-millisecond">newton-millisecond</a><span>, in §4.10</span>
+   <li><a href="#newton-millisecond-has-millisecond">Newton-Millisecond-Has-Millisecond</a><span>, in §5.5</span>
+   <li><a href="#dom-newton-millisecond-has-millisecond-newton-millisecond-has-millisecond">newton-millisecond-has-millisecond</a><span>, in §5.5</span>
+   <li><a href="#newton-millisecond-has-newton">Newton-Millisecond-Has-Newton</a><span>, in §5.6</span>
+   <li><a href="#dom-newton-millisecond-has-newton-newton-millisecond-has-newton">newton-millisecond-has-newton</a><span>, in §5.6</span>
+   <li><a href="#newton-second">newton-second</a><span>, in §4.11</span>
+   <li><a href="#newton-second-has-newton">Newton-Second-Has-Newton</a><span>, in §5.7</span>
+   <li><a href="#dom-newton-second-has-newton-newton-second-has-newton">newton-second-has-newton</a><span>, in §5.7</span>
+   <li><a href="#newton-second-has-second">Newton-Second-Has-Second</a><span>, in §5.8</span>
+   <li><a href="#dom-newton-second-has-second-newton-second-has-second">newton-second-has-second</a><span>, in §5.8</span>
+   <li><a href="#powermagnitude">PowerMagnitude</a><span>, in §3.5</span>
+   <li><a href="#powerunit">PowerUnit</a><span>, in §4.5</span>
+   <li><a href="#watt">watt</a><span>, in §4.12</span>
+   <li><a href="#watt-has-metre-per-second">Watt-Has-Metre-Per-Second</a><span>, in §5.9</span>
+   <li><a href="#dom-watt-has-metre-per-second-watt-has-metre-per-second">watt-has-metre-per-second</a><span>, in §5.9</span>
+   <li><a href="#watt-has-newton">Watt-Has-Newton</a><span>, in §5.10</span>
+   <li><a href="#dom-watt-has-newton-watt-has-newton">watt-has-newton</a><span>, in §5.10</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-kilo">
    <a href="80000-1.html#kilo">80000-1.html#kilo</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilo">3.2. kilogram</a>
+    <li><a href="#ref-for-kilo">4.7. kilogram</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-metre-per-second">
    <a href="80000-3-units.html#metre-per-second">80000-3-units.html#metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-metre-per-second">3.3. kilogram-metre-per-second</a>
-    <li><a href="#ref-for-metre-per-second①">3.4. newton</a>
-    <li><a href="#ref-for-metre-per-second②">3.5. watt</a>
-    <li><a href="#ref-for-metre-per-second③">5.2. kilogram-metre-per-second-of-metre-per-second</a>
-    <li><a href="#ref-for-metre-per-second④">5.4. newton-of-metre-per-second</a>
-    <li><a href="#ref-for-metre-per-second⑤">5.6. watt-of-metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second">4.8. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-metre-per-second①">4.9. newton</a>
+    <li><a href="#ref-for-metre-per-second②">4.12. watt</a>
+    <li><a href="#ref-for-metre-per-second③">5.2. Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-metre-per-second④">5.4. Newton-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-metre-per-second⑤">5.9. Watt-Has-Metre-Per-Second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-millisecond">
+   <a href="80000-3-units.html#millisecond">80000-3-units.html#millisecond</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-millisecond">4.10. newton-millisecond</a>
+    <li><a href="#ref-for-millisecond①">5.5. Newton-Millisecond-Has-Millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-second">
+   <a href="80000-3-units.html#second">80000-3-units.html#second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-second">4.11. newton-second</a>
+    <li><a href="#ref-for-second①">5.8. Newton-Second-Has-Second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-gram-magnitude">
+   <a href="80000-4-magnitudes1.html#gram-magnitude">80000-4-magnitudes1.html#gram-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-gram-magnitude">3.3. MassMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
+   <a href="80000-4-magnitudes1.html#kilogram-magnitude">80000-4-magnitudes1.html#kilogram-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-magnitude">3.3. MassMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-magnitude">
+   <a href="80000-4-magnitudes1.html#kilogram-metre-per-second-magnitude">80000-4-magnitudes1.html#kilogram-metre-per-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-metre-per-second-magnitude">3.4. MomentumMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-magnitude">
+   <a href="80000-4-magnitudes1.html#newton-magnitude">80000-4-magnitudes1.html#newton-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-magnitude">3.1. ForceMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond-magnitude">
+   <a href="80000-4-magnitudes1.html#newton-millisecond-magnitude">80000-4-magnitudes1.html#newton-millisecond-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-millisecond-magnitude">3.2. ImpulseMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second-magnitude">
+   <a href="80000-4-magnitudes1.html#newton-second-magnitude">80000-4-magnitudes1.html#newton-second-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second-magnitude">3.2. ImpulseMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-watt-magnitude">
+   <a href="80000-4-magnitudes1.html#watt-magnitude">80000-4-magnitudes1.html#watt-magnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-watt-magnitude">3.5. PowerMagnitude</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-forceunit">
+   <a href="80000-4-units.html#forceunit">80000-4-units.html#forceunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-forceunit">3.1. ForceMagnitude</a>
+    <li><a href="#ref-for-forceunit①">4.9. newton</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gram">
    <a href="80000-4-units.html#gram">80000-4-units.html#gram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gram">4.1. UnitOfMass</a>
+    <li><a href="#ref-for-gram">4.3. MassUnit</a>
+    <li><a href="#ref-for-gram①">4.7. kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-impulseunit">
+   <a href="80000-4-units.html#impulseunit">80000-4-units.html#impulseunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-impulseunit">3.2. ImpulseMagnitude</a>
+    <li><a href="#ref-for-impulseunit①">4.10. newton-millisecond</a>
+    <li><a href="#ref-for-impulseunit②">4.11. newton-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram">
    <a href="80000-4-units.html#kilogram">80000-4-units.html#kilogram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram">3.3. kilogram-metre-per-second</a>
-    <li><a href="#ref-for-kilogram①">3.4. newton</a>
-    <li><a href="#ref-for-kilogram②">4.1. UnitOfMass</a>
-    <li><a href="#ref-for-kilogram③">5.1. kilogram-metre-per-second-of-kilogram</a>
-    <li><a href="#ref-for-kilogram④">5.3. newton-of-kilogram</a>
+    <li><a href="#ref-for-kilogram">4.6. gram</a>
+    <li><a href="#ref-for-kilogram①">4.8. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-kilogram②">4.9. newton</a>
+    <li><a href="#ref-for-kilogram③">5.1. Kilogram-Metre-Per-Second-Has-Kilogram</a>
+    <li><a href="#ref-for-kilogram④">5.3. Newton-Has-Kilogram</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second">
    <a href="80000-4-units.html#kilogram-metre-per-second">80000-4-units.html#kilogram-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-metre-per-second">3.2. kilogram</a>
-    <li><a href="#ref-for-kilogram-metre-per-second①">4.2. UnitOfMomentum</a>
-    <li><a href="#ref-for-kilogram-metre-per-second②">5.1. kilogram-metre-per-second-of-kilogram</a>
-    <li><a href="#ref-for-kilogram-metre-per-second③">5.2. kilogram-metre-per-second-of-metre-per-second</a>
+    <li><a href="#ref-for-kilogram-metre-per-second">4.4. MomentumUnit</a>
+    <li><a href="#ref-for-kilogram-metre-per-second①">4.7. kilogram</a>
+    <li><a href="#ref-for-kilogram-metre-per-second②">5.1. Kilogram-Metre-Per-Second-Has-Kilogram</a>
+    <li><a href="#ref-for-kilogram-metre-per-second③">5.2. Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-of-kilogram-factor">
-   <a href="80000-4-units.html#kilogram-metre-per-second-of-kilogram-factor">80000-4-units.html#kilogram-metre-per-second-of-kilogram-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-has-kilogram">
+   <a href="80000-4-units.html#kilogram-metre-per-second-has-kilogram">80000-4-units.html#kilogram-metre-per-second-has-kilogram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-metre-per-second-of-kilogram-factor">3.2. kilogram</a>
-    <li><a href="#ref-for-kilogram-metre-per-second-of-kilogram-factor①">3.3. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-kilogram-metre-per-second-has-kilogram">4.7. kilogram</a>
+    <li><a href="#ref-for-kilogram-metre-per-second-has-kilogram①">4.8. kilogram-metre-per-second</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-of-metre-per-second-factor">
-   <a href="80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor">80000-4-units.html#kilogram-metre-per-second-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second-has-metre-per-second">
+   <a href="80000-4-units.html#kilogram-metre-per-second-has-metre-per-second">80000-4-units.html#kilogram-metre-per-second-has-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-metre-per-second-of-metre-per-second-factor">3.3. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-kilogram-metre-per-second-has-metre-per-second">4.8. kilogram-metre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-massunit">
+   <a href="80000-4-units.html#massunit">80000-4-units.html#massunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-massunit">3.3. MassMagnitude</a>
+    <li><a href="#ref-for-massunit①">4.6. gram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentumunit">
+   <a href="80000-4-units.html#momentumunit">80000-4-units.html#momentumunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentumunit">3.4. MomentumMagnitude</a>
+    <li><a href="#ref-for-momentumunit①">4.8. kilogram-metre-per-second</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton">
    <a href="80000-4-units.html#newton">80000-4-units.html#newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton">3.2. kilogram</a>
-    <li><a href="#ref-for-newton①">3.5. watt</a>
-    <li><a href="#ref-for-newton②">4.3. UnitOfForce</a>
-    <li><a href="#ref-for-newton③">5.3. newton-of-kilogram</a>
-    <li><a href="#ref-for-newton④">5.4. newton-of-metre-per-second</a>
-    <li><a href="#ref-for-newton⑤">5.5. watt-of-newton</a>
+    <li><a href="#ref-for-newton">4.1. ForceUnit</a>
+    <li><a href="#ref-for-newton①">4.7. kilogram</a>
+    <li><a href="#ref-for-newton②">4.10. newton-millisecond</a>
+    <li><a href="#ref-for-newton③">4.11. newton-second</a>
+    <li><a href="#ref-for-newton④">4.12. watt</a>
+    <li><a href="#ref-for-newton⑤">5.3. Newton-Has-Kilogram</a>
+    <li><a href="#ref-for-newton⑥">5.4. Newton-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-newton⑦">5.6. Newton-Millisecond-Has-Newton</a>
+    <li><a href="#ref-for-newton⑧">5.7. Newton-Second-Has-Newton</a>
+    <li><a href="#ref-for-newton⑨">5.10. Watt-Has-Newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-of-kilogram-factor">
-   <a href="80000-4-units.html#newton-of-kilogram-factor">80000-4-units.html#newton-of-kilogram-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-has-kilogram">
+   <a href="80000-4-units.html#newton-has-kilogram">80000-4-units.html#newton-has-kilogram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-of-kilogram-factor">3.2. kilogram</a>
-    <li><a href="#ref-for-newton-of-kilogram-factor①">3.4. newton</a>
+    <li><a href="#ref-for-newton-has-kilogram">4.7. kilogram</a>
+    <li><a href="#ref-for-newton-has-kilogram①">4.9. newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-of-metre-per-second-factor">
-   <a href="80000-4-units.html#newton-of-metre-per-second-factor">80000-4-units.html#newton-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-has-metre-per-second">
+   <a href="80000-4-units.html#newton-has-metre-per-second">80000-4-units.html#newton-has-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-of-metre-per-second-factor">3.4. newton</a>
+    <li><a href="#ref-for-newton-has-metre-per-second">4.9. newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofforce">
-   <a href="80000-4-units.html#unitofforce">80000-4-units.html#unitofforce</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond">
+   <a href="80000-4-units.html#newton-millisecond">80000-4-units.html#newton-millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofforce">3.4. newton</a>
+    <li><a href="#ref-for-newton-millisecond">4.2. ImpulseUnit</a>
+    <li><a href="#ref-for-newton-millisecond①">4.9. newton</a>
+    <li><a href="#ref-for-newton-millisecond②">5.5. Newton-Millisecond-Has-Millisecond</a>
+    <li><a href="#ref-for-newton-millisecond③">5.6. Newton-Millisecond-Has-Newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofmass">
-   <a href="80000-4-units.html#unitofmass">80000-4-units.html#unitofmass</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond-has-millisecond">
+   <a href="80000-4-units.html#newton-millisecond-has-millisecond">80000-4-units.html#newton-millisecond-has-millisecond</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofmass">3.1. gram</a>
-    <li><a href="#ref-for-unitofmass①">3.2. kilogram</a>
+    <li><a href="#ref-for-newton-millisecond-has-millisecond">4.10. newton-millisecond</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofmomentum">
-   <a href="80000-4-units.html#unitofmomentum">80000-4-units.html#unitofmomentum</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond-has-newton">
+   <a href="80000-4-units.html#newton-millisecond-has-newton">80000-4-units.html#newton-millisecond-has-newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofmomentum">3.3. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-newton-millisecond-has-newton">4.9. newton</a>
+    <li><a href="#ref-for-newton-millisecond-has-newton①">4.10. newton-millisecond</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitofpower">
-   <a href="80000-4-units.html#unitofpower">80000-4-units.html#unitofpower</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-second">
+   <a href="80000-4-units.html#newton-second">80000-4-units.html#newton-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unitofpower">3.5. watt</a>
+    <li><a href="#ref-for-newton-second">4.2. ImpulseUnit</a>
+    <li><a href="#ref-for-newton-second①">4.9. newton</a>
+    <li><a href="#ref-for-newton-second②">5.7. Newton-Second-Has-Newton</a>
+    <li><a href="#ref-for-newton-second③">5.8. Newton-Second-Has-Second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second-has-newton">
+   <a href="80000-4-units.html#newton-second-has-newton">80000-4-units.html#newton-second-has-newton</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second-has-newton">4.9. newton</a>
+    <li><a href="#ref-for-newton-second-has-newton①">4.11. newton-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second-has-second">
+   <a href="80000-4-units.html#newton-second-has-second">80000-4-units.html#newton-second-has-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second-has-second">4.11. newton-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-powerunit">
+   <a href="80000-4-units.html#powerunit">80000-4-units.html#powerunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-powerunit">3.5. PowerMagnitude</a>
+    <li><a href="#ref-for-powerunit①">4.12. watt</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-watt">
    <a href="80000-4-units.html#watt">80000-4-units.html#watt</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-watt">3.4. newton</a>
-    <li><a href="#ref-for-watt①">4.4. UnitOfPower</a>
-    <li><a href="#ref-for-watt②">5.5. watt-of-newton</a>
-    <li><a href="#ref-for-watt③">5.6. watt-of-metre-per-second</a>
+    <li><a href="#ref-for-watt">4.5. PowerUnit</a>
+    <li><a href="#ref-for-watt①">4.9. newton</a>
+    <li><a href="#ref-for-watt②">5.9. Watt-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-watt③">5.10. Watt-Has-Newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-watt-of-metre-per-second-factor">
-   <a href="80000-4-units.html#watt-of-metre-per-second-factor">80000-4-units.html#watt-of-metre-per-second-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-watt-has-metre-per-second">
+   <a href="80000-4-units.html#watt-has-metre-per-second">80000-4-units.html#watt-has-metre-per-second</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-watt-of-metre-per-second-factor">3.5. watt</a>
+    <li><a href="#ref-for-watt-has-metre-per-second">4.12. watt</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-watt-of-newton-factor">
-   <a href="80000-4-units.html#watt-of-newton-factor">80000-4-units.html#watt-of-newton-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-watt-has-newton">
+   <a href="80000-4-units.html#watt-has-newton">80000-4-units.html#watt-has-newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-watt-of-newton-factor">3.4. newton</a>
-    <li><a href="#ref-for-watt-of-newton-factor①">3.5. watt</a>
+    <li><a href="#ref-for-watt-has-newton">4.9. newton</a>
+    <li><a href="#ref-for-watt-has-newton①">4.12. watt</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
    <a href="80000-6-units.html#newton-per-coulomb">80000-6-units.html#newton-per-coulomb</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-per-coulomb">3.4. newton</a>
+    <li><a href="#ref-for-newton-per-coulomb">4.9. newton</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb-of-newton-factor">
-   <a href="80000-6-units.html#newton-per-coulomb-of-newton-factor">80000-6-units.html#newton-per-coulomb-of-newton-factor</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb-has-newton">
+   <a href="80000-6-units.html#newton-per-coulomb-has-newton">80000-6-units.html#newton-per-coulomb-has-newton</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-newton-per-coulomb-of-newton-factor">3.4. newton</a>
+    <li><a href="#ref-for-newton-per-coulomb-has-newton">4.9. newton</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#coherentmeasurementunit">../ontology.iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#coherentmeasurementunit">../iupac.org/metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-coherentmeasurementunit">4.1. UnitOfMass</a>
-    <li><a href="#ref-for-coherentmeasurementunit①">4.2. UnitOfMomentum</a>
-    <li><a href="#ref-for-coherentmeasurementunit②">4.3. UnitOfForce</a>
-    <li><a href="#ref-for-coherentmeasurementunit③">4.4. UnitOfPower</a>
+    <li><a href="#ref-for-coherentmeasurementunit">4.1. ForceUnit</a>
+    <li><a href="#ref-for-coherentmeasurementunit①">4.2. ImpulseUnit</a>
+    <li><a href="#ref-for-coherentmeasurementunit②">4.3. MassUnit</a>
+    <li><a href="#ref-for-coherentmeasurementunit③">4.4. MomentumUnit</a>
+    <li><a href="#ref-for-coherentmeasurementunit④">4.5. PowerUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-derivedmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#derivedmeasurementunit">../ontology.iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#derivedmeasurementunit">../iupac.org/metrology.html#derivedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-derivedmeasurementunit">3.3. kilogram-metre-per-second</a>
-    <li><a href="#ref-for-derivedmeasurementunit①">3.4. newton</a>
-    <li><a href="#ref-for-derivedmeasurementunit②">3.5. watt</a>
+    <li><a href="#ref-for-derivedmeasurementunit">4.8. kilogram-metre-per-second</a>
+    <li><a href="#ref-for-derivedmeasurementunit①">4.9. newton</a>
+    <li><a href="#ref-for-derivedmeasurementunit②">4.10. newton-millisecond</a>
+    <li><a href="#ref-for-derivedmeasurementunit③">4.11. newton-second</a>
+    <li><a href="#ref-for-derivedmeasurementunit④">4.12. watt</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-exponent">
-   <a href="../ontology.iupac.org/metrology.html#exponent">../ontology.iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-exponent">5.1. kilogram-metre-per-second-of-kilogram</a>
-    <li><a href="#ref-for-exponent①">5.2. kilogram-metre-per-second-of-metre-per-second</a>
-    <li><a href="#ref-for-exponent②">5.3. newton-of-kilogram</a>
-    <li><a href="#ref-for-exponent③">5.4. newton-of-metre-per-second</a>
-    <li><a href="#ref-for-exponent④">5.5. watt-of-newton</a>
-    <li><a href="#ref-for-exponent⑤">5.6. watt-of-metre-per-second</a>
+    <li><a href="#ref-for-exponent">5.1. Kilogram-Metre-Per-Second-Has-Kilogram</a>
+    <li><a href="#ref-for-exponent①">5.2. Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-exponent②">5.3. Newton-Has-Kilogram</a>
+    <li><a href="#ref-for-exponent③">5.4. Newton-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-exponent④">5.5. Newton-Millisecond-Has-Millisecond</a>
+    <li><a href="#ref-for-exponent⑤">5.6. Newton-Millisecond-Has-Newton</a>
+    <li><a href="#ref-for-exponent⑥">5.7. Newton-Second-Has-Newton</a>
+    <li><a href="#ref-for-exponent⑦">5.8. Newton-Second-Has-Second</a>
+    <li><a href="#ref-for-exponent⑧">5.9. Watt-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-exponent⑨">5.10. Watt-Has-Newton</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasfactorformeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#hasfactorformeasurementunit">../ontology.iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#hasfactorformeasurementunit">../iupac.org/metrology.html#hasfactorformeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. kilogram-metre-per-second-of-kilogram</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit①">5.2. kilogram-metre-per-second-of-metre-per-second</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit②">5.3. newton-of-kilogram</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit③">5.4. newton-of-metre-per-second</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit④">5.5. watt-of-newton</a>
-    <li><a href="#ref-for-hasfactorformeasurementunit⑤">5.6. watt-of-metre-per-second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit">5.1. Kilogram-Metre-Per-Second-Has-Kilogram</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit①">5.2. Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit②">5.3. Newton-Has-Kilogram</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit③">5.4. Newton-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit④">5.5. Newton-Millisecond-Has-Millisecond</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑤">5.6. Newton-Millisecond-Has-Newton</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑥">5.7. Newton-Second-Has-Newton</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑦">5.8. Newton-Second-Has-Second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑧">5.9. Watt-Has-Metre-Per-Second</a>
+    <li><a href="#ref-for-hasfactorformeasurementunit⑨">5.10. Watt-Has-Newton</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasprefix">
-   <a href="../ontology.iupac.org/metrology.html#hasprefix">../ontology.iupac.org/metrology.html#hasprefix</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#hasprefix">../iupac.org/metrology.html#hasprefix</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasprefix">3.2. kilogram</a>
+    <li><a href="#ref-for-hasprefix">4.7. kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasreference">
+   <a href="../iupac.org/metrology.html#hasreference">../iupac.org/metrology.html#hasreference</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasreference">3.1. ForceMagnitude</a>
+    <li><a href="#ref-for-hasreference①">3.2. ImpulseMagnitude</a>
+    <li><a href="#ref-for-hasreference②">3.3. MassMagnitude</a>
+    <li><a href="#ref-for-hasreference③">3.4. MomentumMagnitude</a>
+    <li><a href="#ref-for-hasreference④">3.5. PowerMagnitude</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-independentmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#independentmeasurementunit">../ontology.iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#independentmeasurementunit">../iupac.org/metrology.html#independentmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-independentmeasurementunit">3.1. gram</a>
+    <li><a href="#ref-for-independentmeasurementunit">4.6. gram</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-isdimensionlessmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit">../ontology.iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#isdimensionlessmeasurementunit">../iupac.org/metrology.html#isdimensionlessmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. UnitOfMass</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. UnitOfMomentum</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit②">4.3. UnitOfForce</a>
-    <li><a href="#ref-for-isdimensionlessmeasurementunit③">4.4. UnitOfPower</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit">4.1. ForceUnit</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit①">4.2. ImpulseUnit</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit②">4.3. MassUnit</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit③">4.4. MomentumUnit</a>
+    <li><a href="#ref-for-isdimensionlessmeasurementunit④">4.5. PowerUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-prefix">
-   <a href="../ontology.iupac.org/metrology.html#prefix">../ontology.iupac.org/metrology.html#prefix</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#prefix">../iupac.org/metrology.html#prefix</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-prefix">3.2. kilogram</a>
+    <li><a href="#ref-for-prefix">4.7. kilogram</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-prefixedmeasurementunit">
-   <a href="../ontology.iupac.org/metrology.html#prefixedmeasurementunit">../ontology.iupac.org/metrology.html#prefixedmeasurementunit</a><b>Referenced in:</b>
+   <a href="../iupac.org/metrology.html#prefixedmeasurementunit">../iupac.org/metrology.html#prefixedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-prefixedmeasurementunit">3.2. kilogram</a>
+    <li><a href="#ref-for-prefixedmeasurementunit">4.7. kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unitarymagnitude">
+   <a href="../iupac.org/metrology.html#unitarymagnitude">../iupac.org/metrology.html#unitarymagnitude</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unitarymagnitude">3.1. ForceMagnitude</a>
+    <li><a href="#ref-for-unitarymagnitude①">3.2. ImpulseMagnitude</a>
+    <li><a href="#ref-for-unitarymagnitude②">3.3. MassMagnitude</a>
+    <li><a href="#ref-for-unitarymagnitude③">3.4. MomentumMagnitude</a>
+    <li><a href="#ref-for-unitarymagnitude④">3.5. PowerMagnitude</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2313,44 +2815,66 @@ dfn > a.self-link::before      { content: "#"; }
     <a data-link-type="biblio">[http://iso.org/80000-3-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-metre-per-second">metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-millisecond">millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-second">second</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-gram-magnitude">gram-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-magnitude">kilogram-metre-per-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-magnitude">newton-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond-magnitude">newton-millisecond-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second-magnitude">newton-second-magnitude</span>
+     <li><span class="dfn-paneled" id="term-for-watt-magnitude">watt-magnitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-4-units]</a> defines the following terms:
     <ul>
+     <li><span class="dfn-paneled" id="term-for-forceunit">forceunit</span>
      <li><span class="dfn-paneled" id="term-for-gram">gram</span>
+     <li><span class="dfn-paneled" id="term-for-impulseunit">impulseunit</span>
      <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
      <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second">kilogram-metre-per-second</span>
-     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-of-kilogram-factor">kilogram-metre-per-second-of-kilogram-factor</span>
-     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-of-metre-per-second-factor">kilogram-metre-per-second-of-metre-per-second-factor</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-has-kilogram">kilogram-metre-per-second-has-kilogram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second-has-metre-per-second">kilogram-metre-per-second-has-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-massunit">massunit</span>
+     <li><span class="dfn-paneled" id="term-for-momentumunit">momentumunit</span>
      <li><span class="dfn-paneled" id="term-for-newton">newton</span>
-     <li><span class="dfn-paneled" id="term-for-newton-of-kilogram-factor">newton-of-kilogram-factor</span>
-     <li><span class="dfn-paneled" id="term-for-newton-of-metre-per-second-factor">newton-of-metre-per-second-factor</span>
-     <li><span class="dfn-paneled" id="term-for-unitofforce">unitofforce</span>
-     <li><span class="dfn-paneled" id="term-for-unitofmass">unitofmass</span>
-     <li><span class="dfn-paneled" id="term-for-unitofmomentum">unitofmomentum</span>
-     <li><span class="dfn-paneled" id="term-for-unitofpower">unitofpower</span>
+     <li><span class="dfn-paneled" id="term-for-newton-has-kilogram">newton-has-kilogram</span>
+     <li><span class="dfn-paneled" id="term-for-newton-has-metre-per-second">newton-has-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond">newton-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond-has-millisecond">newton-millisecond-has-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond-has-newton">newton-millisecond-has-newton</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second">newton-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second-has-newton">newton-second-has-newton</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second-has-second">newton-second-has-second</span>
+     <li><span class="dfn-paneled" id="term-for-powerunit">powerunit</span>
      <li><span class="dfn-paneled" id="term-for-watt">watt</span>
-     <li><span class="dfn-paneled" id="term-for-watt-of-metre-per-second-factor">watt-of-metre-per-second-factor</span>
-     <li><span class="dfn-paneled" id="term-for-watt-of-newton-factor">watt-of-newton-factor</span>
+     <li><span class="dfn-paneled" id="term-for-watt-has-metre-per-second">watt-has-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-watt-has-newton">watt-has-newton</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb-of-newton-factor">newton-per-coulomb-of-newton-factor</span>
+     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb-has-newton">newton-per-coulomb-has-newton</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://ontology.iupac.org/metrology]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-coherentmeasurementunit">coherentmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-derivedmeasurementunit">derivedmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
      <li><span class="dfn-paneled" id="term-for-hasfactorformeasurementunit">hasfactorformeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-hasprefix">hasprefix</span>
+     <li><span class="dfn-paneled" id="term-for-hasreference">hasreference</span>
      <li><span class="dfn-paneled" id="term-for-independentmeasurementunit">independentmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-isdimensionlessmeasurementunit">isdimensionlessmeasurementunit</span>
      <li><span class="dfn-paneled" id="term-for-prefix">prefix</span>
      <li><span class="dfn-paneled" id="term-for-prefixedmeasurementunit">prefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-unitarymagnitude">unitarymagnitude</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

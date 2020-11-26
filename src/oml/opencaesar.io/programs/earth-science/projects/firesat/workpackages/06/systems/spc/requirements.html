@@ -26,6 +26,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
+ *     -> ins/del.c### for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -34,9 +35,12 @@
  *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
- *   - .assertion  for assertions                    (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
+ *   - .correction for "candidate corrections"       (div, aside, details, section)
+ *   - .addition   for "candidate additions"         (div, aside, details, section)
+ *   - .correction.proposed for "proposed corrections" (div, aside, details, section)
+ *   - .addition.proposed   for "proposed additions"   (div, aside, details, section)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
@@ -57,6 +61,8 @@
  *   - .head for the header
  *   - .copyright for the copyright
  *
+ * Outdated warning for old specs
+ *
  * Miscellaneous
  *   - .overlarge for things that should be as wide as possible, even if
  *     that overflows the body text area. This can be used on an item or
@@ -64,6 +70,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
+ *
  *   - js-added ToC jump links (see fixup.js)
  *
  ******************************************************************************/
@@ -71,24 +78,20 @@
 /* color variables included separately for reliability */
 
 /******************************************************************************/
-/*                                   Body                                     */
+/*                                    Body                                    */
 /******************************************************************************/
 
 	html {
-		color: black;
-		color: var(--text);
-		background-color: white;
-		background-color: var(--bg);
 	}
 
 	body {
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;               /* limit line length to 50em for readability   */
-		margin: 0 auto;                /* center text within page                     */
+		max-width: 50em;			  /* limit line length to 50em for readability   */
+		margin: 0 auto;				/* center text within page                    */
 		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
+		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.5;
@@ -99,7 +102,10 @@
 		overflow-wrap: break-word;
 		hyphens: auto;
 
-		background: transparent top left fixed no-repeat;
+		color: black;
+		color: var(--text);
+		background: white top left fixed no-repeat;
+		background: var(--bg) top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -110,7 +116,7 @@
 
 /** Header ********************************************************************/
 
-	div.head { margin-bottom: 1em }
+	div.head { margin-bottom: 1em; }
 	div.head hr { border-style: solid; }
 
 	div.head h1 {
@@ -158,7 +164,7 @@
 /** Copyright *****************************************************************/
 
 	p.copyright,
-	p.copyright small { font-size: small }
+	p.copyright small { font-size: small; }
 
 /** Back to Top / ToC Toggle **************************************************/
 
@@ -170,7 +176,7 @@
 	@media not print {
 		#toc-nav {
 			position: fixed;
-			z-index: 2;
+			z-index: 3;
 			bottom: 0; left: 0;
 			margin: 0;
 			min-width: 1.33em;
@@ -337,9 +343,9 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
-		font-family: inherit;    /* Inherit the font family. */
-		line-height: 1.2;        /* Keep wrapped headings compact */
-		hyphens: manual;         /* Hyphenated headings look weird */
+		font-family: inherit;	/* Inherit the font family. */
+		line-height: 1.2;		/* Keep wrapped headings compact */
+		hyphens: manual;		/* Hyphenated headings look weird */
 	}
 
 	h2, h3, h4, h5, h6 {
@@ -423,51 +429,51 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
-	 border-left: 0.5em solid var(--algo-border);
+	border-left: 0.5em solid #DEF;
+	border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Put nice boxes around each algorithm. */
 	[data-algorithm]:not(.heading) {
-	  padding: .5em;
-	  border: thin solid #ddd;
-	  border: thin solid var(--algo-border);
-	  border-radius: .5em;
-	  margin: .5em calc(-0.5em - 1px);
+	 padding: .5em;
+	 border: thin solid #ddd;
+	 border: thin solid var(--algo-border);
+	 border-radius: .5em;
+	 margin: .5em calc(-0.5em - 1px);
 	}
 	[data-algorithm]:not(.heading) > :first-child {
-	  margin-top: 0;
+	 margin-top: 0;
 	}
 	[data-algorithm]:not(.heading) > :last-child {
-	  margin-bottom: 0;
+	 margin-bottom: 0;
 	}
 
 	/* Style for switch/case <dl>s */
 	dl.switch > dd > ol.only,
 	dl.switch > dd > .only > ol {
-	 margin-left: 0;
+	margin-left: 0;
 	}
 	dl.switch > dd > ol.algorithm,
 	dl.switch > dd > .algorithm > ol {
-	 margin-left: -2em;
+	margin-left: -2em;
 	}
 	dl.switch {
-	 padding-left: 2em;
+	padding-left: 2em;
 	}
 	dl.switch > dt {
-	 text-indent: -1.5em;
-	 margin-top: 1em;
+	text-indent: -1.5em;
+	margin-top: 1em;
 	}
 	dl.switch > dt + dt {
-	 margin-top: 0;
+	margin-top: 0;
 	}
 	dl.switch > dt::before {
-	 content: '\21AA';
-	 padding: 0 0.5em 0 0;
-	 display: inline-block;
-	 width: 1em;
-	 text-align: right;
-	 line-height: 0.5em;
+	content: '\21AA';
+	padding: 0 0.5em 0 0;
+	display: inline-block;
+	width: 1em;
+	text-align: right;
+	line-height: 0.5em;
 	}
 
 /** Terminology Markup ********************************************************/
@@ -485,7 +491,7 @@
 		font-style: normal;
 	}
 	dt dfn code, code.idl {
-		font-size: medium;
+		font-size: inherit;
 	}
 	dfn var {
 		font-style: normal;
@@ -494,18 +500,37 @@
 /** Change Marking ************************************************************/
 
 	del {
-		color: red;
+		color: #aa0000;
 		color: var(--del-text);
 		background: transparent;
 		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
-		color: #080;
+		color: #006100;
 		color: var(--ins-text);
 		background: transparent;
 		background: var(--ins-bg);
 		text-decoration: underline;
+	}
+
+	/* for amendments (candidate/proposed changes) */
+
+	.amendment ins, .correction ins, .addition ins,
+	ins[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment del, .correction del, .addition del,
+	del[class^=c] {
+		text-decoration-style: dotted;
+	}
+	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
+	ins[class^=c].proposed {
+		text-decoration-style: double;
+	}
+	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
+	del[class^=c].proposed {
+		text-decoration-style: double;
 	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
@@ -546,7 +571,7 @@
 
 /** Inline Code fragments *****************************************************/
 
-  /* Do something nice. */
+	/* Do something nice. */
 
 /******************************************************************************/
 /*                                    Links                                   */
@@ -610,7 +635,7 @@
 	}
 
 	/* For autogen numbers, add
-	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
+	  .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
 
 	figure, .figure, .sidefigure {
@@ -618,7 +643,7 @@
 		text-align: center;
 		margin: 2.5em 0;
 	}
-	.figure img,    .sidefigure img,    figure img,
+	.figure img,	.sidefigure img,	figure img,
 	.figure object, .sidefigure object, figure object {
 		max-width: 100%;
 		margin: auto;
@@ -636,7 +661,7 @@
 		.sidefigure {
 			float: right;
 			width: 50%;
-			margin: 0 0 0.5em 0.5em
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 	.caption, figcaption, caption {
@@ -651,13 +676,15 @@
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > .figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em; }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .assertion, .advisement, blockquote {
+	.issue, .note, .example, .assertion, .advisement, blockquote,
+	.amendment, .correction, .addition {
+		margin: 1em auto;
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -668,20 +695,20 @@
 		border-right-style: solid;
 	}
 
-	.issue,
-	.note,
-	.example,
-	.advisement,
-	.assertion,
-	blockquote {
-		margin: 1em auto;
-	}
+	blockquote > :first-child,
 	.note  > p:first-child,
 	.issue > p:first-child,
-	blockquote > :first-child {
+	.amendment > p:first-child,
+	.correction > p:first-child,
+	.addition > p:first-child {
 		margin-top: 0;
 	}
-	blockquote > :last-child {
+	blockquote > :last-child,
+	.note  > p:last-child,
+	.issue > p:last-child,
+	.amendment > p:last-child,
+	.correction > p:last-child,
+	.addition > p:last-child {
 		margin-bottom: 0;
 	}
 
@@ -689,7 +716,14 @@
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
 	.note::before, .note > .marker,
-	details.note > summary > .marker {
+	details.note > summary > .marker,
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary > .marker,
+	.addition::before, .addition > .marker,
+	addition.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	correction.amendment > summary > .marker
+	{
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
@@ -727,7 +761,7 @@
 		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
-	   or use class="marker" to mark up the issue number in source. */
+	  or use class="marker" to mark up the issue number in source. */
 
 /** Example *******************************************************************/
 
@@ -747,7 +781,7 @@
 		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
-	   or use class="marker" to mark up the example number in source. */
+	  or use class="marker" to mark up the example number in source. */
 
 /** Non-normative Note ********************************************************/
 
@@ -767,7 +801,7 @@
 		color: var(--noteheading-text);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
-	   or use class="marker" to mark up the label in source. */
+	  or use class="marker" to mark up the label in source. */
 
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
@@ -807,6 +841,38 @@
 		color: var(--advisementheading-text);
 	}
 
+/** Amendment Box *************************************************************/
+
+	.amendment, .correction, .addition {
+		border-color: #330099;
+		border-color: var(--amendment-border);
+		background: #F5F0FF;
+		background: var(--amendment-bg);
+		color: black;
+		color: var(--amendment-text);
+	}
+	.amendment.proposed, .correction.proposed, .addition.proposed {
+		border-style: solid;
+		border-block-width: 0.25em;
+	}
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary::before, details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary::before, details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary::before, details.addition > summary > .marker {
+		color: #220066;
+		color: var(--amendmentheading-text);
+	}
+	.amendment.proposed::before, .amendment.proposed > .marker,
+	details.amendment.proposed > summary::before, details.amendment.proposed > summary > .marker,
+	.correction.proposed::before, .correction.proposed > .marker,
+	details.correction.proposed > summary::before, details.correction.proposed > summary > .marker,
+	.addition.proposed::before, .addition.proposed > .marker,
+	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
+		font-weight: bold;
+	}
+
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
@@ -835,15 +901,15 @@
 		margin-bottom: 0;
 	}
 
-	@media not print {
-		details.annoying-warning[open] {
-			position: fixed;
-			left: 0;
-			right: 0;
-			bottom: 2em;
-			z-index: 1000;
-		}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 2em;
+		z-index: 1000;
 	}
+}
 
 	details.annoying-warning:not([open]) > summary {
 		text-align: center;
@@ -918,15 +984,15 @@
 
 /** Data tables (and properly marked-up index tables) *************************/
 	/*
-		 <table class="data"> highlights structural relationships in a table
-		 when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+		<table class="data"> highlights structural relationships in a table
+		when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
 
-		 Use class="complex data" for particularly complicated tables --
-		 (This will draw more lines: busier, but clearer.)
+		Use class="complex data" for particularly complicated tables --
+		(This will draw more lines: busier, but clearer.)
 
-		 Use class="long" on table cells with paragraph-like contents
-		 (This will adjust text alignment accordingly.)
-		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
+		Use class="long" on table cells with paragraph-like contents
+		(This will adjust text alignment accordingly.)
+		Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
 	table {
@@ -1075,22 +1141,22 @@ Possible extra rowspan handling
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.1rem; /* consistent spacing */
+	}
+	.toc {
+		line-height: 1.1em;
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li             { font-weight: bold;   }
-	.toc > li li          { font-weight: normal; }
-	.toc > li li li       { font-size:   95%;    }
-	.toc > li li li li    { font-size:   90%;    }
-	.toc > li li li li .secno { font-size: 85%; }
-	.toc > li li li li li { font-size:   85%;    }
-	.toc > li li li li li .secno { font-size: 100%; }
+	.toc > li			{ font-weight: bold;   }
+	.toc > li li		 { font-weight: normal; }
+	.toc > li li li	  { font-size:   95%;	}
+	.toc > li li li li	{ font-size:   90%;	}
+	.toc > li li li li li { font-size:   85%;	}
 
 	/* @supports not (display:grid) { */
-		.toc > li             { margin: 1.5rem 0;    }
-		.toc > li li          { margin: 0.3rem 0;    }
-		.toc > li li li       { margin-left: 2rem;   }
+		.toc > li			{ margin: 1.5rem 0;	}
+		.toc > li li		 { margin: 0.3rem 0;	}
+		.toc > li li li	  { margin-left: 2rem;   }
 
 		/* Section numbers in a column of their own */
 		.toc .secno {
@@ -1098,33 +1164,35 @@ Possible extra rowspan handling
 			width: 4rem;
 			white-space: nowrap;
 		}
+		.toc > li li li li .secno { font-size: 85%; }
+		.toc > li li li li li .secno { font-size: 100%; }
 
 		.toc li {
 			clear: both;
 		}
 
-		:not(li) > .toc              { margin-left:  5rem; }
-		.toc .secno                  { margin-left: -5rem; }
-		.toc > li li li .secno       { margin-left: -7rem; }
-		.toc > li li li li .secno    { margin-left: -9rem; }
+		:not(li) > .toc			 { margin-left:  5rem; }
+		.toc .secno				 { margin-left: -5rem; }
+		.toc > li li li .secno	  { margin-left: -7rem; }
+		.toc > li li li li .secno	{ margin-left: -9rem; }
 		.toc > li li li li li .secno { margin-left: -11rem; }
 
 		/* Tighten up indentation in narrow ToCs */
 		@media (max-width: 30em) {
-			:not(li) > .toc              { margin-left:  4rem; }
-			.toc .secno                  { margin-left: -4rem; }
-			.toc > li li li              { margin-left:  1rem; }
-			.toc > li li li .secno       { margin-left: -5rem; }
-			.toc > li li li li .secno    { margin-left: -6rem; }
+			:not(li) > .toc			 { margin-left:  4rem; }
+			.toc .secno				 { margin-left: -4rem; }
+			.toc > li li li			 { margin-left:  1rem; }
+			.toc > li li li .secno	  { margin-left: -5rem; }
+			.toc > li li li li .secno	{ margin-left: -6rem; }
 			.toc > li li li li li .secno { margin-left: -7rem; }
 		}
 		/* Loosen it on wide screens */
 		@media screen and (min-width: 78em) {
-			body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
-			body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
-			body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
-			body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
-			body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+			body:not(.toc-inline) :not(li) > .toc			 { margin-left:  4rem; }
+			body:not(.toc-inline) .toc .secno				 { margin-left: -4rem; }
+			body:not(.toc-inline) .toc > li li li			 { margin-left:  1rem; }
+			body:not(.toc-inline) .toc > li li li .secno	  { margin-left: -5rem; }
+			body:not(.toc-inline) .toc > li li li li .secno	{ margin-left: -6rem; }
 			body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
 	}
 	/* } */
@@ -1155,7 +1223,7 @@ Possible extra rowspan handling
 		}
 		#toc > .toc > li > a > span {
 			/* The spans of the top-level list,
-			   comprising the first items of each top-level section. */
+			  comprising the first items of each top-level section. */
 			margin-top: 1.1rem;
 		}
 		#toc#toc .secno { /* Ugh, need more specificity to override base.css */
@@ -1188,12 +1256,12 @@ Possible extra rowspan handling
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
-	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
-	ul.index li li { margin-left: 1em }
-	ul.index dl    { margin-top: 0; }
-	ul.index dt    { margin: .2em 0 .2em 20px;}
-	ul.index dd    { margin: .2em 0 .2em 40px;}
+	ul.index	  { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
+	ul.index li	{ margin-left: 0; list-style: none; break-inside: avoid; }
+	ul.index li li { margin-left: 1em; }
+	ul.index dl	{ margin-top: 0; }
+	ul.index dt	{ margin: .2em 0 .2em 20px;}
+	ul.index dd	{ margin: .2em 0 .2em 40px;}
 	/* Index Lists: Typography */
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
@@ -1237,6 +1305,91 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
+/** Outdated warning **********************************************************/
+
+.outdated-spec {
+	color: black;
+	color: var(--outdatedspec-text);
+	background-color: rgba(0,0,0,0.5);
+	background-color: var(--outdatedspec-bg);
+}
+
+.outdated-warning {
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 50%;
+	background: maroon;
+	background: var(--outdated-bg);
+	color: white;
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	color: var(--outdated-text);
+	border-radius: 1em;
+	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-shadow);
+	padding: 2em;
+	text-align: center;
+	z-index: 2;
+}
+
+.outdated-warning a {
+	color: currentcolor;
+	background: transparent;
+}
+
+.edited-rec-warning {
+	background: darkorange;
+	background: var(--editedrec-bg);
+	box-shadow: 0 0 1em;
+}
+
+.outdated-warning button {
+	position: absolute;
+	top: 0;
+	right:0;
+	margin: 0;
+	border: 0;
+	padding: 0.25em 0.5em;
+	background: transparent;
+	color: white;
+	color: var(--outdated-text);
+	font:1em sans-serif;
+	text-align:center;
+}
+
+.outdated-warning span {
+	display: block;
+}
+
+.outdated-collapsed {
+	bottom: 0;
+	border-radius: 0;
+	width: 100%;
+	padding: 0;
+}
+
 /******************************************************************************/
 /*                                    Print                                   */
 /******************************************************************************/
@@ -1249,6 +1402,16 @@ Possible extra rowspan handling
 		/* Serif for print. */
 		body {
 			font-family: serif;
+		}
+
+		.outdated-warning {
+			position: absolute;
+			border-style: solid;
+			border-color: red;
+		}
+
+		.outdated-warning input {
+			display: none;
 		}
 	}
 	@page {
@@ -1268,13 +1431,13 @@ Possible extra rowspan handling
 		margin-right: auto;
 	}
 	.overlarge {
-		/* Magic to create good table positioning:
-		   "content column" is 50ems wide at max; less on smaller screens.
-		   Extra space (after ToC + content) is empty on the right.
+		/* Magic to create good item positioning:
+		  "content column" is 50ems wide at max; less on smaller screens.
+		  Extra space (after ToC + content) is empty on the right.
 
-		   1. When table < content column, centers table in column.
-		   2. When content < table < available, left-aligns.
-		   3. When table > available, fills available + scroll bar.
+		  1. When item < content column, centers item in column.
+		  2. When content < item < available, left-aligns.
+		  3. When item > available, fills available + scroll bar.
 		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
@@ -1309,21 +1472,21 @@ Possible extra rowspan handling
 		.overlarge {
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
-			 * http://lea.verou.me/2012/04/background-attachment-local/
-			 *
+			* http://lea.verou.me/2012/04/background-attachment-local/
+			*
 			background: top left  / 4em 100% linear-gradient(to right,  #ffffff, rgba(255, 255, 255, 0)) local,
-			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
-			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            white;
+						top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
+						top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+						white;
 			background-repeat: no-repeat;
 			*/
 		}
 	}
 </style>
-  <meta content="Bikeshed version 89ebb6ab, updated Fri Oct 9 15:32:07 2020 -0700" name="generator">
+  <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements" rel="canonical">
-  <meta content="e3b60e0960729c70168d2220db9ac5b73daa682b" name="document-revision">
+  <meta content="3490f980914a4a56ac6b10fa283bd3b3005b23bd" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1394,17 +1557,13 @@ pre .property::before, pre .property::after {
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
-html {
-    color: black;
-    color: var(--text);
-    background-color: white;
-    background-color: var(--bg);
-}
 :root {
     color-scheme: light dark;
 
     --text: black;
     --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 
     --logo-bg: #1a5e9a;
     --logo-active-bg: #c00;
@@ -1478,6 +1637,11 @@ html {
     --warning-border: red;
     --warning-bg: hsla(40,100%,50%,0.95);
     --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
 
     --def-border: #8ccbf2;
     --def-bg: #def;
@@ -1638,6 +1802,8 @@ dfn > a.self-link::before      { content: "#"; }
         --text: #ddd;
         --bg: black;
 
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
         --logo-bg: #1a5e9a;
         --logo-active-bg: #c00;
         --logo-text: white;
@@ -1713,6 +1879,11 @@ dfn > a.self-link::before      { content: "#"; }
         --warning-bg: hsla(40,100%,20%,0.95);
         --warning-text: var(--text);
 
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
         --def-border: #8ccbf2;
         --def-bg: #080818;
         --def-text: var(--text);
@@ -1755,7 +1926,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Spacecraft Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-03">3 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1781,32 +1952,32 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#PrimeItemDefinitionForSpacecraftSystemSegment"><span class="secno">3.1</span> <span class="content"><span>PrimeItemDefinitionForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#StandardSampleForSpacecraftSystemSegment"><span class="secno">3.2</span> <span class="content"><span>StandardSampleForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#ManufacturabilityForSpacecraftSystemSegment"><span class="secno">3.3</span> <span class="content"><span>ManufacturabilityForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#SecurityAndSafetyForSpacecraftSystemSegment"><span class="secno">3.4</span> <span class="content"><span>SecurityAndSafetyForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"><span class="secno">3.5</span> <span class="content"><span>QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#StructuralQualificationForSpacecraftSystemSegment"><span class="secno">3.6</span> <span class="content"><span>StructuralQualificationForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"><span class="secno">3.7</span> <span class="content"><span>SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"><span class="secno">3.8</span> <span class="content"><span>SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#SupplyForSpacecraftSystemSegment"><span class="secno">3.9</span> <span class="content"><span>SupplyForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#FaultProtectionForSpacecraftSystemSegment"><span class="secno">3.10</span> <span class="content"><span>FaultProtectionForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#AvailabilityForSpacecraftSystemSegment"><span class="secno">3.11</span> <span class="content"><span>AvailabilityForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#TransportationForSpacecraftSystemSegment"><span class="secno">3.12</span> <span class="content"><span>TransportationForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#FacilitiesForSpacecraftSystemSegment"><span class="secno">3.13</span> <span class="content"><span>FacilitiesForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#TrainingAndPersonelForSpacecraftSystemSegment"><span class="secno">3.14</span> <span class="content"><span>TrainingAndPersonelForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#ReliabilityForSpacecraftSystemSegment"><span class="secno">3.15</span> <span class="content"><span>ReliabilityForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#MaintainabilityForSpacecraftSystemSegment"><span class="secno">3.16</span> <span class="content"><span>MaintainabilityForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#TimeErrorForSpacecraftSystemSegment"><span class="secno">3.17</span> <span class="content"><span>TimeErrorForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#AltitudeErrorForSpacecraftSystemSegment"><span class="secno">3.18</span> <span class="content"><span>AltitudeErrorForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#PowerBudgetForSpacecraftSystemSegment"><span class="secno">3.19</span> <span class="content"><span>PowerBudgetForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#SpaceVehicleMassForSpacecraftSystemSegment"><span class="secno">3.20</span> <span class="content"><span>SpaceVehicleMassForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#MaturityOfNewTechnologiesForSpacecraftSystemSegment"><span class="secno">3.21</span> <span class="content"><span>MaturityOfNewTechnologiesForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#NumberOfSatellitesForSpacecraftSystemSegment"><span class="secno">3.22</span> <span class="content"><span>NumberOfSatellitesForSpacecraftSystemSegment</span></span></a>
-      <li><a href="#OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.23</span> <span class="content"><span>OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</span></span></a>
-      <li><a href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.24</span> <span class="content"><span>MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</span></span></a>
-      <li><a href="#OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.25</span> <span class="content"><span>OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</span></span></a>
-      <li><a href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.26</span> <span class="content"><span>MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</span></span></a>
+      <li><a href="#AltitudeErrorForSpacecraftSystemSegment"><span class="secno">3.1</span> <span class="content"><span>AltitudeErrorForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#AvailabilityForSpacecraftSystemSegment"><span class="secno">3.2</span> <span class="content"><span>AvailabilityForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#FacilitiesForSpacecraftSystemSegment"><span class="secno">3.3</span> <span class="content"><span>FacilitiesForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#FaultProtectionForSpacecraftSystemSegment"><span class="secno">3.4</span> <span class="content"><span>FaultProtectionForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#MaintainabilityForSpacecraftSystemSegment"><span class="secno">3.5</span> <span class="content"><span>MaintainabilityForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#ManufacturabilityForSpacecraftSystemSegment"><span class="secno">3.6</span> <span class="content"><span>ManufacturabilityForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#MaturityOfNewTechnologiesForSpacecraftSystemSegment"><span class="secno">3.7</span> <span class="content"><span>MaturityOfNewTechnologiesForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.8</span> <span class="content"><span>MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</span></span></a>
+      <li><a href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.9</span> <span class="content"><span>MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</span></span></a>
+      <li><a href="#NumberOfSatellitesForSpacecraftSystemSegment"><span class="secno">3.10</span> <span class="content"><span>NumberOfSatellitesForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.11</span> <span class="content"><span>OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</span></span></a>
+      <li><a href="#OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.12</span> <span class="content"><span>OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</span></span></a>
+      <li><a href="#PowerBudgetForSpacecraftSystemSegment"><span class="secno">3.13</span> <span class="content"><span>PowerBudgetForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#PrimeItemDefinitionForSpacecraftSystemSegment"><span class="secno">3.14</span> <span class="content"><span>PrimeItemDefinitionForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"><span class="secno">3.15</span> <span class="content"><span>QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#ReliabilityForSpacecraftSystemSegment"><span class="secno">3.16</span> <span class="content"><span>ReliabilityForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#SecurityAndSafetyForSpacecraftSystemSegment"><span class="secno">3.17</span> <span class="content"><span>SecurityAndSafetyForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"><span class="secno">3.18</span> <span class="content"><span>SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#SpaceVehicleMassForSpacecraftSystemSegment"><span class="secno">3.19</span> <span class="content"><span>SpaceVehicleMassForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"><span class="secno">3.20</span> <span class="content"><span>SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#StandardSampleForSpacecraftSystemSegment"><span class="secno">3.21</span> <span class="content"><span>StandardSampleForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#StructuralQualificationForSpacecraftSystemSegment"><span class="secno">3.22</span> <span class="content"><span>StructuralQualificationForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#SupplyForSpacecraftSystemSegment"><span class="secno">3.23</span> <span class="content"><span>SupplyForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#TimeErrorForSpacecraftSystemSegment"><span class="secno">3.24</span> <span class="content"><span>TimeErrorForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#TrainingAndPersonelForSpacecraftSystemSegment"><span class="secno">3.25</span> <span class="content"><span>TrainingAndPersonelForSpacecraftSystemSegment</span></span></a>
+      <li><a href="#TransportationForSpacecraftSystemSegment"><span class="secno">3.26</span> <span class="content"><span>TransportationForSpacecraftSystemSegment</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1843,187 +2014,187 @@ dfn > a.self-link::before      { content: "#"; }
       <p>spc-resource-reqs: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource.html">http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/requirements/resource</a></p>
     </ul>
     <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="PrimeItemDefinitionForSpacecraftSystemSegment"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primeitemdefinitionforspacecraftsystemsegment">PrimeItemDefinitionForSpacecraftSystemSegment<a class="self-link" href="#primeitemdefinitionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#PrimeItemDefinitionForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.1" id="AltitudeErrorForSpacecraftSystemSegment"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="altitudeerrorforspacecraftsystemsegment">AltitudeErrorForSpacecraftSystemSegment<a class="self-link" href="#altitudeerrorforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#AltitudeErrorForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#primeitemdefinition" id="ref-for-primeitemdefinition">spc-system-reqs:PrimeItemDefinition</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#powerbudget" id="ref-for-powerbudget">spc-resource-reqs:PowerBudget</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.2" id="StandardSampleForSpacecraftSystemSegment"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="standardsampleforspacecraftsystemsegment">StandardSampleForSpacecraftSystemSegment<a class="self-link" href="#standardsampleforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#StandardSampleForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.2" id="AvailabilityForSpacecraftSystemSegment"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="availabilityforspacecraftsystemsegment">AvailabilityForSpacecraftSystemSegment<a class="self-link" href="#availabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#AvailabilityForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#standardsample" id="ref-for-standardsample">spc-system-reqs:StandardSample</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#availability" id="ref-for-availability">spc-logistical-reqs:Availability</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.3" id="ManufacturabilityForSpacecraftSystemSegment"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="manufacturabilityforspacecraftsystemsegment">ManufacturabilityForSpacecraftSystemSegment<a class="self-link" href="#manufacturabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#ManufacturabilityForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.3" id="FacilitiesForSpacecraftSystemSegment"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="facilitiesforspacecraftsystemsegment">FacilitiesForSpacecraftSystemSegment<a class="self-link" href="#facilitiesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#FacilitiesForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#manufacturability" id="ref-for-manufacturability">spc-system-reqs:Manufacturability</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#facilities" id="ref-for-facilities">spc-logistical-reqs:Facilities</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.4" id="SecurityAndSafetyForSpacecraftSystemSegment"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="securityandsafetyforspacecraftsystemsegment">SecurityAndSafetyForSpacecraftSystemSegment<a class="self-link" href="#securityandsafetyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SecurityAndSafetyForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.4" id="FaultProtectionForSpacecraftSystemSegment"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="faultprotectionforspacecraftsystemsegment">FaultProtectionForSpacecraftSystemSegment<a class="self-link" href="#faultprotectionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#FaultProtectionForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement③">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#securityandsafety" id="ref-for-securityandsafety">spc-system-reqs:SecurityAndSafety</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#faultprotection" id="ref-for-faultprotection">spc-logistical-reqs:FaultProtection</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.5" id="QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="qualificationofheritageflighthardwareforspacecraftsystemsegment">QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment<a class="self-link" href="#qualificationofheritageflighthardwareforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.5" id="MaintainabilityForSpacecraftSystemSegment"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="maintainabilityforspacecraftsystemsegment">MaintainabilityForSpacecraftSystemSegment<a class="self-link" href="#maintainabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#MaintainabilityForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement④">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware" id="ref-for-qualificationofheritageflighthardware">spc-environmental-reqs:QualificationOfHeritageFlightHardware</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#maintainability" id="ref-for-maintainability">spc-logistical-reqs:Maintainability</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.6" id="StructuralQualificationForSpacecraftSystemSegment"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structuralqualificationforspacecraftsystemsegment">StructuralQualificationForSpacecraftSystemSegment<a class="self-link" href="#structuralqualificationforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#StructuralQualificationForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.6" id="ManufacturabilityForSpacecraftSystemSegment"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="manufacturabilityforspacecraftsystemsegment">ManufacturabilityForSpacecraftSystemSegment<a class="self-link" href="#manufacturabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#ManufacturabilityForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement⑤">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#structuralqualification" id="ref-for-structuralqualification">spc-environmental-reqs:StructuralQualification</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#manufacturability" id="ref-for-manufacturability">spc-system-reqs:Manufacturability</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.7" id="SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment">SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment<a class="self-link" href="#spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.7" id="MaturityOfNewTechnologiesForSpacecraftSystemSegment"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="maturityofnewtechnologiesforspacecraftsystemsegment">MaturityOfNewTechnologiesForSpacecraftSystemSegment<a class="self-link" href="#maturityofnewtechnologiesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#MaturityOfNewTechnologiesForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement⑥">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑥">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection" id="ref-for-spaceenvironmenteffectsonmaterialselection">spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑥">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies" id="ref-for-maturityofnewtechnologies">spc-resource-reqs:MaturityOfNewTechnologies</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.8" id="SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacevehiclenaturalfrequencyforspacecraftsystemsegment">SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment<a class="self-link" href="#spacevehiclenaturalfrequencyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.8" id="MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires<a class="self-link" href="#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement⑦">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑦">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency" id="ref-for-spacevehiclenaturalfrequency">spc-environmental-reqs:SpaceVehicleNaturalFrequency</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑦">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#minimumelevationangle" id="ref-for-minimumelevationangle">spc-operational-reqs:MinimumElevationAngle</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.9" id="SupplyForSpacecraftSystemSegment"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supplyforspacecraftsystemsegment">SupplyForSpacecraftSystemSegment<a class="self-link" href="#supplyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SupplyForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.9" id="MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7<a class="self-link" href="#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7"></a></dfn></span><a class="self-link" href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement⑧">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑧">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#supply" id="ref-for-supply">spc-logistical-reqs:Supply</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑧">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#minimumelevationangle" id="ref-for-minimumelevationangle①">spc-operational-reqs:MinimumElevationAngle</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.10" id="FaultProtectionForSpacecraftSystemSegment"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="faultprotectionforspacecraftsystemsegment">FaultProtectionForSpacecraftSystemSegment<a class="self-link" href="#faultprotectionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#FaultProtectionForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.10" id="NumberOfSatellitesForSpacecraftSystemSegment"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="numberofsatellitesforspacecraftsystemsegment">NumberOfSatellitesForSpacecraftSystemSegment<a class="self-link" href="#numberofsatellitesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#NumberOfSatellitesForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement⑨">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑨">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#faultprotection" id="ref-for-faultprotection">spc-logistical-reqs:FaultProtection</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑨">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#numberofsatellites" id="ref-for-numberofsatellites">spc-resource-reqs:NumberOfSatellites</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.11" id="AvailabilityForSpacecraftSystemSegment"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="availabilityforspacecraftsystemsegment">AvailabilityForSpacecraftSystemSegment<a class="self-link" href="#availabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#AvailabilityForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.11" id="OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires<a class="self-link" href="#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⓪">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⓪">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#availability" id="ref-for-availability">spc-logistical-reqs:Availability</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⓪">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#orbitinclination" id="ref-for-orbitinclination">spc-operational-reqs:OrbitInclination</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.12" id="TransportationForSpacecraftSystemSegment"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transportationforspacecraftsystemsegment">TransportationForSpacecraftSystemSegment<a class="self-link" href="#transportationforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TransportationForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.12" id="OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7<a class="self-link" href="#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7"></a></dfn></span><a class="self-link" href="#OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①①">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#transportation" id="ref-for-transportation">spc-logistical-reqs:Transportation</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#orbitinclination" id="ref-for-orbitinclination①">spc-operational-reqs:OrbitInclination</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.13" id="FacilitiesForSpacecraftSystemSegment"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="facilitiesforspacecraftsystemsegment">FacilitiesForSpacecraftSystemSegment<a class="self-link" href="#facilitiesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#FacilitiesForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.13" id="PowerBudgetForSpacecraftSystemSegment"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerbudgetforspacecraftsystemsegment">PowerBudgetForSpacecraftSystemSegment<a class="self-link" href="#powerbudgetforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#PowerBudgetForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①②">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#facilities" id="ref-for-facilities">spc-logistical-reqs:Facilities</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#powerbudget" id="ref-for-powerbudget①">spc-resource-reqs:PowerBudget</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.14" id="TrainingAndPersonelForSpacecraftSystemSegment"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="trainingandpersonelforspacecraftsystemsegment">TrainingAndPersonelForSpacecraftSystemSegment<a class="self-link" href="#trainingandpersonelforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TrainingAndPersonelForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.14" id="PrimeItemDefinitionForSpacecraftSystemSegment"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primeitemdefinitionforspacecraftsystemsegment">PrimeItemDefinitionForSpacecraftSystemSegment<a class="self-link" href="#primeitemdefinitionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#PrimeItemDefinitionForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①③">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel" id="ref-for-trainingandpersonel">spc-logistical-reqs:TrainingAndPersonel</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#primeitemdefinition" id="ref-for-primeitemdefinition">spc-system-reqs:PrimeItemDefinition</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.15" id="ReliabilityForSpacecraftSystemSegment"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reliabilityforspacecraftsystemsegment">ReliabilityForSpacecraftSystemSegment<a class="self-link" href="#reliabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#ReliabilityForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.15" id="QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="qualificationofheritageflighthardwareforspacecraftsystemsegment">QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment<a class="self-link" href="#qualificationofheritageflighthardwareforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①④">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#reliability" id="ref-for-reliability">spc-logistical-reqs:Reliability</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware" id="ref-for-qualificationofheritageflighthardware">spc-environmental-reqs:QualificationOfHeritageFlightHardware</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.16" id="MaintainabilityForSpacecraftSystemSegment"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="maintainabilityforspacecraftsystemsegment">MaintainabilityForSpacecraftSystemSegment<a class="self-link" href="#maintainabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#MaintainabilityForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.16" id="ReliabilityForSpacecraftSystemSegment"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reliabilityforspacecraftsystemsegment">ReliabilityForSpacecraftSystemSegment<a class="self-link" href="#reliabilityforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#ReliabilityForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⑤">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#maintainability" id="ref-for-maintainability">spc-logistical-reqs:Maintainability</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#reliability" id="ref-for-reliability">spc-logistical-reqs:Reliability</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.17" id="TimeErrorForSpacecraftSystemSegment"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="timeerrorforspacecraftsystemsegment">TimeErrorForSpacecraftSystemSegment<a class="self-link" href="#timeerrorforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TimeErrorForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.17" id="SecurityAndSafetyForSpacecraftSystemSegment"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="securityandsafetyforspacecraftsystemsegment">SecurityAndSafetyForSpacecraftSystemSegment<a class="self-link" href="#securityandsafetyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SecurityAndSafetyForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⑥">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑥">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/performance.html#timeerror" id="ref-for-timeerror">spc-performance-reqs:TimeError</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑥">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#securityandsafety" id="ref-for-securityandsafety">spc-system-reqs:SecurityAndSafety</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.18" id="AltitudeErrorForSpacecraftSystemSegment"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="altitudeerrorforspacecraftsystemsegment">AltitudeErrorForSpacecraftSystemSegment<a class="self-link" href="#altitudeerrorforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#AltitudeErrorForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.18" id="SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment">SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment<a class="self-link" href="#spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⑦">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑦">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#powerbudget" id="ref-for-powerbudget">spc-resource-reqs:PowerBudget</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑦">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection" id="ref-for-spaceenvironmenteffectsonmaterialselection">spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.19" id="PowerBudgetForSpacecraftSystemSegment"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerbudgetforspacecraftsystemsegment">PowerBudgetForSpacecraftSystemSegment<a class="self-link" href="#powerbudgetforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#PowerBudgetForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.19" id="SpaceVehicleMassForSpacecraftSystemSegment"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacevehiclemassforspacecraftsystemsegment">SpaceVehicleMassForSpacecraftSystemSegment<a class="self-link" href="#spacevehiclemassforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceVehicleMassForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⑧">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑧">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#powerbudget" id="ref-for-powerbudget①">spc-resource-reqs:PowerBudget</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑧">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#spacevehiclemass" id="ref-for-spacevehiclemass">spc-resource-reqs:SpaceVehicleMass</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.20" id="SpaceVehicleMassForSpacecraftSystemSegment"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacevehiclemassforspacecraftsystemsegment">SpaceVehicleMassForSpacecraftSystemSegment<a class="self-link" href="#spacevehiclemassforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceVehicleMassForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.20" id="SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="spacevehiclenaturalfrequencyforspacecraftsystemsegment">SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment<a class="self-link" href="#spacevehiclenaturalfrequencyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement①⑨">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑨">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#spacevehiclemass" id="ref-for-spacevehiclemass">spc-resource-reqs:SpaceVehicleMass</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⑨">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency" id="ref-for-spacevehiclenaturalfrequency">spc-environmental-reqs:SpaceVehicleNaturalFrequency</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.21" id="MaturityOfNewTechnologiesForSpacecraftSystemSegment"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="maturityofnewtechnologiesforspacecraftsystemsegment">MaturityOfNewTechnologiesForSpacecraftSystemSegment<a class="self-link" href="#maturityofnewtechnologiesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#MaturityOfNewTechnologiesForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.21" id="StandardSampleForSpacecraftSystemSegment"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="standardsampleforspacecraftsystemsegment">StandardSampleForSpacecraftSystemSegment<a class="self-link" href="#standardsampleforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#StandardSampleForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②⓪">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②⓪">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies" id="ref-for-maturityofnewtechnologies">spc-resource-reqs:MaturityOfNewTechnologies</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②⓪">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/system.html#standardsample" id="ref-for-standardsample">spc-system-reqs:StandardSample</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.22" id="NumberOfSatellitesForSpacecraftSystemSegment"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="numberofsatellitesforspacecraftsystemsegment">NumberOfSatellitesForSpacecraftSystemSegment<a class="self-link" href="#numberofsatellitesforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#NumberOfSatellitesForSpacecraftSystemSegment"></a></h3>
+    <h3 class="heading settled" data-level="3.22" id="StructuralQualificationForSpacecraftSystemSegment"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="structuralqualificationforspacecraftsystemsegment">StructuralQualificationForSpacecraftSystemSegment<a class="self-link" href="#structuralqualificationforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#StructuralQualificationForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②①">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/resource.html#numberofsatellites" id="ref-for-numberofsatellites">spc-resource-reqs:NumberOfSatellites</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②①">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/environmental.html#structuralqualification" id="ref-for-structuralqualification">spc-environmental-reqs:StructuralQualification</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.23" id="OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires<a class="self-link" href="#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"></a></h3>
+    <h3 class="heading settled" data-level="3.23" id="SupplyForSpacecraftSystemSegment"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supplyforspacecraftsystemsegment">SupplyForSpacecraftSystemSegment<a class="self-link" href="#supplyforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#SupplyForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②②">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#orbitinclination" id="ref-for-orbitinclination">spc-operational-reqs:OrbitInclination</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②②">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#supply" id="ref-for-supply">spc-logistical-reqs:Supply</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.24" id="MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires<a class="self-link" href="#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires"></a></dfn></span><a class="self-link" href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"></a></h3>
+    <h3 class="heading settled" data-level="3.24" id="TimeErrorForSpacecraftSystemSegment"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="timeerrorforspacecraftsystemsegment">TimeErrorForSpacecraftSystemSegment<a class="self-link" href="#timeerrorforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TimeErrorForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②③">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#minimumelevationangle" id="ref-for-minimumelevationangle">spc-operational-reqs:MinimumElevationAngle</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②③">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/performance.html#timeerror" id="ref-for-timeerror">spc-performance-reqs:TimeError</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.25" id="OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7<a class="self-link" href="#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7"></a></dfn></span><a class="self-link" href="#OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"></a></h3>
+    <h3 class="heading settled" data-level="3.25" id="TrainingAndPersonelForSpacecraftSystemSegment"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="trainingandpersonelforspacecraftsystemsegment">TrainingAndPersonelForSpacecraftSystemSegment<a class="self-link" href="#trainingandpersonelforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TrainingAndPersonelForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②④">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#orbitinclination" id="ref-for-orbitinclination①">spc-operational-reqs:OrbitInclination</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②④">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel" id="ref-for-trainingandpersonel">spc-logistical-reqs:TrainingAndPersonel</a></p>
     </ul>
-    <h3 class="heading settled" data-level="3.26" id="MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7<a class="self-link" href="#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7"></a></dfn></span><a class="self-link" href="#MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"></a></h3>
+    <h3 class="heading settled" data-level="3.26" id="TransportationForSpacecraftSystemSegment"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transportationforspacecraftsystemsegment">TransportationForSpacecraftSystemSegment<a class="self-link" href="#transportationforspacecraftsystemsegment"></a></dfn></span><a class="self-link" href="#TransportationForSpacecraftSystemSegment"></a></h3>
     <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement" id="ref-for-requirement②⑤">mission:Requirement</a></p>
     <p><em>Links:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/operational.html#minimumelevationangle" id="ref-for-minimumelevationangle①">spc-operational-reqs:MinimumElevationAngle</a></p>
+      <p><a data-link-type="dfn" href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../systems/spc/requirements/logistical.html#transportation" id="ref-for-transportation">spc-logistical-reqs:Transportation</a></p>
     </ul>
    </div>
   </main>
@@ -2159,234 +2330,234 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#altitudeerrorforspacecraftsystemsegment">AltitudeErrorForSpacecraftSystemSegment</a><span>, in §3.18</span>
-   <li><a href="#availabilityforspacecraftsystemsegment">AvailabilityForSpacecraftSystemSegment</a><span>, in §3.11</span>
-   <li><a href="#facilitiesforspacecraftsystemsegment">FacilitiesForSpacecraftSystemSegment</a><span>, in §3.13</span>
-   <li><a href="#faultprotectionforspacecraftsystemsegment">FaultProtectionForSpacecraftSystemSegment</a><span>, in §3.10</span>
-   <li><a href="#maintainabilityforspacecraftsystemsegment">MaintainabilityForSpacecraftSystemSegment</a><span>, in §3.16</span>
-   <li><a href="#manufacturabilityforspacecraftsystemsegment">ManufacturabilityForSpacecraftSystemSegment</a><span>, in §3.3</span>
-   <li><a href="#maturityofnewtechnologiesforspacecraftsystemsegment">MaturityOfNewTechnologiesForSpacecraftSystemSegment</a><span>, in §3.21</span>
-   <li><a href="#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a><span>, in §3.24</span>
-   <li><a href="#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a><span>, in §3.26</span>
-   <li><a href="#numberofsatellitesforspacecraftsystemsegment">NumberOfSatellitesForSpacecraftSystemSegment</a><span>, in §3.22</span>
-   <li><a href="#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a><span>, in §3.23</span>
-   <li><a href="#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a><span>, in §3.25</span>
-   <li><a href="#powerbudgetforspacecraftsystemsegment">PowerBudgetForSpacecraftSystemSegment</a><span>, in §3.19</span>
-   <li><a href="#primeitemdefinitionforspacecraftsystemsegment">PrimeItemDefinitionForSpacecraftSystemSegment</a><span>, in §3.1</span>
-   <li><a href="#qualificationofheritageflighthardwareforspacecraftsystemsegment">QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a><span>, in §3.5</span>
-   <li><a href="#reliabilityforspacecraftsystemsegment">ReliabilityForSpacecraftSystemSegment</a><span>, in §3.15</span>
-   <li><a href="#securityandsafetyforspacecraftsystemsegment">SecurityAndSafetyForSpacecraftSystemSegment</a><span>, in §3.4</span>
-   <li><a href="#spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment">SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a><span>, in §3.7</span>
-   <li><a href="#spacevehiclemassforspacecraftsystemsegment">SpaceVehicleMassForSpacecraftSystemSegment</a><span>, in §3.20</span>
-   <li><a href="#spacevehiclenaturalfrequencyforspacecraftsystemsegment">SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a><span>, in §3.8</span>
-   <li><a href="#standardsampleforspacecraftsystemsegment">StandardSampleForSpacecraftSystemSegment</a><span>, in §3.2</span>
-   <li><a href="#structuralqualificationforspacecraftsystemsegment">StructuralQualificationForSpacecraftSystemSegment</a><span>, in §3.6</span>
-   <li><a href="#supplyforspacecraftsystemsegment">SupplyForSpacecraftSystemSegment</a><span>, in §3.9</span>
-   <li><a href="#timeerrorforspacecraftsystemsegment">TimeErrorForSpacecraftSystemSegment</a><span>, in §3.17</span>
-   <li><a href="#trainingandpersonelforspacecraftsystemsegment">TrainingAndPersonelForSpacecraftSystemSegment</a><span>, in §3.14</span>
-   <li><a href="#transportationforspacecraftsystemsegment">TransportationForSpacecraftSystemSegment</a><span>, in §3.12</span>
+   <li><a href="#altitudeerrorforspacecraftsystemsegment">AltitudeErrorForSpacecraftSystemSegment</a><span>, in §3.1</span>
+   <li><a href="#availabilityforspacecraftsystemsegment">AvailabilityForSpacecraftSystemSegment</a><span>, in §3.2</span>
+   <li><a href="#facilitiesforspacecraftsystemsegment">FacilitiesForSpacecraftSystemSegment</a><span>, in §3.3</span>
+   <li><a href="#faultprotectionforspacecraftsystemsegment">FaultProtectionForSpacecraftSystemSegment</a><span>, in §3.4</span>
+   <li><a href="#maintainabilityforspacecraftsystemsegment">MaintainabilityForSpacecraftSystemSegment</a><span>, in §3.5</span>
+   <li><a href="#manufacturabilityforspacecraftsystemsegment">ManufacturabilityForSpacecraftSystemSegment</a><span>, in §3.6</span>
+   <li><a href="#maturityofnewtechnologiesforspacecraftsystemsegment">MaturityOfNewTechnologiesForSpacecraftSystemSegment</a><span>, in §3.7</span>
+   <li><a href="#minimumelevationangleforspacecraftsystemsegmentperformsdetectnewwildfires">MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a><span>, in §3.8</span>
+   <li><a href="#minimumelevationangleforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a><span>, in §3.9</span>
+   <li><a href="#numberofsatellitesforspacecraftsystemsegment">NumberOfSatellitesForSpacecraftSystemSegment</a><span>, in §3.10</span>
+   <li><a href="#orbitinclinationforspacecraftsystemsegmentperformsdetectnewwildfires">OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a><span>, in §3.11</span>
+   <li><a href="#orbitinclinationforspacecraftsystemsegmentperformsmonitorexistingwildfires_24_7">OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a><span>, in §3.12</span>
+   <li><a href="#powerbudgetforspacecraftsystemsegment">PowerBudgetForSpacecraftSystemSegment</a><span>, in §3.13</span>
+   <li><a href="#primeitemdefinitionforspacecraftsystemsegment">PrimeItemDefinitionForSpacecraftSystemSegment</a><span>, in §3.14</span>
+   <li><a href="#qualificationofheritageflighthardwareforspacecraftsystemsegment">QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a><span>, in §3.15</span>
+   <li><a href="#reliabilityforspacecraftsystemsegment">ReliabilityForSpacecraftSystemSegment</a><span>, in §3.16</span>
+   <li><a href="#securityandsafetyforspacecraftsystemsegment">SecurityAndSafetyForSpacecraftSystemSegment</a><span>, in §3.17</span>
+   <li><a href="#spaceenvironmenteffectsonmaterialselectionforspacecraftsystemsegment">SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a><span>, in §3.18</span>
+   <li><a href="#spacevehiclemassforspacecraftsystemsegment">SpaceVehicleMassForSpacecraftSystemSegment</a><span>, in §3.19</span>
+   <li><a href="#spacevehiclenaturalfrequencyforspacecraftsystemsegment">SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a><span>, in §3.20</span>
+   <li><a href="#standardsampleforspacecraftsystemsegment">StandardSampleForSpacecraftSystemSegment</a><span>, in §3.21</span>
+   <li><a href="#structuralqualificationforspacecraftsystemsegment">StructuralQualificationForSpacecraftSystemSegment</a><span>, in §3.22</span>
+   <li><a href="#supplyforspacecraftsystemsegment">SupplyForSpacecraftSystemSegment</a><span>, in §3.23</span>
+   <li><a href="#timeerrorforspacecraftsystemsegment">TimeErrorForSpacecraftSystemSegment</a><span>, in §3.24</span>
+   <li><a href="#trainingandpersonelforspacecraftsystemsegment">TrainingAndPersonelForSpacecraftSystemSegment</a><span>, in §3.25</span>
+   <li><a href="#transportationforspacecraftsystemsegment">TransportationForSpacecraftSystemSegment</a><span>, in §3.26</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-refines">
    <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#refines</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-refines">3.1. PrimeItemDefinitionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①">3.2. StandardSampleForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines②">3.3. ManufacturabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines③">3.4. SecurityAndSafetyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines④">3.5. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines⑤">3.6. StructuralQualificationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines⑥">3.7. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines⑦">3.8. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines⑧">3.9. SupplyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines⑨">3.10. FaultProtectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⓪">3.11. AvailabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①①">3.12. TransportationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①②">3.13. FacilitiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①③">3.14. TrainingAndPersonelForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①④">3.15. ReliabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⑤">3.16. MaintainabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⑥">3.17. TimeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⑦">3.18. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⑧">3.19. PowerBudgetForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines①⑨">3.20. SpaceVehicleMassForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines②⓪">3.21. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines②①">3.22. NumberOfSatellitesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines②②">3.23. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-refines②③">3.24. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-refines②④">3.25. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-refines②⑤">3.26. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-refines">3.1. AltitudeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①">3.2. AvailabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②">3.3. FacilitiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines③">3.4. FaultProtectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines④">3.5. MaintainabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines⑤">3.6. ManufacturabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines⑥">3.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines⑦">3.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-refines⑧">3.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-refines⑨">3.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⓪">3.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-refines①①">3.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-refines①②">3.13. PowerBudgetForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①③">3.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①④">3.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⑤">3.16. ReliabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⑥">3.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⑦">3.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⑧">3.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines①⑨">3.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②⓪">3.21. StandardSampleForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②①">3.22. StructuralQualificationForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②②">3.23. SupplyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②③">3.24. TimeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②④">3.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-refines②⑤">3.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-requirement">
    <a href="../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-requirement">3.1. PrimeItemDefinitionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①">3.2. StandardSampleForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②">3.3. ManufacturabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement③">3.4. SecurityAndSafetyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement④">3.5. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑤">3.6. StructuralQualificationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑥">3.7. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑦">3.8. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑧">3.9. SupplyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑨">3.10. FaultProtectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⓪">3.11. AvailabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①①">3.12. TransportationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①②">3.13. FacilitiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①③">3.14. TrainingAndPersonelForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①④">3.15. ReliabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑤">3.16. MaintainabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑥">3.17. TimeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑦">3.18. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑧">3.19. PowerBudgetForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑨">3.20. SpaceVehicleMassForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②⓪">3.21. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②①">3.22. NumberOfSatellitesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②②">3.23. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-requirement②③">3.24. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-requirement②④">3.25. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-requirement②⑤">3.26. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-requirement">3.1. AltitudeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①">3.2. AvailabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②">3.3. FacilitiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement③">3.4. FaultProtectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement④">3.5. MaintainabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement⑤">3.6. ManufacturabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement⑥">3.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement⑦">3.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-requirement⑧">3.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-requirement⑨">3.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⓪">3.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-requirement①①">3.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-requirement①②">3.13. PowerBudgetForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①③">3.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①④">3.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⑤">3.16. ReliabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⑥">3.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⑦">3.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⑧">3.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement①⑨">3.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②⓪">3.21. StandardSampleForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②①">3.22. StructuralQualificationForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②②">3.23. SupplyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②③">3.24. TimeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②④">3.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-requirement②⑤">3.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-qualificationofheritageflighthardware">
    <a href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware">../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-qualificationofheritageflighthardware">3.5. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-qualificationofheritageflighthardware">3.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-spaceenvironmenteffectsonmaterialselection">
    <a href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection">../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-spaceenvironmenteffectsonmaterialselection">3.7. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-spaceenvironmenteffectsonmaterialselection">3.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-spacevehiclenaturalfrequency">
    <a href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency">3.8. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-spacevehiclenaturalfrequency">3.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-structuralqualification">
    <a href="../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-structuralqualification">3.6. StructuralQualificationForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-structuralqualification">3.22. StructuralQualificationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-availability">
    <a href="../../../../systems/spc/requirements/logistical.html#availability">../../../../systems/spc/requirements/logistical.html#availability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-availability">3.11. AvailabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-availability">3.2. AvailabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-facilities">
    <a href="../../../../systems/spc/requirements/logistical.html#facilities">../../../../systems/spc/requirements/logistical.html#facilities</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-facilities">3.13. FacilitiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-facilities">3.3. FacilitiesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-faultprotection">
    <a href="../../../../systems/spc/requirements/logistical.html#faultprotection">../../../../systems/spc/requirements/logistical.html#faultprotection</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-faultprotection">3.10. FaultProtectionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-faultprotection">3.4. FaultProtectionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-maintainability">
    <a href="../../../../systems/spc/requirements/logistical.html#maintainability">../../../../systems/spc/requirements/logistical.html#maintainability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-maintainability">3.16. MaintainabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-maintainability">3.5. MaintainabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reliability">
    <a href="../../../../systems/spc/requirements/logistical.html#reliability">../../../../systems/spc/requirements/logistical.html#reliability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reliability">3.15. ReliabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-reliability">3.16. ReliabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-supply">
    <a href="../../../../systems/spc/requirements/logistical.html#supply">../../../../systems/spc/requirements/logistical.html#supply</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-supply">3.9. SupplyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-supply">3.23. SupplyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-trainingandpersonel">
    <a href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel">../../../../systems/spc/requirements/logistical.html#trainingandpersonel</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-trainingandpersonel">3.14. TrainingAndPersonelForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-trainingandpersonel">3.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transportation">
    <a href="../../../../systems/spc/requirements/logistical.html#transportation">../../../../systems/spc/requirements/logistical.html#transportation</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transportation">3.12. TransportationForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-transportation">3.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-minimumelevationangle">
    <a href="../../../../systems/spc/requirements/operational.html#minimumelevationangle">../../../../systems/spc/requirements/operational.html#minimumelevationangle</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-minimumelevationangle">3.24. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-minimumelevationangle①">3.26. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-minimumelevationangle">3.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-minimumelevationangle①">3.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-orbitinclination">
    <a href="../../../../systems/spc/requirements/operational.html#orbitinclination">../../../../systems/spc/requirements/operational.html#orbitinclination</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-orbitinclination">3.23. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-orbitinclination①">3.25. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
+    <li><a href="#ref-for-orbitinclination">3.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
+    <li><a href="#ref-for-orbitinclination①">3.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-timeerror">
    <a href="../../../../systems/spc/requirements/performance.html#timeerror">../../../../systems/spc/requirements/performance.html#timeerror</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-timeerror">3.17. TimeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-timeerror">3.24. TimeErrorForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-maturityofnewtechnologies">
    <a href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies">../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-maturityofnewtechnologies">3.21. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-maturityofnewtechnologies">3.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-numberofsatellites">
    <a href="../../../../systems/spc/requirements/resource.html#numberofsatellites">../../../../systems/spc/requirements/resource.html#numberofsatellites</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-numberofsatellites">3.22. NumberOfSatellitesForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-numberofsatellites">3.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-powerbudget">
    <a href="../../../../systems/spc/requirements/resource.html#powerbudget">../../../../systems/spc/requirements/resource.html#powerbudget</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-powerbudget">3.18. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-powerbudget①">3.19. PowerBudgetForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-powerbudget">3.1. AltitudeErrorForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-powerbudget①">3.13. PowerBudgetForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-spacevehiclemass">
    <a href="../../../../systems/spc/requirements/resource.html#spacevehiclemass">../../../../systems/spc/requirements/resource.html#spacevehiclemass</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-spacevehiclemass">3.20. SpaceVehicleMassForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-spacevehiclemass">3.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-manufacturability">
    <a href="../../../../systems/spc/requirements/system.html#manufacturability">../../../../systems/spc/requirements/system.html#manufacturability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-manufacturability">3.3. ManufacturabilityForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-manufacturability">3.6. ManufacturabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-primeitemdefinition">
    <a href="../../../../systems/spc/requirements/system.html#primeitemdefinition">../../../../systems/spc/requirements/system.html#primeitemdefinition</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-primeitemdefinition">3.1. PrimeItemDefinitionForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-primeitemdefinition">3.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-securityandsafety">
    <a href="../../../../systems/spc/requirements/system.html#securityandsafety">../../../../systems/spc/requirements/system.html#securityandsafety</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-securityandsafety">3.4. SecurityAndSafetyForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-securityandsafety">3.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-standardsample">
    <a href="../../../../systems/spc/requirements/system.html#standardsample">../../../../systems/spc/requirements/system.html#standardsample</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-standardsample">3.2. StandardSampleForSpacecraftSystemSegment</a>
+    <li><a href="#ref-for-standardsample">3.21. StandardSampleForSpacecraftSystemSegment</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>

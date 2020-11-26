@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Thermal Control Functions</title>
+  <title>80000-5-quantities</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1485,7 +1485,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions" rel="canonical">
+  <link href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-5-quantities" rel="canonical">
   <meta content="3490f980914a4a56ac6b10fa283bd3b3005b23bd" name="document-revision">
 <style>
 a[data-link-type=biblio] {
@@ -1925,12 +1925,12 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Thermal Control Functions</h1>
+   <h1 class="p-name no-ref" id="title">80000-5-quantities</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions">https://opencaesar.github.io/firesat-example/src/oml/opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-5-quantities">https://opencaesar.github.io/firesat-example/build/oml/iso.org/80000-5-quantities</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
      <dt>Copyright:
@@ -1948,11 +1948,17 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#HomogenizeTemperatureByThermalBlankets"><span class="secno">3.1</span> <span class="content"><span>HomogenizeTemperatureByThermalBlankets</span></span></a>
+      <li><a href="#Celcius-temperature"><span class="secno">3.1</span> <span class="content"><span>celcius-temperature</span></span></a>
+      <li><a href="#Thermodynamic-temperature"><span class="secno">3.2</span> <span class="content"><span>thermodynamic-temperature</span></span></a>
+     </ol>
+    <li>
+     <a href="#Relations"><span class="secno">4</span> <span class="content">Relation Entities</span></a>
+     <ol class="toc">
+      <li><a href="#Celcius-Temperature-Has-Thermodynamic-Temperature"><span class="secno">4.1</span> <span class="content"><span>Celcius-Temperature-Has-Thermodynamic-Temperature</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1967,22 +1973,58 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>thc-functions: <a href="functions.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions</a></p>
+      <p>80000-5-quantities: <a href="80000-5-quantities.html">http://iso.org/80000-5-quantities</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>thc-assemblies: <a href="http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies.html">http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies</a></p>
+      <p>80000-5-units: <a href="http://iso.org/80000-5-units.html">http://iso.org/80000-5-units</a></p>
      <li data-md>
-      <p>firesat-functions: <a href="http://opencaesar.io/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/programs/earth-science/missions/firesat/functions</a></p>
+      <p>80000-4-quantities: <a href="http://iso.org/80000-4-quantities.html">http://iso.org/80000-4-quantities</a></p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="HomogenizeTemperatureByThermalBlankets"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="homogenizetemperaturebythermalblankets">HomogenizeTemperatureByThermalBlankets<a class="self-link" href="#homogenizetemperaturebythermalblankets"></a></dfn></span><a class="self-link" href="#HomogenizeTemperatureByThermalBlankets"></a></h3>
-    <p><em>Types:</em> <a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function" id="ref-for-function">mission:Function</a></p>
-    <p><em>Links:</em></p>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Celcius-temperature"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature">celcius-temperature<a class="self-link" href="#celcius-temperature"></a></dfn></span><a class="self-link" href="#Celcius-temperature"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">metrology:DerivedUnitaryQuantity</a></p>
+    <p><em>Properties:</em></p>
     <ul>
      <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#homogenizetemperature" id="ref-for-homogenizetemperature">firesat-functions:HomogenizeTemperature</a></p>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">metrology:isDimensionlessQuantity</a> (must have value false)</p>
+    </ul>
+    <p><em>Relations with source:</em></p>
+    <ul>
+     <li data-md>
+      <p>celcius-temperature ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">thermodynamic-temperature</a></p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit">80000-5-units:CelciusTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:IsMagnitudeOf</a> → celcius-temperature</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.2" id="Thermodynamic-temperature"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thermodynamic-temperature">thermodynamic-temperature<a class="self-link" href="#thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Thermodynamic-temperature"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">metrology:IndependentUnitaryQuantity</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity①">metrology:isDimensionlessQuantity</a> (must have value false)</p>
+    </ul>
+    <p><em>Relations with target:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature">celcius-temperature</a> ← <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature①">Celcius-Temperature-Has-Thermodynamic-Temperature</a> → thermodynamic-temperature</p>
+     <li data-md>
+      <p><a data-link-type="dfn" href="80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit">80000-5-units:ThermodynamicTemperatureUnit</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:IsMagnitudeOf</a> → thermodynamic-temperature</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Celcius-Temperature-Has-Thermodynamic-Temperature"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature<a class="self-link" href="#celcius-temperature-has-thermodynamic-temperature"></a></dfn></span><a class="self-link" href="#Celcius-Temperature-Has-Thermodynamic-Temperature"></a></h3>
+    <p><em>Attributes:</em> Functional</p>
+    <p><em>Source:</em> <a data-link-type="dfn" href="80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature①">celcius-temperature</a></p>
+    <p><em>Target:</em> <a data-link-type="dfn" href="80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature①">thermodynamic-temperature</a></p>
+    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Celcius-Temperature-Has-Thermodynamic-Temperature" data-dfn-type="attribute" data-export id="dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"><code>celcius-temperature-has-thermodynamic-temperature</code><a class="self-link" href="#dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature"></a></dfn></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">metrology:HasFactorForUnitaryQuantity</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)</p>
     </ul>
    </div>
   </main>
@@ -2118,42 +2160,106 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#homogenizetemperaturebythermalblankets">HomogenizeTemperatureByThermalBlankets</a><span>, in §3.1</span>
+   <li><a href="#celcius-temperature">celcius-temperature</a><span>, in §3.1</span>
+   <li><a href="#celcius-temperature-has-thermodynamic-temperature">Celcius-Temperature-Has-Thermodynamic-Temperature</a><span>, in §4.1</span>
+   <li><a href="#dom-celcius-temperature-has-thermodynamic-temperature-celcius-temperature-has-thermodynamic-temperature">celcius-temperature-has-thermodynamic-temperature</a><span>, in §4.1</span>
+   <li><a href="#thermodynamic-temperature">thermodynamic-temperature</a><span>, in §3.2</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-function">
-   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-celcius-temperature">
+   <a href="80000-5-quantities.html#celcius-temperature">80000-5-quantities.html#celcius-temperature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-function">3.1. HomogenizeTemperatureByThermalBlankets</a>
+    <li><a href="#ref-for-celcius-temperature">3.2. thermodynamic-temperature</a>
+    <li><a href="#ref-for-celcius-temperature①">4.1. Celcius-Temperature-Has-Thermodynamic-Temperature</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-realizes">
-   <a href="../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-celcius-temperature-has-thermodynamic-temperature">
+   <a href="80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature">80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-realizes">3.1. HomogenizeTemperatureByThermalBlankets</a>
+    <li><a href="#ref-for-celcius-temperature-has-thermodynamic-temperature">3.1. celcius-temperature</a>
+    <li><a href="#ref-for-celcius-temperature-has-thermodynamic-temperature①">3.2. thermodynamic-temperature</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-homogenizetemperature">
-   <a href="../../../../../../../missions/firesat/functions.html#homogenizetemperature">../../../../../../../missions/firesat/functions.html#homogenizetemperature</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-thermodynamic-temperature">
+   <a href="80000-5-quantities.html#thermodynamic-temperature">80000-5-quantities.html#thermodynamic-temperature</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-homogenizetemperature">3.1. HomogenizeTemperatureByThermalBlankets</a>
+    <li><a href="#ref-for-thermodynamic-temperature">3.1. celcius-temperature</a>
+    <li><a href="#ref-for-thermodynamic-temperature①">4.1. Celcius-Temperature-Has-Thermodynamic-Temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-celciustemperatureunit">
+   <a href="80000-5-units.html#celciustemperatureunit">80000-5-units.html#celciustemperatureunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-celciustemperatureunit">3.1. celcius-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-thermodynamictemperatureunit">
+   <a href="80000-5-units.html#thermodynamictemperatureunit">80000-5-units.html#thermodynamictemperatureunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-thermodynamictemperatureunit">3.2. thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-derivedunitaryquantity">
+   <a href="../iupac.org/metrology.html#derivedunitaryquantity">../iupac.org/metrology.html#derivedunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-derivedunitaryquantity">3.1. celcius-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-exponent">
+   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-exponent">4.1. Celcius-Temperature-Has-Thermodynamic-Temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasfactorforunitaryquantity">
+   <a href="../iupac.org/metrology.html#hasfactorforunitaryquantity">../iupac.org/metrology.html#hasfactorforunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasfactorforunitaryquantity">4.1. Celcius-Temperature-Has-Thermodynamic-Temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-independentunitaryquantity">
+   <a href="../iupac.org/metrology.html#independentunitaryquantity">../iupac.org/metrology.html#independentunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-independentunitaryquantity">3.2. thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isdimensionlessquantity">
+   <a href="../iupac.org/metrology.html#isdimensionlessquantity">../iupac.org/metrology.html#isdimensionlessquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isdimensionlessquantity">3.1. celcius-temperature</a>
+    <li><a href="#ref-for-isdimensionlessquantity①">3.2. thermodynamic-temperature</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-ismagnitudeof">
+   <a href="../iupac.org/metrology.html#ismagnitudeof">../iupac.org/metrology.html#ismagnitudeof</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-ismagnitudeof">3.1. celcius-temperature</a>
+    <li><a href="#ref-for-ismagnitudeof①">3.2. thermodynamic-temperature</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-quantities]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-function">function</span>
+     <li><span class="dfn-paneled" id="term-for-celcius-temperature">celcius-temperature</span>
+     <li><span class="dfn-paneled" id="term-for-celcius-temperature-has-thermodynamic-temperature">celcius-temperature-has-thermodynamic-temperature</span>
+     <li><span class="dfn-paneled" id="term-for-thermodynamic-temperature">thermodynamic-temperature</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/project]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-realizes">realizes</span>
+     <li><span class="dfn-paneled" id="term-for-celciustemperatureunit">celciustemperatureunit</span>
+     <li><span class="dfn-paneled" id="term-for-thermodynamictemperatureunit">thermodynamictemperatureunit</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://opencaesar.io/programs/earth-science/missions/firesat/functions]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-homogenizetemperature">homogenizetemperature</span>
+     <li><span class="dfn-paneled" id="term-for-derivedunitaryquantity">derivedunitaryquantity</span>
+     <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
+     <li><span class="dfn-paneled" id="term-for-hasfactorforunitaryquantity">hasfactorforunitaryquantity</span>
+     <li><span class="dfn-paneled" id="term-for-independentunitaryquantity">independentunitaryquantity</span>
+     <li><span class="dfn-paneled" id="term-for-isdimensionlessquantity">isdimensionlessquantity</span>
+     <li><span class="dfn-paneled" id="term-for-ismagnitudeof">ismagnitudeof</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
