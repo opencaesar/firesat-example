@@ -3,139 +3,201 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Propulsion System Control Unit Mass
 
-	@rdfs:label "Propulsion System Control Unit CBE Mass Constraint"
-	ci PropulsionSystemControlUnitCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "1.0"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PropulsionSystemControlUnit
+	@rdfs:label "Propulsion System Control Unit CBE Mass"
+	ci PropulsionSystemControlUnitCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PropulsionSystemControlUnit
+	]
+
+	@rdfs:label "Propulsion System Control Unit CBE Mass Magnitude"
+	ci PropulsionSystemControlUnitCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "1.0"^^xsd:double
+		metrology:isMagnitudeOf PropulsionSystemControlUnitCBEMass
 	]
 
 	// Primary Thruster Mass
 
-	@rdfs:label "Primary Thruster CBE Mass Constraint"
-	ci PrimaryThrusterCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "1.0"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PrimaryThruster
+	@rdfs:label "Primary Thruster CBE Mass"
+	ci PrimaryThrusterCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PrimaryThruster
+	]
+
+	@rdfs:label "Primary Thruster CBE Mass Magnitude"
+	ci PrimaryThrusterCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "1.0"^^xsd:double
+		metrology:isMagnitudeOf PrimaryThrusterCBEMass
 	]
 
 	// ACS Thruster 1 Mass
 
-	@rdfs:label "A CS Thruster 1 CBE Mass Constraint"
-	ci ACSThruster1CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster1
+	@rdfs:label "A CS Thruster 1 CBE Mass"
+	ci ACSThruster1CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster1
+	]
+
+	@rdfs:label "A CS Thruster 1 CBE Mass Magnitude"
+	ci ACSThruster1CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster1CBEMass
 	]
 
 	// ACS Thruster 2 Mass
 
-	@rdfs:label "A CS Thruster 2 CBE Mass Constraint"
-	ci ACSThruster2CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster2
+	@rdfs:label "A CS Thruster 2 CBE Mass"
+	ci ACSThruster2CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster2
+	]
+
+	@rdfs:label "A CS Thruster 2 CBE Mass Magnitude"
+	ci ACSThruster2CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster2CBEMass
 	]
 
 	// ACS Thruster 3 Mass
 
-	@rdfs:label "A CS Thruster 3 CBE Mass Constraint"
-	ci ACSThruster3CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster3
+	@rdfs:label "A CS Thruster 3 CBE Mass"
+	ci ACSThruster3CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster3
+	]
+
+	@rdfs:label "A CS Thruster 3 CBE Mass Magnitude"
+	ci ACSThruster3CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster3CBEMass
 	]
 
 	// ACS Thruster 4 Mass
 
-	@rdfs:label "A CS Thruster 4 CBE Mass Constraint"
-	ci ACSThruster4CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster4
+	@rdfs:label "A CS Thruster 4 CBE Mass"
+	ci ACSThruster4CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster4
+	]
+
+	@rdfs:label "A CS Thruster 4 CBE Mass Magnitude"
+	ci ACSThruster4CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster4CBEMass
 	]
 
 	// ACS Thruster 5 Mass
 
-	@rdfs:label "A CS Thruster 5 CBE Mass Constraint"
-	ci ACSThruster5CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster5
+	@rdfs:label "A CS Thruster 5 CBE Mass"
+	ci ACSThruster5CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster5
+	]
+
+	@rdfs:label "A CS Thruster 5 CBE Mass Magnitude"
+	ci ACSThruster5CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster5CBEMass
 	]
 
 	// ACS Thruster 6 Mass
 
-	@rdfs:label "A CS Thruster 6 CBE Mass Constraint"
-	ci ACSThruster6CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.5"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:ACSThruster6
+	@rdfs:label "A CS Thruster 6 CBE Mass"
+	ci ACSThruster6CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:ACSThruster6
+	]
+
+	@rdfs:label "A CS Thruster 6 CBE Mass Magnitude"
+	ci ACSThruster6CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.5"^^xsd:double
+		metrology:isMagnitudeOf ACSThruster6CBEMass
 	]
 
 	// Propellant Handling Section Mass
 
-	@rdfs:label "Propellant Handling Section CBE Mass Constraint"
-	ci PropellantHandlingSectionCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.6"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PropellantHandlingSection
+	@rdfs:label "Propellant Handling Section CBE Mass"
+	ci PropellantHandlingSectionCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PropellantHandlingSection
+	]
+
+	@rdfs:label "Propellant Handling Section CBE Mass Magnitude"
+	ci PropellantHandlingSectionCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.6"^^xsd:double
+		metrology:isMagnitudeOf PropellantHandlingSectionCBEMass
 	]
 
 	// Fill Drain Valve Unit Mass
 
-	@rdfs:label "Fill Drain Valve Unit CBE Mass Constraint"
-	ci FillDrainValveUnitCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "3.75"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:FillDrainValveUnit
+	@rdfs:label "Fill Drain Valve Unit CBE Mass"
+	ci FillDrainValveUnitCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:FillDrainValveUnit
+	]
+
+	@rdfs:label "Fill Drain Valve Unit CBE Mass Magnitude"
+	ci FillDrainValveUnitCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "3.75"^^xsd:double
+		metrology:isMagnitudeOf FillDrainValveUnitCBEMass
 	]
 
 	// BP Propellant Line Unit Mass
 
-	@rdfs:label "BP Propellant Line Unit CBE Mass Constraint"
-	ci BPPropellantLineUnitCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "2.695"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:BPPropellantLineUnit
+	@rdfs:label "BP Propellant Line Unit CBE Mass"
+	ci BPPropellantLineUnitCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:BPPropellantLineUnit
+	]
+
+	@rdfs:label "BP Propellant Line Unit CBE Mass Magnitude"
+	ci BPPropellantLineUnitCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "2.695"^^xsd:double
+		metrology:isMagnitudeOf BPPropellantLineUnitCBEMass
 	]
 
 	// Propulsion Module Mass
 
-	@rdfs:label "Propulsion Module CBE Mass Constraint"
-	ci PropulsionModuleCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "0.6"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PropulsionModule
+	@rdfs:label "Propulsion Module CBE Mass"
+	ci PropulsionModuleCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PropulsionModule
+	]
+
+	@rdfs:label "Propulsion Module CBE Mass Magnitude"
+	ci PropulsionModuleCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.6"^^xsd:double
+		metrology:isMagnitudeOf PropulsionModuleCBEMass
 	]
 
 	// Propellant Tank Mass
 
-	@rdfs:label "Propellant Tank CBE Mass Constraint"
-	ci PropellantTankCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "20.0"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PropellantTank
+	@rdfs:label "Propellant Tank CBE Mass"
+	ci PropellantTankCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PropellantTank
+	]
+
+	@rdfs:label "Propellant Tank CBE Mass Magnitude"
+	ci PropellantTankCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "20.0"^^xsd:double
+		metrology:isMagnitudeOf PropellantTankCBEMass
 	]
 
 	// Pressurant Tank Mass
 
-	@rdfs:label "Pressurant Tank CBE Mass Constraint"
-	ci PressurantTankCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "10.0"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PressurantTank
+	@rdfs:label "Pressurant Tank CBE Mass"
+	ci PressurantTankCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PressurantTank
+	]
+
+	@rdfs:label "Pressurant Tank CBE Mass Magnitude"
+	ci PressurantTankCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "10.0"^^xsd:double
+		metrology:isMagnitudeOf PressurantTankCBEMass
 	]
 
 	// PM Propellant Line Unit Mass
 
-	@rdfs:label "PM Propellant Line Unit CBE Mass Constraint"
-	ci PMPropellantLineUnitCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "2.695"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp-assemblies:PMPropellantLineUnit
+	@rdfs:label "PM Propellant Line Unit CBE Mass"
+	ci PMPropellantLineUnitCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf prp-assemblies:PMPropellantLineUnit
+	]
+
+	@rdfs:label "PM Propellant Line Unit CBE Mass Magnitude"
+	ci PMPropellantLineUnitCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "2.695"^^xsd:double
+		metrology:isMagnitudeOf PMPropellantLineUnitCBEMass
 	]
 
 }

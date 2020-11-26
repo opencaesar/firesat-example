@@ -3,13 +3,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Thermal Blankets Mass
 
-	@rdfs:label "Thermal Blankets CBE Mass Constraint"
-	ci ThermalBlanketsCBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "3.9"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes thc-assemblies:ThermalBlankets
+	@rdfs:label "Thermal Blankets CBE Mass"
+	ci ThermalBlanketsCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf thc-assemblies:ThermalBlankets
+	]
+
+	@rdfs:label "Thermal Blankets CBE Mass Magnitude"
+	ci ThermalBlanketsCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "3.9"^^xsd:double
+		metrology:isMagnitudeOf ThermalBlanketsCBEMass
 	]
 
 }

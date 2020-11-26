@@ -3,13 +3,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/system
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/spc/spc>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Spacecraft Mass
 
-	@rdfs:label "Spacecraft Mass Limit Constraint"
-	ci SpacecraftMassLimitConstraint : fse:MassLimitConstraint [
-		fse:hasMassConstraintValue "235.1"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes spc:Spacecraft
+	@rdfs:label "Spacecraft Mass Limit"
+	ci SpacecraftMassLimit : 80000-4-quantities:mass [
+		fse:isMassLimitOf spc:Spacecraft
+	]
+	
+	@rdfs:label "Spacecraft Mass Limit Magnitude"
+	ci SpacecraftMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "235.1"^^xsd:double
+		metrology:isMagnitudeOf SpacecraftMassLimit
 	]
 
 }

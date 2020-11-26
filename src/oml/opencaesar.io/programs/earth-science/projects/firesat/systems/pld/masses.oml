@@ -3,13 +3,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/system
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/systems/pld/pld>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Payload Mass
 
-	@rdfs:label "Payload Mass Limit Constraint"
-	ci PayloadMassLimitConstraint : fse:MassLimitConstraint [
-		fse:hasMassConstraintValue "28.1"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes pld:Payload
+	@rdfs:label "Payload Mass Limit"
+	ci PayloadMassLimit : 80000-4-quantities:mass [
+		fse:isMassLimitOf pld:Payload
 	]
 	
+	@rdfs:label "Payload Mass Limit Magnitude"
+	ci PayloadMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "28.1"^^xsd:double
+		metrology:isMagnitudeOf PayloadMassLimit
+	]
+
 }

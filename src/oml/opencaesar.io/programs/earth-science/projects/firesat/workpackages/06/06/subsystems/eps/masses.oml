@@ -3,31 +3,45 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Battery Pack 1 Mass
 
-	@rdfs:label "Battery Pack 1 CBE Mass Constraint"
-	ci BatteryPack1CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "3.103"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes eps-assemblies:BatteryPack1
+	@rdfs:label "Battery Pack 1 CBE Mass"
+	ci BatteryPack1CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf eps-assemblies:BatteryPack1
+	]
+
+	@rdfs:label "Battery Pack 1 CBE Mass Magnitude"
+	ci BatteryPack1CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "3.103"^^xsd:double
+		metrology:isMagnitudeOf BatteryPack1CBEMass
 	]
 
 	// Battery Pack 2 Mass
 
-	@rdfs:label "Battery Pack 2 CBE Mass Constraint"
-	ci BatteryPack2CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "3.103"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes eps-assemblies:BatteryPack2
+	@rdfs:label "Battery Pack 2 CBE Mass"
+	ci BatteryPack2CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf eps-assemblies:BatteryPack2
+	]
+
+	@rdfs:label "Battery Pack 2 CBE Mass Magnitude"
+	ci BatteryPack2CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "3.103"^^xsd:double
+		metrology:isMagnitudeOf BatteryPack2CBEMass
 	]
 
 	// Battery Pack 3 Mass
 
-	@rdfs:label "Battery Pack 3 CBE Mass Constraint"
-	ci BatteryPack3CBEMassConstraint : fse:CBEMassConstraint [
-		fse:hasMassConstraintValue "3.103"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes eps-assemblies:BatteryPack3
+	@rdfs:label "Battery Pack 3 CBE Mass"
+	ci BatteryPack3CBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf eps-assemblies:BatteryPack3
+	]
+
+	@rdfs:label "Battery Pack 3 CBE Mass Magnitude"
+	ci BatteryPack3CBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "3.103"^^xsd:double
+		metrology:isMagnitudeOf BatteryPack3CBEMass
 	]
 
 }

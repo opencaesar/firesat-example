@@ -3,13 +3,19 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/workpa
 
 	extends <http://opencaesar.io/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp>
 
+	uses <http://iso.org/80000-4-magnitudes1>
+
 	// Propulsion Mass
 
-	@rdfs:label "Propulsion Mass Limit Constraint"
-	ci PropulsionMassLimitConstraint : fse:MassLimitConstraint [
-		fse:hasMassConstraintValue "44.14"^^xsd:double
-		metrology:hasReference 80000-4-instances:kilogram
-		analysis:characterizes prp:Propulsion
+	@rdfs:label "Propulsion Mass Limit"
+	ci PropulsionMassLimit : 80000-4-quantities:mass [
+		fse:isMassLimitOf prp:Propulsion
+	]
+
+	@rdfs:label "Propulsion Mass Limit Magnitude"
+	ci PropulsionMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "44.14"^^xsd:double
+		metrology:isMagnitudeOf PropulsionMassLimit
 	]
 
 }

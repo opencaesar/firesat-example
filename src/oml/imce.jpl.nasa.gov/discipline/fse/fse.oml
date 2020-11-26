@@ -10,12 +10,9 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	extends <http://imce.jpl.nasa.gov/foundation/project>
 
-	extends <http://iso.org/80000-6-kindsOfQuantities>
+	extends <http://iso.org/80000-6-rules>
 
-  uses <http://iso.org/80000-3-instances>
-  uses <http://iso.org/80000-4-instances>
-  uses <http://iso.org/80000-5-instances>
-  uses <http://iso.org/80000-6-instances>
+	extends <http://iso.org/80000-6-magnitudes1>
 
 	annotation property hasProvenance
 
@@ -26,7 +23,7 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	aspect MassAllocatedElement :> MassConstrainedElement
 
 	@rdfs:label "Mass Constrained Element"
-	aspect MassConstrainedElement :> metrology:Object 
+	aspect MassConstrainedElement :> metrology:Object
 
 	@rdfs:label "Mass Estimated Element"
 	aspect MassEstimatedElement :> MassConstrainedElement
@@ -41,9 +38,6 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	concept Assembly :> FlightHardwareComponent, EndCircuitPresentingElement, ReferenceDesignatedElement [
 		restricts all relation base:isAggregatedIn to Subsystem
 	]
-
-	@rdfs:label "CBE Mass Constraint"
-	concept CBEMassConstraint :> MassEstimationConstraint
 
 	@rdfs:label "Consumable Mass"
 	concept ConsumableMass :> MassProxy
@@ -91,45 +85,70 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		restricts all relation analysis:characterizes to Function
 	]
 
-	@rdfs:label "Mass Constraint"
-	concept MassConstraint :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
-		restricts all relation analysis:characterizes to MassConstrainedElement
-    restricts all relation metrology:isQuantityOf to MassConstrainedElement
-		restricts relation metrology:hasKindOfQuantity to 80000-4-instances:mass
+	@rdfs:label "Is Mass Of"
+	relation entity IsMassOf :> metrology:IsQuantityOf [
+		from 80000-4-quantities:mass
+		to MassConstrainedElement
+		forward isMassOf
+		reverse hasMass
 	]
 
-  rule MassConstraint-isA-Quantity-and-QuantityValue [
-    MassConstraint(x) -> metrology:hasMagnitude(x,x)
-  ]
-
-  rule MassConstraint-characterizes-implies-isQuantityOf [
-    MassConstraint(x) ^ analysis:characterizes(x,y) ^ MassConstrainedElement(y) -> metrology:isQuantityOf(x,y)
-  ]
-
-	@rdfs:label "Mass Estimation Constraint"
-	concept MassEstimationConstraint :> MassConstraint [
-		restricts all relation analysis:characterizes to MassEstimatedElement
-    restricts all relation metrology:isQuantityOf to MassEstimatedElement
+	@rdfs:label "Is Mass Estimation Of"
+	relation entity IsMassEstimationOf :> IsMassOf [
+		from 80000-4-quantities:mass
+		to MassEstimatedElement
+		forward isMassEstimationOf
+		reverse hasMassEstimation
 	]
 
-	@rdfs:label "MEV Mass Constraint"
-	concept MEVMassConstraint :> MassEstimationConstraint
+	@rdfs:label "Is MEV Mass Of"
+	relation entity IsMEVMassOf :> IsMassEstimationOf [
+		from 80000-4-quantities:mass
+		to MassEstimatedElement
+		forward isMEVMassOf
+		reverse hasMEVMass
+	]
 
-	@rdfs:label "MGA Mass Constraint"
-	concept MGAMassConstraint :> MassEstimationConstraint
+	@rdfs:label "Is MGA Mass Of"
+	relation entity IsMGAMassOf :> IsMassEstimationOf [
+		from 80000-4-quantities:mass
+		to MassEstimatedElement
+		forward isMGAMassOf
+		reverse hasMGAMass
+	]
 
-	@rdfs:label "Mass Allocation Constraint"
-	concept MassAllocationConstraint :> MassConstraint [
-		restricts all relation analysis:characterizes to MassAllocatedElement
-    restricts all relation metrology:isQuantityOf to MassAllocatedElement
+	@rdfs:label "Is CBE Mass Of"
+	relation entity IsCBEMassOf :> IsMassEstimationOf [
+		from 80000-4-quantities:mass
+		to MassEstimatedElement
+		forward isCBEMassOf
+		reverse hasCBEMassOf
 	]
 
 
-	@rdfs:label "Mass Limit Constraint"
-	concept MassLimitConstraint :> MassAllocationConstraint
+	@rdfs:label "Is Mass Allocation Of"
+	relation entity IsMassAllocationOf :> IsMassOf [
+		from 80000-4-quantities:mass
+		to MassAllocatedElement
+		forward isMassAllocationOf
+		reverse hasMassAllocation
+	]
 
-	@rdfs:label "Mass Reserve Constraint"
-	concept MassReserveConstraint :> MassAllocationConstraint
+	@rdfs:label "Is Mass Limit Of"
+	relation entity IsMassLimitOf :> IsMassAllocationOf [
+		from 80000-4-quantities:mass
+		to MassAllocatedElement
+		forward isMassLimitOf
+		reverse hasMassLimit
+	]
+
+	@rdfs:label "Is Mass Reserve Of"
+	relation entity IsMassReserveOf :> IsMassAllocationOf [
+		from 80000-4-quantities:mass
+		to MassAllocatedElement
+		forward isMassReserveOf
+		reverse hasMassReserve
+	]
 
 	@rdfs:label "Net"
 	concept Net :> mission:Junction, metrology:Object
@@ -335,36 +354,21 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		range xsd:string
 	]
 
-	@rdfs:label "has cable impedance"
-	concept CableImpedance :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
-		restricts all relation analysis:characterizes to Net
-    restricts all relation metrology:isQuantityOf to Net
-		restricts relation metrology:hasKindOfQuantity to 80000-6-instances:resistance
+	@rdfs:label "is cable impedance of"
+	relation entity IsCableImpedanceOf :> metrology:IsQuantityOf [
+		from 80000-6-quantities:resistance
+		to Net
+		forward isCableImpedanceOf
+		reverse hasCableImpedance
 	]
 
-  rule CableImpedance-isA-Quantity-and-QuantityValue [
-    CableImpedance(x) -> metrology:hasMagnitude(x,x)
-  ]
-
-  rule CableImpedance-characterizes-implies-isQuantityOf [
-    CableImpedance(x) ^ analysis:characterizes(x,y) ^ Net(y) -> metrology:isQuantityOf(x,y)
-  ]
-
-	@rdfs:label "has cable length (m)"
-	concept CableLength :> analysis:Characterization, metrology:UnitaryQuantity, metrology:UnitaryQuantityValue [
-		restricts all relation analysis:characterizes to Net
-    restricts all relation metrology:isQuantityOf to Net
-		restricts relation metrology:hasKindOfQuantity to 80000-3-instances:^length
+	@rdfs:label "is cable length of"
+	relation entity IsCableLengthOf :> metrology:IsQuantityOf [
+		from 80000-3-quantities:^length
+		to Net
+		forward isCableLengthOf
+		reverse hasCableLength
 	]
-
-  rule CableLength-isA-Quantity-and-QuantityValue [
-    CableLength(x) -> metrology:hasMagnitude(x,x)
-  ]
-
-  rule CableLength-characterizes-implies-isQuantityOf [
-    CableLength(x) ^ analysis:characterizes(x,y) ^ Net(y) -> metrology:isQuantityOf(x,y)
-  ]
-
 
 	@rdfs:label "has cable treatment"
 	scalar property hasCableTreatment [
@@ -520,13 +524,6 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	scalar property hasGroundTreeRef2 [
 		domain Function
 		range xsd:string
-	]
-
-	@rdfs:label "has mass constraint value"
-	scalar property hasMassConstraintValue :> metrology:hasDoubleNumber [
-		domain MassConstraint
-		range xsd:double
-		functional
 	]
 
 	@rdfs:label "has multiplicity"
