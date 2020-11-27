@@ -1,0 +1,46 @@
+@dc:title "Payload Requirements"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/requirements> with # as pld-requirements {
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/functions>
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/requirements/system>
+
+	// Sensor Requirements
+
+	ref ci pld-assemblies:Sensor [
+		mission:isSpecifiedBy ApertureSizeForSensor
+		mission:isSpecifiedBy SpectralResolutionForSensor
+		mission:isSpecifiedBy FORForSensor
+		mission:isSpecifiedBy SpatialResolutionForSensor
+		mission:isSpecifiedBy WavelenghtRangeForSensor
+	]
+
+	ref ri pld-functions:SensorPerformsDetectNewWildfires [
+		mission:isSpecifiedBy SensingRangeForSensor
+	]
+
+	ci ApertureSizeForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:ApertureSize
+	]
+
+	ci SpectralResolutionForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:SpectralResolution
+	]
+
+	ci FORForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:FOR
+	]
+
+	ci SpatialResolutionForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:SpatialResolution
+	]
+
+	ci WavelenghtRangeForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:WavelenghtRange
+	]
+
+	ci SensingRangeForSensor : mission:Requirement [
+		mission:refines pld-system-reqs:SensingRange
+	]
+
+}

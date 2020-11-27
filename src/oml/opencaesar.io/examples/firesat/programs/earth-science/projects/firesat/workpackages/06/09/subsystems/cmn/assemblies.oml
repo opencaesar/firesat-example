@@ -1,0 +1,51 @@
+@dc:title "Communications Assemblies"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies> with # as cmn-assemblies {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn>
+
+	// Communications Subsystem
+
+	ref ci cmn:Communications [
+		base:aggregates TransmitterUnit
+		base:aggregates ReceiverUnit
+		base:aggregates TransmitWhipAntenna
+		base:aggregates TransmitHiGainAntenna
+		base:aggregates ReceiveWhipAntenna
+	]
+
+	// Transmitter Unit
+
+	@rdfs:label "Transmitter Unit"
+	ci TransmitterUnit : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "516400"
+	]
+
+	// Receiver Unit
+
+	@rdfs:label "Receiver Unit"
+	ci ReceiverUnit : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "516500"
+	]
+
+	// Transmit Whip Antenna
+
+	@rdfs:label "Transmit Whip Antenna"
+	ci TransmitWhipAntenna : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "553000"
+	]
+
+	// Transmit Hi-Gain Antenna
+
+	@rdfs:label "Transmit Hi-Gain Antenna"
+	ci TransmitHiGainAntenna : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "554000"
+	]
+
+	// Receive Whip Antenna
+
+	@rdfs:label "Receive Whip Antenna"
+	ci ReceiveWhipAntenna : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "555000"
+	]	
+
+}

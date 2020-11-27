@@ -1,0 +1,21 @@
+@dc:title "ADCS and GNC Masses"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/masses> with # as ang-masses {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/ang>
+
+	uses <http://iso.org/80000-4-magnitudes1>
+
+	// ADCS And GNC Mass
+
+	@rdfs:label "ADCS and GNC Mass Limit"
+	ci ADCSAndGNCMassLimit : 80000-4-quantities:mass [
+		fse:isMassLimitOf ang:ADCSAndGNC
+	]
+
+	@rdfs:label "ADCS and GNC Mass Limit Magnitude"
+	ci ADCSAndGNCMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "9.74"^^xsd:double
+		metrology:isMagnitudeOf ADCSAndGNCMassLimit
+	]
+
+}

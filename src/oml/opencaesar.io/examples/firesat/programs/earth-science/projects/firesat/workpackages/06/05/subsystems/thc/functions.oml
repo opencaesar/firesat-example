@@ -1,0 +1,18 @@
+@dc:title "Thermal Control Functions"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/functions> with # as thc-functions {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions>
+
+	// Thermal Blankets
+
+	ref ci thc-assemblies:ThermalBlankets [
+		mission:performs HomogenizeTemperatureByThermalBlankets
+	]
+
+	ci HomogenizeTemperatureByThermalBlankets : mission:Function [
+		project:realizes firesat-functions:HomogenizeTemperature
+	]
+
+}

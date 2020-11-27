@@ -1,0 +1,62 @@
+@dc:title "Communications Endcircuits"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits> with # as cmn-endcircuits {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies>
+
+	// Transmitter Unit End Circuits
+
+	ref ci cmn-assemblies:TransmitterUnit [
+		mission:presents TransmitterUnitPowerIn
+	]
+
+	@rdfs:label "Transmitter Unit Power In"
+	ci TransmitterUnitPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Receiver Unit End Circuits
+
+	ref ci cmn-assemblies:ReceiverUnit [
+		mission:presents ReceiverUnitPowerIn
+	]
+
+	@rdfs:label "Receiver Unit Power In"
+	ci ReceiverUnitPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Transmit Whip Antenna Circuits
+
+	ref ci cmn-assemblies:TransmitWhipAntenna [
+		mission:presents TransmitWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Transmit Whip Antenna Power In"
+	ci TransmitWhipAntennaPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Transmit Hi-Gain Antenna Circuits
+
+	ref ci cmn-assemblies:TransmitHiGainAntenna [
+		mission:presents TransmitHiGainAntennaPowerIn
+	]
+
+	@rdfs:label "Transmit Hi-Gain Antenna Power In"
+	ci TransmitHiGainAntennaPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Receive Whip Antenna Circuits
+
+	ref ci cmn-assemblies:ReceiveWhipAntenna [
+		mission:presents ReceiveWhipAntennaPowerIn
+	]
+
+	@rdfs:label "Receive Whip Antenna Power In"
+	ci ReceiveWhipAntennaPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+}

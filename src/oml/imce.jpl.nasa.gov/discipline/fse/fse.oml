@@ -14,16 +14,17 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	extends <http://iso.org/80000-6-magnitudes1>
 
-	annotation property hasProvenance
+	@rdfs:label "Reference Designated Element"
+	aspect ReferenceDesignatedElement :> base:IdentifiedElement
 
 	@rdfs:label "End Circuit Presenting Element"
 	aspect EndCircuitPresentingElement :> mission:PresentingElement
 
-	@rdfs:label "Mass Allocated Element"
-	aspect MassAllocatedElement :> MassConstrainedElement
-
 	@rdfs:label "Mass Constrained Element"
 	aspect MassConstrainedElement :> metrology:Object
+
+	@rdfs:label "Mass Allocated Element"
+	aspect MassAllocatedElement :> MassConstrainedElement
 
 	@rdfs:label "Mass Estimated Element"
 	aspect MassEstimatedElement :> MassConstrainedElement
@@ -31,21 +32,21 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	@rdfs:label "Mass Proxy"
 	aspect MassProxy :> MassEstimatedElement
 
-	@rdfs:label "Reference Designated Element"
-	aspect ReferenceDesignatedElement :> base:IdentifiedElement
+	@rdfs:label "Flight Hardware Component"
+	concept FlightHardwareComponent :> mission:Component, MassEstimatedElement
+
+	@rdfs:label "Subsystem"
+	concept Subsystem :> FlightHardwareComponent, ReferenceDesignatedElement [
+		restricts all relation base:aggregates to Assembly
+	]
 
 	@rdfs:label "Assembly"
-	concept Assembly :> FlightHardwareComponent, EndCircuitPresentingElement, ReferenceDesignatedElement [
+	concept Assembly :> FlightHardwareComponent, ReferenceDesignatedElement, EndCircuitPresentingElement [
 		restricts all relation base:isAggregatedIn to Subsystem
 	]
 
 	@rdfs:label "Consumable Mass"
 	concept ConsumableMass :> MassProxy
-
-	@rdfs:label "Drawing"
-	concept Drawing :> project:Product [
-		restricts all relation project:describes to Function
-	]
 
 	@rdfs:label "End Circuit"
 	concept EndCircuit :> mission:Interface [
@@ -53,37 +54,12 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		restricts all relation mission:isPresentedBy to EndCircuitPresentingElement
 	]
 
-	@rdfs:label "End Circuit Group"
-	concept EndCircuitGroup :> mission:Interface, EndCircuitPresentingElement [
-		restricts all relation mission:isPresentedBy to Assembly
-		restricts all relation mission:presents to EndCircuit
-	]
-
-	@rdfs:label "Engineering Change Request"
-	concept EngineeringChangeRequest :> analysis:Characterization [
-		restricts all relation analysis:characterizes to Function
-	]
-
-	@rdfs:label "Flight Hardware Component"
-	concept FlightHardwareComponent :> mission:Component, MassEstimatedElement
-
 	@rdfs:label "Function"
 	concept Function :> mission:Junction [
 		restricts all relation mission:joins to EndCircuit
 	]
 
-	@rdfs:label "Function Annotation"
-	concept FunctionAnnotation :> analysis:Characterization [
-		restricts all relation analysis:characterizes to Function
-	]
-
-	@rdfs:label "GangConfiguration"
-	concept GangConfiguration :> analysis:Explanation
-
-	@rdfs:label "Implementer"
-	concept Implementer :> analysis:Characterization [
-		restricts all relation analysis:characterizes to Function
-	]
+	ref concept project:WorkPackage :> MassAllocatedElement, MassEstimatedElement
 
 	@rdfs:label "Is Mass Of"
 	relation entity IsMassOf :> metrology:IsQuantityOf [
@@ -125,7 +101,6 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		reverse hasCBEMassOf
 	]
 
-
 	@rdfs:label "Is Mass Allocation Of"
 	relation entity IsMassAllocationOf :> IsMassOf [
 		from 80000-4-quantities:mass
@@ -141,34 +116,6 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		forward isMassLimitOf
 		reverse hasMassLimit
 	]
-
-	@rdfs:label "Is Mass Reserve Of"
-	relation entity IsMassReserveOf :> IsMassAllocationOf [
-		from 80000-4-quantities:mass
-		to MassAllocatedElement
-		forward isMassReserveOf
-		reverse hasMassReserve
-	]
-
-	@rdfs:label "Net"
-	concept Net :> mission:Junction, metrology:Object
-
-	@rdfs:label "Placeholder Mass"
-	concept PlaceholderMass :> MassProxy
-
-	@rdfs:label "Power Switch Bank"
-	concept PowerSwitchBank :> EndCircuitGroup
-
-	@rdfs:label "Subsystem"
-	concept Subsystem :> FlightHardwareComponent, ReferenceDesignatedElement [
-		restricts all relation base:aggregates to Assembly
-	]
-
-	@rdfs:label "Telemetry"
-	concept Telemetry :> mission:Flow
-
-	@rdfs:label "Wire"
-	concept Wire :> mission:Junction
 
 	@rdfs:label "Connects Assembly"
 	relation entity ConnectsAssembly :> analysis:AnalyzedElement, analysis:CharacterizedElement [
@@ -200,378 +147,17 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		irreflexive
 	]
 
-	@rdfs:label "Connects Subsystem"
-	relation entity ConnectsSubsystem :> analysis:AnalyzedElement, analysis:CharacterizedElement [
-		from Function
-		to Subsystem
-		@rdfs:label "connects subsystem"
-		forward connectsSubsystem
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label ""
-	relation entity ConnectsSubsystem1 :> ConnectsSubsystem [
-		from Function
-		to Subsystem
-		@rdfs:label "connects subsystem 1"
-		forward connectsSubsystem1
-		functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "Connects Subsystem 1"
-	relation entity ConnectsSubsystem2 :> ConnectsSubsystem [
-		from Function
-		to Subsystem
-		@rdfs:label "connects subsystem 2"
-		forward connectsSubsystem2
-		functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "Has Gang Aggregate"
-	relation entity HasGangAggregate :> analysis:Explains, analysis:AnalyzedElement, analysis:CharacterizedElement [
-		from GangConfiguration
-		to EndCircuit
-		@rdfs:label "has gang aggregate"
-		forward hasGangAggregate
-		reverse isAggregateOfGang
-		functional
-		inverse functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "Has Gang Member"
-	relation entity HasGangMember :> analysis:Analyzes, analysis:AnalyzedElement, analysis:CharacterizedElement [
-		from GangConfiguration
-		to EndCircuit
-		@rdfs:label "has gang member"
-		forward hasGangMember
-		reverse isMemberOfGang
-		inverse functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "Implements"
-	relation entity Implements :> analysis:AnalyzedElement, analysis:CharacterizedElement [
-		from mission:Junction
-		to mission:Junction
-		@rdfs:label "implements"
-		forward implements
-		reverse isImplementedBy
-		functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "ImplementsFunction"
-	relation entity ImplementsFunction :> Implements [
-		from Net
-		to Function
-		@rdfs:label "implements function"
-		forward implementsFunction
-		functional
-		asymmetric
-		irreflexive
-	]
-
-	@rdfs:label "ImplementsNet"
-	relation entity ImplementsNet :> Implements [
-		from Wire
-		to Net
-		@rdfs:label "implements net"
-		forward implementsNet
-		functional
-		asymmetric
-		irreflexive
-	]
-
-	rule gangAggregateFromMember [
-		Function(x1) ^ mission:joins(x1, x2) ^ isMemberOfGang(x2, x3) ^ hasGangAggregate(x3, x4) -> mission:joins(x1, x4)
-	]
-
-	rule gangMemberFromAggregate [
-		Function(x1) ^ mission:joins(x1, x2) ^ isAggregateOfGang(x2, x3) ^ hasGangMember(x3, x4) -> mission:joins(x1, x4)
-	]
-
-	enumerated scalar endCircuitDirection :> xsd:string [
+	enumerated scalar EndCircuitDirection :> xsd:string [
 		"in"^^xsd:string,
 		"inout"^^xsd:string,
 		"out"^^xsd:string
 	]
 
-	enumerated scalar functionDirection :> xsd:string [
+	enumerated scalar FunctionDirection :> xsd:string [
 		"1to2"^^xsd:string,
 		"2to1"^^xsd:string,
 		"Bidirectional"^^xsd:string,
 		"Undefined"^^xsd:string
-	]
-
-	enumerated scalar provenance :> xsd:string [
-		"baseline"^^xsd:string,
-		"proposed"^^xsd:string,
-		"retracted"^^xsd:string
-	]
-
-	@rdfs:label "has annotation key"
-	scalar property hasAnnotationKey :> base:hasAlternateName [
-		domain FunctionAnnotation
-		range xsd:string
-	]
-
-	@rdfs:label "has annotation value"
-	scalar property hasAnnotationValue :> base:hasDescription [
-		domain FunctionAnnotation
-		range xsd:string
-	]
-
-	@rdfs:label "has assembly 1 board schematic signal names"
-	scalar property hasAssembly1BoardSchematicSignalNames [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has assembly 2 board schematic signal names"
-	scalar property hasAssembly2BoardSchematicSignalNames [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has assembly acronym"
-	scalar property hasAssemblyAcronym :> base:hasIdentifier [
-		domain Assembly
-		range xsd:string
-	]
-
-	@rdfs:label "has assembly reference designator"
-	scalar property hasAssemblyReferenceDesignator :> hasReferenceDesignator [
-		domain Assembly
-		range xsd:string
-	]
-
-	@rdfs:label "is cable impedance of"
-	relation entity IsCableImpedanceOf :> metrology:IsQuantityOf [
-		from 80000-6-quantities:resistance
-		to Net
-		forward isCableImpedanceOf
-		reverse hasCableImpedance
-	]
-
-	@rdfs:label "is cable length of"
-	relation entity IsCableLengthOf :> metrology:IsQuantityOf [
-		from 80000-3-quantities:^length
-		to Net
-		forward isCableLengthOf
-		reverse hasCableLength
-	]
-
-	@rdfs:label "has cable treatment"
-	scalar property hasCableTreatment [
-		domain Net
-		range xsd:string
-	]
-
-	@rdfs:label "has channel identifier"
-	scalar property hasChannelIdentifier [
-		domain Telemetry
-		range xsd:string
-	]
-
-	@rdfs:label "has channel name"
-	scalar property hasChannelName [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has cognizant engineer"
-	scalar property hasCogE [
-		domain Assembly
-		range xsd:string
-	]
-
-	@rdfs:label "has comments"
-	scalar property hasComments [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has conductor count"
-	scalar property hasConductorCount [
-		domain Function
-		range xsd:integer
-	]
-
-	@rdfs:label "has cross-strapped"
-	scalar property hasCrossStrapped [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has device identifer"
-	scalar property hasDeviceIdentifier [
-		domain Telemetry
-		range xsd:string
-	]
-
-	@rdfs:label "has drawing number"
-	scalar property hasDrawingNumber :> base:hasIdentifier [
-		domain Drawing
-		range xsd:string
-	]
-
-	@rdfs:label "has ECR identifier"
-	scalar property hasEcrIdentifier :> base:hasIdentifier [
-		domain EngineeringChangeRequest
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit 1 part number"
-	scalar property hasEndCircuit1PartNumber [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit 2 part number"
-	scalar property hasEndCircuit2PartNumber [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit direction"
-	scalar property hasEndCircuitDirection [
-		domain EndCircuit
-		range endCircuitDirection
-	]
-
-	@rdfs:label "has end circuit identifier"
-	scalar property hasEndCircuitIdentifier :> base:hasIdentifier [
-		domain EndCircuit
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit local name"
-	scalar property hasEndCircuitLocalName :> base:hasAlternateName [
-		domain EndCircuit
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit named role 1"
-	scalar property hasEndCircuitNamedRole1 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit named role 2"
-	scalar property hasEndCircuitNamedRole2 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end circuit type"
-	scalar property hasEndCircuitType [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end connector 1 type/part number"
-	scalar property hasEndConnector1TypePartNumber [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has end connector 2 type/part number"
-	scalar property hasEndConnector2TypePartNumber [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has function direction"
-	scalar property hasFunctionDirection [
-		domain Function
-		range functionDirection
-	]
-
-	@rdfs:label "has function number"
-	scalar property hasFunctionNumber :> base:hasIdentifier [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has function rev"
-	scalar property hasFunctionRev [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has functions per page"
-	scalar property hasFunctionsPerPage [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has ground tree ref 1"
-	scalar property hasGroundTreeRef1 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has ground tree ref 2"
-	scalar property hasGroundTreeRef2 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has multiplicity"
-	scalar property hasMultiplicity [
-		domain MassProxy
-		range xsd:integer
-	]
-
-	@rdfs:label "has net index"
-	scalar property hasNetIndex [
-		domain Net
-		range xsd:integer
-	]
-
-	@rdfs:label "has note 1"
-	scalar property hasNote1 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has note 2"
-	scalar property hasNote2 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has note 3"
-	scalar property hasNote3 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has note 4"
-	scalar property hasNote4 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has note 5"
-	scalar property hasNote5 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "has note 6"
-	scalar property hasNote6 [
-		domain Function
-		range xsd:string
 	]
 
 	@rdfs:label "has reference designator"
@@ -580,101 +166,40 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 		range xsd:string
 	]
 
-	@rdfs:label "has subsystem acronym"
-	scalar property hasSubsystemAcronym :> base:hasIdentifier [
-		domain Subsystem
+	@rdfs:label "has acronym"
+	scalar property hasAcronym :> base:hasIdentifier [
+		domain ReferenceDesignatedElement
 		range xsd:string
 	]
 
-	@rdfs:label "has subsystem number"
-	scalar property hasSubsystemNumber :> base:hasIdentifier [
-		domain Subsystem
-		range xsd:string
-	]
-
-	@rdfs:label "has subsystem reference designator"
-	scalar property hasSubsystemReferenceDesignator :> hasReferenceDesignator [
-		domain Subsystem
-		range xsd:string
-	]
-
-	@rdfs:label "has switch bank identifer"
-	scalar property hasSwitchBankIdentifier :> base:hasIdentifier [
-		domain PowerSwitchBank
-		range xsd:string
-	]
-
-	@rdfs:label "has switch bank local name"
-	scalar property hasSwitchBankLocalName :> base:hasAlternateName [
-		domain PowerSwitchBank
-		range xsd:string
-	]
-
-	@rdfs:label "has telemetry type"
-	scalar property hasTelemetryType [
-		domain Telemetry
-		range xsd:string
-	]
-
-	@rdfs:label "has view 1"
-	scalar property hasView1 [
+	@rdfs:label "has function number"
+	scalar property hasFunctionNumber :> base:hasIdentifier [
 		domain Function
 		range xsd:string
 	]
 
-	@rdfs:label "has view 2"
-	scalar property hasView2 [
+	@rdfs:label "has function direction"
+	scalar property hasFunctionDirection [
 		domain Function
+		range FunctionDirection
+	]
+
+	@rdfs:label "has end circuit identifier"
+	scalar property hasEndCircuitIdentifier :> base:hasIdentifier [
+		domain EndCircuit
 		range xsd:string
 	]
 
-	@rdfs:label "has view 3"
-	scalar property hasView3 [
-		domain Function
-		range xsd:string
+	@rdfs:label "has end circuit direction"
+	scalar property hasEndCircuitDirection [
+		domain EndCircuit
+		range EndCircuitDirection
 	]
 
-	@rdfs:label "has wire code"
-	scalar property hasWireCode [
-		domain Net
-		range xsd:string
+	@rdfs:label "has multiplicity"
+	scalar property hasMultiplicity [
+		domain MassProxy
+		range xsd:integer
 	]
 
-	@rdfs:label "has wire gauge"
-	scalar property hasWireGauge [
-		domain Net
-		range xsd:string
-	]
-
-	@rdfs:label "has wire treatment"
-	scalar property hasWireTreatment [
-		domain Net
-		range xsd:string
-	]
-
-	@rdfs:label "names cavity 1"
-	scalar property namesCavity1 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "names cavity 2"
-	scalar property namesCavity2 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "names connector 1"
-	scalar property namesConnector1 [
-		domain Function
-		range xsd:string
-	]
-
-	@rdfs:label "names connector 2"
-	scalar property namesConnector2 [
-		domain Function
-		range xsd:string
-	]
-
-	ref concept project:WorkPackage :> MassAllocatedElement, MassEstimatedElement
 }

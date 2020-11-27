@@ -1,0 +1,21 @@
+@dc:title "Command and Data Handling Masses"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/masses> with # as cdh-masses {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh>
+
+	uses <http://iso.org/80000-4-magnitudes1>
+
+	// Command And Data Handling Mass
+
+	@rdfs:label "Command and Data Handling Mass Limit"
+	ci CommandAndDataHandlingMassLimit : 80000-4-quantities:mass [
+		fse:isMassLimitOf cdh:CommandAndDataHandling
+	]
+
+	@rdfs:label "Command and Data Handling Mass Limit Magnitude"
+	ci CommandAndDataHandlingMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "38.07"^^xsd:double
+		metrology:isMagnitudeOf CommandAndDataHandlingMassLimit
+	]
+
+}

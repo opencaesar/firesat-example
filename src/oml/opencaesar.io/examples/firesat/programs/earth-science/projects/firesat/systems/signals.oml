@@ -1,0 +1,27 @@
+@dc:title "FireSat Signals"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/signals> with # as firesat-signals {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/functions>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits>
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits>
+
+	// 5000 to 1000 Power Function
+
+	@rdfs:label "5000 to 1000 Power"
+	ci 5000To1000Power : fse-functions:UnidirectionalPower [
+		fse:hasFunctionNumber "1000-5000-001"
+		fse:hasFunctionDirection "2to1"
+
+		fse:connectsAssembly1 pld-assemblies:PayloadModule
+		mission:joins1 pld-endcircuits:PayloadModulePowerIn
+		
+		fse:connectsAssembly1 pld-assemblies:Sensor
+		mission:joins1 pld-endcircuits:SensorPowerIn
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut3
+	]
+	
+}

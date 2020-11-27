@@ -1,0 +1,32 @@
+@dc:title "Spacecraft Operational Requirements"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/operational> with # as spc-operational-reqs {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional>
+
+	@rdfs:label "Orbit Inclination"
+	ci OrbitInclination : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:GeoLocation
+		mission:refines firesat-functional-reqs:Coverage
+	]
+
+	@rdfs:label "Altitude"
+	ci Altitude : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+	@rdfs:label "Minimum Elevation Angle"
+	ci MinimumElevationAngle : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+}

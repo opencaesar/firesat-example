@@ -17,10 +17,17 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/endcircuits> with # as fse-e
 	@rdfs:label "Power"
 	concept Power :> fse:EndCircuit
 
+	@rdfs:label "Unidirectional Power"
+	concept UnidirectionalPower :> fse:EndCircuit
+
 	@rdfs:label "Power In"
-	concept PowerIn :> Power
+	concept PowerIn :> UnidirectionalPower [
+		restricts scalar property fse:hasEndCircuitDirection to "in"^^xsd:string
+	]
 
 	@rdfs:label "Power Out"
-	concept PowerOut :> Power
+	concept PowerOut :> UnidirectionalPower [
+		restricts scalar property fse:hasEndCircuitDirection to "out"^^xsd:string
+	]
 
 }

@@ -1,0 +1,58 @@
+@dc:title "Structures and Mechanisms Functions"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/functions> with # as sam-functions {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions>
+
+	// Power Control Unit
+	
+	ref ci sam-assemblies:PowerControlUnit [
+		mission:performs Supply_Power_24_7ByPowerControlUnit
+	]
+
+	ci Supply_Power_24_7ByPowerControlUnit : mission:Function [
+		project:realizes firesat-functions:Supply_Power_24_7
+	]
+
+	// EPS Regulators And Converters Unit
+
+	ref ci sam-assemblies:EPSRegulatorsAndConvertersUnit [
+		mission:performs Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit
+	]
+
+	ci Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit : mission:Function [
+		project:realizes firesat-functions:Supply_Power_24_7
+	]
+
+	// Solar Array With SADA 1
+
+	ref ci sam-assemblies:SolarArrayWithSADA1 [
+		mission:performs TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1
+		mission:performs DeployMechanismsBySolarArrayWithSADA1
+	]
+
+	ci TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1 : mission:Function [
+		project:realizes firesat-functions:TransformSolarRadiationsIntoEnergy
+	]
+
+	ci DeployMechanismsBySolarArrayWithSADA1 : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+	// Solar Array With SADA 2
+
+	ref ci sam-assemblies:SolarArrayWithSADA2 [
+		mission:performs TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2
+		mission:performs DeployMechanismsBySolarArrayWithSADA2
+	]
+
+	ci TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2 : mission:Function [
+		project:realizes firesat-functions:TransformSolarRadiationsIntoEnergy
+	]
+
+	ci DeployMechanismsBySolarArrayWithSADA2 : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+}

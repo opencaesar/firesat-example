@@ -1,0 +1,51 @@
+@dc:title "Propulsion Endcircuits"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits> with # as prp-endcircuits {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies>
+
+	// Propulsion System Control Unit End Circuits
+
+	ref ci prp-assemblies:PropulsionSystemControlUnit [
+		mission:presents PropulsionSystemControlUnitPowerIn
+	]
+
+	@rdfs:label "Propulsion System Control Unit Power In"
+	ci PropulsionSystemControlUnitPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Propellant Handling Section End Circuits
+
+	ref ci prp-assemblies:PropellantHandlingSection [
+		mission:presents PropellantHandlingSectionPowerIn
+	]
+
+	@rdfs:label "Propellant Handling Section Power In"
+	ci PropellantHandlingSectionPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Fill Drain Valve Unit End Circuits
+
+	ref ci prp-assemblies:FillDrainValveUnit [
+		mission:presents FillDrainValveUnitPowerIn
+	]
+
+	@rdfs:label "Fill Drain Valve Unit Power In"
+	ci FillDrainValveUnitPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Propulsion Module End Circuits
+
+	ref ci prp-assemblies:PropulsionModule [
+		mission:presents PropulsionModulePowerIn
+	]
+
+	@rdfs:label "Propulsion Module Power In"
+	ci PropulsionModulePowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+}

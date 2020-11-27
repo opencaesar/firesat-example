@@ -1,0 +1,43 @@
+@dc:title "FireSat Project"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/firesat> with # as firesat-project {
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/earth-science>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/pld>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc>
+		
+	extends <http://opencaesar.io/examples/firesat/organizations/jpl>
+
+	// FireSat Project
+
+	ref ci earth-science-program:FireSatProject [
+		project:authorizes WP05
+		project:authorizes WP06
+	]
+		
+	// WP05 Work Package
+
+	@rdfs:label "WP05"
+	ci WP05 : project:WorkPackage [
+		project:supplies pld:Payload
+		project:isResponsibilityOf jpl:JPL
+	]
+
+	// WP06 Work Package
+
+	@rdfs:label "WP06"
+	ci WP06 : project:WorkPackage [
+		project:supplies spc:Spacecraft
+		project:isResponsibilityOf jpl:JPL
+	]
+
+	@rdfs:label "WP06alt"
+	ci WP06alt : project:WorkPackage [
+		project:supplies spc:Spacecraft
+		project:isResponsibilityOf jpl:JPL
+	]
+	
+	@rdfs:label "WP07-incomplete"
+	ci WP07-incomplete : project:WorkPackage
+} 
