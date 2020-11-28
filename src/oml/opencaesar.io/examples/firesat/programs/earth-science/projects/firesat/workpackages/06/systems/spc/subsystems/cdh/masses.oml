@@ -8,12 +8,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Command And Data Handling Mass
 
 	@rdfs:label "Command and Data Handling Mass Limit"
-	ci CommandAndDataHandlingMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf cdh:CommandAndDataHandling
+	ci CommandAndDataHandlingMassLimit : fse:MassLimit [
+		metrology:isQuantityOf cdh:CommandAndDataHandling
 	]
 
 	@rdfs:label "Command and Data Handling Mass Limit Magnitude"
-	ci CommandAndDataHandlingMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci CommandAndDataHandlingMassLimitMagnitude : fse:MassLimitMagnitude [
 		metrology:hasDoubleNumber "38.07"^^xsd:double
 		metrology:isMagnitudeOf CommandAndDataHandlingMassLimit
 	]

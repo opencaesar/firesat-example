@@ -8,12 +8,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Spacecraft Mass
 
 	@rdfs:label "Spacecraft Mass Limit"
-	ci SpacecraftMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf spc:Spacecraft
+	ci SpacecraftMassLimit : fse:MassLimit [
+		metrology:isQuantityOf spc:Spacecraft
 	]
 	
 	@rdfs:label "Spacecraft Mass Limit Magnitude"
-	ci SpacecraftMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci SpacecraftMassLimitMagnitude : fse:MassLimitMagnitude [
 		metrology:hasDoubleNumber "235.1"^^xsd:double
 		metrology:isMagnitudeOf SpacecraftMassLimit
 	]

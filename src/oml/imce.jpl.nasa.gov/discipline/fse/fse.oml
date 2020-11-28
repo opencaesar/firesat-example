@@ -14,6 +14,8 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	extends <http://iso.org/80000-6-magnitudes1>
 
+	uses <http://iso.org/80000-4-instances>
+
 	@rdfs:label "Reference Designated Element"
 	aspect ReferenceDesignatedElement :> base:IdentifiedElement
 
@@ -61,61 +63,51 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 
 	ref concept project:WorkPackage :> MassAllocatedElement, MassEstimatedElement
 
-	@rdfs:label "Is Mass Of"
-	relation entity IsMassOf :> metrology:IsQuantityOf [
-		from 80000-4-quantities:mass
-		to MassConstrainedElement
-		forward isMassOf
-		reverse hasMass
+	@rdfs:label "Mass Estimate"
+	concept MassEstimate :> 80000-4-quantities:mass [
+		restricts all relation metrology:hasMagnitude to MassEstimateMagnitude
 	]
 
-	@rdfs:label "Is Mass Estimation Of"
-	relation entity IsMassEstimationOf :> IsMassOf [
-		from 80000-4-quantities:mass
-		to MassEstimatedElement
-		forward isMassEstimationOf
-		reverse hasMassEstimation
+	concept MassEstimateMagnitude :> 80000-4-units:MassMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:kilogram
 	]
 
-	@rdfs:label "Is MEV Mass Of"
-	relation entity IsMEVMassOf :> IsMassEstimationOf [
-		from 80000-4-quantities:mass
-		to MassEstimatedElement
-		forward isMEVMassOf
-		reverse hasMEVMass
+	@rdfs:label "MEV Mass"
+	concept MEVMass :> MassEstimate [
+		restricts all relation metrology:hasMagnitude to MEVMagnitue
 	]
 
-	@rdfs:label "Is MGA Mass Of"
-	relation entity IsMGAMassOf :> IsMassEstimationOf [
-		from 80000-4-quantities:mass
-		to MassEstimatedElement
-		forward isMGAMassOf
-		reverse hasMGAMass
+	concept MEVMagnitue :> MassEstimateMagnitude
+
+	@rdfs:label "MGA Mass"
+	concept MGAMass :> MassEstimate [
+		restricts all relation metrology:hasMagnitude to MGAMagnitude
 	]
 
-	@rdfs:label "Is CBE Mass Of"
-	relation entity IsCBEMassOf :> IsMassEstimationOf [
-		from 80000-4-quantities:mass
-		to MassEstimatedElement
-		forward isCBEMassOf
-		reverse hasCBEMassOf
+	concept MGAMagnitude :> MassEstimateMagnitude
+
+	@rdfs:label "CBE Mass"
+	concept CBEMass :> MassEstimate [
+		restricts all relation metrology:hasMagnitude to CBEMagnitude
 	]
 
-	@rdfs:label "Is Mass Allocation Of"
-	relation entity IsMassAllocationOf :> IsMassOf [
-		from 80000-4-quantities:mass
-		to MassAllocatedElement
-		forward isMassAllocationOf
-		reverse hasMassAllocation
+	concept CBEMagnitude :> MassEstimateMagnitude
+
+	@rdfs:label "Mass Allocation"
+	concept MassAllocation :> 80000-4-quantities:mass [
+		restricts all relation metrology:hasMagnitude to MassAllocationMagnitude
 	]
 
-	@rdfs:label "Is Mass Limit Of"
-	relation entity IsMassLimitOf :> IsMassAllocationOf [
-		from 80000-4-quantities:mass
-		to MassAllocatedElement
-		forward isMassLimitOf
-		reverse hasMassLimit
+	concept MassAllocationMagnitude :> 80000-4-units:MassMagnitude [
+		restricts relation metrology:hasReference to 80000-4-instances:kilogram
 	]
+
+	@rdfs:label "Mass Limit"
+	concept MassLimit :> MassAllocation [
+		restricts all relation metrology:hasMagnitude to MassLimitMagnitude
+	]
+
+	concept MassLimitMagnitude :> MassAllocationMagnitude
 
 	@rdfs:label "Connects Assembly"
 	relation entity ConnectsAssembly :> analysis:AnalyzedElement, analysis:CharacterizedElement [

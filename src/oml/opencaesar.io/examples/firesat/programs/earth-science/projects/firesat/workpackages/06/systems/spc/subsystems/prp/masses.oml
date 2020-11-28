@@ -8,12 +8,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Propulsion Mass
 
 	@rdfs:label "Propulsion Mass Limit"
-	ci PropulsionMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf prp:Propulsion
+	ci PropulsionMassLimit : fse:MassLimit [
+		metrology:isQuantityOf prp:Propulsion
 	]
 
 	@rdfs:label "Propulsion Mass Limit Magnitude"
-	ci PropulsionMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci PropulsionMassLimitMagnitude : fse:MassLimitMagnitude [
 		metrology:hasDoubleNumber "44.14"^^xsd:double
 		metrology:isMagnitudeOf PropulsionMassLimit
 	]
