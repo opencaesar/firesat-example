@@ -1486,7 +1486,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/imce.jpl.nasa.gov/discipline/fse/endcircuits" rel="canonical">
-  <meta content="3490f980914a4a56ac6b10fa283bd3b3005b23bd" name="document-revision">
+  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1926,7 +1926,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">End Ciruit Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-26">26 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1956,6 +1956,7 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#Power"><span class="secno">3.1</span> <span class="content"><span>Power</span></span></a>
       <li><a href="#PowerIn"><span class="secno">3.2</span> <span class="content"><span>PowerIn</span></span></a>
       <li><a href="#PowerOut"><span class="secno">3.3</span> <span class="content"><span>PowerOut</span></span></a>
+      <li><a href="#UnidirectionalPower"><span class="secno">3.4</span> <span class="content"><span>UnidirectionalPower</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1980,11 +1981,23 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="Power"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">Power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
     <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">fse:EndCircuit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="endcircuits.html#powerin" id="ref-for-powerin">PowerIn</a>, <a data-link-type="dfn" href="endcircuits.html#powerout" id="ref-for-powerout">PowerOut</a></p>
     <h3 class="heading settled" data-level="3.2" id="PowerIn"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerin">PowerIn<a class="self-link" href="#powerin"></a></dfn></span><a class="self-link" href="#PowerIn"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power">Power</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">fse:hasEndCircuitDirection</a> (must have value in)</p>
+    </ul>
     <h3 class="heading settled" data-level="3.3" id="PowerOut"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerout">PowerOut<a class="self-link" href="#powerout"></a></dfn></span><a class="self-link" href="#PowerOut"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power①">Power</a></p>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">UnidirectionalPower</a></p>
+    <p><em>Properties:</em></p>
+    <ul>
+     <li data-md>
+      <p><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection①">fse:hasEndCircuitDirection</a> (must have value out)</p>
+    </ul>
+    <h3 class="heading settled" data-level="3.4" id="UnidirectionalPower"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unidirectionalpower">UnidirectionalPower<a class="self-link" href="#unidirectionalpower"></a></dfn></span><a class="self-link" href="#UnidirectionalPower"></a></h3>
+    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">fse:EndCircuit</a></p>
+    <p><em>Subtypes:</em> <a data-link-type="dfn" href="endcircuits.html#powerin" id="ref-for-powerin">PowerIn</a>, <a data-link-type="dfn" href="endcircuits.html#powerout" id="ref-for-powerout">PowerOut</a></p>
    </div>
   </main>
 <script>
@@ -2122,30 +2135,39 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#power">Power</a><span>, in §3.1</span>
    <li><a href="#powerin">PowerIn</a><span>, in §3.2</span>
    <li><a href="#powerout">PowerOut</a><span>, in §3.3</span>
+   <li><a href="#unidirectionalpower">UnidirectionalPower</a><span>, in §3.4</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-power">
-   <a href="endcircuits.html#power">endcircuits.html#power</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-power">3.2. PowerIn</a>
-    <li><a href="#ref-for-power①">3.3. PowerOut</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-powerin">
    <a href="endcircuits.html#powerin">endcircuits.html#powerin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-powerin">3.1. Power</a>
+    <li><a href="#ref-for-powerin">3.4. UnidirectionalPower</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-powerout">
    <a href="endcircuits.html#powerout">endcircuits.html#powerout</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-powerout">3.1. Power</a>
+    <li><a href="#ref-for-powerout">3.4. UnidirectionalPower</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-unidirectionalpower">
+   <a href="endcircuits.html#unidirectionalpower">endcircuits.html#unidirectionalpower</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unidirectionalpower">3.2. PowerIn</a>
+    <li><a href="#ref-for-unidirectionalpower①">3.3. PowerOut</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-endcircuit">
    <a href="fse.html#endcircuit">fse.html#endcircuit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-endcircuit">3.1. Power</a>
+    <li><a href="#ref-for-endcircuit①">3.4. UnidirectionalPower</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasendcircuitdirection">
+   <a href="fse.html#hasendcircuitdirection">fse.html#hasendcircuitdirection</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasendcircuitdirection">3.2. PowerIn</a>
+    <li><a href="#ref-for-hasendcircuitdirection①">3.3. PowerOut</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -2153,14 +2175,15 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/endcircuits]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-power">power</span>
      <li><span class="dfn-paneled" id="term-for-powerin">powerin</span>
      <li><span class="dfn-paneled" id="term-for-powerout">powerout</span>
+     <li><span class="dfn-paneled" id="term-for-unidirectionalpower">unidirectionalpower</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-endcircuit">endcircuit</span>
+     <li><span class="dfn-paneled" id="term-for-hasendcircuitdirection">hasendcircuitdirection</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
