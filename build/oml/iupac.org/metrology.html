@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/build/oml/iupac.org/metrology" rel="canonical">
-  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
+  <meta content="36f84b02a2191a31826f17f0f1040c8adebc231a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Metrology vocabulary adapted from iupac.org</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-05">5 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2043,399 +2053,1036 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="ExponentFactor"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="exponentfactor">ExponentFactor<a class="self-link" href="#exponentfactor"></a></dfn></span><a class="self-link" href="#ExponentFactor"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing">Thing</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">HasFactorForMeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">HasFactorForUnitaryQuantity</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#exponent" id="ref-for-exponent">exponent</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing">Thing</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit">HasFactorForMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">HasFactorForUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#exponent" id="ref-for-exponent">exponent</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="Magnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnitude">Magnitude<a class="self-link" href="#magnitude"></a></dfn></span><a class="self-link" href="#Magnitude"></a></h3>
     <p>metrology:Magnitude is the magnitude of a metrology:Quantity represented by a number and a reference.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity">MetrologicalEntity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">IsReflexiveMagnitudeOf</a>, <a data-link-type="dfn" href="metrology.html#ordinalmagnitude" id="ref-for-ordinalmagnitude">OrdinalMagnitude</a>, <a data-link-type="dfn" href="metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude">UnitaryMagnitude</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#hasdoublenumber" id="ref-for-hasdoublenumber">hasDoubleNumber</a></p>
-    </ul>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Magnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference">HasReference</a> → <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference">Reference</a></p>
-     <li data-md>
-      <p>Magnitude ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">IsMagnitudeOf</a> → <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity">Quantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof">IsReflexiveMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="metrology.html#ordinalmagnitude" id="ref-for-ordinalmagnitude">OrdinalMagnitude</a>
+         <li><a data-link-type="dfn" href="metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude">UnitaryMagnitude</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#hasdoublenumber" id="ref-for-hasdoublenumber">hasDoubleNumber</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Magnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference">HasReference</a> → <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference">Reference</a> 
+         <li>Magnitude ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">IsMagnitudeOf</a> → <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity">Quantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="MeasurementProcedure"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementprocedure">MeasurementProcedure<a class="self-link" href="#measurementprocedure"></a></dfn></span><a class="self-link" href="#MeasurementProcedure"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference①">Reference</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference①">Reference</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.4" id="MeasurementUnit"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="measurementunit">MeasurementUnit<a class="self-link" href="#measurementunit"></a></dfn></span><a class="self-link" href="#MeasurementUnit"></a></h3>
     <p>Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure
-	algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
-	or user-defined vocabularies.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference②">Reference</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">CoherentMeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">NonCoherentDerivedMeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">PrefixedMeasurementUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#timeunit" id="ref-for-timeunit">80000-3-units:TimeUnit</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">DerivedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">HasFactorForMeasurementUnit</a> → MeasurementUnit</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">NonCoherentDerivedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">NonCoherentDerivedMeasurementUnitOf</a> → MeasurementUnit</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits">SystemOfMetrologicalUnits</a> ← <a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">SystemHasMetrologicalUnit</a> → MeasurementUnit</p>
-    </ul>
+		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
+		or user-defined vocabularies.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference②">Reference</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit">CoherentMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit">NonCoherentDerivedMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit">PrefixedMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#timeunit" id="ref-for-timeunit">80000-3-units:TimeUnit</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit">DerivedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit①">HasFactorForMeasurementUnit</a> → MeasurementUnit 
+         <li><a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit①">NonCoherentDerivedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof">NonCoherentDerivedMeasurementUnitOf</a> → MeasurementUnit 
+         <li><a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits">SystemOfMetrologicalUnits</a> ← <a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">SystemHasMetrologicalUnit</a> → MeasurementUnit 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.5" id="MetrologicalEntity"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="metrologicalentity">MetrologicalEntity<a class="self-link" href="#metrologicalentity"></a></dfn></span><a class="self-link" href="#MetrologicalEntity"></a></h3>
     <p>metrology:MetrologicalEntity is the root of the taxonomy of OML entities involved in the vocabulary
-    for metrological characterization of an object.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing①">Thing</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude">Magnitude</a>, <a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix">Prefix</a>, <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity①">Quantity</a>, <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference③">Reference</a>, <a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits①">SystemOfMetrologicalUnits</a>, <a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities">SystemOfUnitaryQuantities</a></p>
+	    for metrological characterization of an object.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing①">Thing</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude">Magnitude</a>
+         <li><a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix">Prefix</a>
+         <li><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity①">Quantity</a>
+         <li><a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference③">Reference</a>
+         <li><a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits①">SystemOfMetrologicalUnits</a>
+         <li><a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities">SystemOfUnitaryQuantities</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.6" id="Object"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="object">Object<a class="self-link" href="#object"></a></dfn></span><a class="self-link" href="#Object"></a></h3>
     <p>A metrology:Object is anything perceivable or conceivable.</p>
     <p>A metrology:Object serves two purposes:
-    1) Specify the subject of a metrology:isQuantityOf for a given metrology:Quantity.
-    2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.</p>
+	    1) Specify the subject of a metrology:isQuantityOf for a given metrology:Quantity.
+	    2) Provide a reference for elaborating a rich description elsewhere using an appropriate vocabulary.</p>
     <p class="note" role="note"><span>Note:</span> Dybkaer’s ontology defines additional vocabulary about <em>object</em> (S.2.24) with the subconcepts of <em>system</em> (S.3.3) and <em>component</em> (S.3.4), which are further divided in terms of <em>element</em>, <em>relationship</em>,  and <em>process</em> (see Figure 3.5, p. 41).</p>
     <p>Since none of the subconcepts of <em>object</em> (S.2.23) provide any additional semantics to the metrology vocabulary,
-    they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
-    in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a>, <a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing②">Thing</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">fse:MassConstrainedElement</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity②">Quantity</a> ← <a data-link-type="dfn" href="metrology.html#isquantityof" id="ref-for-isquantityof">IsQuantityOf</a> → Object</p>
-    </ul>
+	    they are omitted here. This ommision simplifies the task of establishing correspondences between metrology:Object
+	    in this vocabulary and rich descriptions elsewhere constructed using an appropriate vocabulary.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a>
+         <li><a data-link-type="dfn" href="metrology.html#thing" id="ref-for-thing②">Thing</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">fse:MassConstrainedElement</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity②">Quantity</a> ← <a data-link-type="dfn" href="metrology.html#isquantityof" id="ref-for-isquantityof">IsQuantityOf</a> → Object 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.7" id="OrdinalMagnitude"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalmagnitude">OrdinalMagnitude<a class="self-link" href="#ordinalmagnitude"></a></dfn></span><a class="self-link" href="#OrdinalMagnitude"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude①">Magnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>OrdinalMagnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference①">HasReference</a> → <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure">MeasurementProcedure</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude①">Magnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>OrdinalMagnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference①">HasReference</a> → <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure">MeasurementProcedure</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.8" id="Prefix"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="prefix">Prefix<a class="self-link" href="#prefix"></a></dfn></span><a class="self-link" href="#Prefix"></a></h3>
     <p>A metrology:Prefix is an opaque representation of a multiplier used for defining a metrology:PrefixedMeasurementUnit.
-    This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
-    Had the prefix multipler been defined as a scalar property typed by a datatype, dimensional analysis would be a 
-    more complicated analysis involving a combination of logical and numerical analysis techniques.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity①">MetrologicalEntity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-1-decimalPrefix.html#decimalprefix" id="ref-for-decimalprefix">80000-1-decimalPrefix:DecimalPrefix</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit①">PrefixedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#hasprefix" id="ref-for-hasprefix">HasPrefix</a> → Prefix</p>
-    </ul>
+	    This representation facilitates dimensional analysis of a metrology:SystemOfMetrologicalUnits as a logical analysis since prefixes are individuals.
+	    Had the prefix multipler been defined as a scalar property typed by a datatype, dimensional analysis would be a 
+	    more complicated analysis involving a combination of logical and numerical analysis techniques.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity①">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-1-decimalPrefix.html#decimalprefix" id="ref-for-decimalprefix">80000-1-decimalPrefix:DecimalPrefix</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit①">PrefixedMeasurementUnit</a> ← <a data-link-type="dfn" href="metrology.html#hasprefix" id="ref-for-hasprefix">HasPrefix</a> → Prefix 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.9" id="PrefixedMeasurementUnit"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="prefixedmeasurementunit">PrefixedMeasurementUnit<a class="self-link" href="#prefixedmeasurementunit"></a></dfn></span><a class="self-link" href="#PrefixedMeasurementUnit"></a></h3>
     <p>A metrology:PrefixedMeasurementUnit is a metrology:MeasurementUnit defined by multiplication of another metrology:MeasurementUnit (that it must specialize) and a prefix.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit">MeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram" id="ref-for-kilogram">80000-4-units:kilogram</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre" id="ref-for-kilometre">80000-3-units:kilometre</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>PrefixedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#hasprefix" id="ref-for-hasprefix①">HasPrefix</a> → <a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix①">Prefix</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit">MeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram" id="ref-for-kilogram">80000-4-units:kilogram</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre" id="ref-for-kilometre">80000-3-units:kilometre</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#millisecond" id="ref-for-millisecond">80000-3-units:millisecond</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>PrefixedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#hasprefix" id="ref-for-hasprefix①">HasPrefix</a> → <a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix①">Prefix</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.10" id="Reference"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reference">Reference<a class="self-link" href="#reference"></a></dfn></span><a class="self-link" href="#Reference"></a></h3>
     <p>A reference can be a measurement unit, a measurement procedure, or a reference material, or a combination of such.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity②">MetrologicalEntity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure①">MeasurementProcedure</a>, <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①">MeasurementUnit</a>, <a data-link-type="dfn" href="metrology.html#referencematerial" id="ref-for-referencematerial">ReferenceMaterial</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude②">Magnitude</a> ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference②">HasReference</a> → Reference</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity②">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#measurementprocedure" id="ref-for-measurementprocedure①">MeasurementProcedure</a>
+         <li><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①">MeasurementUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#referencematerial" id="ref-for-referencematerial">ReferenceMaterial</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude②">Magnitude</a> ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference②">HasReference</a> → Reference 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.11" id="ReferenceMaterial"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="referencematerial">ReferenceMaterial<a class="self-link" href="#referencematerial"></a></dfn></span><a class="self-link" href="#ReferenceMaterial"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference④">Reference</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference④">Reference</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.12" id="Thing"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thing">Thing<a class="self-link" href="#thing"></a></dfn></span><a class="self-link" href="#Thing"></a></h3>
     <p>metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling either as an object
-    or a metrological characterization of an object.</p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor">ExponentFactor</a>, <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity③">MetrologicalEntity</a>, <a data-link-type="dfn" href="metrology.html#object" id="ref-for-object">Object</a></p>
+	    or a metrological characterization of an object.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor">ExponentFactor</a>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity③">MetrologicalEntity</a>
+         <li><a data-link-type="dfn" href="metrology.html#object" id="ref-for-object">Object</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.13" id="UnitaryMagnitude"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitarymagnitude">UnitaryMagnitude<a class="self-link" href="#unitarymagnitude"></a></dfn></span><a class="self-link" href="#UnitaryMagnitude"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude③">Magnitude</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#celciustemperaturemagnitude" id="ref-for-celciustemperaturemagnitude">80000-5-units:CelciusTemperatureMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricchargemagnitude" id="ref-for-electricchargemagnitude">80000-6-units:ElectricChargeMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electriccurrentmagnitude" id="ref-for-electriccurrentmagnitude">80000-6-units:ElectricCurrentMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricfieldstrengthmagnitude" id="ref-for-electricfieldstrengthmagnitude">80000-6-units:ElectricFieldStrengthMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricpotentialmagnitude" id="ref-for-electricpotentialmagnitude">80000-6-units:ElectricPotentialMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">80000-4-units:ForceMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">80000-4-units:ImpulseMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">80000-4-units:MassMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#momentummagnitude" id="ref-for-momentummagnitude">80000-4-units:MomentumMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#powermagnitude" id="ref-for-powermagnitude">80000-4-units:PowerMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#resistancemagnitude" id="ref-for-resistancemagnitude">80000-6-units:ResistanceMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude" id="ref-for-thermodynamictemperaturemagnitude">80000-5-units:ThermodynamicTemperatureMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>UnitaryMagnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference③">HasReference</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit②">MeasurementUnit</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude③">Magnitude</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#angularmeasuremagnitude" id="ref-for-angularmeasuremagnitude">80000-3-units:AngularMeasureMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">80000-4-units:ForceMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#frequencymagnitude" id="ref-for-frequencymagnitude">80000-3-units:FrequencyMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">80000-4-units:ImpulseMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#lengthmagnitude" id="ref-for-lengthmagnitude">80000-3-units:LengthMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">80000-4-units:MassMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#momentummagnitude" id="ref-for-momentummagnitude">80000-4-units:MomentumMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#powermagnitude" id="ref-for-powermagnitude">80000-4-units:PowerMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#rotationmagnitude" id="ref-for-rotationmagnitude">80000-3-units:RotationMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#timemagnitude" id="ref-for-timemagnitude">80000-3-units:TimeMagnitude</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#velocitymagnitude" id="ref-for-velocitymagnitude">80000-3-units:VelocityMagnitude</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>UnitaryMagnitude ← <a data-link-type="dfn" href="metrology.html#hasreference" id="ref-for-hasreference③">HasReference</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit②">MeasurementUnit</a> 
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="CoherentMeasurementUnit"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coherentmeasurementunit">CoherentMeasurementUnit<a class="self-link" href="#coherentmeasurementunit"></a></dfn></span><a class="self-link" href="#CoherentMeasurementUnit"></a></h3>
     <p>A metrology:CoherentMeasurementUnit is a metrology:MeasurementUnit that has a proportionality factor of one and may have a dimension of one.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit③">MeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-units.html#angularmeasureunit" id="ref-for-angularmeasureunit">80000-3-units:AngularMeasureUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#celciustemperatureunit" id="ref-for-celciustemperatureunit">80000-5-units:CelciusTemperatureUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#coherenttimeunit" id="ref-for-coherenttimeunit">80000-3-units:CoherentTimeUnit</a>, <a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">DerivedMeasurementUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricchargeunit" id="ref-for-electricchargeunit">80000-6-units:ElectricChargeUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electriccurrentunit" id="ref-for-electriccurrentunit">80000-6-units:ElectricCurrentUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricfieldstrengthunit" id="ref-for-electricfieldstrengthunit">80000-6-units:ElectricFieldStrengthUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#electricpotentialunit" id="ref-for-electricpotentialunit">80000-6-units:ElectricPotentialUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#forceunit" id="ref-for-forceunit">80000-4-units:ForceUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#frequencyunit" id="ref-for-frequencyunit">80000-3-units:FrequencyUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#impulseunit" id="ref-for-impulseunit">80000-4-units:ImpulseUnit</a>, <a data-link-type="dfn" href="metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">IndependentMeasurementUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#lengthunit" id="ref-for-lengthunit">80000-3-units:LengthUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#massunit" id="ref-for-massunit">80000-4-units:MassUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#momentumunit" id="ref-for-momentumunit">80000-4-units:MomentumUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#powerunit" id="ref-for-powerunit">80000-4-units:PowerUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#resistanceunit" id="ref-for-resistanceunit">80000-6-units:ResistanceUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#rotationunit" id="ref-for-rotationunit">80000-3-units:RotationUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#thermodynamictemperatureunit" id="ref-for-thermodynamictemperatureunit">80000-5-units:ThermodynamicTemperatureUnit</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#velocityunit" id="ref-for-velocityunit">80000-3-units:VelocityUnit</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">isDimensionlessMeasurementUnit</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit③">MeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#angularmeasureunit" id="ref-for-angularmeasureunit">80000-3-units:AngularMeasureUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#coherenttimeunit" id="ref-for-coherenttimeunit">80000-3-units:CoherentTimeUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit①">DerivedMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#forceunit" id="ref-for-forceunit">80000-4-units:ForceUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#frequencyunit" id="ref-for-frequencyunit">80000-3-units:FrequencyUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#impulseunit" id="ref-for-impulseunit">80000-4-units:ImpulseUnit</a>
+         <li><a data-link-type="dfn" href="metrology.html#independentmeasurementunit" id="ref-for-independentmeasurementunit">IndependentMeasurementUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#lengthunit" id="ref-for-lengthunit">80000-3-units:LengthUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#massunit" id="ref-for-massunit">80000-4-units:MassUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#momentumunit" id="ref-for-momentumunit">80000-4-units:MomentumUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#powerunit" id="ref-for-powerunit">80000-4-units:PowerUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#rotationunit" id="ref-for-rotationunit">80000-3-units:RotationUnit</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#velocityunit" id="ref-for-velocityunit">80000-3-units:VelocityUnit</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isdimensionlessmeasurementunit" id="ref-for-isdimensionlessmeasurementunit">isDimensionlessMeasurementUnit</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.2" id="DerivedMeasurementUnit"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedmeasurementunit">DerivedMeasurementUnit<a class="self-link" href="#derivedmeasurementunit"></a></dfn></span><a class="self-link" href="#DerivedMeasurementUnit"></a></h3>
     <p>A metrology:DerivedMeasurementUnit is a metrology:CoherentMeasurementUnit defined as the product of powers of other metrology:MeasurementUnit(s).
-    If a metrology:DerivedMeasurementUnit has dimension '1', then the factors simplify to one but must retain the provenance of the derived unit
-    to other metrology:MeasurementUnits.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-6-units.html#coulomb" id="ref-for-coulomb">80000-6-units:coulomb</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#degreecelcius" id="ref-for-degreecelcius">80000-5-units:degreeCelcius</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#hertz" id="ref-for-hertz">80000-3-units:hertz</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-units:kilogram-metre-per-second</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-units:kilometre-per-second</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond">80000-4-units:newton-millisecond</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#newton-per-coulomb" id="ref-for-newton-per-coulomb">80000-6-units:newton-per-coulomb</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second" id="ref-for-newton-second">80000-4-units:newton-second</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#ohm" id="ref-for-ohm">80000-6-units:ohm</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian" id="ref-for-radian">80000-3-units:radian</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#revolution" id="ref-for-revolution">80000-3-units:revolution</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#volt" id="ref-for-volt">80000-6-units:volt</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt" id="ref-for-watt">80000-4-units:watt</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>DerivedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">HasFactorForMeasurementUnit</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit④">MeasurementUnit</a></p>
-    </ul>
+	    If a metrology:DerivedMeasurementUnit has dimension '1', then the factors simplify to one but must retain the provenance of the derived unit
+	    to other metrology:MeasurementUnits.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit①">CoherentMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#hertz" id="ref-for-hertz">80000-3-units:hertz</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">80000-4-units:kilogram-metre-per-second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second" id="ref-for-kilometre-per-second">80000-3-units:kilometre-per-second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second" id="ref-for-metre-per-second">80000-3-units:metre-per-second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton" id="ref-for-newton">80000-4-units:newton</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond">80000-4-units:newton-millisecond</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second" id="ref-for-newton-second">80000-4-units:newton-second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian" id="ref-for-radian">80000-3-units:radian</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#revolution" id="ref-for-revolution">80000-3-units:revolution</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt" id="ref-for-watt">80000-4-units:watt</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>DerivedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#hasfactorformeasurementunit" id="ref-for-hasfactorformeasurementunit②">HasFactorForMeasurementUnit</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit④">MeasurementUnit</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.3" id="DerivedUnitaryQuantity"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="derivedunitaryquantity">DerivedUnitaryQuantity<a class="self-link" href="#derivedunitaryquantity"></a></dfn></span><a class="self-link" href="#DerivedUnitaryQuantity"></a></h3>
     <p>A metrology:DerivedUnitaryQuantity is a metrology:UnitaryQuantity defined as the product of powers of metrology:UnitaryQuantity.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity">UnitaryQuantity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure" id="ref-for-angular-measure">80000-3-quantities:angular-measure</a>, <a data-link-type="dfn" href="../iso.org/80000-5-quantities.html#celcius-temperature" id="ref-for-celcius-temperature">80000-5-quantities:celcius-temperature</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-charge" id="ref-for-electric-charge">80000-6-quantities:electric-charge</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-field-strength" id="ref-for-electric-field-strength">80000-6-quantities:electric-field-strength</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-potential" id="ref-for-electric-potential">80000-6-quantities:electric-potential</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force" id="ref-for-force">80000-4-quantities:force</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#frequency" id="ref-for-frequency">80000-3-quantities:frequency</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse" id="ref-for-impulse">80000-4-quantities:impulse</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum" id="ref-for-momentum">80000-4-quantities:momentum</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power" id="ref-for-power">80000-4-quantities:power</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#resistance" id="ref-for-resistance">80000-6-quantities:resistance</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotation" id="ref-for-rotation">80000-3-quantities:rotation</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement">80000-3-quantities:rotational-displacement</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency">80000-3-quantities:rotational-frequency</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity" id="ref-for-velocity">80000-3-quantities:velocity</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>DerivedUnitaryQuantity ← <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity①">HasFactorForUnitaryQuantity</a> → <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">UnitaryQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity">UnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure" id="ref-for-angular-measure">80000-3-quantities:angular-measure</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force" id="ref-for-force">80000-4-quantities:force</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#frequency" id="ref-for-frequency">80000-3-quantities:frequency</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse" id="ref-for-impulse">80000-4-quantities:impulse</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum" id="ref-for-momentum">80000-4-quantities:momentum</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power" id="ref-for-power">80000-4-quantities:power</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotation" id="ref-for-rotation">80000-3-quantities:rotation</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement" id="ref-for-rotational-displacement">80000-3-quantities:rotational-displacement</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency" id="ref-for-rotational-frequency">80000-3-quantities:rotational-frequency</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity" id="ref-for-velocity">80000-3-quantities:velocity</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>DerivedUnitaryQuantity ← <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity①">HasFactorForUnitaryQuantity</a> → <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity①">UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.4" id="IndependentMeasurementUnit"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="independentmeasurementunit">IndependentMeasurementUnit<a class="self-link" href="#independentmeasurementunit"></a></dfn></span><a class="self-link" href="#IndependentMeasurementUnit"></a></h3>
     <p>A metrology:IndependentMeasurementUnit is a metrology:CoherentMeasurementUnit defined independently of any other metrology:MeasurementUnit(s).</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">CoherentMeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-6-units.html#ampere" id="ref-for-ampere">80000-6-units:ampere</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#gram" id="ref-for-gram">80000-4-units:gram</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#kelvin" id="ref-for-kelvin">80000-5-units:kelvin</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit②">CoherentMeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#gram" id="ref-for-gram">80000-4-units:gram</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre" id="ref-for-metre">80000-3-units:metre</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#second" id="ref-for-second">80000-3-units:second</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.5" id="IndependentUnitaryQuantity"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="independentunitaryquantity">IndependentUnitaryQuantity<a class="self-link" href="#independentunitaryquantity"></a></dfn></span><a class="self-link" href="#IndependentUnitaryQuantity"></a></h3>
     <p>A metrology:IndependentUnitaryQuantity is a metrology:UnitaryQuantity defined independently of any other metrology:UnitaryQuantity.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">UnitaryQuantity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#duration" id="ref-for-duration">80000-3-quantities:duration</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-current" id="ref-for-electric-current">80000-6-quantities:electric-current</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#length" id="ref-for-length">80000-3-quantities:length</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a>, <a data-link-type="dfn" href="../iso.org/80000-5-quantities.html#thermodynamic-temperature" id="ref-for-thermodynamic-temperature">80000-5-quantities:thermodynamic-temperature</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity②">UnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#duration" id="ref-for-duration">80000-3-quantities:duration</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#length" id="ref-for-length">80000-3-quantities:length</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.6" id="NonCoherentDerivedMeasurementUnit"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="noncoherentderivedmeasurementunit">NonCoherentDerivedMeasurementUnit<a class="self-link" href="#noncoherentderivedmeasurementunit"></a></dfn></span><a class="self-link" href="#NonCoherentDerivedMeasurementUnit"></a></h3>
     <p>A metrology:NonCoherentDerivedMeasurementUnit is a metrology:MeasurementUnit
-	that has a proportionality factor different than one with respect to another metrology:MeasurementUnit.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑤">MeasurementUnit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-units.html#hour" id="ref-for-hour">80000-3-units:hour</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#minute" id="ref-for-minute">80000-3-units:minute</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship">nonCoherentRelationship</a></p>
-    </ul>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>NonCoherentDerivedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑥">MeasurementUnit</a></p>
-    </ul>
+		that has a proportionality factor different than one with respect to another metrology:MeasurementUnit.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑤">MeasurementUnit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#hour" id="ref-for-hour">80000-3-units:hour</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#minute" id="ref-for-minute">80000-3-units:minute</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#noncoherentrelationship" id="ref-for-noncoherentrelationship">nonCoherentRelationship</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>NonCoherentDerivedMeasurementUnit ← <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunitof" id="ref-for-noncoherentderivedmeasurementunitof①">NonCoherentDerivedMeasurementUnitOf</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑥">MeasurementUnit</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.7" id="OrdinalQuantity"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ordinalquantity">OrdinalQuantity<a class="self-link" href="#ordinalquantity"></a></dfn></span><a class="self-link" href="#OrdinalQuantity"></a></h3>
     <p>An instance of metrology:OrdinalQuantity is a metrology:Quantity defined by a measurement procedure (S.14.4.4)
-    that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.</p>
+	    that can be stated only to be lesser than, equal to, or greater than another quantity of the same metrology:KindOfQuantity.</p>
     <p>As a class, metrology:OrdinalQuantity classifies metrology:Quantity(ies) that are rankable by magnitude, but are neither subtractive nor divisible (S.13.3.2).</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity③">Quantity</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#ordinalmagnitude" id="ref-for-ordinalmagnitude①">OrdinalMagnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">IsMagnitudeOf</a> → OrdinalQuantity</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity③">Quantity</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#ordinalmagnitude" id="ref-for-ordinalmagnitude①">OrdinalMagnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">IsMagnitudeOf</a> → OrdinalQuantity 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.8" id="Quantity"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="quantity">Quantity<a class="self-link" href="#quantity"></a></dfn></span><a class="self-link" href="#Quantity"></a></h3>
     <p>A metrology:Quantity is an inherent state- or process-descriptive feature
-    of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.</p>
+	    of a metrological:Object that has a magnitude expressed as a metrological:Magnitude.</p>
     <p>This definition is adapted from the expanded definition of 'quantity' (S.12.13, S.12.14).</p>
     <p>Dybkaer’s ontology, makes a distinction between Quantity (S.12.13) and KindOfQuantity (S.13.3.1)
-	where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.</p>
+		where the latter is defined as the 'common defining aspect of mutually comparable properties having a magnitude'.</p>
     <p>In this vocabulary, a specialization of metrology:Quantity corresponds to Dybkaer’s KindOfQuantity per S.13.3.1 and S.13.4.1
-	whereas an instance of metrology:Quantity corresponds to Dybkaer’s Quantity per S.12.13 and S.12.14.</p>
+		whereas an instance of metrology:Quantity corresponds to Dybkaer’s Quantity per S.12.13 and S.12.14.</p>
     <p>Note that Dybkaer’s associative relation between Quantity and KindOfQuantity corresponds to the classification
-	relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.</p>
+		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.</p>
     <p>Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure
-	algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
-	or user-defined vocabularies.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a>, <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity④">MetrologicalEntity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity">OrdinalQuantity</a>, <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">UnitaryQuantity</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Quantity ← <a data-link-type="dfn" href="metrology.html#isquantityof" id="ref-for-isquantityof①">IsQuantityOf</a> → <a data-link-type="dfn" href="metrology.html#object" id="ref-for-object①">Object</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude④">Magnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">IsMagnitudeOf</a> → Quantity</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">IsReflexiveMagnitudeOf</a> ← <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">IsReflexiveMagnitudeOf</a> → Quantity</p>
-    </ul>
+		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
+		or user-defined vocabularies.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity④">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#ordinalquantity" id="ref-for-ordinalquantity">OrdinalQuantity</a>
+         <li><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity③">UnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Quantity ← <a data-link-type="dfn" href="metrology.html#isquantityof" id="ref-for-isquantityof①">IsQuantityOf</a> → <a data-link-type="dfn" href="metrology.html#object" id="ref-for-object①">Object</a> 
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude④">Magnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">IsMagnitudeOf</a> → Quantity 
+         <li><a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof①">IsReflexiveMagnitudeOf</a> ← <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof②">IsReflexiveMagnitudeOf</a> → Quantity 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.9" id="SystemOfMetrologicalUnits"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofmetrologicalunits">SystemOfMetrologicalUnits<a class="self-link" href="#systemofmetrologicalunits"></a></dfn></span><a class="self-link" href="#SystemOfMetrologicalUnits"></a></h3>
     <p>A metrology:SystemOfMetrologicalUnits is a collection of metrology:MeasurementUnit(s) that can be partitioned into two groups:
-    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:MeasurementUnit
-    (i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑤">MetrologicalEntity</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>SystemOfMetrologicalUnits ← <a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">SystemHasMetrologicalUnit</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑦">MeasurementUnit</a></p>
-    </ul>
+	    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:MeasurementUnit
+	    (i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑤">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>SystemOfMetrologicalUnits ← <a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">SystemHasMetrologicalUnit</a> → <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑦">MeasurementUnit</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.10" id="SystemOfUnitaryQuantities"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunitaryquantities">SystemOfUnitaryQuantities<a class="self-link" href="#systemofunitaryquantities"></a></dfn></span><a class="self-link" href="#SystemOfUnitaryQuantities"></a></h3>
     <p>A metrology:SystemOfUnitaryQuantities is a collection of metrology:UnitaryQuantity(ies) that can be partitioned into two groups:
-    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:UnitaryQuantity
-    (i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
+	    base and derived. Note that this partitioning is independent of how the algebraic definition of each metrology:UnitaryQuantity
+	    (i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
     <p>Applying dimensional analysis to a metrology:SystemOfUnitaryQuantities means applying the rules of dimensional calculus to the alegbraic definitions
-    required for expressing each derived metrology:UnitaryQuantity of the system as a product of powers involving only the base metrology:UnitaryQuantity of the system.</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑥">MetrologicalEntity</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>SystemOfUnitaryQuantities ← <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">SystemHasUnitaryQuantity</a> → <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">UnitaryQuantity</a></p>
-    </ul>
+	    required for expressing each derived metrology:UnitaryQuantity of the system as a product of powers involving only the base metrology:UnitaryQuantity of the system.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#metrologicalentity" id="ref-for-metrologicalentity⑥">MetrologicalEntity</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>SystemOfUnitaryQuantities ← <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">SystemHasUnitaryQuantity</a> → <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity④">UnitaryQuantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.11" id="UnitaryQuantity"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unitaryquantity">UnitaryQuantity<a class="self-link" href="#unitaryquantity"></a></dfn></span><a class="self-link" href="#UnitaryQuantity"></a></h3>
     <p>An instance of metrology:UnitaryQuantity is a metrology:Quantity with a magnitude expressed as a reference quantity
-    multiplied by a number (S.12.17).</p>
+	    multiplied by a number (S.12.17).</p>
     <p>As a class, of metrology:UnitaryQuantity classifies metrology:Quantity(ies) with magnitudes expressed as a measurement unit multiplied by a number (S.13.3.3).</p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity④">Quantity</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">DerivedUnitaryQuantity</a>, <a data-link-type="dfn" href="metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">IndependentUnitaryQuantity</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">isDimensionlessQuantity</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity①">DerivedUnitaryQuantity</a> ← <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity②">HasFactorForUnitaryQuantity</a> → UnitaryQuantity</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude①">UnitaryMagnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">IsMagnitudeOf</a> → UnitaryQuantity</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities①">SystemOfUnitaryQuantities</a> ← <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">SystemHasUnitaryQuantity</a> → UnitaryQuantity</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity④">Quantity</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">DerivedUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">IndependentUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">isDimensionlessQuantity</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity①">DerivedUnitaryQuantity</a> ← <a data-link-type="dfn" href="metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity②">HasFactorForUnitaryQuantity</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="metrology.html#unitarymagnitude" id="ref-for-unitarymagnitude①">UnitaryMagnitude</a> ← <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">IsMagnitudeOf</a> → UnitaryQuantity 
+         <li><a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities①">SystemOfUnitaryQuantities</a> ← <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">SystemHasUnitaryQuantity</a> → UnitaryQuantity 
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="5.1" id="HasFactorForMeasurementUnit"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfactorformeasurementunit">HasFactorForMeasurementUnit<a class="self-link" href="#hasfactorformeasurementunit"></a></dfn></span><a class="self-link" href="#HasFactorForMeasurementUnit"></a></h3>
     <p>In dimensional calculus, a metrology:DerivedMeasurementUnit algebraically depends on a metrology:MeasurementUnit as a product factor raised to a rational exponent.</p>
-    <p><em>Attributes:</em> Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">DerivedMeasurementUnit</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑧">MeasurementUnit</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasFactorForMeasurementUnit" data-dfn-type="attribute" data-export id="dom-hasfactorformeasurementunit-hasfactorformeasurementunit"><code>hasFactorForMeasurementUnit</code><a class="self-link" href="#dom-hasfactorformeasurementunit-hasfactorformeasurementunit"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor①">ExponentFactor</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-6-units.html#coulomb-has-ampere" id="ref-for-coulomb-has-ampere">80000-6-units:Coulomb-Has-Ampere</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#coulomb-has-second" id="ref-for-coulomb-has-second">80000-6-units:Coulomb-Has-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-5-units.html#degreecelcius-has-kelvin" id="ref-for-degreecelcius-has-kelvin">80000-5-units:DegreeCelcius-Has-Kelvin</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#hertz-has-second" id="ref-for-hertz-has-second">80000-3-units:Hertz-Has-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second-has-kilogram" id="ref-for-kilogram-metre-per-second-has-kilogram">80000-4-units:Kilogram-Metre-Per-Second-Has-Kilogram</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second-has-metre-per-second" id="ref-for-kilogram-metre-per-second-has-metre-per-second">80000-4-units:Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second-has-kilometre" id="ref-for-kilometre-per-second-has-kilometre">80000-3-units:Kilometre-Per-Second-Has-Kilometre</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second-has-second" id="ref-for-kilometre-per-second-has-second">80000-3-units:Kilometre-Per-Second-Has-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second-has-metre" id="ref-for-metre-per-second-has-metre">80000-3-units:Metre-Per-Second-Has-Metre</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second-has-second" id="ref-for-metre-per-second-has-second">80000-3-units:Metre-Per-Second-Has-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-has-kilogram" id="ref-for-newton-has-kilogram">80000-4-units:Newton-Has-Kilogram</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-has-metre-per-second" id="ref-for-newton-has-metre-per-second">80000-4-units:Newton-Has-Metre-Per-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond-has-millisecond" id="ref-for-newton-millisecond-has-millisecond">80000-4-units:Newton-Millisecond-Has-Millisecond</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond-has-newton" id="ref-for-newton-millisecond-has-newton">80000-4-units:Newton-Millisecond-Has-Newton</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#newton-per-coulomb-has-coulomb" id="ref-for-newton-per-coulomb-has-coulomb">80000-6-units:Newton-Per-Coulomb-Has-Coulomb</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#newton-per-coulomb-has-newton" id="ref-for-newton-per-coulomb-has-newton">80000-6-units:Newton-Per-Coulomb-Has-Newton</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second-has-newton" id="ref-for-newton-second-has-newton">80000-4-units:Newton-Second-Has-Newton</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second-has-second" id="ref-for-newton-second-has-second">80000-4-units:Newton-Second-Has-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#ohm-has-ampere" id="ref-for-ohm-has-ampere">80000-6-units:Ohm-Has-Ampere</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#ohm-has-volt" id="ref-for-ohm-has-volt">80000-6-units:Ohm-Has-Volt</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian-has-metre-denominator" id="ref-for-radian-has-metre-denominator">80000-3-units:Radian-Has-Metre-Denominator</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian-has-metre-numerator" id="ref-for-radian-has-metre-numerator">80000-3-units:Radian-Has-Metre-Numerator</a>, <a data-link-type="dfn" href="../iso.org/80000-3-units.html#revolution-has-radian" id="ref-for-revolution-has-radian">80000-3-units:Revolution-Has-Radian</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#volt-has-metre" id="ref-for-volt-has-metre">80000-6-units:Volt-Has-Metre</a>, <a data-link-type="dfn" href="../iso.org/80000-6-units.html#volt-has-newton-per-coulomb" id="ref-for-volt-has-newton-per-coulomb">80000-6-units:Volt-Has-Newton-Per-Coulomb</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt-has-metre-per-second" id="ref-for-watt-has-metre-per-second">80000-4-units:Watt-Has-Metre-Per-Second</a>, <a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt-has-newton" id="ref-for-watt-has-newton">80000-4-units:Watt-Has-Newton</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#derivedmeasurementunit" id="ref-for-derivedmeasurementunit②">DerivedMeasurementUnit</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑧">MeasurementUnit</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor①">ExponentFactor</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#hertz-has-second" id="ref-for-hertz-has-second">80000-3-units:Hertz-Has-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second-has-kilogram" id="ref-for-kilogram-metre-per-second-has-kilogram">80000-4-units:Kilogram-Metre-Per-Second-Has-Kilogram</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#kilogram-metre-per-second-has-metre-per-second" id="ref-for-kilogram-metre-per-second-has-metre-per-second">80000-4-units:Kilogram-Metre-Per-Second-Has-Metre-Per-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second-has-kilometre" id="ref-for-kilometre-per-second-has-kilometre">80000-3-units:Kilometre-Per-Second-Has-Kilometre</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#kilometre-per-second-has-second" id="ref-for-kilometre-per-second-has-second">80000-3-units:Kilometre-Per-Second-Has-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second-has-metre" id="ref-for-metre-per-second-has-metre">80000-3-units:Metre-Per-Second-Has-Metre</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#metre-per-second-has-second" id="ref-for-metre-per-second-has-second">80000-3-units:Metre-Per-Second-Has-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-has-kilogram" id="ref-for-newton-has-kilogram">80000-4-units:Newton-Has-Kilogram</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-has-metre-per-second" id="ref-for-newton-has-metre-per-second">80000-4-units:Newton-Has-Metre-Per-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond-has-millisecond" id="ref-for-newton-millisecond-has-millisecond">80000-4-units:Newton-Millisecond-Has-Millisecond</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-millisecond-has-newton" id="ref-for-newton-millisecond-has-newton">80000-4-units:Newton-Millisecond-Has-Newton</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second-has-newton" id="ref-for-newton-second-has-newton">80000-4-units:Newton-Second-Has-Newton</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#newton-second-has-second" id="ref-for-newton-second-has-second">80000-4-units:Newton-Second-Has-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian-has-metre-denominator" id="ref-for-radian-has-metre-denominator">80000-3-units:Radian-Has-Metre-Denominator</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#radian-has-metre-numerator" id="ref-for-radian-has-metre-numerator">80000-3-units:Radian-Has-Metre-Numerator</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-units.html#revolution-has-radian" id="ref-for-revolution-has-radian">80000-3-units:Revolution-Has-Radian</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt-has-metre-per-second" id="ref-for-watt-has-metre-per-second">80000-4-units:Watt-Has-Metre-Per-Second</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-units.html#watt-has-newton" id="ref-for-watt-has-newton">80000-4-units:Watt-Has-Newton</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="HasFactorForMeasurementUnit" data-dfn-type="attribute" data-export id="dom-hasfactorformeasurementunit-hasfactorformeasurementunit"><code>hasFactorForMeasurementUnit</code><a class="self-link" href="#dom-hasfactorformeasurementunit-hasfactorformeasurementunit"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.2" id="HasFactorForUnitaryQuantity"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfactorforunitaryquantity">HasFactorForUnitaryQuantity<a class="self-link" href="#hasfactorforunitaryquantity"></a></dfn></span><a class="self-link" href="#HasFactorForUnitaryQuantity"></a></h3>
     <p>In dimensional calculus, a metrology:DerivedUnitaryQuantity algebraically depends on a metrology:UnitaryQuantity as a product factor raised to a rational exponent.</p>
-    <p><em>Attributes:</em> Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity②">DerivedUnitaryQuantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasFactorForUnitaryQuantity" data-dfn-type="attribute" data-export id="dom-hasfactorforunitaryquantity-hasfactorforunitaryquantity"><code>hasFactorForUnitaryQuantity</code><a class="self-link" href="#dom-hasfactorforunitaryquantity-hasfactorforunitaryquantity"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor②">ExponentFactor</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure-has-arc-length" id="ref-for-angular-measure-has-arc-length">80000-3-quantities:Angular-Measure-Has-Arc-Length</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure-has-radius" id="ref-for-angular-measure-has-radius">80000-3-quantities:Angular-Measure-Has-Radius</a>, <a data-link-type="dfn" href="../iso.org/80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature" id="ref-for-celcius-temperature-has-thermodynamic-temperature">80000-5-quantities:Celcius-Temperature-Has-Thermodynamic-Temperature</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-charge-has-duration" id="ref-for-electric-charge-has-duration">80000-6-quantities:Electric-Charge-Has-Duration</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-charge-has-electric-current" id="ref-for-electric-charge-has-electric-current">80000-6-quantities:Electric-Charge-Has-Electric-Current</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-field-strength-has-electric-charge" id="ref-for-electric-field-strength-has-electric-charge">80000-6-quantities:Electric-Field-Strength-Has-Electric-Charge</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-field-strength-has-force" id="ref-for-electric-field-strength-has-force">80000-6-quantities:Electric-Field-Strength-Has-Force</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-potential-has-electric-field-strength" id="ref-for-electric-potential-has-electric-field-strength">80000-6-quantities:Electric-Potential-Has-Electric-Field-Strength</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#electric-potential-has-path-length" id="ref-for-electric-potential-has-path-length">80000-6-quantities:Electric-Potential-Has-Path-Length</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force-has-momentum" id="ref-for-force-has-momentum">80000-4-quantities:Force-Has-Momentum</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force-has-velocity" id="ref-for-force-has-velocity">80000-4-quantities:Force-Has-Velocity</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#frequency-has-period-duration" id="ref-for-frequency-has-period-duration">80000-3-quantities:Frequency-Has-Period-Duration</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse-has-duration" id="ref-for-impulse-has-duration">80000-4-quantities:Impulse-Has-Duration</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse-has-force" id="ref-for-impulse-has-force">80000-4-quantities:Impulse-Has-Force</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum-has-mass" id="ref-for-momentum-has-mass">80000-4-quantities:Momentum-Has-Mass</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum-has-velocity" id="ref-for-momentum-has-velocity">80000-4-quantities:Momentum-Has-Velocity</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power-has-force" id="ref-for-power-has-force">80000-4-quantities:Power-Has-Force</a>, <a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power-has-velocity" id="ref-for-power-has-velocity">80000-4-quantities:Power-Has-Velocity</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#resistance-has-electric-current" id="ref-for-resistance-has-electric-current">80000-6-quantities:Resistance-Has-Electric-Current</a>, <a data-link-type="dfn" href="../iso.org/80000-6-quantities.html#resistance-has-electric-potential" id="ref-for-resistance-has-electric-potential">80000-6-quantities:Resistance-Has-Electric-Potential</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotation-has-rotational-displacement" id="ref-for-rotation-has-rotational-displacement">80000-3-quantities:Rotation-Has-Rotational-Displacement</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement-has-distance" id="ref-for-rotational-displacement-has-distance">80000-3-quantities:Rotational-Displacement-Has-Distance</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement-has-path-length" id="ref-for-rotational-displacement-has-path-length">80000-3-quantities:Rotational-Displacement-Has-Path-Length</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency-has-duration" id="ref-for-rotational-frequency-has-duration">80000-3-quantities:Rotational-Frequency-Has-Duration</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency-has-rotation" id="ref-for-rotational-frequency-has-rotation">80000-3-quantities:Rotational-Frequency-Has-Rotation</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity-has-duration" id="ref-for-velocity-has-duration">80000-3-quantities:Velocity-Has-Duration</a>, <a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity-has-position-vector" id="ref-for-velocity-has-position-vector">80000-3-quantities:Velocity-Has-Position-Vector</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity②">DerivedUnitaryQuantity</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑤">UnitaryQuantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor②">ExponentFactor</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure-has-arc-length" id="ref-for-angular-measure-has-arc-length">80000-3-quantities:Angular-Measure-Has-Arc-Length</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#angular-measure-has-radius" id="ref-for-angular-measure-has-radius">80000-3-quantities:Angular-Measure-Has-Radius</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force-has-momentum" id="ref-for-force-has-momentum">80000-4-quantities:Force-Has-Momentum</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#force-has-velocity" id="ref-for-force-has-velocity">80000-4-quantities:Force-Has-Velocity</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#frequency-has-period-duration" id="ref-for-frequency-has-period-duration">80000-3-quantities:Frequency-Has-Period-Duration</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse-has-duration" id="ref-for-impulse-has-duration">80000-4-quantities:Impulse-Has-Duration</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#impulse-has-force" id="ref-for-impulse-has-force">80000-4-quantities:Impulse-Has-Force</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum-has-mass" id="ref-for-momentum-has-mass">80000-4-quantities:Momentum-Has-Mass</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#momentum-has-velocity" id="ref-for-momentum-has-velocity">80000-4-quantities:Momentum-Has-Velocity</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power-has-force" id="ref-for-power-has-force">80000-4-quantities:Power-Has-Force</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-4-quantities.html#power-has-velocity" id="ref-for-power-has-velocity">80000-4-quantities:Power-Has-Velocity</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotation-has-rotational-displacement" id="ref-for-rotation-has-rotational-displacement">80000-3-quantities:Rotation-Has-Rotational-Displacement</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement-has-distance" id="ref-for-rotational-displacement-has-distance">80000-3-quantities:Rotational-Displacement-Has-Distance</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-displacement-has-path-length" id="ref-for-rotational-displacement-has-path-length">80000-3-quantities:Rotational-Displacement-Has-Path-Length</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency-has-duration" id="ref-for-rotational-frequency-has-duration">80000-3-quantities:Rotational-Frequency-Has-Duration</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#rotational-frequency-has-rotation" id="ref-for-rotational-frequency-has-rotation">80000-3-quantities:Rotational-Frequency-Has-Rotation</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity-has-duration" id="ref-for-velocity-has-duration">80000-3-quantities:Velocity-Has-Duration</a>
+         <li><a data-link-type="dfn" href="../iso.org/80000-3-quantities.html#velocity-has-position-vector" id="ref-for-velocity-has-position-vector">80000-3-quantities:Velocity-Has-Position-Vector</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="HasFactorForUnitaryQuantity" data-dfn-type="attribute" data-export id="dom-hasfactorforunitaryquantity-hasfactorforunitaryquantity"><code>hasFactorForUnitaryQuantity</code><a class="self-link" href="#dom-hasfactorforunitaryquantity-hasfactorforunitaryquantity"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.3" id="HasPrefix"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasprefix">HasPrefix<a class="self-link" href="#hasprefix"></a></dfn></span><a class="self-link" href="#HasPrefix"></a></h3>
-    <p><em>Attributes:</em> Functional</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit②">PrefixedMeasurementUnit</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix②">Prefix</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasPrefix" data-dfn-type="attribute" data-export id="dom-hasprefix-hasprefix"><code>hasPrefix</code><a class="self-link" href="#dom-hasprefix-hasprefix"></a></dfn></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#prefixedmeasurementunit" id="ref-for-prefixedmeasurementunit②">PrefixedMeasurementUnit</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#prefix" id="ref-for-prefix②">Prefix</a>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="HasPrefix" data-dfn-type="attribute" data-export id="dom-hasprefix-hasprefix"><code>hasPrefix</code><a class="self-link" href="#dom-hasprefix-hasprefix"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Functional
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.4" id="HasReference"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasreference">HasReference<a class="self-link" href="#hasreference"></a></dfn></span><a class="self-link" href="#HasReference"></a></h3>
     <p>metrology:HasReference provides the capability to specify the reference involved in measuring the magnitue of a metrology:Quantity.</p>
-    <p><em>Attributes:</em> Functional</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑤">Magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑤">Reference</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="HasReference" data-dfn-type="attribute" data-export id="dom-hasreference-hasreference"><code>hasReference</code><a class="self-link" href="#dom-hasreference-hasreference"></a></dfn></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑤">Magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#reference" id="ref-for-reference⑤">Reference</a>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="HasReference" data-dfn-type="attribute" data-export id="dom-hasreference-hasreference"><code>hasReference</code><a class="self-link" href="#dom-hasreference-hasreference"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Functional
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.5" id="IsMagnitudeOf"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismagnitudeof">IsMagnitudeOf<a class="self-link" href="#ismagnitudeof"></a></dfn></span><a class="self-link" href="#IsMagnitudeOf"></a></h3>
     <p>Specifies the metrology:Magnitude that is the magnitude of a metrology:Quantity.
-    This relationship can be specified either explicitly as an asserted axiom
-    or implicitly as a constraint such as a range restriction or an inference rule
-	involving the foward or reverse property.</p>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑥">Magnitude</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑤">Quantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMagnitudeOf" data-dfn-type="attribute" data-export id="dom-ismagnitudeof-ismagnitudeof"><code>isMagnitudeOf</code><a class="self-link" href="#dom-ismagnitudeof-ismagnitudeof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMagnitudeOf" data-dfn-type="attribute" data-export id="dom-ismagnitudeof-hasmagnitude"><code>hasMagnitude</code><a class="self-link" href="#dom-ismagnitudeof-hasmagnitude"></a></dfn></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">IsReflexiveMagnitudeOf</a></p>
+	    This relationship can be specified either explicitly as an asserted axiom
+	    or implicitly as a constraint such as a range restriction or an inference rule
+		involving the foward or reverse property.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑥">Magnitude</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑤">Quantity</a>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof③">IsReflexiveMagnitudeOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMagnitudeOf" data-dfn-type="attribute" data-export id="dom-ismagnitudeof-ismagnitudeof"><code>isMagnitudeOf</code><a class="self-link" href="#dom-ismagnitudeof-ismagnitudeof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMagnitudeOf" data-dfn-type="attribute" data-export id="dom-ismagnitudeof-hasmagnitude"><code>hasMagnitude</code><a class="self-link" href="#dom-ismagnitudeof-hasmagnitude"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.6" id="IsQuantityOf"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isquantityof">IsQuantityOf<a class="self-link" href="#isquantityof"></a></dfn></span><a class="self-link" href="#IsQuantityOf"></a></h3>
     <p>Specifies the metrology:Object that the metrology:Quantity is a feature of.
-    Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
-    this relationship, metrology:isQuantityOf, can be specified either explicitly as an asserted axiom
-    or implicitly as a constraint such as a range restriction or an inference rule.</p>
-    <p><em>Attributes:</em> Functional</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑥">Quantity</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#object" id="ref-for-object②">Object</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsQuantityOf" data-dfn-type="attribute" data-export id="dom-isquantityof-isquantityof"><code>isQuantityOf</code><a class="self-link" href="#dom-isquantityof-isquantityof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsQuantityOf" data-dfn-type="attribute" data-export id="dom-isquantityof-hasquantity"><code>hasQuantity</code><a class="self-link" href="#dom-isquantityof-hasquantity"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:Characterizes</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#ismassof" id="ref-for-ismassof">fse:IsMassOf</a></p>
+	    Although every metrology:Quantity must have exactly one metrology:Object as its metrology:isQuantityOf,
+	    this relationship, metrology:isQuantityOf, can be specified either explicitly as an asserted axiom
+	    or implicitly as a constraint such as a range restriction or an inference rule.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑥">Quantity</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#object" id="ref-for-object②">Object</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../imce.jpl.nasa.gov/foundation/analysis.html#characterizes" id="ref-for-characterizes">analysis:Characterizes</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#ismassof" id="ref-for-ismassof">fse:IsMassOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsQuantityOf" data-dfn-type="attribute" data-export id="dom-isquantityof-isquantityof"><code>isQuantityOf</code><a class="self-link" href="#dom-isquantityof-isquantityof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsQuantityOf" data-dfn-type="attribute" data-export id="dom-isquantityof-hasquantity"><code>hasQuantity</code><a class="self-link" href="#dom-isquantityof-hasquantity"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Functional
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.7" id="IsReflexiveMagnitudeOf"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isreflexivemagnitudeof">IsReflexiveMagnitudeOf<a class="self-link" href="#isreflexivemagnitudeof"></a></dfn></span><a class="self-link" href="#IsReflexiveMagnitudeOf"></a></h3>
     <p>metrology:IsReflexiveMagnitudeOf defines a convenient pattern that combines in a single
-	instantiable relation two entities that would otherwise have to be instantiated separately,i.e., an instance 
-	of metrology:Magnitude and an instance of metrology:HasMagnitude. This relation entity is unsual because it 
-	is also its source.</p>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">IsReflexiveMagnitudeOf</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑦">Quantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsReflexiveMagnitudeOf" data-dfn-type="attribute" data-export id="dom-isreflexivemagnitudeof-isreflexivemagnitudeof"><code>isReflexiveMagnitudeOf</code><a class="self-link" href="#dom-isreflexivemagnitudeof-isreflexivemagnitudeof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">IsMagnitudeOf</a>, <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑦">Magnitude</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>IsReflexiveMagnitudeOf ← <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">IsReflexiveMagnitudeOf</a> → <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑧">Quantity</a></p>
-    </ul>
+		instantiable relation two entities that would otherwise have to be instantiated separately,i.e., an instance 
+		of metrology:Magnitude and an instance of metrology:HasMagnitude. This relation entity is unsual because it 
+		is also its source.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof④">IsReflexiveMagnitudeOf</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑦">Quantity</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">IsMagnitudeOf</a>
+         <li><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑦">Magnitude</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsReflexiveMagnitudeOf" data-dfn-type="attribute" data-export id="dom-isreflexivemagnitudeof-isreflexivemagnitudeof"><code>isReflexiveMagnitudeOf</code><a class="self-link" href="#dom-isreflexivemagnitudeof-isreflexivemagnitudeof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>IsReflexiveMagnitudeOf ← <a data-link-type="dfn" href="metrology.html#isreflexivemagnitudeof" id="ref-for-isreflexivemagnitudeof⑤">IsReflexiveMagnitudeOf</a> → <a data-link-type="dfn" href="metrology.html#quantity" id="ref-for-quantity⑧">Quantity</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.8" id="NonCoherentDerivedMeasurementUnitOf"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="noncoherentderivedmeasurementunitof">NonCoherentDerivedMeasurementUnitOf<a class="self-link" href="#noncoherentderivedmeasurementunitof"></a></dfn></span><a class="self-link" href="#NonCoherentDerivedMeasurementUnitOf"></a></h3>
     <p>metrology:NonCoherentDerivedMeasurementUnitOf specifies the metrology:MeasurementUnit that a metrology:NonCoherentDerivedMeasurementUnit derives from.</p>
-    <p><em>Attributes:</em> Functional, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit②">NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑨">MeasurementUnit</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="NonCoherentDerivedMeasurementUnitOf" data-dfn-type="attribute" data-export id="dom-noncoherentderivedmeasurementunitof-noncoherentderivedmeasurementunitof"><code>nonCoherentDerivedMeasurementUnitOf</code><a class="self-link" href="#dom-noncoherentderivedmeasurementunitof-noncoherentderivedmeasurementunitof"></a></dfn></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit②">NonCoherentDerivedMeasurementUnit</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit⑨">MeasurementUnit</a>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="NonCoherentDerivedMeasurementUnitOf" data-dfn-type="attribute" data-export id="dom-noncoherentderivedmeasurementunitof-noncoherentderivedmeasurementunitof"><code>nonCoherentDerivedMeasurementUnitOf</code><a class="self-link" href="#dom-noncoherentderivedmeasurementunitof-noncoherentderivedmeasurementunitof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Functional
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.9" id="SystemHasMetrologicalUnit"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemhasmetrologicalunit">SystemHasMetrologicalUnit<a class="self-link" href="#systemhasmetrologicalunit"></a></dfn></span><a class="self-link" href="#SystemHasMetrologicalUnit"></a></h3>
     <p>A metrology:SystemHasMetrologicalUnit specifies that a metrology:SystemOfMetrologicalUnits includes a metrology:MeasurementUnit.</p>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits②">SystemOfMetrologicalUnits</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①⓪">MeasurementUnit</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="SystemHasMetrologicalUnit" data-dfn-type="attribute" data-export id="dom-systemhasmetrologicalunit-systemhasmetrologicalunit"><code>systemHasMetrologicalUnit</code><a class="self-link" href="#dom-systemhasmetrologicalunit-systemhasmetrologicalunit"></a></dfn></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">isBaseMetrologicalUnit</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits②">SystemOfMetrologicalUnits</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#measurementunit" id="ref-for-measurementunit①⓪">MeasurementUnit</a>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="SystemHasMetrologicalUnit" data-dfn-type="attribute" data-export id="dom-systemhasmetrologicalunit-systemhasmetrologicalunit"><code>systemHasMetrologicalUnit</code><a class="self-link" href="#dom-systemhasmetrologicalunit-systemhasmetrologicalunit"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">isBaseMetrologicalUnit</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.10" id="SystemHasUnitaryQuantity"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemhasunitaryquantity">SystemHasUnitaryQuantity<a class="self-link" href="#systemhasunitaryquantity"></a></dfn></span><a class="self-link" href="#SystemHasUnitaryQuantity"></a></h3>
     <p>A metrology:SystemHasUnitaryQuantity specifies that a metrology:SystemOfUnitaryQuantities includes a metrology:UnitaryQuantity.</p>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities②">SystemOfUnitaryQuantities</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">UnitaryQuantity</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="SystemHasUnitaryQuantity" data-dfn-type="attribute" data-export id="dom-systemhasunitaryquantity-systemhasunitaryquantity"><code>systemHasUnitaryQuantity</code><a class="self-link" href="#dom-systemhasunitaryquantity-systemhasunitaryquantity"></a></dfn></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="metrology.html#isbasequantity" id="ref-for-isbasequantity">isBaseQuantity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities②">SystemOfUnitaryQuantities</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑥">UnitaryQuantity</a>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="SystemHasUnitaryQuantity" data-dfn-type="attribute" data-export id="dom-systemhasunitaryquantity-systemhasunitaryquantity"><code>systemHasUnitaryQuantity</code><a class="self-link" href="#dom-systemhasunitaryquantity-systemhasunitaryquantity"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="metrology.html#isbasequantity" id="ref-for-isbasequantity">isBaseQuantity</a>
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="6" id="ScalarProperties"><span class="secno">6. </span><span class="content">Scalar Properties</span><a class="self-link" href="#ScalarProperties"></a></h2>
     <h3 class="heading settled" data-level="6.1" id="Exponent"><span class="secno">6.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="exponent">exponent<a class="self-link" href="#exponent"></a></dfn></span><a class="self-link" href="#Exponent"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor③">ExponentFactor</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2002/07/owl.html#rational" id="ref-for-rational">rational</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#exponentfactor" id="ref-for-exponentfactor③">ExponentFactor</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2002/07/owl.html#rational" id="ref-for-rational">rational</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.2" id="HasDoubleNumber"><span class="secno">6.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasdoublenumber">hasDoubleNumber<a class="self-link" href="#hasdoublenumber"></a></dfn></span><a class="self-link" href="#HasDoubleNumber"></a></h3>
     <p>metrology:hasDoubleNumber provides the capability to specify the number of a metrology:Magnitude as an IEEE 64-bit floating-point number.
-	If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number.</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑧">Magnitude</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#double" id="ref-for-double">double</a></p>
-    <p><em>Attributes:</em> Functional</p>
+		If this capability is inadequate, the metrology vocabulary can be extended with additional properties for an alternate representation of a number.</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#magnitude" id="ref-for-magnitude⑧">Magnitude</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#double" id="ref-for-double">double</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.3" id="IsBaseMetrologicalUnit"><span class="secno">6.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isbasemetrologicalunit">isBaseMetrologicalUnit<a class="self-link" href="#isbasemetrologicalunit"></a></dfn></span><a class="self-link" href="#IsBaseMetrologicalUnit"></a></h3>
     <p>It is a property of a metrology:SystemOfMetrologicalUnits to select of a subset of metrology:MeasurementUnit
-	as being functionally independent of each other as its base metrology:MeasurementUnit(s)
-	such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).</p>
+		as being functionally independent of each other as its base metrology:MeasurementUnit(s)
+		such that the other metrology:MeasurementUnit(s) in the system can be algebraically derived from the base metrology:MeasurementUnit(s).</p>
     <p>Note that selecting a metrology:MeasurementUnit as a base or derived for a given system is unrelated to its definition
-	(i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">SystemHasMetrologicalUnit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean">boolean</a></p>
-    <p><em>Attributes:</em> Functional</p>
+		(i.e metrology:NonCoherentDerivedMeasurementUnit, metrology:IndependentMeasurementUnit, metrology:DerivedMeasurementUnit or metrology:PrefixedMeasurementUnit).</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">SystemHasMetrologicalUnit</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean">boolean</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.4" id="IsBaseQuantity"><span class="secno">6.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isbasequantity">isBaseQuantity<a class="self-link" href="#isbasequantity"></a></dfn></span><a class="self-link" href="#IsBaseQuantity"></a></h3>
     <p>It is a property of a metrology:SystemOfUnitaryQuantities to select of a subset of metrology:UnitaryQuantity
-	as being functionally independent of each other as its base metrology:UnitaryQuantity
-	such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.</p>
+		as being functionally independent of each other as its base metrology:UnitaryQuantity
+		such that the other metrology:UnitaryQuantity in the system can be algebraically derived from the base metrology:UnitaryQuantity.</p>
     <p>Note that selecting a metrology:UnitaryQuantity as a base or derived for a given system is unrelated to its definition
-	(i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">SystemHasUnitaryQuantity</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean①">boolean</a></p>
-    <p><em>Attributes:</em> Functional</p>
+		(i.e metrology:IndependentUnitaryQuantity or metrology:DerivedUnitaryQuantity).</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">SystemHasUnitaryQuantity</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean①">boolean</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.5" id="IsDimensionlessMeasurementUnit"><span class="secno">6.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isdimensionlessmeasurementunit">isDimensionlessMeasurementUnit<a class="self-link" href="#isdimensionlessmeasurementunit"></a></dfn></span><a class="self-link" href="#IsDimensionlessMeasurementUnit"></a></h3>
     <p>metrology:isDimensionlessMeasurementUnit specifies whether the definition of a metrology:CoherentMeasurementUnit has dimension 'one',
-    either intrisically as an metrology:IndependentMeasurementUnit or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other 
-	metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.</p>
+	    either intrisically as an metrology:IndependentMeasurementUnit or extrinsically as a metrology:DerivedMeasurementUnit where the product factors of other 
+		metrology:MeasurementUnit(s) could be algebraically reduced to 'one'.</p>
     <p>Note when defining a metrology:DerivedMeasurementUnit with metrology:isDimensionlessMeasurementUnit=true,
-    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedMeasurementUnit
-    with respect to other metrology:MeasurementUnit(same).</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">CoherentMeasurementUnit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean②">boolean</a></p>
-    <p><em>Attributes:</em> Functional</p>
+	    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedMeasurementUnit
+	    with respect to other metrology:MeasurementUnit(same).</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#coherentmeasurementunit" id="ref-for-coherentmeasurementunit③">CoherentMeasurementUnit</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean②">boolean</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.6" id="IsDimensionlessQuantity"><span class="secno">6.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isdimensionlessquantity">isDimensionlessQuantity<a class="self-link" href="#isdimensionlessquantity"></a></dfn></span><a class="self-link" href="#IsDimensionlessQuantity"></a></h3>
     <p>metrology:isDimensionlessQuantity specifies whether the definition of a metrology:UnitaryQuantity has dimension 'one',
-    either intrisically as an metrology:IndependentUnitaryQuantity 
-    or extrinsically as a metrology:DerivedUnitaryQuantity where the product factors of other metrology:UnitaryQuantity(ies) could be algebraically reduced to 'one'.</p>
+	    either intrisically as an metrology:IndependentUnitaryQuantity 
+	    or extrinsically as a metrology:DerivedUnitaryQuantity where the product factors of other metrology:UnitaryQuantity(ies) could be algebraically reduced to 'one'.</p>
     <p>Note when defining a metrology:DerivedUnitaryQuantity with metrology:isDimensionlessQuantity=true,
-    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedUnitaryQuantity
-    with respect to other metrology:UnitaryQuantity(ies).</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">UnitaryQuantity</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean③">boolean</a></p>
-    <p><em>Attributes:</em> Functional</p>
+	    it is important to retain the non-simplified product factors in order to preserve the metrological provenance of the metrology:DerivedUnitaryQuantity
+	    with respect to other metrology:UnitaryQuantity(ies).</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#unitaryquantity" id="ref-for-unitaryquantity⑦">UnitaryQuantity</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#boolean" id="ref-for-boolean③">boolean</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.7" id="NonCoherentRelationship"><span class="secno">6.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="noncoherentrelationship">nonCoherentRelationship<a class="self-link" href="#noncoherentrelationship"></a></dfn></span><a class="self-link" href="#NonCoherentRelationship"></a></h3>
     <p>metrology:nonCoherentRelationship specifies the non-coherent derivation relationship between a metrology:NonCoherentDerivedMeasurementUnit
-	and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf</p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit③">NonCoherentDerivedMeasurementUnit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+		and a metrology:MeasurementUnit that it is a metrology:nonCoherentDerivedMeasurementUnitOf</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="metrology.html#noncoherentderivedmeasurementunit" id="ref-for-noncoherentderivedmeasurementunit③">NonCoherentDerivedMeasurementUnit</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
    </div>
   </main>
 <script>
@@ -3200,282 +3847,6 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-watt-has-newton">5.1. HasFactorForMeasurementUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-celcius-temperature">
-   <a href="../iso.org/80000-5-quantities.html#celcius-temperature">../iso.org/80000-5-quantities.html#celcius-temperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-celcius-temperature">4.3. DerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-celcius-temperature-has-thermodynamic-temperature">
-   <a href="../iso.org/80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature">../iso.org/80000-5-quantities.html#celcius-temperature-has-thermodynamic-temperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-celcius-temperature-has-thermodynamic-temperature">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-thermodynamic-temperature">
-   <a href="../iso.org/80000-5-quantities.html#thermodynamic-temperature">../iso.org/80000-5-quantities.html#thermodynamic-temperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-thermodynamic-temperature">4.5. IndependentUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-celciustemperaturemagnitude">
-   <a href="../iso.org/80000-5-units.html#celciustemperaturemagnitude">../iso.org/80000-5-units.html#celciustemperaturemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-celciustemperaturemagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-celciustemperatureunit">
-   <a href="../iso.org/80000-5-units.html#celciustemperatureunit">../iso.org/80000-5-units.html#celciustemperatureunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-celciustemperatureunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius">
-   <a href="../iso.org/80000-5-units.html#degreecelcius">../iso.org/80000-5-units.html#degreecelcius</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-degreecelcius">4.2. DerivedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-degreecelcius-has-kelvin">
-   <a href="../iso.org/80000-5-units.html#degreecelcius-has-kelvin">../iso.org/80000-5-units.html#degreecelcius-has-kelvin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-degreecelcius-has-kelvin">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-kelvin">
-   <a href="../iso.org/80000-5-units.html#kelvin">../iso.org/80000-5-units.html#kelvin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kelvin">4.4. IndependentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-thermodynamictemperaturemagnitude">
-   <a href="../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude">../iso.org/80000-5-units.html#thermodynamictemperaturemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-thermodynamictemperaturemagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-thermodynamictemperatureunit">
-   <a href="../iso.org/80000-5-units.html#thermodynamictemperatureunit">../iso.org/80000-5-units.html#thermodynamictemperatureunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-thermodynamictemperatureunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-charge">
-   <a href="../iso.org/80000-6-quantities.html#electric-charge">../iso.org/80000-6-quantities.html#electric-charge</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-charge">4.3. DerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-charge-has-duration">
-   <a href="../iso.org/80000-6-quantities.html#electric-charge-has-duration">../iso.org/80000-6-quantities.html#electric-charge-has-duration</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-charge-has-duration">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-charge-has-electric-current">
-   <a href="../iso.org/80000-6-quantities.html#electric-charge-has-electric-current">../iso.org/80000-6-quantities.html#electric-charge-has-electric-current</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-charge-has-electric-current">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-current">
-   <a href="../iso.org/80000-6-quantities.html#electric-current">../iso.org/80000-6-quantities.html#electric-current</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-current">4.5. IndependentUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-field-strength">
-   <a href="../iso.org/80000-6-quantities.html#electric-field-strength">../iso.org/80000-6-quantities.html#electric-field-strength</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-field-strength">4.3. DerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-field-strength-has-electric-charge">
-   <a href="../iso.org/80000-6-quantities.html#electric-field-strength-has-electric-charge">../iso.org/80000-6-quantities.html#electric-field-strength-has-electric-charge</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-field-strength-has-electric-charge">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-field-strength-has-force">
-   <a href="../iso.org/80000-6-quantities.html#electric-field-strength-has-force">../iso.org/80000-6-quantities.html#electric-field-strength-has-force</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-field-strength-has-force">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-potential">
-   <a href="../iso.org/80000-6-quantities.html#electric-potential">../iso.org/80000-6-quantities.html#electric-potential</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-potential">4.3. DerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-potential-has-electric-field-strength">
-   <a href="../iso.org/80000-6-quantities.html#electric-potential-has-electric-field-strength">../iso.org/80000-6-quantities.html#electric-potential-has-electric-field-strength</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-potential-has-electric-field-strength">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electric-potential-has-path-length">
-   <a href="../iso.org/80000-6-quantities.html#electric-potential-has-path-length">../iso.org/80000-6-quantities.html#electric-potential-has-path-length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electric-potential-has-path-length">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistance">
-   <a href="../iso.org/80000-6-quantities.html#resistance">../iso.org/80000-6-quantities.html#resistance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistance">4.3. DerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistance-has-electric-current">
-   <a href="../iso.org/80000-6-quantities.html#resistance-has-electric-current">../iso.org/80000-6-quantities.html#resistance-has-electric-current</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistance-has-electric-current">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistance-has-electric-potential">
-   <a href="../iso.org/80000-6-quantities.html#resistance-has-electric-potential">../iso.org/80000-6-quantities.html#resistance-has-electric-potential</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistance-has-electric-potential">5.2. HasFactorForUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-ampere">
-   <a href="../iso.org/80000-6-units.html#ampere">../iso.org/80000-6-units.html#ampere</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ampere">4.4. IndependentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-coulomb">
-   <a href="../iso.org/80000-6-units.html#coulomb">../iso.org/80000-6-units.html#coulomb</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-coulomb">4.2. DerivedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-coulomb-has-ampere">
-   <a href="../iso.org/80000-6-units.html#coulomb-has-ampere">../iso.org/80000-6-units.html#coulomb-has-ampere</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-coulomb-has-ampere">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-coulomb-has-second">
-   <a href="../iso.org/80000-6-units.html#coulomb-has-second">../iso.org/80000-6-units.html#coulomb-has-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-coulomb-has-second">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricchargemagnitude">
-   <a href="../iso.org/80000-6-units.html#electricchargemagnitude">../iso.org/80000-6-units.html#electricchargemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricchargemagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricchargeunit">
-   <a href="../iso.org/80000-6-units.html#electricchargeunit">../iso.org/80000-6-units.html#electricchargeunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricchargeunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electriccurrentmagnitude">
-   <a href="../iso.org/80000-6-units.html#electriccurrentmagnitude">../iso.org/80000-6-units.html#electriccurrentmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electriccurrentmagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electriccurrentunit">
-   <a href="../iso.org/80000-6-units.html#electriccurrentunit">../iso.org/80000-6-units.html#electriccurrentunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electriccurrentunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricfieldstrengthmagnitude">
-   <a href="../iso.org/80000-6-units.html#electricfieldstrengthmagnitude">../iso.org/80000-6-units.html#electricfieldstrengthmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricfieldstrengthmagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricfieldstrengthunit">
-   <a href="../iso.org/80000-6-units.html#electricfieldstrengthunit">../iso.org/80000-6-units.html#electricfieldstrengthunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricfieldstrengthunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricpotentialmagnitude">
-   <a href="../iso.org/80000-6-units.html#electricpotentialmagnitude">../iso.org/80000-6-units.html#electricpotentialmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricpotentialmagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-electricpotentialunit">
-   <a href="../iso.org/80000-6-units.html#electricpotentialunit">../iso.org/80000-6-units.html#electricpotentialunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-electricpotentialunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb">
-   <a href="../iso.org/80000-6-units.html#newton-per-coulomb">../iso.org/80000-6-units.html#newton-per-coulomb</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-newton-per-coulomb">4.2. DerivedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb-has-coulomb">
-   <a href="../iso.org/80000-6-units.html#newton-per-coulomb-has-coulomb">../iso.org/80000-6-units.html#newton-per-coulomb-has-coulomb</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-newton-per-coulomb-has-coulomb">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-newton-per-coulomb-has-newton">
-   <a href="../iso.org/80000-6-units.html#newton-per-coulomb-has-newton">../iso.org/80000-6-units.html#newton-per-coulomb-has-newton</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-newton-per-coulomb-has-newton">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-ohm">
-   <a href="../iso.org/80000-6-units.html#ohm">../iso.org/80000-6-units.html#ohm</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ohm">4.2. DerivedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-ohm-has-ampere">
-   <a href="../iso.org/80000-6-units.html#ohm-has-ampere">../iso.org/80000-6-units.html#ohm-has-ampere</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ohm-has-ampere">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-ohm-has-volt">
-   <a href="../iso.org/80000-6-units.html#ohm-has-volt">../iso.org/80000-6-units.html#ohm-has-volt</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ohm-has-volt">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistancemagnitude">
-   <a href="../iso.org/80000-6-units.html#resistancemagnitude">../iso.org/80000-6-units.html#resistancemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistancemagnitude">3.13. UnitaryMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-resistanceunit">
-   <a href="../iso.org/80000-6-units.html#resistanceunit">../iso.org/80000-6-units.html#resistanceunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-resistanceunit">4.1. CoherentMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-volt">
-   <a href="../iso.org/80000-6-units.html#volt">../iso.org/80000-6-units.html#volt</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-volt">4.2. DerivedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-volt-has-metre">
-   <a href="../iso.org/80000-6-units.html#volt-has-metre">../iso.org/80000-6-units.html#volt-has-metre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-volt-has-metre">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-volt-has-newton-per-coulomb">
-   <a href="../iso.org/80000-6-units.html#volt-has-newton-per-coulomb">../iso.org/80000-6-units.html#volt-has-newton-per-coulomb</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-volt-has-newton-per-coulomb">5.1. HasFactorForMeasurementUnit</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-coherentmeasurementunit">
    <a href="metrology.html#coherentmeasurementunit">metrology.html#coherentmeasurementunit</a><b>Referenced in:</b>
    <ul>
@@ -3962,68 +4333,6 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-watt">watt</span>
      <li><span class="dfn-paneled" id="term-for-watt-has-metre-per-second">watt-has-metre-per-second</span>
      <li><span class="dfn-paneled" id="term-for-watt-has-newton">watt-has-newton</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-quantities]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-celcius-temperature">celcius-temperature</span>
-     <li><span class="dfn-paneled" id="term-for-celcius-temperature-has-thermodynamic-temperature">celcius-temperature-has-thermodynamic-temperature</span>
-     <li><span class="dfn-paneled" id="term-for-thermodynamic-temperature">thermodynamic-temperature</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-5-units]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-celciustemperaturemagnitude">celciustemperaturemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-celciustemperatureunit">celciustemperatureunit</span>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius">degreecelcius</span>
-     <li><span class="dfn-paneled" id="term-for-degreecelcius-has-kelvin">degreecelcius-has-kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-kelvin">kelvin</span>
-     <li><span class="dfn-paneled" id="term-for-thermodynamictemperaturemagnitude">thermodynamictemperaturemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-thermodynamictemperatureunit">thermodynamictemperatureunit</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-quantities]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-electric-charge">electric-charge</span>
-     <li><span class="dfn-paneled" id="term-for-electric-charge-has-duration">electric-charge-has-duration</span>
-     <li><span class="dfn-paneled" id="term-for-electric-charge-has-electric-current">electric-charge-has-electric-current</span>
-     <li><span class="dfn-paneled" id="term-for-electric-current">electric-current</span>
-     <li><span class="dfn-paneled" id="term-for-electric-field-strength">electric-field-strength</span>
-     <li><span class="dfn-paneled" id="term-for-electric-field-strength-has-electric-charge">electric-field-strength-has-electric-charge</span>
-     <li><span class="dfn-paneled" id="term-for-electric-field-strength-has-force">electric-field-strength-has-force</span>
-     <li><span class="dfn-paneled" id="term-for-electric-potential">electric-potential</span>
-     <li><span class="dfn-paneled" id="term-for-electric-potential-has-electric-field-strength">electric-potential-has-electric-field-strength</span>
-     <li><span class="dfn-paneled" id="term-for-electric-potential-has-path-length">electric-potential-has-path-length</span>
-     <li><span class="dfn-paneled" id="term-for-resistance">resistance</span>
-     <li><span class="dfn-paneled" id="term-for-resistance-has-electric-current">resistance-has-electric-current</span>
-     <li><span class="dfn-paneled" id="term-for-resistance-has-electric-potential">resistance-has-electric-potential</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-6-units]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-ampere">ampere</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb">coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb-has-ampere">coulomb-has-ampere</span>
-     <li><span class="dfn-paneled" id="term-for-coulomb-has-second">coulomb-has-second</span>
-     <li><span class="dfn-paneled" id="term-for-electricchargemagnitude">electricchargemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electricchargeunit">electricchargeunit</span>
-     <li><span class="dfn-paneled" id="term-for-electriccurrentmagnitude">electriccurrentmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electriccurrentunit">electriccurrentunit</span>
-     <li><span class="dfn-paneled" id="term-for-electricfieldstrengthmagnitude">electricfieldstrengthmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electricfieldstrengthunit">electricfieldstrengthunit</span>
-     <li><span class="dfn-paneled" id="term-for-electricpotentialmagnitude">electricpotentialmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-electricpotentialunit">electricpotentialunit</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb">newton-per-coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb-has-coulomb">newton-per-coulomb-has-coulomb</span>
-     <li><span class="dfn-paneled" id="term-for-newton-per-coulomb-has-newton">newton-per-coulomb-has-newton</span>
-     <li><span class="dfn-paneled" id="term-for-ohm">ohm</span>
-     <li><span class="dfn-paneled" id="term-for-ohm-has-ampere">ohm-has-ampere</span>
-     <li><span class="dfn-paneled" id="term-for-ohm-has-volt">ohm-has-volt</span>
-     <li><span class="dfn-paneled" id="term-for-resistancemagnitude">resistancemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-resistanceunit">resistanceunit</span>
-     <li><span class="dfn-paneled" id="term-for-volt">volt</span>
-     <li><span class="dfn-paneled" id="term-for-volt-has-metre">volt-has-metre</span>
-     <li><span class="dfn-paneled" id="term-for-volt-has-newton-per-coulomb">volt-has-newton-per-coulomb</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:

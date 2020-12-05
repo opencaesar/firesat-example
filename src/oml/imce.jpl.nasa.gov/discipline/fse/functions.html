@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/imce.jpl.nasa.gov/discipline/fse/functions" rel="canonical">
-  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
+  <meta content="36f84b02a2191a31826f17f0f1040c8adebc231a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Function Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-05">5 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1979,23 +1989,59 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="BaseFunction"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="basefunction">BaseFunction<a class="self-link" href="#basefunction"></a></dfn></span><a class="self-link" href="#BaseFunction"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function">fse:Function</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="functions.html#power" id="ref-for-power">Power</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function">fse:Function</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="functions.html#power" id="ref-for-power">Power</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="Power"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">Power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">BaseFunction</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="functions.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Power ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power①">fse-endcircuits:Power</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">BaseFunction</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="functions.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Power ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power①">fse-endcircuits:Power</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="UnidirectionalPower"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unidirectionalpower">UnidirectionalPower<a class="self-link" href="#unidirectionalpower"></a></dfn></span><a class="self-link" href="#UnidirectionalPower"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="functions.html#power" id="ref-for-power②">Power</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>UnidirectionalPower ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">fse-endcircuits:UnidirectionalPower</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="functions.html#power" id="ref-for-power②">Power</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>UnidirectionalPower ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">fse-endcircuits:UnidirectionalPower</a> 
+        </ul>
+    </table>
    </div>
   </main>
 <script>

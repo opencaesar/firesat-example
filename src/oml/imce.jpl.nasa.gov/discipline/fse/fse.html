@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/imce.jpl.nasa.gov/discipline/fse/fse" rel="canonical">
-  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
+  <meta content="36f84b02a2191a31826f17f0f1040c8adebc231a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Flight System Electrical</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-05">5 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2021,228 +2031,667 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p>project: <a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a></p>
      <li data-md>
-      <p>80000-6-rules: <a href="http://iso.org/80000-6-rules.html">http://iso.org/80000-6-rules</a></p>
-     <li data-md>
-      <p>80000-6-magnitudes1: <a href="http://iso.org/80000-6-magnitudes1.html">http://iso.org/80000-6-magnitudes1</a></p>
+      <p>80000-4-rules: <a href="http://iso.org/80000-4-rules.html">http://iso.org/80000-4-rules</a></p>
     </ul>
     <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="EndCircuitPresentingElement"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuitpresentingelement">EndCircuitPresentingElement<a class="self-link" href="#endcircuitpresentingelement"></a></dfn></span><a class="self-link" href="#EndCircuitPresentingElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly">Assembly</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presentingelement" id="ref-for-presentingelement">mission:PresentingElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly">Assembly</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="MassAllocatedElement"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massallocatedelement">MassAllocatedElement<a class="self-link" href="#massallocatedelement"></a></dfn></span><a class="self-link" href="#MassAllocatedElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">MassConstrainedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof">IsMassAllocationOf</a> → MassAllocatedElement</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismasslimitof" id="ref-for-ismasslimitof">IsMassLimitOf</a> → MassAllocatedElement</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement">MassConstrainedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof">IsMassAllocationOf</a> → MassAllocatedElement 
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismasslimitof" id="ref-for-ismasslimitof">IsMassLimitOf</a> → MassAllocatedElement 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="MassConstrainedElement"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massconstrainedelement">MassConstrainedElement<a class="self-link" href="#massconstrainedelement"></a></dfn></span><a class="self-link" href="#MassConstrainedElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/iupac.org/metrology.html#object" id="ref-for-object">metrology:Object</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement">MassAllocatedElement</a>, <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement">MassEstimatedElement</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass②">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof">IsMassOf</a> → MassConstrainedElement</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iupac.org/metrology.html#object" id="ref-for-object">metrology:Object</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement">MassAllocatedElement</a>
+         <li><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement">MassEstimatedElement</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass②">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof">IsMassOf</a> → MassConstrainedElement 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.4" id="MassEstimatedElement"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massestimatedelement">MassEstimatedElement<a class="self-link" href="#massestimatedelement"></a></dfn></span><a class="self-link" href="#MassEstimatedElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement①">MassConstrainedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent">FlightHardwareComponent</a>, <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy">MassProxy</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage①">project:WorkPackage</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass③">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#iscbemassof" id="ref-for-iscbemassof">IsCBEMassOf</a> → MassEstimatedElement</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass④">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismevmassof" id="ref-for-ismevmassof">IsMEVMassOf</a> → MassEstimatedElement</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑤">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismgamassof" id="ref-for-ismgamassof">IsMGAMassOf</a> → MassEstimatedElement</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑥">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof">IsMassEstimationOf</a> → MassEstimatedElement</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement①">MassConstrainedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent">FlightHardwareComponent</a>
+         <li><a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy">MassProxy</a>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/project.html#workpackage" id="ref-for-workpackage①">project:WorkPackage</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass③">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#iscbemassof" id="ref-for-iscbemassof">IsCBEMassOf</a> → MassEstimatedElement 
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass④">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismevmassof" id="ref-for-ismevmassof">IsMEVMassOf</a> → MassEstimatedElement 
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑤">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismgamassof" id="ref-for-ismgamassof">IsMGAMassOf</a> → MassEstimatedElement 
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑥">80000-4-quantities:mass</a> ← <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof">IsMassEstimationOf</a> → MassEstimatedElement 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.5" id="MassProxy"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="massproxy">MassProxy<a class="self-link" href="#massproxy"></a></dfn></span><a class="self-link" href="#MassProxy"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement①">MassEstimatedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#consumablemass" id="ref-for-consumablemass">ConsumableMass</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasmultiplicity" id="ref-for-hasmultiplicity">hasMultiplicity</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement①">MassEstimatedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#consumablemass" id="ref-for-consumablemass">ConsumableMass</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasmultiplicity" id="ref-for-hasmultiplicity">hasMultiplicity</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.6" id="ReferenceDesignatedElement"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="referencedesignatedelement">ReferenceDesignatedElement<a class="self-link" href="#referencedesignatedelement"></a></dfn></span><a class="self-link" href="#ReferenceDesignatedElement"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#identifiedelement" id="ref-for-identifiedelement">base:IdentifiedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①">Assembly</a>, <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem">Subsystem</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasacronym" id="ref-for-hasacronym">hasAcronym</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasreferencedesignator" id="ref-for-hasreferencedesignator">hasReferenceDesignator</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#identifiedelement" id="ref-for-identifiedelement">base:IdentifiedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly①">Assembly</a>
+         <li><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem">Subsystem</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasacronym" id="ref-for-hasacronym">hasAcronym</a>
+         <li><a data-link-type="dfn" href="fse.html#hasreferencedesignator" id="ref-for-hasreferencedesignator">hasReferenceDesignator</a>
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="Assembly"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="assembly">Assembly<a class="self-link" href="#assembly"></a></dfn></span><a class="self-link" href="#Assembly"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement">EndCircuitPresentingElement</a>, <a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent①">FlightHardwareComponent</a>, <a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement">ReferenceDesignatedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="assemblies.html#baseassembly" id="ref-for-baseassembly">fse-assemblies:BaseAssembly</a></p>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem①">Subsystem</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates">base:Aggregates</a> → Assembly</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly">ConnectsAssembly</a> → Assembly</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function①">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1">ConnectsAssembly1</a> → Assembly</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function②">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2">ConnectsAssembly2</a> → Assembly</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement">EndCircuitPresentingElement</a>
+         <li><a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent①">FlightHardwareComponent</a>
+         <li><a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement">ReferenceDesignatedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="assemblies.html#baseassembly" id="ref-for-baseassembly">fse-assemblies:BaseAssembly</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem①">Subsystem</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates">base:Aggregates</a> → Assembly 
+         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly">ConnectsAssembly</a> → Assembly 
+         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function①">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1">ConnectsAssembly1</a> → Assembly 
+         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function②">Function</a> ← <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2">ConnectsAssembly2</a> → Assembly 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.2" id="ConsumableMass"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="consumablemass">ConsumableMass<a class="self-link" href="#consumablemass"></a></dfn></span><a class="self-link" href="#ConsumableMass"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy①">MassProxy</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy①">MassProxy</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.3" id="EndCircuit"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuit">EndCircuit<a class="self-link" href="#endcircuit"></a></dfn></span><a class="self-link" href="#EndCircuit"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface">mission:Interface</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power">fse-endcircuits:Power</a>, <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">fse-endcircuits:UnidirectionalPower</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">hasEndCircuitDirection</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier">hasEndCircuitIdentifier</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#function" id="ref-for-function③">Function</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:Joins</a> → EndCircuit</p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement①">EndCircuitPresentingElement</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:Presents</a> → EndCircuit</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#interface" id="ref-for-interface">mission:Interface</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power">fse-endcircuits:Power</a>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">fse-endcircuits:UnidirectionalPower</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">hasEndCircuitDirection</a>
+         <li><a data-link-type="dfn" href="fse.html#hasendcircuitidentifier" id="ref-for-hasendcircuitidentifier">hasEndCircuitIdentifier</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function③">Function</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins">mission:Joins</a> → EndCircuit 
+         <li><a data-link-type="dfn" href="fse.html#endcircuitpresentingelement" id="ref-for-endcircuitpresentingelement①">EndCircuitPresentingElement</a> ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:Presents</a> → EndCircuit 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.4" id="FlightHardwareComponent"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="flighthardwarecomponent">FlightHardwareComponent<a class="self-link" href="#flighthardwarecomponent"></a></dfn></span><a class="self-link" href="#FlightHardwareComponent"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement②">MassEstimatedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly②">Assembly</a>, <a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem②">Subsystem</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#component" id="ref-for-component">mission:Component</a>
+         <li><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement②">MassEstimatedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly②">Assembly</a>
+         <li><a data-link-type="dfn" href="fse.html#subsystem" id="ref-for-subsystem②">Subsystem</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.5" id="Function"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="function">Function<a class="self-link" href="#function"></a></dfn></span><a class="self-link" href="#Function"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction">mission:Junction</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">fse-functions:BaseFunction</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasfunctiondirection" id="ref-for-hasfunctiondirection">hasFunctionDirection</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasfunctionnumber" id="ref-for-hasfunctionnumber">hasFunctionNumber</a></p>
-    </ul>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly①">ConnectsAssembly</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly③">Assembly</a></p>
-     <li data-md>
-      <p>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1①">ConnectsAssembly1</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly④">Assembly</a></p>
-     <li data-md>
-      <p>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2①">ConnectsAssembly2</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑤">Assembly</a></p>
-     <li data-md>
-      <p>Function ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:Joins</a> → <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">EndCircuit</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#junction" id="ref-for-junction">mission:Junction</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">fse-functions:BaseFunction</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasfunctiondirection" id="ref-for-hasfunctiondirection">hasFunctionDirection</a>
+         <li><a data-link-type="dfn" href="fse.html#hasfunctionnumber" id="ref-for-hasfunctionnumber">hasFunctionNumber</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly①">ConnectsAssembly</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly③">Assembly</a> 
+         <li>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1①">ConnectsAssembly1</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly④">Assembly</a> 
+         <li>Function ← <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2①">ConnectsAssembly2</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑤">Assembly</a> 
+         <li>Function ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/mission.html#joins" id="ref-for-joins①">mission:Joins</a> → <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">EndCircuit</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="4.6" id="Subsystem"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="subsystem">Subsystem<a class="self-link" href="#subsystem"></a></dfn></span><a class="self-link" href="#Subsystem"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent②">FlightHardwareComponent</a>, <a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement①">ReferenceDesignatedElement</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Subsystem ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①">base:Aggregates</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑥">Assembly</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#flighthardwarecomponent" id="ref-for-flighthardwarecomponent②">FlightHardwareComponent</a>
+         <li><a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement①">ReferenceDesignatedElement</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Subsystem ← <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/base.html#aggregates" id="ref-for-aggregates①">base:Aggregates</a> → <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑥">Assembly</a> 
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="5.1" id="ConnectsAssembly"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="connectsassembly">ConnectsAssembly<a class="self-link" href="#connectsassembly"></a></dfn></span><a class="self-link" href="#ConnectsAssembly"></a></h3>
-    <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function④">Function</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑦">Assembly</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="ConnectsAssembly" data-dfn-type="attribute" data-export id="dom-connectsassembly-connectsassembly"><code>connectsAssembly</code><a class="self-link" href="#dom-connectsassembly-connectsassembly"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1②">ConnectsAssembly1</a>, <a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2②">ConnectsAssembly2</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="fse.html#function" id="ref-for-function④">Function</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑦">Assembly</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#connectsassembly1" id="ref-for-connectsassembly1②">ConnectsAssembly1</a>
+         <li><a data-link-type="dfn" href="fse.html#connectsassembly2" id="ref-for-connectsassembly2②">ConnectsAssembly2</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="ConnectsAssembly" data-dfn-type="attribute" data-export id="dom-connectsassembly-connectsassembly"><code>connectsAssembly</code><a class="self-link" href="#dom-connectsassembly-connectsassembly"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Asymmetric
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.2" id="ConnectsAssembly1"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="connectsassembly1">ConnectsAssembly1<a class="self-link" href="#connectsassembly1"></a></dfn></span><a class="self-link" href="#ConnectsAssembly1"></a></h3>
-    <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑤">Function</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑧">Assembly</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="ConnectsAssembly1" data-dfn-type="attribute" data-export id="dom-connectsassembly1-connectsassembly1"><code>connectsAssembly1</code><a class="self-link" href="#dom-connectsassembly1-connectsassembly1"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly②">ConnectsAssembly</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑤">Function</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑧">Assembly</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly②">ConnectsAssembly</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="ConnectsAssembly1" data-dfn-type="attribute" data-export id="dom-connectsassembly1-connectsassembly1"><code>connectsAssembly1</code><a class="self-link" href="#dom-connectsassembly1-connectsassembly1"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Asymmetric
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.3" id="ConnectsAssembly2"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="connectsassembly2">ConnectsAssembly2<a class="self-link" href="#connectsassembly2"></a></dfn></span><a class="self-link" href="#ConnectsAssembly2"></a></h3>
-    <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑥">Function</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑨">Assembly</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="ConnectsAssembly2" data-dfn-type="attribute" data-export id="dom-connectsassembly2-connectsassembly2"><code>connectsAssembly2</code><a class="self-link" href="#dom-connectsassembly2-connectsassembly2"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly③">ConnectsAssembly</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑥">Function</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly⑨">Assembly</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#connectsassembly" id="ref-for-connectsassembly③">ConnectsAssembly</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="ConnectsAssembly2" data-dfn-type="attribute" data-export id="dom-connectsassembly2-connectsassembly2"><code>connectsAssembly2</code><a class="self-link" href="#dom-connectsassembly2-connectsassembly2"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Asymmetric
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.4" id="IsCBEMassOf"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="iscbemassof">IsCBEMassOf<a class="self-link" href="#iscbemassof"></a></dfn></span><a class="self-link" href="#IsCBEMassOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑦">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement③">MassEstimatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsCBEMassOf" data-dfn-type="attribute" data-export id="dom-iscbemassof-iscbemassof"><code>isCBEMassOf</code><a class="self-link" href="#dom-iscbemassof-iscbemassof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsCBEMassOf" data-dfn-type="attribute" data-export id="dom-iscbemassof-hascbemassof"><code>hasCBEMassOf</code><a class="self-link" href="#dom-iscbemassof-hascbemassof"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof①">IsMassEstimationOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑦">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement③">MassEstimatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof①">IsMassEstimationOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsCBEMassOf" data-dfn-type="attribute" data-export id="dom-iscbemassof-iscbemassof"><code>isCBEMassOf</code><a class="self-link" href="#dom-iscbemassof-iscbemassof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsCBEMassOf" data-dfn-type="attribute" data-export id="dom-iscbemassof-hascbemassof"><code>hasCBEMassOf</code><a class="self-link" href="#dom-iscbemassof-hascbemassof"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.5" id="IsMEVMassOf"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismevmassof">IsMEVMassOf<a class="self-link" href="#ismevmassof"></a></dfn></span><a class="self-link" href="#IsMEVMassOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑧">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement④">MassEstimatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMEVMassOf" data-dfn-type="attribute" data-export id="dom-ismevmassof-ismevmassof"><code>isMEVMassOf</code><a class="self-link" href="#dom-ismevmassof-ismevmassof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMEVMassOf" data-dfn-type="attribute" data-export id="dom-ismevmassof-hasmevmass"><code>hasMEVMass</code><a class="self-link" href="#dom-ismevmassof-hasmevmass"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof②">IsMassEstimationOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑧">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement④">MassEstimatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof②">IsMassEstimationOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMEVMassOf" data-dfn-type="attribute" data-export id="dom-ismevmassof-ismevmassof"><code>isMEVMassOf</code><a class="self-link" href="#dom-ismevmassof-ismevmassof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMEVMassOf" data-dfn-type="attribute" data-export id="dom-ismevmassof-hasmevmass"><code>hasMEVMass</code><a class="self-link" href="#dom-ismevmassof-hasmevmass"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.6" id="IsMGAMassOf"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismgamassof">IsMGAMassOf<a class="self-link" href="#ismgamassof"></a></dfn></span><a class="self-link" href="#IsMGAMassOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑨">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement⑤">MassEstimatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMGAMassOf" data-dfn-type="attribute" data-export id="dom-ismgamassof-ismgamassof"><code>isMGAMassOf</code><a class="self-link" href="#dom-ismgamassof-ismgamassof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMGAMassOf" data-dfn-type="attribute" data-export id="dom-ismgamassof-hasmgamass"><code>hasMGAMass</code><a class="self-link" href="#dom-ismgamassof-hasmgamass"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof③">IsMassEstimationOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑨">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement⑤">MassEstimatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof③">IsMassEstimationOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMGAMassOf" data-dfn-type="attribute" data-export id="dom-ismgamassof-ismgamassof"><code>isMGAMassOf</code><a class="self-link" href="#dom-ismgamassof-ismgamassof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMGAMassOf" data-dfn-type="attribute" data-export id="dom-ismgamassof-hasmgamass"><code>hasMGAMass</code><a class="self-link" href="#dom-ismgamassof-hasmgamass"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.7" id="IsMassAllocationOf"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismassallocationof">IsMassAllocationOf<a class="self-link" href="#ismassallocationof"></a></dfn></span><a class="self-link" href="#IsMassAllocationOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①⓪">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement①">MassAllocatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassAllocationOf" data-dfn-type="attribute" data-export id="dom-ismassallocationof-ismassallocationof"><code>isMassAllocationOf</code><a class="self-link" href="#dom-ismassallocationof-ismassallocationof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassAllocationOf" data-dfn-type="attribute" data-export id="dom-ismassallocationof-hasmassallocation"><code>hasMassAllocation</code><a class="self-link" href="#dom-ismassallocationof-hasmassallocation"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof①">IsMassOf</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#ismasslimitof" id="ref-for-ismasslimitof①">IsMassLimitOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①⓪">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement①">MassAllocatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof①">IsMassOf</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismasslimitof" id="ref-for-ismasslimitof①">IsMassLimitOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassAllocationOf" data-dfn-type="attribute" data-export id="dom-ismassallocationof-ismassallocationof"><code>isMassAllocationOf</code><a class="self-link" href="#dom-ismassallocationof-ismassallocationof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassAllocationOf" data-dfn-type="attribute" data-export id="dom-ismassallocationof-hasmassallocation"><code>hasMassAllocation</code><a class="self-link" href="#dom-ismassallocationof-hasmassallocation"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.8" id="IsMassEstimationOf"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismassestimationof">IsMassEstimationOf<a class="self-link" href="#ismassestimationof"></a></dfn></span><a class="self-link" href="#IsMassEstimationOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①①">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement⑥">MassEstimatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassEstimationOf" data-dfn-type="attribute" data-export id="dom-ismassestimationof-ismassestimationof"><code>isMassEstimationOf</code><a class="self-link" href="#dom-ismassestimationof-ismassestimationof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassEstimationOf" data-dfn-type="attribute" data-export id="dom-ismassestimationof-hasmassestimation"><code>hasMassEstimation</code><a class="self-link" href="#dom-ismassestimationof-hasmassestimation"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof②">IsMassOf</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#iscbemassof" id="ref-for-iscbemassof①">IsCBEMassOf</a>, <a data-link-type="dfn" href="fse.html#ismevmassof" id="ref-for-ismevmassof①">IsMEVMassOf</a>, <a data-link-type="dfn" href="fse.html#ismgamassof" id="ref-for-ismgamassof①">IsMGAMassOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①①">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massestimatedelement" id="ref-for-massestimatedelement⑥">MassEstimatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassof" id="ref-for-ismassof②">IsMassOf</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#iscbemassof" id="ref-for-iscbemassof①">IsCBEMassOf</a>
+         <li><a data-link-type="dfn" href="fse.html#ismevmassof" id="ref-for-ismevmassof①">IsMEVMassOf</a>
+         <li><a data-link-type="dfn" href="fse.html#ismgamassof" id="ref-for-ismgamassof①">IsMGAMassOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassEstimationOf" data-dfn-type="attribute" data-export id="dom-ismassestimationof-ismassestimationof"><code>isMassEstimationOf</code><a class="self-link" href="#dom-ismassestimationof-ismassestimationof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassEstimationOf" data-dfn-type="attribute" data-export id="dom-ismassestimationof-hasmassestimation"><code>hasMassEstimation</code><a class="self-link" href="#dom-ismassestimationof-hasmassestimation"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.9" id="IsMassLimitOf"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismasslimitof">IsMassLimitOf<a class="self-link" href="#ismasslimitof"></a></dfn></span><a class="self-link" href="#IsMassLimitOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①②">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement②">MassAllocatedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassLimitOf" data-dfn-type="attribute" data-export id="dom-ismasslimitof-ismasslimitof"><code>isMassLimitOf</code><a class="self-link" href="#dom-ismasslimitof-ismasslimitof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassLimitOf" data-dfn-type="attribute" data-export id="dom-ismasslimitof-hasmasslimit"><code>hasMassLimit</code><a class="self-link" href="#dom-ismasslimitof-hasmasslimit"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof①">IsMassAllocationOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①②">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massallocatedelement" id="ref-for-massallocatedelement②">MassAllocatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof①">IsMassAllocationOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassLimitOf" data-dfn-type="attribute" data-export id="dom-ismasslimitof-ismasslimitof"><code>isMassLimitOf</code><a class="self-link" href="#dom-ismasslimitof-ismasslimitof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassLimitOf" data-dfn-type="attribute" data-export id="dom-ismasslimitof-hasmasslimit"><code>hasMassLimit</code><a class="self-link" href="#dom-ismasslimitof-hasmasslimit"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h3 class="heading settled" data-level="5.10" id="IsMassOf"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ismassof">IsMassOf<a class="self-link" href="#ismassof"></a></dfn></span><a class="self-link" href="#IsMassOf"></a></h3>
-    <p><em>Attributes:</em></p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①③">80000-4-quantities:mass</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement②">MassConstrainedElement</a></p>
-    <p><em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassOf" data-dfn-type="attribute" data-export id="dom-ismassof-ismassof"><code>isMassOf</code><a class="self-link" href="#dom-ismassof-ismassof"></a></dfn></p>
-    <p><em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="IsMassOf" data-dfn-type="attribute" data-export id="dom-ismassof-hasmass"><code>hasMass</code><a class="self-link" href="#dom-ismassof-hasmass"></a></dfn></p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="../../../../../build/oml/iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof">metrology:IsQuantityOf</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof②">IsMassAllocationOf</a>, <a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof④">IsMassEstimationOf</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="../../../../../build/oml/iso.org/80000-4-quantities.html#mass" id="ref-for-mass①③">80000-4-quantities:mass</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement②">MassConstrainedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../../../../../build/oml/iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof">metrology:IsQuantityOf</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#ismassallocationof" id="ref-for-ismassallocationof②">IsMassAllocationOf</a>
+         <li><a data-link-type="dfn" href="fse.html#ismassestimationof" id="ref-for-ismassestimationof④">IsMassEstimationOf</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassOf" data-dfn-type="attribute" data-export id="dom-ismassof-ismassof"><code>isMassOf</code><a class="self-link" href="#dom-ismassof-ismassof"></a></dfn> 
+      <tr>
+       <th>Reverse Relation
+       <td><dfn class="idl-code" data-dfn-for="IsMassOf" data-dfn-type="attribute" data-export id="dom-ismassof-hasmass"><code>hasMass</code><a class="self-link" href="#dom-ismassof-hasmass"></a></dfn> 
+      <tr>
+       <th>Attributes
+       <td>
+        <ul></ul>
+    </table>
     <h2 class="heading settled" data-level="6" id="Scalars"><span class="secno">6. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
     <h3 class="heading settled" data-level="6.1" id="EndCircuitDirection"><span class="secno">6.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuitdirection">EndCircuitDirection<a class="self-link" href="#endcircuitdirection"></a></dfn></span><a class="self-link" href="#EndCircuitDirection"></a></h3>
-    <p><em>Values</em>: in, inout, out</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Values
+       <td>
+        <ul>
+         <li>in
+         <li>inout
+         <li>out
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="6.2" id="FunctionDirection"><span class="secno">6.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="functiondirection">FunctionDirection<a class="self-link" href="#functiondirection"></a></dfn></span><a class="self-link" href="#FunctionDirection"></a></h3>
-    <p><em>Values</em>: 1to2, 2to1, Bidirectional, Undefined</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Values
+       <td>
+        <ul>
+         <li>1to2
+         <li>2to1
+         <li>Bidirectional
+         <li>Undefined
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="7" id="ScalarProperties"><span class="secno">7. </span><span class="content">Scalar Properties</span><a class="self-link" href="#ScalarProperties"></a></h2>
     <h3 class="heading settled" data-level="7.1" id="HasAcronym"><span class="secno">7.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasacronym">hasAcronym<a class="self-link" href="#hasacronym"></a></dfn></span><a class="self-link" href="#HasAcronym"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement②">ReferenceDesignatedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement②">ReferenceDesignatedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a>
+    </table>
     <h3 class="heading settled" data-level="7.2" id="HasEndCircuitDirection"><span class="secno">7.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitdirection">hasEndCircuitDirection<a class="self-link" href="#hasendcircuitdirection"></a></dfn></span><a class="self-link" href="#HasEndCircuitDirection"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">EndCircuit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="fse.html#endcircuitdirection" id="ref-for-endcircuitdirection">EndCircuitDirection</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">EndCircuit</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="fse.html#endcircuitdirection" id="ref-for-endcircuitdirection">EndCircuitDirection</a>
+    </table>
     <h3 class="heading settled" data-level="7.3" id="HasEndCircuitIdentifier"><span class="secno">7.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasendcircuitidentifier">hasEndCircuitIdentifier<a class="self-link" href="#hasendcircuitidentifier"></a></dfn></span><a class="self-link" href="#HasEndCircuitIdentifier"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit②">EndCircuit</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit②">EndCircuit</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a>
+    </table>
     <h3 class="heading settled" data-level="7.4" id="HasFunctionDirection"><span class="secno">7.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctiondirection">hasFunctionDirection<a class="self-link" href="#hasfunctiondirection"></a></dfn></span><a class="self-link" href="#HasFunctionDirection"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑦">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="fse.html#functiondirection" id="ref-for-functiondirection">FunctionDirection</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑦">Function</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="fse.html#functiondirection" id="ref-for-functiondirection">FunctionDirection</a>
+    </table>
     <h3 class="heading settled" data-level="7.5" id="HasFunctionNumber"><span class="secno">7.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasfunctionnumber">hasFunctionNumber<a class="self-link" href="#hasfunctionnumber"></a></dfn></span><a class="self-link" href="#HasFunctionNumber"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑧">Function</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#function" id="ref-for-function⑧">Function</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a>
+    </table>
     <h3 class="heading settled" data-level="7.6" id="HasMultiplicity"><span class="secno">7.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasmultiplicity">hasMultiplicity<a class="self-link" href="#hasmultiplicity"></a></dfn></span><a class="self-link" href="#HasMultiplicity"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy②">MassProxy</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer">integer</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#massproxy" id="ref-for-massproxy②">MassProxy</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#integer" id="ref-for-integer">integer</a>
+    </table>
     <h3 class="heading settled" data-level="7.7" id="HasReferenceDesignator"><span class="secno">7.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasreferencedesignator">hasReferenceDesignator<a class="self-link" href="#hasreferencedesignator"></a></dfn></span><a class="self-link" href="#HasReferenceDesignator"></a></h3>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement③">ReferenceDesignatedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement③">ReferenceDesignatedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../../../../build/oml/www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a>
+    </table>
    </div>
   </main>
 <script>

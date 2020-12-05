@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/build/oml/imce.jpl.nasa.gov/foundation/base" rel="canonical">
-  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
+  <meta content="36f84b02a2191a31826f17f0f1040c8adebc231a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Base</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-05">5 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2020,18 +2030,40 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>project:Product</classname>
      s.
     </para>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>, <a data-link-type="dfn" href="project.html#concern" id="ref-for-concern">project:Concern</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>, <a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>, <a data-link-type="dfn" href="project.html#product" id="ref-for-product">project:Product</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product①">mission:Product</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>AggregatedElement ← <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates">Aggregates</a> → <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement">AggregatedElement</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement①">AggregatedElement</a> ← <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates①">Aggregates</a> → AggregatedElement</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="mission.html#component" id="ref-for-component">mission:Component</a>
+         <li><a data-link-type="dfn" href="project.html#concern" id="ref-for-concern">project:Concern</a>
+         <li><a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment">mission:Environment</a>
+         <li><a data-link-type="dfn" href="analysis.html#explanation" id="ref-for-explanation">analysis:Explanation</a>
+         <li><a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective">mission:Objective</a>
+         <li><a data-link-type="dfn" href="project.html#product" id="ref-for-product">project:Product</a>
+         <li><a data-link-type="dfn" href="mission.html#product" id="ref-for-product①">mission:Product</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>AggregatedElement ← <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates">Aggregates</a> → <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement">AggregatedElement</a> 
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement①">AggregatedElement</a> ← <a data-link-type="dfn" href="base.html#aggregates" id="ref-for-aggregates①">Aggregates</a> → AggregatedElement 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="ContainedElement"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="containedelement">ContainedElement<a class="self-link" href="#containedelement"></a></dfn></span><a class="self-link" href="#ContainedElement"></a></h3>
     <p>
      A 
@@ -2040,18 +2072,37 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>Container</classname>
      .
     </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement①">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement①">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="mission.html#component" id="ref-for-component①">mission:Component</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item">mission:Item</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction">mission:Junction</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hascontainmentindex" id="ref-for-hascontainmentindex">hasContainmentIndex</a></p>
-    </ul>
-    <p><em>Relations with target:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#container" id="ref-for-container">Container</a> ← <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains">Contains</a> → ContainedElement</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement①">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement①">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="mission.html#component" id="ref-for-component①">mission:Component</a>
+         <li><a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow">mission:Flow</a>
+         <li><a data-link-type="dfn" href="mission.html#item" id="ref-for-item">mission:Item</a>
+         <li><a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction">mission:Junction</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="base.html#hascontainmentindex" id="ref-for-hascontainmentindex">hasContainmentIndex</a>
+        </ul>
+      <tr>
+       <th>Relations with target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="base.html#container" id="ref-for-container">Container</a> ← <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains">Contains</a> → ContainedElement 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="Container"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="container">Container<a class="self-link" href="#container"></a></dfn></span><a class="self-link" href="#Container"></a></h3>
     <p>
      A 
@@ -2062,40 +2113,93 @@ dfn > a.self-link::before      { content: "#"; }
      <emphasis>containment</emphasis>
       is general; it is specialized for more particular applications in other ontologies.
     </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement②">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement②">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="mission.html#component" id="ref-for-component②">mission:Component</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow①">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item①">mission:Item</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction①">mission:Junction</a></p>
-    <p><em>Relations with source:</em></p>
-    <ul>
-     <li data-md>
-      <p>Container ← <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains①">Contains</a> → <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement">ContainedElement</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement②">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement②">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="mission.html#component" id="ref-for-component②">mission:Component</a>
+         <li><a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow①">mission:Flow</a>
+         <li><a data-link-type="dfn" href="mission.html#item" id="ref-for-item①">mission:Item</a>
+         <li><a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction①">mission:Junction</a>
+        </ul>
+      <tr>
+       <th>Relations with source
+       <td>
+        <ul>
+         <li>Container ← <a data-link-type="dfn" href="base.html#contains" id="ref-for-contains①">Contains</a> → <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement">ContainedElement</a> 
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.4" id="IdentifiedElement"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="identifiedelement">IdentifiedElement<a class="self-link" href="#identifiedelement"></a></dfn></span><a class="self-link" href="#IdentifiedElement"></a></h3>
     <p>
      A 
      <classname>IdentifiedElement</classname>
       is an object that has a unique identifier and a canonical name. In addition, the object may have multiple alternate names, abbreviations, and index entries.
     </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement③">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement③">analysis:CharacterizedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a>, <a data-link-type="dfn" href="mission.html#component" id="ref-for-component③">mission:Component</a>, <a data-link-type="dfn" href="project.html#concern" id="ref-for-concern①">project:Concern</a>, <a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion">analysis:Criterion</a>, <a data-link-type="dfn" href="project.html#deliverable" id="ref-for-deliverable">project:Deliverable</a>, <a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment①">mission:Environment</a>, <a data-link-type="dfn" href="project.html#facility" id="ref-for-facility">project:Facility</a>, <a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow②">mission:Flow</a>, <a data-link-type="dfn" href="mission.html#function" id="ref-for-function">mission:Function</a>, <a data-link-type="dfn" href="project.html#interchange" id="ref-for-interchange">project:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange①">mission:Interchange</a>, <a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint">mission:InterchangePoint</a>, <a data-link-type="dfn" href="project.html#interchangepoint" id="ref-for-interchangepoint①">project:InterchangePoint</a>, <a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface">mission:Interface</a>, <a data-link-type="dfn" href="mission.html#item" id="ref-for-item②">mission:Item</a>, <a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction②">mission:Junction</a>, <a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission">mission:Mission</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective①">mission:Objective</a>, <a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective②">mission:Objective</a>, <a data-link-type="dfn" href="base.html#package" id="ref-for-package">Package</a>, <a data-link-type="dfn" href="project.html#person" id="ref-for-person">project:Person</a>, <a data-link-type="dfn" href="project.html#process" id="ref-for-process">project:Process</a>, <a data-link-type="dfn" href="project.html#product" id="ref-for-product②">project:Product</a>, <a data-link-type="dfn" href="mission.html#product" id="ref-for-product③">mission:Product</a>, <a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement">fse:ReferenceDesignatedElement</a>, <a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement">mission:Requirement</a>, <a data-link-type="dfn" href="project.html#role" id="ref-for-role">project:Role</a>, <a data-link-type="dfn" href="project.html#stakeholder" id="ref-for-stakeholder">project:Stakeholder</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasalternatename" id="ref-for-hasalternatename">hasAlternateName</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hascanonicalname" id="ref-for-hascanonicalname">hasCanonicalName</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasdescription" id="ref-for-hasdescription">hasDescription</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasidentifier" id="ref-for-hasidentifier">hasIdentifier</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasindexentry" id="ref-for-hasindexentry">hasIndexEntry</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasshortname" id="ref-for-hasshortname">hasShortName</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hassortkey" id="ref-for-hassortkey">hasSortKey</a></p>
-     <li data-md>
-      <p><a data-link-type="dfn" href="base.html#hasuuid" id="ref-for-hasuuid">hasUuid</a></p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement③">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement③">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#characterization" id="ref-for-characterization">analysis:Characterization</a>
+         <li><a data-link-type="dfn" href="mission.html#component" id="ref-for-component③">mission:Component</a>
+         <li><a data-link-type="dfn" href="project.html#concern" id="ref-for-concern①">project:Concern</a>
+         <li><a data-link-type="dfn" href="analysis.html#criterion" id="ref-for-criterion">analysis:Criterion</a>
+         <li><a data-link-type="dfn" href="project.html#deliverable" id="ref-for-deliverable">project:Deliverable</a>
+         <li><a data-link-type="dfn" href="mission.html#environment" id="ref-for-environment①">mission:Environment</a>
+         <li><a data-link-type="dfn" href="project.html#facility" id="ref-for-facility">project:Facility</a>
+         <li><a data-link-type="dfn" href="mission.html#flow" id="ref-for-flow②">mission:Flow</a>
+         <li><a data-link-type="dfn" href="mission.html#function" id="ref-for-function">mission:Function</a>
+         <li><a data-link-type="dfn" href="project.html#interchange" id="ref-for-interchange">project:Interchange</a>
+         <li><a data-link-type="dfn" href="mission.html#interchange" id="ref-for-interchange①">mission:Interchange</a>
+         <li><a data-link-type="dfn" href="project.html#interchangepoint" id="ref-for-interchangepoint">project:InterchangePoint</a>
+         <li><a data-link-type="dfn" href="mission.html#interchangepoint" id="ref-for-interchangepoint①">mission:InterchangePoint</a>
+         <li><a data-link-type="dfn" href="mission.html#interface" id="ref-for-interface">mission:Interface</a>
+         <li><a data-link-type="dfn" href="mission.html#item" id="ref-for-item②">mission:Item</a>
+         <li><a data-link-type="dfn" href="mission.html#junction" id="ref-for-junction②">mission:Junction</a>
+         <li><a data-link-type="dfn" href="mission.html#mission" id="ref-for-mission">mission:Mission</a>
+         <li><a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective①">mission:Objective</a>
+         <li><a data-link-type="dfn" href="mission.html#objective" id="ref-for-objective②">mission:Objective</a>
+         <li><a data-link-type="dfn" href="base.html#package" id="ref-for-package">Package</a>
+         <li><a data-link-type="dfn" href="project.html#person" id="ref-for-person">project:Person</a>
+         <li><a data-link-type="dfn" href="project.html#process" id="ref-for-process">project:Process</a>
+         <li><a data-link-type="dfn" href="project.html#product" id="ref-for-product②">project:Product</a>
+         <li><a data-link-type="dfn" href="mission.html#product" id="ref-for-product③">mission:Product</a>
+         <li><a data-link-type="dfn" href="../../../../src/oml/imce.jpl.nasa.gov/discipline/fse/fse.html#referencedesignatedelement" id="ref-for-referencedesignatedelement">fse:ReferenceDesignatedElement</a>
+         <li><a data-link-type="dfn" href="mission.html#requirement" id="ref-for-requirement">mission:Requirement</a>
+         <li><a data-link-type="dfn" href="project.html#role" id="ref-for-role">project:Role</a>
+         <li><a data-link-type="dfn" href="project.html#stakeholder" id="ref-for-stakeholder">project:Stakeholder</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="base.html#hasalternatename" id="ref-for-hasalternatename">hasAlternateName</a>
+         <li><a data-link-type="dfn" href="base.html#hascanonicalname" id="ref-for-hascanonicalname">hasCanonicalName</a>
+         <li><a data-link-type="dfn" href="base.html#hasdescription" id="ref-for-hasdescription">hasDescription</a>
+         <li><a data-link-type="dfn" href="base.html#hasidentifier" id="ref-for-hasidentifier">hasIdentifier</a>
+         <li><a data-link-type="dfn" href="base.html#hasindexentry" id="ref-for-hasindexentry">hasIndexEntry</a>
+         <li><a data-link-type="dfn" href="base.html#hasshortname" id="ref-for-hasshortname">hasShortName</a>
+         <li><a data-link-type="dfn" href="base.html#hassortkey" id="ref-for-hassortkey">hasSortKey</a>
+         <li><a data-link-type="dfn" href="base.html#hasuuid" id="ref-for-hasuuid">hasUuid</a>
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="4" id="concepts"><span class="secno">4. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="4.1" id="Package"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="package">Package<a class="self-link" href="#package"></a></dfn></span><a class="self-link" href="#Package"></a></h3>
     <p>
@@ -2103,70 +2207,142 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>Package</classname>
       groups an arbitrary collection of model elements.
     </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement④">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement④">analysis:CharacterizedElement</a>, <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement">IdentifiedElement</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="project.html#authority" id="ref-for-authority">project:Authority</a>, <a data-link-type="dfn" href="project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement④">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement④">analysis:CharacterizedElement</a>
+         <li><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement">IdentifiedElement</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="project.html#authority" id="ref-for-authority">project:Authority</a>
+         <li><a data-link-type="dfn" href="project.html#workpackage" id="ref-for-workpackage">project:WorkPackage</a>
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="5" id="Relations"><span class="secno">5. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
     <h3 class="heading settled" data-level="5.1" id="Aggregates"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="aggregates">Aggregates<a class="self-link" href="#aggregates"></a></dfn></span><a class="self-link" href="#Aggregates"></a></h3>
-    <p><em>Attributes:</em> Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement②">AggregatedElement</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement③">AggregatedElement</a></p>
-    <p>
-     <em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Aggregates" data-dfn-type="attribute" data-export id="dom-aggregates-aggregates"><code>aggregates</code><a class="self-link" href="#dom-aggregates-aggregates"></a></dfn> An 
-     <classname>AggregatedElement</classname>
-     <replaceable>e</replaceable>
-     <property>aggregates</property>
-      zero or more elements of compatible type if and only if 
-     <replaceable>e</replaceable>
-      references or subsumes  those other elements.
-    </p>
-    <p>
-     <em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="Aggregates" data-dfn-type="attribute" data-export id="dom-aggregates-isaggregatedin"><code>isAggregatedIn</code><a class="self-link" href="#dom-aggregates-isaggregatedin"></a></dfn> See 
-     <property>aggregates</property>
-     .
-    </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement⑤">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement⑤">analysis:CharacterizedElement</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement②">AggregatedElement</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="base.html#aggregatedelement" id="ref-for-aggregatedelement③">AggregatedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement⑤">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement⑤">analysis:CharacterizedElement</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td>
+        <dfn class="idl-code" data-dfn-for="Aggregates" data-dfn-type="attribute" data-export id="dom-aggregates-aggregates"><code>aggregates</code><a class="self-link" href="#dom-aggregates-aggregates"></a></dfn> 
+        <p>
+         An 
+         <classname>AggregatedElement</classname>
+         <replaceable>e</replaceable>
+         <property>aggregates</property>
+          zero or more elements of compatible type if and only if 
+         <replaceable>e</replaceable>
+          references or subsumes  those other elements.
+        </p>
+      <tr>
+       <th>Reverse Relation
+       <td>
+        <dfn class="idl-code" data-dfn-for="Aggregates" data-dfn-type="attribute" data-export id="dom-aggregates-isaggregatedin"><code>isAggregatedIn</code><a class="self-link" href="#dom-aggregates-isaggregatedin"></a></dfn> 
+        <p>
+         See 
+         <property>aggregates</property>
+         .
+        </p>
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>Asymmetric
+         <li>Irreflexive
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="5.2" id="Contains"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="contains">Contains<a class="self-link" href="#contains"></a></dfn></span><a class="self-link" href="#Contains"></a></h3>
-    <p><em>Attributes:</em> InverseFunctional, Asymmetric, Irreflexive</p>
-    <p><em>Source:</em> <a data-link-type="dfn" href="base.html#container" id="ref-for-container①">Container</a></p>
-    <p><em>Target:</em> <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement①">ContainedElement</a></p>
-    <p>
-     <em>Forward Relation:</em> <dfn class="idl-code" data-dfn-for="Contains" data-dfn-type="attribute" data-export id="dom-contains-contains"><code>contains</code><a class="self-link" href="#dom-contains-contains"></a></dfn> A 
-     <classname>Container</classname>
-     <replaceable>
-      c
-      <subscript>1</subscript>
-     </replaceable>
-     <property>contains</property>
-      another 
-     <classname>ContainedElement</classname>
-    </p>
-    <replaceable>
-     e
-     <subscript>2</subscript>
-    </replaceable>
-     if and only if 
-    <classname>ContainedElement</classname>
-    <replaceable>
-     e
-     <subscript>2</subscript>
-    </replaceable>
-     is incorporated within or otherwise a part of 
-    <classname>Container</classname>
-    <replaceable>
-     c
-     <subscript>1</subscript>
-    </replaceable>
-     and no (directly) any other 
-    <classname>Container</classname>
-    . 
-    <p>
-     <em>Reverse Relation:</em> <dfn class="idl-code" data-dfn-for="Contains" data-dfn-type="attribute" data-export id="dom-contains-iscontainedin"><code>isContainedIn</code><a class="self-link" href="#dom-contains-iscontainedin"></a></dfn> The 
-     <property>isContainedIn</property>
-      property is used to relate classes that can be composed into a strict hierarchy. An element 
-     <property>isContainedIn</property>
-      at most one parent element.
-    </p>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement⑥">analysis:AnalyzedElement</a>, <a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement⑥">analysis:CharacterizedElement</a>, <a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement">mission:SpecifiedElement</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Source
+       <td><a data-link-type="dfn" href="base.html#container" id="ref-for-container①">Container</a>
+      <tr>
+       <th>Target
+       <td><a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement①">ContainedElement</a>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="analysis.html#analyzedelement" id="ref-for-analyzedelement⑥">analysis:AnalyzedElement</a>
+         <li><a data-link-type="dfn" href="analysis.html#characterizedelement" id="ref-for-characterizedelement⑥">analysis:CharacterizedElement</a>
+         <li><a data-link-type="dfn" href="mission.html#specifiedelement" id="ref-for-specifiedelement">mission:SpecifiedElement</a>
+        </ul>
+      <tr>
+       <th>Forward Relation
+       <td>
+        <dfn class="idl-code" data-dfn-for="Contains" data-dfn-type="attribute" data-export id="dom-contains-contains"><code>contains</code><a class="self-link" href="#dom-contains-contains"></a></dfn> 
+        <p>
+         A 
+         <classname>Container</classname>
+         <replaceable>
+          c
+          <subscript>1</subscript>
+         </replaceable>
+         <property>contains</property>
+          another 
+         <classname>ContainedElement</classname>
+         <replaceable>
+          e
+          <subscript>2</subscript>
+         </replaceable>
+          if and only if 
+         <classname>ContainedElement</classname>
+         <replaceable>
+          e
+          <subscript>2</subscript>
+         </replaceable>
+          is incorporated within or otherwise a part of 
+         <classname>Container</classname>
+         <replaceable>
+          c
+          <subscript>1</subscript>
+         </replaceable>
+          and no (directly) any other 
+         <classname>Container</classname>
+         .
+        </p>
+      <tr>
+       <th>Reverse Relation
+       <td>
+        <dfn class="idl-code" data-dfn-for="Contains" data-dfn-type="attribute" data-export id="dom-contains-iscontainedin"><code>isContainedIn</code><a class="self-link" href="#dom-contains-iscontainedin"></a></dfn> 
+        <p>
+         The 
+         <property>isContainedIn</property>
+          property is used to relate classes that can be composed into a strict hierarchy. An element 
+         <property>isContainedIn</property>
+          at most one parent element.
+        </p>
+      <tr>
+       <th>Attributes
+       <td>
+        <ul>
+         <li>InverseFunctional
+         <li>Asymmetric
+         <li>Irreflexive
+        </ul>
+    </table>
     <h2 class="heading settled" data-level="6" id="ScalarProperties"><span class="secno">6. </span><span class="content">Scalar Properties</span><a class="self-link" href="#ScalarProperties"></a></h2>
     <h3 class="heading settled" data-level="6.1" id="HasAlternateName"><span class="secno">6.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasalternatename">hasAlternateName<a class="self-link" href="#hasalternatename"></a></dfn></span><a class="self-link" href="#HasAlternateName"></a></h3>
     <p>
@@ -2176,8 +2352,15 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or more alternate names. Alternate names need not be unique.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement①">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement①">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string">string</a>
+    </table>
     <h3 class="heading settled" data-level="6.2" id="HasCanonicalName"><span class="secno">6.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascanonicalname">hasCanonicalName<a class="self-link" href="#hascanonicalname"></a></dfn></span><a class="self-link" href="#HasCanonicalName"></a></h3>
     <p>
      The 
@@ -2186,9 +2369,18 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or one canonical names. Canonical names need not be unique.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement②">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement②">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string①">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.3" id="HasContainmentIndex"><span class="secno">6.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hascontainmentindex">hasContainmentIndex<a class="self-link" href="#hascontainmentindex"></a></dfn></span><a class="self-link" href="#HasContainmentIndex"></a></h3>
     <p>
      The 
@@ -2199,9 +2391,18 @@ dfn > a.self-link::before      { content: "#"; }
      <property>contains</property>
       relationships.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement②">ContainedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#containedelement" id="ref-for-containedelement②">ContainedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string②">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.4" id="HasDescription"><span class="secno">6.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasdescription">hasDescription<a class="self-link" href="#hasdescription"></a></dfn></span><a class="self-link" href="#HasDescription"></a></h3>
     <p>
      The 
@@ -2210,9 +2411,18 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or one text descriptions.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement③">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement③">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string③">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.5" id="HasIdentifier"><span class="secno">6.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasidentifier">hasIdentifier<a class="self-link" href="#hasidentifier"></a></dfn></span><a class="self-link" href="#HasIdentifier"></a></h3>
     <p>
      The 
@@ -2223,8 +2433,15 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       in some context.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement④">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement④">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string④">string</a>
+    </table>
     <h3 class="heading settled" data-level="6.6" id="HasIndexEntry"><span class="secno">6.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasindexentry">hasIndexEntry<a class="self-link" href="#hasindexentry"></a></dfn></span><a class="self-link" href="#HasIndexEntry"></a></h3>
     <p>
      The 
@@ -2233,8 +2450,15 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or one terms under which it would be indexed in a document.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑤">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤">string</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑤">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑤">string</a>
+    </table>
     <h3 class="heading settled" data-level="6.7" id="HasShortName"><span class="secno">6.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasshortname">hasShortName<a class="self-link" href="#hasshortname"></a></dfn></span><a class="self-link" href="#HasShortName"></a></h3>
     <p>
      The 
@@ -2243,9 +2467,18 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or more short names. Short names need not be unique.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑥">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑥">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑥">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑥">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.8" id="HasSortKey"><span class="secno">6.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hassortkey">hasSortKey<a class="self-link" href="#hassortkey"></a></dfn></span><a class="self-link" href="#HasSortKey"></a></h3>
     <p>
      The 
@@ -2254,9 +2487,18 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or one string-valued keys that may be used to establish its order in a sorted collection.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑦">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑦">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑦">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑦">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
     <h3 class="heading settled" data-level="6.9" id="HasUuid"><span class="secno">6.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasuuid">hasUuid<a class="self-link" href="#hasuuid"></a></dfn></span><a class="self-link" href="#HasUuid"></a></h3>
     <p>
      The 
@@ -2265,9 +2507,18 @@ dfn > a.self-link::before      { content: "#"; }
      <classname>IdentifiedElement</classname>
       to zero or one Universally Unique Identifier as defined by RFC 4122, expressed as a string.
     </p>
-    <p><em>Domain:</em> <a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑧">IdentifiedElement</a></p>
-    <p><em>Scalar value type:</em> <a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑧">string</a></p>
-    <p><em>Attributes:</em> Functional</p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Domain
+       <td><a data-link-type="dfn" href="base.html#identifiedelement" id="ref-for-identifiedelement⑧">IdentifiedElement</a>
+      <tr>
+       <th>Range
+       <td><a data-link-type="dfn" href="../../www.w3.org/2001/XMLSchema.html#string" id="ref-for-string⑧">string</a>
+      <tr>
+       <th>Attributes
+       <td>Functional
+    </table>
    </div>
   </main>
 <script>
@@ -2619,7 +2870,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-interchangepoint">
    <a href="mission.html#interchangepoint">mission.html#interchangepoint</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-interchangepoint">3.4. IdentifiedElement</a>
+    <li><a href="#ref-for-interchangepoint①">3.4. IdentifiedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-interface">
@@ -2710,7 +2961,7 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-interchangepoint">
    <a href="project.html#interchangepoint">project.html#interchangepoint</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-interchangepoint①">3.4. IdentifiedElement</a>
+    <li><a href="#ref-for-interchangepoint">3.4. IdentifiedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-person">

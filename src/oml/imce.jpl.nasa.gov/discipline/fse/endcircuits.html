@@ -1486,10 +1486,20 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/imce.jpl.nasa.gov/discipline/fse/endcircuits" rel="canonical">
-  <meta content="7a72bb52246601fb1e7f86b0f391deb753616327" name="document-revision">
+  <meta content="36f84b02a2191a31826f17f0f1040c8adebc231a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
 }
 </style>
 <style>/* style-autolinks */
@@ -1926,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">End Ciruit Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-11-29">29 November 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-05">5 December 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1980,24 +1990,64 @@ dfn > a.self-link::before      { content: "#"; }
     </ul>
     <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="Power"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">Power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">fse:EndCircuit</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">fse:EndCircuit</a>
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.2" id="PowerIn"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerin">PowerIn<a class="self-link" href="#powerin"></a></dfn></span><a class="self-link" href="#PowerIn"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">fse:hasEndCircuitDirection</a> (must have value in)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection">fse:hasEndCircuitDirection</a> (must have value in)
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.3" id="PowerOut"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerout">PowerOut<a class="self-link" href="#powerout"></a></dfn></span><a class="self-link" href="#PowerOut"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">UnidirectionalPower</a></p>
-    <p><em>Properties:</em></p>
-    <ul>
-     <li data-md>
-      <p><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection①">fse:hasEndCircuitDirection</a> (must have value out)</p>
-    </ul>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">UnidirectionalPower</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#hasendcircuitdirection" id="ref-for-hasendcircuitdirection①">fse:hasEndCircuitDirection</a> (must have value out)
+        </ul>
+    </table>
     <h3 class="heading settled" data-level="3.4" id="UnidirectionalPower"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unidirectionalpower">UnidirectionalPower<a class="self-link" href="#unidirectionalpower"></a></dfn></span><a class="self-link" href="#UnidirectionalPower"></a></h3>
-    <p><em>Supertypes:</em> <a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">fse:EndCircuit</a></p>
-    <p><em>Subtypes:</em> <a data-link-type="dfn" href="endcircuits.html#powerin" id="ref-for-powerin">PowerIn</a>, <a data-link-type="dfn" href="endcircuits.html#powerout" id="ref-for-powerout">PowerOut</a></p>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Supertypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">fse:EndCircuit</a>
+        </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="endcircuits.html#powerin" id="ref-for-powerin">PowerIn</a>
+         <li><a data-link-type="dfn" href="endcircuits.html#powerout" id="ref-for-powerout">PowerOut</a>
+        </ul>
+    </table>
    </div>
   </main>
 <script>
