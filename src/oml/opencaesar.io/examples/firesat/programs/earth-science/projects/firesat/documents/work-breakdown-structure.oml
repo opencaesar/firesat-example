@@ -1,12 +1,12 @@
-description <http://opencaesar.io/programs/earth-science/projects/firesat/documents/work-breakdown-structure> with # as work-breakdown-structure {
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/work-breakdown-structure> with # as work-breakdown-structure {
 	uses <http://imce.jpl.nasa.gov/foundation/project>
 	uses <http://opencaesar.io/document>
 	uses <http://purl.org/dc/elements/1.1>
 	uses <http://imce.jpl.nasa.gov/foundation/mission>
 	
-	extends <http://opencaesar.io/organizations/jpl>
-	extends <http://opencaesar.io/programs/earth-science/earth-science>
-	extends <http://opencaesar.io/programs/earth-science/missions/firesat/firesat>
+	extends <http://opencaesar.io/examples/firesat/organizations/jpl>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/earth-science>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/firesat>
 	extends <./common.oml>
 	
 	@doc:hasReleaseVersion 'Development'
@@ -15,7 +15,7 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		doc:preparedBy jpl:DavidTruong
 		doc:preparedBy jpl:PaulGaspardo
 		
-		doc:describes earth-science:FireSatProject
+		doc:describes earth-science-program:FireSatProject
 		
 		doc:hasElement common:TitlePage
 		doc:hasElement 0-Preface
@@ -46,10 +46,8 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
 
 		SELECT DISTINCT ?org ?orgName (?orgName as ?hasTitle) WHERE {
-			GRAPH ?g {
-				?org a proj:Organization .
-				?org rdfs:label ?orgName
-			}
+			?org a proj:Organization .
+			?org rdfs:label ?orgName .
 		} ORDER BY ?orgName
 	'''
 	@doc:hasForwardedBinding 'org'
@@ -85,12 +83,10 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 
 		SELECT DISTINCT ?personName ?roleName
 		WHERE {
-			GRAPH ?g {
-				?person proj:belongsTo $org .
-				?person proj:hasRole ?role .
-				?person rdfs:label ?personName .
-				?role rdfs:label ?roleName
-			}
+			?person proj:belongsTo $org .
+			?person proj:hasRole ?role .
+			?person rdfs:label ?personName .
+			?role rdfs:label ?roleName .
 		} ORDER BY ?personName
 	'''
 	@doc:hasForwardedBinding '*'
@@ -130,10 +126,8 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 		SELECT DISTINCT ?programName WHERE {
-			GRAPH ?g {
-				?program a proj:Program .
-				?program rdfs:label ?programName
-			}
+			?program a proj:Program .
+			?program rdfs:label ?programName .
 		} ORDER BY ?programName
 	'''
 	@doc:hasForwardedBinding 'programName'
@@ -150,10 +144,8 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 		SELECT DISTINCT ?program (CONCAT(?programName, '\'s Projects') AS ?hasTitle) WHERE {
-			GRAPH ?g {
-				?program a proj:Program .
-				?program rdfs:label ?programName
-			}
+			?program a proj:Program .
+			?program rdfs:label ?programName .
 		} ORDER BY ?programName
 	'''
 	@doc:hasForwardedBinding 'program'
@@ -168,18 +160,12 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 		SELECT DISTINCT ?projectName ?organizationName ?missionName WHERE {
-			GRAPH ?programGraph {
-				$program proj:authorizes ?project .
-				?project proj:isResponsibilityOf ?organization .
-				?project proj:supplies ?mission .
-				?project rdfs:label ?projectName .
-			}
-			GRAPH ?organizationGraph {
-				?organization rdfs:label ?organizationName
-			}
-			GRAPH ?missionGraph {
-				?mission rdfs:label ?missionName
-			}
+			$program proj:authorizes ?project .
+			?project proj:isResponsibilityOf ?organization .
+			?project proj:supplies ?mission .
+			?project rdfs:label ?projectName .
+			?organization rdfs:label ?organizationName .
+			?mission rdfs:label ?missionName .
 		}
 	'''
 	@doc:hasForwardedBinding '*'
@@ -214,12 +200,8 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 
 		SELECT DISTINCT ?mission ?missionName (?missionName AS ?hasTitle)
 		WHERE {
-			GRAPH ?dg {
-				$SELF <http://opencaesar.io/document#describes> ?mission
-			}
-			GRAPH ?mg {
-				?mission rdfs:label ?missionName
-			}
+			$SELF <http://opencaesar.io/document#describes> ?mission .
+			?mission rdfs:label ?missionName .
 		}
 	'''
 	@doc:hasForwardedBinding 'mission'
@@ -241,12 +223,10 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		SELECT DISTINCT (CONCAT('The ', ?missionLabel, ' pursuses ', ?objectiveLabel, ' which has the objective: ', ?objectiveComment,
 			'. The ', ?missionLabel, ' operates in these environments: ') AS ?hasText)
 		WHERE {
-			GRAPH ?g {
-				$mission rdfs:label ?missionLabel .
-				$mission mission:pursues ?objective .
-				?objective rdfs:label ?objectiveLabel .
-				?objective rdfs:comment ?objectiveComment .
-			}
+			$mission rdfs:label ?missionLabel .
+			$mission mission:pursues ?objective .
+			?objective rdfs:label ?objectiveLabel .
+			?objective rdfs:comment ?objectiveComment .
 		}
 	'''
 	ci 1-MissionDescription : doc:Para
@@ -267,15 +247,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 		SELECT DISTINCT ?environmentLabel WHERE {
-			GRAPH ?dg {
-				$mission mission:deploys ?deployed .
-			}
-			GRAPH ?ig {
-				?deployed mission:isInfluencedBy ?environment .
-			}
-			GRAPH ?eg {
-				?environment rdfs:label ?environmentLabel .
-			}
+			$mission mission:deploys ?deployed .
+			?deployed mission:isInfluencedBy ?environment .
+			?environment rdfs:label ?environmentLabel .
 		} ORDER BY ?environmentLabel
 	'''
 	@doc:hasForwardedBinding 'environmentLabel'
@@ -304,13 +278,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
 
 		SELECT DISTINCT ?stakeholderLabel WHERE {
-			GRAPH ?pg {
-				$mission mission:pursues ?objective .
-			}
-			GRAPH ?sg {
-				?stakeholder proj:represents ?objective .
-				?stakeholder rdfs:label ?stakeholderLabel
-			}
+			$mission mission:pursues ?objective .
+			?stakeholder proj:represents ?objective .
+			?stakeholder rdfs:label ?stakeholderLabel .
 		} ORDER BY ?stakeholderLabel
 	'''
 	@doc:hasForwardedBinding 'stakeholderLabel'
@@ -325,17 +295,13 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 	@doc:hasSparqlMapping '''
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 		SELECT DISTINCT ?project ?hasTitle WHERE {
-			GRAPH ?dg {
-				$SELF <http://opencaesar.io/document#describes> ?project .
-			}
-			GRAPH ?pg {
-				?project rdfs:label ?hasTitle
-			}
+			$SELF <http://opencaesar.io/document#describes> ?project .
+			?project rdfs:label ?hasTitle .
 		}
 	'''
 	@doc:hasForwardedBinding 'project'
 	ci 2-FireSatProject : doc:Section [
-		doc:describes earth-science:FireSatProject
+		doc:describes earth-science-program:FireSatProject
 		
 		doc:hasElement 1-ProjectDescription
 		doc:hasElement 2-MainWorkPackages
@@ -352,13 +318,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		SELECT (CONCAT('The ', ?projectLabel, ' deploys multiple work packages in pursuit of the ', ?missionLabel,
 			'. These work packages contain data on the products needed for this project and describes how these products should be built.') AS ?hasText)
 		WHERE {
-			GRAPH ?pg {
-				?project rdfs:label ?projectLabel .
-				?project proj:supplies ?mission
-			}
-			GRAPH ?mg {
-				?mission rdfs:label ?missionLabel
-			}
+			?project rdfs:label ?projectLabel .
+			?project proj:supplies ?mission .
+			?mission rdfs:label ?missionLabel .
 		}
 	'''
 	ci 1-ProjectDescription : doc:Para
@@ -377,22 +339,12 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 
 		SELECT DISTINCT ?workPackageLabel ?suppliesLabel ?organizationLabel
 		WHERE {
-			GRAPH ?ag {
-				$project proj:authorizes ?workPackage
-			}
-			GRAPH ?wpg {
-				?workPackage rdfs:label ?workPackageLabel .
-				?workPackage proj:isResponsibilityOf ?organization
-			}
-			GRAPH ?wpsg {
-				?workPackage proj:supplies ?supplies
-			}
-			GRAPH ?sg {
-				?supplies rdfs:label ?suppliesLabel
-			}
-			GRAPH ?og {
-				?organization rdfs:label ?organizationLabel . 
-			}
+			$project proj:authorizes ?workPackage .
+			?workPackage rdfs:label ?workPackageLabel .
+			?workPackage proj:isResponsibilityOf ?organization .
+			?workPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
 		} ORDER BY ?workPackageLabel
 	'''
 	@doc:hasForwardedBinding '*'
@@ -429,22 +381,12 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 
 		SELECT DISTINCT ?workPackage ?workPackageLabel ?suppliesLabel ?organizationLabel (?workPackageLabel AS ?hasTitle)
 		WHERE {
-			GRAPH ?ag {
-				$project proj:authorizes ?workPackage
-			}
-			GRAPH ?wpg {
-				?workPackage rdfs:label ?workPackageLabel .
-				?workPackage proj:isResponsibilityOf ?organization
-			}
-			GRAPH ?wpsg {
-				?workPackage proj:supplies ?supplies
-			}
-			GRAPH ?sg {
-				?supplies rdfs:label ?suppliesLabel
-			}
-			GRAPH ?og {
-				?organization rdfs:label ?organizationLabel . 
-			}
+			$project proj:authorizes ?workPackage .
+			?workPackage rdfs:label ?workPackageLabel .
+			?workPackage proj:isResponsibilityOf ?organization .
+			?workPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
 		} ORDER BY ?workPackageLabel
 	'''
 	@doc:hasForwardedBinding 'workPackage'
@@ -482,22 +424,12 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 
 		SELECT DISTINCT ?workPackageLabel ?suppliesLabel ?organizationLabel
 		WHERE {
-			GRAPH ?ag {
-				$workPackage proj:authorizes ?subWorkPackage
-			}
-			GRAPH ?wpg {
-				?subWorkPackage rdfs:label ?workPackageLabel .
-				?subWorkPackage proj:isResponsibilityOf ?organization
-			}
-			GRAPH ?wpsg {
-				?subWorkPackage proj:supplies ?supplies
-			}
-			GRAPH ?sg {
-				?supplies rdfs:label ?suppliesLabel
-			}
-			GRAPH ?og {
-				?organization rdfs:label ?organizationLabel . 
-			}
+			$workPackage proj:authorizes ?subWorkPackage .
+			?subWorkPackage rdfs:label ?workPackageLabel .
+			?subWorkPackage proj:isResponsibilityOf ?organization .
+			?subWorkPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
 		} ORDER BY ?workPackageLabel
 	'''
 	@doc:hasForwardedBinding 'workPackageLabel'

@@ -1,17 +1,15 @@
 
-description <http://opencaesar.io/programs/earth-science/projects/firesat/documents/common> with # as common {
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/common> with # as common {
 	uses <http://opencaesar.io/document> as doc
 	
 	@doc:hasRequiredBinding 'DOCUMENT'
 	@doc:hasSparqlMapping '''
 		SELECT (CONCAT(STR(YEAR(NOW())), '-', STR(MONTH(NOW())), '-', STR(DAY(NOW()))) AS ?hasDate) ?hasReleaseVersion WHERE {
-			GRAPH ?docGraph {
-				$DOCUMENT <http://opencaesar.io/document#hasReleaseVersion> ?hasReleaseVersion
-			}
+			$DOCUMENT <http://opencaesar.io/document#hasReleaseVersion> ?hasReleaseVersion
 		}
 	'''
 	ci TitlePage : doc:TitlePage [
-		doc:hasElement Preparer
+		doc:hasElement Preparers
 	]
 	
 	@doc:hasRequiredBinding 'DOCUMENT'
@@ -21,17 +19,14 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 		SELECT DISTINCT ?hasName ?hasRole ?hasOrganization WHERE {
-			GRAPH ?docGraph {
-				$DOCUMENT doc:preparedBy ?preparer
-			}
-			GRAPH ?orgGraph {
-				?preparer proj:belongsTo ?organization .
-				?preparer proj:hasRole ?role .
-				?preparer rdfs:label ?hasName .
-				?role rdfs:label ?hasRole .
-				?organization rdfs:label ?hasOrganization .
-			}
+			$DOCUMENT doc:preparedBy ?preparer .
+			?preparer proj:belongsTo ?organization .
+			?preparer proj:hasRole ?role .
+			?preparer rdfs:label ?hasName .
+			?role rdfs:label ?hasRole .
+			?organization rdfs:label ?hasOrganization .
 		} ORDER BY ?hasName
 	'''
-	ci Preparer : doc:Preparer
+	ci Preparers : doc:Preparer
+	
 }

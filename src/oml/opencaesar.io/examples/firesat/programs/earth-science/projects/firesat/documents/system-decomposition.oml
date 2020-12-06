@@ -1,6 +1,6 @@
-description <http://opencaesar.io/programs/earth-science/projects/firesat/documents/system-decomposition> with # as system-decomposition {
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/system-decomposition> with # as system-decomposition {
 
-	extends <http://opencaesar.io/organizations/jpl>
+	extends <http://opencaesar.io/examples/firesat/organizations/jpl>
 	extends <./common.oml>
 
 	uses <http://imce.jpl.nasa.gov/foundation/project>
@@ -59,20 +59,17 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
 		
 		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
-		  GRAPH ?ig {
 		    ?iri a fse:Subsystem .
-		    ?mc a fse:MassConstraint
-		  }
-		  GRAPH ?ssg {
-		    ?iri fse:hasSubsystemNumber ?identifier .
-		    ?iri rdfs:label ?name
-		  }
-		  GRAPH ?mcg {
-		    ?mc analysis:characterizes ?iri .
-		    ?mc fse:hasMassConstraintValue ?massNumber
-		  }
+		    ?iri fse:hasAcronym ?identifier .
+		    ?iri rdfs:label ?name .
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isMassLimitOf ?iri .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
 		} ORDER BY ?name
 	'''
 	@doc:hasForwardedBinding '*'
@@ -110,21 +107,18 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
 		
 		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
-			GRAPH ?ag {
-				?ss base:aggregates ?iri .
-		        ?iri rdfs:label ?name .
-		        ?iri fse:hasAssemblyAcronym ?identifier
-		    }
-			GRAPH ?ig {
-				?iri a fse:Assembly .
-		        ?mc a fse:MassConstraint
-			}
-		    GRAPH ?mg {
-		   		?mc analysis:characterizes ?iri .
-		        ?mc fse:hasMassConstraintValue ?massNumber
-		    }
+			?ss base:aggregates ?iri .
+	        ?iri rdfs:label ?name .
+	        ?iri fse:hasAcronym ?identifier .
+			?iri a fse:Assembly .
+	        ?mc a iso-80000-4-quantities:mass .
+	   		?mc fse:isCBEMassOf ?iri .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
 		} ORDER BY ?identifier
 	'''
 	@doc:hasForwardedBinding '*'
@@ -144,13 +138,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 		
 		SELECT DISTINCT ?ss ?ssName (?ssName as ?hasTitle) ?ssNumber (?ss AS ?hasId) WHERE {
-		  GRAPH ?ig {
-		    ?ss a fse:Subsystem
-		  }
-		  GRAPH ?ssg {
+		    ?ss a fse:Subsystem .
 		    ?ss rdfs:label ?ssName .
-		    ?ss fse:hasSubsystemNumber ?ssNumber
-		  }
+		    ?ss fse:hasAcronym ?ssNumber
 		} ORDER BY ?s
 	'''
 	@doc:hasForwardedBinding 'ss'
@@ -169,15 +159,14 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
 		
 		SELECT DISTINCT (CONCAT('The mass constraint of ', $ssName, ' (', $ssNumber, ') is ', STR(?mass), '.') as ?hasText) WHERE {
-		  GRAPH ?ig {
-		    ?mc a fse:MassLimitConstraint
-		  }
-		  GRAPH ?mcg {
-		    ?mc analysis:characterizes $ss .
-		    ?mc fse:hasMassConstraintValue ?mass .
-		  }
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isMassLimitOf $ss .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?mass .
 		}
 	'''
 	ci 1-SubsystemDescription : doc:Para
@@ -190,13 +179,9 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 		
 		SELECT DISTINCT ?assembly ?assemblyName (?assemblyName AS ?hasTitle) (?assembly as ?hasId) WHERE {
-		  GRAPH ?ig {
-		    ?assembly a fse:Assembly
-		  }
-		  GRAPH ?ag {
+		    ?assembly a fse:Assembly .
 		    $ss base:aggregates ?assembly .
-		    ?assembly rdfs:label ?assemblyName
-		  }
+		    ?assembly rdfs:label ?assemblyName .
 		} ORDER BY ?assembly
 	'''
 	@doc:hasForwardedBinding 'assembly'
@@ -213,15 +198,14 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
 		
 		SELECT DISTINCT (CONCAT('The mass of ', $assemblyName, ' is ', STR(?mass), '.') as ?hasText) WHERE {
-		  GRAPH ?ig {
-		    ?mc a fse:CBEMassConstraint
-		  }
-		  GRAPH ?mcg {
-		    ?mc analysis:characterizes $assembly .
-		    ?mc fse:hasMassConstraintValue ?mass .
-		  }
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isCBEMassOf $assembly .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?mass .
 		}
 	'''
 	ci 1-AssemblyDescription : doc:Para
@@ -243,22 +227,17 @@ description <http://opencaesar.io/programs/earth-science/projects/firesat/docume
 		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
 		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
 
 		SELECT DISTINCT ?name (STR(?massNumber) AS ?mass) WHERE {
-			GRAPH ?cg {
-				$parent base:contains ?child .
-			}
-			GRAPH ?lg {
-		        ?child rdfs:label ?name .
-		    }
-			GRAPH ?ig {
-				?child a fse:Assembly .
-		        ?mc a fse:MassConstraint
-			}
-		    GRAPH ?mg {
-		   		?mc analysis:characterizes ?child .
-		        ?mc fse:hasMassConstraintValue ?massNumber
-		    }
+			$parent base:contains ?child .
+	        ?child rdfs:label ?name .
+			?child a fse:Assembly .
+	        ?mc a iso-80000-4-quantities:mass .
+	   		?mc fse:isCBEMassOf ?child .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
 		} ORDER BY ?name
 	'''
 	@doc:hasForwardedBinding '*'
