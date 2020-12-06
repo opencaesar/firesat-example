@@ -1,0 +1,34 @@
+@dc:title "Payload Masses"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/masses> with # as pld-masses {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies>
+
+	uses <http://iso.org/80000-4-magnitudes1>
+
+	// Payload Module Mass
+
+	@rdfs:label "Payload Module CBE Mass"
+	ci PayloadModuleCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf pld-assemblies:PayloadModule
+	]
+
+	@rdfs:label "Payload Module CBE Mass Magnitude"
+	ci PayloadModuleCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "0.6"^^xsd:double
+		metrology:isMagnitudeOf PayloadModuleCBEMass
+	]
+
+	// Sensor Mass
+
+	@rdfs:label "Sensor CBE Mass"
+	ci SensorCBEMass : 80000-4-quantities:mass [
+		fse:isCBEMassOf pld-assemblies:Sensor
+	]
+
+	@rdfs:label "Sensor CBE Mass Magnitude"
+	ci SensorCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+		metrology:hasDoubleNumber "28.1"^^xsd:double
+		metrology:isMagnitudeOf PayloadModuleCBEMass
+	]
+
+}

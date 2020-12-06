@@ -1,0 +1,43 @@
+@dc:title "Structures and Mechanisms Assemblies"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies> with # as sam-assemblies {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/sam/sam>
+
+	// Structures and Mechanisms Subsystem
+	
+	ref ci sam:StructuresAndMechanisms [
+		base:aggregates PowerControlUnit
+		base:aggregates EPSRegulatorsAndConvertersUnit
+		base:aggregates SolarArrayWithSADA1
+		base:aggregates SolarArrayWithSADA2
+	]
+	
+	// Power Control Unit
+
+	@rdfs:label "Power Control Unit"
+	ci PowerControlUnit : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "516100"
+	]
+
+	// EPS Regulators And Converters Unit
+
+	@rdfs:label "EPS Regulators and Converters Unit"
+	ci EPSRegulatorsAndConvertersUnit : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "516200"
+	]
+
+	// Solar Array With SADA 1
+
+	@rdfs:label "Solar Array with SADA 1"
+	ci SolarArrayWithSADA1 : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "580000-1"
+	]
+
+	// Solar Array With SADA 2
+
+	@rdfs:label "Solar Array with SADA 2"
+	ci SolarArrayWithSADA2 : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "580000-2"
+	]
+
+}

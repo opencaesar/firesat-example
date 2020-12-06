@@ -1,0 +1,36 @@
+@dc:title "Electric Power System Assemblies"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies> with # as eps-assemblies {
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps>
+
+	// Electric Power System
+	
+	ref ci eps:ElectricPowerSystem [
+		base:aggregates BatteryPack1
+		base:aggregates BatteryPack2
+		base:aggregates BatteryPack3
+	]
+	
+	
+	// Battery Pack 1 Assembly
+
+	@rdfs:label "Battery Pack 1"
+	ci BatteryPack1 : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "512000-1"
+	]
+
+	// Battery Pack 2 Assembly
+
+	@rdfs:label "Battery Pack 2"
+	ci BatteryPack2 : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "512000-2"
+	]
+
+	// Battery Pack 3 Assembly
+
+	@rdfs:label "Battery Pack 3"
+	ci BatteryPack3 : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "512000-3"
+	]
+
+}

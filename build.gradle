@@ -3,7 +3,7 @@
  */
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '1.5.0'
+version = '2.1.0'
 
 /* 
  * The Gradle task dependencies 
@@ -40,7 +40,7 @@ buildscript {
  * Dependency versions
  */
 ext { 
-	jplVersion = '1.+'
+	imceVersion = '2.+'
 }
 
 /*
@@ -64,8 +64,7 @@ repositories {
  * The OML dependencies
  */
 dependencies {
-	oml "io.opencaesar.ontologies:jpl-vocabularies:$jplVersion"
-    stylesheets "io.opencaesar.docbook:docbook-stylesheets:+"
+	oml "io.opencaesar.ontologies:imce-vocabularies:$imceVersion"
 }
 
 /*
@@ -85,7 +84,7 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn:
 	// OWL folder
 	outputFolderPath = file('build/bikeshed')
 	// Input Ontology Iri
-	rootOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
+	rootOntologyIri = 'http://opencaesar.io/examples/firesat/bundle'
 	// Publish URL
 	publishUrl = 'https://opencaesar.github.io/firesat-example'
 }
@@ -122,12 +121,12 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 	// OWL catalog
 	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://opencaesar.io/programs/earth-science/projects/firesat/bundle'
+	inputOntologyIri = 'http://opencaesar.io/examples/firesat/bundle'
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
-		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes = ALL_SUBCLASS',
-		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+		'http://opencaesar.io/examples/firesat/bundle/classes = ALL_SUBCLASS',
+		'http://opencaesar.io/examples/firesat/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://opencaesar.io/examples/firesat/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
 	reportPath = file('build/reports/reasoning.xml')
@@ -153,9 +152,9 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 	endpointURL = 'http://localhost:3030/firesat'
     fileExtensions = ['owl', 'ttl']
 	iris = [
-		'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/classes',
-	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/properties',
-	    'http://opencaesar.io/programs/earth-science/projects/firesat/bundle/individuals'
+		'http://opencaesar.io/examples/firesat/bundle/classes',
+	    'http://opencaesar.io/examples/firesat/bundle/properties',
+	    'http://opencaesar.io/examples/firesat/bundle/individuals'
 	]
 }
 

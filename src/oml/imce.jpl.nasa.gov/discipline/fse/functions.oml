@@ -8,7 +8,7 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:date "2019-11-25"
 vocabulary <http://imce.jpl.nasa.gov/discipline/fse/functions> with # as fse-functions {
 
-	extends <http://imce.jpl.nasa.gov/discipline/fse/fse>
+	extends <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
 
 	/*
 	 * Functions
@@ -19,18 +19,12 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/functions> with # as fse-fun
 
 	@rdfs:label "Power"
 	concept Power :> BaseFunction [
-		restricts all relation mission:joins to PowerEndCircuit
+		restricts all relation mission:joins to fse-endcircuits:Power
 	]
 
 	@rdfs:label "Unidirectional Power"
 	concept UnidirectionalPower :> Power [
-		restricts all relation mission:joins to UnidirectionalPowerEndCircuit
+		restricts all relation mission:joins to fse-endcircuits:UnidirectionalPower
 	]
-
-	@rdfs:label "Power End Circuit"
-	aspect PowerEndCircuit
-
-	@rdfs:label "Unidirectional Power End Circuit"
-	aspect UnidirectionalPowerEndCircuit
 
 }

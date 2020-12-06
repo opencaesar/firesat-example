@@ -1,0 +1,25 @@
+@dc:title "Earth Science Program"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/earth-science> with # as earth-science-program {
+	
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/firesat>
+	
+	extends <http://opencaesar.io/examples/firesat/organizations/nasa>
+
+	// Earth Science Program
+	
+	@rdfs:label "Earth Science Program"
+	ci EarthScienceProgram : project:Program [
+		project:authorizes FireSatProject
+	]
+
+	// FireSat Project
+	
+	@rdfs:label "FireSat Project"
+	ci FireSatProject : project:Project [
+		project:supplies firesat-mission:FireSatMission
+		project:isResponsibilityOf nasa:NASA
+	]
+
+} 

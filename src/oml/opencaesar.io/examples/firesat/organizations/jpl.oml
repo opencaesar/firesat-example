@@ -1,0 +1,26 @@
+@dc:title "JPL"
+description <http://opencaesar.io/examples/firesat/organizations/jpl> with # as jpl {
+
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+
+	@rdfs:label "JPL"
+	ci JPL : project:Organization
+	
+	@rdfs:label "Intern"
+	ci Intern : project:Role
+	
+	@rdfs:label "Software Systems Engineer"
+	ci SoftwareSystemsEngineer : project:Role
+	
+	@rdfs:label "David Truong"
+	ci DavidTruong : project:Person [
+		project:belongsTo JPL
+		project:hasRole Intern
+	]
+	
+	@rdfs:label "Paul Gaspardo"
+	ci PaulGaspardo : project:Person [
+		project:belongsTo JPL
+		project:hasRole SoftwareSystemsEngineer
+	]
+}

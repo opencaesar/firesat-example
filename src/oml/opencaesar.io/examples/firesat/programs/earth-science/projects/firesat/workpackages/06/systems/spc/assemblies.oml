@@ -1,0 +1,27 @@
+@dc:title "Spacecraft Assemblies"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies> with # as spc-assemblies {
+
+	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc>
+
+	ref ci spc:Spacecraft [
+		base:aggregates SpacecraftSystemSegment
+		//base:aggregates Propellant
+	]
+
+	// Spacecraft System Segment
+
+	@rdfs:label "Spacecraft System Segment"
+	ci SpacecraftSystemSegment : fse-assemblies:BaseAssembly [
+		fse:hasAcronym "500000"
+	]
+
+	// Propellant Consumable Mass
+
+	@rdfs:label "Propellant"
+	ci Propellant : fse:ConsumableMass [
+		fse:hasMultiplicity "1"^^xsd:integer
+	]
+
+}

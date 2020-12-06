@@ -1,0 +1,51 @@
+@dc:title "NASA"
+description <http://opencaesar.io/examples/firesat/organizations/nasa> with # as nasa {
+
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+
+	@rdfs:label "NASA"
+	ci NASA : project:Organization
+
+	@rdfs:label "Project Manager"
+	ci ProjectManager : project:Role
+
+	@rdfs:label "System architect"
+	ci SystemArchitect : project:Role
+
+	@rdfs:label "System engineer"
+	ci SystemEngineer : project:Role
+
+	@rdfs:label "John A."
+	ci JohnA : project:Person [
+		project:belongsTo NASA
+		project:hasRole ProjectManager
+	]
+
+	@rdfs:label "Bob F."
+	ci BobF : project:Person [
+		project:belongsTo NASA
+		project:hasRole SystemArchitect
+	]
+
+	@rdfs:label "Harry P."
+	ci HarryP : project:Person [
+		project:belongsTo NASA
+		project:hasRole SystemEngineer
+		project:hasRole SystemArchitect
+	]
+
+	@rdfs:label "Luke S."
+	ci LukeS : project:Person [
+		project:belongsTo NASA
+		project:hasRole SystemArchitect
+		project:hasRole SystemEngineer
+	]
+
+	@rdfs:label "Paul N."
+	ci PaulN : project:Person [
+		project:belongsTo NASA
+		project:hasRole SystemEngineer
+		project:hasRole SystemArchitect
+	]
+
+}

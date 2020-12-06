@@ -1,0 +1,30 @@
+@dc:title "Payload Endcircuits"
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits> with # as pld-endcircuits {
+	
+	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies>
+
+	// Payload Module End Circuits
+
+	ref ci pld-assemblies:PayloadModule [
+		mission:presents PayloadModulePowerIn
+	]
+
+	@rdfs:label "Payload Module Power In"
+	ci PayloadModulePowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+	// Sensor End Circuits
+
+	ref ci pld-assemblies:Sensor [
+		mission:presents SensorPowerIn
+	]
+
+	@rdfs:label "Sensor Power In"
+	ci SensorPowerIn : fse-endcircuits:PowerIn [
+		fse:hasEndCircuitIdentifier "1"
+	]
+
+}
