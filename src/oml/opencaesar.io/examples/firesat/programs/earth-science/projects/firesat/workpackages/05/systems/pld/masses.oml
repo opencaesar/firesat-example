@@ -6,12 +6,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Payload Module Mass
 
 	@rdfs:label "Payload Module CBE Mass"
-	ci PayloadModuleCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf pld-assemblies:PayloadModule
+	ci PayloadModuleCBEMass : fse:CBEMass [
+		metrology:isQuantityOf pld-assemblies:PayloadModule
 	]
 
 	@rdfs:label "Payload Module CBE Mass Magnitude"
-	ci PayloadModuleCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci PayloadModuleCBEMassMagnitude : fse:CBEMagnitude [
 		metrology:hasDoubleNumber "0.6"^^xsd:double
 		metrology:isMagnitudeOf PayloadModuleCBEMass
 	]
@@ -19,12 +19,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Sensor Mass
 
 	@rdfs:label "Sensor CBE Mass"
-	ci SensorCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf pld-assemblies:Sensor
+	ci SensorCBEMass : fse:CBEMass [
+		metrology:isQuantityOf pld-assemblies:Sensor
 	]
 
 	@rdfs:label "Sensor CBE Mass Magnitude"
-	ci SensorCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci SensorCBEMassMagnitude : fse:CBEMagnitude [
 		metrology:hasDoubleNumber "28.1"^^xsd:double
 		metrology:isMagnitudeOf PayloadModuleCBEMass
 	]

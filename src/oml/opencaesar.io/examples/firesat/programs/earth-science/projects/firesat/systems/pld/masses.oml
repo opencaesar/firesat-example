@@ -6,12 +6,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Payload Mass
 
 	@rdfs:label "Payload Mass Limit"
-	ci PayloadMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf pld:Payload
+	ci PayloadMassLimit : fse:MassLimit [
+		metrology:isQuantityOf pld:Payload
 	]
 	
 	@rdfs:label "Payload Mass Limit Magnitude"
-	ci PayloadMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci PayloadMassLimitMagnitude : fse:MassLimitMagnitude [
 		metrology:hasDoubleNumber "28.1"^^xsd:double
 		metrology:isMagnitudeOf PayloadMassLimit
 	]

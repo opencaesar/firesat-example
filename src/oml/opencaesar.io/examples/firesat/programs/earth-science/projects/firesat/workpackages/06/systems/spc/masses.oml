@@ -6,12 +6,12 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Spacecraft System Segment Mass
 
 	@rdfs:label "Spacecraft System Segment CBE Mass"
-	ci SpacecraftSystemSegmentCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf spc-assemblies:SpacecraftSystemSegment
+	ci SpacecraftSystemSegmentCBEMass : fse:CBEMass [
+		metrology:isQuantityOf spc-assemblies:SpacecraftSystemSegment
 	]
 
 	@rdfs:label "Spacecraft System Segment CBE Mass Magnitude"
-	ci SpacecraftSystemSegmentCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci SpacecraftSystemSegmentCBEMassMagnitude : fse:CBEMagnitude [
 		metrology:hasDoubleNumber "0.6"^^xsd:double
 		metrology:isMagnitudeOf SpacecraftSystemSegmentCBEMass
 	]
@@ -19,23 +19,23 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Propellant Mass
 
 	@rdfs:label "Propellant CBE Mass"
-	ci PropellantCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf spc-assemblies:Propellant
+	ci PropellantCBEMass : fse:CBEMass [
+		metrology:isQuantityOf spc-assemblies:Propellant
 	]
 
 	@rdfs:label "Propellant CBE Mass Magnitude"
-	ci PropellantCBEMassMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci PropellantCBEMassMagnitude : fse:CBEMagnitude [
 		metrology:hasDoubleNumber "66.21"^^xsd:double
 		metrology:isMagnitudeOf PropellantCBEMass
 	]
 
 	@rdfs:label "Propellant Mass Limit"
-	ci PropellantMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf spc-assemblies:Propellant
+	ci PropellantMassLimit : fse:MassLimit [
+		metrology:isQuantityOf spc-assemblies:Propellant
 	]
 
 	@rdfs:label "Propellant Mass Limit Magnitude"
-	ci PropellantMassLimitMagnitude : 80000-4-magnitudes1:kilogram-magnitude [
+	ci PropellantMassLimitMagnitude : fse:MassLimitMagnitude [
 		metrology:hasDoubleNumber "66.21"^^xsd:double
 		metrology:isMagnitudeOf PropellantMassLimit
 	]
