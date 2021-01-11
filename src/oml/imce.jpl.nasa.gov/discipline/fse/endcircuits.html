@@ -1486,7 +1486,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version c5172e83, updated Fri Nov 20 15:35:20 2020 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/src/oml/imce.jpl.nasa.gov/discipline/fse/endcircuits" rel="canonical">
-  <meta content="2b5e45e1c5a944f34a98cae3f082940e9369faac" name="document-revision">
+  <meta content="7a040476c050958d7b7f32bfb08e6d4f5d02d096" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1936,7 +1936,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">End Ciruit Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-12-14">14 December 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-01-11">11 January 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1998,6 +1998,12 @@ dfn > a.self-link::before      { content: "#"; }
         <ul>
          <li><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit">fse:EndCircuit</a>
         </ul>
+      <tr>
+       <th>Subtypes
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a>
+        </ul>
     </table>
     <h3 class="heading settled" data-level="3.2" id="PowerIn"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="powerin">PowerIn<a class="self-link" href="#powerin"></a></dfn></span><a class="self-link" href="#PowerIn"></a></h3>
     <table class="def">
@@ -2006,7 +2012,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">UnidirectionalPower</a>
         </ul>
       <tr>
        <th>Properties
@@ -2022,7 +2028,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">UnidirectionalPower</a>
+         <li><a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower②">UnidirectionalPower</a>
         </ul>
       <tr>
        <th>Properties
@@ -2038,7 +2044,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="fse.html#endcircuit" id="ref-for-endcircuit①">fse:EndCircuit</a>
+         <li><a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power">Power</a>
         </ul>
       <tr>
        <th>Subtypes
@@ -2187,6 +2193,12 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#powerout">PowerOut</a><span>, in §3.3</span>
    <li><a href="#unidirectionalpower">UnidirectionalPower</a><span>, in §3.4</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-power">
+   <a href="endcircuits.html#power">endcircuits.html#power</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power">3.4. UnidirectionalPower</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-powerin">
    <a href="endcircuits.html#powerin">endcircuits.html#powerin</a><b>Referenced in:</b>
    <ul>
@@ -2202,15 +2214,15 @@ dfn > a.self-link::before      { content: "#"; }
   <aside class="dfn-panel" data-for="term-for-unidirectionalpower">
    <a href="endcircuits.html#unidirectionalpower">endcircuits.html#unidirectionalpower</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unidirectionalpower">3.2. PowerIn</a>
-    <li><a href="#ref-for-unidirectionalpower①">3.3. PowerOut</a>
+    <li><a href="#ref-for-unidirectionalpower">3.1. Power</a>
+    <li><a href="#ref-for-unidirectionalpower①">3.2. PowerIn</a>
+    <li><a href="#ref-for-unidirectionalpower②">3.3. PowerOut</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-endcircuit">
    <a href="fse.html#endcircuit">fse.html#endcircuit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-endcircuit">3.1. Power</a>
-    <li><a href="#ref-for-endcircuit①">3.4. UnidirectionalPower</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-hasendcircuitdirection">
@@ -2225,6 +2237,7 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/endcircuits]</a> defines the following terms:
     <ul>
+     <li><span class="dfn-paneled" id="term-for-power">power</span>
      <li><span class="dfn-paneled" id="term-for-powerin">powerin</span>
      <li><span class="dfn-paneled" id="term-for-powerout">powerout</span>
      <li><span class="dfn-paneled" id="term-for-unidirectionalpower">unidirectionalpower</span>
