@@ -3,7 +3,7 @@
  */
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '2.2.1'
+version = '2.2.2'
 
 /* 
  * The Gradle task dependencies 
@@ -199,12 +199,22 @@ task omlZip(type: Zip) {
 	archiveVersion = project.version
 }
 
-publishToMavenLocal.dependsOn omlZip
+task vocabularyZip(type: Zip) {
+	from file('src/oml')
+	include "imce.jpl.nasa.gov/**/*.oml"
+	destinationDirectory = file('build/libs')
+	archiveBaseName = project.name
+	archiveVersion = project.version
+	archiveClassifier = 'vocabularies'
+}
+
+publishToMavenLocal.dependsOn omlZip, vocabularyZip
 
 publishing {
     publications {
         maven(MavenPublication) {
             artifact omlZip
+            artifact vocabularyZip
 			pom.withXml {
                 def dependencies = asNode().appendNode('dependencies')
                 configurations.oml.allDependencies.stream().each {
