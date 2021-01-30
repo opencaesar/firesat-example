@@ -33,15 +33,15 @@ vocabulary <http://imce.jpl.nasa.gov/discipline/fse/fse> with # as fse {
 	aspect MassProxy :> MassEstimatedElement
 
 	@rdfs:label "Flight Hardware Component"
-	concept FlightHardwareComponent :> mission:Component, MassEstimatedElement
+	concept FlightHardwareComponent :> mission:Component, ReferenceDesignatedElement
 
 	@rdfs:label "Subsystem"
-	concept Subsystem :> FlightHardwareComponent, ReferenceDesignatedElement [
+	concept Subsystem :> FlightHardwareComponent, MassAllocatedElement [
 		restricts all relation base:aggregates to Assembly
 	]
 
 	@rdfs:label "Assembly"
-	concept Assembly :> FlightHardwareComponent, ReferenceDesignatedElement, EndCircuitPresentingElement [
+	concept Assembly :> FlightHardwareComponent, EndCircuitPresentingElement, MassEstimatedElement [
 		restricts all relation base:isAggregatedIn to Subsystem
 	]
 
