@@ -1,0 +1,256 @@
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/system-decomposition> with # as system-decomposition {
+
+	extends <http://opencaesar.io/examples/firesat/organizations/jpl>
+	extends <./common.oml>
+
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	uses <http://opencaesar.io/document>
+	uses <http://purl.org/dc/elements/1.1>
+	
+	@doc:hasTitle 'FireSat Physical Structure'
+	@doc:hasReleaseVersion 'Development'
+	ci PhysicalDecomposition : doc:Book [
+		doc:preparedBy jpl:DavidTruong
+		doc:preparedBy jpl:PaulGaspardo
+		
+		doc:hasElement common:TitlePage
+		
+		doc:hasElement 0-Preface
+		doc:hasElement 1-SubsystemsAndAssemblies
+	]
+	
+	@doc:hasTitle 'Overview'
+	ci 0-Preface : doc:Preface [
+		doc:hasElement PrefaceText
+	]
+	
+	@doc:hasText '''
+		This document details the physical decomposition of the systems involved in the
+		example fire detection satellite system described by the OML vocabulary. This includes 
+		information about the assemblies used, what assemblies are used to create other assemblies,
+		and mass constraints for all the assemblies.
+	'''
+	ci PrefaceText : doc:Para
+	
+	@doc:hasTitle 'Subsystem and Assemblies'
+	ci 1-SubsystemsAndAssemblies : doc:Chapter [
+		doc:hasElement 0-SubsystemsAndAssembliesText
+		doc:hasElement 1-SubsystemsAndAssembliesTable
+		doc:hasElement 2-SubsystemSections
+	]
+	
+	@doc:hasText '''
+		The FireSat system is composed of multiple subsystems. These subsystems have a mass
+		constraint, and are the aggregate of multiple assemblies. These assemblies also have a 
+		mass constraint that must be met, and some assemblies contain multiple base 
+		assemblies put together.
+	'''
+	ci 0-SubsystemsAndAssembliesText : doc:Para
+	
+	@doc:hasTitle 'Subsystems'
+	@doc:hasClass 'getTable'
+	@doc:hasBorder '0'
+	ci 1-SubsystemsAndAssembliesTable : doc:Table [
+		doc:hasElement SubsystemTableContent
+	]
+	
+	@doc:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
+		
+		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
+		    ?iri a fse:Subsystem .
+		    ?iri fse:hasAcronym ?identifier .
+		    ?iri rdfs:label ?name .
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isMassLimitOf ?iri .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
+		} ORDER BY ?name
+	'''
+	@doc:hasForwardedBinding '*'
+	ci SubsystemTableContent : doc:Block [
+		doc:hasElement 1-SubsystemTableSubsytemRow
+		doc:hasElement 2-SubsystemTableAssemblyRows
+	]
+	
+	@doc:hasForwardedBinding '*'
+	@doc:hasStyle 'background-color: #BFDFBF'
+	@doc:hasClass 'ocTable'
+	@doc:hasBackgroundColor '#BFDFBF'
+	ci 1-SubsystemTableSubsytemRow : doc:TableRow [
+		doc:hasElement 1-AcronymColumn
+		doc:hasElement 2-NameColumn
+		doc:hasElement 3-MassColumn
+	]
+	
+	@doc:hasTitle 'Identifier'
+	@doc:hasRequiredBinding 'identifier as hasText'
+	ci 1-AcronymColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Name'
+	@doc:hasRequiredBinding 'iri as hasLink'
+	@doc:hasRequiredBinding 'name as hasText'
+	ci 2-NameColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Mass'
+	@doc:hasRequiredBinding 'mass as hasText'
+	ci 3-MassColumn : doc:TableColumn
+	
+	@doc:hasRequiredBinding 'iri as ss'
+	@doc:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
+		
+		SELECT DISTINCT ?iri ?identifier ?name (STR(?massNumber) AS ?mass) WHERE {
+			?ss base:aggregates ?iri .
+	        ?iri rdfs:label ?name .
+	        ?iri fse:hasAcronym ?identifier .
+			?iri a fse:Assembly .
+	        ?mc a iso-80000-4-quantities:mass .
+	   		?mc fse:isCBEMassOf ?iri .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
+		} ORDER BY ?identifier
+	'''
+	@doc:hasForwardedBinding '*'
+	@doc:hasClass 'interleaveTable'
+	@doc:hasStyle 'background-color: white'
+	@doc:hasBackgroundColor 'white'
+	ci 2-SubsystemTableAssemblyRows : doc:TableRow [
+		doc:hasElement 1-AcronymColumn
+		doc:hasElement 2-NameColumn
+		doc:hasElement 3-MassColumn
+	]
+	
+	@doc:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?ss ?ssName (?ssName as ?hasTitle) ?ssNumber (?ss AS ?hasId) WHERE {
+		    ?ss a fse:Subsystem .
+		    ?ss rdfs:label ?ssName .
+		    ?ss fse:hasAcronym ?ssNumber
+		} ORDER BY ?s
+	'''
+	@doc:hasForwardedBinding 'ss'
+	@doc:hasForwardedBinding 'ssName'
+	@doc:hasForwardedBinding 'ssNumber'
+	ci 2-SubsystemSections : doc:Section [
+		doc:hasElement 1-SubsystemDescription
+		doc:hasElement 2-AssemblySections
+	]
+	
+	@doc:hasRequiredBinding 'ss'
+	@doc:hasRequiredBinding 'ssName'
+	@doc:hasRequiredBinding 'ssNumber'
+	@doc:hasSparqlMapping '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
+		
+		SELECT DISTINCT (CONCAT('The mass constraint of ', $ssName, ' (', $ssNumber, ') is ', STR(?mass), '.') as ?hasText) WHERE {
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isMassLimitOf $ss .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?mass .
+		}
+	'''
+	ci 1-SubsystemDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'ss'
+	@doc:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		
+		SELECT DISTINCT ?assembly ?assemblyName (?assemblyName AS ?hasTitle) (?assembly as ?hasId) WHERE {
+		    ?assembly a fse:Assembly .
+		    $ss base:aggregates ?assembly .
+		    ?assembly rdfs:label ?assemblyName .
+		} ORDER BY ?assembly
+	'''
+	@doc:hasForwardedBinding 'assembly'
+	@doc:hasForwardedBinding 'assemblyName'
+	ci 2-AssemblySections : doc:Section [
+		doc:hasElement 1-AssemblyDescription
+		doc:hasElement 2-ContainedAssemblies
+	]
+	
+	@doc:hasRequiredBinding 'assembly'
+	@doc:hasRequiredBinding 'assemblyName'
+	@doc:hasSparqlMapping '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
+		
+		SELECT DISTINCT (CONCAT('The mass of ', $assemblyName, ' is ', STR(?mass), '.') as ?hasText) WHERE {
+		    ?mc a iso-80000-4-quantities:mass .
+		    ?mc fse:isCBEMassOf $assembly .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?mass .
+		}
+	'''
+	ci 1-AssemblyDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'assembly'
+	@doc:hasRequiredBinding 'assemblyName'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT($assemblyName, ' Contained Assemblies') AS ?hasTitle) WHERE { }
+	'''
+	@doc:hasForwardedBinding 'assembly'
+	@doc:hasBorder '0'
+	ci 2-ContainedAssemblies : doc:Table [
+		doc:hasElement ContainedAssemblyRow
+	]
+	
+	@doc:hasRequiredBinding 'assembly as parent'
+	@doc:hasSparqlExpansion '''
+		PREFIX fse: <http://imce.jpl.nasa.gov/discipline/fse/fse#>
+		PREFIX base: <http://imce.jpl.nasa.gov/foundation/base#>
+		PREFIX analysis: <http://imce.jpl.nasa.gov/foundation/analysis#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX metrology: <http://iupac.org/metrology#>
+		PREFIX iso-80000-4-quantities: <http://iso.org/80000-4-quantities#>
+
+		SELECT DISTINCT ?name (STR(?massNumber) AS ?mass) WHERE {
+			$parent base:contains ?child .
+	        ?child rdfs:label ?name .
+			?child a fse:Assembly .
+	        ?mc a iso-80000-4-quantities:mass .
+	   		?mc fse:isCBEMassOf ?child .
+	        ?mq metrology:isMagnitudeOf ?mc .
+			?mq metrology:hasDoubleNumber ?massNumber .
+		} ORDER BY ?name
+	'''
+	@doc:hasForwardedBinding '*'
+	ci ContainedAssemblyRow : doc:TableRow [
+		doc:hasElement 1-AssemblyName
+		doc:hasElement 2-AssemblyMass
+	]
+	
+	@doc:hasTitle 'Assembly'
+	@doc:hasRequiredBinding 'name as hasText'
+	ci 1-AssemblyName : doc:TableColumn
+	
+	@doc:hasTitle 'Mass'
+	@doc:hasRequiredBinding 'mass as hasText'
+	ci 2-AssemblyMass : doc:TableColumn
+}

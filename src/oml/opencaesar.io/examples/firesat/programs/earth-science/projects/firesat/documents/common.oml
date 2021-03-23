@@ -1,0 +1,32 @@
+
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/common> with # as common {
+	uses <http://opencaesar.io/document> as doc
+	
+	@doc:hasRequiredBinding 'DOCUMENT'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT(STR(YEAR(NOW())), '-', STR(MONTH(NOW())), '-', STR(DAY(NOW()))) AS ?hasDate) ?hasReleaseVersion WHERE {
+			$DOCUMENT <http://opencaesar.io/document#hasReleaseVersion> ?hasReleaseVersion
+		}
+	'''
+	ci TitlePage : doc:TitlePage [
+		doc:hasElement Preparers
+	]
+	
+	@doc:hasRequiredBinding 'DOCUMENT'
+	@doc:hasSparqlExpansion '''
+		PREFIX doc: <http://opencaesar.io/document#>
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?hasName ?hasRole ?hasOrganization WHERE {
+			$DOCUMENT doc:preparedBy ?preparer .
+			?preparer proj:belongsTo ?organization .
+			?preparer proj:hasRole ?role .
+			?preparer rdfs:label ?hasName .
+			?role rdfs:label ?hasRole .
+			?organization rdfs:label ?hasOrganization .
+		} ORDER BY ?hasName
+	'''
+	ci Preparers : doc:Preparer
+	
+}

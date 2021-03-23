@@ -19,6 +19,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
+		classpath 'io.opencaesar.owl:owl-doc-gradle:+'
 		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-shacl-fuseki-gradle:+'
 		classpath 'io.opencaesar.owl:owl-query-gradle:+'
@@ -29,6 +30,9 @@ buildscript {
 		classpath 'io.opencaesar.oml:oml-merge-gradle:0.8.+'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:+'
 		// needed since gradle-bintray-plugin brings an old version of xerces
+		classpath 'io.opencaesar.docbook:docbook-generator-gradle:+'
+		classpath 'io.opencaesar.docbook:docbook-renderer-gradle:+'
+		// needed since gradle bintray brings an old version of xerces
 		configurations.classpath.exclude group: 'xerces', module: 'xercesImpl'
 	}
 }
@@ -44,7 +48,8 @@ ext {
  * The configuration of OML dependencies
  */
 configurations {
-	oml
+	oml // Include the oml dependencies only
+    stylesheets // Include the docbook stylesheets
 }
 
 /*
@@ -61,6 +66,7 @@ repositories {
  */
 dependencies {
 	oml "io.opencaesar.ontologies:imce-vocabularies:$imceVersion"
+	stylesheets "io.opencaesar.docbook:docbook-stylesheets:+"
 }
 
 /*
@@ -173,10 +179,105 @@ task owlShacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn:
 }
 
 /*
+ * Zips stylesheets from docbook-stylesheets (local maven)
+ * Places them in build/stylesheets-gen 
+ */
+task stylesheetUnzip(type: Copy) {
+  from configurations.stylesheets.files.collect { zipTree(it) }
+  into file("build/stylesheets-gen")
+}
+/*
+ * Gradle tasks to render the docbook physical_structure
+ */
+task physicalGenerate(type:io.opencaesar.owl.doc.OwlDocTask) {
+	endpointURL = 'http://localhost:3030/firesat'
+	documentIRI = 'http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/system-decomposition#PhysicalDecomposition'
+	outputPath = file('build/reports/physical_structure/physical_structure.json')
+}
+
+task physicalDocbook(type:io.opencaesar.docbook.generator.DocbookGeneratorTask, dependsOn: physicalGenerate) {
+	input = file('build/reports/physical_structure/physical_structure.json')
+	output = file('build/reports/physical_structure/physical_structure.xml')
+}
+
+task physicalPDF(type:io.opencaesar.docbook.renderer.DocbookRendererTask, dependsOn: stylesheetUnzip) {
+	input = file('build/reports/physical_structure/physical_structure.xml')
+	output = file('build/reports/physical_structure/physical_structure.pdf')
+	type = 'pdf'
+	xsl = file('build/stylesheets-gen/pdf/pdf.xsl')
+}
+
+task physicalHTML(type:io.opencaesar.docbook.renderer.DocbookRendererTask, dependsOn: stylesheetUnzip) {
+	input = file('build/reports/physical_structure/physical_structure.xml')
+	output = file('build/reports/physical_structure/physical_structure.html')
+	type = 'html'
+	xsl = file('build/stylesheets-gen/html/html.xsl')
+	css = file('build/stylesheets-gen/default.css')
+}
+
+physicalGenerate.mustRunAfter(owlLoad)
+physicalDocbook.mustRunAfter(physicalGenerate)
+physicalHTML.mustRunAfter(physicalDocbook)
+physicalPDF.mustRunAfter(physicalDocbook)
+
+task physicalRender() {
+	dependsOn owlLoad
+	dependsOn physicalGenerate
+	dependsOn physicalDocbook
+	dependsOn physicalPDF
+	dependsOn physicalHTML
+}
+
+/*
+ * Gradle tasks to render the docbook wbs document
+ */
+task wbsGenerate(type:io.opencaesar.owl.doc.OwlDocTask) {
+	endpointURL = 'http://localhost:3030/firesat'
+	documentIRI = 'http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/work-breakdown-structure#WorkBreakdownStructure'
+	outputPath = file('build/reports/wbs/wbs.json')
+}
+
+task wbsDocbook(type:io.opencaesar.docbook.generator.DocbookGeneratorTask, dependsOn: wbsGenerate) {
+	input = file('build/reports/wbs/wbs.json')
+	output = file('build/reports/wbs/wbs.xml')
+}
+
+task wbsPDF(type:io.opencaesar.docbook.renderer.DocbookRendererTask, dependsOn: stylesheetUnzip) {
+	input = file('build/reports/wbs/wbs.xml')
+	output = file('build/reports/wbs/wbs.pdf')
+	type = 'pdf'
+	xsl = file('build/stylesheets-gen/pdf/pdf.xsl')
+}
+
+task wbsHTML(type:io.opencaesar.docbook.renderer.DocbookRendererTask, dependsOn: stylesheetUnzip) {
+	input = file('build/reports/wbs/wbs.xml')
+	output = file('build/reports/wbs/wbs.html')
+	type = 'html'
+	xsl = file('build/stylesheets-gen/html/html.xsl')
+	css = file('build/stylesheets-gen/default.css')
+}
+
+wbsGenerate.mustRunAfter(owlLoad)
+wbsDocbook.mustRunAfter(wbsGenerate)
+wbsPDF.mustRunAfter(wbsDocbook)
+wbsHTML.mustRunAfter(wbsDocbook)
+
+task wbsRender() {
+	dependsOn owlLoad
+	dependsOn wbsGenerate
+	dependsOn wbsDocbook
+	dependsOn wbsPDF
+	dependsOn wbsHTML
+}
+
+
+/*
  * A task to build the project, which executes several tasks together
  */
 task build() {
 	dependsOn owlReason
+	// dependsOn bikeshed2html
+	dependsOn stylesheetUnzip
 }
 
 /*

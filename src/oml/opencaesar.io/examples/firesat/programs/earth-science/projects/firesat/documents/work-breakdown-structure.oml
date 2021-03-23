@@ -1,0 +1,448 @@
+description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/documents/work-breakdown-structure> with # as work-breakdown-structure {
+	uses <http://imce.jpl.nasa.gov/foundation/project>
+	uses <http://opencaesar.io/document>
+	uses <http://purl.org/dc/elements/1.1>
+	uses <http://imce.jpl.nasa.gov/foundation/mission>
+	
+	extends <http://opencaesar.io/examples/firesat/organizations/jpl>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/earth-science>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/firesat>
+	extends <./common.oml>
+	
+	@doc:hasReleaseVersion 'Development'
+	@doc:hasTitle 'FireSat Work Breakdown Structure'
+	ci WorkBreakdownStructure : doc:Book [
+		doc:preparedBy jpl:DavidTruong
+		doc:preparedBy jpl:PaulGaspardo
+		
+		doc:describes earth-science-program:FireSatProject
+		
+		doc:hasElement common:TitlePage
+		doc:hasElement 0-Preface
+		doc:hasElement 1-Organizations
+		doc:hasElement 2-Programs
+		doc:hasElement 3-FireSat
+	]
+	
+	@doc:hasTitle 'Overview'
+	ci 0-Preface : doc:Preface [
+		doc:hasElement PrefaceText
+	]
+	
+	@doc:hasText '''
+		A description of the work breakdwon structure of an example forest fire
+		detection satellite system. The system is described in OML and this document
+		aims to present the details held in vocabulary.
+	'''
+	ci PrefaceText : doc:Para
+	
+	@doc:hasTitle 'Organizations'
+	ci 1-Organizations : doc:Chapter [
+		doc:hasElement 1-OrgList
+	]
+	
+	@doc:hasSparqlExpansion '''
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+
+		SELECT DISTINCT ?org ?orgName (?orgName as ?hasTitle) WHERE {
+			?org a proj:Organization .
+			?org rdfs:label ?orgName .
+		} ORDER BY ?orgName
+	'''
+	@doc:hasForwardedBinding 'org'
+	@doc:hasForwardedBinding 'orgName'
+	@doc:hasTitle 'Organizations'
+	ci 1-OrgList : doc:Section [
+		doc:hasElement 1-OrgDescription
+		doc:hasElement 2-OrgPeople
+	]
+	
+	@doc:hasRequiredBinding 'orgName'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT($orgName, ' is one of the organizations involved in this satellite system') AS ?hasText)
+		WHERE { }
+	'''
+	ci 1-OrgDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'orgName'
+	@doc:hasRequiredBinding 'org'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT($orgName, ' Worker List') AS ?hasTitle) WHERE { }
+	'''
+	@doc:hasForwardedBinding 'org'
+	@doc:hasBorder '0'
+	ci 2-OrgPeople : doc:Table [
+		doc:hasElement OrgPerson
+	]
+	
+	@doc:hasRequiredBinding 'org'
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?personName ?roleName
+		WHERE {
+			?person proj:belongsTo $org .
+			?person proj:hasRole ?role .
+			?person rdfs:label ?personName .
+			?role rdfs:label ?roleName .
+		} ORDER BY ?personName
+	'''
+	@doc:hasForwardedBinding '*'
+	ci OrgPerson : doc:TableRow [
+		doc:hasElement 1-OrgPersonName
+		doc:hasElement 2-OrgPersonRole
+	]
+	
+	@doc:hasTitle 'Name'
+	@doc:hasRequiredBinding 'personName as hasText'
+	ci 1-OrgPersonName : doc:TableColumn
+	
+	@doc:hasTitle 'Role'
+	@doc:hasRequiredBinding 'roleName as hasText'
+	ci 2-OrgPersonRole : doc:TableColumn
+	
+	@doc:hasTitle 'Programs'
+	ci 2-Programs : doc:Chapter [
+		doc:hasElement 1-ProgramsDescription
+		doc:hasElement 2-ProgramsList
+		doc:hasElement 3-ProjectList
+	]
+	
+	@doc:hasText '''
+		Programs related to the fire satellite and their respective projects
+	'''
+	ci 1-ProgramsDescription : doc:Para
+	
+	@doc:hasTitle 'Program List'
+	@doc:hasBorder '0'
+	ci 2-ProgramsList : doc:Table [
+		doc:hasElement ProgramListRow
+	]
+	
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?programName WHERE {
+			?program a proj:Program .
+			?program rdfs:label ?programName .
+		} ORDER BY ?programName
+	'''
+	@doc:hasForwardedBinding 'programName'
+	ci ProgramListRow : doc:TableRow [
+		doc:hasElement ProgramColumn
+	]
+	
+	@doc:hasTitle 'Program'
+	@doc:hasRequiredBinding 'programName as hasText'
+	ci ProgramColumn : doc:TableColumn
+	
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?program (CONCAT(?programName, '\'s Projects') AS ?hasTitle) WHERE {
+			?program a proj:Program .
+			?program rdfs:label ?programName .
+		} ORDER BY ?programName
+	'''
+	@doc:hasForwardedBinding 'program'
+	@doc:hasBorder '0'
+	ci 3-ProjectList : doc:Table [
+		doc:hasElement ProjectListRow
+	]
+	
+	@doc:hasRequiredBinding 'program'
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?projectName ?organizationName ?missionName WHERE {
+			$program proj:authorizes ?project .
+			?project proj:isResponsibilityOf ?organization .
+			?project proj:supplies ?mission .
+			?project rdfs:label ?projectName .
+			?organization rdfs:label ?organizationName .
+			?mission rdfs:label ?missionName .
+		}
+	'''
+	@doc:hasForwardedBinding '*'
+	ci ProjectListRow : doc:TableRow [
+		doc:hasElement 1-ProjectColumn
+		doc:hasElement 2-OrganizationColumn
+		doc:hasElement 3-MissionColumn
+	]
+	
+	@doc:hasTitle 'Project'
+	@doc:hasRequiredBinding 'projectName as hasText'
+	ci 1-ProjectColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Organization'
+	@doc:hasRequiredBinding 'organizationName as hasText'
+	ci 2-OrganizationColumn : doc:TableColumn
+	
+	@doc:hasTitle 'Mission'
+	@doc:hasRequiredBinding 'missionName as hasText'
+	ci 3-MissionColumn : doc:TableColumn
+	
+	@doc:hasTitle 'FireSat'
+	ci 3-FireSat : doc:Chapter [
+		doc:hasElement 1-FireSatMission
+		doc:hasElement 2-FireSatProject
+	]
+	
+	@doc:hasRequiredBinding 'SELF'
+	@doc:hasSparqlMapping '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?mission ?missionName (?missionName AS ?hasTitle)
+		WHERE {
+			$SELF <http://opencaesar.io/document#describes> ?mission .
+			?mission rdfs:label ?missionName .
+		}
+	'''
+	@doc:hasForwardedBinding 'mission'
+	@doc:hasForwardedBinding 'missionName'
+	ci 1-FireSatMission : doc:Section [
+		doc:describes firesat-mission:FireSatMission
+		
+		doc:hasElement 1-MissionDescription
+		doc:hasElement 2-MissionEnvironments
+		doc:hasElement 3-StakeholderDescription
+		doc:hasElement 4-Stakeholders
+	]
+	
+	@doc:hasRequiredBinding 'mission'
+	@doc:hasSparqlMapping '''
+		PREFIX mission: <http://imce.jpl.nasa.gov/foundation/mission#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT (CONCAT('The ', ?missionLabel, ' pursuses ', ?objectiveLabel, ' which has the objective: ', ?objectiveComment,
+			'. The ', ?missionLabel, ' operates in these environments: ') AS ?hasText)
+		WHERE {
+			$mission rdfs:label ?missionLabel .
+			$mission mission:pursues ?objective .
+			?objective rdfs:label ?objectiveLabel .
+			?objective rdfs:comment ?objectiveComment .
+		}
+	'''
+	ci 1-MissionDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'missionName'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT($missionName, ' Environments') AS ?hasTitle) WHERE { }
+	'''
+	@doc:hasForwardedBinding 'mission'
+	@doc:hasBorder '0'
+	ci 2-MissionEnvironments : doc:Table [
+		doc:hasElement EnvironmentRow
+	]
+	
+	@doc:hasRequiredBinding 'mission'
+	@doc:hasSparqlExpansion '''
+		PREFIX mission: <http://imce.jpl.nasa.gov/foundation/mission#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?environmentLabel WHERE {
+			$mission mission:deploys ?deployed .
+			?deployed mission:isInfluencedBy ?environment .
+			?environment rdfs:label ?environmentLabel .
+		} ORDER BY ?environmentLabel
+	'''
+	@doc:hasForwardedBinding 'environmentLabel'
+	ci EnvironmentRow : doc:TableRow [
+		doc:hasElement EnvironmentCol
+	]
+	
+	@doc:hasRequiredBinding 'environmentLabel as hasText'
+	@doc:hasTitle 'Environment'
+	ci EnvironmentCol : doc:TableColumn
+	
+	@doc:hasText 'The stakeholders of this mission are:'
+	ci 3-StakeholderDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'mission'
+	@doc:hasForwardedBinding 'mission'
+	@doc:hasBorder '0'
+	ci 4-Stakeholders : doc:InformalTable [
+		doc:hasElement StakeholderRow
+	]
+	
+	@doc:hasRequiredBinding 'mission'
+	@doc:hasSparqlExpansion '''
+		PREFIX mission: <http://imce.jpl.nasa.gov/foundation/mission#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+
+		SELECT DISTINCT ?stakeholderLabel WHERE {
+			$mission mission:pursues ?objective .
+			?stakeholder proj:represents ?objective .
+			?stakeholder rdfs:label ?stakeholderLabel .
+		} ORDER BY ?stakeholderLabel
+	'''
+	@doc:hasForwardedBinding 'stakeholderLabel'
+	ci StakeholderRow : doc:TableRow [
+		doc:hasElement StakeholderCol
+	]
+	
+	@doc:hasRequiredBinding 'stakeholderLabel as hasText'
+	@doc:hasTitle 'Stakeholder'
+	ci StakeholderCol : doc:TableColumn
+	
+	@doc:hasSparqlMapping '''
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		SELECT DISTINCT ?project ?hasTitle WHERE {
+			$SELF <http://opencaesar.io/document#describes> ?project .
+			?project rdfs:label ?hasTitle .
+		}
+	'''
+	@doc:hasForwardedBinding 'project'
+	ci 2-FireSatProject : doc:Section [
+		doc:describes earth-science-program:FireSatProject
+		
+		doc:hasElement 1-ProjectDescription
+		doc:hasElement 2-MainWorkPackages
+		doc:hasElement 3-BreakdownDescription
+		doc:hasElement 4-WorkPackageSections
+	]
+	
+	@doc:hasRequiredBinding 'project'
+	@doc:hasSparqlMapping '''
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX mission: <http://imce.jpl.nasa.gov/foundation/mission#>
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+
+		SELECT (CONCAT('The ', ?projectLabel, ' deploys multiple work packages in pursuit of the ', ?missionLabel,
+			'. These work packages contain data on the products needed for this project and describes how these products should be built.') AS ?hasText)
+		WHERE {
+			?project rdfs:label ?projectLabel .
+			?project proj:supplies ?mission .
+			?mission rdfs:label ?missionLabel .
+		}
+	'''
+	ci 1-ProjectDescription : doc:Para
+	
+	@doc:hasForwardedBinding 'project'
+	@doc:hasTitle 'Main Work Packages'
+	@doc:hasBorder '0'
+	ci 2-MainWorkPackages : doc:Table [
+		doc:hasElement MainWorkPackageRow
+	]
+	
+	@doc:hasRequiredBinding 'project'
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?workPackageLabel ?suppliesLabel ?organizationLabel
+		WHERE {
+			$project proj:authorizes ?workPackage .
+			?workPackage rdfs:label ?workPackageLabel .
+			?workPackage proj:isResponsibilityOf ?organization .
+			?workPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
+		} ORDER BY ?workPackageLabel
+	'''
+	@doc:hasForwardedBinding '*'
+	ci MainWorkPackageRow : doc:TableRow [
+		doc:hasElement 1-WorkPackageCol
+		doc:hasElement 2-SuppliesCol
+		doc:hasElement 3-ProvidingOrgCol
+	]
+	
+	@doc:hasTitle 'Work Package'
+	@doc:hasRequiredBinding 'workPackageLabel as hasText'
+	ci 1-WorkPackageCol : doc:TableColumn
+	
+	@doc:hasTitle 'Supplies'
+	@doc:hasRequiredBinding 'suppliesLabel as hasText'
+	ci 2-SuppliesCol : doc:TableColumn
+	
+	@doc:hasTitle 'Providing Organization'
+	@doc:hasRequiredBinding 'organizationLabel as hasText'
+	ci 3-ProvidingOrgCol : doc:TableColumn
+	
+	@doc:hasText '''
+        Some work packages authorize other work packages to further break down the work and 
+        details needed to supply a certain part. These sub work packages often deal with subsystems
+        that make up the whole system that the main work package focsues on. The following sections
+        go over the main work packages and note any sub work packages.
+	'''
+	ci 3-BreakdownDescription : doc:Para
+	
+	@doc:hasRequiredBinding 'project'
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?workPackage ?workPackageLabel ?suppliesLabel ?organizationLabel (?workPackageLabel AS ?hasTitle)
+		WHERE {
+			$project proj:authorizes ?workPackage .
+			?workPackage rdfs:label ?workPackageLabel .
+			?workPackage proj:isResponsibilityOf ?organization .
+			?workPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
+		} ORDER BY ?workPackageLabel
+	'''
+	@doc:hasForwardedBinding 'workPackage'
+	@doc:hasForwardedBinding 'workPackageLabel'
+	@doc:hasForwardedBinding 'suppliesLabel'
+	@doc:hasForwardedBinding 'organizationLabel'
+	ci 4-WorkPackageSections : doc:Section [
+		doc:hasElement 1-WorkPackageDescription
+		doc:hasElement 2-SubWorkPackages
+	]
+	
+	@doc:hasRequiredBinding 'workPackageLabel'
+	@doc:hasRequiredBinding 'suppliesLabel'
+	@doc:hasRequiredBinding 'organizationLabel'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT(?workPackageLabel, ' focuses on the ', ?suppliesLabel, ' and is the responsibility of ', ?organizationLabel, '.') AS ?hasText)
+		WHERE { }
+	'''
+	ci 1-WorkPackageDescription : doc:Para
+	
+	@doc:hasForwardedBinding 'workPackage'
+	@doc:hasRequiredBinding 'workPackageLabel'
+	@doc:hasSparqlMapping '''
+		SELECT (CONCAT(?workPackageLabel, '\'s Sub Work Packages') AS ?hasTitle) WHERE { }
+	'''
+	@doc:hasBorder '0'
+	ci 2-SubWorkPackages : doc:Table [
+		doc:hasElement SubWorkPackageRows
+	]
+	
+	@doc:hasRequiredBinding 'workPackage'
+	@doc:hasSparqlExpansion '''
+		PREFIX proj: <http://imce.jpl.nasa.gov/foundation/project#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT DISTINCT ?workPackageLabel ?suppliesLabel ?organizationLabel
+		WHERE {
+			$workPackage proj:authorizes ?subWorkPackage .
+			?subWorkPackage rdfs:label ?workPackageLabel .
+			?subWorkPackage proj:isResponsibilityOf ?organization .
+			?subWorkPackage proj:supplies ?supplies .
+			?supplies rdfs:label ?suppliesLabel .
+			?organization rdfs:label ?organizationLabel . 
+		} ORDER BY ?workPackageLabel
+	'''
+	@doc:hasForwardedBinding 'workPackageLabel'
+	@doc:hasForwardedBinding 'suppliesLabel'
+	@doc:hasForwardedBinding 'organizationLabel'
+	ci SubWorkPackageRows : doc:TableRow [
+		doc:hasElement 1-SubWorkPackageCol
+		doc:hasElement 2-SuppliesCol
+		doc:hasElement 3-ProvidingOrgCol
+	]
+	
+	@doc:hasTitle 'Sub Work Package'
+	@doc:hasRequiredBinding 'workPackageLabel as hasText'
+	ci 1-SubWorkPackageCol : doc:TableColumn
+	
+}
