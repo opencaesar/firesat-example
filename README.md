@@ -1,9 +1,9 @@
 # FireSat Example
 
-[![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/firesat-example) 
 [![Build Status](https://travis-ci.org/opencaesar/firesat-example.svg?branch=master)](https://travis-ci.org/opencaesar/firesat-example)
-[ ![Download](https://api.bintray.com/packages/opencaesar/ontologies/firesat-example/images/download.svg) ](https://bintray.com/opencaesar/ontologies/firesat-example/_latestVersion)
+[![Release](https://img.shields.io/github/v/tag/opencaesar/firesat-example?label=release)](https://github.com/opencaesar/firesat-example/releases/latest)
 [![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/firesat-example/) 
+[![Gitpod](https://img.shields.io/badge/gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/opencaesar/firesat-example) 
 
 This is a description of a FireSat project expressed in [OML](https://github.com/opencaesar/oml)
 

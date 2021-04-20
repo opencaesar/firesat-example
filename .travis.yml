@@ -14,6 +14,11 @@ before_install:
 install:
   - pip3 install bikeshed && bikeshed update
 
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle
+
 script:
   - ./gradlew build generateDocs
 
@@ -26,14 +31,6 @@ deploy:
   - provider: script
     script: .deploy/deploy.sh
     skip_cleanup: true
-    dry-run: false
-    on:
-      tags: true
-      branch: master
-  - provider: script
-    script: ./gradlew bintrayUpload
-    skip_cleanup: true
-    dry-run: false
     on:
       tags: true
       branch: master

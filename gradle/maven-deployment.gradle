@@ -1,0 +1,78 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing' 
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "melaasar"
+            name "Maged Elaasar"
+            email "melaasar@gmail.com"
+        }
+    }
+    scm {
+        url 'https://github.com/opencaesar/'+rootProject.name
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId project.group
+            artifactId project.name
+            version project.version
+            
+            pom {
+                packaging = 'zip'
+                withXml {
+                    def root = asNode()
+                    if (configurations.find { it.name == 'oml' }) {
+                        def dependencies = root.appendNode('dependencies')
+                        configurations.oml.resolvedConfiguration.resolvedArtifacts.each {
+                            def dependency = dependencies.appendNode('dependency')
+                            dependency.appendNode('groupId', it.moduleVersion.id.group)
+                            dependency.appendNode('artifactId', it.moduleVersion.id.name)
+                            dependency.appendNode('version', it.moduleVersion.id.version)
+                            if (it.classifier != null) {
+                                dependency.appendNode('classifier', it.classifier)
+                                dependency.appendNode('type', it.extension)
+                            }
+                        }
+                    }
+                    root.appendNode('name', project.ext.title)
+                    root.appendNode('description', project.description)
+                    root.appendNode('url', 'https://github.com/opencaesar/'+rootProject.name)
+                    root.children().last() + pomConfig
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "sonatype"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.findProperty('ossrhUsername')
+                password = project.findProperty('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    def pgpSigningKey = project.findProperty('pgpSigningKey')
+    if (pgpSigningKey != null) { pgpSigningKey = new String(pgpSigningKey.decodeBase64()) }
+    def pgpSigningPassword = project.findProperty('pgpSigningPassword')
+    useInMemoryPgpKeys(pgpSigningKey, pgpSigningPassword)
+    sign publishing.publications.maven
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    signMavenPublication.onlyIf { taskGraph.allTasks.any{it.name == 'publishMavenPublicationToSonatypeRepository'} }
+}
