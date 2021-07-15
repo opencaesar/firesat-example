@@ -12,6 +12,11 @@ This is a description of a FireSat project expressed in [OML](https://github.com
   git clone https://github.com/opencaesar/firesat-example.git
   cd firesat-example
 ```
+## Prerequisites
+
+- You need JDK 11 installed in the environment
+
+- if you run 'generateDocs', you also need [Bikeshed](https://tabatkins.github.io/bikeshed/#install-final) installed in the environment
 
 ## Build
 Equivalent to owlReason task
@@ -20,7 +25,6 @@ Equivalent to owlReason task
 ```
 
 ## Generate Docs
-You must first have Bikeshed (the app itself) installed from [here](https://tabatkins.github.io/bikeshed/#install-final)
 ```
 ./gradlew generateDocs
 ```
@@ -30,35 +34,41 @@ You must first have Bikeshed (the app itself) installed from [here](https://taba
 ./gradlew owlReason
 ```
 
-## Start Fuseki Server
-```
-./gradlew startFuseki
-```
-
-## Stop Fuseki Server
-```
-./gradlew stopFuseki
-```
-
 ## Load to Fuseki Dataset
 ```
 ./gradlew owlLoad
 ```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below)  
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below)  
+
 
 ## Run SPARQL Queries
 ```
 ./gradlew owlQuery
 ```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below)  
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below)  
+
 
 ## Run SHACL Rules
 ```
 ./gradlew owlShacl
 ```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see below) 
+Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below) 
+
 
 ## Publish to Maven Local
 ```
 ./gradlew publishToMavenLocal
 ```
+
+## Start Headless Fuseki Server
+```
+./gradlew startFuseki
+```
+> You need to run this once at the start before running any action involving Fuseki
+
+## Stop Headless Fuseki Server
+```
+./gradlew stopFuseki
+```
+> You need to run this once at the end after you are done running actions involving Fuseki
+
