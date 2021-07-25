@@ -5,20 +5,17 @@
 @prefix ja:      <http://jena.hpl.hp.com/2005/11/Assembler#> .
 @prefix :        <#> .
 
-[] rdf:type fuseki:Server .
+[] a fuseki:Server .
 
-<#service> rdf:type fuseki:Service ;
-    rdfs:label          "Dataset with SHACL validation" ;
+<#service> a fuseki:Service ;
+    rdfs:label          "Firesat Dataset" ;
     fuseki:name         "firesat" ;														# See the endpoint url in build.gradle
     fuseki:serviceReadWriteGraphStore "data" ;											# SPARQL Graph store protocol (read and write)
     fuseki:endpoint 	[ fuseki:operation fuseki:query ;	fuseki:name "sparql"  ] ;	# SPARQL query service
     fuseki:endpoint 	[ fuseki:operation fuseki:shacl ;	fuseki:name "shacl" ] ;		# SHACL query service
     fuseki:dataset      <#dataset> .
 
-## In memory TDB with union graph.
-<#dataset> rdf:type   tdb:DatasetTDB ;
-  tdb:location "--mem--" ;
-  # Query timeout on this dataset (1s, 1000 milliseconds)
-  ja:context [ ja:cxtName "arq:queryTimeout" ; ja:cxtValue "1000" ] ;
-  # Make the default graph be the union of all named graphs.
-  tdb:unionDefaultGraph true .
+<#dataset> a tdb:DatasetTDB ;															## In memory TDB with union graph.
+  	tdb:location 			"--mem--" ;
+  	ja:context 				[ ja:cxtName "arq:queryTimeout" ; ja:cxtValue "1000" ] ; 	# Query timeout on this dataset (1s, 1000 milliseconds)
+  	tdb:unionDefaultGraph	 true .														# Make the default graph be the union of all named graphs.
