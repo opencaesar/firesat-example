@@ -1,71 +1,56 @@
 @dc:title "Communications Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses> with # as cmn-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies> as cmn-assemblies
 
 	// Transmitter Unit Mass
 
-	@rdfs:label "Transmitter Unit CBE Mass"
-	ci TransmitterUnitCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf cmn-assemblies:TransmitterUnit
-	]
-
-	@rdfs:label "Transmitter Unit CBE Mass Magnitude"
-	ci TransmitterUnitCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Transmitter Unit Unit Mass Limit Constraint"
+	ci TransmitterUnitMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "2.1"^^xsd:double
-		metrology:isMagnitudeOf TransmitterUnitCBEMass
+		metrology:isQuantityOf cmn-assemblies:TransmitterUnit
 	]
 
 	// Receiver Unit Mass
 
-	@rdfs:label "Receiver Unit CBE Mass"
-	ci ReceiverUnitCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf cmn-assemblies:ReceiverUnit
-	]
-
-	@rdfs:label "Receiver Unit CBE Mass Magnitude"
-	ci ReceiverUnitCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Receiver Unit Mass Limit Constraint"
+	ci ReceiverUnitMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "1.0"^^xsd:double
-		metrology:isMagnitudeOf ReceiverUnitCBEMass
+		metrology:isQuantityOf cmn-assemblies:ReceiverUnit
 	]
 
 	// Transmit Whip Antenna Mass
 
-	@rdfs:label "Transmit Whip Antenna CBE Mass"
-	ci TransmitWhipAntennaCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf cmn-assemblies:TransmitWhipAntenna
-	]
-
-	@rdfs:label "Transmit Whip Antenna CBE Mass Magnitude"
-	ci TransmitWhipAntennaCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Transmit Whip Antenna Mass Limit Constraint"
+	ci TransmitWhipAntennaMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "0.04"^^xsd:double
-		metrology:isMagnitudeOf TransmitWhipAntennaCBEMass
+		metrology:isQuantityOf cmn-assemblies:TransmitWhipAntenna
 	]
 
 	// Transmit Hi-Gain Antenna Mass
 
-	@rdfs:label "Transmit Hi-Gain Antenna CBE Mass"
-	ci TransmitHiGainAntennaCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf cmn-assemblies:TransmitHiGainAntenna
-	]
-
-	@rdfs:label "Transmit Hi-Gain Antenna CBE Mass Magnitude"
-	ci TransmitHiGainAntennaCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Transmit Hi-Gain Antenna Mass Limit Constraint"
+	ci TransmitHiGainAntennaMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "0.04"^^xsd:double
-		metrology:isMagnitudeOf TransmitHiGainAntennaCBEMass
+		metrology:isQuantityOf cmn-assemblies:TransmitHiGainAntenna
 	]
 
 	// Receive Whip Antenna Mass
 
-	@rdfs:label "Receive Whip Antenna CBE Mass"
-	ci ReceiveWhipAntennaCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf cmn-assemblies:ReceiveWhipAntenna
-	]
-
-	@rdfs:label "Receive Whip Antenna CBE Mass Magnitude"
-	ci ReceiveWhipAntennaCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Receive Whip Antenna Mass Limit Constraint"
+	ci ReceiveWhipAntennaMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "0.08"^^xsd:double
-		metrology:isMagnitudeOf ReceiveWhipAntennaCBEMass
+		metrology:isQuantityOf cmn-assemblies:ReceiveWhipAntenna
 	]
 
 }

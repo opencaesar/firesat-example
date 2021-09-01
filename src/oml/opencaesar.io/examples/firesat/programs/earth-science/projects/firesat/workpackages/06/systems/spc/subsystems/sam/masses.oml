@@ -1,19 +1,24 @@
 @dc:title "Structures and Mechanisms Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/sam/masses> with # as sam-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/sam/sam>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs 
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/sam/sam> as sam
 
 	// Structures and Mechanisms Mass
 
-	@rdfs:label "Structures and Mechanisms Mass Limit"
-	ci StructuresAndMechanismsMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf sam:StructuresAndMechanisms
-	]
-
-	@rdfs:label "Structures and Mechanisms Mass Limit Magnitude"
-	ci StructuresAndMechanismsMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Structures and Mechanisms Mass Limit Constraint"
+	ci StructuresAndMechanismsMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "5.0"^^xsd:double
-		metrology:isMagnitudeOf StructuresAndMechanismsMassLimit
+		metrology:isQuantityOf sam:StructuresAndMechanisms
 	]
 
 }

@@ -1,14 +1,19 @@
 @dc:title "Payload"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/pld> with # as pld {
 	
-	uses <http://imce.jpl.nasa.gov/discipline/fse/fse>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
 	
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
 	// Payload System
 	
 	@rdfs:label "Payload System"
 	ci Payload : fse:Subsystem [
-		fse:hasReferenceDesignator "1000"
-		fse:hasAcronym "PLD"
+		base:hasIdentifier "PLD"
 	]
 
 } 

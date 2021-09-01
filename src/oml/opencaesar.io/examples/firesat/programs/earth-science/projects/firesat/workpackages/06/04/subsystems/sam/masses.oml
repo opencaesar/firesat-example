@@ -1,58 +1,48 @@
 @dc:title "Structures and Mechanisms Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/masses> with # as sam-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies> as sam-assemblies
 
 	// Power Control Unit Mass
 
-	@rdfs:label "Power Control Unit CBE Mass"
-	ci PowerControlUnitCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf sam-assemblies:PowerControlUnit
-	]
-
-	@rdfs:label "Power Control Unit CBE Mass Magnitude"
-	ci PowerControlUnitCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Power Control Unit Mass Limit Constraint"
+	ci PowerControlUnitMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "5.96"^^xsd:double
-		metrology:isMagnitudeOf PowerControlUnitCBEMass
+		metrology:isQuantityOf sam-assemblies:PowerControlUnit
 	]
 
 	// EPS Regulators And Converters Unit Mass
 
-	@rdfs:label "EPS Regulators and Converters Unit CBE Mass"
-	ci EPSRegulatorsAndConvertersUnitCBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf sam-assemblies:EPSRegulatorsAndConvertersUnit
-	]
-
-	@rdfs:label "EPS Regulators and Converters Unit CBE Mass Magnitude"
-	ci EPSRegulatorsAndConvertersUnitCBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "EPS Regulators and Converters Unit Mass Limit Constraint"
+	ci EPSRegulatorsAndConvertersUnitMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "14.48"^^xsd:double
-		metrology:isMagnitudeOf EPSRegulatorsAndConvertersUnitCBEMass
+		metrology:isQuantityOf sam-assemblies:EPSRegulatorsAndConvertersUnit
 	]
 
 	// Solar Array With SADA 1 Mass
 
-	@rdfs:label "Solar Array With SADA 1 CBE Mass"
-	ci SolarArrayWithSADA1CBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf sam-assemblies:SolarArrayWithSADA1
-	]
-
-	@rdfs:label "Solar Array With SADA 1 CBE Mass Magnitude"
-	ci SolarArrayWithSADA1CBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Solar Array With SADA 1 Mass Limit Constraint"
+	ci SolarArrayWithSADA1MassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "7.965"^^xsd:double
-		metrology:isMagnitudeOf SolarArrayWithSADA1CBEMass
+		metrology:isQuantityOf sam-assemblies:SolarArrayWithSADA1
 	]
 
 	// Solar Array With SADA 2 Mass
 
-	@rdfs:label "Solar Array With SADA 2 CBE Mass"
-	ci SolarArrayWithSADA2CBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf sam-assemblies:SolarArrayWithSADA2
-	]
-
-	@rdfs:label "Solar Array With SADA 2 CBE Mass Magnitude"
-	ci SolarArrayWithSADA2CBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Solar Array With SADA 2 Mass Limit Constraint"
+	ci SolarArrayWithSADA2MassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "7.965"^^xsd:double
-		metrology:isMagnitudeOf SolarArrayWithSADA2CBEMass
+		metrology:isQuantityOf sam-assemblies:SolarArrayWithSADA2
 	]
 
 }

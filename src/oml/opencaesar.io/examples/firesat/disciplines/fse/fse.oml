@@ -1,0 +1,117 @@
+@dc:title "Flight System Engineering"
+vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse> with # as fse {
+
+	extends <http://purl.org/dc/elements/1.1> with / as dc
+
+	extends <http://www.w3.org/2001/XMLSchema> as xsd
+
+	extends <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	extends <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	extends <http://imce.jpl.nasa.gov/foundation/project> as project
+
+	extends <http://iupac.org/metrology> as metrology
+
+	extends <http://iso.org/iso-80000-4-quantities> as iso-80000-4-quantities
+
+	extends <http://iso.org/iso-80000-4-magnitudes-1> as iso-80000-4-magnitudes-1
+
+	// The terms
+
+	aspect EndCircuitPresentingElement :> mission:PresentingElement
+
+	aspect MassConstrainedElement :> metrology:Object
+
+	ref concept project:WorkPackage :> MassConstrainedElement
+
+	concept Subsystem :> mission:Component, MassConstrainedElement [
+		restricts all relation base:aggregates to Assembly
+	]
+	
+	concept Assembly :> mission:Component, MassConstrainedElement, EndCircuitPresentingElement [
+		restricts all relation base:isAggregatedIn to Subsystem
+	]
+
+	concept EndCircuit :> mission:Interface [
+		restricts all relation mission:isJoinedIn to Function
+		restricts all relation mission:isPresentedBy to EndCircuitPresentingElement
+	]
+
+	concept PowerEndCircuit :> EndCircuit
+
+	concept PowerIn :> PowerEndCircuit
+
+	concept PowerOut :> PowerEndCircuit
+
+	concept Function :> mission:Junction [
+		restricts all relation mission:joins to EndCircuit
+	]
+
+	concept PowerFunction :> Function [
+		restricts scalar property hasEndCircuitType to "Power"
+		restricts all relation mission:joins to PowerEndCircuit
+		
+	]
+
+	concept MassConstraint :> iso-80000-4-quantities:mass, iso-80000-4-magnitudes-1:kilogram-magnitude [
+		restricts all relation metrology:isQuantityOf to MassConstrainedElement
+	]
+
+	concept MassAllocationConstraint :> MassConstraint
+
+	concept MassLimitConstraint :> MassConstraint
+
+	relation entity ConnectsAssembly [
+		from Function
+		to Assembly
+		forward connectsAssembly
+		asymmetric
+		irreflexive
+	]
+
+	relation entity ConnectsAssembly1 :> ConnectsAssembly [
+		from Function
+		to Assembly
+		forward connectsAssembly1
+		asymmetric
+		irreflexive
+	]
+
+	relation entity ConnectsAssembly2 :> ConnectsAssembly [
+		from Function
+		to Assembly
+		forward connectsAssembly2
+		asymmetric
+		irreflexive
+	]
+
+	enumerated scalar EndCircuitDirection :> xsd:string [
+		"in"^^xsd:string,
+		"inout"^^xsd:string,
+		"out"^^xsd:string
+	]
+
+	enumerated scalar FunctionDirection :> xsd:string [
+		"1to2"^^xsd:string,
+		"2to1"^^xsd:string,
+		"Bidirectional"^^xsd:string,
+		"Undefined"^^xsd:string
+	]
+
+	scalar property hasFunctionDirection [
+		domain Function
+		range FunctionDirection
+	]
+	
+	scalar property hasEndCircuitDirectione [
+		domain Function
+		range EndCircuitDirection
+	]
+
+	scalar property hasEndCircuitType [
+		domain Function
+		range xsd:string
+	]
+	
+}

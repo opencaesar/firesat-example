@@ -1,17 +1,29 @@
 @dc:title "FireSat Signals"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/signals> with # as firesat-signals {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/functions>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse 
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits> as pld-endcircuits
 	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits> as sam-endcircuits
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies> as pld-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies> as sam-assemblies
 
 	// 5000 to 1000 Power Function
 
 	@rdfs:label "5000 to 1000 Power"
-	ci 5000To1000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "1000-5000-001"
+	ci 5000To1000Power : fse:PowerFunction [
+		base:hasIdentifier "1000-5000-001"
 		fse:hasFunctionDirection "2to1"
 
 		fse:connectsAssembly1 pld-assemblies:PayloadModule

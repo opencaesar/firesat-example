@@ -1,9 +1,15 @@
 @dc:title "Spacecraft Assemblies"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/assemblies> with # as spc-assemblies {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/assemblies>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
 	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc>
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc> as spc
 
 	ref ci spc:Spacecraft [
 		base:aggregates SpacecraftSystemSegment
@@ -13,15 +19,9 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Spacecraft System Segment
 
 	@rdfs:label "Spacecraft System Segment"
-	ci SpacecraftSystemSegment : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "500000"
+	ci SpacecraftSystemSegment : fse:Assembly [
+		base:hasIdentifier "500000"
 	]
 
-	// Propellant Consumable Mass
-
-	@rdfs:label "Propellant"
-	ci Propellant : fse:ConsumableMass [
-		fse:hasMultiplicity "1"^^xsd:integer
-	]
 
 }

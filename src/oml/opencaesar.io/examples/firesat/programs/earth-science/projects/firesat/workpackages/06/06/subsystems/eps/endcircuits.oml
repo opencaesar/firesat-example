@@ -1,9 +1,17 @@
 @dc:title "Electric Power System Endcircuits"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/endcircuits> with # as eps-endcircuits {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse 
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies> as eps-assemblies
 
 	// Battery Pack 1 End Circuits
 
@@ -13,13 +21,13 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Battery Pack Power In"
-	ci BatteryPack1PowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci BatteryPack1PowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	@rdfs:label "Battery Pack Power Out"
-	ci BatteryPack1PowerOut : fse-endcircuits:PowerOut [
-		fse:hasEndCircuitIdentifier "2"
+	ci BatteryPack1PowerOut : fse:PowerOut [
+		base:hasIdentifier "2"
 	]
 
 	// Battery Pack 2 End Circuits
@@ -30,13 +38,13 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 	
 	@rdfs:label "Battery Pack Power In"
-	ci BatteryPack2PowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci BatteryPack2PowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	@rdfs:label "Battery Pack Power Out"
-	ci BatteryPack2PowerOut : fse-endcircuits:PowerOut [
-		fse:hasEndCircuitIdentifier "2"
+	ci BatteryPack2PowerOut : fse:PowerOut [
+		base:hasIdentifier "2"
 	]
 
 	// Battery Pack 3 End Circuits
@@ -47,13 +55,13 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Battery Pack Power In"
-	ci BatteryPack3PowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci BatteryPack3PowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	@rdfs:label "Battery Pack Power Out"
-	ci BatteryPack3PowerOut : fse-endcircuits:PowerOut [
-		fse:hasEndCircuitIdentifier "2"
+	ci BatteryPack3PowerOut : fse:PowerOut [
+		base:hasIdentifier "2"
 	]
 
 }

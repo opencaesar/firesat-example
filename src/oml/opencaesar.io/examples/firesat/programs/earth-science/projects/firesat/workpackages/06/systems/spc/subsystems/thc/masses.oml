@@ -1,19 +1,24 @@
 @dc:title "Thermal Control Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/masses> with # as thc-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs 
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc> as thc
 
 	// Thermal Control Mass
 
-	@rdfs:label "Thermal Control Mass Limit"
-	ci ThermalControlMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf thc:ThermalControl
-	]
-
-	@rdfs:label "Thermal Control Mass Limit Magnitude"
-	ci ThermalControlMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Thermal Control Mass Limit Constraint"
+	ci ThermalControlMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "3.9"^^xsd:double
-		metrology:isMagnitudeOf ThermalControlMassLimit
+		metrology:isQuantityOf thc:ThermalControl
 	]
 
 }

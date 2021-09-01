@@ -1,19 +1,24 @@
 @dc:title "Spacecraft Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/masses> with # as spc-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/spc> as spc
 
 	// Spacecraft Mass
 
-	@rdfs:label "Spacecraft Mass Limit"
-	ci SpacecraftMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf spc:Spacecraft
-	]
-	
-	@rdfs:label "Spacecraft Mass Limit Magnitude"
-	ci SpacecraftMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Spacecraft Mass Limit Constraint"
+	ci PayloadMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "235.1"^^xsd:double
-		metrology:isMagnitudeOf SpacecraftMassLimit
+		metrology:isQuantityOf spc:Spacecraft
 	]
 
 }

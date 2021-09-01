@@ -4,7 +4,7 @@
 ext.title = "FireSat Example"
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '2.3.2'
+version = '3.0.0'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
@@ -22,9 +22,9 @@ buildscript {
         classpath 'io.opencaesar.owl:owl-query-gradle:+'
         classpath 'io.opencaesar.owl:owl-load-gradle:+'
         classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:0.9.+'
-        classpath 'io.opencaesar.oml:oml-merge-gradle:0.9.+'
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:0.9.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
+        classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
     }
 }
 
@@ -32,7 +32,7 @@ buildscript {
  * Dependency versions
  */
 ext { 
-    imceVersion = '2.+'
+    imceVersion = '3.+'
 }
 
 /*
@@ -132,6 +132,7 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
     configurationPath = file('.fuseki.ttl')
     outputFolderPath = file('.fuseki')
+	webui = true
 }
 
 task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {

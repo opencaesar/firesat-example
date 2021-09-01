@@ -1,15 +1,25 @@
 @dc:title "Fire Satellite Signals"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/signals> with # as sam-signals {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/functions>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits> as sam-endcircuits
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies> as sam-assemblies
 
 	// 5000516200 to 5000 Power Function
 
 	@rdfs:label "5000516200To5000Power"
-	ci 5000516200To5000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "5000-5000-001"
+	ci 5000516200To5000Power : fse:PowerFunction [
+		base:hasIdentifier "5000-5000-001"
 		fse:hasFunctionDirection "2to1"
 		
 		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit
@@ -25,8 +35,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 5000516200 Power Function
 
 	@rdfs:label "5000To5000516200Power"
-	ci 5000To5000516200Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "5000-5000-002"
+	ci 5000To5000516200Power : fse:PowerFunction [
+		base:hasIdentifier "5000-5000-002"
 		fse:hasFunctionDirection "1to2"
 
 		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit

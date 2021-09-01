@@ -1,9 +1,17 @@
 @dc:title "Propulsion Endcircuits"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits> with # as prp-endcircuits {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse 
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies> as prp-assemblies
 
 	// Propulsion System Control Unit End Circuits
 
@@ -12,8 +20,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Propulsion System Control Unit Power In"
-	ci PropulsionSystemControlUnitPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci PropulsionSystemControlUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Propellant Handling Section End Circuits
@@ -23,8 +31,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Propellant Handling Section Power In"
-	ci PropellantHandlingSectionPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci PropellantHandlingSectionPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Fill Drain Valve Unit End Circuits
@@ -34,8 +42,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Fill Drain Valve Unit Power In"
-	ci FillDrainValveUnitPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci FillDrainValveUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Propulsion Module End Circuits
@@ -45,7 +53,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Propulsion Module Power In"
-	ci PropulsionModulePowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci PropulsionModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 }

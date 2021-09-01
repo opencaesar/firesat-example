@@ -1,7 +1,15 @@
 @dc:title "Thermal Control Assemblies"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/05/subsystems/thc/assemblies> with # as thc-assemblies {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/thc/thc> as thc
 
 	// Thermal Control Subsystem
 	
@@ -12,7 +20,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Thermal Blankets
 
 	@rdfs:label "Thermal Blankets"
-	ci ThermalBlankets : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "570000"
+	ci ThermalBlankets : fse:Assembly [
+		base:hasIdentifier "570000"
 	]
 }

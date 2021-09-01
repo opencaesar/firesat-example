@@ -1,7 +1,15 @@
 @dc:title "Electric Power System Assemblies"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies> with # as eps-assemblies {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps> as eps
 
 	// Electric Power System
 	
@@ -15,22 +23,22 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Battery Pack 1 Assembly
 
 	@rdfs:label "Battery Pack 1"
-	ci BatteryPack1 : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "512000-1"
+	ci BatteryPack1 : fse:Assembly [
+		base:hasIdentifier "512000-1"
 	]
 
 	// Battery Pack 2 Assembly
 
 	@rdfs:label "Battery Pack 2"
-	ci BatteryPack2 : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "512000-2"
+	ci BatteryPack2 : fse:Assembly [
+		base:hasIdentifier "512000-2"
 	]
 
 	// Battery Pack 3 Assembly
 
 	@rdfs:label "Battery Pack 3"
-	ci BatteryPack3 : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "512000-3"
+	ci BatteryPack3 : fse:Assembly [
+		base:hasIdentifier "512000-3"
 	]
 
 }

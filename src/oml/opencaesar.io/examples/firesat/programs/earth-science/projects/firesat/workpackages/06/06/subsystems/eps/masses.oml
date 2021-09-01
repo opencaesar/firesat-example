@@ -1,45 +1,40 @@
 @dc:title "Electric Power System Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/masses> with # as eps-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies> as eps-assemblies
 
 	// Battery Pack 1 Mass
 
-	@rdfs:label "Battery Pack 1 CBE Mass"
-	ci BatteryPack1CBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf eps-assemblies:BatteryPack1
-	]
-
-	@rdfs:label "Battery Pack 1 CBE Mass Magnitude"
-	ci BatteryPack1CBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Battery Pack 1 Mass Limit Constraint"
+	ci BatteryPack1MassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "3.103"^^xsd:double
-		metrology:isMagnitudeOf BatteryPack1CBEMass
+		metrology:isQuantityOf eps-assemblies:BatteryPack1
 	]
 
 	// Battery Pack 2 Mass
 
-	@rdfs:label "Battery Pack 2 CBE Mass"
-	ci BatteryPack2CBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf eps-assemblies:BatteryPack2
-	]
-
-	@rdfs:label "Battery Pack 2 CBE Mass Magnitude"
-	ci BatteryPack2CBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Battery Pack 2 Mass Limit Constraint"
+	ci BatteryPack2MassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "3.103"^^xsd:double
-		metrology:isMagnitudeOf BatteryPack2CBEMass
+		metrology:isQuantityOf eps-assemblies:BatteryPack2
 	]
 
 	// Battery Pack 3 Mass
 
-	@rdfs:label "Battery Pack 3 CBE Mass"
-	ci BatteryPack3CBEMass : 80000-4-quantities:mass [
-		fse:isCBEMassOf eps-assemblies:BatteryPack3
-	]
-
-	@rdfs:label "Battery Pack 3 CBE Mass Magnitude"
-	ci BatteryPack3CBEMassMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Thermal Blankets Mass Limit Constraint"
+	ci BatteryPack3MassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "3.103"^^xsd:double
-		metrology:isMagnitudeOf BatteryPack3CBEMass
+		metrology:isQuantityOf eps-assemblies:BatteryPack3
 	]
 
 }

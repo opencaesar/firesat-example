@@ -1,19 +1,24 @@
 @dc:title "Electric Power System Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/masses> with # as eps-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs 
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/eps/eps> as eps
 
 	// Electric Power System Mass
 
-	@rdfs:label "Electric Power System Mass Limit"
-	ci EPSMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf eps:ElectricPowerSystem
-	]
-
-	@rdfs:label "Electric Power System Mass Limit Magnitude"
-	ci EPSMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Electric Power System Mass Limit Constraint"
+	ci EPSMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "9.31"^^xsd:double
-		metrology:isMagnitudeOf EPSMassLimit
+		metrology:isQuantityOf eps:ElectricPowerSystem
 	]
 
 }

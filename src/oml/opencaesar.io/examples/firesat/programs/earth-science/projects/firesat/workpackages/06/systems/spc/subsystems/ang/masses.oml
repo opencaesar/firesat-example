@@ -1,19 +1,24 @@
 @dc:title "ADCS and GNC Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/masses> with # as ang-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/ang>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs 
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/ang> as ang
 
 	// ADCS And GNC Mass
 
-	@rdfs:label "ADCS and GNC Mass Limit"
-	ci ADCSAndGNCMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf ang:ADCSAndGNC
-	]
-
-	@rdfs:label "ADCS and GNC Mass Limit Magnitude"
-	ci ADCSAndGNCMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "ADCS and GNC Mass Limit Constraint"
+	ci ADCSAndGNCMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "9.74"^^xsd:double
-		metrology:isMagnitudeOf ADCSAndGNCMassLimit
+		metrology:isQuantityOf ang:ADCSAndGNC
 	]
 
 }

@@ -1,9 +1,15 @@
 @dc:title "Spacecraft Operational Requirements"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/operational> with # as spc-operational-reqs {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder> as firesat-stakeholder-reqs
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional> as firesat-functional-reqs
 
 	@rdfs:label "Orbit Inclination"
 	ci OrbitInclination : mission:Requirement [

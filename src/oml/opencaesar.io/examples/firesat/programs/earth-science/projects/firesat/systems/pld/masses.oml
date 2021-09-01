@@ -1,19 +1,23 @@
 @dc:title "Payload Masses"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/masses> with # as pld-masses {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/pld>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/pld/pld> as pld
 
 	// Payload Mass
-
-	@rdfs:label "Payload Mass Limit"
-	ci PayloadMassLimit : 80000-4-quantities:mass [
-		fse:isMassLimitOf pld:Payload
-	]
 	
-	@rdfs:label "Payload Mass Limit Magnitude"
-	ci PayloadMassLimitMagnitude : 80000-4-magnitudes-1:kilogram-magnitude [
+	@rdfs:label "Payload Mass Limit Constraint"
+	ci PayloadMassLimitConstraint : fse:MassLimitConstraint [
 		metrology:hasDoubleNumber "28.1"^^xsd:double
-		metrology:isMagnitudeOf PayloadMassLimit
+		metrology:isQuantityOf pld:Payload
 	]
-
 }

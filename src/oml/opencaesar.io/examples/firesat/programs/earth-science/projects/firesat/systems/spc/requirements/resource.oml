@@ -1,11 +1,17 @@
 @dc:title "Spacecraft Resource Requirements"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/resource> with # as spc-resource-reqs {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical>
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder> as firesat-stakeholder-reqs
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional> as firesat-functional-reqs
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical> as spc-logistical-reqs
 
 	@rdfs:label "Power Budget"
 	ci PowerBudget : mission:Requirement [

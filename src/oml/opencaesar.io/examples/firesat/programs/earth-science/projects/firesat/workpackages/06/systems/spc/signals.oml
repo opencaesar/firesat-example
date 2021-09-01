@@ -1,25 +1,45 @@
 @dc:title "Spacecraft Signals"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/signals> with # as spc-signals {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/functions>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits>
-	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/endcircuits>
-	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits>
-	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits>
-	
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/endcircuits>
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/endcircuits> as sam-endcircuits
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/endcircuits> as eps-endcircuits
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/endcircuits> as ang-endcircuits
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/endcircuits> as prp-endcircuits
+	
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/endcircuits> as cmn-endcircuits
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/endcircuits> as cdh-endcircuits
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/06/subsystems/eps/assemblies> as eps-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies> as sam-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies> as ang-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies> as prp-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies> as cmn-assemblies
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies> as cdh-assemblies
 
 	// 3000 to 5000 Power Function
 
 	@rdfs:label "Power 3000 to 5000"
-	ci 3000To5000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "3000-5000-001"
+	ci 3000To5000Power : fse:PowerFunction [
+		base:hasIdentifier "3000-5000-001"
 		fse:hasFunctionDirection "1to2"
 		
 		fse:connectsAssembly1 eps-assemblies:BatteryPack1
@@ -38,8 +58,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 2000 Power Function
 
 	@rdfs:label "Power 5000 to 2000"
-	ci 5000To2000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "2000-5000-001"
+	ci 5000To2000Power : fse:PowerFunction [
+		base:hasIdentifier "2000-5000-001"
 		fse:hasFunctionDirection "2to1"
 
 		fse:connectsAssembly1 ang-assemblies:Magnetometer
@@ -88,8 +108,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 3000 Power Function
 
 	@rdfs:label "Power 5000 to 3000"
-	ci 5000To3000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "3000-5000-002"
+	ci 5000To3000Power : fse:PowerFunction [
+		base:hasIdentifier "3000-5000-002"
 		fse:hasFunctionDirection "2to1"
 
 		fse:connectsAssembly1 eps-assemblies:BatteryPack1
@@ -108,8 +128,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 4000 Power Function
 
 	@rdfs:label "Power 5000 to 4000"
-	ci 5000To4000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "4000-5000-001"
+	ci 5000To4000Power : fse:PowerFunction [
+		base:hasIdentifier "4000-5000-001"
 		fse:hasFunctionDirection "2to1"
 
 		fse:connectsAssembly1 prp-assemblies:PropellantHandlingSection
@@ -153,8 +173,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 6000 Power Function
 
 	@rdfs:label "Power 5000 to 6000"
-	ci 5000To6000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "5000-6000-001"
+	ci 5000To6000Power : fse:PowerFunction [
+		base:hasIdentifier "5000-6000-001"
 		fse:hasFunctionDirection "1to2"
 		
 		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit
@@ -179,8 +199,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// 5000 to 7000 Power Function
 
 	@rdfs:label "Power 5000 to 7000"
-	ci 5000To7000Power : fse-functions:UnidirectionalPower [
-		fse:hasFunctionNumber "5000-7000-001"
+	ci 5000To7000Power : fse:PowerFunction [
+		base:hasAlternateName "5000-7000-001"
 		fse:hasFunctionDirection "1to2"
 
 		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit

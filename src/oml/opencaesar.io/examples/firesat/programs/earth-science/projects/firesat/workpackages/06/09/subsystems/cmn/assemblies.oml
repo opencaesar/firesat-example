@@ -1,7 +1,15 @@
 @dc:title "Communications Assemblies"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies> with # as cmn-assemblies {
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cmn/cmn> as cmn
 
 	// Communications Subsystem
 
@@ -16,36 +24,36 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	// Transmitter Unit
 
 	@rdfs:label "Transmitter Unit"
-	ci TransmitterUnit : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "516400"
+	ci TransmitterUnit : fse:Assembly [
+		base:hasIdentifier "516400"
 	]
 
 	// Receiver Unit
 
 	@rdfs:label "Receiver Unit"
-	ci ReceiverUnit : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "516500"
+	ci ReceiverUnit : fse:Assembly [
+		base:hasIdentifier "516500"
 	]
 
 	// Transmit Whip Antenna
 
 	@rdfs:label "Transmit Whip Antenna"
-	ci TransmitWhipAntenna : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "553000"
+	ci TransmitWhipAntenna : fse:Assembly [
+		base:hasIdentifier "553000"
 	]
 
 	// Transmit Hi-Gain Antenna
 
 	@rdfs:label "Transmit Hi-Gain Antenna"
-	ci TransmitHiGainAntenna : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "554000"
+	ci TransmitHiGainAntenna : fse:Assembly [
+		base:hasIdentifier "554000"
 	]
 
 	// Receive Whip Antenna
 
 	@rdfs:label "Receive Whip Antenna"
-	ci ReceiveWhipAntenna : fse-assemblies:BaseAssembly [
-		fse:hasAcronym "555000"
+	ci ReceiveWhipAntenna : fse:Assembly [
+		base:hasIdentifier "555000"
 	]	
 
 }

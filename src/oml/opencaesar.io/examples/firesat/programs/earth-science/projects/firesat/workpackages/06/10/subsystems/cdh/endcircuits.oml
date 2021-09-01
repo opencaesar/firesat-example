@@ -1,9 +1,17 @@
 @dc:title "Command and Data Handling Endcircuits"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/endcircuits> with # as cdh-endcircuits {
 
-	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse 
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/assemblies> as cdh-assemblies
 
 	// Avionics Stack Section End Circuits
 
@@ -12,8 +20,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Avionics Stack Section Power In"
-	ci AvionicsStackSectionPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci AvionicsStackSectionPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Primary Flight Computer Unit End Circuits
@@ -23,8 +31,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Primary Flight Computer Unit Power In"
-	ci PrimaryFlightComputerUnitPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci PrimaryFlightComputerUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Launch Vehicle Interface Module End Circuits
@@ -34,8 +42,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Launch Vehicle Interface Module Power In"
-	ci LaunchVehicleInterfaceModulePowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci LaunchVehicleInterfaceModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Separation System End Circuits
@@ -45,7 +53,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Separation System Power In"
-	ci SeparationSystemPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci SeparationSystemPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 }

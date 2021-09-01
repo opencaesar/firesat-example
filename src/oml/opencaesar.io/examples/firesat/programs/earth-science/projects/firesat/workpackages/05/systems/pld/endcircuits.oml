@@ -1,9 +1,17 @@
 @dc:title "Payload Endcircuits"
 description <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/endcircuits> with # as pld-endcircuits {
 	
-	uses <http://imce.jpl.nasa.gov/discipline/fse/endcircuits>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies>
+	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission> as mission
+
+	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse> as fse 
+
+	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/05/systems/pld/assemblies> as pld-assemblies
 
 	// Payload Module End Circuits
 
@@ -12,8 +20,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Payload Module Power In"
-	ci PayloadModulePowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci PayloadModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 	// Sensor End Circuits
@@ -23,8 +31,8 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Sensor Power In"
-	ci SensorPowerIn : fse-endcircuits:PowerIn [
-		fse:hasEndCircuitIdentifier "1"
+	ci SensorPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
 	]
 
 }
