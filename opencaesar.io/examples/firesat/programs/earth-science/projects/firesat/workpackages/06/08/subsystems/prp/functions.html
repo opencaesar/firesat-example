@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/functions" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,22 +1962,23 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#ControlTrajectoryByACSThruster1"><span class="secno">3.1</span> <span class="content"><span>ControlTrajectoryByACSThruster1</span></span></a>
-      <li><a href="#ControlTrajectoryByACSThruster2"><span class="secno">3.2</span> <span class="content"><span>ControlTrajectoryByACSThruster2</span></span></a>
-      <li><a href="#ControlTrajectoryByACSThruster3"><span class="secno">3.3</span> <span class="content"><span>ControlTrajectoryByACSThruster3</span></span></a>
-      <li><a href="#ControlTrajectoryByACSThruster4"><span class="secno">3.4</span> <span class="content"><span>ControlTrajectoryByACSThruster4</span></span></a>
-      <li><a href="#ControlTrajectoryByACSThruster5"><span class="secno">3.5</span> <span class="content"><span>ControlTrajectoryByACSThruster5</span></span></a>
-      <li><a href="#ControlTrajectoryByACSThruster6"><span class="secno">3.6</span> <span class="content"><span>ControlTrajectoryByACSThruster6</span></span></a>
-      <li><a href="#ControlTrajectoryByBPPropellantLineUnit"><span class="secno">3.7</span> <span class="content"><span>ControlTrajectoryByBPPropellantLineUnit</span></span></a>
-      <li><a href="#ControlTrajectoryByFillDrainValveUnit"><span class="secno">3.8</span> <span class="content"><span>ControlTrajectoryByFillDrainValveUnit</span></span></a>
-      <li><a href="#ControlTrajectoryByPMPropellantLineUnit"><span class="secno">3.9</span> <span class="content"><span>ControlTrajectoryByPMPropellantLineUnit</span></span></a>
-      <li><a href="#ControlTrajectoryByPressurantTank"><span class="secno">3.10</span> <span class="content"><span>ControlTrajectoryByPressurantTank</span></span></a>
-      <li><a href="#ControlTrajectoryByPropellantTank"><span class="secno">3.11</span> <span class="content"><span>ControlTrajectoryByPropellantTank</span></span></a>
-      <li><a href="#ControlTrajectoryByPropulsionSystemControlUnit"><span class="secno">3.12</span> <span class="content"><span>ControlTrajectoryByPropulsionSystemControlUnit</span></span></a>
-      <li><a href="#Launch_SCByPrimaryThruster"><span class="secno">3.13</span> <span class="content"><span>Launch_SCByPrimaryThruster</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster1"><span class="secno">4.1</span> <span class="content"><span>ControlTrajectoryByACSThruster1</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster2"><span class="secno">4.2</span> <span class="content"><span>ControlTrajectoryByACSThruster2</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster3"><span class="secno">4.3</span> <span class="content"><span>ControlTrajectoryByACSThruster3</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster4"><span class="secno">4.4</span> <span class="content"><span>ControlTrajectoryByACSThruster4</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster5"><span class="secno">4.5</span> <span class="content"><span>ControlTrajectoryByACSThruster5</span></span></a>
+      <li><a href="#ControlTrajectoryByACSThruster6"><span class="secno">4.6</span> <span class="content"><span>ControlTrajectoryByACSThruster6</span></span></a>
+      <li><a href="#ControlTrajectoryByBPPropellantLineUnit"><span class="secno">4.7</span> <span class="content"><span>ControlTrajectoryByBPPropellantLineUnit</span></span></a>
+      <li><a href="#ControlTrajectoryByFillDrainValveUnit"><span class="secno">4.8</span> <span class="content"><span>ControlTrajectoryByFillDrainValveUnit</span></span></a>
+      <li><a href="#ControlTrajectoryByPMPropellantLineUnit"><span class="secno">4.9</span> <span class="content"><span>ControlTrajectoryByPMPropellantLineUnit</span></span></a>
+      <li><a href="#ControlTrajectoryByPressurantTank"><span class="secno">4.10</span> <span class="content"><span>ControlTrajectoryByPressurantTank</span></span></a>
+      <li><a href="#ControlTrajectoryByPropellantTank"><span class="secno">4.11</span> <span class="content"><span>ControlTrajectoryByPropellantTank</span></span></a>
+      <li><a href="#ControlTrajectoryByPropulsionSystemControlUnit"><span class="secno">4.12</span> <span class="content"><span>ControlTrajectoryByPropulsionSystemControlUnit</span></span></a>
+      <li><a href="#Launch_SCByPrimaryThruster"><span class="secno">4.13</span> <span class="content"><span>Launch_SCByPrimaryThruster</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1992,17 +1993,26 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>prp-functions: <a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/functions</a></p>
+      <p><a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/functions</a> [prp-functions]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>prp-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies</a> [prp-assemblies]</p>
      <li data-md>
-      <p>firesat-functions: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a> [firesat-functions]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="ControlTrajectoryByACSThruster1"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster1">ControlTrajectoryByACSThruster1<a class="self-link" href="#controltrajectorybyacsthruster1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster1"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/mission.html">http://imce.jpl.nasa.gov/foundation/mission</a> [mission]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a> [project]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ControlTrajectoryByACSThruster1"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster1">ControlTrajectoryByACSThruster1<a class="self-link" href="#controltrajectorybyacsthruster1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster1"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2018,7 +2028,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="ControlTrajectoryByACSThruster2"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster2">ControlTrajectoryByACSThruster2<a class="self-link" href="#controltrajectorybyacsthruster2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster2"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="ControlTrajectoryByACSThruster2"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster2">ControlTrajectoryByACSThruster2<a class="self-link" href="#controltrajectorybyacsthruster2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster2"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2034,7 +2044,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory①">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="ControlTrajectoryByACSThruster3"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster3">ControlTrajectoryByACSThruster3<a class="self-link" href="#controltrajectorybyacsthruster3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster3"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="ControlTrajectoryByACSThruster3"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster3">ControlTrajectoryByACSThruster3<a class="self-link" href="#controltrajectorybyacsthruster3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster3"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2050,7 +2060,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory②">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.4" id="ControlTrajectoryByACSThruster4"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster4">ControlTrajectoryByACSThruster4<a class="self-link" href="#controltrajectorybyacsthruster4"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster4"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="ControlTrajectoryByACSThruster4"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster4">ControlTrajectoryByACSThruster4<a class="self-link" href="#controltrajectorybyacsthruster4"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster4"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2066,7 +2076,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory③">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="ControlTrajectoryByACSThruster5"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster5">ControlTrajectoryByACSThruster5<a class="self-link" href="#controltrajectorybyacsthruster5"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster5"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="ControlTrajectoryByACSThruster5"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster5">ControlTrajectoryByACSThruster5<a class="self-link" href="#controltrajectorybyacsthruster5"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster5"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2082,7 +2092,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory④">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.6" id="ControlTrajectoryByACSThruster6"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster6">ControlTrajectoryByACSThruster6<a class="self-link" href="#controltrajectorybyacsthruster6"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster6"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="ControlTrajectoryByACSThruster6"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyacsthruster6">ControlTrajectoryByACSThruster6<a class="self-link" href="#controltrajectorybyacsthruster6"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByACSThruster6"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2098,7 +2108,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑤">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="ControlTrajectoryByBPPropellantLineUnit"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybybppropellantlineunit">ControlTrajectoryByBPPropellantLineUnit<a class="self-link" href="#controltrajectorybybppropellantlineunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByBPPropellantLineUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="ControlTrajectoryByBPPropellantLineUnit"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybybppropellantlineunit">ControlTrajectoryByBPPropellantLineUnit<a class="self-link" href="#controltrajectorybybppropellantlineunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByBPPropellantLineUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2114,7 +2124,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑥">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.8" id="ControlTrajectoryByFillDrainValveUnit"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyfilldrainvalveunit">ControlTrajectoryByFillDrainValveUnit<a class="self-link" href="#controltrajectorybyfilldrainvalveunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByFillDrainValveUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="ControlTrajectoryByFillDrainValveUnit"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyfilldrainvalveunit">ControlTrajectoryByFillDrainValveUnit<a class="self-link" href="#controltrajectorybyfilldrainvalveunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByFillDrainValveUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2130,7 +2140,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑦">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="ControlTrajectoryByPMPropellantLineUnit"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypmpropellantlineunit">ControlTrajectoryByPMPropellantLineUnit<a class="self-link" href="#controltrajectorybypmpropellantlineunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPMPropellantLineUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="ControlTrajectoryByPMPropellantLineUnit"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypmpropellantlineunit">ControlTrajectoryByPMPropellantLineUnit<a class="self-link" href="#controltrajectorybypmpropellantlineunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPMPropellantLineUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2146,7 +2156,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑧">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑧">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.10" id="ControlTrajectoryByPressurantTank"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypressuranttank">ControlTrajectoryByPressurantTank<a class="self-link" href="#controltrajectorybypressuranttank"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPressurantTank"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="ControlTrajectoryByPressurantTank"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypressuranttank">ControlTrajectoryByPressurantTank<a class="self-link" href="#controltrajectorybypressuranttank"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPressurantTank"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2162,7 +2172,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑨">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑨">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.11" id="ControlTrajectoryByPropellantTank"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypropellanttank">ControlTrajectoryByPropellantTank<a class="self-link" href="#controltrajectorybypropellanttank"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPropellantTank"></a></h3>
+    <h3 class="heading settled" data-level="4.11" id="ControlTrajectoryByPropellantTank"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypropellanttank">ControlTrajectoryByPropellantTank<a class="self-link" href="#controltrajectorybypropellanttank"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPropellantTank"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2178,7 +2188,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⓪">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory①⓪">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.12" id="ControlTrajectoryByPropulsionSystemControlUnit"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypropulsionsystemcontrolunit">ControlTrajectoryByPropulsionSystemControlUnit<a class="self-link" href="#controltrajectorybypropulsionsystemcontrolunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPropulsionSystemControlUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.12" id="ControlTrajectoryByPropulsionSystemControlUnit"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybypropulsionsystemcontrolunit">ControlTrajectoryByPropulsionSystemControlUnit<a class="self-link" href="#controltrajectorybypropulsionsystemcontrolunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByPropulsionSystemControlUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2194,7 +2204,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory①①">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.13" id="Launch_SCByPrimaryThruster"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="launch_scbyprimarythruster">Launch_SCByPrimaryThruster<a class="self-link" href="#launch_scbyprimarythruster"></a></dfn></span><a class="self-link" href="#Launch_SCByPrimaryThruster"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="Launch_SCByPrimaryThruster"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="launch_scbyprimarythruster">Launch_SCByPrimaryThruster<a class="self-link" href="#launch_scbyprimarythruster"></a></dfn></span><a class="self-link" href="#Launch_SCByPrimaryThruster"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2344,77 +2354,77 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#controltrajectorybyacsthruster1">ControlTrajectoryByACSThruster1</a><span>, in §3.1</span>
-   <li><a href="#controltrajectorybyacsthruster2">ControlTrajectoryByACSThruster2</a><span>, in §3.2</span>
-   <li><a href="#controltrajectorybyacsthruster3">ControlTrajectoryByACSThruster3</a><span>, in §3.3</span>
-   <li><a href="#controltrajectorybyacsthruster4">ControlTrajectoryByACSThruster4</a><span>, in §3.4</span>
-   <li><a href="#controltrajectorybyacsthruster5">ControlTrajectoryByACSThruster5</a><span>, in §3.5</span>
-   <li><a href="#controltrajectorybyacsthruster6">ControlTrajectoryByACSThruster6</a><span>, in §3.6</span>
-   <li><a href="#controltrajectorybybppropellantlineunit">ControlTrajectoryByBPPropellantLineUnit</a><span>, in §3.7</span>
-   <li><a href="#controltrajectorybyfilldrainvalveunit">ControlTrajectoryByFillDrainValveUnit</a><span>, in §3.8</span>
-   <li><a href="#controltrajectorybypmpropellantlineunit">ControlTrajectoryByPMPropellantLineUnit</a><span>, in §3.9</span>
-   <li><a href="#controltrajectorybypressuranttank">ControlTrajectoryByPressurantTank</a><span>, in §3.10</span>
-   <li><a href="#controltrajectorybypropellanttank">ControlTrajectoryByPropellantTank</a><span>, in §3.11</span>
-   <li><a href="#controltrajectorybypropulsionsystemcontrolunit">ControlTrajectoryByPropulsionSystemControlUnit</a><span>, in §3.12</span>
-   <li><a href="#launch_scbyprimarythruster">Launch_SCByPrimaryThruster</a><span>, in §3.13</span>
+   <li><a href="#controltrajectorybyacsthruster1">ControlTrajectoryByACSThruster1</a><span>, in § 4.1</span>
+   <li><a href="#controltrajectorybyacsthruster2">ControlTrajectoryByACSThruster2</a><span>, in § 4.2</span>
+   <li><a href="#controltrajectorybyacsthruster3">ControlTrajectoryByACSThruster3</a><span>, in § 4.3</span>
+   <li><a href="#controltrajectorybyacsthruster4">ControlTrajectoryByACSThruster4</a><span>, in § 4.4</span>
+   <li><a href="#controltrajectorybyacsthruster5">ControlTrajectoryByACSThruster5</a><span>, in § 4.5</span>
+   <li><a href="#controltrajectorybyacsthruster6">ControlTrajectoryByACSThruster6</a><span>, in § 4.6</span>
+   <li><a href="#controltrajectorybybppropellantlineunit">ControlTrajectoryByBPPropellantLineUnit</a><span>, in § 4.7</span>
+   <li><a href="#controltrajectorybyfilldrainvalveunit">ControlTrajectoryByFillDrainValveUnit</a><span>, in § 4.8</span>
+   <li><a href="#controltrajectorybypmpropellantlineunit">ControlTrajectoryByPMPropellantLineUnit</a><span>, in § 4.9</span>
+   <li><a href="#controltrajectorybypressuranttank">ControlTrajectoryByPressurantTank</a><span>, in § 4.10</span>
+   <li><a href="#controltrajectorybypropellanttank">ControlTrajectoryByPropellantTank</a><span>, in § 4.11</span>
+   <li><a href="#controltrajectorybypropulsionsystemcontrolunit">ControlTrajectoryByPropulsionSystemControlUnit</a><span>, in § 4.12</span>
+   <li><a href="#launch_scbyprimarythruster">Launch_SCByPrimaryThruster</a><span>, in § 4.13</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-function">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-function">3.1. ControlTrajectoryByACSThruster1</a>
-    <li><a href="#ref-for-function①">3.2. ControlTrajectoryByACSThruster2</a>
-    <li><a href="#ref-for-function②">3.3. ControlTrajectoryByACSThruster3</a>
-    <li><a href="#ref-for-function③">3.4. ControlTrajectoryByACSThruster4</a>
-    <li><a href="#ref-for-function④">3.5. ControlTrajectoryByACSThruster5</a>
-    <li><a href="#ref-for-function⑤">3.6. ControlTrajectoryByACSThruster6</a>
-    <li><a href="#ref-for-function⑥">3.7. ControlTrajectoryByBPPropellantLineUnit</a>
-    <li><a href="#ref-for-function⑦">3.8. ControlTrajectoryByFillDrainValveUnit</a>
-    <li><a href="#ref-for-function⑧">3.9. ControlTrajectoryByPMPropellantLineUnit</a>
-    <li><a href="#ref-for-function⑨">3.10. ControlTrajectoryByPressurantTank</a>
-    <li><a href="#ref-for-function①⓪">3.11. ControlTrajectoryByPropellantTank</a>
-    <li><a href="#ref-for-function①①">3.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-function①②">3.13. Launch_SCByPrimaryThruster</a>
+    <li><a href="#ref-for-function">4.1. ControlTrajectoryByACSThruster1</a>
+    <li><a href="#ref-for-function①">4.2. ControlTrajectoryByACSThruster2</a>
+    <li><a href="#ref-for-function②">4.3. ControlTrajectoryByACSThruster3</a>
+    <li><a href="#ref-for-function③">4.4. ControlTrajectoryByACSThruster4</a>
+    <li><a href="#ref-for-function④">4.5. ControlTrajectoryByACSThruster5</a>
+    <li><a href="#ref-for-function⑤">4.6. ControlTrajectoryByACSThruster6</a>
+    <li><a href="#ref-for-function⑥">4.7. ControlTrajectoryByBPPropellantLineUnit</a>
+    <li><a href="#ref-for-function⑦">4.8. ControlTrajectoryByFillDrainValveUnit</a>
+    <li><a href="#ref-for-function⑧">4.9. ControlTrajectoryByPMPropellantLineUnit</a>
+    <li><a href="#ref-for-function⑨">4.10. ControlTrajectoryByPressurantTank</a>
+    <li><a href="#ref-for-function①⓪">4.11. ControlTrajectoryByPropellantTank</a>
+    <li><a href="#ref-for-function①①">4.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-function①②">4.13. Launch_SCByPrimaryThruster</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-realizes">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-realizes">3.1. ControlTrajectoryByACSThruster1</a>
-    <li><a href="#ref-for-realizes①">3.2. ControlTrajectoryByACSThruster2</a>
-    <li><a href="#ref-for-realizes②">3.3. ControlTrajectoryByACSThruster3</a>
-    <li><a href="#ref-for-realizes③">3.4. ControlTrajectoryByACSThruster4</a>
-    <li><a href="#ref-for-realizes④">3.5. ControlTrajectoryByACSThruster5</a>
-    <li><a href="#ref-for-realizes⑤">3.6. ControlTrajectoryByACSThruster6</a>
-    <li><a href="#ref-for-realizes⑥">3.7. ControlTrajectoryByBPPropellantLineUnit</a>
-    <li><a href="#ref-for-realizes⑦">3.8. ControlTrajectoryByFillDrainValveUnit</a>
-    <li><a href="#ref-for-realizes⑧">3.9. ControlTrajectoryByPMPropellantLineUnit</a>
-    <li><a href="#ref-for-realizes⑨">3.10. ControlTrajectoryByPressurantTank</a>
-    <li><a href="#ref-for-realizes①⓪">3.11. ControlTrajectoryByPropellantTank</a>
-    <li><a href="#ref-for-realizes①①">3.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-realizes①②">3.13. Launch_SCByPrimaryThruster</a>
+    <li><a href="#ref-for-realizes">4.1. ControlTrajectoryByACSThruster1</a>
+    <li><a href="#ref-for-realizes①">4.2. ControlTrajectoryByACSThruster2</a>
+    <li><a href="#ref-for-realizes②">4.3. ControlTrajectoryByACSThruster3</a>
+    <li><a href="#ref-for-realizes③">4.4. ControlTrajectoryByACSThruster4</a>
+    <li><a href="#ref-for-realizes④">4.5. ControlTrajectoryByACSThruster5</a>
+    <li><a href="#ref-for-realizes⑤">4.6. ControlTrajectoryByACSThruster6</a>
+    <li><a href="#ref-for-realizes⑥">4.7. ControlTrajectoryByBPPropellantLineUnit</a>
+    <li><a href="#ref-for-realizes⑦">4.8. ControlTrajectoryByFillDrainValveUnit</a>
+    <li><a href="#ref-for-realizes⑧">4.9. ControlTrajectoryByPMPropellantLineUnit</a>
+    <li><a href="#ref-for-realizes⑨">4.10. ControlTrajectoryByPressurantTank</a>
+    <li><a href="#ref-for-realizes①⓪">4.11. ControlTrajectoryByPropellantTank</a>
+    <li><a href="#ref-for-realizes①①">4.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-realizes①②">4.13. Launch_SCByPrimaryThruster</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectory">
    <a href="../../../../../../../missions/firesat/functions.html#controltrajectory">../../../../../../../missions/firesat/functions.html#controltrajectory</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectory">3.1. ControlTrajectoryByACSThruster1</a>
-    <li><a href="#ref-for-controltrajectory①">3.2. ControlTrajectoryByACSThruster2</a>
-    <li><a href="#ref-for-controltrajectory②">3.3. ControlTrajectoryByACSThruster3</a>
-    <li><a href="#ref-for-controltrajectory③">3.4. ControlTrajectoryByACSThruster4</a>
-    <li><a href="#ref-for-controltrajectory④">3.5. ControlTrajectoryByACSThruster5</a>
-    <li><a href="#ref-for-controltrajectory⑤">3.6. ControlTrajectoryByACSThruster6</a>
-    <li><a href="#ref-for-controltrajectory⑥">3.7. ControlTrajectoryByBPPropellantLineUnit</a>
-    <li><a href="#ref-for-controltrajectory⑦">3.8. ControlTrajectoryByFillDrainValveUnit</a>
-    <li><a href="#ref-for-controltrajectory⑧">3.9. ControlTrajectoryByPMPropellantLineUnit</a>
-    <li><a href="#ref-for-controltrajectory⑨">3.10. ControlTrajectoryByPressurantTank</a>
-    <li><a href="#ref-for-controltrajectory①⓪">3.11. ControlTrajectoryByPropellantTank</a>
-    <li><a href="#ref-for-controltrajectory①①">3.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-controltrajectory">4.1. ControlTrajectoryByACSThruster1</a>
+    <li><a href="#ref-for-controltrajectory①">4.2. ControlTrajectoryByACSThruster2</a>
+    <li><a href="#ref-for-controltrajectory②">4.3. ControlTrajectoryByACSThruster3</a>
+    <li><a href="#ref-for-controltrajectory③">4.4. ControlTrajectoryByACSThruster4</a>
+    <li><a href="#ref-for-controltrajectory④">4.5. ControlTrajectoryByACSThruster5</a>
+    <li><a href="#ref-for-controltrajectory⑤">4.6. ControlTrajectoryByACSThruster6</a>
+    <li><a href="#ref-for-controltrajectory⑥">4.7. ControlTrajectoryByBPPropellantLineUnit</a>
+    <li><a href="#ref-for-controltrajectory⑦">4.8. ControlTrajectoryByFillDrainValveUnit</a>
+    <li><a href="#ref-for-controltrajectory⑧">4.9. ControlTrajectoryByPMPropellantLineUnit</a>
+    <li><a href="#ref-for-controltrajectory⑨">4.10. ControlTrajectoryByPressurantTank</a>
+    <li><a href="#ref-for-controltrajectory①⓪">4.11. ControlTrajectoryByPropellantTank</a>
+    <li><a href="#ref-for-controltrajectory①①">4.12. ControlTrajectoryByPropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-launch_sc">
    <a href="../../../../../../../missions/firesat/functions.html#launch_sc">../../../../../../../missions/firesat/functions.html#launch_sc</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-launch_sc">3.13. Launch_SCByPrimaryThruster</a>
+    <li><a href="#ref-for-launch_sc">4.13. Launch_SCByPrimaryThruster</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>

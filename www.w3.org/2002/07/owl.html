@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/www.w3.org/2002/07/owl" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1892,7 +1892,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref allcaps" id="title">OWL2</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1917,19 +1917,25 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#Scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
+     <a href="#Aspects"><span class="secno">3</span> <span class="content">Aspects</span></a>
      <ol class="toc">
-      <li><a href="#Rational"><span class="secno">3.1</span> <span class="content"><span>rational</span></span></a>
-      <li><a href="#Real"><span class="secno">3.2</span> <span class="content"><span>real</span></span></a>
+      <li><a href="#Nothing"><span class="secno">3.1</span> <span class="content"><span>Nothing</span></span></a>
+      <li><a href="#Thing"><span class="secno">3.2</span> <span class="content"><span>Thing</span></span></a>
      </ol>
     <li>
-     <a href="#AnnotationProperties"><span class="secno">4</span> <span class="content">Annotation Properties</span></a>
+     <a href="#Scalars"><span class="secno">4</span> <span class="content">Scalars</span></a>
      <ol class="toc">
-      <li><a href="#BackwardCompatibleWith"><span class="secno">4.1</span> <span class="content"><span>backwardCompatibleWith</span></span></a>
-      <li><a href="#Deprecated"><span class="secno">4.2</span> <span class="content"><span>deprecated</span></span></a>
-      <li><a href="#IncompatibleWith"><span class="secno">4.3</span> <span class="content"><span>incompatibleWith</span></span></a>
-      <li><a href="#PriorVersion"><span class="secno">4.4</span> <span class="content"><span>priorVersion</span></span></a>
-      <li><a href="#VersionInfo"><span class="secno">4.5</span> <span class="content"><span>versionInfo</span></span></a>
+      <li><a href="#Rational"><span class="secno">4.1</span> <span class="content"><span>rational</span></span></a>
+      <li><a href="#Real"><span class="secno">4.2</span> <span class="content"><span>real</span></span></a>
+     </ol>
+    <li>
+     <a href="#AnnotationProperties"><span class="secno">5</span> <span class="content">Annotation Properties</span></a>
+     <ol class="toc">
+      <li><a href="#BackwardCompatibleWith"><span class="secno">5.1</span> <span class="content"><span>backwardCompatibleWith</span></span></a>
+      <li><a href="#Deprecated"><span class="secno">5.2</span> <span class="content"><span>deprecated</span></span></a>
+      <li><a href="#IncompatibleWith"><span class="secno">5.3</span> <span class="content"><span>incompatibleWith</span></span></a>
+      <li><a href="#PriorVersion"><span class="secno">5.4</span> <span class="content"><span>priorVersion</span></span></a>
+      <li><a href="#VersionInfo"><span class="secno">5.5</span> <span class="content"><span>versionInfo</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1943,26 +1949,33 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>owl: <a href="owl.html">http://www.w3.org/2002/07/owl</a></p>
+      <p><a href="owl.html">http://www.w3.org/2002/07/owl</a> [owl]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns.html">http://www.w3.org/1999/02/22-rdf-syntax-ns</a></p>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
      <li data-md>
-      <p>rdfs: <a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a></p>
+      <p><a href="http://www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="Scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Rational"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rational">rational<a class="self-link" href="#rational"></a></dfn></span><a class="self-link" href="#Rational"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Nothing"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nothing">Nothing<a class="self-link" href="#nothing"></a></dfn></span><a class="self-link" href="#Nothing"></a></h3>
     <table class="def"></table>
-    <h3 class="heading settled" data-level="3.2" id="Real"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="real">real<a class="self-link" href="#real"></a></dfn></span><a class="self-link" href="#Real"></a></h3>
+    <h3 class="heading settled" data-level="3.2" id="Thing"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="thing">Thing<a class="self-link" href="#thing"></a></dfn></span><a class="self-link" href="#Thing"></a></h3>
     <table class="def"></table>
-    <h2 class="heading settled" data-level="4" id="AnnotationProperties"><span class="secno">4. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="BackwardCompatibleWith"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="backwardcompatiblewith">backwardCompatibleWith<a class="self-link" href="#backwardcompatiblewith"></a></dfn></span><a class="self-link" href="#BackwardCompatibleWith"></a></h3>
-    <h3 class="heading settled" data-level="4.2" id="Deprecated"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deprecated">deprecated<a class="self-link" href="#deprecated"></a></dfn></span><a class="self-link" href="#Deprecated"></a></h3>
-    <h3 class="heading settled" data-level="4.3" id="IncompatibleWith"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="incompatiblewith">incompatibleWith<a class="self-link" href="#incompatiblewith"></a></dfn></span><a class="self-link" href="#IncompatibleWith"></a></h3>
-    <h3 class="heading settled" data-level="4.4" id="PriorVersion"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="priorversion">priorVersion<a class="self-link" href="#priorversion"></a></dfn></span><a class="self-link" href="#PriorVersion"></a></h3>
-    <h3 class="heading settled" data-level="4.5" id="VersionInfo"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="versioninfo">versionInfo<a class="self-link" href="#versioninfo"></a></dfn></span><a class="self-link" href="#VersionInfo"></a></h3>
+    <h2 class="heading settled" data-level="4" id="Scalars"><span class="secno">4. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Rational"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rational">rational<a class="self-link" href="#rational"></a></dfn></span><a class="self-link" href="#Rational"></a></h3>
+    <table class="def"></table>
+    <h3 class="heading settled" data-level="4.2" id="Real"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="real">real<a class="self-link" href="#real"></a></dfn></span><a class="self-link" href="#Real"></a></h3>
+    <table class="def"></table>
+    <h2 class="heading settled" data-level="5" id="AnnotationProperties"><span class="secno">5. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="BackwardCompatibleWith"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="backwardcompatiblewith">backwardCompatibleWith<a class="self-link" href="#backwardcompatiblewith"></a></dfn></span><a class="self-link" href="#BackwardCompatibleWith"></a></h3>
+    <h3 class="heading settled" data-level="5.2" id="Deprecated"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deprecated">deprecated<a class="self-link" href="#deprecated"></a></dfn></span><a class="self-link" href="#Deprecated"></a></h3>
+    <h3 class="heading settled" data-level="5.3" id="IncompatibleWith"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="incompatiblewith">incompatibleWith<a class="self-link" href="#incompatiblewith"></a></dfn></span><a class="self-link" href="#IncompatibleWith"></a></h3>
+    <h3 class="heading settled" data-level="5.4" id="PriorVersion"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="priorversion">priorVersion<a class="self-link" href="#priorversion"></a></dfn></span><a class="self-link" href="#PriorVersion"></a></h3>
+    <h3 class="heading settled" data-level="5.5" id="VersionInfo"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="versioninfo">versionInfo<a class="self-link" href="#versioninfo"></a></dfn></span><a class="self-link" href="#VersionInfo"></a></h3>
    </div>
   </main>
 <script>
@@ -2097,11 +2110,13 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#backwardcompatiblewith">backwardCompatibleWith</a><span>, in §4.1</span>
-   <li><a href="#deprecated">deprecated</a><span>, in §4.2</span>
-   <li><a href="#incompatiblewith">incompatibleWith</a><span>, in §4.3</span>
-   <li><a href="#priorversion">priorVersion</a><span>, in §4.4</span>
-   <li><a href="#rational">rational</a><span>, in §3.1</span>
-   <li><a href="#real">real</a><span>, in §3.2</span>
-   <li><a href="#versioninfo">versionInfo</a><span>, in §4.5</span>
+   <li><a href="#backwardcompatiblewith">backwardCompatibleWith</a><span>, in § 5.1</span>
+   <li><a href="#deprecated">deprecated</a><span>, in § 5.2</span>
+   <li><a href="#incompatiblewith">incompatibleWith</a><span>, in § 5.3</span>
+   <li><a href="#nothing">Nothing</a><span>, in § 3.1</span>
+   <li><a href="#priorversion">priorVersion</a><span>, in § 5.4</span>
+   <li><a href="#rational">rational</a><span>, in § 4.1</span>
+   <li><a href="#real">real</a><span>, in § 4.2</span>
+   <li><a href="#thing">Thing</a><span>, in § 3.2</span>
+   <li><a href="#versioninfo">versionInfo</a><span>, in § 5.5</span>
   </ul>

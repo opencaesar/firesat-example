@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Communications Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,21 +1962,22 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#InteroperabilityForReceiveWhipAntenna"><span class="secno">3.1</span> <span class="content"><span>InteroperabilityForReceiveWhipAntenna</span></span></a>
-      <li><a href="#InteroperabilityForReceiverUnit"><span class="secno">3.2</span> <span class="content"><span>InteroperabilityForReceiverUnit</span></span></a>
-      <li><a href="#InteroperabilityForTransmitHiGainAntenna"><span class="secno">3.3</span> <span class="content"><span>InteroperabilityForTransmitHiGainAntenna</span></span></a>
-      <li><a href="#InteroperabilityForTransmitWhipAntenna"><span class="secno">3.4</span> <span class="content"><span>InteroperabilityForTransmitWhipAntenna</span></span></a>
-      <li><a href="#InteroperabilityForTransmitterUnit"><span class="secno">3.5</span> <span class="content"><span>InteroperabilityForTransmitterUnit</span></span></a>
-      <li><a href="#SupportabilityForTransmitWhipAntenna"><span class="secno">3.6</span> <span class="content"><span>SupportabilityForTransmitWhipAntenna</span></span></a>
-      <li><a href="#SupportabilityForTransmitterUnit"><span class="secno">3.7</span> <span class="content"><span>SupportabilityForTransmitterUnit</span></span></a>
-      <li><a href="#UplinkDownlinkHardwareForReceiveWhipAntenna"><span class="secno">3.8</span> <span class="content"><span>UplinkDownlinkHardwareForReceiveWhipAntenna</span></span></a>
-      <li><a href="#UplinkDownlinkHardwareForReceiverUnit"><span class="secno">3.9</span> <span class="content"><span>UplinkDownlinkHardwareForReceiverUnit</span></span></a>
-      <li><a href="#UplinkDownlinkHardwareForTransmitHiGainAntenna"><span class="secno">3.10</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitHiGainAntenna</span></span></a>
-      <li><a href="#UplinkDownlinkHardwareForTransmitWhipAntenna"><span class="secno">3.11</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitWhipAntenna</span></span></a>
-      <li><a href="#UplinkDownlinkHardwareForTransmitterUnit"><span class="secno">3.12</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitterUnit</span></span></a>
+      <li><a href="#InteroperabilityForReceiveWhipAntenna"><span class="secno">4.1</span> <span class="content"><span>InteroperabilityForReceiveWhipAntenna</span></span></a>
+      <li><a href="#InteroperabilityForReceiverUnit"><span class="secno">4.2</span> <span class="content"><span>InteroperabilityForReceiverUnit</span></span></a>
+      <li><a href="#InteroperabilityForTransmitHiGainAntenna"><span class="secno">4.3</span> <span class="content"><span>InteroperabilityForTransmitHiGainAntenna</span></span></a>
+      <li><a href="#InteroperabilityForTransmitWhipAntenna"><span class="secno">4.4</span> <span class="content"><span>InteroperabilityForTransmitWhipAntenna</span></span></a>
+      <li><a href="#InteroperabilityForTransmitterUnit"><span class="secno">4.5</span> <span class="content"><span>InteroperabilityForTransmitterUnit</span></span></a>
+      <li><a href="#SupportabilityForTransmitWhipAntenna"><span class="secno">4.6</span> <span class="content"><span>SupportabilityForTransmitWhipAntenna</span></span></a>
+      <li><a href="#SupportabilityForTransmitterUnit"><span class="secno">4.7</span> <span class="content"><span>SupportabilityForTransmitterUnit</span></span></a>
+      <li><a href="#UplinkDownlinkHardwareForReceiveWhipAntenna"><span class="secno">4.8</span> <span class="content"><span>UplinkDownlinkHardwareForReceiveWhipAntenna</span></span></a>
+      <li><a href="#UplinkDownlinkHardwareForReceiverUnit"><span class="secno">4.9</span> <span class="content"><span>UplinkDownlinkHardwareForReceiverUnit</span></span></a>
+      <li><a href="#UplinkDownlinkHardwareForTransmitHiGainAntenna"><span class="secno">4.10</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitHiGainAntenna</span></span></a>
+      <li><a href="#UplinkDownlinkHardwareForTransmitWhipAntenna"><span class="secno">4.11</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitWhipAntenna</span></span></a>
+      <li><a href="#UplinkDownlinkHardwareForTransmitterUnit"><span class="secno">4.12</span> <span class="content"><span>UplinkDownlinkHardwareForTransmitterUnit</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1991,25 +1992,28 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-requirements: <a href="requirements.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements</a></p>
+      <p><a href="requirements.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/requirements</a> [cmn-requirements]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a> [cmn-assemblies]</p>
      <li data-md>
-      <p>cmn-functions: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions</a> [cmn-functions]</p>
      <li data-md>
-      <p>firesat-stakeholder-reqs: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/stakeholder</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/system.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/system</a> [spc-system-reqs]</p>
      <li data-md>
-      <p>firesat-functional-reqs: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/requirements/functional</a></p>
-     <li data-md>
-      <p>spc-system-reqs: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/system.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/system</a></p>
-     <li data-md>
-      <p>spc-logistical-reqs: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical</a> [spc-logistical-reqs]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="InteroperabilityForReceiveWhipAntenna"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityforreceivewhipantenna">InteroperabilityForReceiveWhipAntenna<a class="self-link" href="#interoperabilityforreceivewhipantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForReceiveWhipAntenna"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/mission.html">http://imce.jpl.nasa.gov/foundation/mission</a> [mission]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="InteroperabilityForReceiveWhipAntenna"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityforreceivewhipantenna">InteroperabilityForReceiveWhipAntenna<a class="self-link" href="#interoperabilityforreceivewhipantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForReceiveWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2025,7 +2029,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#interoperability" id="ref-for-interoperability">spc-system-reqs:Interoperability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="InteroperabilityForReceiverUnit"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityforreceiverunit">InteroperabilityForReceiverUnit<a class="self-link" href="#interoperabilityforreceiverunit"></a></dfn></span><a class="self-link" href="#InteroperabilityForReceiverUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="InteroperabilityForReceiverUnit"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityforreceiverunit">InteroperabilityForReceiverUnit<a class="self-link" href="#interoperabilityforreceiverunit"></a></dfn></span><a class="self-link" href="#InteroperabilityForReceiverUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2041,7 +2045,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#interoperability" id="ref-for-interoperability①">spc-system-reqs:Interoperability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="InteroperabilityForTransmitHiGainAntenna"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmithigainantenna">InteroperabilityForTransmitHiGainAntenna<a class="self-link" href="#interoperabilityfortransmithigainantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitHiGainAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="InteroperabilityForTransmitHiGainAntenna"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmithigainantenna">InteroperabilityForTransmitHiGainAntenna<a class="self-link" href="#interoperabilityfortransmithigainantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitHiGainAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2057,7 +2061,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines②">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#interoperability" id="ref-for-interoperability②">spc-system-reqs:Interoperability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.4" id="InteroperabilityForTransmitWhipAntenna"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmitwhipantenna">InteroperabilityForTransmitWhipAntenna<a class="self-link" href="#interoperabilityfortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="InteroperabilityForTransmitWhipAntenna"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmitwhipantenna">InteroperabilityForTransmitWhipAntenna<a class="self-link" href="#interoperabilityfortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2073,7 +2077,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines③">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#interoperability" id="ref-for-interoperability③">spc-system-reqs:Interoperability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="InteroperabilityForTransmitterUnit"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmitterunit">InteroperabilityForTransmitterUnit<a class="self-link" href="#interoperabilityfortransmitterunit"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitterUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="InteroperabilityForTransmitterUnit"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="interoperabilityfortransmitterunit">InteroperabilityForTransmitterUnit<a class="self-link" href="#interoperabilityfortransmitterunit"></a></dfn></span><a class="self-link" href="#InteroperabilityForTransmitterUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2089,7 +2093,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines④">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#interoperability" id="ref-for-interoperability④">spc-system-reqs:Interoperability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.6" id="SupportabilityForTransmitWhipAntenna"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supportabilityfortransmitwhipantenna">SupportabilityForTransmitWhipAntenna<a class="self-link" href="#supportabilityfortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#SupportabilityForTransmitWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="SupportabilityForTransmitWhipAntenna"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supportabilityfortransmitwhipantenna">SupportabilityForTransmitWhipAntenna<a class="self-link" href="#supportabilityfortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#SupportabilityForTransmitWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2105,7 +2109,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑤">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/logistical.html#supportability" id="ref-for-supportability">spc-logistical-reqs:Supportability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="SupportabilityForTransmitterUnit"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supportabilityfortransmitterunit">SupportabilityForTransmitterUnit<a class="self-link" href="#supportabilityfortransmitterunit"></a></dfn></span><a class="self-link" href="#SupportabilityForTransmitterUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="SupportabilityForTransmitterUnit"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="supportabilityfortransmitterunit">SupportabilityForTransmitterUnit<a class="self-link" href="#supportabilityfortransmitterunit"></a></dfn></span><a class="self-link" href="#SupportabilityForTransmitterUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2121,7 +2125,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑥">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/logistical.html#supportability" id="ref-for-supportability①">spc-logistical-reqs:Supportability</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.8" id="UplinkDownlinkHardwareForReceiveWhipAntenna"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwareforreceivewhipantenna">UplinkDownlinkHardwareForReceiveWhipAntenna<a class="self-link" href="#uplinkdownlinkhardwareforreceivewhipantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForReceiveWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="UplinkDownlinkHardwareForReceiveWhipAntenna"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwareforreceivewhipantenna">UplinkDownlinkHardwareForReceiveWhipAntenna<a class="self-link" href="#uplinkdownlinkhardwareforreceivewhipantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForReceiveWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2137,7 +2141,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑦">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware" id="ref-for-uplinkdownlinkhardware">spc-system-reqs:UplinkDownlinkHardware</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="UplinkDownlinkHardwareForReceiverUnit"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwareforreceiverunit">UplinkDownlinkHardwareForReceiverUnit<a class="self-link" href="#uplinkdownlinkhardwareforreceiverunit"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForReceiverUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="UplinkDownlinkHardwareForReceiverUnit"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwareforreceiverunit">UplinkDownlinkHardwareForReceiverUnit<a class="self-link" href="#uplinkdownlinkhardwareforreceiverunit"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForReceiverUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2153,7 +2157,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑧">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware" id="ref-for-uplinkdownlinkhardware①">spc-system-reqs:UplinkDownlinkHardware</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.10" id="UplinkDownlinkHardwareForTransmitHiGainAntenna"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmithigainantenna">UplinkDownlinkHardwareForTransmitHiGainAntenna<a class="self-link" href="#uplinkdownlinkhardwarefortransmithigainantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitHiGainAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="UplinkDownlinkHardwareForTransmitHiGainAntenna"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmithigainantenna">UplinkDownlinkHardwareForTransmitHiGainAntenna<a class="self-link" href="#uplinkdownlinkhardwarefortransmithigainantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitHiGainAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2169,7 +2173,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines⑨">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware" id="ref-for-uplinkdownlinkhardware②">spc-system-reqs:UplinkDownlinkHardware</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.11" id="UplinkDownlinkHardwareForTransmitWhipAntenna"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmitwhipantenna">UplinkDownlinkHardwareForTransmitWhipAntenna<a class="self-link" href="#uplinkdownlinkhardwarefortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.11" id="UplinkDownlinkHardwareForTransmitWhipAntenna"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmitwhipantenna">UplinkDownlinkHardwareForTransmitWhipAntenna<a class="self-link" href="#uplinkdownlinkhardwarefortransmitwhipantenna"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2185,7 +2189,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines" id="ref-for-refines①⓪">mission:refines</a> <a data-link-type="dfn" href="../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware" id="ref-for-uplinkdownlinkhardware③">spc-system-reqs:UplinkDownlinkHardware</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.12" id="UplinkDownlinkHardwareForTransmitterUnit"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmitterunit">UplinkDownlinkHardwareForTransmitterUnit<a class="self-link" href="#uplinkdownlinkhardwarefortransmitterunit"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitterUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.12" id="UplinkDownlinkHardwareForTransmitterUnit"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="uplinkdownlinkhardwarefortransmitterunit">UplinkDownlinkHardwareForTransmitterUnit<a class="self-link" href="#uplinkdownlinkhardwarefortransmitterunit"></a></dfn></span><a class="self-link" href="#UplinkDownlinkHardwareForTransmitterUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2335,78 +2339,78 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#interoperabilityforreceiverunit">InteroperabilityForReceiverUnit</a><span>, in §3.2</span>
-   <li><a href="#interoperabilityforreceivewhipantenna">InteroperabilityForReceiveWhipAntenna</a><span>, in §3.1</span>
-   <li><a href="#interoperabilityfortransmithigainantenna">InteroperabilityForTransmitHiGainAntenna</a><span>, in §3.3</span>
-   <li><a href="#interoperabilityfortransmitterunit">InteroperabilityForTransmitterUnit</a><span>, in §3.5</span>
-   <li><a href="#interoperabilityfortransmitwhipantenna">InteroperabilityForTransmitWhipAntenna</a><span>, in §3.4</span>
-   <li><a href="#supportabilityfortransmitterunit">SupportabilityForTransmitterUnit</a><span>, in §3.7</span>
-   <li><a href="#supportabilityfortransmitwhipantenna">SupportabilityForTransmitWhipAntenna</a><span>, in §3.6</span>
-   <li><a href="#uplinkdownlinkhardwareforreceiverunit">UplinkDownlinkHardwareForReceiverUnit</a><span>, in §3.9</span>
-   <li><a href="#uplinkdownlinkhardwareforreceivewhipantenna">UplinkDownlinkHardwareForReceiveWhipAntenna</a><span>, in §3.8</span>
-   <li><a href="#uplinkdownlinkhardwarefortransmithigainantenna">UplinkDownlinkHardwareForTransmitHiGainAntenna</a><span>, in §3.10</span>
-   <li><a href="#uplinkdownlinkhardwarefortransmitterunit">UplinkDownlinkHardwareForTransmitterUnit</a><span>, in §3.12</span>
-   <li><a href="#uplinkdownlinkhardwarefortransmitwhipantenna">UplinkDownlinkHardwareForTransmitWhipAntenna</a><span>, in §3.11</span>
+   <li><a href="#interoperabilityforreceiverunit">InteroperabilityForReceiverUnit</a><span>, in § 4.2</span>
+   <li><a href="#interoperabilityforreceivewhipantenna">InteroperabilityForReceiveWhipAntenna</a><span>, in § 4.1</span>
+   <li><a href="#interoperabilityfortransmithigainantenna">InteroperabilityForTransmitHiGainAntenna</a><span>, in § 4.3</span>
+   <li><a href="#interoperabilityfortransmitterunit">InteroperabilityForTransmitterUnit</a><span>, in § 4.5</span>
+   <li><a href="#interoperabilityfortransmitwhipantenna">InteroperabilityForTransmitWhipAntenna</a><span>, in § 4.4</span>
+   <li><a href="#supportabilityfortransmitterunit">SupportabilityForTransmitterUnit</a><span>, in § 4.7</span>
+   <li><a href="#supportabilityfortransmitwhipantenna">SupportabilityForTransmitWhipAntenna</a><span>, in § 4.6</span>
+   <li><a href="#uplinkdownlinkhardwareforreceiverunit">UplinkDownlinkHardwareForReceiverUnit</a><span>, in § 4.9</span>
+   <li><a href="#uplinkdownlinkhardwareforreceivewhipantenna">UplinkDownlinkHardwareForReceiveWhipAntenna</a><span>, in § 4.8</span>
+   <li><a href="#uplinkdownlinkhardwarefortransmithigainantenna">UplinkDownlinkHardwareForTransmitHiGainAntenna</a><span>, in § 4.10</span>
+   <li><a href="#uplinkdownlinkhardwarefortransmitterunit">UplinkDownlinkHardwareForTransmitterUnit</a><span>, in § 4.12</span>
+   <li><a href="#uplinkdownlinkhardwarefortransmitwhipantenna">UplinkDownlinkHardwareForTransmitWhipAntenna</a><span>, in § 4.11</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-refines">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-refines">3.1. InteroperabilityForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-refines①">3.2. InteroperabilityForReceiverUnit</a>
-    <li><a href="#ref-for-refines②">3.3. InteroperabilityForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-refines③">3.4. InteroperabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-refines④">3.5. InteroperabilityForTransmitterUnit</a>
-    <li><a href="#ref-for-refines⑤">3.6. SupportabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-refines⑥">3.7. SupportabilityForTransmitterUnit</a>
-    <li><a href="#ref-for-refines⑦">3.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-refines⑧">3.9. UplinkDownlinkHardwareForReceiverUnit</a>
-    <li><a href="#ref-for-refines⑨">3.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-refines①⓪">3.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-refines①①">3.12. UplinkDownlinkHardwareForTransmitterUnit</a>
+    <li><a href="#ref-for-refines">4.1. InteroperabilityForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-refines①">4.2. InteroperabilityForReceiverUnit</a>
+    <li><a href="#ref-for-refines②">4.3. InteroperabilityForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-refines③">4.4. InteroperabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-refines④">4.5. InteroperabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-refines⑤">4.6. SupportabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-refines⑥">4.7. SupportabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-refines⑦">4.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-refines⑧">4.9. UplinkDownlinkHardwareForReceiverUnit</a>
+    <li><a href="#ref-for-refines⑨">4.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-refines①⓪">4.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-refines①①">4.12. UplinkDownlinkHardwareForTransmitterUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-requirement">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-requirement">3.1. InteroperabilityForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-requirement①">3.2. InteroperabilityForReceiverUnit</a>
-    <li><a href="#ref-for-requirement②">3.3. InteroperabilityForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-requirement③">3.4. InteroperabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-requirement④">3.5. InteroperabilityForTransmitterUnit</a>
-    <li><a href="#ref-for-requirement⑤">3.6. SupportabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-requirement⑥">3.7. SupportabilityForTransmitterUnit</a>
-    <li><a href="#ref-for-requirement⑦">3.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-requirement⑧">3.9. UplinkDownlinkHardwareForReceiverUnit</a>
-    <li><a href="#ref-for-requirement⑨">3.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-requirement①⓪">3.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-requirement①①">3.12. UplinkDownlinkHardwareForTransmitterUnit</a>
+    <li><a href="#ref-for-requirement">4.1. InteroperabilityForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-requirement①">4.2. InteroperabilityForReceiverUnit</a>
+    <li><a href="#ref-for-requirement②">4.3. InteroperabilityForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-requirement③">4.4. InteroperabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-requirement④">4.5. InteroperabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-requirement⑤">4.6. SupportabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-requirement⑥">4.7. SupportabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-requirement⑦">4.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-requirement⑧">4.9. UplinkDownlinkHardwareForReceiverUnit</a>
+    <li><a href="#ref-for-requirement⑨">4.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-requirement①⓪">4.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-requirement①①">4.12. UplinkDownlinkHardwareForTransmitterUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-supportability">
    <a href="../../../../../systems/spc/requirements/logistical.html#supportability">../../../../../systems/spc/requirements/logistical.html#supportability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-supportability">3.6. SupportabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-supportability①">3.7. SupportabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-supportability">4.6. SupportabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-supportability①">4.7. SupportabilityForTransmitterUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-interoperability">
    <a href="../../../../../systems/spc/requirements/system.html#interoperability">../../../../../systems/spc/requirements/system.html#interoperability</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-interoperability">3.1. InteroperabilityForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-interoperability①">3.2. InteroperabilityForReceiverUnit</a>
-    <li><a href="#ref-for-interoperability②">3.3. InteroperabilityForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-interoperability③">3.4. InteroperabilityForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-interoperability④">3.5. InteroperabilityForTransmitterUnit</a>
+    <li><a href="#ref-for-interoperability">4.1. InteroperabilityForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-interoperability①">4.2. InteroperabilityForReceiverUnit</a>
+    <li><a href="#ref-for-interoperability②">4.3. InteroperabilityForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-interoperability③">4.4. InteroperabilityForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-interoperability④">4.5. InteroperabilityForTransmitterUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardware">
    <a href="../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware">../../../../../systems/spc/requirements/system.html#uplinkdownlinkhardware</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-uplinkdownlinkhardware">3.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
-    <li><a href="#ref-for-uplinkdownlinkhardware①">3.9. UplinkDownlinkHardwareForReceiverUnit</a>
-    <li><a href="#ref-for-uplinkdownlinkhardware②">3.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-uplinkdownlinkhardware③">3.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
-    <li><a href="#ref-for-uplinkdownlinkhardware④">3.12. UplinkDownlinkHardwareForTransmitterUnit</a>
+    <li><a href="#ref-for-uplinkdownlinkhardware">4.8. UplinkDownlinkHardwareForReceiveWhipAntenna</a>
+    <li><a href="#ref-for-uplinkdownlinkhardware①">4.9. UplinkDownlinkHardwareForReceiverUnit</a>
+    <li><a href="#ref-for-uplinkdownlinkhardware②">4.10. UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-uplinkdownlinkhardware③">4.11. UplinkDownlinkHardwareForTransmitWhipAntenna</a>
+    <li><a href="#ref-for-uplinkdownlinkhardware④">4.12. UplinkDownlinkHardwareForTransmitterUnit</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>

@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Communications Masses</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,19 +1962,15 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#ReceiveWhipAntennaCBEMass"><span class="secno">3.1</span> <span class="content"><span>ReceiveWhipAntennaCBEMass</span></span></a>
-      <li><a href="#ReceiveWhipAntennaCBEMassMagnitude"><span class="secno">3.2</span> <span class="content"><span>ReceiveWhipAntennaCBEMassMagnitude</span></span></a>
-      <li><a href="#ReceiverUnitCBEMass"><span class="secno">3.3</span> <span class="content"><span>ReceiverUnitCBEMass</span></span></a>
-      <li><a href="#ReceiverUnitCBEMassMagnitude"><span class="secno">3.4</span> <span class="content"><span>ReceiverUnitCBEMassMagnitude</span></span></a>
-      <li><a href="#TransmitHiGainAntennaCBEMass"><span class="secno">3.5</span> <span class="content"><span>TransmitHiGainAntennaCBEMass</span></span></a>
-      <li><a href="#TransmitHiGainAntennaCBEMassMagnitude"><span class="secno">3.6</span> <span class="content"><span>TransmitHiGainAntennaCBEMassMagnitude</span></span></a>
-      <li><a href="#TransmitWhipAntennaCBEMass"><span class="secno">3.7</span> <span class="content"><span>TransmitWhipAntennaCBEMass</span></span></a>
-      <li><a href="#TransmitWhipAntennaCBEMassMagnitude"><span class="secno">3.8</span> <span class="content"><span>TransmitWhipAntennaCBEMassMagnitude</span></span></a>
-      <li><a href="#TransmitterUnitCBEMass"><span class="secno">3.9</span> <span class="content"><span>TransmitterUnitCBEMass</span></span></a>
-      <li><a href="#TransmitterUnitCBEMassMagnitude"><span class="secno">3.10</span> <span class="content"><span>TransmitterUnitCBEMassMagnitude</span></span></a>
+      <li><a href="#ReceiveWhipAntennaMassLimitConstraint"><span class="secno">4.1</span> <span class="content"><span>ReceiveWhipAntennaMassLimitConstraint</span></span></a>
+      <li><a href="#ReceiverUnitMassLimitConstraint"><span class="secno">4.2</span> <span class="content"><span>ReceiverUnitMassLimitConstraint</span></span></a>
+      <li><a href="#TransmitHiGainAntennaMassLimitConstraint"><span class="secno">4.3</span> <span class="content"><span>TransmitHiGainAntennaMassLimitConstraint</span></span></a>
+      <li><a href="#TransmitWhipAntennaMassLimitConstraint"><span class="secno">4.4</span> <span class="content"><span>TransmitWhipAntennaMassLimitConstraint</span></span></a>
+      <li><a href="#TransmitterUnitMassLimitConstraint"><span class="secno">4.5</span> <span class="content"><span>TransmitterUnitMassLimitConstraint</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1989,38 +1985,35 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-masses: <a href="masses.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses</a></p>
+      <p><a href="masses.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses</a> [cmn-masses]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a> [cmn-assemblies]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="ReceiveWhipAntennaCBEMass"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receivewhipantennacbemass">ReceiveWhipAntennaCBEMass<a class="self-link" href="#receivewhipantennacbemass"></a></dfn></span><a class="self-link" href="#ReceiveWhipAntennaCBEMass"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
+     <li data-md>
+      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
+     <li data-md>
+      <p><a href="http://opencaesar.io/examples/firesat/disciplines/fse/fse.html">http://opencaesar.io/examples/firesat/disciplines/fse/fse</a> [fse]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ReceiveWhipAntennaMassLimitConstraint"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receivewhipantennamasslimitconstraint">ReceiveWhipAntennaMassLimitConstraint<a class="self-link" href="#receivewhipantennamasslimitconstraint"></a></dfn></span><a class="self-link" href="#ReceiveWhipAntennaMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#receivewhipantenna" id="ref-for-receivewhipantenna">cmn-assemblies:ReceiveWhipAntenna</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.2" id="ReceiveWhipAntennaCBEMassMagnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receivewhipantennacbemassmagnitude">ReceiveWhipAntennaCBEMassMagnitude<a class="self-link" href="#receivewhipantennacbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReceiveWhipAntennaCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2032,33 +2025,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#receivewhipantennacbemass" id="ref-for-receivewhipantennacbemass">ReceiveWhipAntennaCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#receivewhipantenna" id="ref-for-receivewhipantenna">cmn-assemblies:ReceiveWhipAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="ReceiverUnitCBEMass"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receiverunitcbemass">ReceiverUnitCBEMass<a class="self-link" href="#receiverunitcbemass"></a></dfn></span><a class="self-link" href="#ReceiverUnitCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="ReceiverUnitMassLimitConstraint"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receiverunitmasslimitconstraint">ReceiverUnitMassLimitConstraint<a class="self-link" href="#receiverunitmasslimitconstraint"></a></dfn></span><a class="self-link" href="#ReceiverUnitMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass①">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof①">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#receiverunit" id="ref-for-receiverunit">cmn-assemblies:ReceiverUnit</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.4" id="ReceiverUnitCBEMassMagnitude"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="receiverunitcbemassmagnitude">ReceiverUnitCBEMassMagnitude<a class="self-link" href="#receiverunitcbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReceiverUnitCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint①">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2070,33 +2047,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#receiverunitcbemass" id="ref-for-receiverunitcbemass">ReceiverUnitCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof①">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#receiverunit" id="ref-for-receiverunit">cmn-assemblies:ReceiverUnit</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="TransmitHiGainAntennaCBEMass"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantennacbemass">TransmitHiGainAntennaCBEMass<a class="self-link" href="#transmithigainantennacbemass"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntennaCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="TransmitHiGainAntennaMassLimitConstraint"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantennamasslimitconstraint">TransmitHiGainAntennaMassLimitConstraint<a class="self-link" href="#transmithigainantennamasslimitconstraint"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntennaMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass②">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof②">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#transmithigainantenna" id="ref-for-transmithigainantenna">cmn-assemblies:TransmitHiGainAntenna</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.6" id="TransmitHiGainAntennaCBEMassMagnitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantennacbemassmagnitude">TransmitHiGainAntennaCBEMassMagnitude<a class="self-link" href="#transmithigainantennacbemassmagnitude"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntennaCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude②">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint②">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2108,33 +2069,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#transmithigainantennacbemass" id="ref-for-transmithigainantennacbemass">TransmitHiGainAntennaCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof②">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#transmithigainantenna" id="ref-for-transmithigainantenna">cmn-assemblies:TransmitHiGainAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="TransmitWhipAntennaCBEMass"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitwhipantennacbemass">TransmitWhipAntennaCBEMass<a class="self-link" href="#transmitwhipantennacbemass"></a></dfn></span><a class="self-link" href="#TransmitWhipAntennaCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="TransmitWhipAntennaMassLimitConstraint"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitwhipantennamasslimitconstraint">TransmitWhipAntennaMassLimitConstraint<a class="self-link" href="#transmitwhipantennamasslimitconstraint"></a></dfn></span><a class="self-link" href="#TransmitWhipAntennaMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass③">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof③">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#transmitwhipantenna" id="ref-for-transmitwhipantenna">cmn-assemblies:TransmitWhipAntenna</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.8" id="TransmitWhipAntennaCBEMassMagnitude"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitwhipantennacbemassmagnitude">TransmitWhipAntennaCBEMassMagnitude<a class="self-link" href="#transmitwhipantennacbemassmagnitude"></a></dfn></span><a class="self-link" href="#TransmitWhipAntennaCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude③">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint③">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2146,33 +2091,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#transmitwhipantennacbemass" id="ref-for-transmitwhipantennacbemass">TransmitWhipAntennaCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof③">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#transmitwhipantenna" id="ref-for-transmitwhipantenna">cmn-assemblies:TransmitWhipAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="TransmitterUnitCBEMass"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunitcbemass">TransmitterUnitCBEMass<a class="self-link" href="#transmitterunitcbemass"></a></dfn></span><a class="self-link" href="#TransmitterUnitCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="TransmitterUnitMassLimitConstraint"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunitmasslimitconstraint">TransmitterUnitMassLimitConstraint<a class="self-link" href="#transmitterunitmasslimitconstraint"></a></dfn></span><a class="self-link" href="#TransmitterUnitMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass④">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof④">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#transmitterunit" id="ref-for-transmitterunit">cmn-assemblies:TransmitterUnit</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.10" id="TransmitterUnitCBEMassMagnitude"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunitcbemassmagnitude">TransmitterUnitCBEMassMagnitude<a class="self-link" href="#transmitterunitcbemassmagnitude"></a></dfn></span><a class="self-link" href="#TransmitterUnitCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude④">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint④">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2184,7 +2113,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#transmitterunitcbemass" id="ref-for-transmitterunitcbemass">TransmitterUnitCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof④">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#transmitterunit" id="ref-for-transmitterunit">cmn-assemblies:TransmitterUnit</a>
         </ul>
     </table>
    </div>
@@ -2321,149 +2250,84 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#receiverunitcbemass">ReceiverUnitCBEMass</a><span>, in §3.3</span>
-   <li><a href="#receiverunitcbemassmagnitude">ReceiverUnitCBEMassMagnitude</a><span>, in §3.4</span>
-   <li><a href="#receivewhipantennacbemass">ReceiveWhipAntennaCBEMass</a><span>, in §3.1</span>
-   <li><a href="#receivewhipantennacbemassmagnitude">ReceiveWhipAntennaCBEMassMagnitude</a><span>, in §3.2</span>
-   <li><a href="#transmithigainantennacbemass">TransmitHiGainAntennaCBEMass</a><span>, in §3.5</span>
-   <li><a href="#transmithigainantennacbemassmagnitude">TransmitHiGainAntennaCBEMassMagnitude</a><span>, in §3.6</span>
-   <li><a href="#transmitterunitcbemass">TransmitterUnitCBEMass</a><span>, in §3.9</span>
-   <li><a href="#transmitterunitcbemassmagnitude">TransmitterUnitCBEMassMagnitude</a><span>, in §3.10</span>
-   <li><a href="#transmitwhipantennacbemass">TransmitWhipAntennaCBEMass</a><span>, in §3.7</span>
-   <li><a href="#transmitwhipantennacbemassmagnitude">TransmitWhipAntennaCBEMassMagnitude</a><span>, in §3.8</span>
+   <li><a href="#receiverunitmasslimitconstraint">ReceiverUnitMassLimitConstraint</a><span>, in § 4.2</span>
+   <li><a href="#receivewhipantennamasslimitconstraint">ReceiveWhipAntennaMassLimitConstraint</a><span>, in § 4.1</span>
+   <li><a href="#transmithigainantennamasslimitconstraint">TransmitHiGainAntennaMassLimitConstraint</a><span>, in § 4.3</span>
+   <li><a href="#transmitterunitmasslimitconstraint">TransmitterUnitMassLimitConstraint</a><span>, in § 4.5</span>
+   <li><a href="#transmitwhipantennamasslimitconstraint">TransmitWhipAntennaMassLimitConstraint</a><span>, in § 4.4</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-iscbemassof">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof">../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-iscbemassof">3.1. ReceiveWhipAntennaCBEMass</a>
-    <li><a href="#ref-for-iscbemassof①">3.3. ReceiverUnitCBEMass</a>
-    <li><a href="#ref-for-iscbemassof②">3.5. TransmitHiGainAntennaCBEMass</a>
-    <li><a href="#ref-for-iscbemassof③">3.7. TransmitWhipAntennaCBEMass</a>
-    <li><a href="#ref-for-iscbemassof④">3.9. TransmitterUnitCBEMass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
-   <a href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude">../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kilogram-magnitude">3.2. ReceiveWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude①">3.4. ReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude②">3.6. TransmitHiGainAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude③">3.8. TransmitWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude④">3.10. TransmitterUnitCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-mass">
-   <a href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass">../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mass">3.1. ReceiveWhipAntennaCBEMass</a>
-    <li><a href="#ref-for-mass①">3.3. ReceiverUnitCBEMass</a>
-    <li><a href="#ref-for-mass②">3.5. TransmitHiGainAntennaCBEMass</a>
-    <li><a href="#ref-for-mass③">3.7. TransmitWhipAntennaCBEMass</a>
-    <li><a href="#ref-for-mass④">3.9. TransmitterUnitCBEMass</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-hasdoublenumber">
    <a href="../../../../../../../../../../../../iupac.org/metrology.html#hasdoublenumber">../../../../../../../../../../../../iupac.org/metrology.html#hasdoublenumber</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasdoublenumber">3.2. ReceiveWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber①">3.4. ReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber②">3.6. TransmitHiGainAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber③">3.8. TransmitWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber④">3.10. TransmitterUnitCBEMassMagnitude</a>
+    <li><a href="#ref-for-hasdoublenumber">4.1. ReceiveWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber①">4.2. ReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber②">4.3. TransmitHiGainAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber③">4.4. TransmitWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber④">4.5. TransmitterUnitMassLimitConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ismagnitudeof">
-   <a href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof">../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-isquantityof">
+   <a href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof">../../../../../../../../../../../../iupac.org/metrology.html#isquantityof</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ismagnitudeof">3.2. ReceiveWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof①">3.4. ReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof②">3.6. TransmitHiGainAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof③">3.8. TransmitWhipAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof④">3.10. TransmitterUnitCBEMassMagnitude</a>
+    <li><a href="#ref-for-isquantityof">4.1. ReceiveWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof①">4.2. ReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof②">4.3. TransmitHiGainAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof③">4.4. TransmitWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof④">4.5. TransmitterUnitMassLimitConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-masslimitconstraint">
+   <a href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint">../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-masslimitconstraint">4.1. ReceiveWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint①">4.2. ReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint②">4.3. TransmitHiGainAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint③">4.4. TransmitWhipAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint④">4.5. TransmitterUnitMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-receiverunit">
    <a href="assemblies.html#receiverunit">assemblies.html#receiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-receiverunit">3.3. ReceiverUnitCBEMass</a>
+    <li><a href="#ref-for-receiverunit">4.2. ReceiverUnitMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-receivewhipantenna">
    <a href="assemblies.html#receivewhipantenna">assemblies.html#receivewhipantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-receivewhipantenna">3.1. ReceiveWhipAntennaCBEMass</a>
+    <li><a href="#ref-for-receivewhipantenna">4.1. ReceiveWhipAntennaMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transmithigainantenna">
    <a href="assemblies.html#transmithigainantenna">assemblies.html#transmithigainantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transmithigainantenna">3.5. TransmitHiGainAntennaCBEMass</a>
+    <li><a href="#ref-for-transmithigainantenna">4.3. TransmitHiGainAntennaMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transmitterunit">
    <a href="assemblies.html#transmitterunit">assemblies.html#transmitterunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transmitterunit">3.9. TransmitterUnitCBEMass</a>
+    <li><a href="#ref-for-transmitterunit">4.5. TransmitterUnitMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transmitwhipantenna">
    <a href="assemblies.html#transmitwhipantenna">assemblies.html#transmitwhipantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transmitwhipantenna">3.7. TransmitWhipAntennaCBEMass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-receiverunitcbemass">
-   <a href="masses.html#receiverunitcbemass">masses.html#receiverunitcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-receiverunitcbemass">3.4. ReceiverUnitCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-receivewhipantennacbemass">
-   <a href="masses.html#receivewhipantennacbemass">masses.html#receivewhipantennacbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-receivewhipantennacbemass">3.2. ReceiveWhipAntennaCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-transmithigainantennacbemass">
-   <a href="masses.html#transmithigainantennacbemass">masses.html#transmithigainantennacbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transmithigainantennacbemass">3.6. TransmitHiGainAntennaCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-transmitterunitcbemass">
-   <a href="masses.html#transmitterunitcbemass">masses.html#transmitterunitcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transmitterunitcbemass">3.10. TransmitterUnitCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-transmitwhipantennacbemass">
-   <a href="masses.html#transmitwhipantennacbemass">masses.html#transmitwhipantennacbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transmitwhipantennacbemass">3.8. TransmitWhipAntennaCBEMassMagnitude</a>
+    <li><a href="#ref-for-transmitwhipantenna">4.4. TransmitWhipAntennaMassLimitConstraint</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-iscbemassof">iscbemassof</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes-1]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-4-quantities]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-mass">mass</span>
-    </ul>
-   <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hasdoublenumber">hasdoublenumber</span>
-     <li><span class="dfn-paneled" id="term-for-ismagnitudeof">ismagnitudeof</span>
+     <li><span class="dfn-paneled" id="term-for-isquantityof">isquantityof</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/disciplines/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-masslimitconstraint">masslimitconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies]</a> defines the following terms:
@@ -2473,15 +2337,6 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-transmithigainantenna">transmithigainantenna</span>
      <li><span class="dfn-paneled" id="term-for-transmitterunit">transmitterunit</span>
      <li><span class="dfn-paneled" id="term-for-transmitwhipantenna">transmitwhipantenna</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/masses]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-receiverunitcbemass">receiverunitcbemass</span>
-     <li><span class="dfn-paneled" id="term-for-receivewhipantennacbemass">receivewhipantennacbemass</span>
-     <li><span class="dfn-paneled" id="term-for-transmithigainantennacbemass">transmithigainantennacbemass</span>
-     <li><span class="dfn-paneled" id="term-for-transmitterunitcbemass">transmitterunitcbemass</span>
-     <li><span class="dfn-paneled" id="term-for-transmitwhipantennacbemass">transmitwhipantennacbemass</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Communications Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,23 +1962,24 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#ApplyCommandsByReceiverUnit"><span class="secno">3.1</span> <span class="content"><span>ApplyCommandsByReceiverUnit</span></span></a>
-      <li><a href="#Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"><span class="secno">3.2</span> <span class="content"><span>Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</span></span></a>
-      <li><a href="#Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"><span class="secno">3.3</span> <span class="content"><span>Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</span></span></a>
-      <li><a href="#DeployMechanismsByReceiveWhipAntenna"><span class="secno">3.4</span> <span class="content"><span>DeployMechanismsByReceiveWhipAntenna</span></span></a>
-      <li><a href="#DeployMechanismsByTransmitHiGainAntenna"><span class="secno">3.5</span> <span class="content"><span>DeployMechanismsByTransmitHiGainAntenna</span></span></a>
-      <li><a href="#DeployMechanismsByTransmitWhipAntenna"><span class="secno">3.6</span> <span class="content"><span>DeployMechanismsByTransmitWhipAntenna</span></span></a>
-      <li><a href="#GenerateTelemetryByTransmitterUnit"><span class="secno">3.7</span> <span class="content"><span>GenerateTelemetryByTransmitterUnit</span></span></a>
-      <li><a href="#SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"><span class="secno">3.8</span> <span class="content"><span>SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</span></span></a>
+      <li><a href="#ApplyCommandsByReceiverUnit"><span class="secno">4.1</span> <span class="content"><span>ApplyCommandsByReceiverUnit</span></span></a>
+      <li><a href="#Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"><span class="secno">4.2</span> <span class="content"><span>Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</span></span></a>
+      <li><a href="#Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"><span class="secno">4.3</span> <span class="content"><span>Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</span></span></a>
+      <li><a href="#DeployMechanismsByReceiveWhipAntenna"><span class="secno">4.4</span> <span class="content"><span>DeployMechanismsByReceiveWhipAntenna</span></span></a>
+      <li><a href="#DeployMechanismsByTransmitHiGainAntenna"><span class="secno">4.5</span> <span class="content"><span>DeployMechanismsByTransmitHiGainAntenna</span></span></a>
+      <li><a href="#DeployMechanismsByTransmitWhipAntenna"><span class="secno">4.6</span> <span class="content"><span>DeployMechanismsByTransmitWhipAntenna</span></span></a>
+      <li><a href="#GenerateTelemetryByTransmitterUnit"><span class="secno">4.7</span> <span class="content"><span>GenerateTelemetryByTransmitterUnit</span></span></a>
+      <li><a href="#SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"><span class="secno">4.8</span> <span class="content"><span>SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</span></span></a>
      </ol>
     <li>
-     <a href="#RelationInstances"><span class="secno">4</span> <span class="content">Relation Instances</span></a>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
      <ol class="toc">
-      <li><a href="#TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"><span class="secno">4.1</span> <span class="content"><span>TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</span></span></a>
-      <li><a href="#TransmitterUnitPerformsGenerateTelemetry"><span class="secno">4.2</span> <span class="content"><span>TransmitterUnitPerformsGenerateTelemetry</span></span></a>
+      <li><a href="#TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"><span class="secno">5.1</span> <span class="content"><span>TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</span></span></a>
+      <li><a href="#TransmitterUnitPerformsGenerateTelemetry"><span class="secno">5.2</span> <span class="content"><span>TransmitterUnitPerformsGenerateTelemetry</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1993,17 +1994,26 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-functions: <a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions</a></p>
+      <p><a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/functions</a> [cmn-functions]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>cmn-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/09/subsystems/cmn/assemblies</a> [cmn-assemblies]</p>
      <li data-md>
-      <p>firesat-functions: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a> [firesat-functions]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="ApplyCommandsByReceiverUnit"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applycommandsbyreceiverunit">ApplyCommandsByReceiverUnit<a class="self-link" href="#applycommandsbyreceiverunit"></a></dfn></span><a class="self-link" href="#ApplyCommandsByReceiverUnit"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/mission.html">http://imce.jpl.nasa.gov/foundation/mission</a> [mission]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a> [project]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ApplyCommandsByReceiverUnit"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applycommandsbyreceiverunit">ApplyCommandsByReceiverUnit<a class="self-link" href="#applycommandsbyreceiverunit"></a></dfn></span><a class="self-link" href="#ApplyCommandsByReceiverUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2019,7 +2029,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#applycommands" id="ref-for-applycommands">firesat-functions:ApplyCommands</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna<a class="self-link" href="#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna"></a></dfn></span><a class="self-link" href="#Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna<a class="self-link" href="#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna"></a></dfn></span><a class="self-link" href="#Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2035,7 +2045,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#communicate911downlinkwithregionalfieldoffices" id="ref-for-communicate911downlinkwithregionalfieldoffices">firesat-functions:Communicate911DownlinkWithRegionalFieldOffices</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna<a class="self-link" href="#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna"></a></dfn></span><a class="self-link" href="#Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna<a class="self-link" href="#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna"></a></dfn></span><a class="self-link" href="#Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2051,7 +2061,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#communicate911downlinkwithregionalfieldoffices" id="ref-for-communicate911downlinkwithregionalfieldoffices①">firesat-functions:Communicate911DownlinkWithRegionalFieldOffices</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.4" id="DeployMechanismsByReceiveWhipAntenna"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbyreceivewhipantenna">DeployMechanismsByReceiveWhipAntenna<a class="self-link" href="#deploymechanismsbyreceivewhipantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByReceiveWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="DeployMechanismsByReceiveWhipAntenna"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbyreceivewhipantenna">DeployMechanismsByReceiveWhipAntenna<a class="self-link" href="#deploymechanismsbyreceivewhipantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByReceiveWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2067,7 +2077,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#deploymechanisms" id="ref-for-deploymechanisms">firesat-functions:DeployMechanisms</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="DeployMechanismsByTransmitHiGainAntenna"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbytransmithigainantenna">DeployMechanismsByTransmitHiGainAntenna<a class="self-link" href="#deploymechanismsbytransmithigainantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByTransmitHiGainAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="DeployMechanismsByTransmitHiGainAntenna"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbytransmithigainantenna">DeployMechanismsByTransmitHiGainAntenna<a class="self-link" href="#deploymechanismsbytransmithigainantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByTransmitHiGainAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2083,7 +2093,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#deploymechanisms" id="ref-for-deploymechanisms①">firesat-functions:DeployMechanisms</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.6" id="DeployMechanismsByTransmitWhipAntenna"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbytransmitwhipantenna">DeployMechanismsByTransmitWhipAntenna<a class="self-link" href="#deploymechanismsbytransmitwhipantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByTransmitWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="DeployMechanismsByTransmitWhipAntenna"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deploymechanismsbytransmitwhipantenna">DeployMechanismsByTransmitWhipAntenna<a class="self-link" href="#deploymechanismsbytransmitwhipantenna"></a></dfn></span><a class="self-link" href="#DeployMechanismsByTransmitWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2099,7 +2109,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#deploymechanisms" id="ref-for-deploymechanisms②">firesat-functions:DeployMechanisms</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="GenerateTelemetryByTransmitterUnit"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="generatetelemetrybytransmitterunit">GenerateTelemetryByTransmitterUnit<a class="self-link" href="#generatetelemetrybytransmitterunit"></a></dfn></span><a class="self-link" href="#GenerateTelemetryByTransmitterUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="GenerateTelemetryByTransmitterUnit"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="generatetelemetrybytransmitterunit">GenerateTelemetryByTransmitterUnit<a class="self-link" href="#generatetelemetrybytransmitterunit"></a></dfn></span><a class="self-link" href="#GenerateTelemetryByTransmitterUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2115,7 +2125,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#generatetelemetry" id="ref-for-generatetelemetry">firesat-functions:GenerateTelemetry</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.8" id="SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sendtelemetrytonoaagroundstationsbytransmitwhipantenna">SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna<a class="self-link" href="#sendtelemetrytonoaagroundstationsbytransmitwhipantenna"></a></dfn></span><a class="self-link" href="#SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sendtelemetrytonoaagroundstationsbytransmitwhipantenna">SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna<a class="self-link" href="#sendtelemetrytonoaagroundstationsbytransmitwhipantenna"></a></dfn></span><a class="self-link" href="#SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2131,8 +2141,8 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#sendtelemetrytonoaagroundstations" id="ref-for-sendtelemetrytonoaagroundstations">firesat-functions:SendTelemetryToNOAAGroundStations</a>
         </ul>
     </table>
-    <h2 class="heading settled" data-level="4" id="RelationInstances"><span class="secno">4. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices">TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices<a class="self-link" href="#transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"></a></h3>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices">TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices<a class="self-link" href="#transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices"></a></dfn></span><a class="self-link" href="#TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2160,7 +2170,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#uplinkdownlinkhardwarefortransmithigainantenna" id="ref-for-uplinkdownlinkhardwarefortransmithigainantenna">cmn-requirements:UplinkDownlinkHardwareForTransmitHiGainAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="4.2" id="TransmitterUnitPerformsGenerateTelemetry"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunitperformsgeneratetelemetry">TransmitterUnitPerformsGenerateTelemetry<a class="self-link" href="#transmitterunitperformsgeneratetelemetry"></a></dfn></span><a class="self-link" href="#TransmitterUnitPerformsGenerateTelemetry"></a></h3>
+    <h3 class="heading settled" data-level="5.2" id="TransmitterUnitPerformsGenerateTelemetry"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="transmitterunitperformsgeneratetelemetry">TransmitterUnitPerformsGenerateTelemetry<a class="self-link" href="#transmitterunitperformsgeneratetelemetry"></a></dfn></span><a class="self-link" href="#TransmitterUnitPerformsGenerateTelemetry"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2322,124 +2332,124 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#applycommandsbyreceiverunit">ApplyCommandsByReceiverUnit</a><span>, in §3.1</span>
-   <li><a href="#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a><span>, in §3.2</span>
-   <li><a href="#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a><span>, in §3.3</span>
-   <li><a href="#deploymechanismsbyreceivewhipantenna">DeployMechanismsByReceiveWhipAntenna</a><span>, in §3.4</span>
-   <li><a href="#deploymechanismsbytransmithigainantenna">DeployMechanismsByTransmitHiGainAntenna</a><span>, in §3.5</span>
-   <li><a href="#deploymechanismsbytransmitwhipantenna">DeployMechanismsByTransmitWhipAntenna</a><span>, in §3.6</span>
-   <li><a href="#generatetelemetrybytransmitterunit">GenerateTelemetryByTransmitterUnit</a><span>, in §3.7</span>
-   <li><a href="#sendtelemetrytonoaagroundstationsbytransmitwhipantenna">SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a><span>, in §3.8</span>
-   <li><a href="#transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices">TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a><span>, in §4.1</span>
-   <li><a href="#transmitterunitperformsgeneratetelemetry">TransmitterUnitPerformsGenerateTelemetry</a><span>, in §4.2</span>
+   <li><a href="#applycommandsbyreceiverunit">ApplyCommandsByReceiverUnit</a><span>, in § 4.1</span>
+   <li><a href="#communicate911downlinkwithregionalfieldofficesbyreceivewhipantenna">Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a><span>, in § 4.2</span>
+   <li><a href="#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a><span>, in § 4.3</span>
+   <li><a href="#deploymechanismsbyreceivewhipantenna">DeployMechanismsByReceiveWhipAntenna</a><span>, in § 4.4</span>
+   <li><a href="#deploymechanismsbytransmithigainantenna">DeployMechanismsByTransmitHiGainAntenna</a><span>, in § 4.5</span>
+   <li><a href="#deploymechanismsbytransmitwhipantenna">DeployMechanismsByTransmitWhipAntenna</a><span>, in § 4.6</span>
+   <li><a href="#generatetelemetrybytransmitterunit">GenerateTelemetryByTransmitterUnit</a><span>, in § 4.7</span>
+   <li><a href="#sendtelemetrytonoaagroundstationsbytransmitwhipantenna">SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a><span>, in § 4.8</span>
+   <li><a href="#transmithigainantennaperformscommunicate911downlinkwithregionalfieldoffices">TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a><span>, in § 5.1</span>
+   <li><a href="#transmitterunitperformsgeneratetelemetry">TransmitterUnitPerformsGenerateTelemetry</a><span>, in § 5.2</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-function">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-function">3.1. ApplyCommandsByReceiverUnit</a>
-    <li><a href="#ref-for-function①">3.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-function②">3.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-function③">3.4. DeployMechanismsByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-function④">3.5. DeployMechanismsByTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-function⑤">3.6. DeployMechanismsByTransmitWhipAntenna</a>
-    <li><a href="#ref-for-function⑥">3.7. GenerateTelemetryByTransmitterUnit</a>
-    <li><a href="#ref-for-function⑦">3.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-function">4.1. ApplyCommandsByReceiverUnit</a>
+    <li><a href="#ref-for-function①">4.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-function②">4.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-function③">4.4. DeployMechanismsByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-function④">4.5. DeployMechanismsByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-function⑤">4.6. DeployMechanismsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-function⑥">4.7. GenerateTelemetryByTransmitterUnit</a>
+    <li><a href="#ref-for-function⑦">4.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-isspecifiedby">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isspecifiedby">4.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
-    <li><a href="#ref-for-isspecifiedby①">4.2. TransmitterUnitPerformsGenerateTelemetry</a>
+    <li><a href="#ref-for-isspecifiedby">5.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
+    <li><a href="#ref-for-isspecifiedby①">5.2. TransmitterUnitPerformsGenerateTelemetry</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-performs">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-performs">4.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
-    <li><a href="#ref-for-performs①">4.2. TransmitterUnitPerformsGenerateTelemetry</a>
+    <li><a href="#ref-for-performs">5.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
+    <li><a href="#ref-for-performs①">5.2. TransmitterUnitPerformsGenerateTelemetry</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-realizes">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-realizes">3.1. ApplyCommandsByReceiverUnit</a>
-    <li><a href="#ref-for-realizes①">3.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-realizes②">3.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-realizes③">3.4. DeployMechanismsByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-realizes④">3.5. DeployMechanismsByTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-realizes⑤">3.6. DeployMechanismsByTransmitWhipAntenna</a>
-    <li><a href="#ref-for-realizes⑥">3.7. GenerateTelemetryByTransmitterUnit</a>
-    <li><a href="#ref-for-realizes⑦">3.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-realizes">4.1. ApplyCommandsByReceiverUnit</a>
+    <li><a href="#ref-for-realizes①">4.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-realizes②">4.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-realizes③">4.4. DeployMechanismsByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-realizes④">4.5. DeployMechanismsByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-realizes⑤">4.6. DeployMechanismsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-realizes⑥">4.7. GenerateTelemetryByTransmitterUnit</a>
+    <li><a href="#ref-for-realizes⑦">4.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-applycommands">
    <a href="../../../../../../../missions/firesat/functions.html#applycommands">../../../../../../../missions/firesat/functions.html#applycommands</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-applycommands">3.1. ApplyCommandsByReceiverUnit</a>
+    <li><a href="#ref-for-applycommands">4.1. ApplyCommandsByReceiverUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-communicate911downlinkwithregionalfieldoffices">
    <a href="../../../../../../../missions/firesat/functions.html#communicate911downlinkwithregionalfieldoffices">../../../../../../../missions/firesat/functions.html#communicate911downlinkwithregionalfieldoffices</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices">3.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices①">3.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices">4.2. Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices①">4.3. Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deploymechanisms">
    <a href="../../../../../../../missions/firesat/functions.html#deploymechanisms">../../../../../../../missions/firesat/functions.html#deploymechanisms</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deploymechanisms">3.4. DeployMechanismsByReceiveWhipAntenna</a>
-    <li><a href="#ref-for-deploymechanisms①">3.5. DeployMechanismsByTransmitHiGainAntenna</a>
-    <li><a href="#ref-for-deploymechanisms②">3.6. DeployMechanismsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-deploymechanisms">4.4. DeployMechanismsByReceiveWhipAntenna</a>
+    <li><a href="#ref-for-deploymechanisms①">4.5. DeployMechanismsByTransmitHiGainAntenna</a>
+    <li><a href="#ref-for-deploymechanisms②">4.6. DeployMechanismsByTransmitWhipAntenna</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-generatetelemetry">
    <a href="../../../../../../../missions/firesat/functions.html#generatetelemetry">../../../../../../../missions/firesat/functions.html#generatetelemetry</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-generatetelemetry">3.7. GenerateTelemetryByTransmitterUnit</a>
+    <li><a href="#ref-for-generatetelemetry">4.7. GenerateTelemetryByTransmitterUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-sendtelemetrytonoaagroundstations">
    <a href="../../../../../../../missions/firesat/functions.html#sendtelemetrytonoaagroundstations">../../../../../../../missions/firesat/functions.html#sendtelemetrytonoaagroundstations</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-sendtelemetrytonoaagroundstations">3.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
+    <li><a href="#ref-for-sendtelemetrytonoaagroundstations">4.8. SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transmithigainantenna">
    <a href="assemblies.html#transmithigainantenna">assemblies.html#transmithigainantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transmithigainantenna">4.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
+    <li><a href="#ref-for-transmithigainantenna">5.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-transmitterunit">
    <a href="assemblies.html#transmitterunit">assemblies.html#transmitterunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-transmitterunit">4.2. TransmitterUnitPerformsGenerateTelemetry</a>
+    <li><a href="#ref-for-transmitterunit">5.2. TransmitterUnitPerformsGenerateTelemetry</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">
    <a href="functions.html#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">functions.html#communicate911downlinkwithregionalfieldofficesbytransmithigainantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">4.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
+    <li><a href="#ref-for-communicate911downlinkwithregionalfieldofficesbytransmithigainantenna">5.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-generatetelemetrybytransmitterunit">
    <a href="functions.html#generatetelemetrybytransmitterunit">functions.html#generatetelemetrybytransmitterunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-generatetelemetrybytransmitterunit">4.2. TransmitterUnitPerformsGenerateTelemetry</a>
+    <li><a href="#ref-for-generatetelemetrybytransmitterunit">5.2. TransmitterUnitPerformsGenerateTelemetry</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardwarefortransmithigainantenna">
    <a href="requirements.html#uplinkdownlinkhardwarefortransmithigainantenna">requirements.html#uplinkdownlinkhardwarefortransmithigainantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-uplinkdownlinkhardwarefortransmithigainantenna">4.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
+    <li><a href="#ref-for-uplinkdownlinkhardwarefortransmithigainantenna">5.1. TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-uplinkdownlinkhardwarefortransmitterunit">
    <a href="requirements.html#uplinkdownlinkhardwarefortransmitterunit">requirements.html#uplinkdownlinkhardwarefortransmitterunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-uplinkdownlinkhardwarefortransmitterunit">4.2. TransmitterUnitPerformsGenerateTelemetry</a>
+    <li><a href="#ref-for-uplinkdownlinkhardwarefortransmitterunit">5.2. TransmitterUnitPerformsGenerateTelemetry</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>

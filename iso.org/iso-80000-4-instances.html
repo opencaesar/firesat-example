@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Assembly Library</title>
+  <title>ISO-80000-4 Instances</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/assemblies" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
+  <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-instances" rel="canonical">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1938,16 +1938,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Assembly Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO-80000-4 Instances</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/assemblies">https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/assemblies</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-instances">https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-instances</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>Copyright 2010-2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses,a or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1955,18 +1955,45 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A library for assemblies.</p>
+   <p>The ISO-80000-4 instances library.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#BaseAssembly"><span class="secno">3.1</span> <span class="content"><span>BaseAssembly</span></span></a>
+      <li><a href="#Force"><span class="secno">4.1</span> <span class="content"><span>force</span></span></a>
+      <li><a href="#Gram"><span class="secno">4.2</span> <span class="content"><span>gram</span></span></a>
+      <li><a href="#Impulse"><span class="secno">4.3</span> <span class="content"><span>impulse</span></span></a>
+      <li><a href="#Kilogram"><span class="secno">4.4</span> <span class="content"><span>kilogram</span></span></a>
+      <li><a href="#Kilogram-metre-per-second"><span class="secno">4.5</span> <span class="content"><span>kilogram-metre-per-second</span></span></a>
+      <li><a href="#Mass"><span class="secno">4.6</span> <span class="content"><span>mass</span></span></a>
+      <li><a href="#Momentum"><span class="secno">4.7</span> <span class="content"><span>momentum</span></span></a>
+      <li><a href="#Newton"><span class="secno">4.8</span> <span class="content"><span>newton</span></span></a>
+      <li><a href="#Newton-millisecond"><span class="secno">4.9</span> <span class="content"><span>newton-millisecond</span></span></a>
+      <li><a href="#Newton-second"><span class="secno">4.10</span> <span class="content"><span>newton-second</span></span></a>
+      <li><a href="#Power"><span class="secno">4.11</span> <span class="content"><span>power</span></span></a>
+      <li><a href="#Watt"><span class="secno">4.12</span> <span class="content"><span>watt</span></span></a>
+     </ol>
+    <li>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
+     <ol class="toc">
+      <li><a href="#SystemOfQuantities-force"><span class="secno">5.1</span> <span class="content"><span>systemOfQuantities-force</span></span></a>
+      <li><a href="#SystemOfQuantities-impulse"><span class="secno">5.2</span> <span class="content"><span>systemOfQuantities-impulse</span></span></a>
+      <li><a href="#SystemOfQuantities-mass"><span class="secno">5.3</span> <span class="content"><span>systemOfQuantities-mass</span></span></a>
+      <li><a href="#SystemOfQuantities-momentum"><span class="secno">5.4</span> <span class="content"><span>systemOfQuantities-momentum</span></span></a>
+      <li><a href="#SystemOfQuantities-power"><span class="secno">5.5</span> <span class="content"><span>systemOfQuantities-power</span></span></a>
+      <li><a href="#SystemOfUnits-kilogram"><span class="secno">5.6</span> <span class="content"><span>systemOfUnits-kilogram</span></span></a>
+      <li><a href="#SystemOfUnits-kilogram-metre-per-second"><span class="secno">5.7</span> <span class="content"><span>systemOfUnits-kilogram-metre-per-second</span></span></a>
+      <li><a href="#SystemOfUnits-newton"><span class="secno">5.8</span> <span class="content"><span>systemOfUnits-newton</span></span></a>
+      <li><a href="#SystemOfUnits-newton-millisecond"><span class="secno">5.9</span> <span class="content"><span>systemOfUnits-newton-millisecond</span></span></a>
+      <li><a href="#SystemOfUnits-newton-second"><span class="secno">5.10</span> <span class="content"><span>systemOfUnits-newton-second</span></span></a>
+      <li><a href="#SystemOfUnits-watt"><span class="secno">5.11</span> <span class="content"><span>systemOfUnits-watt</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1981,22 +2008,454 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>fse-assemblies: <a href="assemblies.html">http://imce.jpl.nasa.gov/discipline/fse/assemblies</a></p>
+      <p><a href="iso-80000-4-instances.html">http://iso.org/iso-80000-4-instances</a> [iso-80000-4-instances]</p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>fse: <a href="http://imce.jpl.nasa.gov/discipline/fse/fse.html">http://imce.jpl.nasa.gov/discipline/fse/fse</a></p>
+      <p><a href="http://iso.org/iso-80000-instances.html">http://iso.org/iso-80000-instances</a> [iso-80000-instances]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="BaseAssembly"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="baseassembly">BaseAssembly<a class="self-link" href="#baseassembly"></a></dfn></span><a class="self-link" href="#BaseAssembly"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
+     <li data-md>
+      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
+     <li data-md>
+      <p><a href="http://iso.org/iso-80000-4-quantities.html">http://iso.org/iso-80000-4-quantities</a> [iso-80000-4-quantities]</p>
+     <li data-md>
+      <p><a href="http://iso.org/iso-80000-4-units.html">http://iso.org/iso-80000-4-units</a> [iso-80000-4-units]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Force"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force">force<a class="self-link" href="#force"></a></dfn></span><a class="self-link" href="#Force"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="fse.html#assembly" id="ref-for-assembly">fse:Assembly</a>
+         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force">iso-80000-4-quantities:force</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.2" id="Gram"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gram">gram<a class="self-link" href="#gram"></a></dfn></span><a class="self-link" href="#Gram"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#gram" id="ref-for-gram">iso-80000-4-units:gram</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.3" id="Impulse"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulse">impulse<a class="self-link" href="#impulse"></a></dfn></span><a class="self-link" href="#Impulse"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse" id="ref-for-impulse">iso-80000-4-quantities:impulse</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.4" id="Kilogram"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram">kilogram<a class="self-link" href="#kilogram"></a></dfn></span><a class="self-link" href="#Kilogram"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#kilogram" id="ref-for-kilogram">iso-80000-4-units:kilogram</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.5" id="Kilogram-metre-per-second"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram-metre-per-second">kilogram-metre-per-second<a class="self-link" href="#kilogram-metre-per-second"></a></dfn></span><a class="self-link" href="#Kilogram-metre-per-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second">iso-80000-4-units:kilogram-metre-per-second</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.6" id="Mass"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="mass">mass<a class="self-link" href="#mass"></a></dfn></span><a class="self-link" href="#Mass"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#mass" id="ref-for-mass">iso-80000-4-quantities:mass</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.7" id="Momentum"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum">momentum<a class="self-link" href="#momentum"></a></dfn></span><a class="self-link" href="#Momentum"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum">iso-80000-4-quantities:momentum</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.8" id="Newton"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton">newton<a class="self-link" href="#newton"></a></dfn></span><a class="self-link" href="#Newton"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#newton" id="ref-for-newton">iso-80000-4-units:newton</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.9" id="Newton-millisecond"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-millisecond">newton-millisecond<a class="self-link" href="#newton-millisecond"></a></dfn></span><a class="self-link" href="#Newton-millisecond"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#newton-millisecond" id="ref-for-newton-millisecond">iso-80000-4-units:newton-millisecond</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.10" id="Newton-second"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second">newton-second<a class="self-link" href="#newton-second"></a></dfn></span><a class="self-link" href="#Newton-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#newton-second" id="ref-for-newton-second">iso-80000-4-units:newton-second</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.11" id="Power"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#power" id="ref-for-power">iso-80000-4-quantities:power</a>
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.12" id="Watt"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="watt">watt<a class="self-link" href="#watt"></a></dfn></span><a class="self-link" href="#Watt"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-units.html#watt" id="ref-for-watt">iso-80000-4-units:watt</a>
+        </ul>
+    </table>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="SystemOfQuantities-force"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-force">systemOfQuantities-force<a class="self-link" href="#systemofquantities-force"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-force"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofquantities" id="ref-for-systemofquantities">iso-80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#force" id="ref-for-force①">force</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.2" id="SystemOfQuantities-impulse"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-impulse">systemOfQuantities-impulse<a class="self-link" href="#systemofquantities-impulse"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-impulse"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity①">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofquantities" id="ref-for-systemofquantities①">iso-80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#impulse" id="ref-for-impulse①">impulse</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity①">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.3" id="SystemOfQuantities-mass"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-mass">systemOfQuantities-mass<a class="self-link" href="#systemofquantities-mass"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-mass"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity②">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofquantities" id="ref-for-systemofquantities②">iso-80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#mass" id="ref-for-mass①">mass</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity②">metrology:isBaseQuantity</a> true
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.4" id="SystemOfQuantities-momentum"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-momentum">systemOfQuantities-momentum<a class="self-link" href="#systemofquantities-momentum"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-momentum"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity③">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofquantities" id="ref-for-systemofquantities③">iso-80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#momentum" id="ref-for-momentum①">momentum</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity③">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.5" id="SystemOfQuantities-power"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities-power">systemOfQuantities-power<a class="self-link" href="#systemofquantities-power"></a></dfn></span><a class="self-link" href="#SystemOfQuantities-power"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasunitaryquantity" id="ref-for-systemhasunitaryquantity④">metrology:SystemHasUnitaryQuantity</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofquantities" id="ref-for-systemofquantities④">iso-80000-instances:systemOfQuantities</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#power" id="ref-for-power①">power</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasequantity" id="ref-for-isbasequantity④">metrology:isBaseQuantity</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.6" id="SystemOfUnits-kilogram"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-kilogram">systemOfUnits-kilogram<a class="self-link" href="#systemofunits-kilogram"></a></dfn></span><a class="self-link" href="#SystemOfUnits-kilogram"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#kilogram" id="ref-for-kilogram①">kilogram</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit">metrology:isBaseMetrologicalUnit</a> true
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.7" id="SystemOfUnits-kilogram-metre-per-second"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-kilogram-metre-per-second">systemOfUnits-kilogram-metre-per-second<a class="self-link" href="#systemofunits-kilogram-metre-per-second"></a></dfn></span><a class="self-link" href="#SystemOfUnits-kilogram-metre-per-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit①">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits①">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#kilogram-metre-per-second" id="ref-for-kilogram-metre-per-second①">kilogram-metre-per-second</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit①">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.8" id="SystemOfUnits-newton"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-newton">systemOfUnits-newton<a class="self-link" href="#systemofunits-newton"></a></dfn></span><a class="self-link" href="#SystemOfUnits-newton"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit②">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits②">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#newton" id="ref-for-newton①">newton</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit②">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.9" id="SystemOfUnits-newton-millisecond"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-newton-millisecond">systemOfUnits-newton-millisecond<a class="self-link" href="#systemofunits-newton-millisecond"></a></dfn></span><a class="self-link" href="#SystemOfUnits-newton-millisecond"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit③">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits③">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#newton-millisecond" id="ref-for-newton-millisecond①">newton-millisecond</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit③">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.10" id="SystemOfUnits-newton-second"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-newton-second">systemOfUnits-newton-second<a class="self-link" href="#systemofunits-newton-second"></a></dfn></span><a class="self-link" href="#SystemOfUnits-newton-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit④">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits④">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#newton-second" id="ref-for-newton-second①">newton-second</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit④">metrology:isBaseMetrologicalUnit</a> false
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.11" id="SystemOfUnits-watt"><span class="secno">5.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits-watt">systemOfUnits-watt<a class="self-link" href="#systemofunits-watt"></a></dfn></span><a class="self-link" href="#SystemOfUnits-watt"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemhasmetrologicalunit" id="ref-for-systemhasmetrologicalunit⑤">metrology:SystemHasMetrologicalUnit</a>
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-instances.html#systemofunits" id="ref-for-systemofunits⑤">iso-80000-instances:systemOfUnits</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4-instances.html#watt" id="ref-for-watt①">watt</a>
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isbasemetrologicalunit" id="ref-for-isbasemetrologicalunit⑤">metrology:isBaseMetrologicalUnit</a> false
         </ul>
     </table>
    </div>
@@ -2133,20 +2592,281 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#baseassembly">BaseAssembly</a><span>, in §3.1</span>
+   <li><a href="#force">force</a><span>, in § 4.1</span>
+   <li><a href="#gram">gram</a><span>, in § 4.2</span>
+   <li><a href="#impulse">impulse</a><span>, in § 4.3</span>
+   <li><a href="#kilogram">kilogram</a><span>, in § 4.4</span>
+   <li><a href="#kilogram-metre-per-second">kilogram-metre-per-second</a><span>, in § 4.5</span>
+   <li><a href="#mass">mass</a><span>, in § 4.6</span>
+   <li><a href="#momentum">momentum</a><span>, in § 4.7</span>
+   <li><a href="#newton">newton</a><span>, in § 4.8</span>
+   <li><a href="#newton-millisecond">newton-millisecond</a><span>, in § 4.9</span>
+   <li><a href="#newton-second">newton-second</a><span>, in § 4.10</span>
+   <li><a href="#power">power</a><span>, in § 4.11</span>
+   <li><a href="#systemofquantities-force">systemOfQuantities-force</a><span>, in § 5.1</span>
+   <li><a href="#systemofquantities-impulse">systemOfQuantities-impulse</a><span>, in § 5.2</span>
+   <li><a href="#systemofquantities-mass">systemOfQuantities-mass</a><span>, in § 5.3</span>
+   <li><a href="#systemofquantities-momentum">systemOfQuantities-momentum</a><span>, in § 5.4</span>
+   <li><a href="#systemofquantities-power">systemOfQuantities-power</a><span>, in § 5.5</span>
+   <li><a href="#systemofunits-kilogram">systemOfUnits-kilogram</a><span>, in § 5.6</span>
+   <li><a href="#systemofunits-kilogram-metre-per-second">systemOfUnits-kilogram-metre-per-second</a><span>, in § 5.7</span>
+   <li><a href="#systemofunits-newton">systemOfUnits-newton</a><span>, in § 5.8</span>
+   <li><a href="#systemofunits-newton-millisecond">systemOfUnits-newton-millisecond</a><span>, in § 5.9</span>
+   <li><a href="#systemofunits-newton-second">systemOfUnits-newton-second</a><span>, in § 5.10</span>
+   <li><a href="#systemofunits-watt">systemOfUnits-watt</a><span>, in § 5.11</span>
+   <li><a href="#watt">watt</a><span>, in § 4.12</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-assembly">
-   <a href="fse.html#assembly">fse.html#assembly</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-force">
+   <a href="iso-80000-4-instances.html#force">iso-80000-4-instances.html#force</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-assembly">3.1. BaseAssembly</a>
+    <li><a href="#ref-for-force①">5.1. systemOfQuantities-force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-impulse">
+   <a href="iso-80000-4-instances.html#impulse">iso-80000-4-instances.html#impulse</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-impulse①">5.2. systemOfQuantities-impulse</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="iso-80000-4-instances.html#kilogram">iso-80000-4-instances.html#kilogram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram①">5.6. systemOfUnits-kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second">
+   <a href="iso-80000-4-instances.html#kilogram-metre-per-second">iso-80000-4-instances.html#kilogram-metre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-metre-per-second①">5.7. systemOfUnits-kilogram-metre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-mass">
+   <a href="iso-80000-4-instances.html#mass">iso-80000-4-instances.html#mass</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-mass①">5.3. systemOfQuantities-mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentum">
+   <a href="iso-80000-4-instances.html#momentum">iso-80000-4-instances.html#momentum</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentum①">5.4. systemOfQuantities-momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton">
+   <a href="iso-80000-4-instances.html#newton">iso-80000-4-instances.html#newton</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton①">5.8. systemOfUnits-newton</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond">
+   <a href="iso-80000-4-instances.html#newton-millisecond">iso-80000-4-instances.html#newton-millisecond</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-millisecond①">5.9. systemOfUnits-newton-millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second">
+   <a href="iso-80000-4-instances.html#newton-second">iso-80000-4-instances.html#newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second①">5.10. systemOfUnits-newton-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-power">
+   <a href="iso-80000-4-instances.html#power">iso-80000-4-instances.html#power</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power①">5.5. systemOfQuantities-power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-watt">
+   <a href="iso-80000-4-instances.html#watt">iso-80000-4-instances.html#watt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-watt①">5.11. systemOfUnits-watt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-force">
+   <a href="iso-80000-4-quantities.html#force">iso-80000-4-quantities.html#force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-force">4.1. force</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-impulse">
+   <a href="iso-80000-4-quantities.html#impulse">iso-80000-4-quantities.html#impulse</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-impulse">4.3. impulse</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-mass">
+   <a href="iso-80000-4-quantities.html#mass">iso-80000-4-quantities.html#mass</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-mass">4.6. mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-momentum">
+   <a href="iso-80000-4-quantities.html#momentum">iso-80000-4-quantities.html#momentum</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-momentum">4.7. momentum</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-power">
+   <a href="iso-80000-4-quantities.html#power">iso-80000-4-quantities.html#power</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-power">4.11. power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-gram">
+   <a href="iso-80000-4-units.html#gram">iso-80000-4-units.html#gram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-gram">4.2. gram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="iso-80000-4-units.html#kilogram">iso-80000-4-units.html#kilogram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram">4.4. kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram-metre-per-second">
+   <a href="iso-80000-4-units.html#kilogram-metre-per-second">iso-80000-4-units.html#kilogram-metre-per-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram-metre-per-second">4.5. kilogram-metre-per-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton">
+   <a href="iso-80000-4-units.html#newton">iso-80000-4-units.html#newton</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton">4.8. newton</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-millisecond">
+   <a href="iso-80000-4-units.html#newton-millisecond">iso-80000-4-units.html#newton-millisecond</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-millisecond">4.9. newton-millisecond</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-newton-second">
+   <a href="iso-80000-4-units.html#newton-second">iso-80000-4-units.html#newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second">4.10. newton-second</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-watt">
+   <a href="iso-80000-4-units.html#watt">iso-80000-4-units.html#watt</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-watt">4.12. watt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofquantities">
+   <a href="iso-80000-instances.html#systemofquantities">iso-80000-instances.html#systemofquantities</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofquantities">5.1. systemOfQuantities-force</a>
+    <li><a href="#ref-for-systemofquantities①">5.2. systemOfQuantities-impulse</a>
+    <li><a href="#ref-for-systemofquantities②">5.3. systemOfQuantities-mass</a>
+    <li><a href="#ref-for-systemofquantities③">5.4. systemOfQuantities-momentum</a>
+    <li><a href="#ref-for-systemofquantities④">5.5. systemOfQuantities-power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemofunits">
+   <a href="iso-80000-instances.html#systemofunits">iso-80000-instances.html#systemofunits</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemofunits">5.6. systemOfUnits-kilogram</a>
+    <li><a href="#ref-for-systemofunits①">5.7. systemOfUnits-kilogram-metre-per-second</a>
+    <li><a href="#ref-for-systemofunits②">5.8. systemOfUnits-newton</a>
+    <li><a href="#ref-for-systemofunits③">5.9. systemOfUnits-newton-millisecond</a>
+    <li><a href="#ref-for-systemofunits④">5.10. systemOfUnits-newton-second</a>
+    <li><a href="#ref-for-systemofunits⑤">5.11. systemOfUnits-watt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasemetrologicalunit">
+   <a href="../iupac.org/metrology.html#isbasemetrologicalunit">../iupac.org/metrology.html#isbasemetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasemetrologicalunit">5.6. systemOfUnits-kilogram</a>
+    <li><a href="#ref-for-isbasemetrologicalunit①">5.7. systemOfUnits-kilogram-metre-per-second</a>
+    <li><a href="#ref-for-isbasemetrologicalunit②">5.8. systemOfUnits-newton</a>
+    <li><a href="#ref-for-isbasemetrologicalunit③">5.9. systemOfUnits-newton-millisecond</a>
+    <li><a href="#ref-for-isbasemetrologicalunit④">5.10. systemOfUnits-newton-second</a>
+    <li><a href="#ref-for-isbasemetrologicalunit⑤">5.11. systemOfUnits-watt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isbasequantity">
+   <a href="../iupac.org/metrology.html#isbasequantity">../iupac.org/metrology.html#isbasequantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isbasequantity">5.1. systemOfQuantities-force</a>
+    <li><a href="#ref-for-isbasequantity①">5.2. systemOfQuantities-impulse</a>
+    <li><a href="#ref-for-isbasequantity②">5.3. systemOfQuantities-mass</a>
+    <li><a href="#ref-for-isbasequantity③">5.4. systemOfQuantities-momentum</a>
+    <li><a href="#ref-for-isbasequantity④">5.5. systemOfQuantities-power</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasmetrologicalunit">
+   <a href="../iupac.org/metrology.html#systemhasmetrologicalunit">../iupac.org/metrology.html#systemhasmetrologicalunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasmetrologicalunit">5.6. systemOfUnits-kilogram</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit①">5.7. systemOfUnits-kilogram-metre-per-second</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit②">5.8. systemOfUnits-newton</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit③">5.9. systemOfUnits-newton-millisecond</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit④">5.10. systemOfUnits-newton-second</a>
+    <li><a href="#ref-for-systemhasmetrologicalunit⑤">5.11. systemOfUnits-watt</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-systemhasunitaryquantity">
+   <a href="../iupac.org/metrology.html#systemhasunitaryquantity">../iupac.org/metrology.html#systemhasunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasunitaryquantity">5.1. systemOfQuantities-force</a>
+    <li><a href="#ref-for-systemhasunitaryquantity①">5.2. systemOfQuantities-impulse</a>
+    <li><a href="#ref-for-systemhasunitaryquantity②">5.3. systemOfQuantities-mass</a>
+    <li><a href="#ref-for-systemhasunitaryquantity③">5.4. systemOfQuantities-momentum</a>
+    <li><a href="#ref-for-systemhasunitaryquantity④">5.5. systemOfQuantities-power</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/iso-80000-4-instances]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-assembly">assembly</span>
+     <li><span class="dfn-paneled" id="term-for-force">force</span>
+     <li><span class="dfn-paneled" id="term-for-impulse">impulse</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second">kilogram-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-mass">mass</span>
+     <li><span class="dfn-paneled" id="term-for-momentum">momentum</span>
+     <li><span class="dfn-paneled" id="term-for-newton">newton</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond">newton-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second">newton-second</span>
+     <li><span class="dfn-paneled" id="term-for-power">power</span>
+     <li><span class="dfn-paneled" id="term-for-watt">watt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/iso-80000-4-quantities]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-force①">force</span>
+     <li><span class="dfn-paneled" id="term-for-impulse①">impulse</span>
+     <li><span class="dfn-paneled" id="term-for-mass①">mass</span>
+     <li><span class="dfn-paneled" id="term-for-momentum①">momentum</span>
+     <li><span class="dfn-paneled" id="term-for-power①">power</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/iso-80000-4-units]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-gram">gram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram①">kilogram</span>
+     <li><span class="dfn-paneled" id="term-for-kilogram-metre-per-second①">kilogram-metre-per-second</span>
+     <li><span class="dfn-paneled" id="term-for-newton①">newton</span>
+     <li><span class="dfn-paneled" id="term-for-newton-millisecond①">newton-millisecond</span>
+     <li><span class="dfn-paneled" id="term-for-newton-second①">newton-second</span>
+     <li><span class="dfn-paneled" id="term-for-watt①">watt</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/iso-80000-instances]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-systemofquantities">systemofquantities</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunits">systemofunits</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-isbasemetrologicalunit">isbasemetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-isbasequantity">isbasequantity</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasmetrologicalunit">systemhasmetrologicalunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasunitaryquantity">systemhasunitaryquantity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

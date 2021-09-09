@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/masses" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ADCS and GNC Masses</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,35 +1962,23 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#ADCSElectronicsUnitCBEMass"><span class="secno">3.1</span> <span class="content"><span>ADCSElectronicsUnitCBEMass</span></span></a>
-      <li><a href="#ADCSElectronicsUnitCBEMassMagnitude"><span class="secno">3.2</span> <span class="content"><span>ADCSElectronicsUnitCBEMassMagnitude</span></span></a>
-      <li><a href="#EarthSensorCBEMass"><span class="secno">3.3</span> <span class="content"><span>EarthSensorCBEMass</span></span></a>
-      <li><a href="#EarthSensorCBEMassMagnitude"><span class="secno">3.4</span> <span class="content"><span>EarthSensorCBEMassMagnitude</span></span></a>
-      <li><a href="#GPSAntennaCBEMass"><span class="secno">3.5</span> <span class="content"><span>GPSAntennaCBEMass</span></span></a>
-      <li><a href="#GPSAntennaCBEMassMagnitude"><span class="secno">3.6</span> <span class="content"><span>GPSAntennaCBEMassMagnitude</span></span></a>
-      <li><a href="#GPSReceiverUnitCBEMass"><span class="secno">3.7</span> <span class="content"><span>GPSReceiverUnitCBEMass</span></span></a>
-      <li><a href="#GPSReceiverUnitCBEMassMagnitude"><span class="secno">3.8</span> <span class="content"><span>GPSReceiverUnitCBEMassMagnitude</span></span></a>
-      <li><a href="#MagnetometerCBEMass"><span class="secno">3.9</span> <span class="content"><span>MagnetometerCBEMass</span></span></a>
-      <li><a href="#MagnetometerCBEMassMagnitude"><span class="secno">3.10</span> <span class="content"><span>MagnetometerCBEMassMagnitude</span></span></a>
-      <li><a href="#Magnetorquer1CBEMass"><span class="secno">3.11</span> <span class="content"><span>Magnetorquer1CBEMass</span></span></a>
-      <li><a href="#Magnetorquer1CBEMassMagnitude"><span class="secno">3.12</span> <span class="content"><span>Magnetorquer1CBEMassMagnitude</span></span></a>
-      <li><a href="#Magnetorquer2CBEMass"><span class="secno">3.13</span> <span class="content"><span>Magnetorquer2CBEMass</span></span></a>
-      <li><a href="#Magnetorquer2CBEMassMagnitude"><span class="secno">3.14</span> <span class="content"><span>Magnetorquer2CBEMassMagnitude</span></span></a>
-      <li><a href="#Magnetorquer3CBEMass"><span class="secno">3.15</span> <span class="content"><span>Magnetorquer3CBEMass</span></span></a>
-      <li><a href="#Magnetorquer3CBEMassMagnitude"><span class="secno">3.16</span> <span class="content"><span>Magnetorquer3CBEMassMagnitude</span></span></a>
-      <li><a href="#ReactionWheel1CBEMass"><span class="secno">3.17</span> <span class="content"><span>ReactionWheel1CBEMass</span></span></a>
-      <li><a href="#ReactionWheel1CBEMassMagnitude"><span class="secno">3.18</span> <span class="content"><span>ReactionWheel1CBEMassMagnitude</span></span></a>
-      <li><a href="#ReactionWheel2CBEMass"><span class="secno">3.19</span> <span class="content"><span>ReactionWheel2CBEMass</span></span></a>
-      <li><a href="#ReactionWheel2CBEMassMagnitude"><span class="secno">3.20</span> <span class="content"><span>ReactionWheel2CBEMassMagnitude</span></span></a>
-      <li><a href="#ReactionWheel3CBEMass"><span class="secno">3.21</span> <span class="content"><span>ReactionWheel3CBEMass</span></span></a>
-      <li><a href="#ReactionWheel3CBEMassMagnitude"><span class="secno">3.22</span> <span class="content"><span>ReactionWheel3CBEMassMagnitude</span></span></a>
-      <li><a href="#ReactionWheel4CBEMass"><span class="secno">3.23</span> <span class="content"><span>ReactionWheel4CBEMass</span></span></a>
-      <li><a href="#ReactionWheel4CBEMassMagnitude"><span class="secno">3.24</span> <span class="content"><span>ReactionWheel4CBEMassMagnitude</span></span></a>
-      <li><a href="#SunSensorCBEMass"><span class="secno">3.25</span> <span class="content"><span>SunSensorCBEMass</span></span></a>
-      <li><a href="#SunSensorCBEMassMagnitude"><span class="secno">3.26</span> <span class="content"><span>SunSensorCBEMassMagnitude</span></span></a>
+      <li><a href="#ADCSElectronicsUnitMassLimitConstraint"><span class="secno">4.1</span> <span class="content"><span>ADCSElectronicsUnitMassLimitConstraint</span></span></a>
+      <li><a href="#EarthSensorMassLimitConstraint"><span class="secno">4.2</span> <span class="content"><span>EarthSensorMassLimitConstraint</span></span></a>
+      <li><a href="#GPSAntennaMassLimitConstraint"><span class="secno">4.3</span> <span class="content"><span>GPSAntennaMassLimitConstraint</span></span></a>
+      <li><a href="#GPSReceiverUnitMassLimitConstraint"><span class="secno">4.4</span> <span class="content"><span>GPSReceiverUnitMassLimitConstraint</span></span></a>
+      <li><a href="#MagnetometerMassLimitConstraint"><span class="secno">4.5</span> <span class="content"><span>MagnetometerMassLimitConstraint</span></span></a>
+      <li><a href="#Magnetorquer1MassLimitConstraint"><span class="secno">4.6</span> <span class="content"><span>Magnetorquer1MassLimitConstraint</span></span></a>
+      <li><a href="#Magnetorquer2MassLimitConstraint"><span class="secno">4.7</span> <span class="content"><span>Magnetorquer2MassLimitConstraint</span></span></a>
+      <li><a href="#Magnetorquer3MassLimitConstraint"><span class="secno">4.8</span> <span class="content"><span>Magnetorquer3MassLimitConstraint</span></span></a>
+      <li><a href="#ReactionWheel1MassLimitConstraint"><span class="secno">4.9</span> <span class="content"><span>ReactionWheel1MassLimitConstraint</span></span></a>
+      <li><a href="#ReactionWheel2MassLimitConstraint"><span class="secno">4.10</span> <span class="content"><span>ReactionWheel2MassLimitConstraint</span></span></a>
+      <li><a href="#ReactionWheel3MassLimitConstraint"><span class="secno">4.11</span> <span class="content"><span>ReactionWheel3MassLimitConstraint</span></span></a>
+      <li><a href="#ReactionWheel4MassLimitConstraint"><span class="secno">4.12</span> <span class="content"><span>ReactionWheel4MassLimitConstraint</span></span></a>
+      <li><a href="#SunSensorMassLimitConstraint"><span class="secno">4.13</span> <span class="content"><span>SunSensorMassLimitConstraint</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -2005,38 +1993,35 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>ang-masses: <a href="masses.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/masses</a></p>
+      <p><a href="masses.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/masses</a> [ang-masses]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>ang-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies</a> [ang-assemblies]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="ADCSElectronicsUnitCBEMass"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="adcselectronicsunitcbemass">ADCSElectronicsUnitCBEMass<a class="self-link" href="#adcselectronicsunitcbemass"></a></dfn></span><a class="self-link" href="#ADCSElectronicsUnitCBEMass"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
+     <li data-md>
+      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
+     <li data-md>
+      <p><a href="http://opencaesar.io/examples/firesat/disciplines/fse/fse.html">http://opencaesar.io/examples/firesat/disciplines/fse/fse</a> [fse]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ADCSElectronicsUnitMassLimitConstraint"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="adcselectronicsunitmasslimitconstraint">ADCSElectronicsUnitMassLimitConstraint<a class="self-link" href="#adcselectronicsunitmasslimitconstraint"></a></dfn></span><a class="self-link" href="#ADCSElectronicsUnitMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#adcselectronicsunit" id="ref-for-adcselectronicsunit">ang-assemblies:ADCSElectronicsUnit</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.2" id="ADCSElectronicsUnitCBEMassMagnitude"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="adcselectronicsunitcbemassmagnitude">ADCSElectronicsUnitCBEMassMagnitude<a class="self-link" href="#adcselectronicsunitcbemassmagnitude"></a></dfn></span><a class="self-link" href="#ADCSElectronicsUnitCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2048,33 +2033,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#adcselectronicsunitcbemass" id="ref-for-adcselectronicsunitcbemass">ADCSElectronicsUnitCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#adcselectronicsunit" id="ref-for-adcselectronicsunit">ang-assemblies:ADCSElectronicsUnit</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="EarthSensorCBEMass"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="earthsensorcbemass">EarthSensorCBEMass<a class="self-link" href="#earthsensorcbemass"></a></dfn></span><a class="self-link" href="#EarthSensorCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="EarthSensorMassLimitConstraint"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="earthsensormasslimitconstraint">EarthSensorMassLimitConstraint<a class="self-link" href="#earthsensormasslimitconstraint"></a></dfn></span><a class="self-link" href="#EarthSensorMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass①">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof①">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#earthsensor" id="ref-for-earthsensor">ang-assemblies:EarthSensor</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.4" id="EarthSensorCBEMassMagnitude"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="earthsensorcbemassmagnitude">EarthSensorCBEMassMagnitude<a class="self-link" href="#earthsensorcbemassmagnitude"></a></dfn></span><a class="self-link" href="#EarthSensorCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint①">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2086,33 +2055,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#earthsensorcbemass" id="ref-for-earthsensorcbemass">EarthSensorCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof①">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#earthsensor" id="ref-for-earthsensor">ang-assemblies:EarthSensor</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="GPSAntennaCBEMass"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennacbemass">GPSAntennaCBEMass<a class="self-link" href="#gpsantennacbemass"></a></dfn></span><a class="self-link" href="#GPSAntennaCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="GPSAntennaMassLimitConstraint"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennamasslimitconstraint">GPSAntennaMassLimitConstraint<a class="self-link" href="#gpsantennamasslimitconstraint"></a></dfn></span><a class="self-link" href="#GPSAntennaMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass②">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof②">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#gpsantenna" id="ref-for-gpsantenna">ang-assemblies:GPSAntenna</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.6" id="GPSAntennaCBEMassMagnitude"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennacbemassmagnitude">GPSAntennaCBEMassMagnitude<a class="self-link" href="#gpsantennacbemassmagnitude"></a></dfn></span><a class="self-link" href="#GPSAntennaCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude②">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint②">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2124,33 +2077,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#gpsantennacbemass" id="ref-for-gpsantennacbemass">GPSAntennaCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof②">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#gpsantenna" id="ref-for-gpsantenna">ang-assemblies:GPSAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="GPSReceiverUnitCBEMass"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitcbemass">GPSReceiverUnitCBEMass<a class="self-link" href="#gpsreceiverunitcbemass"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="GPSReceiverUnitMassLimitConstraint"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitmasslimitconstraint">GPSReceiverUnitMassLimitConstraint<a class="self-link" href="#gpsreceiverunitmasslimitconstraint"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass③">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof③">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#gpsreceiverunit" id="ref-for-gpsreceiverunit">ang-assemblies:GPSReceiverUnit</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.8" id="GPSReceiverUnitCBEMassMagnitude"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitcbemassmagnitude">GPSReceiverUnitCBEMassMagnitude<a class="self-link" href="#gpsreceiverunitcbemassmagnitude"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude③">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint③">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2162,33 +2099,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#gpsreceiverunitcbemass" id="ref-for-gpsreceiverunitcbemass">GPSReceiverUnitCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof③">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#gpsreceiverunit" id="ref-for-gpsreceiverunit">ang-assemblies:GPSReceiverUnit</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="MagnetometerCBEMass"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetometercbemass">MagnetometerCBEMass<a class="self-link" href="#magnetometercbemass"></a></dfn></span><a class="self-link" href="#MagnetometerCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="MagnetometerMassLimitConstraint"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetometermasslimitconstraint">MagnetometerMassLimitConstraint<a class="self-link" href="#magnetometermasslimitconstraint"></a></dfn></span><a class="self-link" href="#MagnetometerMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass④">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof④">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#magnetometer" id="ref-for-magnetometer">ang-assemblies:Magnetometer</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.10" id="MagnetometerCBEMassMagnitude"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetometercbemassmagnitude">MagnetometerCBEMassMagnitude<a class="self-link" href="#magnetometercbemassmagnitude"></a></dfn></span><a class="self-link" href="#MagnetometerCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude④">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint④">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2200,33 +2121,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#magnetometercbemass" id="ref-for-magnetometercbemass">MagnetometerCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof④">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#magnetometer" id="ref-for-magnetometer">ang-assemblies:Magnetometer</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.11" id="Magnetorquer1CBEMass"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer1cbemass">Magnetorquer1CBEMass<a class="self-link" href="#magnetorquer1cbemass"></a></dfn></span><a class="self-link" href="#Magnetorquer1CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="Magnetorquer1MassLimitConstraint"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer1masslimitconstraint">Magnetorquer1MassLimitConstraint<a class="self-link" href="#magnetorquer1masslimitconstraint"></a></dfn></span><a class="self-link" href="#Magnetorquer1MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑤">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof⑤">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer1" id="ref-for-magnetorquer1">ang-assemblies:Magnetorquer1</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.12" id="Magnetorquer1CBEMassMagnitude"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer1cbemassmagnitude">Magnetorquer1CBEMassMagnitude<a class="self-link" href="#magnetorquer1cbemassmagnitude"></a></dfn></span><a class="self-link" href="#Magnetorquer1CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude⑤">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint⑤">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2238,33 +2143,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑤">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#magnetorquer1cbemass" id="ref-for-magnetorquer1cbemass">Magnetorquer1CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof⑤">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer1" id="ref-for-magnetorquer1">ang-assemblies:Magnetorquer1</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.13" id="Magnetorquer2CBEMass"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer2cbemass">Magnetorquer2CBEMass<a class="self-link" href="#magnetorquer2cbemass"></a></dfn></span><a class="self-link" href="#Magnetorquer2CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="Magnetorquer2MassLimitConstraint"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer2masslimitconstraint">Magnetorquer2MassLimitConstraint<a class="self-link" href="#magnetorquer2masslimitconstraint"></a></dfn></span><a class="self-link" href="#Magnetorquer2MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑥">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof⑥">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer2" id="ref-for-magnetorquer2">ang-assemblies:Magnetorquer2</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.14" id="Magnetorquer2CBEMassMagnitude"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer2cbemassmagnitude">Magnetorquer2CBEMassMagnitude<a class="self-link" href="#magnetorquer2cbemassmagnitude"></a></dfn></span><a class="self-link" href="#Magnetorquer2CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude⑥">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint⑥">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2276,33 +2165,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑥">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#magnetorquer2cbemass" id="ref-for-magnetorquer2cbemass">Magnetorquer2CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof⑥">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer2" id="ref-for-magnetorquer2">ang-assemblies:Magnetorquer2</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.15" id="Magnetorquer3CBEMass"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer3cbemass">Magnetorquer3CBEMass<a class="self-link" href="#magnetorquer3cbemass"></a></dfn></span><a class="self-link" href="#Magnetorquer3CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="Magnetorquer3MassLimitConstraint"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer3masslimitconstraint">Magnetorquer3MassLimitConstraint<a class="self-link" href="#magnetorquer3masslimitconstraint"></a></dfn></span><a class="self-link" href="#Magnetorquer3MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑦">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof⑦">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer3" id="ref-for-magnetorquer3">ang-assemblies:Magnetorquer3</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.16" id="Magnetorquer3CBEMassMagnitude"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="magnetorquer3cbemassmagnitude">Magnetorquer3CBEMassMagnitude<a class="self-link" href="#magnetorquer3cbemassmagnitude"></a></dfn></span><a class="self-link" href="#Magnetorquer3CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude⑦">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint⑦">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2314,33 +2187,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑦">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#magnetorquer3cbemass" id="ref-for-magnetorquer3cbemass">Magnetorquer3CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof⑦">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#magnetorquer3" id="ref-for-magnetorquer3">ang-assemblies:Magnetorquer3</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.17" id="ReactionWheel1CBEMass"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel1cbemass">ReactionWheel1CBEMass<a class="self-link" href="#reactionwheel1cbemass"></a></dfn></span><a class="self-link" href="#ReactionWheel1CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="ReactionWheel1MassLimitConstraint"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel1masslimitconstraint">ReactionWheel1MassLimitConstraint<a class="self-link" href="#reactionwheel1masslimitconstraint"></a></dfn></span><a class="self-link" href="#ReactionWheel1MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑧">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof⑧">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel1" id="ref-for-reactionwheel1">ang-assemblies:ReactionWheel1</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.18" id="ReactionWheel1CBEMassMagnitude"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel1cbemassmagnitude">ReactionWheel1CBEMassMagnitude<a class="self-link" href="#reactionwheel1cbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReactionWheel1CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude⑧">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint⑧">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2352,33 +2209,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑧">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#reactionwheel1cbemass" id="ref-for-reactionwheel1cbemass">ReactionWheel1CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof⑧">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel1" id="ref-for-reactionwheel1">ang-assemblies:ReactionWheel1</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.19" id="ReactionWheel2CBEMass"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel2cbemass">ReactionWheel2CBEMass<a class="self-link" href="#reactionwheel2cbemass"></a></dfn></span><a class="self-link" href="#ReactionWheel2CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="ReactionWheel2MassLimitConstraint"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel2masslimitconstraint">ReactionWheel2MassLimitConstraint<a class="self-link" href="#reactionwheel2masslimitconstraint"></a></dfn></span><a class="self-link" href="#ReactionWheel2MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass⑨">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof⑨">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel2" id="ref-for-reactionwheel2">ang-assemblies:ReactionWheel2</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.20" id="ReactionWheel2CBEMassMagnitude"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel2cbemassmagnitude">ReactionWheel2CBEMassMagnitude<a class="self-link" href="#reactionwheel2cbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReactionWheel2CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude⑨">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint⑨">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2390,33 +2231,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof⑨">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#reactionwheel2cbemass" id="ref-for-reactionwheel2cbemass">ReactionWheel2CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof⑨">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel2" id="ref-for-reactionwheel2">ang-assemblies:ReactionWheel2</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.21" id="ReactionWheel3CBEMass"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel3cbemass">ReactionWheel3CBEMass<a class="self-link" href="#reactionwheel3cbemass"></a></dfn></span><a class="self-link" href="#ReactionWheel3CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.11" id="ReactionWheel3MassLimitConstraint"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel3masslimitconstraint">ReactionWheel3MassLimitConstraint<a class="self-link" href="#reactionwheel3masslimitconstraint"></a></dfn></span><a class="self-link" href="#ReactionWheel3MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass①⓪">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof①⓪">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel3" id="ref-for-reactionwheel3">ang-assemblies:ReactionWheel3</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.22" id="ReactionWheel3CBEMassMagnitude"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel3cbemassmagnitude">ReactionWheel3CBEMassMagnitude<a class="self-link" href="#reactionwheel3cbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReactionWheel3CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①⓪">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint①⓪">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2428,33 +2253,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①⓪">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#reactionwheel3cbemass" id="ref-for-reactionwheel3cbemass">ReactionWheel3CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof①⓪">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel3" id="ref-for-reactionwheel3">ang-assemblies:ReactionWheel3</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.23" id="ReactionWheel4CBEMass"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel4cbemass">ReactionWheel4CBEMass<a class="self-link" href="#reactionwheel4cbemass"></a></dfn></span><a class="self-link" href="#ReactionWheel4CBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.12" id="ReactionWheel4MassLimitConstraint"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel4masslimitconstraint">ReactionWheel4MassLimitConstraint<a class="self-link" href="#reactionwheel4masslimitconstraint"></a></dfn></span><a class="self-link" href="#ReactionWheel4MassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass①①">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof①①">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel4" id="ref-for-reactionwheel4">ang-assemblies:ReactionWheel4</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.24" id="ReactionWheel4CBEMassMagnitude"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="reactionwheel4cbemassmagnitude">ReactionWheel4CBEMassMagnitude<a class="self-link" href="#reactionwheel4cbemassmagnitude"></a></dfn></span><a class="self-link" href="#ReactionWheel4CBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①①">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint①①">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2466,33 +2275,17 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①①">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#reactionwheel4cbemass" id="ref-for-reactionwheel4cbemass">ReactionWheel4CBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof①①">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#reactionwheel4" id="ref-for-reactionwheel4">ang-assemblies:ReactionWheel4</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.25" id="SunSensorCBEMass"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sunsensorcbemass">SunSensorCBEMass<a class="self-link" href="#sunsensorcbemass"></a></dfn></span><a class="self-link" href="#SunSensorCBEMass"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="SunSensorMassLimitConstraint"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sunsensormasslimitconstraint">SunSensorMassLimitConstraint<a class="self-link" href="#sunsensormasslimitconstraint"></a></dfn></span><a class="self-link" href="#SunSensorMassLimitConstraint"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass" id="ref-for-mass①②">80000-4-quantities:mass</a>
-        </ul>
-      <tr>
-       <th>Links
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof" id="ref-for-iscbemassof①②">fse:isCBEMassOf</a> <a data-link-type="dfn" href="assemblies.html#sunsensor" id="ref-for-sunsensor">ang-assemblies:SunSensor</a>
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.26" id="SunSensorCBEMassMagnitude"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sunsensorcbemassmagnitude">SunSensorCBEMassMagnitude<a class="self-link" href="#sunsensorcbemassmagnitude"></a></dfn></span><a class="self-link" href="#SunSensorCBEMassMagnitude"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Types
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude①②">80000-4-magnitudes-1:kilogram-magnitude</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint" id="ref-for-masslimitconstraint①②">fse:MassLimitConstraint</a>
         </ul>
       <tr>
        <th>Properties
@@ -2504,7 +2297,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①②">metrology:isMagnitudeOf</a> <a data-link-type="dfn" href="masses.html#sunsensorcbemass" id="ref-for-sunsensorcbemass">SunSensorCBEMass</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof①②">metrology:isQuantityOf</a> <a data-link-type="dfn" href="assemblies.html#sunsensor" id="ref-for-sunsensor">ang-assemblies:SunSensor</a>
         </ul>
     </table>
    </div>
@@ -2641,301 +2434,164 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#adcselectronicsunitcbemass">ADCSElectronicsUnitCBEMass</a><span>, in §3.1</span>
-   <li><a href="#adcselectronicsunitcbemassmagnitude">ADCSElectronicsUnitCBEMassMagnitude</a><span>, in §3.2</span>
-   <li><a href="#earthsensorcbemass">EarthSensorCBEMass</a><span>, in §3.3</span>
-   <li><a href="#earthsensorcbemassmagnitude">EarthSensorCBEMassMagnitude</a><span>, in §3.4</span>
-   <li><a href="#gpsantennacbemass">GPSAntennaCBEMass</a><span>, in §3.5</span>
-   <li><a href="#gpsantennacbemassmagnitude">GPSAntennaCBEMassMagnitude</a><span>, in §3.6</span>
-   <li><a href="#gpsreceiverunitcbemass">GPSReceiverUnitCBEMass</a><span>, in §3.7</span>
-   <li><a href="#gpsreceiverunitcbemassmagnitude">GPSReceiverUnitCBEMassMagnitude</a><span>, in §3.8</span>
-   <li><a href="#magnetometercbemass">MagnetometerCBEMass</a><span>, in §3.9</span>
-   <li><a href="#magnetometercbemassmagnitude">MagnetometerCBEMassMagnitude</a><span>, in §3.10</span>
-   <li><a href="#magnetorquer1cbemass">Magnetorquer1CBEMass</a><span>, in §3.11</span>
-   <li><a href="#magnetorquer1cbemassmagnitude">Magnetorquer1CBEMassMagnitude</a><span>, in §3.12</span>
-   <li><a href="#magnetorquer2cbemass">Magnetorquer2CBEMass</a><span>, in §3.13</span>
-   <li><a href="#magnetorquer2cbemassmagnitude">Magnetorquer2CBEMassMagnitude</a><span>, in §3.14</span>
-   <li><a href="#magnetorquer3cbemass">Magnetorquer3CBEMass</a><span>, in §3.15</span>
-   <li><a href="#magnetorquer3cbemassmagnitude">Magnetorquer3CBEMassMagnitude</a><span>, in §3.16</span>
-   <li><a href="#reactionwheel1cbemass">ReactionWheel1CBEMass</a><span>, in §3.17</span>
-   <li><a href="#reactionwheel1cbemassmagnitude">ReactionWheel1CBEMassMagnitude</a><span>, in §3.18</span>
-   <li><a href="#reactionwheel2cbemass">ReactionWheel2CBEMass</a><span>, in §3.19</span>
-   <li><a href="#reactionwheel2cbemassmagnitude">ReactionWheel2CBEMassMagnitude</a><span>, in §3.20</span>
-   <li><a href="#reactionwheel3cbemass">ReactionWheel3CBEMass</a><span>, in §3.21</span>
-   <li><a href="#reactionwheel3cbemassmagnitude">ReactionWheel3CBEMassMagnitude</a><span>, in §3.22</span>
-   <li><a href="#reactionwheel4cbemass">ReactionWheel4CBEMass</a><span>, in §3.23</span>
-   <li><a href="#reactionwheel4cbemassmagnitude">ReactionWheel4CBEMassMagnitude</a><span>, in §3.24</span>
-   <li><a href="#sunsensorcbemass">SunSensorCBEMass</a><span>, in §3.25</span>
-   <li><a href="#sunsensorcbemassmagnitude">SunSensorCBEMassMagnitude</a><span>, in §3.26</span>
+   <li><a href="#adcselectronicsunitmasslimitconstraint">ADCSElectronicsUnitMassLimitConstraint</a><span>, in § 4.1</span>
+   <li><a href="#earthsensormasslimitconstraint">EarthSensorMassLimitConstraint</a><span>, in § 4.2</span>
+   <li><a href="#gpsantennamasslimitconstraint">GPSAntennaMassLimitConstraint</a><span>, in § 4.3</span>
+   <li><a href="#gpsreceiverunitmasslimitconstraint">GPSReceiverUnitMassLimitConstraint</a><span>, in § 4.4</span>
+   <li><a href="#magnetometermasslimitconstraint">MagnetometerMassLimitConstraint</a><span>, in § 4.5</span>
+   <li><a href="#magnetorquer1masslimitconstraint">Magnetorquer1MassLimitConstraint</a><span>, in § 4.6</span>
+   <li><a href="#magnetorquer2masslimitconstraint">Magnetorquer2MassLimitConstraint</a><span>, in § 4.7</span>
+   <li><a href="#magnetorquer3masslimitconstraint">Magnetorquer3MassLimitConstraint</a><span>, in § 4.8</span>
+   <li><a href="#reactionwheel1masslimitconstraint">ReactionWheel1MassLimitConstraint</a><span>, in § 4.9</span>
+   <li><a href="#reactionwheel2masslimitconstraint">ReactionWheel2MassLimitConstraint</a><span>, in § 4.10</span>
+   <li><a href="#reactionwheel3masslimitconstraint">ReactionWheel3MassLimitConstraint</a><span>, in § 4.11</span>
+   <li><a href="#reactionwheel4masslimitconstraint">ReactionWheel4MassLimitConstraint</a><span>, in § 4.12</span>
+   <li><a href="#sunsensormasslimitconstraint">SunSensorMassLimitConstraint</a><span>, in § 4.13</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-iscbemassof">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof">../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#iscbemassof</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-iscbemassof">3.1. ADCSElectronicsUnitCBEMass</a>
-    <li><a href="#ref-for-iscbemassof①">3.3. EarthSensorCBEMass</a>
-    <li><a href="#ref-for-iscbemassof②">3.5. GPSAntennaCBEMass</a>
-    <li><a href="#ref-for-iscbemassof③">3.7. GPSReceiverUnitCBEMass</a>
-    <li><a href="#ref-for-iscbemassof④">3.9. MagnetometerCBEMass</a>
-    <li><a href="#ref-for-iscbemassof⑤">3.11. Magnetorquer1CBEMass</a>
-    <li><a href="#ref-for-iscbemassof⑥">3.13. Magnetorquer2CBEMass</a>
-    <li><a href="#ref-for-iscbemassof⑦">3.15. Magnetorquer3CBEMass</a>
-    <li><a href="#ref-for-iscbemassof⑧">3.17. ReactionWheel1CBEMass</a>
-    <li><a href="#ref-for-iscbemassof⑨">3.19. ReactionWheel2CBEMass</a>
-    <li><a href="#ref-for-iscbemassof①⓪">3.21. ReactionWheel3CBEMass</a>
-    <li><a href="#ref-for-iscbemassof①①">3.23. ReactionWheel4CBEMass</a>
-    <li><a href="#ref-for-iscbemassof①②">3.25. SunSensorCBEMass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
-   <a href="../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude">../../../../../../../../../../../../iso.org/80000-4-magnitudes-1.html#kilogram-magnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kilogram-magnitude">3.2. ADCSElectronicsUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude①">3.4. EarthSensorCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude②">3.6. GPSAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude③">3.8. GPSReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude④">3.10. MagnetometerCBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude⑤">3.12. Magnetorquer1CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude⑥">3.14. Magnetorquer2CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude⑦">3.16. Magnetorquer3CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude⑧">3.18. ReactionWheel1CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude⑨">3.20. ReactionWheel2CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude①⓪">3.22. ReactionWheel3CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude①①">3.24. ReactionWheel4CBEMassMagnitude</a>
-    <li><a href="#ref-for-kilogram-magnitude①②">3.26. SunSensorCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-mass">
-   <a href="../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass">../../../../../../../../../../../../iso.org/80000-4-quantities.html#mass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mass">3.1. ADCSElectronicsUnitCBEMass</a>
-    <li><a href="#ref-for-mass①">3.3. EarthSensorCBEMass</a>
-    <li><a href="#ref-for-mass②">3.5. GPSAntennaCBEMass</a>
-    <li><a href="#ref-for-mass③">3.7. GPSReceiverUnitCBEMass</a>
-    <li><a href="#ref-for-mass④">3.9. MagnetometerCBEMass</a>
-    <li><a href="#ref-for-mass⑤">3.11. Magnetorquer1CBEMass</a>
-    <li><a href="#ref-for-mass⑥">3.13. Magnetorquer2CBEMass</a>
-    <li><a href="#ref-for-mass⑦">3.15. Magnetorquer3CBEMass</a>
-    <li><a href="#ref-for-mass⑧">3.17. ReactionWheel1CBEMass</a>
-    <li><a href="#ref-for-mass⑨">3.19. ReactionWheel2CBEMass</a>
-    <li><a href="#ref-for-mass①⓪">3.21. ReactionWheel3CBEMass</a>
-    <li><a href="#ref-for-mass①①">3.23. ReactionWheel4CBEMass</a>
-    <li><a href="#ref-for-mass①②">3.25. SunSensorCBEMass</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-hasdoublenumber">
    <a href="../../../../../../../../../../../../iupac.org/metrology.html#hasdoublenumber">../../../../../../../../../../../../iupac.org/metrology.html#hasdoublenumber</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hasdoublenumber">3.2. ADCSElectronicsUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber①">3.4. EarthSensorCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber②">3.6. GPSAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber③">3.8. GPSReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber④">3.10. MagnetometerCBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber⑤">3.12. Magnetorquer1CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber⑥">3.14. Magnetorquer2CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber⑦">3.16. Magnetorquer3CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber⑧">3.18. ReactionWheel1CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber⑨">3.20. ReactionWheel2CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber①⓪">3.22. ReactionWheel3CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber①①">3.24. ReactionWheel4CBEMassMagnitude</a>
-    <li><a href="#ref-for-hasdoublenumber①②">3.26. SunSensorCBEMassMagnitude</a>
+    <li><a href="#ref-for-hasdoublenumber">4.1. ADCSElectronicsUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber①">4.2. EarthSensorMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber②">4.3. GPSAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber③">4.4. GPSReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber④">4.5. MagnetometerMassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber⑤">4.6. Magnetorquer1MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber⑥">4.7. Magnetorquer2MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber⑦">4.8. Magnetorquer3MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber⑧">4.9. ReactionWheel1MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber⑨">4.10. ReactionWheel2MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber①⓪">4.11. ReactionWheel3MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber①①">4.12. ReactionWheel4MassLimitConstraint</a>
+    <li><a href="#ref-for-hasdoublenumber①②">4.13. SunSensorMassLimitConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ismagnitudeof">
-   <a href="../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof">../../../../../../../../../../../../iupac.org/metrology.html#ismagnitudeof</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-isquantityof">
+   <a href="../../../../../../../../../../../../iupac.org/metrology.html#isquantityof">../../../../../../../../../../../../iupac.org/metrology.html#isquantityof</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ismagnitudeof">3.2. ADCSElectronicsUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof①">3.4. EarthSensorCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof②">3.6. GPSAntennaCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof③">3.8. GPSReceiverUnitCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof④">3.10. MagnetometerCBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof⑤">3.12. Magnetorquer1CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof⑥">3.14. Magnetorquer2CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof⑦">3.16. Magnetorquer3CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof⑧">3.18. ReactionWheel1CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof⑨">3.20. ReactionWheel2CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof①⓪">3.22. ReactionWheel3CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof①①">3.24. ReactionWheel4CBEMassMagnitude</a>
-    <li><a href="#ref-for-ismagnitudeof①②">3.26. SunSensorCBEMassMagnitude</a>
+    <li><a href="#ref-for-isquantityof">4.1. ADCSElectronicsUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof①">4.2. EarthSensorMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof②">4.3. GPSAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof③">4.4. GPSReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof④">4.5. MagnetometerMassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof⑤">4.6. Magnetorquer1MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof⑥">4.7. Magnetorquer2MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof⑦">4.8. Magnetorquer3MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof⑧">4.9. ReactionWheel1MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof⑨">4.10. ReactionWheel2MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof①⓪">4.11. ReactionWheel3MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof①①">4.12. ReactionWheel4MassLimitConstraint</a>
+    <li><a href="#ref-for-isquantityof①②">4.13. SunSensorMassLimitConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-masslimitconstraint">
+   <a href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint">../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-masslimitconstraint">4.1. ADCSElectronicsUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint①">4.2. EarthSensorMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint②">4.3. GPSAntennaMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint③">4.4. GPSReceiverUnitMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint④">4.5. MagnetometerMassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint⑤">4.6. Magnetorquer1MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint⑥">4.7. Magnetorquer2MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint⑦">4.8. Magnetorquer3MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint⑧">4.9. ReactionWheel1MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint⑨">4.10. ReactionWheel2MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint①⓪">4.11. ReactionWheel3MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint①①">4.12. ReactionWheel4MassLimitConstraint</a>
+    <li><a href="#ref-for-masslimitconstraint①②">4.13. SunSensorMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-adcselectronicsunit">
    <a href="assemblies.html#adcselectronicsunit">assemblies.html#adcselectronicsunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-adcselectronicsunit">3.1. ADCSElectronicsUnitCBEMass</a>
+    <li><a href="#ref-for-adcselectronicsunit">4.1. ADCSElectronicsUnitMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-earthsensor">
    <a href="assemblies.html#earthsensor">assemblies.html#earthsensor</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-earthsensor">3.3. EarthSensorCBEMass</a>
+    <li><a href="#ref-for-earthsensor">4.2. EarthSensorMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gpsantenna">
    <a href="assemblies.html#gpsantenna">assemblies.html#gpsantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gpsantenna">3.5. GPSAntennaCBEMass</a>
+    <li><a href="#ref-for-gpsantenna">4.3. GPSAntennaMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gpsreceiverunit">
    <a href="assemblies.html#gpsreceiverunit">assemblies.html#gpsreceiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gpsreceiverunit">3.7. GPSReceiverUnitCBEMass</a>
+    <li><a href="#ref-for-gpsreceiverunit">4.4. GPSReceiverUnitMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-magnetometer">
    <a href="assemblies.html#magnetometer">assemblies.html#magnetometer</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-magnetometer">3.9. MagnetometerCBEMass</a>
+    <li><a href="#ref-for-magnetometer">4.5. MagnetometerMassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-magnetorquer1">
    <a href="assemblies.html#magnetorquer1">assemblies.html#magnetorquer1</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-magnetorquer1">3.11. Magnetorquer1CBEMass</a>
+    <li><a href="#ref-for-magnetorquer1">4.6. Magnetorquer1MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-magnetorquer2">
    <a href="assemblies.html#magnetorquer2">assemblies.html#magnetorquer2</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-magnetorquer2">3.13. Magnetorquer2CBEMass</a>
+    <li><a href="#ref-for-magnetorquer2">4.7. Magnetorquer2MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-magnetorquer3">
    <a href="assemblies.html#magnetorquer3">assemblies.html#magnetorquer3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-magnetorquer3">3.15. Magnetorquer3CBEMass</a>
+    <li><a href="#ref-for-magnetorquer3">4.8. Magnetorquer3MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reactionwheel1">
    <a href="assemblies.html#reactionwheel1">assemblies.html#reactionwheel1</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reactionwheel1">3.17. ReactionWheel1CBEMass</a>
+    <li><a href="#ref-for-reactionwheel1">4.9. ReactionWheel1MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reactionwheel2">
    <a href="assemblies.html#reactionwheel2">assemblies.html#reactionwheel2</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reactionwheel2">3.19. ReactionWheel2CBEMass</a>
+    <li><a href="#ref-for-reactionwheel2">4.10. ReactionWheel2MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reactionwheel3">
    <a href="assemblies.html#reactionwheel3">assemblies.html#reactionwheel3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reactionwheel3">3.21. ReactionWheel3CBEMass</a>
+    <li><a href="#ref-for-reactionwheel3">4.11. ReactionWheel3MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-reactionwheel4">
    <a href="assemblies.html#reactionwheel4">assemblies.html#reactionwheel4</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-reactionwheel4">3.23. ReactionWheel4CBEMass</a>
+    <li><a href="#ref-for-reactionwheel4">4.12. ReactionWheel4MassLimitConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-sunsensor">
    <a href="assemblies.html#sunsensor">assemblies.html#sunsensor</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-sunsensor">3.25. SunSensorCBEMass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-adcselectronicsunitcbemass">
-   <a href="masses.html#adcselectronicsunitcbemass">masses.html#adcselectronicsunitcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-adcselectronicsunitcbemass">3.2. ADCSElectronicsUnitCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-earthsensorcbemass">
-   <a href="masses.html#earthsensorcbemass">masses.html#earthsensorcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-earthsensorcbemass">3.4. EarthSensorCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gpsantennacbemass">
-   <a href="masses.html#gpsantennacbemass">masses.html#gpsantennacbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gpsantennacbemass">3.6. GPSAntennaCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gpsreceiverunitcbemass">
-   <a href="masses.html#gpsreceiverunitcbemass">masses.html#gpsreceiverunitcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gpsreceiverunitcbemass">3.8. GPSReceiverUnitCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetometercbemass">
-   <a href="masses.html#magnetometercbemass">masses.html#magnetometercbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetometercbemass">3.10. MagnetometerCBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer1cbemass">
-   <a href="masses.html#magnetorquer1cbemass">masses.html#magnetorquer1cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer1cbemass">3.12. Magnetorquer1CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer2cbemass">
-   <a href="masses.html#magnetorquer2cbemass">masses.html#magnetorquer2cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer2cbemass">3.14. Magnetorquer2CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer3cbemass">
-   <a href="masses.html#magnetorquer3cbemass">masses.html#magnetorquer3cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer3cbemass">3.16. Magnetorquer3CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel1cbemass">
-   <a href="masses.html#reactionwheel1cbemass">masses.html#reactionwheel1cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel1cbemass">3.18. ReactionWheel1CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel2cbemass">
-   <a href="masses.html#reactionwheel2cbemass">masses.html#reactionwheel2cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel2cbemass">3.20. ReactionWheel2CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel3cbemass">
-   <a href="masses.html#reactionwheel3cbemass">masses.html#reactionwheel3cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel3cbemass">3.22. ReactionWheel3CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel4cbemass">
-   <a href="masses.html#reactionwheel4cbemass">masses.html#reactionwheel4cbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel4cbemass">3.24. ReactionWheel4CBEMassMagnitude</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-sunsensorcbemass">
-   <a href="masses.html#sunsensorcbemass">masses.html#sunsensorcbemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-sunsensorcbemass">3.26. SunSensorCBEMassMagnitude</a>
+    <li><a href="#ref-for-sunsensor">4.13. SunSensorMassLimitConstraint</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-iscbemassof">iscbemassof</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-4-magnitudes-1]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/80000-4-quantities]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-mass">mass</span>
-    </ul>
-   <li>
     <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-hasdoublenumber">hasdoublenumber</span>
-     <li><span class="dfn-paneled" id="term-for-ismagnitudeof">ismagnitudeof</span>
+     <li><span class="dfn-paneled" id="term-for-isquantityof">isquantityof</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/disciplines/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-masslimitconstraint">masslimitconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies]</a> defines the following terms:
@@ -2953,23 +2609,6 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-reactionwheel3">reactionwheel3</span>
      <li><span class="dfn-paneled" id="term-for-reactionwheel4">reactionwheel4</span>
      <li><span class="dfn-paneled" id="term-for-sunsensor">sunsensor</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/masses]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-adcselectronicsunitcbemass">adcselectronicsunitcbemass</span>
-     <li><span class="dfn-paneled" id="term-for-earthsensorcbemass">earthsensorcbemass</span>
-     <li><span class="dfn-paneled" id="term-for-gpsantennacbemass">gpsantennacbemass</span>
-     <li><span class="dfn-paneled" id="term-for-gpsreceiverunitcbemass">gpsreceiverunitcbemass</span>
-     <li><span class="dfn-paneled" id="term-for-magnetometercbemass">magnetometercbemass</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer1cbemass">magnetorquer1cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer2cbemass">magnetorquer2cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer3cbemass">magnetorquer3cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel1cbemass">reactionwheel1cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel2cbemass">reactionwheel2cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel3cbemass">reactionwheel3cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel4cbemass">reactionwheel4cbemass</span>
-     <li><span class="dfn-paneled" id="term-for-sunsensorcbemass">sunsensorcbemass</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

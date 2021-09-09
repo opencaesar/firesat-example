@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Function Library</title>
+  <title>ISO-80000 Instances</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/functions" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
+  <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-instances" rel="canonical">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1938,16 +1938,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Function Library</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO-80000 Instances</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/functions">https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/discipline/fse/functions</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-instances">https://opencaesar.github.io/firesat-example/iso.org/iso-80000-instances</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>Copyright 2010-2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses,a or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1955,20 +1955,19 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A library for functions.</p>
+   <p>The ISO-80000 instances library.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
+    <li><a href="#Iclusions"><span class="secno">2</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#BaseFunction"><span class="secno">3.1</span> <span class="content"><span>BaseFunction</span></span></a>
-      <li><a href="#Power"><span class="secno">3.2</span> <span class="content"><span>Power</span></span></a>
-      <li><a href="#UnidirectionalPower"><span class="secno">3.3</span> <span class="content"><span>UnidirectionalPower</span></span></a>
+      <li><a href="#SystemOfQuantities"><span class="secno">3.1</span> <span class="content"><span>systemOfQuantities</span></span></a>
+      <li><a href="#SystemOfUnits"><span class="secno">3.2</span> <span class="content"><span>systemOfUnits</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1983,66 +1982,38 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>fse-functions: <a href="functions.html">http://imce.jpl.nasa.gov/discipline/fse/functions</a></p>
+      <p><a href="iso-80000-instances.html">http://iso.org/iso-80000-instances</a> [iso-80000-instances]</p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Iclusions"><span class="secno">2. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
     <ul>
      <li data-md>
-      <p>fse-endcircuits: <a href="http://imce.jpl.nasa.gov/discipline/fse/endcircuits.html">http://imce.jpl.nasa.gov/discipline/fse/endcircuits</a></p>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
+     <li data-md>
+      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="BaseFunction"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="basefunction">BaseFunction<a class="self-link" href="#basefunction"></a></dfn></span><a class="self-link" href="#BaseFunction"></a></h3>
+    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="SystemOfQuantities"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofquantities">systemOfQuantities<a class="self-link" href="#systemofquantities"></a></dfn></span><a class="self-link" href="#SystemOfQuantities"></a></h3>
+    <p>The International System of Quantities.</p>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="fse.html#function" id="ref-for-function">fse:Function</a>
-        </ul>
-      <tr>
-       <th>Subtypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="functions.html#power" id="ref-for-power">Power</a>
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemofunitaryquantities" id="ref-for-systemofunitaryquantities">metrology:SystemOfUnitaryQuantities</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="Power"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">Power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
+    <h3 class="heading settled" data-level="3.2" id="SystemOfUnits"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="systemofunits">systemOfUnits<a class="self-link" href="#systemofunits"></a></dfn></span><a class="self-link" href="#SystemOfUnits"></a></h3>
+    <p>The International System of Units.</p>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="functions.html#basefunction" id="ref-for-basefunction">BaseFunction</a>
-        </ul>
-      <tr>
-       <th>Subtypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="functions.html#unidirectionalpower" id="ref-for-unidirectionalpower">UnidirectionalPower</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>Power ← <a data-link-type="dfn" href="../../foundation/mission.html#joins" id="ref-for-joins">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#power" id="ref-for-power①">fse-endcircuits:Power</a> 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.3" id="UnidirectionalPower"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unidirectionalpower">UnidirectionalPower<a class="self-link" href="#unidirectionalpower"></a></dfn></span><a class="self-link" href="#UnidirectionalPower"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="functions.html#power" id="ref-for-power②">Power</a>
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>UnidirectionalPower ← <a data-link-type="dfn" href="../../foundation/mission.html#joins" id="ref-for-joins①">mission:Joins</a> → <a data-link-type="dfn" href="endcircuits.html#unidirectionalpower" id="ref-for-unidirectionalpower①">fse-endcircuits:UnidirectionalPower</a> 
+         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#systemofmetrologicalunits" id="ref-for-systemofmetrologicalunits">metrology:SystemOfMetrologicalUnits</a>
         </ul>
     </table>
    </div>
@@ -2179,78 +2150,28 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#basefunction">BaseFunction</a><span>, in §3.1</span>
-   <li><a href="#power">Power</a><span>, in §3.2</span>
-   <li><a href="#unidirectionalpower">UnidirectionalPower</a><span>, in §3.3</span>
+   <li><a href="#systemofquantities">systemOfQuantities</a><span>, in § 3.1</span>
+   <li><a href="#systemofunits">systemOfUnits</a><span>, in § 3.2</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-power">
-   <a href="endcircuits.html#power">endcircuits.html#power</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-systemofmetrologicalunits">
+   <a href="../iupac.org/metrology.html#systemofmetrologicalunits">../iupac.org/metrology.html#systemofmetrologicalunits</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-power①">3.2. Power</a>
+    <li><a href="#ref-for-systemofmetrologicalunits">3.2. systemOfUnits</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unidirectionalpower">
-   <a href="endcircuits.html#unidirectionalpower">endcircuits.html#unidirectionalpower</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-systemofunitaryquantities">
+   <a href="../iupac.org/metrology.html#systemofunitaryquantities">../iupac.org/metrology.html#systemofunitaryquantities</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unidirectionalpower①">3.3. UnidirectionalPower</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-function">
-   <a href="fse.html#function">fse.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function">3.1. BaseFunction</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-basefunction">
-   <a href="functions.html#basefunction">functions.html#basefunction</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-basefunction">3.2. Power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-power">
-   <a href="functions.html#power">functions.html#power</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-power">3.1. BaseFunction</a>
-    <li><a href="#ref-for-power②">3.3. UnidirectionalPower</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-unidirectionalpower">
-   <a href="functions.html#unidirectionalpower">functions.html#unidirectionalpower</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unidirectionalpower">3.2. Power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-joins">
-   <a href="../../foundation/mission.html#joins">../../foundation/mission.html#joins</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins">3.2. Power</a>
-    <li><a href="#ref-for-joins①">3.3. UnidirectionalPower</a>
+    <li><a href="#ref-for-systemofunitaryquantities">3.1. systemOfQuantities</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/endcircuits]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-power">power</span>
-     <li><span class="dfn-paneled" id="term-for-unidirectionalpower">unidirectionalpower</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-function">function</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/functions]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-basefunction">basefunction</span>
-     <li><span class="dfn-paneled" id="term-for-power①">power</span>
-     <li><span class="dfn-paneled" id="term-for-unidirectionalpower①">unidirectionalpower</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-joins">joins</span>
+     <li><span class="dfn-paneled" id="term-for-systemofmetrologicalunits">systemofmetrologicalunits</span>
+     <li><span class="dfn-paneled" id="term-for-systemofunitaryquantities">systemofunitaryquantities</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

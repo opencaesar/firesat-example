@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ADCS and GNC Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,28 +1962,29 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#AttitudeAwarenessByEarthSensor"><span class="secno">3.1</span> <span class="content"><span>AttitudeAwarenessByEarthSensor</span></span></a>
-      <li><a href="#AttitudeAwarenessByMagnetometer"><span class="secno">3.2</span> <span class="content"><span>AttitudeAwarenessByMagnetometer</span></span></a>
-      <li><a href="#AttitudeAwarenessBySunSensor"><span class="secno">3.3</span> <span class="content"><span>AttitudeAwarenessBySunSensor</span></span></a>
-      <li><a href="#ControlTrajectoryByADCSElectronicsUnit"><span class="secno">3.4</span> <span class="content"><span>ControlTrajectoryByADCSElectronicsUnit</span></span></a>
-      <li><a href="#ControlTrajectoryByMagnetorquer1"><span class="secno">3.5</span> <span class="content"><span>ControlTrajectoryByMagnetorquer1</span></span></a>
-      <li><a href="#ControlTrajectoryByMagnetorquer2"><span class="secno">3.6</span> <span class="content"><span>ControlTrajectoryByMagnetorquer2</span></span></a>
-      <li><a href="#ControlTrajectoryByMagnetorquer3"><span class="secno">3.7</span> <span class="content"><span>ControlTrajectoryByMagnetorquer3</span></span></a>
-      <li><a href="#ControlTrajectoryByReactionWheel1"><span class="secno">3.8</span> <span class="content"><span>ControlTrajectoryByReactionWheel1</span></span></a>
-      <li><a href="#ControlTrajectoryByReactionWheel2"><span class="secno">3.9</span> <span class="content"><span>ControlTrajectoryByReactionWheel2</span></span></a>
-      <li><a href="#ControlTrajectoryByReactionWheel3"><span class="secno">3.10</span> <span class="content"><span>ControlTrajectoryByReactionWheel3</span></span></a>
-      <li><a href="#ControlTrajectoryByReactionWheel4"><span class="secno">3.11</span> <span class="content"><span>ControlTrajectoryByReactionWheel4</span></span></a>
-      <li><a href="#PositionAwarenessByGPSAntenna"><span class="secno">3.12</span> <span class="content"><span>PositionAwarenessByGPSAntenna</span></span></a>
-      <li><a href="#PositionAwarenessByGPSReceiverUnit"><span class="secno">3.13</span> <span class="content"><span>PositionAwarenessByGPSReceiverUnit</span></span></a>
+      <li><a href="#AttitudeAwarenessByEarthSensor"><span class="secno">4.1</span> <span class="content"><span>AttitudeAwarenessByEarthSensor</span></span></a>
+      <li><a href="#AttitudeAwarenessByMagnetometer"><span class="secno">4.2</span> <span class="content"><span>AttitudeAwarenessByMagnetometer</span></span></a>
+      <li><a href="#AttitudeAwarenessBySunSensor"><span class="secno">4.3</span> <span class="content"><span>AttitudeAwarenessBySunSensor</span></span></a>
+      <li><a href="#ControlTrajectoryByADCSElectronicsUnit"><span class="secno">4.4</span> <span class="content"><span>ControlTrajectoryByADCSElectronicsUnit</span></span></a>
+      <li><a href="#ControlTrajectoryByMagnetorquer1"><span class="secno">4.5</span> <span class="content"><span>ControlTrajectoryByMagnetorquer1</span></span></a>
+      <li><a href="#ControlTrajectoryByMagnetorquer2"><span class="secno">4.6</span> <span class="content"><span>ControlTrajectoryByMagnetorquer2</span></span></a>
+      <li><a href="#ControlTrajectoryByMagnetorquer3"><span class="secno">4.7</span> <span class="content"><span>ControlTrajectoryByMagnetorquer3</span></span></a>
+      <li><a href="#ControlTrajectoryByReactionWheel1"><span class="secno">4.8</span> <span class="content"><span>ControlTrajectoryByReactionWheel1</span></span></a>
+      <li><a href="#ControlTrajectoryByReactionWheel2"><span class="secno">4.9</span> <span class="content"><span>ControlTrajectoryByReactionWheel2</span></span></a>
+      <li><a href="#ControlTrajectoryByReactionWheel3"><span class="secno">4.10</span> <span class="content"><span>ControlTrajectoryByReactionWheel3</span></span></a>
+      <li><a href="#ControlTrajectoryByReactionWheel4"><span class="secno">4.11</span> <span class="content"><span>ControlTrajectoryByReactionWheel4</span></span></a>
+      <li><a href="#PositionAwarenessByGPSAntenna"><span class="secno">4.12</span> <span class="content"><span>PositionAwarenessByGPSAntenna</span></span></a>
+      <li><a href="#PositionAwarenessByGPSReceiverUnit"><span class="secno">4.13</span> <span class="content"><span>PositionAwarenessByGPSReceiverUnit</span></span></a>
      </ol>
     <li>
-     <a href="#RelationInstances"><span class="secno">4</span> <span class="content">Relation Instances</span></a>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
      <ol class="toc">
-      <li><a href="#GPSAntennaPerformsPositionAwareness"><span class="secno">4.1</span> <span class="content"><span>GPSAntennaPerformsPositionAwareness</span></span></a>
-      <li><a href="#GPSReceiverUnitPerformsPositionAwareness"><span class="secno">4.2</span> <span class="content"><span>GPSReceiverUnitPerformsPositionAwareness</span></span></a>
+      <li><a href="#GPSAntennaPerformsPositionAwareness"><span class="secno">5.1</span> <span class="content"><span>GPSAntennaPerformsPositionAwareness</span></span></a>
+      <li><a href="#GPSReceiverUnitPerformsPositionAwareness"><span class="secno">5.2</span> <span class="content"><span>GPSReceiverUnitPerformsPositionAwareness</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1998,17 +1999,26 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>ang-functions: <a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions</a></p>
+      <p><a href="functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/functions</a> [ang-functions]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>ang-assemblies: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies</a> [ang-assemblies]</p>
      <li data-md>
-      <p>firesat-functions: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions.html">http://opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions</a> [firesat-functions]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="AttitudeAwarenessByEarthSensor"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbyearthsensor">AttitudeAwarenessByEarthSensor<a class="self-link" href="#attitudeawarenessbyearthsensor"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessByEarthSensor"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/mission.html">http://imce.jpl.nasa.gov/foundation/mission</a> [mission]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a> [project]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="AttitudeAwarenessByEarthSensor"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbyearthsensor">AttitudeAwarenessByEarthSensor<a class="self-link" href="#attitudeawarenessbyearthsensor"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessByEarthSensor"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2024,7 +2034,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#attitudeawareness" id="ref-for-attitudeawareness">firesat-functions:AttitudeAwareness</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="AttitudeAwarenessByMagnetometer"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbymagnetometer">AttitudeAwarenessByMagnetometer<a class="self-link" href="#attitudeawarenessbymagnetometer"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessByMagnetometer"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="AttitudeAwarenessByMagnetometer"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbymagnetometer">AttitudeAwarenessByMagnetometer<a class="self-link" href="#attitudeawarenessbymagnetometer"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessByMagnetometer"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2040,7 +2050,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#attitudeawareness" id="ref-for-attitudeawareness①">firesat-functions:AttitudeAwareness</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="AttitudeAwarenessBySunSensor"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbysunsensor">AttitudeAwarenessBySunSensor<a class="self-link" href="#attitudeawarenessbysunsensor"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessBySunSensor"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="AttitudeAwarenessBySunSensor"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="attitudeawarenessbysunsensor">AttitudeAwarenessBySunSensor<a class="self-link" href="#attitudeawarenessbysunsensor"></a></dfn></span><a class="self-link" href="#AttitudeAwarenessBySunSensor"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2056,7 +2066,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#attitudeawareness" id="ref-for-attitudeawareness②">firesat-functions:AttitudeAwareness</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.4" id="ControlTrajectoryByADCSElectronicsUnit"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyadcselectronicsunit">ControlTrajectoryByADCSElectronicsUnit<a class="self-link" href="#controltrajectorybyadcselectronicsunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByADCSElectronicsUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="ControlTrajectoryByADCSElectronicsUnit"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyadcselectronicsunit">ControlTrajectoryByADCSElectronicsUnit<a class="self-link" href="#controltrajectorybyadcselectronicsunit"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByADCSElectronicsUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2072,7 +2082,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes③">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="ControlTrajectoryByMagnetorquer1"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer1">ControlTrajectoryByMagnetorquer1<a class="self-link" href="#controltrajectorybymagnetorquer1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer1"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="ControlTrajectoryByMagnetorquer1"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer1">ControlTrajectoryByMagnetorquer1<a class="self-link" href="#controltrajectorybymagnetorquer1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer1"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2088,7 +2098,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes④">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory①">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.6" id="ControlTrajectoryByMagnetorquer2"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer2">ControlTrajectoryByMagnetorquer2<a class="self-link" href="#controltrajectorybymagnetorquer2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer2"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="ControlTrajectoryByMagnetorquer2"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer2">ControlTrajectoryByMagnetorquer2<a class="self-link" href="#controltrajectorybymagnetorquer2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer2"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2104,7 +2114,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑤">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory②">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="ControlTrajectoryByMagnetorquer3"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer3">ControlTrajectoryByMagnetorquer3<a class="self-link" href="#controltrajectorybymagnetorquer3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer3"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="ControlTrajectoryByMagnetorquer3"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybymagnetorquer3">ControlTrajectoryByMagnetorquer3<a class="self-link" href="#controltrajectorybymagnetorquer3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByMagnetorquer3"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2120,7 +2130,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑥">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory③">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.8" id="ControlTrajectoryByReactionWheel1"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel1">ControlTrajectoryByReactionWheel1<a class="self-link" href="#controltrajectorybyreactionwheel1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel1"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="ControlTrajectoryByReactionWheel1"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel1">ControlTrajectoryByReactionWheel1<a class="self-link" href="#controltrajectorybyreactionwheel1"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel1"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2136,7 +2146,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑦">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory④">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="ControlTrajectoryByReactionWheel2"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel2">ControlTrajectoryByReactionWheel2<a class="self-link" href="#controltrajectorybyreactionwheel2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel2"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="ControlTrajectoryByReactionWheel2"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel2">ControlTrajectoryByReactionWheel2<a class="self-link" href="#controltrajectorybyreactionwheel2"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel2"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2152,7 +2162,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑧">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑤">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.10" id="ControlTrajectoryByReactionWheel3"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel3">ControlTrajectoryByReactionWheel3<a class="self-link" href="#controltrajectorybyreactionwheel3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel3"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="ControlTrajectoryByReactionWheel3"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel3">ControlTrajectoryByReactionWheel3<a class="self-link" href="#controltrajectorybyreactionwheel3"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel3"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2168,7 +2178,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes⑨">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑥">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.11" id="ControlTrajectoryByReactionWheel4"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel4">ControlTrajectoryByReactionWheel4<a class="self-link" href="#controltrajectorybyreactionwheel4"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel4"></a></h3>
+    <h3 class="heading settled" data-level="4.11" id="ControlTrajectoryByReactionWheel4"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="controltrajectorybyreactionwheel4">ControlTrajectoryByReactionWheel4<a class="self-link" href="#controltrajectorybyreactionwheel4"></a></dfn></span><a class="self-link" href="#ControlTrajectoryByReactionWheel4"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2184,7 +2194,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①⓪">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#controltrajectory" id="ref-for-controltrajectory⑦">firesat-functions:ControlTrajectory</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.12" id="PositionAwarenessByGPSAntenna"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positionawarenessbygpsantenna">PositionAwarenessByGPSAntenna<a class="self-link" href="#positionawarenessbygpsantenna"></a></dfn></span><a class="self-link" href="#PositionAwarenessByGPSAntenna"></a></h3>
+    <h3 class="heading settled" data-level="4.12" id="PositionAwarenessByGPSAntenna"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positionawarenessbygpsantenna">PositionAwarenessByGPSAntenna<a class="self-link" href="#positionawarenessbygpsantenna"></a></dfn></span><a class="self-link" href="#PositionAwarenessByGPSAntenna"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2200,7 +2210,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①①">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#positionawareness" id="ref-for-positionawareness">firesat-functions:PositionAwareness</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.13" id="PositionAwarenessByGPSReceiverUnit"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positionawarenessbygpsreceiverunit">PositionAwarenessByGPSReceiverUnit<a class="self-link" href="#positionawarenessbygpsreceiverunit"></a></dfn></span><a class="self-link" href="#PositionAwarenessByGPSReceiverUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="PositionAwarenessByGPSReceiverUnit"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positionawarenessbygpsreceiverunit">PositionAwarenessByGPSReceiverUnit<a class="self-link" href="#positionawarenessbygpsreceiverunit"></a></dfn></span><a class="self-link" href="#PositionAwarenessByGPSReceiverUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2216,8 +2226,8 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes" id="ref-for-realizes①②">project:realizes</a> <a data-link-type="dfn" href="../../../../../../../missions/firesat/functions.html#positionawareness" id="ref-for-positionawareness①">firesat-functions:PositionAwareness</a>
         </ul>
     </table>
-    <h2 class="heading settled" data-level="4" id="RelationInstances"><span class="secno">4. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="GPSAntennaPerformsPositionAwareness"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennaperformspositionawareness">GPSAntennaPerformsPositionAwareness<a class="self-link" href="#gpsantennaperformspositionawareness"></a></dfn></span><a class="self-link" href="#GPSAntennaPerformsPositionAwareness"></a></h3>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="GPSAntennaPerformsPositionAwareness"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsantennaperformspositionawareness">GPSAntennaPerformsPositionAwareness<a class="self-link" href="#gpsantennaperformspositionawareness"></a></dfn></span><a class="self-link" href="#GPSAntennaPerformsPositionAwareness"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2246,7 +2256,7 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby①">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#orbitdeterminationforgpsantenna" id="ref-for-orbitdeterminationforgpsantenna">ang-requirements:OrbitDeterminationForGPSAntenna</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="4.2" id="GPSReceiverUnitPerformsPositionAwareness"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitperformspositionawareness">GPSReceiverUnitPerformsPositionAwareness<a class="self-link" href="#gpsreceiverunitperformspositionawareness"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitPerformsPositionAwareness"></a></h3>
+    <h3 class="heading settled" data-level="5.2" id="GPSReceiverUnitPerformsPositionAwareness"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gpsreceiverunitperformspositionawareness">GPSReceiverUnitPerformsPositionAwareness<a class="self-link" href="#gpsreceiverunitperformspositionawareness"></a></dfn></span><a class="self-link" href="#GPSReceiverUnitPerformsPositionAwareness"></a></h3>
     <table class="def">
      <tbody>
       <tr>
@@ -2409,146 +2419,146 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#attitudeawarenessbyearthsensor">AttitudeAwarenessByEarthSensor</a><span>, in §3.1</span>
-   <li><a href="#attitudeawarenessbymagnetometer">AttitudeAwarenessByMagnetometer</a><span>, in §3.2</span>
-   <li><a href="#attitudeawarenessbysunsensor">AttitudeAwarenessBySunSensor</a><span>, in §3.3</span>
-   <li><a href="#controltrajectorybyadcselectronicsunit">ControlTrajectoryByADCSElectronicsUnit</a><span>, in §3.4</span>
-   <li><a href="#controltrajectorybymagnetorquer1">ControlTrajectoryByMagnetorquer1</a><span>, in §3.5</span>
-   <li><a href="#controltrajectorybymagnetorquer2">ControlTrajectoryByMagnetorquer2</a><span>, in §3.6</span>
-   <li><a href="#controltrajectorybymagnetorquer3">ControlTrajectoryByMagnetorquer3</a><span>, in §3.7</span>
-   <li><a href="#controltrajectorybyreactionwheel1">ControlTrajectoryByReactionWheel1</a><span>, in §3.8</span>
-   <li><a href="#controltrajectorybyreactionwheel2">ControlTrajectoryByReactionWheel2</a><span>, in §3.9</span>
-   <li><a href="#controltrajectorybyreactionwheel3">ControlTrajectoryByReactionWheel3</a><span>, in §3.10</span>
-   <li><a href="#controltrajectorybyreactionwheel4">ControlTrajectoryByReactionWheel4</a><span>, in §3.11</span>
-   <li><a href="#gpsantennaperformspositionawareness">GPSAntennaPerformsPositionAwareness</a><span>, in §4.1</span>
-   <li><a href="#gpsreceiverunitperformspositionawareness">GPSReceiverUnitPerformsPositionAwareness</a><span>, in §4.2</span>
-   <li><a href="#positionawarenessbygpsantenna">PositionAwarenessByGPSAntenna</a><span>, in §3.12</span>
-   <li><a href="#positionawarenessbygpsreceiverunit">PositionAwarenessByGPSReceiverUnit</a><span>, in §3.13</span>
+   <li><a href="#attitudeawarenessbyearthsensor">AttitudeAwarenessByEarthSensor</a><span>, in § 4.1</span>
+   <li><a href="#attitudeawarenessbymagnetometer">AttitudeAwarenessByMagnetometer</a><span>, in § 4.2</span>
+   <li><a href="#attitudeawarenessbysunsensor">AttitudeAwarenessBySunSensor</a><span>, in § 4.3</span>
+   <li><a href="#controltrajectorybyadcselectronicsunit">ControlTrajectoryByADCSElectronicsUnit</a><span>, in § 4.4</span>
+   <li><a href="#controltrajectorybymagnetorquer1">ControlTrajectoryByMagnetorquer1</a><span>, in § 4.5</span>
+   <li><a href="#controltrajectorybymagnetorquer2">ControlTrajectoryByMagnetorquer2</a><span>, in § 4.6</span>
+   <li><a href="#controltrajectorybymagnetorquer3">ControlTrajectoryByMagnetorquer3</a><span>, in § 4.7</span>
+   <li><a href="#controltrajectorybyreactionwheel1">ControlTrajectoryByReactionWheel1</a><span>, in § 4.8</span>
+   <li><a href="#controltrajectorybyreactionwheel2">ControlTrajectoryByReactionWheel2</a><span>, in § 4.9</span>
+   <li><a href="#controltrajectorybyreactionwheel3">ControlTrajectoryByReactionWheel3</a><span>, in § 4.10</span>
+   <li><a href="#controltrajectorybyreactionwheel4">ControlTrajectoryByReactionWheel4</a><span>, in § 4.11</span>
+   <li><a href="#gpsantennaperformspositionawareness">GPSAntennaPerformsPositionAwareness</a><span>, in § 5.1</span>
+   <li><a href="#gpsreceiverunitperformspositionawareness">GPSReceiverUnitPerformsPositionAwareness</a><span>, in § 5.2</span>
+   <li><a href="#positionawarenessbygpsantenna">PositionAwarenessByGPSAntenna</a><span>, in § 4.12</span>
+   <li><a href="#positionawarenessbygpsreceiverunit">PositionAwarenessByGPSReceiverUnit</a><span>, in § 4.13</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-function">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-function">3.1. AttitudeAwarenessByEarthSensor</a>
-    <li><a href="#ref-for-function①">3.2. AttitudeAwarenessByMagnetometer</a>
-    <li><a href="#ref-for-function②">3.3. AttitudeAwarenessBySunSensor</a>
-    <li><a href="#ref-for-function③">3.4. ControlTrajectoryByADCSElectronicsUnit</a>
-    <li><a href="#ref-for-function④">3.5. ControlTrajectoryByMagnetorquer1</a>
-    <li><a href="#ref-for-function⑤">3.6. ControlTrajectoryByMagnetorquer2</a>
-    <li><a href="#ref-for-function⑥">3.7. ControlTrajectoryByMagnetorquer3</a>
-    <li><a href="#ref-for-function⑦">3.8. ControlTrajectoryByReactionWheel1</a>
-    <li><a href="#ref-for-function⑧">3.9. ControlTrajectoryByReactionWheel2</a>
-    <li><a href="#ref-for-function⑨">3.10. ControlTrajectoryByReactionWheel3</a>
-    <li><a href="#ref-for-function①⓪">3.11. ControlTrajectoryByReactionWheel4</a>
-    <li><a href="#ref-for-function①①">3.12. PositionAwarenessByGPSAntenna</a>
-    <li><a href="#ref-for-function①②">3.13. PositionAwarenessByGPSReceiverUnit</a>
+    <li><a href="#ref-for-function">4.1. AttitudeAwarenessByEarthSensor</a>
+    <li><a href="#ref-for-function①">4.2. AttitudeAwarenessByMagnetometer</a>
+    <li><a href="#ref-for-function②">4.3. AttitudeAwarenessBySunSensor</a>
+    <li><a href="#ref-for-function③">4.4. ControlTrajectoryByADCSElectronicsUnit</a>
+    <li><a href="#ref-for-function④">4.5. ControlTrajectoryByMagnetorquer1</a>
+    <li><a href="#ref-for-function⑤">4.6. ControlTrajectoryByMagnetorquer2</a>
+    <li><a href="#ref-for-function⑥">4.7. ControlTrajectoryByMagnetorquer3</a>
+    <li><a href="#ref-for-function⑦">4.8. ControlTrajectoryByReactionWheel1</a>
+    <li><a href="#ref-for-function⑧">4.9. ControlTrajectoryByReactionWheel2</a>
+    <li><a href="#ref-for-function⑨">4.10. ControlTrajectoryByReactionWheel3</a>
+    <li><a href="#ref-for-function①⓪">4.11. ControlTrajectoryByReactionWheel4</a>
+    <li><a href="#ref-for-function①①">4.12. PositionAwarenessByGPSAntenna</a>
+    <li><a href="#ref-for-function①②">4.13. PositionAwarenessByGPSReceiverUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-isspecifiedby">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isspecifiedby">4.1. GPSAntennaPerformsPositionAwareness</a> <a href="#ref-for-isspecifiedby①">(2)</a>
-    <li><a href="#ref-for-isspecifiedby②">4.2. GPSReceiverUnitPerformsPositionAwareness</a> <a href="#ref-for-isspecifiedby③">(2)</a>
+    <li><a href="#ref-for-isspecifiedby">5.1. GPSAntennaPerformsPositionAwareness</a> <a href="#ref-for-isspecifiedby①">(2)</a>
+    <li><a href="#ref-for-isspecifiedby②">5.2. GPSReceiverUnitPerformsPositionAwareness</a> <a href="#ref-for-isspecifiedby③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-performs">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-performs">4.1. GPSAntennaPerformsPositionAwareness</a>
-    <li><a href="#ref-for-performs①">4.2. GPSReceiverUnitPerformsPositionAwareness</a>
+    <li><a href="#ref-for-performs">5.1. GPSAntennaPerformsPositionAwareness</a>
+    <li><a href="#ref-for-performs①">5.2. GPSReceiverUnitPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-realizes">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-realizes">3.1. AttitudeAwarenessByEarthSensor</a>
-    <li><a href="#ref-for-realizes①">3.2. AttitudeAwarenessByMagnetometer</a>
-    <li><a href="#ref-for-realizes②">3.3. AttitudeAwarenessBySunSensor</a>
-    <li><a href="#ref-for-realizes③">3.4. ControlTrajectoryByADCSElectronicsUnit</a>
-    <li><a href="#ref-for-realizes④">3.5. ControlTrajectoryByMagnetorquer1</a>
-    <li><a href="#ref-for-realizes⑤">3.6. ControlTrajectoryByMagnetorquer2</a>
-    <li><a href="#ref-for-realizes⑥">3.7. ControlTrajectoryByMagnetorquer3</a>
-    <li><a href="#ref-for-realizes⑦">3.8. ControlTrajectoryByReactionWheel1</a>
-    <li><a href="#ref-for-realizes⑧">3.9. ControlTrajectoryByReactionWheel2</a>
-    <li><a href="#ref-for-realizes⑨">3.10. ControlTrajectoryByReactionWheel3</a>
-    <li><a href="#ref-for-realizes①⓪">3.11. ControlTrajectoryByReactionWheel4</a>
-    <li><a href="#ref-for-realizes①①">3.12. PositionAwarenessByGPSAntenna</a>
-    <li><a href="#ref-for-realizes①②">3.13. PositionAwarenessByGPSReceiverUnit</a>
+    <li><a href="#ref-for-realizes">4.1. AttitudeAwarenessByEarthSensor</a>
+    <li><a href="#ref-for-realizes①">4.2. AttitudeAwarenessByMagnetometer</a>
+    <li><a href="#ref-for-realizes②">4.3. AttitudeAwarenessBySunSensor</a>
+    <li><a href="#ref-for-realizes③">4.4. ControlTrajectoryByADCSElectronicsUnit</a>
+    <li><a href="#ref-for-realizes④">4.5. ControlTrajectoryByMagnetorquer1</a>
+    <li><a href="#ref-for-realizes⑤">4.6. ControlTrajectoryByMagnetorquer2</a>
+    <li><a href="#ref-for-realizes⑥">4.7. ControlTrajectoryByMagnetorquer3</a>
+    <li><a href="#ref-for-realizes⑦">4.8. ControlTrajectoryByReactionWheel1</a>
+    <li><a href="#ref-for-realizes⑧">4.9. ControlTrajectoryByReactionWheel2</a>
+    <li><a href="#ref-for-realizes⑨">4.10. ControlTrajectoryByReactionWheel3</a>
+    <li><a href="#ref-for-realizes①⓪">4.11. ControlTrajectoryByReactionWheel4</a>
+    <li><a href="#ref-for-realizes①①">4.12. PositionAwarenessByGPSAntenna</a>
+    <li><a href="#ref-for-realizes①②">4.13. PositionAwarenessByGPSReceiverUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-attitudeawareness">
    <a href="../../../../../../../missions/firesat/functions.html#attitudeawareness">../../../../../../../missions/firesat/functions.html#attitudeawareness</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-attitudeawareness">3.1. AttitudeAwarenessByEarthSensor</a>
-    <li><a href="#ref-for-attitudeawareness①">3.2. AttitudeAwarenessByMagnetometer</a>
-    <li><a href="#ref-for-attitudeawareness②">3.3. AttitudeAwarenessBySunSensor</a>
+    <li><a href="#ref-for-attitudeawareness">4.1. AttitudeAwarenessByEarthSensor</a>
+    <li><a href="#ref-for-attitudeawareness①">4.2. AttitudeAwarenessByMagnetometer</a>
+    <li><a href="#ref-for-attitudeawareness②">4.3. AttitudeAwarenessBySunSensor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectory">
    <a href="../../../../../../../missions/firesat/functions.html#controltrajectory">../../../../../../../missions/firesat/functions.html#controltrajectory</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectory">3.4. ControlTrajectoryByADCSElectronicsUnit</a>
-    <li><a href="#ref-for-controltrajectory①">3.5. ControlTrajectoryByMagnetorquer1</a>
-    <li><a href="#ref-for-controltrajectory②">3.6. ControlTrajectoryByMagnetorquer2</a>
-    <li><a href="#ref-for-controltrajectory③">3.7. ControlTrajectoryByMagnetorquer3</a>
-    <li><a href="#ref-for-controltrajectory④">3.8. ControlTrajectoryByReactionWheel1</a>
-    <li><a href="#ref-for-controltrajectory⑤">3.9. ControlTrajectoryByReactionWheel2</a>
-    <li><a href="#ref-for-controltrajectory⑥">3.10. ControlTrajectoryByReactionWheel3</a>
-    <li><a href="#ref-for-controltrajectory⑦">3.11. ControlTrajectoryByReactionWheel4</a>
+    <li><a href="#ref-for-controltrajectory">4.4. ControlTrajectoryByADCSElectronicsUnit</a>
+    <li><a href="#ref-for-controltrajectory①">4.5. ControlTrajectoryByMagnetorquer1</a>
+    <li><a href="#ref-for-controltrajectory②">4.6. ControlTrajectoryByMagnetorquer2</a>
+    <li><a href="#ref-for-controltrajectory③">4.7. ControlTrajectoryByMagnetorquer3</a>
+    <li><a href="#ref-for-controltrajectory④">4.8. ControlTrajectoryByReactionWheel1</a>
+    <li><a href="#ref-for-controltrajectory⑤">4.9. ControlTrajectoryByReactionWheel2</a>
+    <li><a href="#ref-for-controltrajectory⑥">4.10. ControlTrajectoryByReactionWheel3</a>
+    <li><a href="#ref-for-controltrajectory⑦">4.11. ControlTrajectoryByReactionWheel4</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-positionawareness">
    <a href="../../../../../../../missions/firesat/functions.html#positionawareness">../../../../../../../missions/firesat/functions.html#positionawareness</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-positionawareness">3.12. PositionAwarenessByGPSAntenna</a>
-    <li><a href="#ref-for-positionawareness①">3.13. PositionAwarenessByGPSReceiverUnit</a>
+    <li><a href="#ref-for-positionawareness">4.12. PositionAwarenessByGPSAntenna</a>
+    <li><a href="#ref-for-positionawareness①">4.13. PositionAwarenessByGPSReceiverUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gpsantenna">
    <a href="assemblies.html#gpsantenna">assemblies.html#gpsantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gpsantenna">4.1. GPSAntennaPerformsPositionAwareness</a>
+    <li><a href="#ref-for-gpsantenna">5.1. GPSAntennaPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-gpsreceiverunit">
    <a href="assemblies.html#gpsreceiverunit">assemblies.html#gpsreceiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-gpsreceiverunit">4.2. GPSReceiverUnitPerformsPositionAwareness</a>
+    <li><a href="#ref-for-gpsreceiverunit">5.2. GPSReceiverUnitPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-positionawarenessbygpsantenna">
    <a href="functions.html#positionawarenessbygpsantenna">functions.html#positionawarenessbygpsantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-positionawarenessbygpsantenna">4.1. GPSAntennaPerformsPositionAwareness</a>
+    <li><a href="#ref-for-positionawarenessbygpsantenna">5.1. GPSAntennaPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-positionawarenessbygpsreceiverunit">
    <a href="functions.html#positionawarenessbygpsreceiverunit">functions.html#positionawarenessbygpsreceiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-positionawarenessbygpsreceiverunit">4.2. GPSReceiverUnitPerformsPositionAwareness</a>
+    <li><a href="#ref-for-positionawarenessbygpsreceiverunit">5.2. GPSReceiverUnitPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudedeterminationforgpsantenna">
    <a href="requirements.html#altitudedeterminationforgpsantenna">requirements.html#altitudedeterminationforgpsantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudedeterminationforgpsantenna">4.1. GPSAntennaPerformsPositionAwareness</a>
+    <li><a href="#ref-for-altitudedeterminationforgpsantenna">5.1. GPSAntennaPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudedeterminationforgpsreceiverunit">
    <a href="requirements.html#altitudedeterminationforgpsreceiverunit">requirements.html#altitudedeterminationforgpsreceiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudedeterminationforgpsreceiverunit">4.2. GPSReceiverUnitPerformsPositionAwareness</a>
+    <li><a href="#ref-for-altitudedeterminationforgpsreceiverunit">5.2. GPSReceiverUnitPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-orbitdeterminationforgpsantenna">
    <a href="requirements.html#orbitdeterminationforgpsantenna">requirements.html#orbitdeterminationforgpsantenna</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-orbitdeterminationforgpsantenna">4.1. GPSAntennaPerformsPositionAwareness</a>
+    <li><a href="#ref-for-orbitdeterminationforgpsantenna">5.1. GPSAntennaPerformsPositionAwareness</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-orbitdeterminationforgpsreceiverunit">
    <a href="requirements.html#orbitdeterminationforgpsreceiverunit">requirements.html#orbitdeterminationforgpsreceiverunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-orbitdeterminationforgpsreceiverunit">4.2. GPSReceiverUnitPerformsPositionAwareness</a>
+    <li><a href="#ref-for-orbitdeterminationforgpsreceiverunit">5.2. GPSReceiverUnitPerformsPositionAwareness</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>

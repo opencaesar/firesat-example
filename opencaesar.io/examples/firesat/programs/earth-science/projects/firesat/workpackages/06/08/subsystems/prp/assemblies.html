@@ -12,7 +12,7 @@
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
- *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in § N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
  *
  * Structural Markup
@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 59d067506, updated Fri Jul 23 15:43:29 2021 -0700" name="generator">
+  <meta content="Bikeshed version 4f053d00e, updated Tue Aug 10 14:13:32 2021 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies" rel="canonical">
-  <meta content="44a668abbfeca2b0dca58bf0aa4c2c0e01589e1e" name="document-revision">
+  <meta content="b904a3b7d4b39bb0b6371eec2d55ac755845d27b" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1939,7 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Assemblies</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-07-25">25 July 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2021-09-09">9 September 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1962,24 +1962,25 @@ dfn > a.self-link::before      { content: "#"; }
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
     <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#ConceptInstances"><span class="secno">3</span> <span class="content">Concept Instances</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#ACSThruster1"><span class="secno">3.1</span> <span class="content"><span>ACSThruster1</span></span></a>
-      <li><a href="#ACSThruster2"><span class="secno">3.2</span> <span class="content"><span>ACSThruster2</span></span></a>
-      <li><a href="#ACSThruster3"><span class="secno">3.3</span> <span class="content"><span>ACSThruster3</span></span></a>
-      <li><a href="#ACSThruster4"><span class="secno">3.4</span> <span class="content"><span>ACSThruster4</span></span></a>
-      <li><a href="#ACSThruster5"><span class="secno">3.5</span> <span class="content"><span>ACSThruster5</span></span></a>
-      <li><a href="#ACSThruster6"><span class="secno">3.6</span> <span class="content"><span>ACSThruster6</span></span></a>
-      <li><a href="#BPPropellantLineUnit"><span class="secno">3.7</span> <span class="content"><span>BPPropellantLineUnit</span></span></a>
-      <li><a href="#FillDrainValveUnit"><span class="secno">3.8</span> <span class="content"><span>FillDrainValveUnit</span></span></a>
-      <li><a href="#PMPropellantLineUnit"><span class="secno">3.9</span> <span class="content"><span>PMPropellantLineUnit</span></span></a>
-      <li><a href="#PressurantTank"><span class="secno">3.10</span> <span class="content"><span>PressurantTank</span></span></a>
-      <li><a href="#PrimaryThruster"><span class="secno">3.11</span> <span class="content"><span>PrimaryThruster</span></span></a>
-      <li><a href="#PropellantHandlingSection"><span class="secno">3.12</span> <span class="content"><span>PropellantHandlingSection</span></span></a>
-      <li><a href="#PropellantTank"><span class="secno">3.13</span> <span class="content"><span>PropellantTank</span></span></a>
-      <li><a href="#PropulsionModule"><span class="secno">3.14</span> <span class="content"><span>PropulsionModule</span></span></a>
-      <li><a href="#PropulsionSystemControlUnit"><span class="secno">3.15</span> <span class="content"><span>PropulsionSystemControlUnit</span></span></a>
+      <li><a href="#ACSThruster1"><span class="secno">4.1</span> <span class="content"><span>ACSThruster1</span></span></a>
+      <li><a href="#ACSThruster2"><span class="secno">4.2</span> <span class="content"><span>ACSThruster2</span></span></a>
+      <li><a href="#ACSThruster3"><span class="secno">4.3</span> <span class="content"><span>ACSThruster3</span></span></a>
+      <li><a href="#ACSThruster4"><span class="secno">4.4</span> <span class="content"><span>ACSThruster4</span></span></a>
+      <li><a href="#ACSThruster5"><span class="secno">4.5</span> <span class="content"><span>ACSThruster5</span></span></a>
+      <li><a href="#ACSThruster6"><span class="secno">4.6</span> <span class="content"><span>ACSThruster6</span></span></a>
+      <li><a href="#BPPropellantLineUnit"><span class="secno">4.7</span> <span class="content"><span>BPPropellantLineUnit</span></span></a>
+      <li><a href="#FillDrainValveUnit"><span class="secno">4.8</span> <span class="content"><span>FillDrainValveUnit</span></span></a>
+      <li><a href="#PMPropellantLineUnit"><span class="secno">4.9</span> <span class="content"><span>PMPropellantLineUnit</span></span></a>
+      <li><a href="#PressurantTank"><span class="secno">4.10</span> <span class="content"><span>PressurantTank</span></span></a>
+      <li><a href="#PrimaryThruster"><span class="secno">4.11</span> <span class="content"><span>PrimaryThruster</span></span></a>
+      <li><a href="#PropellantHandlingSection"><span class="secno">4.12</span> <span class="content"><span>PropellantHandlingSection</span></span></a>
+      <li><a href="#PropellantTank"><span class="secno">4.13</span> <span class="content"><span>PropellantTank</span></span></a>
+      <li><a href="#PropulsionModule"><span class="secno">4.14</span> <span class="content"><span>PropulsionModule</span></span></a>
+      <li><a href="#PropulsionSystemControlUnit"><span class="secno">4.15</span> <span class="content"><span>PropulsionSystemControlUnit</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1994,28 +1995,39 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>prp-assemblies: <a href="assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies</a></p>
+      <p><a href="assemblies.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies</a> [prp-assemblies]</p>
     </ul>
     <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
      <li data-md>
-      <p>prp: <a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp</a></p>
+      <p><a href="http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp.html">http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp</a> [prp]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="ConceptInstances"><span class="secno">3. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="ACSThruster1"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster1">ACSThruster1<a class="self-link" href="#acsthruster1"></a></dfn></span><a class="self-link" href="#ACSThruster1"></a></h3>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
+     <li data-md>
+      <p><a href="http://imce.jpl.nasa.gov/foundation/base.html">http://imce.jpl.nasa.gov/foundation/base</a> [base]</p>
+     <li data-md>
+      <p><a href="http://opencaesar.io/examples/firesat/disciplines/fse/fse.html">http://opencaesar.io/examples/firesat/disciplines/fse/fse</a> [fse]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="ACSThruster1"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster1">ACSThruster1<a class="self-link" href="#acsthruster1"></a></dfn></span><a class="self-link" href="#ACSThruster1"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym">fse:hasAcronym</a> 518000-1
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier">base:hasIdentifier</a> 518000-1
         </ul>
       <tr>
        <th>Links
@@ -2025,20 +2037,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster1" id="ref-for-controltrajectorybyacsthruster1">prp-functions:ControlTrajectoryByACSThruster1</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="ACSThruster2"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster2">ACSThruster2<a class="self-link" href="#acsthruster2"></a></dfn></span><a class="self-link" href="#ACSThruster2"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="ACSThruster2"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster2">ACSThruster2<a class="self-link" href="#acsthruster2"></a></dfn></span><a class="self-link" href="#ACSThruster2"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①">fse:hasAcronym</a> 518000-2
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①">base:hasIdentifier</a> 518000-2
         </ul>
       <tr>
        <th>Links
@@ -2048,20 +2060,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs①">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster2" id="ref-for-controltrajectorybyacsthruster2">prp-functions:ControlTrajectoryByACSThruster2</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="ACSThruster3"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster3">ACSThruster3<a class="self-link" href="#acsthruster3"></a></dfn></span><a class="self-link" href="#ACSThruster3"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="ACSThruster3"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster3">ACSThruster3<a class="self-link" href="#acsthruster3"></a></dfn></span><a class="self-link" href="#ACSThruster3"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly②">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly②">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym②">fse:hasAcronym</a> 518000-3
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier②">base:hasIdentifier</a> 518000-3
         </ul>
       <tr>
        <th>Links
@@ -2071,20 +2083,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs②">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster3" id="ref-for-controltrajectorybyacsthruster3">prp-functions:ControlTrajectoryByACSThruster3</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.4" id="ACSThruster4"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster4">ACSThruster4<a class="self-link" href="#acsthruster4"></a></dfn></span><a class="self-link" href="#ACSThruster4"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="ACSThruster4"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster4">ACSThruster4<a class="self-link" href="#acsthruster4"></a></dfn></span><a class="self-link" href="#ACSThruster4"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly③">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly③">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym③">fse:hasAcronym</a> 518000-4
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier③">base:hasIdentifier</a> 518000-4
         </ul>
       <tr>
        <th>Links
@@ -2094,20 +2106,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs③">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster4" id="ref-for-controltrajectorybyacsthruster4">prp-functions:ControlTrajectoryByACSThruster4</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.5" id="ACSThruster5"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster5">ACSThruster5<a class="self-link" href="#acsthruster5"></a></dfn></span><a class="self-link" href="#ACSThruster5"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="ACSThruster5"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster5">ACSThruster5<a class="self-link" href="#acsthruster5"></a></dfn></span><a class="self-link" href="#ACSThruster5"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly④">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly④">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym④">fse:hasAcronym</a> 518000-5
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier④">base:hasIdentifier</a> 518000-5
         </ul>
       <tr>
        <th>Links
@@ -2117,20 +2129,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs④">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster5" id="ref-for-controltrajectorybyacsthruster5">prp-functions:ControlTrajectoryByACSThruster5</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.6" id="ACSThruster6"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster6">ACSThruster6<a class="self-link" href="#acsthruster6"></a></dfn></span><a class="self-link" href="#ACSThruster6"></a></h3>
+    <h3 class="heading settled" data-level="4.6" id="ACSThruster6"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="acsthruster6">ACSThruster6<a class="self-link" href="#acsthruster6"></a></dfn></span><a class="self-link" href="#ACSThruster6"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly⑤">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly⑤">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym⑤">fse:hasAcronym</a> 518000-6
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier⑤">base:hasIdentifier</a> 518000-6
         </ul>
       <tr>
        <th>Links
@@ -2140,20 +2152,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs⑤">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybyacsthruster6" id="ref-for-controltrajectorybyacsthruster6">prp-functions:ControlTrajectoryByACSThruster6</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.7" id="BPPropellantLineUnit"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="bppropellantlineunit">BPPropellantLineUnit<a class="self-link" href="#bppropellantlineunit"></a></dfn></span><a class="self-link" href="#BPPropellantLineUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="BPPropellantLineUnit"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="bppropellantlineunit">BPPropellantLineUnit<a class="self-link" href="#bppropellantlineunit"></a></dfn></span><a class="self-link" href="#BPPropellantLineUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly⑥">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly⑥">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym⑥">fse:hasAcronym</a> 519200
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier⑥">base:hasIdentifier</a> 519200
         </ul>
       <tr>
        <th>Links
@@ -2164,20 +2176,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs⑥">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybybppropellantlineunit" id="ref-for-controltrajectorybybppropellantlineunit">prp-functions:ControlTrajectoryByBPPropellantLineUnit</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.8" id="FillDrainValveUnit"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="filldrainvalveunit">FillDrainValveUnit<a class="self-link" href="#filldrainvalveunit"></a></dfn></span><a class="self-link" href="#FillDrainValveUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="FillDrainValveUnit"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="filldrainvalveunit">FillDrainValveUnit<a class="self-link" href="#filldrainvalveunit"></a></dfn></span><a class="self-link" href="#FillDrainValveUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly⑦">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly⑦">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym⑦">fse:hasAcronym</a> 519100
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier⑦">base:hasIdentifier</a> 519100
         </ul>
       <tr>
        <th>Links
@@ -2188,20 +2200,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#filldrainvalveunitpowerin" id="ref-for-filldrainvalveunitpowerin">prp-endcircuits:FillDrainValveUnitPowerIn</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.9" id="PMPropellantLineUnit"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pmpropellantlineunit">PMPropellantLineUnit<a class="self-link" href="#pmpropellantlineunit"></a></dfn></span><a class="self-link" href="#PMPropellantLineUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="PMPropellantLineUnit"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pmpropellantlineunit">PMPropellantLineUnit<a class="self-link" href="#pmpropellantlineunit"></a></dfn></span><a class="self-link" href="#PMPropellantLineUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly⑧">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly⑧">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym⑧">fse:hasAcronym</a> 536000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier⑧">base:hasIdentifier</a> 536000
         </ul>
       <tr>
        <th>Links
@@ -2212,20 +2224,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs⑧">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybypmpropellantlineunit" id="ref-for-controltrajectorybypmpropellantlineunit">prp-functions:ControlTrajectoryByPMPropellantLineUnit</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.10" id="PressurantTank"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pressuranttank">PressurantTank<a class="self-link" href="#pressuranttank"></a></dfn></span><a class="self-link" href="#PressurantTank"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="PressurantTank"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="pressuranttank">PressurantTank<a class="self-link" href="#pressuranttank"></a></dfn></span><a class="self-link" href="#PressurantTank"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly⑨">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly⑨">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym⑨">fse:hasAcronym</a> 535000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier⑨">base:hasIdentifier</a> 535000
         </ul>
       <tr>
        <th>Links
@@ -2236,20 +2248,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs⑨">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybypressuranttank" id="ref-for-controltrajectorybypressuranttank">prp-functions:ControlTrajectoryByPressurantTank</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.11" id="PrimaryThruster"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primarythruster">PrimaryThruster<a class="self-link" href="#primarythruster"></a></dfn></span><a class="self-link" href="#PrimaryThruster"></a></h3>
+    <h3 class="heading settled" data-level="4.11" id="PrimaryThruster"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="primarythruster">PrimaryThruster<a class="self-link" href="#primarythruster"></a></dfn></span><a class="self-link" href="#PrimaryThruster"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①⓪">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①⓪">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①⓪">fse:hasAcronym</a> 517000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①⓪">base:hasIdentifier</a> 517000
         </ul>
       <tr>
        <th>Links
@@ -2260,20 +2272,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs①⓪">mission:performs</a> <a data-link-type="dfn" href="functions.html#launch_scbyprimarythruster" id="ref-for-launch_scbyprimarythruster">prp-functions:Launch_SCByPrimaryThruster</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.12" id="PropellantHandlingSection"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanthandlingsection">PropellantHandlingSection<a class="self-link" href="#propellanthandlingsection"></a></dfn></span><a class="self-link" href="#PropellantHandlingSection"></a></h3>
+    <h3 class="heading settled" data-level="4.12" id="PropellantHandlingSection"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanthandlingsection">PropellantHandlingSection<a class="self-link" href="#propellanthandlingsection"></a></dfn></span><a class="self-link" href="#PropellantHandlingSection"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①①">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①①">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①①">fse:hasAcronym</a> 519000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①①">base:hasIdentifier</a> 519000
         </ul>
       <tr>
        <th>Links
@@ -2284,20 +2296,20 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents①">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#propellanthandlingsectionpowerin" id="ref-for-propellanthandlingsectionpowerin">prp-endcircuits:PropellantHandlingSectionPowerIn</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.13" id="PropellantTank"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanttank">PropellantTank<a class="self-link" href="#propellanttank"></a></dfn></span><a class="self-link" href="#PropellantTank"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="PropellantTank"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propellanttank">PropellantTank<a class="self-link" href="#propellanttank"></a></dfn></span><a class="self-link" href="#PropellantTank"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①②">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①②">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①②">fse:hasAcronym</a> 532000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①②">base:hasIdentifier</a> 532000
         </ul>
       <tr>
        <th>Links
@@ -2308,53 +2320,53 @@ dfn > a.self-link::before      { content: "#"; }
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs" id="ref-for-performs①①">mission:performs</a> <a data-link-type="dfn" href="functions.html#controltrajectorybypropellanttank" id="ref-for-controltrajectorybypropellanttank">prp-functions:ControlTrajectoryByPropellantTank</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.14" id="PropulsionModule"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionmodule">PropulsionModule<a class="self-link" href="#propulsionmodule"></a></dfn></span><a class="self-link" href="#PropulsionModule"></a></h3>
+    <h3 class="heading settled" data-level="4.14" id="PropulsionModule"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionmodule">PropulsionModule<a class="self-link" href="#propulsionmodule"></a></dfn></span><a class="self-link" href="#PropulsionModule"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①③">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①③">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①③">fse:hasAcronym</a> 530000
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①③">base:hasIdentifier</a> 530000
         </ul>
       <tr>
        <th>Links
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains②">base:contains</a> <a data-link-type="dfn" href="assemblies.html#pmpropellantlineunit" id="ref-for-pmpropellantlineunit">PMPropellantLineUnit</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains③">base:contains</a> <a data-link-type="dfn" href="assemblies.html#pressuranttank" id="ref-for-pressuranttank">PressurantTank</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains④">base:contains</a> <a data-link-type="dfn" href="assemblies.html#propellanttank" id="ref-for-propellanttank">PropellantTank</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑤">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel" id="ref-for-pressuranttankmountingpanel">cdh-assemblies:PressurantTankMountingPanel</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑥">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel" id="ref-for-propellanttankmountingpanel">cdh-assemblies:PropellantTankMountingPanel</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑦">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1" id="ref-for-propulsionstructurepost1">cdh-assemblies:PropulsionStructurePost1</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑧">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2" id="ref-for-propulsionstructurepost2">cdh-assemblies:PropulsionStructurePost2</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑨">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3" id="ref-for-propulsionstructurepost3">cdh-assemblies:PropulsionStructurePost3</a>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①⓪">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4" id="ref-for-propulsionstructurepost4">cdh-assemblies:PropulsionStructurePost4</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains②">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel" id="ref-for-pressuranttankmountingpanel">cdh-assemblies:PressurantTankMountingPanel</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains③">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel" id="ref-for-propellanttankmountingpanel">cdh-assemblies:PropellantTankMountingPanel</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains④">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1" id="ref-for-propulsionstructurepost1">cdh-assemblies:PropulsionStructurePost1</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑤">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2" id="ref-for-propulsionstructurepost2">cdh-assemblies:PropulsionStructurePost2</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑥">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3" id="ref-for-propulsionstructurepost3">cdh-assemblies:PropulsionStructurePost3</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑦">base:contains</a> <a data-link-type="dfn" href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4" id="ref-for-propulsionstructurepost4">cdh-assemblies:PropulsionStructurePost4</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑧">base:contains</a> <a data-link-type="dfn" href="assemblies.html#pmpropellantlineunit" id="ref-for-pmpropellantlineunit">PMPropellantLineUnit</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains⑨">base:contains</a> <a data-link-type="dfn" href="assemblies.html#pressuranttank" id="ref-for-pressuranttank">PressurantTank</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains" id="ref-for-contains①⓪">base:contains</a> <a data-link-type="dfn" href="assemblies.html#propellanttank" id="ref-for-propellanttank">PropellantTank</a>
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby①⑦">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#altitudeforpropulsionmodule" id="ref-for-altitudeforpropulsionmodule">prp-requirements:AltitudeForPropulsionModule</a>
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby" id="ref-for-isspecifiedby①⑧">mission:isSpecifiedBy</a> <a data-link-type="dfn" href="requirements.html#deltavbudgetforpropulsionmodule" id="ref-for-deltavbudgetforpropulsionmodule">prp-requirements:DeltaVBudgetForPropulsionModule</a>
          <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents" id="ref-for-presents②">mission:presents</a> <a data-link-type="dfn" href="endcircuits.html#propulsionmodulepowerin" id="ref-for-propulsionmodulepowerin">prp-endcircuits:PropulsionModulePowerIn</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.15" id="PropulsionSystemControlUnit"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionsystemcontrolunit">PropulsionSystemControlUnit<a class="self-link" href="#propulsionsystemcontrolunit"></a></dfn></span><a class="self-link" href="#PropulsionSystemControlUnit"></a></h3>
+    <h3 class="heading settled" data-level="4.15" id="PropulsionSystemControlUnit"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="propulsionsystemcontrolunit">PropulsionSystemControlUnit<a class="self-link" href="#propulsionsystemcontrolunit"></a></dfn></span><a class="self-link" href="#PropulsionSystemControlUnit"></a></h3>
     <table class="def">
      <tbody>
       <tr>
        <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly" id="ref-for-baseassembly①④">fse-assemblies:BaseAssembly</a>
+         <li><a data-link-type="dfn" href="../../../../../../../../../disciplines/fse/fse.html#assembly" id="ref-for-assembly①④">fse:Assembly</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym" id="ref-for-hasacronym①④">fse:hasAcronym</a> 516700
+         <li><a data-link-type="dfn" href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier" id="ref-for-hasidentifier①④">base:hasIdentifier</a> 516700
         </ul>
       <tr>
        <th>Links
@@ -2500,425 +2512,416 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#acsthruster1">ACSThruster1</a><span>, in §3.1</span>
-   <li><a href="#acsthruster2">ACSThruster2</a><span>, in §3.2</span>
-   <li><a href="#acsthruster3">ACSThruster3</a><span>, in §3.3</span>
-   <li><a href="#acsthruster4">ACSThruster4</a><span>, in §3.4</span>
-   <li><a href="#acsthruster5">ACSThruster5</a><span>, in §3.5</span>
-   <li><a href="#acsthruster6">ACSThruster6</a><span>, in §3.6</span>
-   <li><a href="#bppropellantlineunit">BPPropellantLineUnit</a><span>, in §3.7</span>
-   <li><a href="#filldrainvalveunit">FillDrainValveUnit</a><span>, in §3.8</span>
-   <li><a href="#pmpropellantlineunit">PMPropellantLineUnit</a><span>, in §3.9</span>
-   <li><a href="#pressuranttank">PressurantTank</a><span>, in §3.10</span>
-   <li><a href="#primarythruster">PrimaryThruster</a><span>, in §3.11</span>
-   <li><a href="#propellanthandlingsection">PropellantHandlingSection</a><span>, in §3.12</span>
-   <li><a href="#propellanttank">PropellantTank</a><span>, in §3.13</span>
-   <li><a href="#propulsionmodule">PropulsionModule</a><span>, in §3.14</span>
-   <li><a href="#propulsionsystemcontrolunit">PropulsionSystemControlUnit</a><span>, in §3.15</span>
+   <li><a href="#acsthruster1">ACSThruster1</a><span>, in § 4.1</span>
+   <li><a href="#acsthruster2">ACSThruster2</a><span>, in § 4.2</span>
+   <li><a href="#acsthruster3">ACSThruster3</a><span>, in § 4.3</span>
+   <li><a href="#acsthruster4">ACSThruster4</a><span>, in § 4.4</span>
+   <li><a href="#acsthruster5">ACSThruster5</a><span>, in § 4.5</span>
+   <li><a href="#acsthruster6">ACSThruster6</a><span>, in § 4.6</span>
+   <li><a href="#bppropellantlineunit">BPPropellantLineUnit</a><span>, in § 4.7</span>
+   <li><a href="#filldrainvalveunit">FillDrainValveUnit</a><span>, in § 4.8</span>
+   <li><a href="#pmpropellantlineunit">PMPropellantLineUnit</a><span>, in § 4.9</span>
+   <li><a href="#pressuranttank">PressurantTank</a><span>, in § 4.10</span>
+   <li><a href="#primarythruster">PrimaryThruster</a><span>, in § 4.11</span>
+   <li><a href="#propellanthandlingsection">PropellantHandlingSection</a><span>, in § 4.12</span>
+   <li><a href="#propellanttank">PropellantTank</a><span>, in § 4.13</span>
+   <li><a href="#propulsionmodule">PropulsionModule</a><span>, in § 4.14</span>
+   <li><a href="#propulsionsystemcontrolunit">PropulsionSystemControlUnit</a><span>, in § 4.15</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-baseassembly">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly">../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/assemblies.html#baseassembly</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-baseassembly">3.1. ACSThruster1</a>
-    <li><a href="#ref-for-baseassembly①">3.2. ACSThruster2</a>
-    <li><a href="#ref-for-baseassembly②">3.3. ACSThruster3</a>
-    <li><a href="#ref-for-baseassembly③">3.4. ACSThruster4</a>
-    <li><a href="#ref-for-baseassembly④">3.5. ACSThruster5</a>
-    <li><a href="#ref-for-baseassembly⑤">3.6. ACSThruster6</a>
-    <li><a href="#ref-for-baseassembly⑥">3.7. BPPropellantLineUnit</a>
-    <li><a href="#ref-for-baseassembly⑦">3.8. FillDrainValveUnit</a>
-    <li><a href="#ref-for-baseassembly⑧">3.9. PMPropellantLineUnit</a>
-    <li><a href="#ref-for-baseassembly⑨">3.10. PressurantTank</a>
-    <li><a href="#ref-for-baseassembly①⓪">3.11. PrimaryThruster</a>
-    <li><a href="#ref-for-baseassembly①①">3.12. PropellantHandlingSection</a>
-    <li><a href="#ref-for-baseassembly①②">3.13. PropellantTank</a>
-    <li><a href="#ref-for-baseassembly①③">3.14. PropulsionModule</a>
-    <li><a href="#ref-for-baseassembly①④">3.15. PropulsionSystemControlUnit</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hasacronym">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym">../../../../../../../../../../../../imce.jpl.nasa.gov/discipline/fse/fse.html#hasacronym</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasacronym">3.1. ACSThruster1</a>
-    <li><a href="#ref-for-hasacronym①">3.2. ACSThruster2</a>
-    <li><a href="#ref-for-hasacronym②">3.3. ACSThruster3</a>
-    <li><a href="#ref-for-hasacronym③">3.4. ACSThruster4</a>
-    <li><a href="#ref-for-hasacronym④">3.5. ACSThruster5</a>
-    <li><a href="#ref-for-hasacronym⑤">3.6. ACSThruster6</a>
-    <li><a href="#ref-for-hasacronym⑥">3.7. BPPropellantLineUnit</a>
-    <li><a href="#ref-for-hasacronym⑦">3.8. FillDrainValveUnit</a>
-    <li><a href="#ref-for-hasacronym⑧">3.9. PMPropellantLineUnit</a>
-    <li><a href="#ref-for-hasacronym⑨">3.10. PressurantTank</a>
-    <li><a href="#ref-for-hasacronym①⓪">3.11. PrimaryThruster</a>
-    <li><a href="#ref-for-hasacronym①①">3.12. PropellantHandlingSection</a>
-    <li><a href="#ref-for-hasacronym①②">3.13. PropellantTank</a>
-    <li><a href="#ref-for-hasacronym①③">3.14. PropulsionModule</a>
-    <li><a href="#ref-for-hasacronym①④">3.15. PropulsionSystemControlUnit</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="term-for-contains">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-contains">3.12. PropellantHandlingSection</a> <a href="#ref-for-contains①">(2)</a>
-    <li><a href="#ref-for-contains②">3.14. PropulsionModule</a> <a href="#ref-for-contains③">(2)</a> <a href="#ref-for-contains④">(3)</a> <a href="#ref-for-contains⑤">(4)</a> <a href="#ref-for-contains⑥">(5)</a> <a href="#ref-for-contains⑦">(6)</a> <a href="#ref-for-contains⑧">(7)</a> <a href="#ref-for-contains⑨">(8)</a> <a href="#ref-for-contains①⓪">(9)</a>
+    <li><a href="#ref-for-contains">4.12. PropellantHandlingSection</a> <a href="#ref-for-contains①">(2)</a>
+    <li><a href="#ref-for-contains②">4.14. PropulsionModule</a> <a href="#ref-for-contains③">(2)</a> <a href="#ref-for-contains④">(3)</a> <a href="#ref-for-contains⑤">(4)</a> <a href="#ref-for-contains⑥">(5)</a> <a href="#ref-for-contains⑦">(6)</a> <a href="#ref-for-contains⑧">(7)</a> <a href="#ref-for-contains⑨">(8)</a> <a href="#ref-for-contains①⓪">(9)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasidentifier">
+   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasidentifier">4.1. ACSThruster1</a>
+    <li><a href="#ref-for-hasidentifier①">4.2. ACSThruster2</a>
+    <li><a href="#ref-for-hasidentifier②">4.3. ACSThruster3</a>
+    <li><a href="#ref-for-hasidentifier③">4.4. ACSThruster4</a>
+    <li><a href="#ref-for-hasidentifier④">4.5. ACSThruster5</a>
+    <li><a href="#ref-for-hasidentifier⑤">4.6. ACSThruster6</a>
+    <li><a href="#ref-for-hasidentifier⑥">4.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-hasidentifier⑦">4.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-hasidentifier⑧">4.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-hasidentifier⑨">4.10. PressurantTank</a>
+    <li><a href="#ref-for-hasidentifier①⓪">4.11. PrimaryThruster</a>
+    <li><a href="#ref-for-hasidentifier①①">4.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-hasidentifier①②">4.13. PropellantTank</a>
+    <li><a href="#ref-for-hasidentifier①③">4.14. PropulsionModule</a>
+    <li><a href="#ref-for-hasidentifier①④">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-isspecifiedby">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-isspecifiedby">3.1. ACSThruster1</a>
-    <li><a href="#ref-for-isspecifiedby①">3.2. ACSThruster2</a>
-    <li><a href="#ref-for-isspecifiedby②">3.3. ACSThruster3</a>
-    <li><a href="#ref-for-isspecifiedby③">3.4. ACSThruster4</a>
-    <li><a href="#ref-for-isspecifiedby④">3.5. ACSThruster5</a>
-    <li><a href="#ref-for-isspecifiedby⑤">3.6. ACSThruster6</a>
-    <li><a href="#ref-for-isspecifiedby⑥">3.7. BPPropellantLineUnit</a> <a href="#ref-for-isspecifiedby⑦">(2)</a>
-    <li><a href="#ref-for-isspecifiedby⑧">3.8. FillDrainValveUnit</a>
-    <li><a href="#ref-for-isspecifiedby⑨">3.9. PMPropellantLineUnit</a> <a href="#ref-for-isspecifiedby①⓪">(2)</a>
-    <li><a href="#ref-for-isspecifiedby①①">3.10. PressurantTank</a> <a href="#ref-for-isspecifiedby①②">(2)</a>
-    <li><a href="#ref-for-isspecifiedby①③">3.11. PrimaryThruster</a> <a href="#ref-for-isspecifiedby①④">(2)</a>
-    <li><a href="#ref-for-isspecifiedby①⑤">3.13. PropellantTank</a> <a href="#ref-for-isspecifiedby①⑥">(2)</a>
-    <li><a href="#ref-for-isspecifiedby①⑦">3.14. PropulsionModule</a> <a href="#ref-for-isspecifiedby①⑧">(2)</a>
-    <li><a href="#ref-for-isspecifiedby①⑨">3.15. PropulsionSystemControlUnit</a> <a href="#ref-for-isspecifiedby②⓪">(2)</a>
+    <li><a href="#ref-for-isspecifiedby">4.1. ACSThruster1</a>
+    <li><a href="#ref-for-isspecifiedby①">4.2. ACSThruster2</a>
+    <li><a href="#ref-for-isspecifiedby②">4.3. ACSThruster3</a>
+    <li><a href="#ref-for-isspecifiedby③">4.4. ACSThruster4</a>
+    <li><a href="#ref-for-isspecifiedby④">4.5. ACSThruster5</a>
+    <li><a href="#ref-for-isspecifiedby⑤">4.6. ACSThruster6</a>
+    <li><a href="#ref-for-isspecifiedby⑥">4.7. BPPropellantLineUnit</a> <a href="#ref-for-isspecifiedby⑦">(2)</a>
+    <li><a href="#ref-for-isspecifiedby⑧">4.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-isspecifiedby⑨">4.9. PMPropellantLineUnit</a> <a href="#ref-for-isspecifiedby①⓪">(2)</a>
+    <li><a href="#ref-for-isspecifiedby①①">4.10. PressurantTank</a> <a href="#ref-for-isspecifiedby①②">(2)</a>
+    <li><a href="#ref-for-isspecifiedby①③">4.11. PrimaryThruster</a> <a href="#ref-for-isspecifiedby①④">(2)</a>
+    <li><a href="#ref-for-isspecifiedby①⑤">4.13. PropellantTank</a> <a href="#ref-for-isspecifiedby①⑥">(2)</a>
+    <li><a href="#ref-for-isspecifiedby①⑦">4.14. PropulsionModule</a> <a href="#ref-for-isspecifiedby①⑧">(2)</a>
+    <li><a href="#ref-for-isspecifiedby①⑨">4.15. PropulsionSystemControlUnit</a> <a href="#ref-for-isspecifiedby②⓪">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-performs">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-performs">3.1. ACSThruster1</a>
-    <li><a href="#ref-for-performs①">3.2. ACSThruster2</a>
-    <li><a href="#ref-for-performs②">3.3. ACSThruster3</a>
-    <li><a href="#ref-for-performs③">3.4. ACSThruster4</a>
-    <li><a href="#ref-for-performs④">3.5. ACSThruster5</a>
-    <li><a href="#ref-for-performs⑤">3.6. ACSThruster6</a>
-    <li><a href="#ref-for-performs⑥">3.7. BPPropellantLineUnit</a>
-    <li><a href="#ref-for-performs⑦">3.8. FillDrainValveUnit</a>
-    <li><a href="#ref-for-performs⑧">3.9. PMPropellantLineUnit</a>
-    <li><a href="#ref-for-performs⑨">3.10. PressurantTank</a>
-    <li><a href="#ref-for-performs①⓪">3.11. PrimaryThruster</a>
-    <li><a href="#ref-for-performs①①">3.13. PropellantTank</a>
-    <li><a href="#ref-for-performs①②">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-performs">4.1. ACSThruster1</a>
+    <li><a href="#ref-for-performs①">4.2. ACSThruster2</a>
+    <li><a href="#ref-for-performs②">4.3. ACSThruster3</a>
+    <li><a href="#ref-for-performs③">4.4. ACSThruster4</a>
+    <li><a href="#ref-for-performs④">4.5. ACSThruster5</a>
+    <li><a href="#ref-for-performs⑤">4.6. ACSThruster6</a>
+    <li><a href="#ref-for-performs⑥">4.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-performs⑦">4.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-performs⑧">4.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-performs⑨">4.10. PressurantTank</a>
+    <li><a href="#ref-for-performs①⓪">4.11. PrimaryThruster</a>
+    <li><a href="#ref-for-performs①①">4.13. PropellantTank</a>
+    <li><a href="#ref-for-performs①②">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-presents">
    <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-presents">3.8. FillDrainValveUnit</a>
-    <li><a href="#ref-for-presents①">3.12. PropellantHandlingSection</a>
-    <li><a href="#ref-for-presents②">3.14. PropulsionModule</a>
-    <li><a href="#ref-for-presents③">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-presents">4.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-presents①">4.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-presents②">4.14. PropulsionModule</a>
+    <li><a href="#ref-for-presents③">4.15. PropulsionSystemControlUnit</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-assembly">
+   <a href="../../../../../../../../../disciplines/fse/fse.html#assembly">../../../../../../../../../disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-assembly">4.1. ACSThruster1</a>
+    <li><a href="#ref-for-assembly①">4.2. ACSThruster2</a>
+    <li><a href="#ref-for-assembly②">4.3. ACSThruster3</a>
+    <li><a href="#ref-for-assembly③">4.4. ACSThruster4</a>
+    <li><a href="#ref-for-assembly④">4.5. ACSThruster5</a>
+    <li><a href="#ref-for-assembly⑤">4.6. ACSThruster6</a>
+    <li><a href="#ref-for-assembly⑥">4.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-assembly⑦">4.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-assembly⑧">4.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-assembly⑨">4.10. PressurantTank</a>
+    <li><a href="#ref-for-assembly①⓪">4.11. PrimaryThruster</a>
+    <li><a href="#ref-for-assembly①①">4.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-assembly①②">4.13. PropellantTank</a>
+    <li><a href="#ref-for-assembly①③">4.14. PropulsionModule</a>
+    <li><a href="#ref-for-assembly①④">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-bppropellantlineunit">
    <a href="assemblies.html#bppropellantlineunit">assemblies.html#bppropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-bppropellantlineunit">3.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-bppropellantlineunit">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-filldrainvalveunit">
    <a href="assemblies.html#filldrainvalveunit">assemblies.html#filldrainvalveunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-filldrainvalveunit">3.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-filldrainvalveunit">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pmpropellantlineunit">
    <a href="assemblies.html#pmpropellantlineunit">assemblies.html#pmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pmpropellantlineunit">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-pmpropellantlineunit">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pressuranttank">
    <a href="assemblies.html#pressuranttank">assemblies.html#pressuranttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pressuranttank">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-pressuranttank">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propellanttank">
    <a href="assemblies.html#propellanttank">assemblies.html#propellanttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propellanttank">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propellanttank">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-filldrainvalveunitpowerin">
    <a href="endcircuits.html#filldrainvalveunitpowerin">endcircuits.html#filldrainvalveunitpowerin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-filldrainvalveunitpowerin">3.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-filldrainvalveunitpowerin">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propellanthandlingsectionpowerin">
    <a href="endcircuits.html#propellanthandlingsectionpowerin">endcircuits.html#propellanthandlingsectionpowerin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propellanthandlingsectionpowerin">3.12. PropellantHandlingSection</a>
+    <li><a href="#ref-for-propellanthandlingsectionpowerin">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionmodulepowerin">
    <a href="endcircuits.html#propulsionmodulepowerin">endcircuits.html#propulsionmodulepowerin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionmodulepowerin">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propulsionmodulepowerin">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionsystemcontrolunitpowerin">
    <a href="endcircuits.html#propulsionsystemcontrolunitpowerin">endcircuits.html#propulsionsystemcontrolunitpowerin</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionsystemcontrolunitpowerin">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-propulsionsystemcontrolunitpowerin">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster1">
    <a href="functions.html#controltrajectorybyacsthruster1">functions.html#controltrajectorybyacsthruster1</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster1">3.1. ACSThruster1</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster1">4.1. ACSThruster1</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster2">
    <a href="functions.html#controltrajectorybyacsthruster2">functions.html#controltrajectorybyacsthruster2</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster2">3.2. ACSThruster2</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster2">4.2. ACSThruster2</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster3">
    <a href="functions.html#controltrajectorybyacsthruster3">functions.html#controltrajectorybyacsthruster3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster3">3.3. ACSThruster3</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster3">4.3. ACSThruster3</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster4">
    <a href="functions.html#controltrajectorybyacsthruster4">functions.html#controltrajectorybyacsthruster4</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster4">3.4. ACSThruster4</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster4">4.4. ACSThruster4</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster5">
    <a href="functions.html#controltrajectorybyacsthruster5">functions.html#controltrajectorybyacsthruster5</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster5">3.5. ACSThruster5</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster5">4.5. ACSThruster5</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster6">
    <a href="functions.html#controltrajectorybyacsthruster6">functions.html#controltrajectorybyacsthruster6</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyacsthruster6">3.6. ACSThruster6</a>
+    <li><a href="#ref-for-controltrajectorybyacsthruster6">4.6. ACSThruster6</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybybppropellantlineunit">
    <a href="functions.html#controltrajectorybybppropellantlineunit">functions.html#controltrajectorybybppropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybybppropellantlineunit">3.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-controltrajectorybybppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybyfilldrainvalveunit">
    <a href="functions.html#controltrajectorybyfilldrainvalveunit">functions.html#controltrajectorybyfilldrainvalveunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybyfilldrainvalveunit">3.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-controltrajectorybyfilldrainvalveunit">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybypmpropellantlineunit">
    <a href="functions.html#controltrajectorybypmpropellantlineunit">functions.html#controltrajectorybypmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybypmpropellantlineunit">3.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-controltrajectorybypmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybypressuranttank">
    <a href="functions.html#controltrajectorybypressuranttank">functions.html#controltrajectorybypressuranttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybypressuranttank">3.10. PressurantTank</a>
+    <li><a href="#ref-for-controltrajectorybypressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybypropellanttank">
    <a href="functions.html#controltrajectorybypropellanttank">functions.html#controltrajectorybypropellanttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybypropellanttank">3.13. PropellantTank</a>
+    <li><a href="#ref-for-controltrajectorybypropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-controltrajectorybypropulsionsystemcontrolunit">
    <a href="functions.html#controltrajectorybypropulsionsystemcontrolunit">functions.html#controltrajectorybypropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-controltrajectorybypropulsionsystemcontrolunit">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-controltrajectorybypropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-launch_scbyprimarythruster">
    <a href="functions.html#launch_scbyprimarythruster">functions.html#launch_scbyprimarythruster</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-launch_scbyprimarythruster">3.11. PrimaryThruster</a>
+    <li><a href="#ref-for-launch_scbyprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforbppropellantlineunit">
    <a href="requirements.html#altitudeforbppropellantlineunit">requirements.html#altitudeforbppropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforbppropellantlineunit">3.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-altitudeforbppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforpmpropellantlineunit">
    <a href="requirements.html#altitudeforpmpropellantlineunit">requirements.html#altitudeforpmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforpmpropellantlineunit">3.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-altitudeforpmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforpressuranttank">
    <a href="requirements.html#altitudeforpressuranttank">requirements.html#altitudeforpressuranttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforpressuranttank">3.10. PressurantTank</a>
+    <li><a href="#ref-for-altitudeforpressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforprimarythruster">
    <a href="requirements.html#altitudeforprimarythruster">requirements.html#altitudeforprimarythruster</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforprimarythruster">3.11. PrimaryThruster</a>
+    <li><a href="#ref-for-altitudeforprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforpropellanttank">
    <a href="requirements.html#altitudeforpropellanttank">requirements.html#altitudeforpropellanttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforpropellanttank">3.13. PropellantTank</a>
+    <li><a href="#ref-for-altitudeforpropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforpropulsionmodule">
    <a href="requirements.html#altitudeforpropulsionmodule">requirements.html#altitudeforpropulsionmodule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforpropulsionmodule">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-altitudeforpropulsionmodule">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-altitudeforpropulsionsystemcontrolunit">
    <a href="requirements.html#altitudeforpropulsionsystemcontrolunit">requirements.html#altitudeforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-altitudeforpropulsionsystemcontrolunit">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-altitudeforpropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforbppropellantlineunit">
    <a href="requirements.html#deltavbudgetforbppropellantlineunit">requirements.html#deltavbudgetforbppropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforbppropellantlineunit">3.7. BPPropellantLineUnit</a>
+    <li><a href="#ref-for-deltavbudgetforbppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforfilldrainvalveunit">
    <a href="requirements.html#deltavbudgetforfilldrainvalveunit">requirements.html#deltavbudgetforfilldrainvalveunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforfilldrainvalveunit">3.8. FillDrainValveUnit</a>
+    <li><a href="#ref-for-deltavbudgetforfilldrainvalveunit">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforpmpropellantlineunit">
    <a href="requirements.html#deltavbudgetforpmpropellantlineunit">requirements.html#deltavbudgetforpmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforpmpropellantlineunit">3.9. PMPropellantLineUnit</a>
+    <li><a href="#ref-for-deltavbudgetforpmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforpressuranttank">
    <a href="requirements.html#deltavbudgetforpressuranttank">requirements.html#deltavbudgetforpressuranttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforpressuranttank">3.10. PressurantTank</a>
+    <li><a href="#ref-for-deltavbudgetforpressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforprimarythruster">
    <a href="requirements.html#deltavbudgetforprimarythruster">requirements.html#deltavbudgetforprimarythruster</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforprimarythruster">3.11. PrimaryThruster</a>
+    <li><a href="#ref-for-deltavbudgetforprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropellanttank">
    <a href="requirements.html#deltavbudgetforpropellanttank">requirements.html#deltavbudgetforpropellanttank</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforpropellanttank">3.13. PropellantTank</a>
+    <li><a href="#ref-for-deltavbudgetforpropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropulsionmodule">
    <a href="requirements.html#deltavbudgetforpropulsionmodule">requirements.html#deltavbudgetforpropulsionmodule</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforpropulsionmodule">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-deltavbudgetforpropulsionmodule">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropulsionsystemcontrolunit">
    <a href="requirements.html#deltavbudgetforpropulsionsystemcontrolunit">requirements.html#deltavbudgetforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-deltavbudgetforpropulsionsystemcontrolunit">3.15. PropulsionSystemControlUnit</a>
+    <li><a href="#ref-for-deltavbudgetforpropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster1">
    <a href="requirements.html#operabilityforacsthruster1">requirements.html#operabilityforacsthruster1</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster1">3.1. ACSThruster1</a>
+    <li><a href="#ref-for-operabilityforacsthruster1">4.1. ACSThruster1</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster2">
    <a href="requirements.html#operabilityforacsthruster2">requirements.html#operabilityforacsthruster2</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster2">3.2. ACSThruster2</a>
+    <li><a href="#ref-for-operabilityforacsthruster2">4.2. ACSThruster2</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster3">
    <a href="requirements.html#operabilityforacsthruster3">requirements.html#operabilityforacsthruster3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster3">3.3. ACSThruster3</a>
+    <li><a href="#ref-for-operabilityforacsthruster3">4.3. ACSThruster3</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster4">
    <a href="requirements.html#operabilityforacsthruster4">requirements.html#operabilityforacsthruster4</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster4">3.4. ACSThruster4</a>
+    <li><a href="#ref-for-operabilityforacsthruster4">4.4. ACSThruster4</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster5">
    <a href="requirements.html#operabilityforacsthruster5">requirements.html#operabilityforacsthruster5</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster5">3.5. ACSThruster5</a>
+    <li><a href="#ref-for-operabilityforacsthruster5">4.5. ACSThruster5</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster6">
    <a href="requirements.html#operabilityforacsthruster6">requirements.html#operabilityforacsthruster6</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-operabilityforacsthruster6">3.6. ACSThruster6</a>
+    <li><a href="#ref-for-operabilityforacsthruster6">4.6. ACSThruster6</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-pressuranttankmountingpanel">
    <a href="../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-pressuranttankmountingpanel">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-pressuranttankmountingpanel">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propellanttankmountingpanel">
    <a href="../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propellanttankmountingpanel">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propellanttankmountingpanel">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionstructurepost1">
    <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionstructurepost1">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propulsionstructurepost1">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionstructurepost2">
    <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionstructurepost2">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propulsionstructurepost2">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionstructurepost3">
    <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionstructurepost3">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propulsionstructurepost3">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-propulsionstructurepost4">
    <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propulsionstructurepost4">3.14. PropulsionModule</a>
+    <li><a href="#ref-for-propulsionstructurepost4">4.14. PropulsionModule</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/assemblies]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-baseassembly">baseassembly</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://imce.jpl.nasa.gov/discipline/fse/fse]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-hasacronym">hasacronym</span>
-    </ul>
-   <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-contains">contains</span>
+     <li><span class="dfn-paneled" id="term-for-hasidentifier">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/mission]</a> defines the following terms:
@@ -2926,6 +2929,11 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-isspecifiedby">isspecifiedby</span>
      <li><span class="dfn-paneled" id="term-for-performs">performs</span>
      <li><span class="dfn-paneled" id="term-for-presents">presents</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/disciplines/fse/fse]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-assembly">assembly</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies]</a> defines the following terms:
