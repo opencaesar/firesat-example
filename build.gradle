@@ -132,7 +132,6 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
     configurationPath = file('.fuseki.ttl')
     outputFolderPath = file('.fuseki')
-	webui = true
 }
 
 task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
@@ -159,7 +158,7 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
 task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
     endpointURL = 'http://localhost:3030/firesat'
     queryPath = file('src/sparql')
-    resultPath = file('build/frames')
+    resultPath = file('build/results')
 }
 
 /*

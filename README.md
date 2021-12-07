@@ -18,6 +18,16 @@ This is a description of a FireSat project expressed in [OML](https://github.com
 
 - if you run 'generateDocs', you also need [Bikeshed](https://tabatkins.github.io/bikeshed/#install-final) installed in the environment
 
+## Quick Start
+Run the following
+```
+./gradlew clean
+./gradlew startFuseki
+./gradlew owlQuery
+./gradlew stopFuseki
+``` 
+Inspect results of query in folder: `build/results` 
+
 ## Build
 Equivalent to owlReason task
 ```
@@ -46,6 +56,8 @@ Pre-req: A Fuseki server with a firesat dataset must be running at http://localh
 ./gradlew owlQuery
 ```
 Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below)  
+
+Results will be in the folder 'build/results'
 
 
 ## Run SHACL Rules
