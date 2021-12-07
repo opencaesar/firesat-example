@@ -15,7 +15,7 @@
     fuseki:endpoint 	[ fuseki:operation fuseki:shacl ;	fuseki:name "shacl" ] ;		# SHACL query service
     fuseki:dataset      <#dataset> .
 
-<#dataset> a tdb:DatasetTDB ;															## In memory TDB with union graph.
+<#dataset> a tdb:DatasetTDB ;															# In memory TDB with union graph.
   	tdb:location 			"--mem--" ;
   	ja:context 				[ ja:cxtName "arq:queryTimeout" ; ja:cxtValue "1000" ] ; 	# Query timeout on this dataset (1s, 1000 milliseconds)
   	tdb:unionDefaultGraph	 true .														# Make the default graph be the union of all named graphs.
