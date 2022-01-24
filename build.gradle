@@ -22,11 +22,19 @@ buildscript {
         classpath 'io.opencaesar.owl:owl-query-gradle:+'
         classpath 'io.opencaesar.owl:owl-load-gradle:+'
         classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
-        classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
+        classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
         classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
     }
 }
+
+/*
+ * Bikeshed folder
+ */
+ext {
+	bikeshed = 'build/bikeshed'
+}
+ 
 
 /*
  * Dependency versions
@@ -78,7 +86,7 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn:
     // Input Ontology Iri
     rootOntologyIri = 'http://opencaesar.io/examples/firesat/bundle'
     // OWL folder
-    outputFolderPath = file('build/bikeshed')
+    outputFolderPath = file("$bikeshed")
     // Publish URL
     publishUrl = 'https://opencaesar.github.io/firesat-example'
 }
@@ -88,12 +96,13 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn:
  */
 import org.gradle.internal.os.OperatingSystem
 task generateDocs(dependsOn: omlToBikeshed) {
+	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
+	outputs.files(fileTree("$bikeshed").include('**/*.html'))
     doLast {
         if (OperatingSystem.current().isWindows()) {
-            exec { commandLine 'build/bikeshed/publish.bat' }
+            exec { commandLine "$bikeshed/publish.bat" }
         } else {
-            exec { commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' }
-            exec { commandLine 'build/bikeshed/publish.sh' }
+            exec { commandLine "$bikeshed/publish.sh" }
         }
     }
 }
