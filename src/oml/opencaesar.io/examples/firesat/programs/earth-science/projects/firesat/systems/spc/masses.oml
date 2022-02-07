@@ -7,7 +7,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	uses <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	uses <http://iupac.org/metrology#> as metrology
+  uses <http://bipm.org/jcgm/vim4#> as vim4
 
 	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse
 
@@ -17,8 +17,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	@rdfs:label "Spacecraft Mass Limit Constraint"
 	ci PayloadMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "235.1"^^xsd:double
-		metrology:isQuantityOf spc:Spacecraft
+    vim4:hasDoubleNumber "235.1"^^xsd:double
+		vim4:characterizes spc:Spacecraft
 	]
-
 }

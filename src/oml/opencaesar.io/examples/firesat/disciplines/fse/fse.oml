@@ -11,17 +11,15 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 
 	extends <http://imce.jpl.nasa.gov/foundation/project#> as project
 
-	extends <http://iupac.org/metrology#> as metrology
+	extends <http://bipm.org/jcgm/vim4#> as vim4
 
-	extends <http://iso.org/iso-80000-4-quantities#> as iso-80000-4-quantities
-
-	extends <http://iso.org/iso-80000-4-magnitudes-1#> as iso-80000-4-magnitudes-1
+	uses <http://iso.org/iso-80000-4.1#> as iso-80000-4.1
 
 	// The terms
 
 	aspect EndCircuitPresentingElement :> mission:PresentingElement
 
-	aspect MassConstrainedElement :> metrology:Object
+	aspect MassConstrainedElement :> vim4:Object
 
 	ref concept project:WorkPackage :> MassConstrainedElement
 
@@ -54,8 +52,10 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 		
 	]
 
-	concept MassConstraint :> iso-80000-4-quantities:mass, iso-80000-4-magnitudes-1:kilogram-magnitude [
-		restricts all relation metrology:isQuantityOf to MassConstrainedElement
+	concept MassConstraint :> vim4:InherentUnitaryQuantityValue [
+		restricts all relation vim4:characterizes to MassConstrainedElement
+    restricts relation vim4:instantiates to iso-80000-4.1:mass
+    restricts relation vim4:unit to iso-80000-4.1:kilogram
 	]
 
 	concept MassAllocationConstraint :> MassConstraint

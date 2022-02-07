@@ -7,7 +7,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
-	uses <http://iupac.org/metrology#> as metrology
+  uses <http://bipm.org/jcgm/vim4#> as vim4
 
 	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse
 
@@ -17,16 +17,16 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	@rdfs:label "Payload Module Mass Limit Constraint"
 	ci PayloadModuleMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "0.6"^^xsd:double
-		metrology:isQuantityOf pld-assemblies:PayloadModule
+    vim4:hasDoubleNumber "0.6"^^xsd:double
+		vim4:characterizes pld-assemblies:PayloadModule
 	]
-
+	
 	// Sensor Mass
 
 	@rdfs:label "Sensor Mass Limit Constraint"
 	ci SensorMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "28.1"^^xsd:double
-		metrology:isQuantityOf pld-assemblies:Sensor
+    vim4:hasDoubleNumber "28.1"^^xsd:double
+		vim4:isAttributedTo pld-assemblies:Sensor
 	]
 	
 }
