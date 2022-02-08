@@ -1489,7 +1489,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 2e3c4c68b, updated Fri Jan 14 14:49:00 2022 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/disciplines/fse/fse" rel="canonical">
-  <meta content="f37936e4bc92cf57d618492b723f2890544651c3" name="document-revision">
+  <meta content="8b192327dcb5398ac32142865449283f31b50ec2" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1949,7 +1949,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Flight System Engineering</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-02-08">8 February 2022</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2041,11 +2041,7 @@ dfn > a.self-link::before      { content: "#"; }
      <li data-md>
       <p><a href="http://imce.jpl.nasa.gov/foundation/project.html">http://imce.jpl.nasa.gov/foundation/project</a> [project]</p>
      <li data-md>
-      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
-     <li data-md>
-      <p><a href="http://iso.org/iso-80000-4-quantities.html">http://iso.org/iso-80000-4-quantities</a> [iso-80000-4-quantities]</p>
-     <li data-md>
-      <p><a href="http://iso.org/iso-80000-4-magnitudes-1.html">http://iso.org/iso-80000-4-magnitudes-1</a> [iso-80000-4-magnitudes-1]</p>
+      <p><a href="http://bipm.org/jcgm/vim4.html">http://bipm.org/jcgm/vim4</a> [vim4]</p>
     </ul>
     <h2 class="heading settled" data-level="3" id="Aspects"><span class="secno">3. </span><span class="content">Aspects</span><a class="self-link" href="#Aspects"></a></h2>
     <h3 class="heading settled" data-level="3.1" id="EndCircuitPresentingElement"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="endcircuitpresentingelement">EndCircuitPresentingElement<a class="self-link" href="#endcircuitpresentingelement"></a></dfn></span><a class="self-link" href="#EndCircuitPresentingElement"></a></h3>
@@ -2071,7 +2067,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../iupac.org/metrology.html#object" id="ref-for-object">metrology:Object</a>
+         <li><a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#object" id="ref-for-object">vim4:Object</a>
         </ul>
       <tr>
        <th>Subtypes
@@ -2177,8 +2173,7 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../../../../../iso.org/iso-80000-4-magnitudes-1.html#kilogram-magnitude" id="ref-for-kilogram-magnitude">iso-80000-4-magnitudes-1:kilogram-magnitude</a>
-         <li><a data-link-type="dfn" href="../../../../../iso.org/iso-80000-4-quantities.html#mass" id="ref-for-mass">iso-80000-4-quantities:mass</a>
+         <li><a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#inherentunitaryquantityvalue" id="ref-for-inherentunitaryquantityvalue">vim4:InherentUnitaryQuantityValue</a>
         </ul>
       <tr>
        <th>Subtypes
@@ -2191,7 +2186,9 @@ dfn > a.self-link::before      { content: "#"; }
        <th>Relations with source
        <td>
         <ul>
-         <li>MassConstraint ← <a data-link-type="dfn" href="../../../../../iupac.org/metrology.html#isquantityof" id="ref-for-isquantityof">metrology:IsQuantityOf</a> → <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement①">MassConstrainedElement</a> 
+         <li>MassConstraint ← <a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#characterizes" id="ref-for-characterizes">vim4:Characterizes</a> → <a data-link-type="dfn" href="fse.html#massconstrainedelement" id="ref-for-massconstrainedelement①">MassConstrainedElement</a> 
+         <li>MassConstraint ← <a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#hasunit" id="ref-for-hasunit">vim4:HasUnit</a> → <a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#measurementunit" id="ref-for-measurementunit">vim4:MeasurementUnit</a> (range restricted to instance <a data-link-type="dfn" href="../../../../../iso.org/iso-80000-4.1.html#kilogram" id="ref-for-kilogram">iso-80000-4.1:kilogram</a>) 
+         <li>MassConstraint ← <a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#instantiates" id="ref-for-instantiates">vim4:Instantiates</a> → <a data-link-type="dfn" href="../../../../../bipm.org/jcgm/vim4.html#generalproperty" id="ref-for-generalproperty">vim4:GeneralProperty</a> (range restricted to instance <a data-link-type="dfn" href="../../../../../iso.org/iso-80000-4.1.html#mass" id="ref-for-mass">iso-80000-4.1:mass</a>) 
         </ul>
     </table>
     <h3 class="heading settled" data-level="4.6" id="MassLimitConstraint"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="masslimitconstraint">MassLimitConstraint<a class="self-link" href="#masslimitconstraint"></a></dfn></span><a class="self-link" href="#MassLimitConstraint"></a></h3>
@@ -2576,6 +2573,48 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#powerout">PowerOut</a><span>, in § 4.10</span>
    <li><a href="#subsystem">Subsystem</a><span>, in § 4.11</span>
   </ul>
+  <aside class="dfn-panel" data-for="term-for-characterizes">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#characterizes">../../../../../bipm.org/jcgm/vim4.html#characterizes</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-characterizes">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-generalproperty">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#generalproperty">../../../../../bipm.org/jcgm/vim4.html#generalproperty</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-generalproperty">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-hasunit">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#hasunit">../../../../../bipm.org/jcgm/vim4.html#hasunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-hasunit">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-inherentunitaryquantityvalue">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#inherentunitaryquantityvalue">../../../../../bipm.org/jcgm/vim4.html#inherentunitaryquantityvalue</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-inherentunitaryquantityvalue">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-instantiates">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#instantiates">../../../../../bipm.org/jcgm/vim4.html#instantiates</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-instantiates">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-measurementunit">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#measurementunit">../../../../../bipm.org/jcgm/vim4.html#measurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-measurementunit">4.5. MassConstraint</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-object">
+   <a href="../../../../../bipm.org/jcgm/vim4.html#object">../../../../../bipm.org/jcgm/vim4.html#object</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-object">3.2. MassConstrainedElement</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-aggregates">
    <a href="../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates">../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates</a><b>Referenced in:</b>
    <ul>
@@ -2628,28 +2667,16 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-workpackage">3.2. MassConstrainedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-kilogram-magnitude">
-   <a href="../../../../../iso.org/iso-80000-4-magnitudes-1.html#kilogram-magnitude">../../../../../iso.org/iso-80000-4-magnitudes-1.html#kilogram-magnitude</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="../../../../../iso.org/iso-80000-4.1.html#kilogram">../../../../../iso.org/iso-80000-4.1.html#kilogram</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-kilogram-magnitude">4.5. MassConstraint</a>
+    <li><a href="#ref-for-kilogram">4.5. MassConstraint</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mass">
-   <a href="../../../../../iso.org/iso-80000-4-quantities.html#mass">../../../../../iso.org/iso-80000-4-quantities.html#mass</a><b>Referenced in:</b>
+   <a href="../../../../../iso.org/iso-80000-4.1.html#mass">../../../../../iso.org/iso-80000-4.1.html#mass</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-mass">4.5. MassConstraint</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-isquantityof">
-   <a href="../../../../../iupac.org/metrology.html#isquantityof">../../../../../iupac.org/metrology.html#isquantityof</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isquantityof">4.5. MassConstraint</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-object">
-   <a href="../../../../../iupac.org/metrology.html#object">../../../../../iupac.org/metrology.html#object</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-object">3.2. MassConstrainedElement</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-assembly">
@@ -2818,6 +2845,17 @@ dfn > a.self-link::before      { content: "#"; }
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
+    <a data-link-type="biblio">[http://bipm.org/jcgm/vim4]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-characterizes">characterizes</span>
+     <li><span class="dfn-paneled" id="term-for-generalproperty">generalproperty</span>
+     <li><span class="dfn-paneled" id="term-for-hasunit">hasunit</span>
+     <li><span class="dfn-paneled" id="term-for-inherentunitaryquantityvalue">inherentunitaryquantityvalue</span>
+     <li><span class="dfn-paneled" id="term-for-instantiates">instantiates</span>
+     <li><span class="dfn-paneled" id="term-for-measurementunit">measurementunit</span>
+     <li><span class="dfn-paneled" id="term-for-object">object</span>
+    </ul>
+   <li>
     <a data-link-type="biblio">[http://imce.jpl.nasa.gov/foundation/base]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-aggregates">aggregates</span>
@@ -2838,20 +2876,10 @@ dfn > a.self-link::before      { content: "#"; }
      <li><span class="dfn-paneled" id="term-for-workpackage">workpackage</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/iso-80000-4-magnitudes-1]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/iso-80000-4.1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-kilogram-magnitude">kilogram-magnitude</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/iso-80000-4-quantities]</a> defines the following terms:
-    <ul>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
      <li><span class="dfn-paneled" id="term-for-mass">mass</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-isquantityof">isquantityof</span>
-     <li><span class="dfn-paneled" id="term-for-object">object</span>
     </ul>
    <li>
     <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/disciplines/fse/fse]</a> defines the following terms:

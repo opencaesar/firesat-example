@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Metrology Bundle</title>
+  <title>ISO 1087-1:2000 annotation vocabulary</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,8 +1488,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 2e3c4c68b, updated Fri Jan 14 14:49:00 2022 -0800" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/iupac.org/metrology-bundle" rel="canonical">
-  <meta content="f37936e4bc92cf57d618492b723f2890544651c3" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-1087-1" rel="canonical">
+  <meta content="8b192327dcb5398ac32142865449283f31b50ec2" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1901,16 +1901,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Metrology Bundle</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO 1087-1:2000 annotation vocabulary</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-02-08">8 February 2022</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iupac.org/metrology-bundle">https://opencaesar.github.io/firesat-example/iupac.org/metrology-bundle</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iso.org/iso-1087-1">https://opencaesar.github.io/firesat-example/iso.org/iso-1087-1</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+     <dd>Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1918,14 +1918,45 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This is the metrology vocabulary bundle.</p>
+   <p>Annotation vocabulary for traceability of terminology analysis per ISO 1087-1:2000</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Inclusions"><span class="secno">2</span> <span class="content">Inclusions</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
+    <li>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <ol class="toc">
+      <li><a href="#ConceptSystem"><span class="secno">3.1</span> <span class="content"><span>ConceptSystem</span></span></a>
+     </ol>
+    <li>
+     <a href="#AnnotationProperties"><span class="secno">4</span> <span class="content">Annotation Properties</span></a>
+     <ol class="toc">
+      <li><a href="#AssociativeRelation"><span class="secno">4.1</span> <span class="content"><span>AssociativeRelation</span></span></a>
+      <li><a href="#CausalRelation"><span class="secno">4.2</span> <span class="content"><span>CausalRelation</span></span></a>
+      <li><a href="#Characteristic"><span class="secno">4.3</span> <span class="content"><span>Characteristic</span></span></a>
+      <li><a href="#Concept"><span class="secno">4.4</span> <span class="content"><span>Concept</span></span></a>
+      <li><a href="#ConceptDiagram"><span class="secno">4.5</span> <span class="content"><span>ConceptDiagram</span></span></a>
+      <li><a href="#DelimitingCharacteristic"><span class="secno">4.6</span> <span class="content"><span>DelimitingCharacteristic</span></span></a>
+      <li><a href="#EssentialCharacteristic"><span class="secno">4.7</span> <span class="content"><span>EssentialCharacteristic</span></span></a>
+      <li><a href="#GenericRelation"><span class="secno">4.8</span> <span class="content"><span>GenericRelation</span></span></a>
+      <li><a href="#HierarchicalRelation"><span class="secno">4.9</span> <span class="content"><span>HierarchicalRelation</span></span></a>
+      <li><a href="#Includes"><span class="secno">4.10</span> <span class="content"><span>Includes</span></span></a>
+      <li><a href="#IsIncludedIn"><span class="secno">4.11</span> <span class="content"><span>IsIncludedIn</span></span></a>
+      <li><a href="#Object"><span class="secno">4.12</span> <span class="content"><span>Object</span></span></a>
+      <li><a href="#PartitiveRelation"><span class="secno">4.13</span> <span class="content"><span>PartitiveRelation</span></span></a>
+      <li><a href="#Property"><span class="secno">4.14</span> <span class="content"><span>Property</span></span></a>
+      <li><a href="#SequentialRelation"><span class="secno">4.15</span> <span class="content"><span>SequentialRelation</span></span></a>
+      <li><a href="#Shows"><span class="secno">4.16</span> <span class="content"><span>Shows</span></span></a>
+      <li><a href="#TemporalRelation"><span class="secno">4.17</span> <span class="content"><span>TemporalRelation</span></span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -1933,15 +1964,46 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p><a href="metrology-bundle.html">http://iupac.org/metrology-bundle</a> [metrology-bundle]</p>
+      <p><a href="iso-1087-1.html">http://iso.org/iso-1087-1</a> [iso-1087-1]</p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Inclusions"><span class="secno">2. </span><span class="content">Inclusions</span><a class="self-link" href="#Inclusions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
     <ul>
+     <li data-md>
+      <p><a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
      <li data-md>
       <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
      <li data-md>
-      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a></p>
+      <p><a href="http://opencaesar.io/viewpoint.html">http://opencaesar.io/viewpoint</a> [viewpoint]</p>
     </ul>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="ConceptSystem"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="conceptsystem">ConceptSystem<a class="self-link" href="#conceptsystem"></a></dfn></span><a class="self-link" href="#ConceptSystem"></a></h3>
+    <table class="def"></table>
+    <h2 class="heading settled" data-level="4" id="AnnotationProperties"><span class="secno">4. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="AssociativeRelation"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="associativerelation">AssociativeRelation<a class="self-link" href="#associativerelation"></a></dfn></span><a class="self-link" href="#AssociativeRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="CausalRelation"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="causalrelation">CausalRelation<a class="self-link" href="#causalrelation"></a></dfn></span><a class="self-link" href="#CausalRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="Characteristic"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="characteristic">Characteristic<a class="self-link" href="#characteristic"></a></dfn></span><a class="self-link" href="#Characteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="Concept"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="concept">Concept<a class="self-link" href="#concept"></a></dfn></span><a class="self-link" href="#Concept"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="ConceptDiagram"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="conceptdiagram">ConceptDiagram<a class="self-link" href="#conceptdiagram"></a></dfn></span><a class="self-link" href="#ConceptDiagram"></a></h3>
+    <p>Annotation subject is an ontology</p>
+    <h3 class="heading settled" data-level="4.6" id="DelimitingCharacteristic"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="delimitingcharacteristic">DelimitingCharacteristic<a class="self-link" href="#delimitingcharacteristic"></a></dfn></span><a class="self-link" href="#DelimitingCharacteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="EssentialCharacteristic"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="essentialcharacteristic">EssentialCharacteristic<a class="self-link" href="#essentialcharacteristic"></a></dfn></span><a class="self-link" href="#EssentialCharacteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="GenericRelation"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="genericrelation">GenericRelation<a class="self-link" href="#genericrelation"></a></dfn></span><a class="self-link" href="#GenericRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="HierarchicalRelation"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hierarchicalrelation">HierarchicalRelation<a class="self-link" href="#hierarchicalrelation"></a></dfn></span><a class="self-link" href="#HierarchicalRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="Includes"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="includes">Includes<a class="self-link" href="#includes"></a></dfn></span><a class="self-link" href="#Includes"></a></h3>
+    <p>This annotation specifies that the annotation subject is included in the scope of a concept system (the annotation object).
+The annotation subject should be an instance or a specialization of ConceptSystem.
+The annotation target should have an annotation as Object, Property, Concept or one of the Characteristics or *Relations.</p>
+    <h3 class="heading settled" data-level="4.11" id="IsIncludedIn"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isincludedin">IsIncludedIn<a class="self-link" href="#isincludedin"></a></dfn></span><a class="self-link" href="#IsIncludedIn"></a></h3>
+    <p>This annotation specifies that the annotation subject is included in the scope of a concept system (the annotation object).
+The annotation subject should have an annotation as Object, Property, Concept or one of the Characteristics or *Relations.
+The annotation object should be an instance or a specialization of ConceptSystem.</p>
+    <h3 class="heading settled" data-level="4.12" id="Object"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="object">Object<a class="self-link" href="#object"></a></dfn></span><a class="self-link" href="#Object"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="PartitiveRelation"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="partitiverelation">PartitiveRelation<a class="self-link" href="#partitiverelation"></a></dfn></span><a class="self-link" href="#PartitiveRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.14" id="Property"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="property">Property<a class="self-link" href="#property"></a></dfn></span><a class="self-link" href="#Property"></a></h3>
+    <h3 class="heading settled" data-level="4.15" id="SequentialRelation"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sequentialrelation">SequentialRelation<a class="self-link" href="#sequentialrelation"></a></dfn></span><a class="self-link" href="#SequentialRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.16" id="Shows"><span class="secno">4.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="shows">Shows<a class="self-link" href="#shows"></a></dfn></span><a class="self-link" href="#Shows"></a></h3>
+    <p>Annotation subject is shown in the diagram of the annotated ontology.</p>
+    <h3 class="heading settled" data-level="4.17" id="TemporalRelation"><span class="secno">4.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="temporalrelation">TemporalRelation<a class="self-link" href="#temporalrelation"></a></dfn></span><a class="self-link" href="#TemporalRelation"></a></h3>
    </div>
   </main>
 <script>
@@ -2073,3 +2135,25 @@ dfn > a.self-link::before      { content: "#"; }
 
 })();
 </script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#associativerelation">AssociativeRelation</a><span>, in § 4.1</span>
+   <li><a href="#causalrelation">CausalRelation</a><span>, in § 4.2</span>
+   <li><a href="#characteristic">Characteristic</a><span>, in § 4.3</span>
+   <li><a href="#concept">Concept</a><span>, in § 4.4</span>
+   <li><a href="#conceptdiagram">ConceptDiagram</a><span>, in § 4.5</span>
+   <li><a href="#conceptsystem">ConceptSystem</a><span>, in § 3.1</span>
+   <li><a href="#delimitingcharacteristic">DelimitingCharacteristic</a><span>, in § 4.6</span>
+   <li><a href="#essentialcharacteristic">EssentialCharacteristic</a><span>, in § 4.7</span>
+   <li><a href="#genericrelation">GenericRelation</a><span>, in § 4.8</span>
+   <li><a href="#hierarchicalrelation">HierarchicalRelation</a><span>, in § 4.9</span>
+   <li><a href="#includes">Includes</a><span>, in § 4.10</span>
+   <li><a href="#isincludedin">IsIncludedIn</a><span>, in § 4.11</span>
+   <li><a href="#object">Object</a><span>, in § 4.12</span>
+   <li><a href="#partitiverelation">PartitiveRelation</a><span>, in § 4.13</span>
+   <li><a href="#property">Property</a><span>, in § 4.14</span>
+   <li><a href="#sequentialrelation">SequentialRelation</a><span>, in § 4.15</span>
+   <li><a href="#shows">Shows</a><span>, in § 4.16</span>
+   <li><a href="#temporalrelation">TemporalRelation</a><span>, in § 4.17</span>
+  </ul>

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>ISO-80000-4 Quantities</title>
+  <title>ISO-80000-4.1 mass</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,8 +1488,8 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 2e3c4c68b, updated Fri Jan 14 14:49:00 2022 -0800" name="generator">
-  <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-quantities" rel="canonical">
-  <meta content="f37936e4bc92cf57d618492b723f2890544651c3" name="document-revision">
+  <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4.1" rel="canonical">
+  <meta content="8b192327dcb5398ac32142865449283f31b50ec2" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1948,16 +1948,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">ISO-80000-4 Quantities</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-01-24">24 January 2022</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO-80000-4.1 mass</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-02-08">8 February 2022</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-quantities">https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4-quantities</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4.1">https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4.1</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+     <dd>Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1965,34 +1965,28 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>The ISO-80000-4 quantities vocabulary.</p>
+   <p>The ISO-80000-4 library.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
-    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#Force"><span class="secno">3.1</span> <span class="content"><span>force</span></span></a>
-      <li><a href="#Impulse"><span class="secno">3.2</span> <span class="content"><span>impulse</span></span></a>
-      <li><a href="#Mass"><span class="secno">3.3</span> <span class="content"><span>mass</span></span></a>
-      <li><a href="#Momentum"><span class="secno">3.4</span> <span class="content"><span>momentum</span></span></a>
-      <li><a href="#Power"><span class="secno">3.5</span> <span class="content"><span>power</span></span></a>
+      <li><a href="#Kilogram"><span class="secno">4.1</span> <span class="content"><span>kilogram</span></span></a>
+      <li><a href="#Mass"><span class="secno">4.2</span> <span class="content"><span>mass</span></span></a>
      </ol>
     <li>
-     <a href="#Relations"><span class="secno">4</span> <span class="content">Relation Entities</span></a>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
      <ol class="toc">
-      <li><a href="#Force-Has-Momentum"><span class="secno">4.1</span> <span class="content"><span>Force-Has-Momentum</span></span></a>
-      <li><a href="#Force-Has-Velocity"><span class="secno">4.2</span> <span class="content"><span>Force-Has-Velocity</span></span></a>
-      <li><a href="#Impulse-Has-Duration"><span class="secno">4.3</span> <span class="content"><span>Impulse-Has-Duration</span></span></a>
-      <li><a href="#Impulse-Has-Force"><span class="secno">4.4</span> <span class="content"><span>Impulse-Has-Force</span></span></a>
-      <li><a href="#Momentum-Has-Mass"><span class="secno">4.5</span> <span class="content"><span>Momentum-Has-Mass</span></span></a>
-      <li><a href="#Momentum-Has-Velocity"><span class="secno">4.6</span> <span class="content"><span>Momentum-Has-Velocity</span></span></a>
-      <li><a href="#Power-Has-Force"><span class="secno">4.7</span> <span class="content"><span>Power-Has-Force</span></span></a>
-      <li><a href="#Power-Has-Velocity"><span class="secno">4.8</span> <span class="content"><span>Power-Has-Velocity</span></span></a>
+      <li><a href="#ISQ7-mass"><span class="secno">5.1</span> <span class="content"><span>ISQ7-mass</span></span></a>
+      <li><a href="#ISQ8-mass"><span class="secno">5.2</span> <span class="content"><span>ISQ8-mass</span></span></a>
+      <li><a href="#SI7-kilogram"><span class="secno">5.3</span> <span class="content"><span>SI7-kilogram</span></span></a>
+      <li><a href="#SI8-kilogram"><span class="secno">5.4</span> <span class="content"><span>SI8-kilogram</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -2007,419 +2001,158 @@ dfn > a.self-link::before      { content: "#"; }
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p><a href="iso-80000-4-quantities.html">http://iso.org/iso-80000-4-quantities</a> [iso-80000-4-quantities]</p>
+      <p><a href="iso-80000-4.1.html">http://iso.org/iso-80000-4.1</a> [iso-80000-4.1]</p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="http://iso.org/iso-80000-1.html">http://iso.org/iso-80000-1</a> [iso-80000-1]</p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
     <ul>
      <li data-md>
       <p><a href="http://purl.org/dc/elements/1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
      <li data-md>
-      <p><a href="http://www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
-     <li data-md>
-      <p><a href="http://www.w3.org/2002/07/owl.html">http://www.w3.org/2002/07/owl</a> [owl]</p>
-     <li data-md>
-      <p><a href="http://iupac.org/metrology.html">http://iupac.org/metrology</a> [metrology]</p>
-     <li data-md>
-      <p><a href="http://iso.org/iso-80000-4-units.html">http://iso.org/iso-80000-4-units</a> [iso-80000-4-units]</p>
-     <li data-md>
-      <p><a href="http://iso.org/iso-80000-3-quantities.html">http://iso.org/iso-80000-3-quantities</a> [iso-80000-3-quantities]</p>
+      <p><a href="http://bipm.org/jcgm/vim4.html">http://bipm.org/jcgm/vim4</a> [vim4]</p>
     </ul>
-    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="Force"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force">force<a class="self-link" href="#force"></a></dfn></span><a class="self-link" href="#Force"></a></h3>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Kilogram"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="kilogram">kilogram<a class="self-link" href="#kilogram"></a></dfn></span><a class="self-link" href="#Kilogram"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity">metrology:DerivedUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit" id="ref-for-unprefixedmeasurementunit">vim4:UnprefixedMeasurementUnit</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity">metrology:isDimensionlessQuantity</a> (must have value false)
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#id" id="ref-for-id">vim4:id</a> kilogram
         </ul>
       <tr>
-       <th>Relations with source
+       <th>Links
        <td>
         <ul>
-         <li>force ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#force-has-momentum" id="ref-for-force-has-momentum">Force-Has-Momentum</a> → <a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum">momentum</a> 
-         <li>force ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#force-has-velocity" id="ref-for-force-has-velocity">Force-Has-Velocity</a> → <a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity">iso-80000-3-quantities:velocity</a> 
-        </ul>
-      <tr>
-       <th>Relations with target
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse" id="ref-for-impulse">impulse</a> ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse-has-force" id="ref-for-impulse-has-force">Impulse-Has-Force</a> → force 
-         <li><a data-link-type="dfn" href="iso-80000-4-units.html#forcemagnitude" id="ref-for-forcemagnitude">iso-80000-4-units:ForceMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof">metrology:IsMagnitudeOf</a> → force 
-         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#power" id="ref-for-power">power</a> ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#power-has-force" id="ref-for-power-has-force">Power-Has-Force</a> → force 
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#instantiates" id="ref-for-instantiates">vim4:instantiates</a> <a data-link-type="dfn" href="iso-80000-4.1.html#mass" id="ref-for-mass">mass</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.2" id="Impulse"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulse">impulse<a class="self-link" href="#impulse"></a></dfn></span><a class="self-link" href="#Impulse"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="Mass"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="mass">mass<a class="self-link" href="#mass"></a></dfn></span><a class="self-link" href="#Mass"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity①">metrology:DerivedUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#generalunitaryquantity" id="ref-for-generalunitaryquantity">vim4:GeneralUnitaryQuantity</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity①">metrology:isDimensionlessQuantity</a> (must have value false)
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>impulse ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse-has-duration" id="ref-for-impulse-has-duration">Impulse-Has-Duration</a> → <a data-link-type="dfn" href="iso-80000-3-quantities.html#duration" id="ref-for-duration">iso-80000-3-quantities:duration</a> 
-         <li>impulse ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse-has-force" id="ref-for-impulse-has-force①">Impulse-Has-Force</a> → <a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force">force</a> 
-        </ul>
-      <tr>
-       <th>Relations with target
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="iso-80000-4-units.html#impulsemagnitude" id="ref-for-impulsemagnitude">iso-80000-4-units:ImpulseMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof①">metrology:IsMagnitudeOf</a> → impulse 
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#id" id="ref-for-id①">vim4:id</a> mass
         </ul>
     </table>
-    <h3 class="heading settled" data-level="3.3" id="Mass"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="mass">mass<a class="self-link" href="#mass"></a></dfn></span><a class="self-link" href="#Mass"></a></h3>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="ISQ7-mass"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isq7-mass">ISQ7-mass<a class="self-link" href="#isq7-mass"></a></dfn></span><a class="self-link" href="#ISQ7-mass"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#independentunitaryquantity" id="ref-for-independentunitaryquantity">metrology:IndependentUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity" id="ref-for-systemhasbaseunitaryquantity">vim4:SystemHasBaseUnitaryQuantity</a>
         </ul>
-      <tr>
-       <th>Subtypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint" id="ref-for-massconstraint">fse:MassConstraint</a>
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity②">metrology:isDimensionlessQuantity</a> (must have value false)
-        </ul>
-      <tr>
-       <th>Relations with target
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="iso-80000-4-units.html#massmagnitude" id="ref-for-massmagnitude">iso-80000-4-units:MassMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof②">metrology:IsMagnitudeOf</a> → mass 
-         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum①">momentum</a> ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum-has-mass" id="ref-for-momentum-has-mass">Momentum-Has-Mass</a> → mass 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.4" id="Momentum"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum">momentum<a class="self-link" href="#momentum"></a></dfn></span><a class="self-link" href="#Momentum"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity②">metrology:DerivedUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity③">metrology:isDimensionlessQuantity</a> (must have value false)
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>momentum ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum-has-mass" id="ref-for-momentum-has-mass①">Momentum-Has-Mass</a> → <a data-link-type="dfn" href="iso-80000-4-quantities.html#mass" id="ref-for-mass">mass</a> 
-         <li>momentum ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum-has-velocity" id="ref-for-momentum-has-velocity">Momentum-Has-Velocity</a> → <a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity①">iso-80000-3-quantities:velocity</a> 
-        </ul>
-      <tr>
-       <th>Relations with target
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force①">force</a> ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#force-has-momentum" id="ref-for-force-has-momentum①">Force-Has-Momentum</a> → momentum 
-         <li><a data-link-type="dfn" href="iso-80000-4-units.html#momentummagnitude" id="ref-for-momentummagnitude">iso-80000-4-units:MomentumMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof③">metrology:IsMagnitudeOf</a> → momentum 
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="3.5" id="Power"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power">power<a class="self-link" href="#power"></a></dfn></span><a class="self-link" href="#Power"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#derivedunitaryquantity" id="ref-for-derivedunitaryquantity③">metrology:DerivedUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#isdimensionlessquantity" id="ref-for-isdimensionlessquantity④">metrology:isDimensionlessQuantity</a> (must have value false)
-        </ul>
-      <tr>
-       <th>Relations with source
-       <td>
-        <ul>
-         <li>power ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#power-has-force" id="ref-for-power-has-force①">Power-Has-Force</a> → <a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force②">force</a> 
-         <li>power ← <a data-link-type="dfn" href="iso-80000-4-quantities.html#power-has-velocity" id="ref-for-power-has-velocity">Power-Has-Velocity</a> → <a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity②">iso-80000-3-quantities:velocity</a> 
-        </ul>
-      <tr>
-       <th>Relations with target
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="iso-80000-4-units.html#powermagnitude" id="ref-for-powermagnitude">iso-80000-4-units:PowerMagnitude</a> ← <a data-link-type="dfn" href="../iupac.org/metrology.html#ismagnitudeof" id="ref-for-ismagnitudeof④">metrology:IsMagnitudeOf</a> → power 
-        </ul>
-    </table>
-    <h2 class="heading settled" data-level="4" id="Relations"><span class="secno">4. </span><span class="content">Relation Entities</span><a class="self-link" href="#Relations"></a></h2>
-    <h3 class="heading settled" data-level="4.1" id="Force-Has-Momentum"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force-has-momentum">Force-Has-Momentum<a class="self-link" href="#force-has-momentum"></a></dfn></span><a class="self-link" href="#Force-Has-Momentum"></a></h3>
-    <table class="def">
-     <tbody>
       <tr>
        <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force③">force</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum②">momentum</a>
-      <tr>
-       <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity">metrology:HasFactorForUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="iso-80000-1.html#isq7" id="ref-for-isq7">iso-80000-1:ISQ7</a>
         </ul>
       <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Force-Has-Momentum" data-dfn-type="attribute" data-export id="dom-force-has-momentum-force-has-momentum"><code>force-has-momentum</code><a class="self-link" href="#dom-force-has-momentum-force-has-momentum"></a></dfn> 
-      <tr>
-       <th>Attributes
+       <th>Target
        <td>
         <ul>
-         <li>Functional
+         <li><a data-link-type="dfn" href="iso-80000-4.1.html#mass" id="ref-for-mass①">mass</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent">metrology:exponent</a> (must have value 1/1)
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#dimensionsymbol" id="ref-for-dimensionsymbol">vim4:dimensionSymbol</a> M
         </ul>
     </table>
-    <h3 class="heading settled" data-level="4.2" id="Force-Has-Velocity"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="force-has-velocity">Force-Has-Velocity<a class="self-link" href="#force-has-velocity"></a></dfn></span><a class="self-link" href="#Force-Has-Velocity"></a></h3>
+    <h3 class="heading settled" data-level="5.2" id="ISQ8-mass"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="isq8-mass">ISQ8-mass<a class="self-link" href="#isq8-mass"></a></dfn></span><a class="self-link" href="#ISQ8-mass"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force④">force</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity③">iso-80000-3-quantities:velocity</a>
-      <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity①">metrology:HasFactorForUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity" id="ref-for-systemhasbaseunitaryquantity①">vim4:SystemHasBaseUnitaryQuantity</a>
         </ul>
       <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Force-Has-Velocity" data-dfn-type="attribute" data-export id="dom-force-has-velocity-force-has-velocity"><code>force-has-velocity</code><a class="self-link" href="#dom-force-has-velocity-force-has-velocity"></a></dfn> 
-      <tr>
-       <th>Attributes
+       <th>Source
        <td>
         <ul>
-         <li>Functional
+         <li><a data-link-type="dfn" href="iso-80000-1.html#isq8" id="ref-for-isq8">iso-80000-1:ISQ8</a>
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-4.1.html#mass" id="ref-for-mass②">mass</a>
         </ul>
       <tr>
        <th>Properties
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent①">metrology:exponent</a> (must have value 1/1)
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#dimensionsymbol" id="ref-for-dimensionsymbol①">vim4:dimensionSymbol</a> M
         </ul>
     </table>
-    <h3 class="heading settled" data-level="4.3" id="Impulse-Has-Duration"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulse-has-duration">Impulse-Has-Duration<a class="self-link" href="#impulse-has-duration"></a></dfn></span><a class="self-link" href="#Impulse-Has-Duration"></a></h3>
+    <h3 class="heading settled" data-level="5.3" id="SI7-kilogram"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="si7-kilogram">SI7-kilogram<a class="self-link" href="#si7-kilogram"></a></dfn></span><a class="self-link" href="#SI7-kilogram"></a></h3>
     <table class="def">
      <tbody>
       <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasbaseunit" id="ref-for-systemhasbaseunit">vim4:SystemHasBaseUnit</a>
+        </ul>
+      <tr>
        <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse" id="ref-for-impulse①">impulse</a>
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-1.html#si7" id="ref-for-si7">iso-80000-1:SI7</a>
+        </ul>
       <tr>
        <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-3-quantities.html#duration" id="ref-for-duration①">iso-80000-3-quantities:duration</a>
-      <tr>
-       <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity②">metrology:HasFactorForUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Impulse-Has-Duration" data-dfn-type="attribute" data-export id="dom-impulse-has-duration-impulse-has-duration"><code>impulse-has-duration</code><a class="self-link" href="#dom-impulse-has-duration-impulse-has-duration"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent②">metrology:exponent</a> (must have value 1/1)
+         <li><a data-link-type="dfn" href="iso-80000-4.1.html#kilogram" id="ref-for-kilogram">kilogram</a>
         </ul>
     </table>
-    <h3 class="heading settled" data-level="4.4" id="Impulse-Has-Force"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="impulse-has-force">Impulse-Has-Force<a class="self-link" href="#impulse-has-force"></a></dfn></span><a class="self-link" href="#Impulse-Has-Force"></a></h3>
+    <h3 class="heading settled" data-level="5.4" id="SI8-kilogram"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="si8-kilogram">SI8-kilogram<a class="self-link" href="#si8-kilogram"></a></dfn></span><a class="self-link" href="#SI8-kilogram"></a></h3>
     <table class="def">
      <tbody>
       <tr>
-       <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#impulse" id="ref-for-impulse②">impulse</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force⑤">force</a>
-      <tr>
-       <th>Supertypes
+       <th>Types
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity③">metrology:HasFactorForUnitaryQuantity</a>
+         <li><a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasbaseunit" id="ref-for-systemhasbaseunit①">vim4:SystemHasBaseUnit</a>
         </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Impulse-Has-Force" data-dfn-type="attribute" data-export id="dom-impulse-has-force-impulse-has-force"><code>impulse-has-force</code><a class="self-link" href="#dom-impulse-has-force-impulse-has-force"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent③">metrology:exponent</a> (must have value 1/1)
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="4.5" id="Momentum-Has-Mass"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum-has-mass">Momentum-Has-Mass<a class="self-link" href="#momentum-has-mass"></a></dfn></span><a class="self-link" href="#Momentum-Has-Mass"></a></h3>
-    <table class="def">
-     <tbody>
       <tr>
        <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum③">momentum</a>
+       <td>
+        <ul>
+         <li><a data-link-type="dfn" href="iso-80000-1.html#si8" id="ref-for-si8">iso-80000-1:SI8</a>
+        </ul>
       <tr>
        <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#mass" id="ref-for-mass①">mass</a>
-      <tr>
-       <th>Supertypes
        <td>
         <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity④">metrology:HasFactorForUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Momentum-Has-Mass" data-dfn-type="attribute" data-export id="dom-momentum-has-mass-momentum-has-mass"><code>momentum-has-mass</code><a class="self-link" href="#dom-momentum-has-mass-momentum-has-mass"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent④">metrology:exponent</a> (must have value 1/1)
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="4.6" id="Momentum-Has-Velocity"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="momentum-has-velocity">Momentum-Has-Velocity<a class="self-link" href="#momentum-has-velocity"></a></dfn></span><a class="self-link" href="#Momentum-Has-Velocity"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#momentum" id="ref-for-momentum④">momentum</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity④">iso-80000-3-quantities:velocity</a>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑤">metrology:HasFactorForUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Momentum-Has-Velocity" data-dfn-type="attribute" data-export id="dom-momentum-has-velocity-momentum-has-velocity"><code>momentum-has-velocity</code><a class="self-link" href="#dom-momentum-has-velocity-momentum-has-velocity"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑤">metrology:exponent</a> (must have value -1/1)
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="4.7" id="Power-Has-Force"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power-has-force">Power-Has-Force<a class="self-link" href="#power-has-force"></a></dfn></span><a class="self-link" href="#Power-Has-Force"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#power" id="ref-for-power①">power</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#force" id="ref-for-force⑥">force</a>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑥">metrology:HasFactorForUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Power-Has-Force" data-dfn-type="attribute" data-export id="dom-power-has-force-power-has-force"><code>power-has-force</code><a class="self-link" href="#dom-power-has-force-power-has-force"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑥">metrology:exponent</a> (must have value 1/1)
-        </ul>
-    </table>
-    <h3 class="heading settled" data-level="4.8" id="Power-Has-Velocity"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="power-has-velocity">Power-Has-Velocity<a class="self-link" href="#power-has-velocity"></a></dfn></span><a class="self-link" href="#Power-Has-Velocity"></a></h3>
-    <table class="def">
-     <tbody>
-      <tr>
-       <th>Source
-       <td><a data-link-type="dfn" href="iso-80000-4-quantities.html#power" id="ref-for-power②">power</a>
-      <tr>
-       <th>Target
-       <td><a data-link-type="dfn" href="iso-80000-3-quantities.html#velocity" id="ref-for-velocity⑤">iso-80000-3-quantities:velocity</a>
-      <tr>
-       <th>Supertypes
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#hasfactorforunitaryquantity" id="ref-for-hasfactorforunitaryquantity⑦">metrology:HasFactorForUnitaryQuantity</a>
-        </ul>
-      <tr>
-       <th>Forward Relation
-       <td><dfn class="idl-code" data-dfn-for="Power-Has-Velocity" data-dfn-type="attribute" data-export id="dom-power-has-velocity-power-has-velocity"><code>power-has-velocity</code><a class="self-link" href="#dom-power-has-velocity-power-has-velocity"></a></dfn> 
-      <tr>
-       <th>Attributes
-       <td>
-        <ul>
-         <li>Functional
-        </ul>
-      <tr>
-       <th>Properties
-       <td>
-        <ul>
-         <li><a data-link-type="dfn" href="../iupac.org/metrology.html#exponent" id="ref-for-exponent⑦">metrology:exponent</a> (must have value 1/1)
+         <li><a data-link-type="dfn" href="iso-80000-4.1.html#kilogram" id="ref-for-kilogram①">kilogram</a>
         </ul>
     </table>
    </div>
@@ -2556,288 +2289,124 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#force">force</a><span>, in § 3.1</span>
-   <li><a href="#force-has-momentum">Force-Has-Momentum</a><span>, in § 4.1</span>
-   <li><a href="#dom-force-has-momentum-force-has-momentum">force-has-momentum</a><span>, in § 4.1</span>
-   <li><a href="#force-has-velocity">Force-Has-Velocity</a><span>, in § 4.2</span>
-   <li><a href="#dom-force-has-velocity-force-has-velocity">force-has-velocity</a><span>, in § 4.2</span>
-   <li><a href="#impulse">impulse</a><span>, in § 3.2</span>
-   <li><a href="#impulse-has-duration">Impulse-Has-Duration</a><span>, in § 4.3</span>
-   <li><a href="#dom-impulse-has-duration-impulse-has-duration">impulse-has-duration</a><span>, in § 4.3</span>
-   <li><a href="#impulse-has-force">Impulse-Has-Force</a><span>, in § 4.4</span>
-   <li><a href="#dom-impulse-has-force-impulse-has-force">impulse-has-force</a><span>, in § 4.4</span>
-   <li><a href="#mass">mass</a><span>, in § 3.3</span>
-   <li><a href="#momentum">momentum</a><span>, in § 3.4</span>
-   <li><a href="#momentum-has-mass">Momentum-Has-Mass</a><span>, in § 4.5</span>
-   <li><a href="#dom-momentum-has-mass-momentum-has-mass">momentum-has-mass</a><span>, in § 4.5</span>
-   <li><a href="#momentum-has-velocity">Momentum-Has-Velocity</a><span>, in § 4.6</span>
-   <li><a href="#dom-momentum-has-velocity-momentum-has-velocity">momentum-has-velocity</a><span>, in § 4.6</span>
-   <li><a href="#power">power</a><span>, in § 3.5</span>
-   <li><a href="#power-has-force">Power-Has-Force</a><span>, in § 4.7</span>
-   <li><a href="#dom-power-has-force-power-has-force">power-has-force</a><span>, in § 4.7</span>
-   <li><a href="#power-has-velocity">Power-Has-Velocity</a><span>, in § 4.8</span>
-   <li><a href="#dom-power-has-velocity-power-has-velocity">power-has-velocity</a><span>, in § 4.8</span>
+   <li><a href="#isq7-mass">ISQ7-mass</a><span>, in § 5.1</span>
+   <li><a href="#isq8-mass">ISQ8-mass</a><span>, in § 5.2</span>
+   <li><a href="#kilogram">kilogram</a><span>, in § 4.1</span>
+   <li><a href="#mass">mass</a><span>, in § 4.2</span>
+   <li><a href="#si7-kilogram">SI7-kilogram</a><span>, in § 5.3</span>
+   <li><a href="#si8-kilogram">SI8-kilogram</a><span>, in § 5.4</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-duration">
-   <a href="iso-80000-3-quantities.html#duration">iso-80000-3-quantities.html#duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-dimensionsymbol">
+   <a href="../bipm.org/jcgm/vim4.html#dimensionsymbol">../bipm.org/jcgm/vim4.html#dimensionsymbol</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-duration">3.2. impulse</a>
-    <li><a href="#ref-for-duration①">4.3. Impulse-Has-Duration</a>
+    <li><a href="#ref-for-dimensionsymbol">5.1. ISQ7-mass</a>
+    <li><a href="#ref-for-dimensionsymbol①">5.2. ISQ8-mass</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-velocity">
-   <a href="iso-80000-3-quantities.html#velocity">iso-80000-3-quantities.html#velocity</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-generalunitaryquantity">
+   <a href="../bipm.org/jcgm/vim4.html#generalunitaryquantity">../bipm.org/jcgm/vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-velocity">3.1. force</a>
-    <li><a href="#ref-for-velocity①">3.4. momentum</a>
-    <li><a href="#ref-for-velocity②">3.5. power</a>
-    <li><a href="#ref-for-velocity③">4.2. Force-Has-Velocity</a>
-    <li><a href="#ref-for-velocity④">4.6. Momentum-Has-Velocity</a>
-    <li><a href="#ref-for-velocity⑤">4.8. Power-Has-Velocity</a>
+    <li><a href="#ref-for-generalunitaryquantity">4.2. mass</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-force">
-   <a href="iso-80000-4-quantities.html#force">iso-80000-4-quantities.html#force</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-id">
+   <a href="../bipm.org/jcgm/vim4.html#id">../bipm.org/jcgm/vim4.html#id</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-force">3.2. impulse</a>
-    <li><a href="#ref-for-force①">3.4. momentum</a>
-    <li><a href="#ref-for-force②">3.5. power</a>
-    <li><a href="#ref-for-force③">4.1. Force-Has-Momentum</a>
-    <li><a href="#ref-for-force④">4.2. Force-Has-Velocity</a>
-    <li><a href="#ref-for-force⑤">4.4. Impulse-Has-Force</a>
-    <li><a href="#ref-for-force⑥">4.7. Power-Has-Force</a>
+    <li><a href="#ref-for-id">4.1. kilogram</a>
+    <li><a href="#ref-for-id①">4.2. mass</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-force-has-momentum">
-   <a href="iso-80000-4-quantities.html#force-has-momentum">iso-80000-4-quantities.html#force-has-momentum</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-instantiates">
+   <a href="../bipm.org/jcgm/vim4.html#instantiates">../bipm.org/jcgm/vim4.html#instantiates</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-force-has-momentum">3.1. force</a>
-    <li><a href="#ref-for-force-has-momentum①">3.4. momentum</a>
+    <li><a href="#ref-for-instantiates">4.1. kilogram</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-force-has-velocity">
-   <a href="iso-80000-4-quantities.html#force-has-velocity">iso-80000-4-quantities.html#force-has-velocity</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-systemhasbaseunit">
+   <a href="../bipm.org/jcgm/vim4.html#systemhasbaseunit">../bipm.org/jcgm/vim4.html#systemhasbaseunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-force-has-velocity">3.1. force</a>
+    <li><a href="#ref-for-systemhasbaseunit">5.3. SI7-kilogram</a>
+    <li><a href="#ref-for-systemhasbaseunit①">5.4. SI8-kilogram</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-impulse">
-   <a href="iso-80000-4-quantities.html#impulse">iso-80000-4-quantities.html#impulse</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-systemhasbaseunitaryquantity">
+   <a href="../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-impulse">3.1. force</a>
-    <li><a href="#ref-for-impulse①">4.3. Impulse-Has-Duration</a>
-    <li><a href="#ref-for-impulse②">4.4. Impulse-Has-Force</a>
+    <li><a href="#ref-for-systemhasbaseunitaryquantity">5.1. ISQ7-mass</a>
+    <li><a href="#ref-for-systemhasbaseunitaryquantity①">5.2. ISQ8-mass</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-impulse-has-duration">
-   <a href="iso-80000-4-quantities.html#impulse-has-duration">iso-80000-4-quantities.html#impulse-has-duration</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-unprefixedmeasurementunit">
+   <a href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit">../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-impulse-has-duration">3.2. impulse</a>
+    <li><a href="#ref-for-unprefixedmeasurementunit">4.1. kilogram</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-impulse-has-force">
-   <a href="iso-80000-4-quantities.html#impulse-has-force">iso-80000-4-quantities.html#impulse-has-force</a><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="term-for-isq7">
+   <a href="iso-80000-1.html#isq7">iso-80000-1.html#isq7</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-impulse-has-force">3.1. force</a>
-    <li><a href="#ref-for-impulse-has-force①">3.2. impulse</a>
+    <li><a href="#ref-for-isq7">5.1. ISQ7-mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-isq8">
+   <a href="iso-80000-1.html#isq8">iso-80000-1.html#isq8</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq8">5.2. ISQ8-mass</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-si7">
+   <a href="iso-80000-1.html#si7">iso-80000-1.html#si7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si7">5.3. SI7-kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-si8">
+   <a href="iso-80000-1.html#si8">iso-80000-1.html#si8</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si8">5.4. SI8-kilogram</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-kilogram">
+   <a href="iso-80000-4.1.html#kilogram">iso-80000-4.1.html#kilogram</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-kilogram">5.3. SI7-kilogram</a>
+    <li><a href="#ref-for-kilogram①">5.4. SI8-kilogram</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-mass">
-   <a href="iso-80000-4-quantities.html#mass">iso-80000-4-quantities.html#mass</a><b>Referenced in:</b>
+   <a href="iso-80000-4.1.html#mass">iso-80000-4.1.html#mass</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-mass">3.4. momentum</a>
-    <li><a href="#ref-for-mass①">4.5. Momentum-Has-Mass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-momentum">
-   <a href="iso-80000-4-quantities.html#momentum">iso-80000-4-quantities.html#momentum</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-momentum">3.1. force</a>
-    <li><a href="#ref-for-momentum①">3.3. mass</a>
-    <li><a href="#ref-for-momentum②">4.1. Force-Has-Momentum</a>
-    <li><a href="#ref-for-momentum③">4.5. Momentum-Has-Mass</a>
-    <li><a href="#ref-for-momentum④">4.6. Momentum-Has-Velocity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-momentum-has-mass">
-   <a href="iso-80000-4-quantities.html#momentum-has-mass">iso-80000-4-quantities.html#momentum-has-mass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-momentum-has-mass">3.3. mass</a>
-    <li><a href="#ref-for-momentum-has-mass①">3.4. momentum</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-momentum-has-velocity">
-   <a href="iso-80000-4-quantities.html#momentum-has-velocity">iso-80000-4-quantities.html#momentum-has-velocity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-momentum-has-velocity">3.4. momentum</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-power">
-   <a href="iso-80000-4-quantities.html#power">iso-80000-4-quantities.html#power</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-power">3.1. force</a>
-    <li><a href="#ref-for-power①">4.7. Power-Has-Force</a>
-    <li><a href="#ref-for-power②">4.8. Power-Has-Velocity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-power-has-force">
-   <a href="iso-80000-4-quantities.html#power-has-force">iso-80000-4-quantities.html#power-has-force</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-power-has-force">3.1. force</a>
-    <li><a href="#ref-for-power-has-force①">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-power-has-velocity">
-   <a href="iso-80000-4-quantities.html#power-has-velocity">iso-80000-4-quantities.html#power-has-velocity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-power-has-velocity">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-forcemagnitude">
-   <a href="iso-80000-4-units.html#forcemagnitude">iso-80000-4-units.html#forcemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-forcemagnitude">3.1. force</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-impulsemagnitude">
-   <a href="iso-80000-4-units.html#impulsemagnitude">iso-80000-4-units.html#impulsemagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-impulsemagnitude">3.2. impulse</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-massmagnitude">
-   <a href="iso-80000-4-units.html#massmagnitude">iso-80000-4-units.html#massmagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massmagnitude">3.3. mass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-momentummagnitude">
-   <a href="iso-80000-4-units.html#momentummagnitude">iso-80000-4-units.html#momentummagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-momentummagnitude">3.4. momentum</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-powermagnitude">
-   <a href="iso-80000-4-units.html#powermagnitude">iso-80000-4-units.html#powermagnitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-powermagnitude">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-derivedunitaryquantity">
-   <a href="../iupac.org/metrology.html#derivedunitaryquantity">../iupac.org/metrology.html#derivedunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-derivedunitaryquantity">3.1. force</a>
-    <li><a href="#ref-for-derivedunitaryquantity①">3.2. impulse</a>
-    <li><a href="#ref-for-derivedunitaryquantity②">3.4. momentum</a>
-    <li><a href="#ref-for-derivedunitaryquantity③">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-exponent">
-   <a href="../iupac.org/metrology.html#exponent">../iupac.org/metrology.html#exponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-exponent">4.1. Force-Has-Momentum</a>
-    <li><a href="#ref-for-exponent①">4.2. Force-Has-Velocity</a>
-    <li><a href="#ref-for-exponent②">4.3. Impulse-Has-Duration</a>
-    <li><a href="#ref-for-exponent③">4.4. Impulse-Has-Force</a>
-    <li><a href="#ref-for-exponent④">4.5. Momentum-Has-Mass</a>
-    <li><a href="#ref-for-exponent⑤">4.6. Momentum-Has-Velocity</a>
-    <li><a href="#ref-for-exponent⑥">4.7. Power-Has-Force</a>
-    <li><a href="#ref-for-exponent⑦">4.8. Power-Has-Velocity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hasfactorforunitaryquantity">
-   <a href="../iupac.org/metrology.html#hasfactorforunitaryquantity">../iupac.org/metrology.html#hasfactorforunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasfactorforunitaryquantity">4.1. Force-Has-Momentum</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity①">4.2. Force-Has-Velocity</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity②">4.3. Impulse-Has-Duration</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity③">4.4. Impulse-Has-Force</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity④">4.5. Momentum-Has-Mass</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑤">4.6. Momentum-Has-Velocity</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑥">4.7. Power-Has-Force</a>
-    <li><a href="#ref-for-hasfactorforunitaryquantity⑦">4.8. Power-Has-Velocity</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-independentunitaryquantity">
-   <a href="../iupac.org/metrology.html#independentunitaryquantity">../iupac.org/metrology.html#independentunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-independentunitaryquantity">3.3. mass</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-isdimensionlessquantity">
-   <a href="../iupac.org/metrology.html#isdimensionlessquantity">../iupac.org/metrology.html#isdimensionlessquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isdimensionlessquantity">3.1. force</a>
-    <li><a href="#ref-for-isdimensionlessquantity①">3.2. impulse</a>
-    <li><a href="#ref-for-isdimensionlessquantity②">3.3. mass</a>
-    <li><a href="#ref-for-isdimensionlessquantity③">3.4. momentum</a>
-    <li><a href="#ref-for-isdimensionlessquantity④">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-ismagnitudeof">
-   <a href="../iupac.org/metrology.html#ismagnitudeof">../iupac.org/metrology.html#ismagnitudeof</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ismagnitudeof">3.1. force</a>
-    <li><a href="#ref-for-ismagnitudeof①">3.2. impulse</a>
-    <li><a href="#ref-for-ismagnitudeof②">3.3. mass</a>
-    <li><a href="#ref-for-ismagnitudeof③">3.4. momentum</a>
-    <li><a href="#ref-for-ismagnitudeof④">3.5. power</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-massconstraint">
-   <a href="../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint">../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massconstraint">3.3. mass</a>
+    <li><a href="#ref-for-mass">4.1. kilogram</a>
+    <li><a href="#ref-for-mass①">5.1. ISQ7-mass</a>
+    <li><a href="#ref-for-mass②">5.2. ISQ8-mass</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[http://iso.org/iso-80000-3-quantities]</a> defines the following terms:
+    <a data-link-type="biblio">[http://bipm.org/jcgm/vim4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-duration">duration</span>
-     <li><span class="dfn-paneled" id="term-for-velocity">velocity</span>
+     <li><span class="dfn-paneled" id="term-for-dimensionsymbol">dimensionsymbol</span>
+     <li><span class="dfn-paneled" id="term-for-generalunitaryquantity">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="term-for-id">id</span>
+     <li><span class="dfn-paneled" id="term-for-instantiates">instantiates</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasbaseunit">systemhasbaseunit</span>
+     <li><span class="dfn-paneled" id="term-for-systemhasbaseunitaryquantity">systemhasbaseunitaryquantity</span>
+     <li><span class="dfn-paneled" id="term-for-unprefixedmeasurementunit">unprefixedmeasurementunit</span>
     </ul>
    <li>
-    <a data-link-type="biblio">[http://iso.org/iso-80000-4-quantities]</a> defines the following terms:
+    <a data-link-type="biblio">[http://iso.org/iso-80000-1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-force">force</span>
-     <li><span class="dfn-paneled" id="term-for-force-has-momentum">force-has-momentum</span>
-     <li><span class="dfn-paneled" id="term-for-force-has-velocity">force-has-velocity</span>
-     <li><span class="dfn-paneled" id="term-for-impulse">impulse</span>
-     <li><span class="dfn-paneled" id="term-for-impulse-has-duration">impulse-has-duration</span>
-     <li><span class="dfn-paneled" id="term-for-impulse-has-force">impulse-has-force</span>
+     <li><span class="dfn-paneled" id="term-for-isq7">isq7</span>
+     <li><span class="dfn-paneled" id="term-for-isq8">isq8</span>
+     <li><span class="dfn-paneled" id="term-for-si7">si7</span>
+     <li><span class="dfn-paneled" id="term-for-si8">si8</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[http://iso.org/iso-80000-4.1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-kilogram">kilogram</span>
      <li><span class="dfn-paneled" id="term-for-mass">mass</span>
-     <li><span class="dfn-paneled" id="term-for-momentum">momentum</span>
-     <li><span class="dfn-paneled" id="term-for-momentum-has-mass">momentum-has-mass</span>
-     <li><span class="dfn-paneled" id="term-for-momentum-has-velocity">momentum-has-velocity</span>
-     <li><span class="dfn-paneled" id="term-for-power">power</span>
-     <li><span class="dfn-paneled" id="term-for-power-has-force">power-has-force</span>
-     <li><span class="dfn-paneled" id="term-for-power-has-velocity">power-has-velocity</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iso.org/iso-80000-4-units]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-forcemagnitude">forcemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-impulsemagnitude">impulsemagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-massmagnitude">massmagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-momentummagnitude">momentummagnitude</span>
-     <li><span class="dfn-paneled" id="term-for-powermagnitude">powermagnitude</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://iupac.org/metrology]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-derivedunitaryquantity">derivedunitaryquantity</span>
-     <li><span class="dfn-paneled" id="term-for-exponent">exponent</span>
-     <li><span class="dfn-paneled" id="term-for-hasfactorforunitaryquantity">hasfactorforunitaryquantity</span>
-     <li><span class="dfn-paneled" id="term-for-independentunitaryquantity">independentunitaryquantity</span>
-     <li><span class="dfn-paneled" id="term-for-isdimensionlessquantity">isdimensionlessquantity</span>
-     <li><span class="dfn-paneled" id="term-for-ismagnitudeof">ismagnitudeof</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://opencaesar.io/examples/firesat/disciplines/fse/fse]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-massconstraint">massconstraint</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
