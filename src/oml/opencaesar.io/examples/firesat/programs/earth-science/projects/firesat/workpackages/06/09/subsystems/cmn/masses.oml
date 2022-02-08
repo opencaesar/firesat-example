@@ -7,7 +7,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
-	uses <http://iupac.org/metrology#> as metrology
+	uses <http://bipm.org/jcgm/vim4#> as vim4
 
 	uses <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse
 
@@ -17,40 +17,40 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	@rdfs:label "Transmitter Unit Unit Mass Limit Constraint"
 	ci TransmitterUnitMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "2.1"^^xsd:double
-		metrology:isQuantityOf cmn-assemblies:TransmitterUnit
+		vim4:hasDoubleNumber "2.1"^^xsd:double
+		vim4:characterizes cmn-assemblies:TransmitterUnit
 	]
 
 	// Receiver Unit Mass
 
 	@rdfs:label "Receiver Unit Mass Limit Constraint"
 	ci ReceiverUnitMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "1.0"^^xsd:double
-		metrology:isQuantityOf cmn-assemblies:ReceiverUnit
+		vim4:hasDoubleNumber "1.0"^^xsd:double
+		vim4:characterizes cmn-assemblies:ReceiverUnit
 	]
 
 	// Transmit Whip Antenna Mass
 
 	@rdfs:label "Transmit Whip Antenna Mass Limit Constraint"
 	ci TransmitWhipAntennaMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "0.04"^^xsd:double
-		metrology:isQuantityOf cmn-assemblies:TransmitWhipAntenna
+		vim4:hasDoubleNumber "0.04"^^xsd:double
+		vim4:characterizes cmn-assemblies:TransmitWhipAntenna
 	]
 
 	// Transmit Hi-Gain Antenna Mass
 
 	@rdfs:label "Transmit Hi-Gain Antenna Mass Limit Constraint"
 	ci TransmitHiGainAntennaMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "0.04"^^xsd:double
-		metrology:isQuantityOf cmn-assemblies:TransmitHiGainAntenna
+		vim4:hasDoubleNumber "0.04"^^xsd:double
+		vim4:characterizes cmn-assemblies:TransmitHiGainAntenna
 	]
 
 	// Receive Whip Antenna Mass
 
 	@rdfs:label "Receive Whip Antenna Mass Limit Constraint"
 	ci ReceiveWhipAntennaMassLimitConstraint : fse:MassLimitConstraint [
-		metrology:hasDoubleNumber "0.08"^^xsd:double
-		metrology:isQuantityOf cmn-assemblies:ReceiveWhipAntenna
+		vim4:hasDoubleNumber "0.08"^^xsd:double
+		vim4:characterizes cmn-assemblies:ReceiveWhipAntenna
 	]
 
 }
