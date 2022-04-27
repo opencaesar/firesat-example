@@ -22,9 +22,9 @@ buildscript {
         classpath 'io.opencaesar.owl:owl-query-gradle:+'
         classpath 'io.opencaesar.owl:owl-load-gradle:+'
         classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
-        classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.+'
+        classpath 'io.opencaesar.oml:oml-merge-gradle:1.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.+'
     }
 }
 
@@ -164,6 +164,7 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
 task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
+	inputs.files(owlLoad.inputs.files) // rerun when the dataset changes
     endpointURL = 'http://localhost:3030/firesat'
     queryPath = file('src/sparql')
     resultPath = file('build/results')
