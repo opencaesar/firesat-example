@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/foundation/analysis" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Analysis</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3063,88 +3065,88 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#validates">validates</a><span>, in § 5.12</span>
    <li><a href="#validates_1">validates_1</a><span>, in § 5.12</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-characterizes">
-   <a href="../../bipm.org/jcgm/vim4.html#characterizes">../../bipm.org/jcgm/vim4.html#characterizes</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a76b7a981dbd5fe17283ae74b1a80155" class="dfn-panel" data-for="a76b7a981dbd5fe17283ae74b1a80155" id="infopanel-for-a76b7a981dbd5fe17283ae74b1a80155">
+   <span id="infopaneltitle-for-a76b7a981dbd5fe17283ae74b1a80155" style="display:none">Info about the 'characterizes' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#characterizes">../../bipm.org/jcgm/vim4.html#characterizes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizes②">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-individualnominalproperty">
-   <a href="../../bipm.org/jcgm/vim4.html#individualnominalproperty">../../bipm.org/jcgm/vim4.html#individualnominalproperty</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ed8188a3dde02e1641af5fb419cb4f8b" class="dfn-panel" data-for="ed8188a3dde02e1641af5fb419cb4f8b" id="infopanel-for-ed8188a3dde02e1641af5fb419cb4f8b">
+   <span id="infopaneltitle-for-ed8188a3dde02e1641af5fb419cb4f8b" style="display:none">Info about the 'individualnominalproperty' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#individualnominalproperty">../../bipm.org/jcgm/vim4.html#individualnominalproperty</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-individualnominalproperty">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-individualnominalproperty①">4.3. Characterization</a>
     <li><a href="#ref-for-individualnominalproperty②">4.11. NominalPropertyValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-individualordinalquantity">
-   <a href="../../bipm.org/jcgm/vim4.html#individualordinalquantity">../../bipm.org/jcgm/vim4.html#individualordinalquantity</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-39d9ae1cb09d1a6de298d443abf1d37f" class="dfn-panel" data-for="39d9ae1cb09d1a6de298d443abf1d37f" id="infopanel-for-39d9ae1cb09d1a6de298d443abf1d37f">
+   <span id="infopaneltitle-for-39d9ae1cb09d1a6de298d443abf1d37f" style="display:none">Info about the 'individualordinalquantity' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#individualordinalquantity">../../bipm.org/jcgm/vim4.html#individualordinalquantity</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-individualordinalquantity">4.3. Characterization</a>
     <li><a href="#ref-for-individualordinalquantity①">4.12. OrdinalQuantityValueConstraint</a> <a href="#ref-for-individualordinalquantity②">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-individualquantity">
-   <a href="../../bipm.org/jcgm/vim4.html#individualquantity">../../bipm.org/jcgm/vim4.html#individualquantity</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3efaef365cb8f7707ee9fe89ce1d6945" class="dfn-panel" data-for="3efaef365cb8f7707ee9fe89ce1d6945" id="infopanel-for-3efaef365cb8f7707ee9fe89ce1d6945">
+   <span id="infopaneltitle-for-3efaef365cb8f7707ee9fe89ce1d6945" style="display:none">Info about the 'individualquantity' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#individualquantity">../../bipm.org/jcgm/vim4.html#individualquantity</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-individualquantity">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-individualquantity①">4.13. QuantityValueConstraint</a> <a href="#ref-for-individualquantity②">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-individualunitaryquantity">
-   <a href="../../bipm.org/jcgm/vim4.html#individualunitaryquantity">../../bipm.org/jcgm/vim4.html#individualunitaryquantity</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e29588e7c8441bd16f615820d065099f" class="dfn-panel" data-for="e29588e7c8441bd16f615820d065099f" id="infopanel-for-e29588e7c8441bd16f615820d065099f">
+   <span id="infopaneltitle-for-e29588e7c8441bd16f615820d065099f" style="display:none">Info about the 'individualunitaryquantity' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#individualunitaryquantity">../../bipm.org/jcgm/vim4.html#individualunitaryquantity</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-individualunitaryquantity">4.3. Characterization</a>
     <li><a href="#ref-for-individualunitaryquantity①">4.17. UnitaryQuantityValueConstraint</a> <a href="#ref-for-individualunitaryquantity②">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-object">
-   <a href="../../bipm.org/jcgm/vim4.html#object">../../bipm.org/jcgm/vim4.html#object</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0f0617f3f3f849a82716fbc101eb8e91" class="dfn-panel" data-for="0f0617f3f3f849a82716fbc101eb8e91" id="infopanel-for-0f0617f3f3f849a82716fbc101eb8e91">
+   <span id="infopaneltitle-for-0f0617f3f3f849a82716fbc101eb8e91" style="display:none">Info about the 'object' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#object">../../bipm.org/jcgm/vim4.html#object</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-object">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ordinalquantityvalue">
-   <a href="../../bipm.org/jcgm/vim4.html#ordinalquantityvalue">../../bipm.org/jcgm/vim4.html#ordinalquantityvalue</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-9167399038e244e0777fa39594d259ec" class="dfn-panel" data-for="9167399038e244e0777fa39594d259ec" id="infopanel-for-9167399038e244e0777fa39594d259ec">
+   <span id="infopaneltitle-for-9167399038e244e0777fa39594d259ec" style="display:none">Info about the 'ordinalquantityvalue' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#ordinalquantityvalue">../../bipm.org/jcgm/vim4.html#ordinalquantityvalue</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ordinalquantityvalue">4.12. OrdinalQuantityValueConstraint</a> <a href="#ref-for-ordinalquantityvalue①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-quantityvalue">
-   <a href="../../bipm.org/jcgm/vim4.html#quantityvalue">../../bipm.org/jcgm/vim4.html#quantityvalue</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-4c35a6b9efe9e48b2646098df78f5d4f" class="dfn-panel" data-for="4c35a6b9efe9e48b2646098df78f5d4f" id="infopanel-for-4c35a6b9efe9e48b2646098df78f5d4f">
+   <span id="infopaneltitle-for-4c35a6b9efe9e48b2646098df78f5d4f" style="display:none">Info about the 'quantityvalue' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#quantityvalue">../../bipm.org/jcgm/vim4.html#quantityvalue</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-quantityvalue">3.1. AnalyzedElement</a>
     <li><a href="#ref-for-quantityvalue①">4.13. QuantityValueConstraint</a> <a href="#ref-for-quantityvalue②">(2)</a> <a href="#ref-for-quantityvalue③">(3)</a>
     <li><a href="#ref-for-quantityvalue④">5.9. HasQuantityValue</a> <a href="#ref-for-quantityvalue⑤">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitaryquantityvalue">
-   <a href="../../bipm.org/jcgm/vim4.html#unitaryquantityvalue">../../bipm.org/jcgm/vim4.html#unitaryquantityvalue</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-43ecd03c10041d8c9144868cc28cbb80" class="dfn-panel" data-for="43ecd03c10041d8c9144868cc28cbb80" id="infopanel-for-43ecd03c10041d8c9144868cc28cbb80">
+   <span id="infopaneltitle-for-43ecd03c10041d8c9144868cc28cbb80" style="display:none">Info about the 'unitaryquantityvalue' external reference.</span><a href="../../bipm.org/jcgm/vim4.html#unitaryquantityvalue">../../bipm.org/jcgm/vim4.html#unitaryquantityvalue</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-unitaryquantityvalue">4.17. UnitaryQuantityValueConstraint</a> <a href="#ref-for-unitaryquantityvalue①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-always">
-   <a href="analysis.html#always">analysis.html#always</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-69c0159ba8642fd9aac849d61e6294da" class="dfn-panel" data-for="69c0159ba8642fd9aac849d61e6294da" id="infopanel-for-69c0159ba8642fd9aac849d61e6294da">
+   <span id="infopaneltitle-for-69c0159ba8642fd9aac849d61e6294da" style="display:none">Info about the 'always' external reference.</span><a href="analysis.html#always">analysis.html#always</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-always①">4.15. Scenario</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-analyzedelement">
-   <a href="analysis.html#analyzedelement">analysis.html#analyzedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-358732284aff785b9b98afe093db2056" class="dfn-panel" data-for="358732284aff785b9b98afe093db2056" id="infopanel-for-358732284aff785b9b98afe093db2056">
+   <span id="infopaneltitle-for-358732284aff785b9b98afe093db2056" style="display:none">Info about the 'analyzedelement' external reference.</span><a href="analysis.html#analyzedelement">analysis.html#analyzedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzedelement①">4.6. Explanation</a>
     <li><a href="#ref-for-analyzedelement③">5.1. Analyzes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-analyzes">
-   <a href="analysis.html#analyzes">analysis.html#analyzes</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2593409fb33335db658d9d46ab21f9e0" class="dfn-panel" data-for="2593409fb33335db658d9d46ab21f9e0" id="infopanel-for-2593409fb33335db658d9d46ab21f9e0">
+   <span id="infopaneltitle-for-2593409fb33335db658d9d46ab21f9e0" style="display:none">Info about the 'analyzes' external reference.</span><a href="analysis.html#analyzes">analysis.html#analyzes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzes②">5.9. HasQuantityValue</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-analyzes_1">
-   <a href="analysis.html#analyzes_1">analysis.html#analyzes_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c4b56277595db4bedd357bee558d311f" class="dfn-panel" data-for="c4b56277595db4bedd357bee558d311f" id="infopanel-for-c4b56277595db4bedd357bee558d311f">
+   <span id="infopaneltitle-for-c4b56277595db4bedd357bee558d311f" style="display:none">Info about the 'analyzes_1' external reference.</span><a href="analysis.html#analyzes_1">analysis.html#analyzes_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzes_1">4.6. Explanation</a>
     <li><a href="#ref-for-analyzes_1①">4.12. OrdinalQuantityValueConstraint</a>
@@ -3152,16 +3154,16 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-analyzes_1③">4.17. UnitaryQuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-asserts_1">
-   <a href="analysis.html#asserts_1">analysis.html#asserts_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8467be3e24011294b0ad4fb4accf37fa" class="dfn-panel" data-for="8467be3e24011294b0ad4fb4accf37fa" id="infopanel-for-8467be3e24011294b0ad4fb4accf37fa">
+   <span id="infopaneltitle-for-8467be3e24011294b0ad4fb4accf37fa" style="display:none">Info about the 'asserts_1' external reference.</span><a href="analysis.html#asserts_1">analysis.html#asserts_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-asserts_1">4.1. Always</a>
     <li><a href="#ref-for-asserts_1①">4.10. Never</a>
     <li><a href="#ref-for-asserts_1②">4.15. Scenario</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-assumption">
-   <a href="analysis.html#assumption">analysis.html#assumption</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2c9b8b405a61f7b9b64f3d636378353b" class="dfn-panel" data-for="2c9b8b405a61f7b9b64f3d636378353b" id="infopanel-for-2c9b8b405a61f7b9b64f3d636378353b">
+   <span id="infopaneltitle-for-2c9b8b405a61f7b9b64f3d636378353b" style="display:none">Info about the 'assumption' external reference.</span><a href="analysis.html#assumption">analysis.html#assumption</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-assumption">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-assumption②">4.3. Characterization</a>
@@ -3169,8 +3171,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-assumption⑥">5.10. Limits</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-characterization">
-   <a href="analysis.html#characterization">analysis.html#characterization</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-346ce162508283706ad80d3d7ae979ba" class="dfn-panel" data-for="346ce162508283706ad80d3d7ae979ba" id="infopanel-for-346ce162508283706ad80d3d7ae979ba">
+   <span id="infopaneltitle-for-346ce162508283706ad80d3d7ae979ba" style="display:none">Info about the 'characterization' external reference.</span><a href="analysis.html#characterization">analysis.html#characterization</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterization">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-characterization②">4.2. Assumption</a>
@@ -3180,8 +3182,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterization⑨">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-characterizedelement">
-   <a href="analysis.html#characterizedelement">analysis.html#characterizedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-962849c0f378b6120e746962bb64daa5" class="dfn-panel" data-for="962849c0f378b6120e746962bb64daa5" id="infopanel-for-962849c0f378b6120e746962bb64daa5">
+   <span id="infopaneltitle-for-962849c0f378b6120e746962bb64daa5" style="display:none">Info about the 'characterizedelement' external reference.</span><a href="analysis.html#characterizedelement">analysis.html#characterizedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizedelement①">4.2. Assumption</a>
     <li><a href="#ref-for-characterizedelement②">4.3. Characterization</a>
@@ -3194,33 +3196,33 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterizedelement①④">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-characterizes">
-   <a href="analysis.html#characterizes">analysis.html#characterizes</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-17c9458d108baf1c9953e05b40ba7c0b" class="dfn-panel" data-for="17c9458d108baf1c9953e05b40ba7c0b" id="infopanel-for-17c9458d108baf1c9953e05b40ba7c0b">
+   <span id="infopaneltitle-for-17c9458d108baf1c9953e05b40ba7c0b" style="display:none">Info about the 'characterizes' external reference.</span><a href="analysis.html#characterizes">analysis.html#characterizes</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizes③">5.7. Explains</a>
     <li><a href="#ref-for-characterizes④">5.10. Limits</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-characterizes_1">
-   <a href="analysis.html#characterizes_1">analysis.html#characterizes_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b230ca567504df4faf3451249e4f3cf7" class="dfn-panel" data-for="b230ca567504df4faf3451249e4f3cf7" id="infopanel-for-b230ca567504df4faf3451249e4f3cf7">
+   <span id="infopaneltitle-for-b230ca567504df4faf3451249e4f3cf7" style="display:none">Info about the 'characterizes_1' external reference.</span><a href="analysis.html#characterizes_1">analysis.html#characterizes_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizes_1">4.3. Characterization</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-constrains">
-   <a href="analysis.html#constrains">analysis.html#constrains</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6ec76c22e2e004fe5711a955686766bd" class="dfn-panel" data-for="6ec76c22e2e004fe5711a955686766bd" id="infopanel-for-6ec76c22e2e004fe5711a955686766bd">
+   <span id="infopaneltitle-for-6ec76c22e2e004fe5711a955686766bd" style="display:none">Info about the 'constrains' external reference.</span><a href="analysis.html#constrains">analysis.html#constrains</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-constrains①">5.7. Explains</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-constrains_1">
-   <a href="analysis.html#constrains_1">analysis.html#constrains_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-211c2d57dfe3a5dd94b33fb8e3533f93" class="dfn-panel" data-for="211c2d57dfe3a5dd94b33fb8e3533f93" id="infopanel-for-211c2d57dfe3a5dd94b33fb8e3533f93">
+   <span id="infopaneltitle-for-211c2d57dfe3a5dd94b33fb8e3533f93" style="display:none">Info about the 'constrains_1' external reference.</span><a href="analysis.html#constrains_1">analysis.html#constrains_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-constrains_1">4.4. Constraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-constraint">
-   <a href="analysis.html#constraint">analysis.html#constraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-dc78e29f1d268c5eeeb130ab78c4e0c4" class="dfn-panel" data-for="dc78e29f1d268c5eeeb130ab78c4e0c4" id="infopanel-for-dc78e29f1d268c5eeeb130ab78c4e0c4">
+   <span id="infopaneltitle-for-dc78e29f1d268c5eeeb130ab78c4e0c4" style="display:none">Info about the 'constraint' external reference.</span><a href="analysis.html#constraint">analysis.html#constraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-constraint">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-constraint③">4.6. Explanation</a>
@@ -3237,30 +3239,30 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-constraint②①">7.4. hasTruthValue</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-denies_1">
-   <a href="analysis.html#denies_1">analysis.html#denies_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ebb562ac3e52ec60f375e993a04ac851" class="dfn-panel" data-for="ebb562ac3e52ec60f375e993a04ac851" id="infopanel-for-ebb562ac3e52ec60f375e993a04ac851">
+   <span id="infopaneltitle-for-ebb562ac3e52ec60f375e993a04ac851" style="display:none">Info about the 'denies_1' external reference.</span><a href="analysis.html#denies_1">analysis.html#denies_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-denies_1">4.1. Always</a>
     <li><a href="#ref-for-denies_1①">4.10. Never</a>
     <li><a href="#ref-for-denies_1②">4.15. Scenario</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-drivingrequirementsexplanation">
-   <a href="analysis.html#drivingrequirementsexplanation">analysis.html#drivingrequirementsexplanation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b8d9fc4bb4418b26b3043c96ccd126ed" class="dfn-panel" data-for="b8d9fc4bb4418b26b3043c96ccd126ed" id="infopanel-for-b8d9fc4bb4418b26b3043c96ccd126ed">
+   <span id="infopaneltitle-for-b8d9fc4bb4418b26b3043c96ccd126ed" style="display:none">Info about the 'drivingrequirementsexplanation' external reference.</span><a href="analysis.html#drivingrequirementsexplanation">analysis.html#drivingrequirementsexplanation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-drivingrequirementsexplanation①">4.6. Explanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-explains">
-   <a href="analysis.html#explains">analysis.html#explains</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-115e58741ac81d268e21de8ec147abc5" class="dfn-panel" data-for="115e58741ac81d268e21de8ec147abc5" id="infopanel-for-115e58741ac81d268e21de8ec147abc5">
+   <span id="infopaneltitle-for-115e58741ac81d268e21de8ec147abc5" style="display:none">Info about the 'explains' external reference.</span><a href="analysis.html#explains">analysis.html#explains</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explains②">5.4. Characterizes</a>
     <li><a href="#ref-for-explains④">5.5. Constrains</a>
     <li><a href="#ref-for-explains⑥">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-explains_1">
-   <a href="analysis.html#explains_1">analysis.html#explains_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6a1b044221887d6c581868e97260add1" class="dfn-panel" data-for="6a1b044221887d6c581868e97260add1" id="infopanel-for-6a1b044221887d6c581868e97260add1">
+   <span id="infopaneltitle-for-6a1b044221887d6c581868e97260add1" style="display:none">Info about the 'explains_1' external reference.</span><a href="analysis.html#explains_1">analysis.html#explains_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explains_1">4.5. DrivingRequirementsExplanation</a>
     <li><a href="#ref-for-explains_1①">4.6. Explanation</a>
@@ -3271,8 +3273,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-explains_1⑥">4.17. UnitaryQuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-explanation">
-   <a href="analysis.html#explanation">analysis.html#explanation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-96c7671693cb2e772c6a0f2c83e7185c" class="dfn-panel" data-for="96c7671693cb2e772c6a0f2c83e7185c" id="infopanel-for-96c7671693cb2e772c6a0f2c83e7185c">
+   <span id="infopaneltitle-for-96c7671693cb2e772c6a0f2c83e7185c" style="display:none">Info about the 'explanation' external reference.</span><a href="analysis.html#explanation">analysis.html#explanation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explanation">3.1. AnalyzedElement</a>
     <li><a href="#ref-for-explanation①">3.2. CharacterizedElement</a> <a href="#ref-for-explanation②">(2)</a>
@@ -3286,132 +3288,132 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-explanation①④">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-fact">
-   <a href="analysis.html#fact">analysis.html#fact</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f974438bdffb26c44da4023ffa594a5e" class="dfn-panel" data-for="f974438bdffb26c44da4023ffa594a5e" id="infopanel-for-f974438bdffb26c44da4023ffa594a5e">
+   <span id="infopaneltitle-for-f974438bdffb26c44da4023ffa594a5e" style="display:none">Info about the 'fact' external reference.</span><a href="analysis.html#fact">analysis.html#fact</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-fact">4.2. Assumption</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-glossaryentry">
-   <a href="analysis.html#glossaryentry">analysis.html#glossaryentry</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c01966317519710377905d1fa9185d78" class="dfn-panel" data-for="c01966317519710377905d1fa9185d78" id="infopanel-for-c01966317519710377905d1fa9185d78">
+   <span id="infopaneltitle-for-c01966317519710377905d1fa9185d78" style="display:none">Info about the 'glossaryentry' external reference.</span><a href="analysis.html#glossaryentry">analysis.html#glossaryentry</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-glossaryentry">4.3. Characterization</a>
     <li><a href="#ref-for-glossaryentry②">7.1. hasGlossaryDefinition</a>
     <li><a href="#ref-for-glossaryentry③">7.2. hasGlossaryTerm</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasglossarydefinition">
-   <a href="analysis.html#hasglossarydefinition">analysis.html#hasglossarydefinition</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7001139d8564eb4a8b2cef3487a17696" class="dfn-panel" data-for="7001139d8564eb4a8b2cef3487a17696" id="infopanel-for-7001139d8564eb4a8b2cef3487a17696">
+   <span id="infopaneltitle-for-7001139d8564eb4a8b2cef3487a17696" style="display:none">Info about the 'hasglossarydefinition' external reference.</span><a href="analysis.html#hasglossarydefinition">analysis.html#hasglossarydefinition</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasglossarydefinition">4.8. GlossaryEntry</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasglossaryterm">
-   <a href="analysis.html#hasglossaryterm">analysis.html#hasglossaryterm</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-aadc8c8a6acd8e33ae78843b195f94cd" class="dfn-panel" data-for="aadc8c8a6acd8e33ae78843b195f94cd" id="infopanel-for-aadc8c8a6acd8e33ae78843b195f94cd">
+   <span id="infopaneltitle-for-aadc8c8a6acd8e33ae78843b195f94cd" style="display:none">Info about the 'hasglossaryterm' external reference.</span><a href="analysis.html#hasglossaryterm">analysis.html#hasglossaryterm</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasglossaryterm">4.8. GlossaryEntry</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasquantityvalue">
-   <a href="analysis.html#hasquantityvalue">analysis.html#hasquantityvalue</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3ea52f1555fefa2904bdc91a7aec7f94" class="dfn-panel" data-for="3ea52f1555fefa2904bdc91a7aec7f94" id="infopanel-for-3ea52f1555fefa2904bdc91a7aec7f94">
+   <span id="infopaneltitle-for-3ea52f1555fefa2904bdc91a7aec7f94" style="display:none">Info about the 'hasquantityvalue' external reference.</span><a href="analysis.html#hasquantityvalue">analysis.html#hasquantityvalue</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasquantityvalue">5.1. Analyzes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasquantityvalue_1">
-   <a href="analysis.html#hasquantityvalue_1">analysis.html#hasquantityvalue_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-700cf7581704c4996f45a9a73c4bc250" class="dfn-panel" data-for="700cf7581704c4996f45a9a73c4bc250" id="infopanel-for-700cf7581704c4996f45a9a73c4bc250">
+   <span id="infopaneltitle-for-700cf7581704c4996f45a9a73c4bc250" style="display:none">Info about the 'hasquantityvalue_1' external reference.</span><a href="analysis.html#hasquantityvalue_1">analysis.html#hasquantityvalue_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasquantityvalue_1">4.13. QuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasquantityvaluerelation">
-   <a href="analysis.html#hasquantityvaluerelation">analysis.html#hasquantityvaluerelation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-828b80e55174fca2f1a7dbb0f3fa5882" class="dfn-panel" data-for="828b80e55174fca2f1a7dbb0f3fa5882" id="infopanel-for-828b80e55174fca2f1a7dbb0f3fa5882">
+   <span id="infopaneltitle-for-828b80e55174fca2f1a7dbb0f3fa5882" style="display:none">Info about the 'hasquantityvaluerelation' external reference.</span><a href="analysis.html#hasquantityvaluerelation">analysis.html#hasquantityvaluerelation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasquantityvaluerelation">4.13. QuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hastruthvalue">
-   <a href="analysis.html#hastruthvalue">analysis.html#hastruthvalue</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-48753927a9ffd55e86043db4f6d33fa4" class="dfn-panel" data-for="48753927a9ffd55e86043db4f6d33fa4" id="infopanel-for-48753927a9ffd55e86043db4f6d33fa4">
+   <span id="infopaneltitle-for-48753927a9ffd55e86043db4f6d33fa4" style="display:none">Info about the 'hastruthvalue' external reference.</span><a href="analysis.html#hastruthvalue">analysis.html#hastruthvalue</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hastruthvalue">4.4. Constraint</a>
     <li><a href="#ref-for-hastruthvalue①">4.14. SatisfiedConstraint</a>
     <li><a href="#ref-for-hastruthvalue②">4.18. UnsatisfiedConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isanalyzedby">
-   <a href="analysis.html#isanalyzedby">analysis.html#isanalyzedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-08ec15dde8b86593ad28dddd9238eef1" class="dfn-panel" data-for="08ec15dde8b86593ad28dddd9238eef1" id="infopanel-for-08ec15dde8b86593ad28dddd9238eef1">
+   <span id="infopaneltitle-for-08ec15dde8b86593ad28dddd9238eef1" style="display:none">Info about the 'isanalyzedby' external reference.</span><a href="analysis.html#isanalyzedby">analysis.html#isanalyzedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-isanalyzedby">3.1. AnalyzedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ischaracterizedby">
-   <a href="analysis.html#ischaracterizedby">analysis.html#ischaracterizedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0645dc7246f7ebc0e56c6a01c7bb739c" class="dfn-panel" data-for="0645dc7246f7ebc0e56c6a01c7bb739c" id="infopanel-for-0645dc7246f7ebc0e56c6a01c7bb739c">
+   <span id="infopaneltitle-for-0645dc7246f7ebc0e56c6a01c7bb739c" style="display:none">Info about the 'ischaracterizedby' external reference.</span><a href="analysis.html#ischaracterizedby">analysis.html#ischaracterizedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ischaracterizedby">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isconstrainedby">
-   <a href="analysis.html#isconstrainedby">analysis.html#isconstrainedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-26b7b72a043e7faaccc51dcf1ce5b692" class="dfn-panel" data-for="26b7b72a043e7faaccc51dcf1ce5b692" id="infopanel-for-26b7b72a043e7faaccc51dcf1ce5b692">
+   <span id="infopaneltitle-for-26b7b72a043e7faaccc51dcf1ce5b692" style="display:none">Info about the 'isconstrainedby' external reference.</span><a href="analysis.html#isconstrainedby">analysis.html#isconstrainedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-isconstrainedby">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isexplainedby">
-   <a href="analysis.html#isexplainedby">analysis.html#isexplainedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-422dcac8d9388a7a8b87c95a9c85f3db" class="dfn-panel" data-for="422dcac8d9388a7a8b87c95a9c85f3db" id="infopanel-for-422dcac8d9388a7a8b87c95a9c85f3db">
+   <span id="infopaneltitle-for-422dcac8d9388a7a8b87c95a9c85f3db" style="display:none">Info about the 'isexplainedby' external reference.</span><a href="analysis.html#isexplainedby">analysis.html#isexplainedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-isexplainedby">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-islimitedby">
-   <a href="analysis.html#islimitedby">analysis.html#islimitedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ee062a3a74f31ecd62800c7449a9e19e" class="dfn-panel" data-for="ee062a3a74f31ecd62800c7449a9e19e" id="infopanel-for-ee062a3a74f31ecd62800c7449a9e19e">
+   <span id="infopaneltitle-for-ee062a3a74f31ecd62800c7449a9e19e" style="display:none">Info about the 'islimitedby' external reference.</span><a href="analysis.html#islimitedby">analysis.html#islimitedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-islimitedby">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isvalidatedby">
-   <a href="analysis.html#isvalidatedby">analysis.html#isvalidatedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-046e9c0eb99ff2ccc6cd404c48875239" class="dfn-panel" data-for="046e9c0eb99ff2ccc6cd404c48875239" id="infopanel-for-046e9c0eb99ff2ccc6cd404c48875239">
+   <span id="infopaneltitle-for-046e9c0eb99ff2ccc6cd404c48875239" style="display:none">Info about the 'isvalidatedby' external reference.</span><a href="analysis.html#isvalidatedby">analysis.html#isvalidatedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-isvalidatedby">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-keyrequirementsexplanation">
-   <a href="analysis.html#keyrequirementsexplanation">analysis.html#keyrequirementsexplanation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a6f799828a76a72e44b27bfc99f91dc6" class="dfn-panel" data-for="a6f799828a76a72e44b27bfc99f91dc6" id="infopanel-for-a6f799828a76a72e44b27bfc99f91dc6">
+   <span id="infopaneltitle-for-a6f799828a76a72e44b27bfc99f91dc6" style="display:none">Info about the 'keyrequirementsexplanation' external reference.</span><a href="analysis.html#keyrequirementsexplanation">analysis.html#keyrequirementsexplanation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-keyrequirementsexplanation">4.6. Explanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-limits">
-   <a href="analysis.html#limits">analysis.html#limits</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-164e868c3d0c2f621a4640cef13cacfa" class="dfn-panel" data-for="164e868c3d0c2f621a4640cef13cacfa" id="infopanel-for-164e868c3d0c2f621a4640cef13cacfa">
+   <span id="infopaneltitle-for-164e868c3d0c2f621a4640cef13cacfa" style="display:none">Info about the 'limits' external reference.</span><a href="analysis.html#limits">analysis.html#limits</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-limits">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-limits_1">
-   <a href="analysis.html#limits_1">analysis.html#limits_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-095cdec874da9ffb9c0285d14e96e09e" class="dfn-panel" data-for="095cdec874da9ffb9c0285d14e96e09e" id="infopanel-for-095cdec874da9ffb9c0285d14e96e09e">
+   <span id="infopaneltitle-for-095cdec874da9ffb9c0285d14e96e09e" style="display:none">Info about the 'limits_1' external reference.</span><a href="analysis.html#limits_1">analysis.html#limits_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-limits_1">4.2. Assumption</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-never">
-   <a href="analysis.html#never">analysis.html#never</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0002abedf9dd3aa26b1eb68108db43ad" class="dfn-panel" data-for="0002abedf9dd3aa26b1eb68108db43ad" id="infopanel-for-0002abedf9dd3aa26b1eb68108db43ad">
+   <span id="infopaneltitle-for-0002abedf9dd3aa26b1eb68108db43ad" style="display:none">Info about the 'never' external reference.</span><a href="analysis.html#never">analysis.html#never</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-never①">4.15. Scenario</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-nominalpropertyvalueconstraint">
-   <a href="analysis.html#nominalpropertyvalueconstraint">analysis.html#nominalpropertyvalueconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d65bc5e5bc5f36dac44381337dd26b5c" class="dfn-panel" data-for="d65bc5e5bc5f36dac44381337dd26b5c" id="infopanel-for-d65bc5e5bc5f36dac44381337dd26b5c">
+   <span id="infopaneltitle-for-d65bc5e5bc5f36dac44381337dd26b5c" style="display:none">Info about the 'nominalpropertyvalueconstraint' external reference.</span><a href="analysis.html#nominalpropertyvalueconstraint">analysis.html#nominalpropertyvalueconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-nominalpropertyvalueconstraint">4.4. Constraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-ordinalquantityvalueconstraint">
-   <a href="analysis.html#ordinalquantityvalueconstraint">analysis.html#ordinalquantityvalueconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5e7b113f536546e7d735a1a4e2e6d5c0" class="dfn-panel" data-for="5e7b113f536546e7d735a1a4e2e6d5c0" id="infopanel-for-5e7b113f536546e7d735a1a4e2e6d5c0">
+   <span id="infopaneltitle-for-5e7b113f536546e7d735a1a4e2e6d5c0" style="display:none">Info about the 'ordinalquantityvalueconstraint' external reference.</span><a href="analysis.html#ordinalquantityvalueconstraint">analysis.html#ordinalquantityvalueconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ordinalquantityvalueconstraint①">4.13. QuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-quantityvalueconstraint">
-   <a href="analysis.html#quantityvalueconstraint">analysis.html#quantityvalueconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-9d57b17eb20198575d26bcfa026a1c4d" class="dfn-panel" data-for="9d57b17eb20198575d26bcfa026a1c4d" id="infopanel-for-9d57b17eb20198575d26bcfa026a1c4d">
+   <span id="infopaneltitle-for-9d57b17eb20198575d26bcfa026a1c4d" style="display:none">Info about the 'quantityvalueconstraint' external reference.</span><a href="analysis.html#quantityvalueconstraint">analysis.html#quantityvalueconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-quantityvalueconstraint">4.4. Constraint</a>
     <li><a href="#ref-for-quantityvalueconstraint①">4.12. OrdinalQuantityValueConstraint</a>
@@ -3420,23 +3422,23 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-quantityvalueconstraint⑥">7.3. hasQuantityValueRelation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-quantityvaluerelation">
-   <a href="analysis.html#quantityvaluerelation">analysis.html#quantityvaluerelation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-172126b7fc76164411b4d588af4a9897" class="dfn-panel" data-for="172126b7fc76164411b4d588af4a9897" id="infopanel-for-172126b7fc76164411b4d588af4a9897">
+   <span id="infopaneltitle-for-172126b7fc76164411b4d588af4a9897" style="display:none">Info about the 'quantityvaluerelation' external reference.</span><a href="analysis.html#quantityvaluerelation">analysis.html#quantityvaluerelation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-quantityvaluerelation">4.13. QuantityValueConstraint</a>
     <li><a href="#ref-for-quantityvaluerelation③">7.3. hasQuantityValueRelation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-satisfiedconstraint">
-   <a href="analysis.html#satisfiedconstraint">analysis.html#satisfiedconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a7bd3a948845fa3e6df6ec62a5fbd04c" class="dfn-panel" data-for="a7bd3a948845fa3e6df6ec62a5fbd04c" id="infopanel-for-a7bd3a948845fa3e6df6ec62a5fbd04c">
+   <span id="infopaneltitle-for-a7bd3a948845fa3e6df6ec62a5fbd04c" style="display:none">Info about the 'satisfiedconstraint' external reference.</span><a href="analysis.html#satisfiedconstraint">analysis.html#satisfiedconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-satisfiedconstraint">4.1. Always</a> <a href="#ref-for-satisfiedconstraint①">(2)</a>
     <li><a href="#ref-for-satisfiedconstraint②">4.4. Constraint</a>
     <li><a href="#ref-for-satisfiedconstraint③">4.10. Never</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-scenario">
-   <a href="analysis.html#scenario">analysis.html#scenario</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ff40210cdc11544573fa0e0aad69a6b1" class="dfn-panel" data-for="ff40210cdc11544573fa0e0aad69a6b1" id="infopanel-for-ff40210cdc11544573fa0e0aad69a6b1">
+   <span id="infopaneltitle-for-ff40210cdc11544573fa0e0aad69a6b1" style="display:none">Info about the 'scenario' external reference.</span><a href="analysis.html#scenario">analysis.html#scenario</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scenario①">4.1. Always</a>
     <li><a href="#ref-for-scenario②">4.3. Characterization</a>
@@ -3446,52 +3448,52 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-scenario①②">5.6. Denies</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-tradestudy">
-   <a href="analysis.html#tradestudy">analysis.html#tradestudy</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-772da25591d4ed572c249491e1da2fd7" class="dfn-panel" data-for="772da25591d4ed572c249491e1da2fd7" id="infopanel-for-772da25591d4ed572c249491e1da2fd7">
+   <span id="infopaneltitle-for-772da25591d4ed572c249491e1da2fd7" style="display:none">Info about the 'tradestudy' external reference.</span><a href="analysis.html#tradestudy">analysis.html#tradestudy</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-tradestudy">4.6. Explanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unitaryquantityvalueconstraint">
-   <a href="analysis.html#unitaryquantityvalueconstraint">analysis.html#unitaryquantityvalueconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d28f5a57ec08b4f6e7563b0c04dc88fe" class="dfn-panel" data-for="d28f5a57ec08b4f6e7563b0c04dc88fe" id="infopanel-for-d28f5a57ec08b4f6e7563b0c04dc88fe">
+   <span id="infopaneltitle-for-d28f5a57ec08b4f6e7563b0c04dc88fe" style="display:none">Info about the 'unitaryquantityvalueconstraint' external reference.</span><a href="analysis.html#unitaryquantityvalueconstraint">analysis.html#unitaryquantityvalueconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-unitaryquantityvalueconstraint">4.13. QuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-unsatisfiedconstraint">
-   <a href="analysis.html#unsatisfiedconstraint">analysis.html#unsatisfiedconstraint</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-86930c709485fb35488d44adcf0ef984" class="dfn-panel" data-for="86930c709485fb35488d44adcf0ef984" id="infopanel-for-86930c709485fb35488d44adcf0ef984">
+   <span id="infopaneltitle-for-86930c709485fb35488d44adcf0ef984" style="display:none">Info about the 'unsatisfiedconstraint' external reference.</span><a href="analysis.html#unsatisfiedconstraint">analysis.html#unsatisfiedconstraint</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-unsatisfiedconstraint">4.1. Always</a>
     <li><a href="#ref-for-unsatisfiedconstraint①">4.4. Constraint</a>
     <li><a href="#ref-for-unsatisfiedconstraint②">4.10. Never</a> <a href="#ref-for-unsatisfiedconstraint③">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-validates">
-   <a href="analysis.html#validates">analysis.html#validates</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0f7da104f42cfc00e78380ffaf446aa8" class="dfn-panel" data-for="0f7da104f42cfc00e78380ffaf446aa8" id="infopanel-for-0f7da104f42cfc00e78380ffaf446aa8">
+   <span id="infopaneltitle-for-0f7da104f42cfc00e78380ffaf446aa8" style="display:none">Info about the 'validates' external reference.</span><a href="analysis.html#validates">analysis.html#validates</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-validates">5.7. Explains</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-validates_1">
-   <a href="analysis.html#validates_1">analysis.html#validates_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-90ce4feda12738bf367a93ba414101bf" class="dfn-panel" data-for="90ce4feda12738bf367a93ba414101bf" id="infopanel-for-90ce4feda12738bf367a93ba414101bf">
+   <span id="infopaneltitle-for-90ce4feda12738bf367a93ba414101bf" style="display:none">Info about the 'validates_1' external reference.</span><a href="analysis.html#validates_1">analysis.html#validates_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-validates_1">4.6. Explanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-aggregatedelement">
-   <a href="base.html#aggregatedelement">base.html#aggregatedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-85c5ce890fc4e13b9e4e0c7ae8adda5a" class="dfn-panel" data-for="85c5ce890fc4e13b9e4e0c7ae8adda5a" id="infopanel-for-85c5ce890fc4e13b9e4e0c7ae8adda5a">
+   <span id="infopaneltitle-for-85c5ce890fc4e13b9e4e0c7ae8adda5a" style="display:none">Info about the 'aggregatedelement' external reference.</span><a href="base.html#aggregatedelement">base.html#aggregatedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-aggregatedelement">4.6. Explanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-identifiedelement">
-   <a href="base.html#identifiedelement">base.html#identifiedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-71442ea0ca42bb8505fbb31491316fd0" class="dfn-panel" data-for="71442ea0ca42bb8505fbb31491316fd0" id="infopanel-for-71442ea0ca42bb8505fbb31491316fd0">
+   <span id="infopaneltitle-for-71442ea0ca42bb8505fbb31491316fd0" style="display:none">Info about the 'identifiedelement' external reference.</span><a href="base.html#identifiedelement">base.html#identifiedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-identifiedelement">4.3. Characterization</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-requirement">
-   <a href="mission.html#requirement">mission.html#requirement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-089c76bb0d1df54e21fb89a1e832b50f" class="dfn-panel" data-for="089c76bb0d1df54e21fb89a1e832b50f" id="infopanel-for-089c76bb0d1df54e21fb89a1e832b50f">
+   <span id="infopaneltitle-for-089c76bb0d1df54e21fb89a1e832b50f" style="display:none">Info about the 'requirement' external reference.</span><a href="mission.html#requirement">mission.html#requirement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-requirement">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-requirement①">4.5. DrivingRequirementsExplanation</a> <a href="#ref-for-requirement②">(2)</a>
@@ -3501,26 +3503,26 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-requirement①⓪">5.11. Requires</a> <a href="#ref-for-requirement①①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-specifiedelement">
-   <a href="mission.html#specifiedelement">mission.html#specifiedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e22043d2a7672b558eb790d7028aa6b4" class="dfn-panel" data-for="e22043d2a7672b558eb790d7028aa6b4" id="infopanel-for-e22043d2a7672b558eb790d7028aa6b4">
+   <span id="infopaneltitle-for-e22043d2a7672b558eb790d7028aa6b4" style="display:none">Info about the 'specifiedelement' external reference.</span><a href="mission.html#specifiedelement">mission.html#specifiedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-specifiedelement">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-developedelement">
-   <a href="project.html#developedelement">project.html#developedelement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e0e9589a34340294f82879f05d3ed074" class="dfn-panel" data-for="e0e9589a34340294f82879f05d3ed074" id="infopanel-for-e0e9589a34340294f82879f05d3ed074">
+   <span id="infopaneltitle-for-e0e9589a34340294f82879f05d3ed074" style="display:none">Info about the 'developedelement' external reference.</span><a href="project.html#developedelement">project.html#developedelement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-developedelement">3.2. CharacterizedElement</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-developmentstate">
-   <a href="project.html#developmentstate">project.html#developmentstate</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0c7500e8a80865cbc9b4be53b01c30da" class="dfn-panel" data-for="0c7500e8a80865cbc9b4be53b01c30da" id="infopanel-for-0c7500e8a80865cbc9b4be53b01c30da">
+   <span id="infopaneltitle-for-0c7500e8a80865cbc9b4be53b01c30da" style="display:none">Info about the 'developmentstate' external reference.</span><a href="project.html#developmentstate">project.html#developmentstate</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-developmentstate">4.3. Characterization</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-boolean">
-   <a href="../../www.w3.org/2001/XMLSchema.html#boolean">../../www.w3.org/2001/XMLSchema.html#boolean</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7021b3979d304ea2ee41b20ddddfdcde" class="dfn-panel" data-for="7021b3979d304ea2ee41b20ddddfdcde" id="infopanel-for-7021b3979d304ea2ee41b20ddddfdcde">
+   <span id="infopaneltitle-for-7021b3979d304ea2ee41b20ddddfdcde" style="display:none">Info about the 'boolean' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#boolean">../../www.w3.org/2001/XMLSchema.html#boolean</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-boolean">4.4. Constraint</a>
     <li><a href="#ref-for-boolean①">4.14. SatisfiedConstraint</a>
@@ -3528,8 +3530,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-boolean③">7.4. hasTruthValue</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-string">
-   <a href="../../www.w3.org/2001/XMLSchema.html#string">../../www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" class="dfn-panel" data-for="b4ff35aa4e6e33fb0b8b711f7c7a5196" id="infopanel-for-b4ff35aa4e6e33fb0b8b711f7c7a5196">
+   <span id="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" style="display:none">Info about the 'string' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#string">../../www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-string">4.8. GlossaryEntry</a> <a href="#ref-for-string①">(2)</a>
     <li><a href="#ref-for-string②">7.1. hasGlossaryDefinition</a>
@@ -3541,101 +3543,101 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-characterizes">characterizes</span>
-     <li><span class="dfn-paneled" id="term-for-individualnominalproperty">individualnominalproperty</span>
-     <li><span class="dfn-paneled" id="term-for-individualordinalquantity">individualordinalquantity</span>
-     <li><span class="dfn-paneled" id="term-for-individualquantity">individualquantity</span>
-     <li><span class="dfn-paneled" id="term-for-individualunitaryquantity">individualunitaryquantity</span>
-     <li><span class="dfn-paneled" id="term-for-object">object</span>
-     <li><span class="dfn-paneled" id="term-for-ordinalquantityvalue">ordinalquantityvalue</span>
-     <li><span class="dfn-paneled" id="term-for-quantityvalue">quantityvalue</span>
-     <li><span class="dfn-paneled" id="term-for-unitaryquantityvalue">unitaryquantityvalue</span>
+     <li><span class="dfn-paneled" id="a76b7a981dbd5fe17283ae74b1a80155">characterizes</span>
+     <li><span class="dfn-paneled" id="ed8188a3dde02e1641af5fb419cb4f8b">individualnominalproperty</span>
+     <li><span class="dfn-paneled" id="39d9ae1cb09d1a6de298d443abf1d37f">individualordinalquantity</span>
+     <li><span class="dfn-paneled" id="3efaef365cb8f7707ee9fe89ce1d6945">individualquantity</span>
+     <li><span class="dfn-paneled" id="e29588e7c8441bd16f615820d065099f">individualunitaryquantity</span>
+     <li><span class="dfn-paneled" id="0f0617f3f3f849a82716fbc101eb8e91">object</span>
+     <li><span class="dfn-paneled" id="9167399038e244e0777fa39594d259ec">ordinalquantityvalue</span>
+     <li><span class="dfn-paneled" id="4c35a6b9efe9e48b2646098df78f5d4f">quantityvalue</span>
+     <li><span class="dfn-paneled" id="43ecd03c10041d8c9144868cc28cbb80">unitaryquantityvalue</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/ANALYSIS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-always">always</span>
-     <li><span class="dfn-paneled" id="term-for-analyzedelement">analyzedelement</span>
-     <li><span class="dfn-paneled" id="term-for-analyzes">analyzes</span>
-     <li><span class="dfn-paneled" id="term-for-analyzes_1">analyzes_1</span>
-     <li><span class="dfn-paneled" id="term-for-asserts_1">asserts_1</span>
-     <li><span class="dfn-paneled" id="term-for-assumption">assumption</span>
-     <li><span class="dfn-paneled" id="term-for-characterization">characterization</span>
-     <li><span class="dfn-paneled" id="term-for-characterizedelement">characterizedelement</span>
-     <li><span class="dfn-paneled" id="term-for-characterizes①">characterizes</span>
-     <li><span class="dfn-paneled" id="term-for-characterizes_1">characterizes_1</span>
-     <li><span class="dfn-paneled" id="term-for-constrains">constrains</span>
-     <li><span class="dfn-paneled" id="term-for-constrains_1">constrains_1</span>
-     <li><span class="dfn-paneled" id="term-for-constraint">constraint</span>
-     <li><span class="dfn-paneled" id="term-for-denies_1">denies_1</span>
-     <li><span class="dfn-paneled" id="term-for-drivingrequirementsexplanation">drivingrequirementsexplanation</span>
-     <li><span class="dfn-paneled" id="term-for-explains">explains</span>
-     <li><span class="dfn-paneled" id="term-for-explains_1">explains_1</span>
-     <li><span class="dfn-paneled" id="term-for-explanation">explanation</span>
-     <li><span class="dfn-paneled" id="term-for-fact">fact</span>
-     <li><span class="dfn-paneled" id="term-for-glossaryentry">glossaryentry</span>
-     <li><span class="dfn-paneled" id="term-for-hasglossarydefinition">hasglossarydefinition</span>
-     <li><span class="dfn-paneled" id="term-for-hasglossaryterm">hasglossaryterm</span>
-     <li><span class="dfn-paneled" id="term-for-hasquantityvalue">hasquantityvalue</span>
-     <li><span class="dfn-paneled" id="term-for-hasquantityvalue_1">hasquantityvalue_1</span>
-     <li><span class="dfn-paneled" id="term-for-hasquantityvaluerelation">hasquantityvaluerelation</span>
-     <li><span class="dfn-paneled" id="term-for-hastruthvalue">hastruthvalue</span>
-     <li><span class="dfn-paneled" id="term-for-isanalyzedby">isanalyzedby</span>
-     <li><span class="dfn-paneled" id="term-for-ischaracterizedby">ischaracterizedby</span>
-     <li><span class="dfn-paneled" id="term-for-isconstrainedby">isconstrainedby</span>
-     <li><span class="dfn-paneled" id="term-for-isexplainedby">isexplainedby</span>
-     <li><span class="dfn-paneled" id="term-for-islimitedby">islimitedby</span>
-     <li><span class="dfn-paneled" id="term-for-isvalidatedby">isvalidatedby</span>
-     <li><span class="dfn-paneled" id="term-for-keyrequirementsexplanation">keyrequirementsexplanation</span>
-     <li><span class="dfn-paneled" id="term-for-limits">limits</span>
-     <li><span class="dfn-paneled" id="term-for-limits_1">limits_1</span>
-     <li><span class="dfn-paneled" id="term-for-never">never</span>
-     <li><span class="dfn-paneled" id="term-for-nominalpropertyvalueconstraint">nominalpropertyvalueconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-ordinalquantityvalueconstraint">ordinalquantityvalueconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-quantityvalueconstraint">quantityvalueconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-quantityvaluerelation">quantityvaluerelation</span>
-     <li><span class="dfn-paneled" id="term-for-satisfiedconstraint">satisfiedconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-scenario">scenario</span>
-     <li><span class="dfn-paneled" id="term-for-tradestudy">tradestudy</span>
-     <li><span class="dfn-paneled" id="term-for-unitaryquantityvalueconstraint">unitaryquantityvalueconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-unsatisfiedconstraint">unsatisfiedconstraint</span>
-     <li><span class="dfn-paneled" id="term-for-validates">validates</span>
-     <li><span class="dfn-paneled" id="term-for-validates_1">validates_1</span>
+     <li><span class="dfn-paneled" id="69c0159ba8642fd9aac849d61e6294da">always</span>
+     <li><span class="dfn-paneled" id="358732284aff785b9b98afe093db2056">analyzedelement</span>
+     <li><span class="dfn-paneled" id="2593409fb33335db658d9d46ab21f9e0">analyzes</span>
+     <li><span class="dfn-paneled" id="c4b56277595db4bedd357bee558d311f">analyzes_1</span>
+     <li><span class="dfn-paneled" id="8467be3e24011294b0ad4fb4accf37fa">asserts_1</span>
+     <li><span class="dfn-paneled" id="2c9b8b405a61f7b9b64f3d636378353b">assumption</span>
+     <li><span class="dfn-paneled" id="346ce162508283706ad80d3d7ae979ba">characterization</span>
+     <li><span class="dfn-paneled" id="962849c0f378b6120e746962bb64daa5">characterizedelement</span>
+     <li><span class="dfn-paneled" id="17c9458d108baf1c9953e05b40ba7c0b">characterizes</span>
+     <li><span class="dfn-paneled" id="b230ca567504df4faf3451249e4f3cf7">characterizes_1</span>
+     <li><span class="dfn-paneled" id="6ec76c22e2e004fe5711a955686766bd">constrains</span>
+     <li><span class="dfn-paneled" id="211c2d57dfe3a5dd94b33fb8e3533f93">constrains_1</span>
+     <li><span class="dfn-paneled" id="dc78e29f1d268c5eeeb130ab78c4e0c4">constraint</span>
+     <li><span class="dfn-paneled" id="ebb562ac3e52ec60f375e993a04ac851">denies_1</span>
+     <li><span class="dfn-paneled" id="b8d9fc4bb4418b26b3043c96ccd126ed">drivingrequirementsexplanation</span>
+     <li><span class="dfn-paneled" id="115e58741ac81d268e21de8ec147abc5">explains</span>
+     <li><span class="dfn-paneled" id="6a1b044221887d6c581868e97260add1">explains_1</span>
+     <li><span class="dfn-paneled" id="96c7671693cb2e772c6a0f2c83e7185c">explanation</span>
+     <li><span class="dfn-paneled" id="f974438bdffb26c44da4023ffa594a5e">fact</span>
+     <li><span class="dfn-paneled" id="c01966317519710377905d1fa9185d78">glossaryentry</span>
+     <li><span class="dfn-paneled" id="7001139d8564eb4a8b2cef3487a17696">hasglossarydefinition</span>
+     <li><span class="dfn-paneled" id="aadc8c8a6acd8e33ae78843b195f94cd">hasglossaryterm</span>
+     <li><span class="dfn-paneled" id="3ea52f1555fefa2904bdc91a7aec7f94">hasquantityvalue</span>
+     <li><span class="dfn-paneled" id="700cf7581704c4996f45a9a73c4bc250">hasquantityvalue_1</span>
+     <li><span class="dfn-paneled" id="828b80e55174fca2f1a7dbb0f3fa5882">hasquantityvaluerelation</span>
+     <li><span class="dfn-paneled" id="48753927a9ffd55e86043db4f6d33fa4">hastruthvalue</span>
+     <li><span class="dfn-paneled" id="08ec15dde8b86593ad28dddd9238eef1">isanalyzedby</span>
+     <li><span class="dfn-paneled" id="0645dc7246f7ebc0e56c6a01c7bb739c">ischaracterizedby</span>
+     <li><span class="dfn-paneled" id="26b7b72a043e7faaccc51dcf1ce5b692">isconstrainedby</span>
+     <li><span class="dfn-paneled" id="422dcac8d9388a7a8b87c95a9c85f3db">isexplainedby</span>
+     <li><span class="dfn-paneled" id="ee062a3a74f31ecd62800c7449a9e19e">islimitedby</span>
+     <li><span class="dfn-paneled" id="046e9c0eb99ff2ccc6cd404c48875239">isvalidatedby</span>
+     <li><span class="dfn-paneled" id="a6f799828a76a72e44b27bfc99f91dc6">keyrequirementsexplanation</span>
+     <li><span class="dfn-paneled" id="164e868c3d0c2f621a4640cef13cacfa">limits</span>
+     <li><span class="dfn-paneled" id="095cdec874da9ffb9c0285d14e96e09e">limits_1</span>
+     <li><span class="dfn-paneled" id="0002abedf9dd3aa26b1eb68108db43ad">never</span>
+     <li><span class="dfn-paneled" id="d65bc5e5bc5f36dac44381337dd26b5c">nominalpropertyvalueconstraint</span>
+     <li><span class="dfn-paneled" id="5e7b113f536546e7d735a1a4e2e6d5c0">ordinalquantityvalueconstraint</span>
+     <li><span class="dfn-paneled" id="9d57b17eb20198575d26bcfa026a1c4d">quantityvalueconstraint</span>
+     <li><span class="dfn-paneled" id="172126b7fc76164411b4d588af4a9897">quantityvaluerelation</span>
+     <li><span class="dfn-paneled" id="a7bd3a948845fa3e6df6ec62a5fbd04c">satisfiedconstraint</span>
+     <li><span class="dfn-paneled" id="ff40210cdc11544573fa0e0aad69a6b1">scenario</span>
+     <li><span class="dfn-paneled" id="772da25591d4ed572c249491e1da2fd7">tradestudy</span>
+     <li><span class="dfn-paneled" id="d28f5a57ec08b4f6e7563b0c04dc88fe">unitaryquantityvalueconstraint</span>
+     <li><span class="dfn-paneled" id="86930c709485fb35488d44adcf0ef984">unsatisfiedconstraint</span>
+     <li><span class="dfn-paneled" id="0f7da104f42cfc00e78380ffaf446aa8">validates</span>
+     <li><span class="dfn-paneled" id="90ce4feda12738bf367a93ba414101bf">validates_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-aggregatedelement">aggregatedelement</span>
-     <li><span class="dfn-paneled" id="term-for-identifiedelement">identifiedelement</span>
+     <li><span class="dfn-paneled" id="85c5ce890fc4e13b9e4e0c7ae8adda5a">aggregatedelement</span>
+     <li><span class="dfn-paneled" id="71442ea0ca42bb8505fbb31491316fd0">identifiedelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
-     <li><span class="dfn-paneled" id="term-for-specifiedelement">specifiedelement</span>
+     <li><span class="dfn-paneled" id="089c76bb0d1df54e21fb89a1e832b50f">requirement</span>
+     <li><span class="dfn-paneled" id="e22043d2a7672b558eb790d7028aa6b4">specifiedelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/PROJECT]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-developedelement">developedelement</span>
-     <li><span class="dfn-paneled" id="term-for-developmentstate">developmentstate</span>
+     <li><span class="dfn-paneled" id="e0e9589a34340294f82879f05d3ed074">developedelement</span>
+     <li><span class="dfn-paneled" id="0c7500e8a80865cbc9b4be53b01c30da">developmentstate</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://WWW.W3.ORG/2001/XMLSCHEMA]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-boolean">boolean</span>
-     <li><span class="dfn-paneled" id="term-for-string">string</span>
+     <li><span class="dfn-paneled" id="7021b3979d304ea2ee41b20ddddfdcde">boolean</span>
+     <li><span class="dfn-paneled" id="b4ff35aa4e6e33fb0b8b711f7c7a5196">string</span>
     </ul>
   </ul>
-  <aside class="dfn-panel" data-for="analyzedelement">
-   <b><a href="#analyzedelement">#analyzedelement</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-analyzedelement" class="dfn-panel" data-for="analyzedelement" id="infopanel-for-analyzedelement">
+   <span id="infopaneltitle-for-analyzedelement" style="display:none">Info about the 'AnalyzedElement' definition.</span><b><a href="#analyzedelement">#analyzedelement</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzedelement">3.1. AnalyzedElement</a>
     <li><a href="#ref-for-analyzedelement②">5.1. Analyzes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="characterizedelement">
-   <b><a href="#characterizedelement">#characterizedelement</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-characterizedelement" class="dfn-panel" data-for="characterizedelement" id="infopanel-for-characterizedelement">
+   <span id="infopaneltitle-for-characterizedelement" style="display:none">Info about the 'CharacterizedElement' definition.</span><b><a href="#characterizedelement">#characterizedelement</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizedelement">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-characterizedelement⑥">5.4. Characterizes</a>
@@ -3644,22 +3646,22 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterizedelement①③">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="always">
-   <b><a href="#always">#always</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-always" class="dfn-panel" data-for="always" id="infopanel-for-always">
+   <span id="infopaneltitle-for-always" style="display:none">Info about the 'Always' definition.</span><b><a href="#always">#always</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-always">4.1. Always</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="assumption">
-   <b><a href="#assumption">#assumption</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-assumption" class="dfn-panel" data-for="assumption" id="infopanel-for-assumption">
+   <span id="infopaneltitle-for-assumption" style="display:none">Info about the 'Assumption' definition.</span><b><a href="#assumption">#assumption</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-assumption①">4.2. Assumption</a>
     <li><a href="#ref-for-assumption③">4.7. Fact</a>
     <li><a href="#ref-for-assumption⑤">5.10. Limits</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="characterization">
-   <b><a href="#characterization">#characterization</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-characterization" class="dfn-panel" data-for="characterization" id="infopanel-for-characterization">
+   <span id="infopaneltitle-for-characterization" style="display:none">Info about the 'Characterization' definition.</span><b><a href="#characterization">#characterization</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterization①">4.2. Assumption</a>
     <li><a href="#ref-for-characterization③">4.3. Characterization</a>
@@ -3667,8 +3669,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-characterization⑧">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="constraint">
-   <b><a href="#constraint">#constraint</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-constraint" class="dfn-panel" data-for="constraint" id="infopanel-for-constraint">
+   <span id="infopaneltitle-for-constraint" style="display:none">Info about the 'Constraint' definition.</span><b><a href="#constraint">#constraint</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-constraint①">4.1. Always</a>
     <li><a href="#ref-for-constraint②">4.4. Constraint</a>
@@ -3680,14 +3682,14 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-constraint①⑨">5.11. Requires</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="drivingrequirementsexplanation">
-   <b><a href="#drivingrequirementsexplanation">#drivingrequirementsexplanation</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-drivingrequirementsexplanation" class="dfn-panel" data-for="drivingrequirementsexplanation" id="infopanel-for-drivingrequirementsexplanation">
+   <span id="infopaneltitle-for-drivingrequirementsexplanation" style="display:none">Info about the 'DrivingRequirementsExplanation' definition.</span><b><a href="#drivingrequirementsexplanation">#drivingrequirementsexplanation</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-drivingrequirementsexplanation">4.5. DrivingRequirementsExplanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="explanation">
-   <b><a href="#explanation">#explanation</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-explanation" class="dfn-panel" data-for="explanation" id="infopanel-for-explanation">
+   <span id="infopaneltitle-for-explanation" style="display:none">Info about the 'Explanation' definition.</span><b><a href="#explanation">#explanation</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explanation⑥">4.6. Explanation</a>
     <li><a href="#ref-for-explanation⑨">5.1. Analyzes</a>
@@ -3695,45 +3697,45 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-explanation①③">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="fact">
-   <b><a href="#fact">#fact</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-fact" class="dfn-panel" data-for="fact" id="infopanel-for-fact">
+   <span id="infopaneltitle-for-fact" style="display:none">Info about the 'Fact' definition.</span><b><a href="#fact">#fact</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-fact①">4.7. Fact</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="glossaryentry">
-   <b><a href="#glossaryentry">#glossaryentry</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-glossaryentry" class="dfn-panel" data-for="glossaryentry" id="infopanel-for-glossaryentry">
+   <span id="infopaneltitle-for-glossaryentry" style="display:none">Info about the 'GlossaryEntry' definition.</span><b><a href="#glossaryentry">#glossaryentry</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-glossaryentry①">4.8. GlossaryEntry</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="keyrequirementsexplanation">
-   <b><a href="#keyrequirementsexplanation">#keyrequirementsexplanation</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-keyrequirementsexplanation" class="dfn-panel" data-for="keyrequirementsexplanation" id="infopanel-for-keyrequirementsexplanation">
+   <span id="infopaneltitle-for-keyrequirementsexplanation" style="display:none">Info about the 'KeyRequirementsExplanation' definition.</span><b><a href="#keyrequirementsexplanation">#keyrequirementsexplanation</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-keyrequirementsexplanation①">4.9. KeyRequirementsExplanation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="never">
-   <b><a href="#never">#never</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-never" class="dfn-panel" data-for="never" id="infopanel-for-never">
+   <span id="infopaneltitle-for-never" style="display:none">Info about the 'Never' definition.</span><b><a href="#never">#never</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-never">4.10. Never</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="ordinalquantityvalueconstraint">
-   <b><a href="#ordinalquantityvalueconstraint">#ordinalquantityvalueconstraint</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ordinalquantityvalueconstraint" class="dfn-panel" data-for="ordinalquantityvalueconstraint" id="infopanel-for-ordinalquantityvalueconstraint">
+   <span id="infopaneltitle-for-ordinalquantityvalueconstraint" style="display:none">Info about the 'OrdinalQuantityValueConstraint' definition.</span><b><a href="#ordinalquantityvalueconstraint">#ordinalquantityvalueconstraint</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-ordinalquantityvalueconstraint">4.12. OrdinalQuantityValueConstraint</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="quantityvalueconstraint">
-   <b><a href="#quantityvalueconstraint">#quantityvalueconstraint</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-quantityvalueconstraint" class="dfn-panel" data-for="quantityvalueconstraint" id="infopanel-for-quantityvalueconstraint">
+   <span id="infopaneltitle-for-quantityvalueconstraint" style="display:none">Info about the 'QuantityValueConstraint' definition.</span><b><a href="#quantityvalueconstraint">#quantityvalueconstraint</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-quantityvalueconstraint②">4.13. QuantityValueConstraint</a>
     <li><a href="#ref-for-quantityvalueconstraint④">5.9. HasQuantityValue</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="scenario">
-   <b><a href="#scenario">#scenario</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-scenario" class="dfn-panel" data-for="scenario" id="infopanel-for-scenario">
+   <span id="infopaneltitle-for-scenario" style="display:none">Info about the 'Scenario' definition.</span><b><a href="#scenario">#scenario</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-scenario">4.1. Always</a>
     <li><a href="#ref-for-scenario③">4.10. Never</a>
@@ -3743,62 +3745,62 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-scenario①①">5.6. Denies</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="tradestudy">
-   <b><a href="#tradestudy">#tradestudy</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-tradestudy" class="dfn-panel" data-for="tradestudy" id="infopanel-for-tradestudy">
+   <span id="infopaneltitle-for-tradestudy" style="display:none">Info about the 'TradeStudy' definition.</span><b><a href="#tradestudy">#tradestudy</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-tradestudy①">4.16. TradeStudy</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="unitaryquantityvalueconstraint">
-   <b><a href="#unitaryquantityvalueconstraint">#unitaryquantityvalueconstraint</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-unitaryquantityvalueconstraint" class="dfn-panel" data-for="unitaryquantityvalueconstraint" id="infopanel-for-unitaryquantityvalueconstraint">
+   <span id="infopaneltitle-for-unitaryquantityvalueconstraint" style="display:none">Info about the 'UnitaryQuantityValueConstraint' definition.</span><b><a href="#unitaryquantityvalueconstraint">#unitaryquantityvalueconstraint</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-unitaryquantityvalueconstraint①">4.17. UnitaryQuantityValueConstraint</a>
     <li><a href="#ref-for-unitaryquantityvalueconstraint②">6.1. quantityValueRelation</a>
     <li><a href="#ref-for-unitaryquantityvalueconstraint③">7.3. hasQuantityValueRelation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="analyzes">
-   <b><a href="#analyzes">#analyzes</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-analyzes" class="dfn-panel" data-for="analyzes" id="infopanel-for-analyzes">
+   <span id="infopaneltitle-for-analyzes" style="display:none">Info about the 'Analyzes' definition.</span><b><a href="#analyzes">#analyzes</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-analyzes">3.1. AnalyzedElement</a>
     <li><a href="#ref-for-analyzes①">5.1. Analyzes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="appliesduring">
-   <b><a href="#appliesduring">#appliesduring</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-appliesduring" class="dfn-panel" data-for="appliesduring" id="infopanel-for-appliesduring">
+   <span id="infopaneltitle-for-appliesduring" style="display:none">Info about the 'AppliesDuring' definition.</span><b><a href="#appliesduring">#appliesduring</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-appliesduring">5.2. AppliesDuring</a> <a href="#ref-for-appliesduring①">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="asserts">
-   <b><a href="#asserts">#asserts</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-asserts" class="dfn-panel" data-for="asserts" id="infopanel-for-asserts">
+   <span id="infopaneltitle-for-asserts" style="display:none">Info about the 'Asserts' definition.</span><b><a href="#asserts">#asserts</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-asserts">4.15. Scenario</a>
     <li><a href="#ref-for-asserts①">5.3. Asserts</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="characterizes">
-   <b><a href="#characterizes">#characterizes</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-characterizes" class="dfn-panel" data-for="characterizes" id="infopanel-for-characterizes">
+   <span id="infopaneltitle-for-characterizes" style="display:none">Info about the 'Characterizes' definition.</span><b><a href="#characterizes">#characterizes</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-characterizes">3.2. CharacterizedElement</a>
     <li><a href="#ref-for-characterizes①">5.4. Characterizes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="constrains">
-   <b><a href="#constrains">#constrains</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-constrains" class="dfn-panel" data-for="constrains" id="infopanel-for-constrains">
+   <span id="infopaneltitle-for-constrains" style="display:none">Info about the 'Constrains' definition.</span><b><a href="#constrains">#constrains</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-constrains">5.5. Constrains</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="denies">
-   <b><a href="#denies">#denies</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-denies" class="dfn-panel" data-for="denies" id="infopanel-for-denies">
+   <span id="infopaneltitle-for-denies" style="display:none">Info about the 'Denies' definition.</span><b><a href="#denies">#denies</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-denies">4.15. Scenario</a>
     <li><a href="#ref-for-denies①">5.6. Denies</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="explains">
-   <b><a href="#explains">#explains</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-explains" class="dfn-panel" data-for="explains" id="infopanel-for-explains">
+   <span id="infopaneltitle-for-explains" style="display:none">Info about the 'Explains' definition.</span><b><a href="#explains">#explains</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-explains">4.5. DrivingRequirementsExplanation</a>
     <li><a href="#ref-for-explains①">4.9. KeyRequirementsExplanation</a>
@@ -3806,102 +3808,156 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-explains⑤">5.7. Explains</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="forbids">
-   <b><a href="#forbids">#forbids</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-forbids" class="dfn-panel" data-for="forbids" id="infopanel-for-forbids">
+   <span id="infopaneltitle-for-forbids" style="display:none">Info about the 'Forbids' definition.</span><b><a href="#forbids">#forbids</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-forbids">5.8. Forbids</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="hasquantityvalue">
-   <b><a href="#hasquantityvalue">#hasquantityvalue</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-hasquantityvalue" class="dfn-panel" data-for="hasquantityvalue" id="infopanel-for-hasquantityvalue">
+   <span id="infopaneltitle-for-hasquantityvalue" style="display:none">Info about the 'HasQuantityValue' definition.</span><b><a href="#hasquantityvalue">#hasquantityvalue</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasquantityvalue①">5.9. HasQuantityValue</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="limits">
-   <b><a href="#limits">#limits</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-limits" class="dfn-panel" data-for="limits" id="infopanel-for-limits">
+   <span id="infopaneltitle-for-limits" style="display:none">Info about the 'Limits' definition.</span><b><a href="#limits">#limits</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-limits①">5.10. Limits</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="requires">
-   <b><a href="#requires">#requires</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-requires" class="dfn-panel" data-for="requires" id="infopanel-for-requires">
+   <span id="infopaneltitle-for-requires" style="display:none">Info about the 'Requires' definition.</span><b><a href="#requires">#requires</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-requires">5.11. Requires</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="validates">
-   <b><a href="#validates">#validates</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-validates" class="dfn-panel" data-for="validates" id="infopanel-for-validates">
+   <span id="infopaneltitle-for-validates" style="display:none">Info about the 'Validates' definition.</span><b><a href="#validates">#validates</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-validates①">5.12. Validates</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="quantityvaluerelation">
-   <b><a href="#quantityvaluerelation">#quantityvaluerelation</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-quantityvaluerelation" class="dfn-panel" data-for="quantityvaluerelation" id="infopanel-for-quantityvaluerelation">
+   <span id="infopaneltitle-for-quantityvaluerelation" style="display:none">Info about the 'quantityValueRelation' definition.</span><b><a href="#quantityvaluerelation">#quantityvaluerelation</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-quantityvaluerelation①">6.1. quantityValueRelation</a>
     <li><a href="#ref-for-quantityvaluerelation②">7.3. hasQuantityValueRelation</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="hasquantityvaluerelation">
-   <b><a href="#hasquantityvaluerelation">#hasquantityvaluerelation</a></b><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-hasquantityvaluerelation" class="dfn-panel" data-for="hasquantityvaluerelation" id="infopanel-for-hasquantityvaluerelation">
+   <span id="infopaneltitle-for-hasquantityvaluerelation" style="display:none">Info about the 'hasQuantityValueRelation' definition.</span><b><a href="#hasquantityvaluerelation">#hasquantityvaluerelation</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasquantityvaluerelation①">7.3. hasQuantityValueRelation</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

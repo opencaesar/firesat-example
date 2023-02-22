@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/ang/ang" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ADCS and GNC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2182,98 +2184,98 @@ dfn > a.self-link::before      { content: "#"; }
   <ul class="index">
    <li><a href="#adcsandgnc">adcsandgnc</a><span>, in § 3.1</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-aggregates_1">
-   <a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" class="dfn-panel" data-for="180d592e44b8b69ed7424effc953fd7c" id="infopanel-for-180d592e44b8b69ed7424effc953fd7c">
+   <span id="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" style="display:none">Info about the 'aggregates_1' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-aggregates_1">3.1. ADCSAndGNC</a> <a href="#ref-for-aggregates_1①">(2)</a> <a href="#ref-for-aggregates_1②">(3)</a> <a href="#ref-for-aggregates_1③">(4)</a> <a href="#ref-for-aggregates_1④">(5)</a> <a href="#ref-for-aggregates_1⑤">(6)</a> <a href="#ref-for-aggregates_1⑥">(7)</a> <a href="#ref-for-aggregates_1⑦">(8)</a> <a href="#ref-for-aggregates_1⑧">(9)</a> <a href="#ref-for-aggregates_1⑨">(10)</a> <a href="#ref-for-aggregates_1①⓪">(11)</a> <a href="#ref-for-aggregates_1①①">(12)</a> <a href="#ref-for-aggregates_1①②">(13)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasidentifier">
-   <a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-22ea2507406567e18e424569909e32d1" class="dfn-panel" data-for="22ea2507406567e18e424569909e32d1" id="infopanel-for-22ea2507406567e18e424569909e32d1">
+   <span id="infopaneltitle-for-22ea2507406567e18e424569909e32d1" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasidentifier">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-subsystem">
-   <a href="../../../../../../../../../../disciplines/fse/fse.html#subsystem">../../../../../../../../../../disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" class="dfn-panel" data-for="d9c8d3a8743f534bf20f2fde4daf4c1c" id="infopanel-for-d9c8d3a8743f534bf20f2fde4daf4c1c">
+   <span id="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" style="display:none">Info about the 'subsystem' external reference.</span><a href="../../../../../../../../../../disciplines/fse/fse.html#subsystem">../../../../../../../../../../disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-subsystem">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-adcselectronicsunit">
-   <a href="../../../../07/subsystems/ang/assemblies.html#adcselectronicsunit">../../../../07/subsystems/ang/assemblies.html#adcselectronicsunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-45e6ac2032a9124feadd2c845dfa0d30" class="dfn-panel" data-for="45e6ac2032a9124feadd2c845dfa0d30" id="infopanel-for-45e6ac2032a9124feadd2c845dfa0d30">
+   <span id="infopaneltitle-for-45e6ac2032a9124feadd2c845dfa0d30" style="display:none">Info about the 'adcselectronicsunit' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#adcselectronicsunit">../../../../07/subsystems/ang/assemblies.html#adcselectronicsunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-adcselectronicsunit">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-earthsensor">
-   <a href="../../../../07/subsystems/ang/assemblies.html#earthsensor">../../../../07/subsystems/ang/assemblies.html#earthsensor</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d55ea46bcda8a92abed484b010b695da" class="dfn-panel" data-for="d55ea46bcda8a92abed484b010b695da" id="infopanel-for-d55ea46bcda8a92abed484b010b695da">
+   <span id="infopaneltitle-for-d55ea46bcda8a92abed484b010b695da" style="display:none">Info about the 'earthsensor' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#earthsensor">../../../../07/subsystems/ang/assemblies.html#earthsensor</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-earthsensor">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-gpsantenna">
-   <a href="../../../../07/subsystems/ang/assemblies.html#gpsantenna">../../../../07/subsystems/ang/assemblies.html#gpsantenna</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-dd96caea868f2cb4a965a0911d561dc8" class="dfn-panel" data-for="dd96caea868f2cb4a965a0911d561dc8" id="infopanel-for-dd96caea868f2cb4a965a0911d561dc8">
+   <span id="infopaneltitle-for-dd96caea868f2cb4a965a0911d561dc8" style="display:none">Info about the 'gpsantenna' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#gpsantenna">../../../../07/subsystems/ang/assemblies.html#gpsantenna</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-gpsantenna">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-gpsreceiverunit">
-   <a href="../../../../07/subsystems/ang/assemblies.html#gpsreceiverunit">../../../../07/subsystems/ang/assemblies.html#gpsreceiverunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7a2f6427805408fadb00f206ab0464a6" class="dfn-panel" data-for="7a2f6427805408fadb00f206ab0464a6" id="infopanel-for-7a2f6427805408fadb00f206ab0464a6">
+   <span id="infopaneltitle-for-7a2f6427805408fadb00f206ab0464a6" style="display:none">Info about the 'gpsreceiverunit' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#gpsreceiverunit">../../../../07/subsystems/ang/assemblies.html#gpsreceiverunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-gpsreceiverunit">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetometer">
-   <a href="../../../../07/subsystems/ang/assemblies.html#magnetometer">../../../../07/subsystems/ang/assemblies.html#magnetometer</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d22144c95c68f14b48ed70075bf20677" class="dfn-panel" data-for="d22144c95c68f14b48ed70075bf20677" id="infopanel-for-d22144c95c68f14b48ed70075bf20677">
+   <span id="infopaneltitle-for-d22144c95c68f14b48ed70075bf20677" style="display:none">Info about the 'magnetometer' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#magnetometer">../../../../07/subsystems/ang/assemblies.html#magnetometer</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-magnetometer">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer1">
-   <a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer1">../../../../07/subsystems/ang/assemblies.html#magnetorquer1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5dcf75ebd8dd9574bf7aac916c8c459e" class="dfn-panel" data-for="5dcf75ebd8dd9574bf7aac916c8c459e" id="infopanel-for-5dcf75ebd8dd9574bf7aac916c8c459e">
+   <span id="infopaneltitle-for-5dcf75ebd8dd9574bf7aac916c8c459e" style="display:none">Info about the 'magnetorquer1' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer1">../../../../07/subsystems/ang/assemblies.html#magnetorquer1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-magnetorquer1">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer2">
-   <a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer2">../../../../07/subsystems/ang/assemblies.html#magnetorquer2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-aa64fda657acd888ac1231eb93ea418c" class="dfn-panel" data-for="aa64fda657acd888ac1231eb93ea418c" id="infopanel-for-aa64fda657acd888ac1231eb93ea418c">
+   <span id="infopaneltitle-for-aa64fda657acd888ac1231eb93ea418c" style="display:none">Info about the 'magnetorquer2' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer2">../../../../07/subsystems/ang/assemblies.html#magnetorquer2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-magnetorquer2">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-magnetorquer3">
-   <a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer3">../../../../07/subsystems/ang/assemblies.html#magnetorquer3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e87b76b85e3a7eb4799ce4a72c6fe76f" class="dfn-panel" data-for="e87b76b85e3a7eb4799ce4a72c6fe76f" id="infopanel-for-e87b76b85e3a7eb4799ce4a72c6fe76f">
+   <span id="infopaneltitle-for-e87b76b85e3a7eb4799ce4a72c6fe76f" style="display:none">Info about the 'magnetorquer3' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#magnetorquer3">../../../../07/subsystems/ang/assemblies.html#magnetorquer3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-magnetorquer3">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel1">
-   <a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel1">../../../../07/subsystems/ang/assemblies.html#reactionwheel1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d6d8f8dde924c3c5f5ba38b043692b41" class="dfn-panel" data-for="d6d8f8dde924c3c5f5ba38b043692b41" id="infopanel-for-d6d8f8dde924c3c5f5ba38b043692b41">
+   <span id="infopaneltitle-for-d6d8f8dde924c3c5f5ba38b043692b41" style="display:none">Info about the 'reactionwheel1' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel1">../../../../07/subsystems/ang/assemblies.html#reactionwheel1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reactionwheel1">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel2">
-   <a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel2">../../../../07/subsystems/ang/assemblies.html#reactionwheel2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-011ef0ca3f67521c4405a18d94ec37eb" class="dfn-panel" data-for="011ef0ca3f67521c4405a18d94ec37eb" id="infopanel-for-011ef0ca3f67521c4405a18d94ec37eb">
+   <span id="infopaneltitle-for-011ef0ca3f67521c4405a18d94ec37eb" style="display:none">Info about the 'reactionwheel2' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel2">../../../../07/subsystems/ang/assemblies.html#reactionwheel2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reactionwheel2">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel3">
-   <a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel3">../../../../07/subsystems/ang/assemblies.html#reactionwheel3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-505b7b8e7cd0ca1211983533939eed28" class="dfn-panel" data-for="505b7b8e7cd0ca1211983533939eed28" id="infopanel-for-505b7b8e7cd0ca1211983533939eed28">
+   <span id="infopaneltitle-for-505b7b8e7cd0ca1211983533939eed28" style="display:none">Info about the 'reactionwheel3' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel3">../../../../07/subsystems/ang/assemblies.html#reactionwheel3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reactionwheel3">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reactionwheel4">
-   <a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel4">../../../../07/subsystems/ang/assemblies.html#reactionwheel4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3e43a50ae8849b0144ccd422053403f9" class="dfn-panel" data-for="3e43a50ae8849b0144ccd422053403f9" id="infopanel-for-3e43a50ae8849b0144ccd422053403f9">
+   <span id="infopaneltitle-for-3e43a50ae8849b0144ccd422053403f9" style="display:none">Info about the 'reactionwheel4' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#reactionwheel4">../../../../07/subsystems/ang/assemblies.html#reactionwheel4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reactionwheel4">3.1. ADCSAndGNC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sunsensor">
-   <a href="../../../../07/subsystems/ang/assemblies.html#sunsensor">../../../../07/subsystems/ang/assemblies.html#sunsensor</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c40760ebfa647e41e5f53d630e030a7e" class="dfn-panel" data-for="c40760ebfa647e41e5f53d630e030a7e" id="infopanel-for-c40760ebfa647e41e5f53d630e030a7e">
+   <span id="infopaneltitle-for-c40760ebfa647e41e5f53d630e030a7e" style="display:none">Info about the 'sunsensor' external reference.</span><a href="../../../../07/subsystems/ang/assemblies.html#sunsensor">../../../../07/subsystems/ang/assemblies.html#sunsensor</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sunsensor">3.1. ADCSAndGNC</a>
    </ul>
@@ -2283,85 +2285,139 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-aggregates_1">aggregates_1</span>
-     <li><span class="dfn-paneled" id="term-for-hasidentifier">hasidentifier</span>
+     <li><span class="dfn-paneled" id="180d592e44b8b69ed7424effc953fd7c">aggregates_1</span>
+     <li><span class="dfn-paneled" id="22ea2507406567e18e424569909e32d1">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-subsystem">subsystem</span>
+     <li><span class="dfn-paneled" id="d9c8d3a8743f534bf20f2fde4daf4c1c">subsystem</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/07/SUBSYSTEMS/ANG/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-adcselectronicsunit">adcselectronicsunit</span>
-     <li><span class="dfn-paneled" id="term-for-earthsensor">earthsensor</span>
-     <li><span class="dfn-paneled" id="term-for-gpsantenna">gpsantenna</span>
-     <li><span class="dfn-paneled" id="term-for-gpsreceiverunit">gpsreceiverunit</span>
-     <li><span class="dfn-paneled" id="term-for-magnetometer">magnetometer</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer1">magnetorquer1</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer2">magnetorquer2</span>
-     <li><span class="dfn-paneled" id="term-for-magnetorquer3">magnetorquer3</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel1">reactionwheel1</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel2">reactionwheel2</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel3">reactionwheel3</span>
-     <li><span class="dfn-paneled" id="term-for-reactionwheel4">reactionwheel4</span>
-     <li><span class="dfn-paneled" id="term-for-sunsensor">sunsensor</span>
+     <li><span class="dfn-paneled" id="45e6ac2032a9124feadd2c845dfa0d30">adcselectronicsunit</span>
+     <li><span class="dfn-paneled" id="d55ea46bcda8a92abed484b010b695da">earthsensor</span>
+     <li><span class="dfn-paneled" id="dd96caea868f2cb4a965a0911d561dc8">gpsantenna</span>
+     <li><span class="dfn-paneled" id="7a2f6427805408fadb00f206ab0464a6">gpsreceiverunit</span>
+     <li><span class="dfn-paneled" id="d22144c95c68f14b48ed70075bf20677">magnetometer</span>
+     <li><span class="dfn-paneled" id="5dcf75ebd8dd9574bf7aac916c8c459e">magnetorquer1</span>
+     <li><span class="dfn-paneled" id="aa64fda657acd888ac1231eb93ea418c">magnetorquer2</span>
+     <li><span class="dfn-paneled" id="e87b76b85e3a7eb4799ce4a72c6fe76f">magnetorquer3</span>
+     <li><span class="dfn-paneled" id="d6d8f8dde924c3c5f5ba38b043692b41">reactionwheel1</span>
+     <li><span class="dfn-paneled" id="011ef0ca3f67521c4405a18d94ec37eb">reactionwheel2</span>
+     <li><span class="dfn-paneled" id="505b7b8e7cd0ca1211983533939eed28">reactionwheel3</span>
+     <li><span class="dfn-paneled" id="3e43a50ae8849b0144ccd422053403f9">reactionwheel4</span>
+     <li><span class="dfn-paneled" id="c40760ebfa647e41e5f53d630e030a7e">sunsensor</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

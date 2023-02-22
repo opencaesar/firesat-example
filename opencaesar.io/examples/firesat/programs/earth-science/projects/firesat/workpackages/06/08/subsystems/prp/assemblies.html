@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/assemblies" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Assemblies</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2546,15 +2548,15 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#propulsionmodule">propulsionmodule</a><span>, in § 4.14</span>
    <li><a href="#propulsionsystemcontrolunit">propulsionsystemcontrolunit</a><span>, in § 4.15</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-contains_1">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-11f7dca5cd5798d4b31c96a6b888c4f3" class="dfn-panel" data-for="11f7dca5cd5798d4b31c96a6b888c4f3" id="infopanel-for-11f7dca5cd5798d4b31c96a6b888c4f3">
+   <span id="infopaneltitle-for-11f7dca5cd5798d4b31c96a6b888c4f3" style="display:none">Info about the 'contains_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#contains_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-contains_1">4.12. PropellantHandlingSection</a> <a href="#ref-for-contains_1①">(2)</a>
     <li><a href="#ref-for-contains_1②">4.14. PropulsionModule</a> <a href="#ref-for-contains_1③">(2)</a> <a href="#ref-for-contains_1④">(3)</a> <a href="#ref-for-contains_1⑤">(4)</a> <a href="#ref-for-contains_1⑥">(5)</a> <a href="#ref-for-contains_1⑦">(6)</a> <a href="#ref-for-contains_1⑧">(7)</a> <a href="#ref-for-contains_1⑨">(8)</a> <a href="#ref-for-contains_1①⓪">(9)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasidentifier">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" class="dfn-panel" data-for="1311b9980aaaac9d07f4c3a25606bff4" id="infopanel-for-1311b9980aaaac9d07f4c3a25606bff4">
+   <span id="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasidentifier">4.1. ACSThruster1</a>
     <li><a href="#ref-for-hasidentifier①">4.2. ACSThruster2</a>
@@ -2573,8 +2575,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-hasidentifier①④">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-isspecifiedby">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" class="dfn-panel" data-for="7ee331c96b0af3798fedbaa0edddb821" id="infopanel-for-7ee331c96b0af3798fedbaa0edddb821">
+   <span id="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" style="display:none">Info about the 'isspecifiedby' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-isspecifiedby">4.1. ACSThruster1</a>
     <li><a href="#ref-for-isspecifiedby①">4.2. ACSThruster2</a>
@@ -2592,8 +2594,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-isspecifiedby①⑨">4.15. PropulsionSystemControlUnit</a> <a href="#ref-for-isspecifiedby②⓪">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-performs_1">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" class="dfn-panel" data-for="70c4176574de9e523fb260c500cca5a2" id="infopanel-for-70c4176574de9e523fb260c500cca5a2">
+   <span id="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" style="display:none">Info about the 'performs_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-performs_1">4.1. ACSThruster1</a>
     <li><a href="#ref-for-performs_1①">4.2. ACSThruster2</a>
@@ -2610,8 +2612,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-performs_1①②">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-presents_1">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" class="dfn-panel" data-for="aea8174c6de59b1354b2a15091cfbd9e" id="infopanel-for-aea8174c6de59b1354b2a15091cfbd9e">
+   <span id="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" style="display:none">Info about the 'presents_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-presents_1">4.8. FillDrainValveUnit</a>
     <li><a href="#ref-for-presents_1①">4.12. PropellantHandlingSection</a>
@@ -2619,8 +2621,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-presents_1③">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-assembly">
-   <a href="../../../../../../../../../disciplines/fse/fse.html#assembly">../../../../../../../../../disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" class="dfn-panel" data-for="f668f73c4df2daa6968c666b6f01a6bc" id="infopanel-for-f668f73c4df2daa6968c666b6f01a6bc">
+   <span id="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" style="display:none">Info about the 'assembly' external reference.</span><a href="../../../../../../../../../disciplines/fse/fse.html#assembly">../../../../../../../../../disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-assembly">4.1. ACSThruster1</a>
     <li><a href="#ref-for-assembly①">4.2. ACSThruster2</a>
@@ -2639,296 +2641,296 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-assembly①④">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-bppropellantlineunit">
-   <a href="assemblies.html#bppropellantlineunit">assemblies.html#bppropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1a1f42537918ec75d384e358aa67de12" class="dfn-panel" data-for="1a1f42537918ec75d384e358aa67de12" id="infopanel-for-1a1f42537918ec75d384e358aa67de12">
+   <span id="infopaneltitle-for-1a1f42537918ec75d384e358aa67de12" style="display:none">Info about the 'bppropellantlineunit' external reference.</span><a href="assemblies.html#bppropellantlineunit">assemblies.html#bppropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-bppropellantlineunit">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-filldrainvalveunit">
-   <a href="assemblies.html#filldrainvalveunit">assemblies.html#filldrainvalveunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-01cf3c80979fffba3ba444085543d0eb" class="dfn-panel" data-for="01cf3c80979fffba3ba444085543d0eb" id="infopanel-for-01cf3c80979fffba3ba444085543d0eb">
+   <span id="infopaneltitle-for-01cf3c80979fffba3ba444085543d0eb" style="display:none">Info about the 'filldrainvalveunit' external reference.</span><a href="assemblies.html#filldrainvalveunit">assemblies.html#filldrainvalveunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-filldrainvalveunit">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-pmpropellantlineunit">
-   <a href="assemblies.html#pmpropellantlineunit">assemblies.html#pmpropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-755bf5a0bf4fecdf2a9b1ec3eec195fa" class="dfn-panel" data-for="755bf5a0bf4fecdf2a9b1ec3eec195fa" id="infopanel-for-755bf5a0bf4fecdf2a9b1ec3eec195fa">
+   <span id="infopaneltitle-for-755bf5a0bf4fecdf2a9b1ec3eec195fa" style="display:none">Info about the 'pmpropellantlineunit' external reference.</span><a href="assemblies.html#pmpropellantlineunit">assemblies.html#pmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pmpropellantlineunit">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-pressuranttank">
-   <a href="assemblies.html#pressuranttank">assemblies.html#pressuranttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7584cdc223d52c5ceebfd8608dc9495f" class="dfn-panel" data-for="7584cdc223d52c5ceebfd8608dc9495f" id="infopanel-for-7584cdc223d52c5ceebfd8608dc9495f">
+   <span id="infopaneltitle-for-7584cdc223d52c5ceebfd8608dc9495f" style="display:none">Info about the 'pressuranttank' external reference.</span><a href="assemblies.html#pressuranttank">assemblies.html#pressuranttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pressuranttank">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propellanttank">
-   <a href="assemblies.html#propellanttank">assemblies.html#propellanttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-dbf08845bee9c98b4fcb7ad550c37fae" class="dfn-panel" data-for="dbf08845bee9c98b4fcb7ad550c37fae" id="infopanel-for-dbf08845bee9c98b4fcb7ad550c37fae">
+   <span id="infopaneltitle-for-dbf08845bee9c98b4fcb7ad550c37fae" style="display:none">Info about the 'propellanttank' external reference.</span><a href="assemblies.html#propellanttank">assemblies.html#propellanttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propellanttank">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-filldrainvalveunitpowerin">
-   <a href="endcircuits.html#filldrainvalveunitpowerin">endcircuits.html#filldrainvalveunitpowerin</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bc198f766c072d9c6c9ccad7186e41d6" class="dfn-panel" data-for="bc198f766c072d9c6c9ccad7186e41d6" id="infopanel-for-bc198f766c072d9c6c9ccad7186e41d6">
+   <span id="infopaneltitle-for-bc198f766c072d9c6c9ccad7186e41d6" style="display:none">Info about the 'filldrainvalveunitpowerin' external reference.</span><a href="endcircuits.html#filldrainvalveunitpowerin">endcircuits.html#filldrainvalveunitpowerin</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-filldrainvalveunitpowerin">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propellanthandlingsectionpowerin">
-   <a href="endcircuits.html#propellanthandlingsectionpowerin">endcircuits.html#propellanthandlingsectionpowerin</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-aaadfa2ae2c5d6ff8f180dea6eb45802" class="dfn-panel" data-for="aaadfa2ae2c5d6ff8f180dea6eb45802" id="infopanel-for-aaadfa2ae2c5d6ff8f180dea6eb45802">
+   <span id="infopaneltitle-for-aaadfa2ae2c5d6ff8f180dea6eb45802" style="display:none">Info about the 'propellanthandlingsectionpowerin' external reference.</span><a href="endcircuits.html#propellanthandlingsectionpowerin">endcircuits.html#propellanthandlingsectionpowerin</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propellanthandlingsectionpowerin">4.12. PropellantHandlingSection</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionmodulepowerin">
-   <a href="endcircuits.html#propulsionmodulepowerin">endcircuits.html#propulsionmodulepowerin</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8fec006c7fc385610a45258c36196673" class="dfn-panel" data-for="8fec006c7fc385610a45258c36196673" id="infopanel-for-8fec006c7fc385610a45258c36196673">
+   <span id="infopaneltitle-for-8fec006c7fc385610a45258c36196673" style="display:none">Info about the 'propulsionmodulepowerin' external reference.</span><a href="endcircuits.html#propulsionmodulepowerin">endcircuits.html#propulsionmodulepowerin</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionmodulepowerin">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionsystemcontrolunitpowerin">
-   <a href="endcircuits.html#propulsionsystemcontrolunitpowerin">endcircuits.html#propulsionsystemcontrolunitpowerin</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bfab8af3ae41b9c649e79c31c9ecc04c" class="dfn-panel" data-for="bfab8af3ae41b9c649e79c31c9ecc04c" id="infopanel-for-bfab8af3ae41b9c649e79c31c9ecc04c">
+   <span id="infopaneltitle-for-bfab8af3ae41b9c649e79c31c9ecc04c" style="display:none">Info about the 'propulsionsystemcontrolunitpowerin' external reference.</span><a href="endcircuits.html#propulsionsystemcontrolunitpowerin">endcircuits.html#propulsionsystemcontrolunitpowerin</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionsystemcontrolunitpowerin">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster1">
-   <a href="functions.html#controltrajectorybyacsthruster1">functions.html#controltrajectorybyacsthruster1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-47fff0272fdc5460a51698ed642acbcc" class="dfn-panel" data-for="47fff0272fdc5460a51698ed642acbcc" id="infopanel-for-47fff0272fdc5460a51698ed642acbcc">
+   <span id="infopaneltitle-for-47fff0272fdc5460a51698ed642acbcc" style="display:none">Info about the 'controltrajectorybyacsthruster1' external reference.</span><a href="functions.html#controltrajectorybyacsthruster1">functions.html#controltrajectorybyacsthruster1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster1">4.1. ACSThruster1</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster2">
-   <a href="functions.html#controltrajectorybyacsthruster2">functions.html#controltrajectorybyacsthruster2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-34aaf77179152715dcc4c9f20cf7da41" class="dfn-panel" data-for="34aaf77179152715dcc4c9f20cf7da41" id="infopanel-for-34aaf77179152715dcc4c9f20cf7da41">
+   <span id="infopaneltitle-for-34aaf77179152715dcc4c9f20cf7da41" style="display:none">Info about the 'controltrajectorybyacsthruster2' external reference.</span><a href="functions.html#controltrajectorybyacsthruster2">functions.html#controltrajectorybyacsthruster2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster2">4.2. ACSThruster2</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster3">
-   <a href="functions.html#controltrajectorybyacsthruster3">functions.html#controltrajectorybyacsthruster3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c00fac16b24fe58030fa1bb0c8df8dd9" class="dfn-panel" data-for="c00fac16b24fe58030fa1bb0c8df8dd9" id="infopanel-for-c00fac16b24fe58030fa1bb0c8df8dd9">
+   <span id="infopaneltitle-for-c00fac16b24fe58030fa1bb0c8df8dd9" style="display:none">Info about the 'controltrajectorybyacsthruster3' external reference.</span><a href="functions.html#controltrajectorybyacsthruster3">functions.html#controltrajectorybyacsthruster3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster3">4.3. ACSThruster3</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster4">
-   <a href="functions.html#controltrajectorybyacsthruster4">functions.html#controltrajectorybyacsthruster4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-431a10302adaea25101a0f76f704f421" class="dfn-panel" data-for="431a10302adaea25101a0f76f704f421" id="infopanel-for-431a10302adaea25101a0f76f704f421">
+   <span id="infopaneltitle-for-431a10302adaea25101a0f76f704f421" style="display:none">Info about the 'controltrajectorybyacsthruster4' external reference.</span><a href="functions.html#controltrajectorybyacsthruster4">functions.html#controltrajectorybyacsthruster4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster4">4.4. ACSThruster4</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster5">
-   <a href="functions.html#controltrajectorybyacsthruster5">functions.html#controltrajectorybyacsthruster5</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-71886674c955e6ae5cb03873c712ae55" class="dfn-panel" data-for="71886674c955e6ae5cb03873c712ae55" id="infopanel-for-71886674c955e6ae5cb03873c712ae55">
+   <span id="infopaneltitle-for-71886674c955e6ae5cb03873c712ae55" style="display:none">Info about the 'controltrajectorybyacsthruster5' external reference.</span><a href="functions.html#controltrajectorybyacsthruster5">functions.html#controltrajectorybyacsthruster5</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster5">4.5. ACSThruster5</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyacsthruster6">
-   <a href="functions.html#controltrajectorybyacsthruster6">functions.html#controltrajectorybyacsthruster6</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0436a1d1813a1d48138e390c1cdf9f4b" class="dfn-panel" data-for="0436a1d1813a1d48138e390c1cdf9f4b" id="infopanel-for-0436a1d1813a1d48138e390c1cdf9f4b">
+   <span id="infopaneltitle-for-0436a1d1813a1d48138e390c1cdf9f4b" style="display:none">Info about the 'controltrajectorybyacsthruster6' external reference.</span><a href="functions.html#controltrajectorybyacsthruster6">functions.html#controltrajectorybyacsthruster6</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyacsthruster6">4.6. ACSThruster6</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybybppropellantlineunit">
-   <a href="functions.html#controltrajectorybybppropellantlineunit">functions.html#controltrajectorybybppropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f67d51c24da244b447dd691998c534ff" class="dfn-panel" data-for="f67d51c24da244b447dd691998c534ff" id="infopanel-for-f67d51c24da244b447dd691998c534ff">
+   <span id="infopaneltitle-for-f67d51c24da244b447dd691998c534ff" style="display:none">Info about the 'controltrajectorybybppropellantlineunit' external reference.</span><a href="functions.html#controltrajectorybybppropellantlineunit">functions.html#controltrajectorybybppropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybybppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybyfilldrainvalveunit">
-   <a href="functions.html#controltrajectorybyfilldrainvalveunit">functions.html#controltrajectorybyfilldrainvalveunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ce9fe371a17e37189987079eb54da05f" class="dfn-panel" data-for="ce9fe371a17e37189987079eb54da05f" id="infopanel-for-ce9fe371a17e37189987079eb54da05f">
+   <span id="infopaneltitle-for-ce9fe371a17e37189987079eb54da05f" style="display:none">Info about the 'controltrajectorybyfilldrainvalveunit' external reference.</span><a href="functions.html#controltrajectorybyfilldrainvalveunit">functions.html#controltrajectorybyfilldrainvalveunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybyfilldrainvalveunit">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybypmpropellantlineunit">
-   <a href="functions.html#controltrajectorybypmpropellantlineunit">functions.html#controltrajectorybypmpropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5b30c72f769d7afd5f5e49222e432258" class="dfn-panel" data-for="5b30c72f769d7afd5f5e49222e432258" id="infopanel-for-5b30c72f769d7afd5f5e49222e432258">
+   <span id="infopaneltitle-for-5b30c72f769d7afd5f5e49222e432258" style="display:none">Info about the 'controltrajectorybypmpropellantlineunit' external reference.</span><a href="functions.html#controltrajectorybypmpropellantlineunit">functions.html#controltrajectorybypmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybypmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybypressuranttank">
-   <a href="functions.html#controltrajectorybypressuranttank">functions.html#controltrajectorybypressuranttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-374ee0fa4d3ddbeb94a042acde0d96b8" class="dfn-panel" data-for="374ee0fa4d3ddbeb94a042acde0d96b8" id="infopanel-for-374ee0fa4d3ddbeb94a042acde0d96b8">
+   <span id="infopaneltitle-for-374ee0fa4d3ddbeb94a042acde0d96b8" style="display:none">Info about the 'controltrajectorybypressuranttank' external reference.</span><a href="functions.html#controltrajectorybypressuranttank">functions.html#controltrajectorybypressuranttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybypressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybypropellanttank">
-   <a href="functions.html#controltrajectorybypropellanttank">functions.html#controltrajectorybypropellanttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d1f3d197800baea10e19234bfc50a484" class="dfn-panel" data-for="d1f3d197800baea10e19234bfc50a484" id="infopanel-for-d1f3d197800baea10e19234bfc50a484">
+   <span id="infopaneltitle-for-d1f3d197800baea10e19234bfc50a484" style="display:none">Info about the 'controltrajectorybypropellanttank' external reference.</span><a href="functions.html#controltrajectorybypropellanttank">functions.html#controltrajectorybypropellanttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybypropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectorybypropulsionsystemcontrolunit">
-   <a href="functions.html#controltrajectorybypropulsionsystemcontrolunit">functions.html#controltrajectorybypropulsionsystemcontrolunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a2e9a6927382a5f1d1edc5b90bb804ec" class="dfn-panel" data-for="a2e9a6927382a5f1d1edc5b90bb804ec" id="infopanel-for-a2e9a6927382a5f1d1edc5b90bb804ec">
+   <span id="infopaneltitle-for-a2e9a6927382a5f1d1edc5b90bb804ec" style="display:none">Info about the 'controltrajectorybypropulsionsystemcontrolunit' external reference.</span><a href="functions.html#controltrajectorybypropulsionsystemcontrolunit">functions.html#controltrajectorybypropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectorybypropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-launch_scbyprimarythruster">
-   <a href="functions.html#launch_scbyprimarythruster">functions.html#launch_scbyprimarythruster</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-36917889c534e03c65fa7c59ead47f73" class="dfn-panel" data-for="36917889c534e03c65fa7c59ead47f73" id="infopanel-for-36917889c534e03c65fa7c59ead47f73">
+   <span id="infopaneltitle-for-36917889c534e03c65fa7c59ead47f73" style="display:none">Info about the 'launch_scbyprimarythruster' external reference.</span><a href="functions.html#launch_scbyprimarythruster">functions.html#launch_scbyprimarythruster</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-launch_scbyprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforbppropellantlineunit">
-   <a href="requirements.html#altitudeforbppropellantlineunit">requirements.html#altitudeforbppropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b5b9d00e067c97d1b5a3dccfab4d5287" class="dfn-panel" data-for="b5b9d00e067c97d1b5a3dccfab4d5287" id="infopanel-for-b5b9d00e067c97d1b5a3dccfab4d5287">
+   <span id="infopaneltitle-for-b5b9d00e067c97d1b5a3dccfab4d5287" style="display:none">Info about the 'altitudeforbppropellantlineunit' external reference.</span><a href="requirements.html#altitudeforbppropellantlineunit">requirements.html#altitudeforbppropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforbppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforpmpropellantlineunit">
-   <a href="requirements.html#altitudeforpmpropellantlineunit">requirements.html#altitudeforpmpropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6935230d9fd21db96a9e01ca160f8661" class="dfn-panel" data-for="6935230d9fd21db96a9e01ca160f8661" id="infopanel-for-6935230d9fd21db96a9e01ca160f8661">
+   <span id="infopaneltitle-for-6935230d9fd21db96a9e01ca160f8661" style="display:none">Info about the 'altitudeforpmpropellantlineunit' external reference.</span><a href="requirements.html#altitudeforpmpropellantlineunit">requirements.html#altitudeforpmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforpmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforpressuranttank">
-   <a href="requirements.html#altitudeforpressuranttank">requirements.html#altitudeforpressuranttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8130332a6fca350ab9f5ea2256ef427f" class="dfn-panel" data-for="8130332a6fca350ab9f5ea2256ef427f" id="infopanel-for-8130332a6fca350ab9f5ea2256ef427f">
+   <span id="infopaneltitle-for-8130332a6fca350ab9f5ea2256ef427f" style="display:none">Info about the 'altitudeforpressuranttank' external reference.</span><a href="requirements.html#altitudeforpressuranttank">requirements.html#altitudeforpressuranttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforpressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforprimarythruster">
-   <a href="requirements.html#altitudeforprimarythruster">requirements.html#altitudeforprimarythruster</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0310cc82599fcd7ab669c782a0c9ee9e" class="dfn-panel" data-for="0310cc82599fcd7ab669c782a0c9ee9e" id="infopanel-for-0310cc82599fcd7ab669c782a0c9ee9e">
+   <span id="infopaneltitle-for-0310cc82599fcd7ab669c782a0c9ee9e" style="display:none">Info about the 'altitudeforprimarythruster' external reference.</span><a href="requirements.html#altitudeforprimarythruster">requirements.html#altitudeforprimarythruster</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforpropellanttank">
-   <a href="requirements.html#altitudeforpropellanttank">requirements.html#altitudeforpropellanttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-409baf54dd2e584e40ee8f5d7c1b66ab" class="dfn-panel" data-for="409baf54dd2e584e40ee8f5d7c1b66ab" id="infopanel-for-409baf54dd2e584e40ee8f5d7c1b66ab">
+   <span id="infopaneltitle-for-409baf54dd2e584e40ee8f5d7c1b66ab" style="display:none">Info about the 'altitudeforpropellanttank' external reference.</span><a href="requirements.html#altitudeforpropellanttank">requirements.html#altitudeforpropellanttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforpropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforpropulsionmodule">
-   <a href="requirements.html#altitudeforpropulsionmodule">requirements.html#altitudeforpropulsionmodule</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5b159fd4825db4216e026929858843c0" class="dfn-panel" data-for="5b159fd4825db4216e026929858843c0" id="infopanel-for-5b159fd4825db4216e026929858843c0">
+   <span id="infopaneltitle-for-5b159fd4825db4216e026929858843c0" style="display:none">Info about the 'altitudeforpropulsionmodule' external reference.</span><a href="requirements.html#altitudeforpropulsionmodule">requirements.html#altitudeforpropulsionmodule</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforpropulsionmodule">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-altitudeforpropulsionsystemcontrolunit">
-   <a href="requirements.html#altitudeforpropulsionsystemcontrolunit">requirements.html#altitudeforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ce5f5946a04d186eb8bd84f91d03d826" class="dfn-panel" data-for="ce5f5946a04d186eb8bd84f91d03d826" id="infopanel-for-ce5f5946a04d186eb8bd84f91d03d826">
+   <span id="infopaneltitle-for-ce5f5946a04d186eb8bd84f91d03d826" style="display:none">Info about the 'altitudeforpropulsionsystemcontrolunit' external reference.</span><a href="requirements.html#altitudeforpropulsionsystemcontrolunit">requirements.html#altitudeforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-altitudeforpropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforbppropellantlineunit">
-   <a href="requirements.html#deltavbudgetforbppropellantlineunit">requirements.html#deltavbudgetforbppropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3f78edb5e3017ea1545b304911036957" class="dfn-panel" data-for="3f78edb5e3017ea1545b304911036957" id="infopanel-for-3f78edb5e3017ea1545b304911036957">
+   <span id="infopaneltitle-for-3f78edb5e3017ea1545b304911036957" style="display:none">Info about the 'deltavbudgetforbppropellantlineunit' external reference.</span><a href="requirements.html#deltavbudgetforbppropellantlineunit">requirements.html#deltavbudgetforbppropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforbppropellantlineunit">4.7. BPPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforfilldrainvalveunit">
-   <a href="requirements.html#deltavbudgetforfilldrainvalveunit">requirements.html#deltavbudgetforfilldrainvalveunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7dddb6bd0a9dee63513ec089021e4a2a" class="dfn-panel" data-for="7dddb6bd0a9dee63513ec089021e4a2a" id="infopanel-for-7dddb6bd0a9dee63513ec089021e4a2a">
+   <span id="infopaneltitle-for-7dddb6bd0a9dee63513ec089021e4a2a" style="display:none">Info about the 'deltavbudgetforfilldrainvalveunit' external reference.</span><a href="requirements.html#deltavbudgetforfilldrainvalveunit">requirements.html#deltavbudgetforfilldrainvalveunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforfilldrainvalveunit">4.8. FillDrainValveUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforpmpropellantlineunit">
-   <a href="requirements.html#deltavbudgetforpmpropellantlineunit">requirements.html#deltavbudgetforpmpropellantlineunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-28916384596242c00b9b0f474eb1eb83" class="dfn-panel" data-for="28916384596242c00b9b0f474eb1eb83" id="infopanel-for-28916384596242c00b9b0f474eb1eb83">
+   <span id="infopaneltitle-for-28916384596242c00b9b0f474eb1eb83" style="display:none">Info about the 'deltavbudgetforpmpropellantlineunit' external reference.</span><a href="requirements.html#deltavbudgetforpmpropellantlineunit">requirements.html#deltavbudgetforpmpropellantlineunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforpmpropellantlineunit">4.9. PMPropellantLineUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforpressuranttank">
-   <a href="requirements.html#deltavbudgetforpressuranttank">requirements.html#deltavbudgetforpressuranttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8999379316721b486813bfd8e6e939f9" class="dfn-panel" data-for="8999379316721b486813bfd8e6e939f9" id="infopanel-for-8999379316721b486813bfd8e6e939f9">
+   <span id="infopaneltitle-for-8999379316721b486813bfd8e6e939f9" style="display:none">Info about the 'deltavbudgetforpressuranttank' external reference.</span><a href="requirements.html#deltavbudgetforpressuranttank">requirements.html#deltavbudgetforpressuranttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforpressuranttank">4.10. PressurantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforprimarythruster">
-   <a href="requirements.html#deltavbudgetforprimarythruster">requirements.html#deltavbudgetforprimarythruster</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c7557c39e25302ed87faec91dcc80564" class="dfn-panel" data-for="c7557c39e25302ed87faec91dcc80564" id="infopanel-for-c7557c39e25302ed87faec91dcc80564">
+   <span id="infopaneltitle-for-c7557c39e25302ed87faec91dcc80564" style="display:none">Info about the 'deltavbudgetforprimarythruster' external reference.</span><a href="requirements.html#deltavbudgetforprimarythruster">requirements.html#deltavbudgetforprimarythruster</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforprimarythruster">4.11. PrimaryThruster</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropellanttank">
-   <a href="requirements.html#deltavbudgetforpropellanttank">requirements.html#deltavbudgetforpropellanttank</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-302e924d657d740ea707c7b9f7728178" class="dfn-panel" data-for="302e924d657d740ea707c7b9f7728178" id="infopanel-for-302e924d657d740ea707c7b9f7728178">
+   <span id="infopaneltitle-for-302e924d657d740ea707c7b9f7728178" style="display:none">Info about the 'deltavbudgetforpropellanttank' external reference.</span><a href="requirements.html#deltavbudgetforpropellanttank">requirements.html#deltavbudgetforpropellanttank</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforpropellanttank">4.13. PropellantTank</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropulsionmodule">
-   <a href="requirements.html#deltavbudgetforpropulsionmodule">requirements.html#deltavbudgetforpropulsionmodule</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5bd5bb8f0b9b4df964cda5448ff81c49" class="dfn-panel" data-for="5bd5bb8f0b9b4df964cda5448ff81c49" id="infopanel-for-5bd5bb8f0b9b4df964cda5448ff81c49">
+   <span id="infopaneltitle-for-5bd5bb8f0b9b4df964cda5448ff81c49" style="display:none">Info about the 'deltavbudgetforpropulsionmodule' external reference.</span><a href="requirements.html#deltavbudgetforpropulsionmodule">requirements.html#deltavbudgetforpropulsionmodule</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforpropulsionmodule">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deltavbudgetforpropulsionsystemcontrolunit">
-   <a href="requirements.html#deltavbudgetforpropulsionsystemcontrolunit">requirements.html#deltavbudgetforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b0d2826e05e883768c12f9b425193638" class="dfn-panel" data-for="b0d2826e05e883768c12f9b425193638" id="infopanel-for-b0d2826e05e883768c12f9b425193638">
+   <span id="infopaneltitle-for-b0d2826e05e883768c12f9b425193638" style="display:none">Info about the 'deltavbudgetforpropulsionsystemcontrolunit' external reference.</span><a href="requirements.html#deltavbudgetforpropulsionsystemcontrolunit">requirements.html#deltavbudgetforpropulsionsystemcontrolunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deltavbudgetforpropulsionsystemcontrolunit">4.15. PropulsionSystemControlUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster1">
-   <a href="requirements.html#operabilityforacsthruster1">requirements.html#operabilityforacsthruster1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e9c764b8ddc7b715b7836d23a1d8e489" class="dfn-panel" data-for="e9c764b8ddc7b715b7836d23a1d8e489" id="infopanel-for-e9c764b8ddc7b715b7836d23a1d8e489">
+   <span id="infopaneltitle-for-e9c764b8ddc7b715b7836d23a1d8e489" style="display:none">Info about the 'operabilityforacsthruster1' external reference.</span><a href="requirements.html#operabilityforacsthruster1">requirements.html#operabilityforacsthruster1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster1">4.1. ACSThruster1</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster2">
-   <a href="requirements.html#operabilityforacsthruster2">requirements.html#operabilityforacsthruster2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8a3f2202995a10bf915c13d859ff3300" class="dfn-panel" data-for="8a3f2202995a10bf915c13d859ff3300" id="infopanel-for-8a3f2202995a10bf915c13d859ff3300">
+   <span id="infopaneltitle-for-8a3f2202995a10bf915c13d859ff3300" style="display:none">Info about the 'operabilityforacsthruster2' external reference.</span><a href="requirements.html#operabilityforacsthruster2">requirements.html#operabilityforacsthruster2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster2">4.2. ACSThruster2</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster3">
-   <a href="requirements.html#operabilityforacsthruster3">requirements.html#operabilityforacsthruster3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bdfdbc1f1f25cd1ec45cbbbe32365e1c" class="dfn-panel" data-for="bdfdbc1f1f25cd1ec45cbbbe32365e1c" id="infopanel-for-bdfdbc1f1f25cd1ec45cbbbe32365e1c">
+   <span id="infopaneltitle-for-bdfdbc1f1f25cd1ec45cbbbe32365e1c" style="display:none">Info about the 'operabilityforacsthruster3' external reference.</span><a href="requirements.html#operabilityforacsthruster3">requirements.html#operabilityforacsthruster3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster3">4.3. ACSThruster3</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster4">
-   <a href="requirements.html#operabilityforacsthruster4">requirements.html#operabilityforacsthruster4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-26e26ccd29961f8f4a3ca080a4d0a56d" class="dfn-panel" data-for="26e26ccd29961f8f4a3ca080a4d0a56d" id="infopanel-for-26e26ccd29961f8f4a3ca080a4d0a56d">
+   <span id="infopaneltitle-for-26e26ccd29961f8f4a3ca080a4d0a56d" style="display:none">Info about the 'operabilityforacsthruster4' external reference.</span><a href="requirements.html#operabilityforacsthruster4">requirements.html#operabilityforacsthruster4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster4">4.4. ACSThruster4</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster5">
-   <a href="requirements.html#operabilityforacsthruster5">requirements.html#operabilityforacsthruster5</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c3fcdf4aef488d7fc11c1c820a9cb85c" class="dfn-panel" data-for="c3fcdf4aef488d7fc11c1c820a9cb85c" id="infopanel-for-c3fcdf4aef488d7fc11c1c820a9cb85c">
+   <span id="infopaneltitle-for-c3fcdf4aef488d7fc11c1c820a9cb85c" style="display:none">Info about the 'operabilityforacsthruster5' external reference.</span><a href="requirements.html#operabilityforacsthruster5">requirements.html#operabilityforacsthruster5</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster5">4.5. ACSThruster5</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-operabilityforacsthruster6">
-   <a href="requirements.html#operabilityforacsthruster6">requirements.html#operabilityforacsthruster6</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1ff0c25ab21e197c91e71b925fd73c7b" class="dfn-panel" data-for="1ff0c25ab21e197c91e71b925fd73c7b" id="infopanel-for-1ff0c25ab21e197c91e71b925fd73c7b">
+   <span id="infopaneltitle-for-1ff0c25ab21e197c91e71b925fd73c7b" style="display:none">Info about the 'operabilityforacsthruster6' external reference.</span><a href="requirements.html#operabilityforacsthruster6">requirements.html#operabilityforacsthruster6</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-operabilityforacsthruster6">4.6. ACSThruster6</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-pressuranttankmountingpanel">
-   <a href="../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-594fb58d4c32bfffaba1a634a7ae1fb8" class="dfn-panel" data-for="594fb58d4c32bfffaba1a634a7ae1fb8" id="infopanel-for-594fb58d4c32bfffaba1a634a7ae1fb8">
+   <span id="infopaneltitle-for-594fb58d4c32bfffaba1a634a7ae1fb8" style="display:none">Info about the 'pressuranttankmountingpanel' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pressuranttankmountingpanel">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propellanttankmountingpanel">
-   <a href="../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-db0d856e26c8c468bb554f0759e1c4fc" class="dfn-panel" data-for="db0d856e26c8c468bb554f0759e1c4fc" id="infopanel-for-db0d856e26c8c468bb554f0759e1c4fc">
+   <span id="infopaneltitle-for-db0d856e26c8c468bb554f0759e1c4fc" style="display:none">Info about the 'propellanttankmountingpanel' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propellanttankmountingpanel">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost1">
-   <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-36b663434951e148561ef1892b592725" class="dfn-panel" data-for="36b663434951e148561ef1892b592725" id="infopanel-for-36b663434951e148561ef1892b592725">
+   <span id="infopaneltitle-for-36b663434951e148561ef1892b592725" style="display:none">Info about the 'propulsionstructurepost1' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost1">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost2">
-   <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e7c8a5340fca20a5518915ec5fc5a355" class="dfn-panel" data-for="e7c8a5340fca20a5518915ec5fc5a355" id="infopanel-for-e7c8a5340fca20a5518915ec5fc5a355">
+   <span id="infopaneltitle-for-e7c8a5340fca20a5518915ec5fc5a355" style="display:none">Info about the 'propulsionstructurepost2' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost2">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost3">
-   <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-7917ab078dc171d9b9ffc273ac1ef951" class="dfn-panel" data-for="7917ab078dc171d9b9ffc273ac1ef951" id="infopanel-for-7917ab078dc171d9b9ffc273ac1ef951">
+   <span id="infopaneltitle-for-7917ab078dc171d9b9ffc273ac1ef951" style="display:none">Info about the 'propulsionstructurepost3' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost3">4.14. PropulsionModule</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost4">
-   <a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5632e0d1ae9a427627843fa1a6d0880a" class="dfn-panel" data-for="5632e0d1ae9a427627843fa1a6d0880a" id="infopanel-for-5632e0d1ae9a427627843fa1a6d0880a">
+   <span id="infopaneltitle-for-5632e0d1ae9a427627843fa1a6d0880a" style="display:none">Info about the 'propulsionstructurepost4' external reference.</span><a href="../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost4">4.14. PropulsionModule</a>
    </ul>
@@ -2938,144 +2940,198 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-contains_1">contains_1</span>
-     <li><span class="dfn-paneled" id="term-for-hasidentifier">hasidentifier</span>
+     <li><span class="dfn-paneled" id="11f7dca5cd5798d4b31c96a6b888c4f3">contains_1</span>
+     <li><span class="dfn-paneled" id="1311b9980aaaac9d07f4c3a25606bff4">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-isspecifiedby">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="term-for-performs_1">performs_1</span>
-     <li><span class="dfn-paneled" id="term-for-presents_1">presents_1</span>
+     <li><span class="dfn-paneled" id="7ee331c96b0af3798fedbaa0edddb821">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="70c4176574de9e523fb260c500cca5a2">performs_1</span>
+     <li><span class="dfn-paneled" id="aea8174c6de59b1354b2a15091cfbd9e">presents_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-assembly">assembly</span>
+     <li><span class="dfn-paneled" id="f668f73c4df2daa6968c666b6f01a6bc">assembly</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-bppropellantlineunit">bppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-filldrainvalveunit">filldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="term-for-pmpropellantlineunit">pmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-pressuranttank">pressuranttank</span>
-     <li><span class="dfn-paneled" id="term-for-propellanttank">propellanttank</span>
+     <li><span class="dfn-paneled" id="1a1f42537918ec75d384e358aa67de12">bppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="01cf3c80979fffba3ba444085543d0eb">filldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="755bf5a0bf4fecdf2a9b1ec3eec195fa">pmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="7584cdc223d52c5ceebfd8608dc9495f">pressuranttank</span>
+     <li><span class="dfn-paneled" id="dbf08845bee9c98b4fcb7ad550c37fae">propellanttank</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/ENDCIRCUITS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-filldrainvalveunitpowerin">filldrainvalveunitpowerin</span>
-     <li><span class="dfn-paneled" id="term-for-propellanthandlingsectionpowerin">propellanthandlingsectionpowerin</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionmodulepowerin">propulsionmodulepowerin</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionsystemcontrolunitpowerin">propulsionsystemcontrolunitpowerin</span>
+     <li><span class="dfn-paneled" id="bc198f766c072d9c6c9ccad7186e41d6">filldrainvalveunitpowerin</span>
+     <li><span class="dfn-paneled" id="aaadfa2ae2c5d6ff8f180dea6eb45802">propellanthandlingsectionpowerin</span>
+     <li><span class="dfn-paneled" id="8fec006c7fc385610a45258c36196673">propulsionmodulepowerin</span>
+     <li><span class="dfn-paneled" id="bfab8af3ae41b9c649e79c31c9ecc04c">propulsionsystemcontrolunitpowerin</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster1">controltrajectorybyacsthruster1</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster2">controltrajectorybyacsthruster2</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster3">controltrajectorybyacsthruster3</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster4">controltrajectorybyacsthruster4</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster5">controltrajectorybyacsthruster5</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyacsthruster6">controltrajectorybyacsthruster6</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybybppropellantlineunit">controltrajectorybybppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybyfilldrainvalveunit">controltrajectorybyfilldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybypmpropellantlineunit">controltrajectorybypmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybypressuranttank">controltrajectorybypressuranttank</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybypropellanttank">controltrajectorybypropellanttank</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectorybypropulsionsystemcontrolunit">controltrajectorybypropulsionsystemcontrolunit</span>
-     <li><span class="dfn-paneled" id="term-for-launch_scbyprimarythruster">launch_scbyprimarythruster</span>
+     <li><span class="dfn-paneled" id="47fff0272fdc5460a51698ed642acbcc">controltrajectorybyacsthruster1</span>
+     <li><span class="dfn-paneled" id="34aaf77179152715dcc4c9f20cf7da41">controltrajectorybyacsthruster2</span>
+     <li><span class="dfn-paneled" id="c00fac16b24fe58030fa1bb0c8df8dd9">controltrajectorybyacsthruster3</span>
+     <li><span class="dfn-paneled" id="431a10302adaea25101a0f76f704f421">controltrajectorybyacsthruster4</span>
+     <li><span class="dfn-paneled" id="71886674c955e6ae5cb03873c712ae55">controltrajectorybyacsthruster5</span>
+     <li><span class="dfn-paneled" id="0436a1d1813a1d48138e390c1cdf9f4b">controltrajectorybyacsthruster6</span>
+     <li><span class="dfn-paneled" id="f67d51c24da244b447dd691998c534ff">controltrajectorybybppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="ce9fe371a17e37189987079eb54da05f">controltrajectorybyfilldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="5b30c72f769d7afd5f5e49222e432258">controltrajectorybypmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="374ee0fa4d3ddbeb94a042acde0d96b8">controltrajectorybypressuranttank</span>
+     <li><span class="dfn-paneled" id="d1f3d197800baea10e19234bfc50a484">controltrajectorybypropellanttank</span>
+     <li><span class="dfn-paneled" id="a2e9a6927382a5f1d1edc5b90bb804ec">controltrajectorybypropulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="36917889c534e03c65fa7c59ead47f73">launch_scbyprimarythruster</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/REQUIREMENTS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-altitudeforbppropellantlineunit">altitudeforbppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforpmpropellantlineunit">altitudeforpmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforpressuranttank">altitudeforpressuranttank</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforprimarythruster">altitudeforprimarythruster</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforpropellanttank">altitudeforpropellanttank</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforpropulsionmodule">altitudeforpropulsionmodule</span>
-     <li><span class="dfn-paneled" id="term-for-altitudeforpropulsionsystemcontrolunit">altitudeforpropulsionsystemcontrolunit</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforbppropellantlineunit">deltavbudgetforbppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforfilldrainvalveunit">deltavbudgetforfilldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforpmpropellantlineunit">deltavbudgetforpmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforpressuranttank">deltavbudgetforpressuranttank</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforprimarythruster">deltavbudgetforprimarythruster</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforpropellanttank">deltavbudgetforpropellanttank</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforpropulsionmodule">deltavbudgetforpropulsionmodule</span>
-     <li><span class="dfn-paneled" id="term-for-deltavbudgetforpropulsionsystemcontrolunit">deltavbudgetforpropulsionsystemcontrolunit</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster1">operabilityforacsthruster1</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster2">operabilityforacsthruster2</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster3">operabilityforacsthruster3</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster4">operabilityforacsthruster4</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster5">operabilityforacsthruster5</span>
-     <li><span class="dfn-paneled" id="term-for-operabilityforacsthruster6">operabilityforacsthruster6</span>
+     <li><span class="dfn-paneled" id="b5b9d00e067c97d1b5a3dccfab4d5287">altitudeforbppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="6935230d9fd21db96a9e01ca160f8661">altitudeforpmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="8130332a6fca350ab9f5ea2256ef427f">altitudeforpressuranttank</span>
+     <li><span class="dfn-paneled" id="0310cc82599fcd7ab669c782a0c9ee9e">altitudeforprimarythruster</span>
+     <li><span class="dfn-paneled" id="409baf54dd2e584e40ee8f5d7c1b66ab">altitudeforpropellanttank</span>
+     <li><span class="dfn-paneled" id="5b159fd4825db4216e026929858843c0">altitudeforpropulsionmodule</span>
+     <li><span class="dfn-paneled" id="ce5f5946a04d186eb8bd84f91d03d826">altitudeforpropulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="3f78edb5e3017ea1545b304911036957">deltavbudgetforbppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="7dddb6bd0a9dee63513ec089021e4a2a">deltavbudgetforfilldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="28916384596242c00b9b0f474eb1eb83">deltavbudgetforpmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="8999379316721b486813bfd8e6e939f9">deltavbudgetforpressuranttank</span>
+     <li><span class="dfn-paneled" id="c7557c39e25302ed87faec91dcc80564">deltavbudgetforprimarythruster</span>
+     <li><span class="dfn-paneled" id="302e924d657d740ea707c7b9f7728178">deltavbudgetforpropellanttank</span>
+     <li><span class="dfn-paneled" id="5bd5bb8f0b9b4df964cda5448ff81c49">deltavbudgetforpropulsionmodule</span>
+     <li><span class="dfn-paneled" id="b0d2826e05e883768c12f9b425193638">deltavbudgetforpropulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="e9c764b8ddc7b715b7836d23a1d8e489">operabilityforacsthruster1</span>
+     <li><span class="dfn-paneled" id="8a3f2202995a10bf915c13d859ff3300">operabilityforacsthruster2</span>
+     <li><span class="dfn-paneled" id="bdfdbc1f1f25cd1ec45cbbbe32365e1c">operabilityforacsthruster3</span>
+     <li><span class="dfn-paneled" id="26e26ccd29961f8f4a3ca080a4d0a56d">operabilityforacsthruster4</span>
+     <li><span class="dfn-paneled" id="c3fcdf4aef488d7fc11c1c820a9cb85c">operabilityforacsthruster5</span>
+     <li><span class="dfn-paneled" id="1ff0c25ab21e197c91e71b925fd73c7b">operabilityforacsthruster6</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/10/SUBSYSTEMS/CDH/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-pressuranttankmountingpanel">pressuranttankmountingpanel</span>
-     <li><span class="dfn-paneled" id="term-for-propellanttankmountingpanel">propellanttankmountingpanel</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost1">propulsionstructurepost1</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost2">propulsionstructurepost2</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost3">propulsionstructurepost3</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost4">propulsionstructurepost4</span>
+     <li><span class="dfn-paneled" id="594fb58d4c32bfffaba1a634a7ae1fb8">pressuranttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="db0d856e26c8c468bb554f0759e1c4fc">propellanttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="36b663434951e148561ef1892b592725">propulsionstructurepost1</span>
+     <li><span class="dfn-paneled" id="e7c8a5340fca20a5518915ec5fc5a355">propulsionstructurepost2</span>
+     <li><span class="dfn-paneled" id="7917ab078dc171d9b9ffc273ac1ef951">propulsionstructurepost3</span>
+     <li><span class="dfn-paneled" id="5632e0d1ae9a427627843fa1a6d0880a">propulsionstructurepost4</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

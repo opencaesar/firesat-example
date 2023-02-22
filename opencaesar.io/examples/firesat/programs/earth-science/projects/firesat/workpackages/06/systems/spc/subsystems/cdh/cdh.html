@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/cdh/cdh" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Command and Data Handling</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2197,188 +2199,188 @@ dfn > a.self-link::before      { content: "#"; }
   <ul class="index">
    <li><a href="#commandanddatahandling">commandanddatahandling</a><span>, in § 3.1</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-aggregates_1">
-   <a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" class="dfn-panel" data-for="180d592e44b8b69ed7424effc953fd7c" id="infopanel-for-180d592e44b8b69ed7424effc953fd7c">
+   <span id="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" style="display:none">Info about the 'aggregates_1' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-aggregates_1">3.1. CommandAndDataHandling</a> <a href="#ref-for-aggregates_1①">(2)</a> <a href="#ref-for-aggregates_1②">(3)</a> <a href="#ref-for-aggregates_1③">(4)</a> <a href="#ref-for-aggregates_1④">(5)</a> <a href="#ref-for-aggregates_1⑤">(6)</a> <a href="#ref-for-aggregates_1⑥">(7)</a> <a href="#ref-for-aggregates_1⑦">(8)</a> <a href="#ref-for-aggregates_1⑧">(9)</a> <a href="#ref-for-aggregates_1⑨">(10)</a> <a href="#ref-for-aggregates_1①⓪">(11)</a> <a href="#ref-for-aggregates_1①①">(12)</a> <a href="#ref-for-aggregates_1①②">(13)</a> <a href="#ref-for-aggregates_1①③">(14)</a> <a href="#ref-for-aggregates_1①④">(15)</a> <a href="#ref-for-aggregates_1①⑤">(16)</a> <a href="#ref-for-aggregates_1①⑥">(17)</a> <a href="#ref-for-aggregates_1①⑦">(18)</a> <a href="#ref-for-aggregates_1①⑧">(19)</a> <a href="#ref-for-aggregates_1①⑨">(20)</a> <a href="#ref-for-aggregates_1②⓪">(21)</a> <a href="#ref-for-aggregates_1②①">(22)</a> <a href="#ref-for-aggregates_1②②">(23)</a> <a href="#ref-for-aggregates_1②③">(24)</a> <a href="#ref-for-aggregates_1②④">(25)</a> <a href="#ref-for-aggregates_1②⑤">(26)</a> <a href="#ref-for-aggregates_1②⑥">(27)</a> <a href="#ref-for-aggregates_1②⑦">(28)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-hasidentifier">
-   <a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-22ea2507406567e18e424569909e32d1" class="dfn-panel" data-for="22ea2507406567e18e424569909e32d1" id="infopanel-for-22ea2507406567e18e424569909e32d1">
+   <span id="infopaneltitle-for-22ea2507406567e18e424569909e32d1" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hasidentifier">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-subsystem">
-   <a href="../../../../../../../../../../disciplines/fse/fse.html#subsystem">../../../../../../../../../../disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" class="dfn-panel" data-for="d9c8d3a8743f534bf20f2fde4daf4c1c" id="infopanel-for-d9c8d3a8743f534bf20f2fde4daf4c1c">
+   <span id="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" style="display:none">Info about the 'subsystem' external reference.</span><a href="../../../../../../../../../../disciplines/fse/fse.html#subsystem">../../../../../../../../../../disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-subsystem">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-avionicsstacksection">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection">../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6b7a6b6165b2a92f3e339efe6d581b6a" class="dfn-panel" data-for="6b7a6b6165b2a92f3e339efe6d581b6a" id="infopanel-for-6b7a6b6165b2a92f3e339efe6d581b6a">
+   <span id="infopaneltitle-for-6b7a6b6165b2a92f3e339efe6d581b6a" style="display:none">Info about the 'avionicsstacksection' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection">../../../../10/subsystems/cdh/assemblies.html#avionicsstacksection</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-avionicsstacksection">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-baseplate">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#baseplate">../../../../10/subsystems/cdh/assemblies.html#baseplate</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-62b6c90fb73b6fecec6204eb03849d17" class="dfn-panel" data-for="62b6c90fb73b6fecec6204eb03849d17" id="infopanel-for-62b6c90fb73b6fecec6204eb03849d17">
+   <span id="infopaneltitle-for-62b6c90fb73b6fecec6204eb03849d17" style="display:none">Info about the 'baseplate' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#baseplate">../../../../10/subsystems/cdh/assemblies.html#baseplate</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-baseplate">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-baseplatemodule">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#baseplatemodule">../../../../10/subsystems/cdh/assemblies.html#baseplatemodule</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-33cd02b2fe6f06be2520813485206902" class="dfn-panel" data-for="33cd02b2fe6f06be2520813485206902" id="infopanel-for-33cd02b2fe6f06be2520813485206902">
+   <span id="infopaneltitle-for-33cd02b2fe6f06be2520813485206902" style="display:none">Info about the 'baseplatemodule' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#baseplatemodule">../../../../10/subsystems/cdh/assemblies.html#baseplatemodule</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-baseplatemodule">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-launchvehicleadapter">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter">../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-4e0f4e06f9cd76534746d0461c22b7f5" class="dfn-panel" data-for="4e0f4e06f9cd76534746d0461c22b7f5" id="infopanel-for-4e0f4e06f9cd76534746d0461c22b7f5">
+   <span id="infopaneltitle-for-4e0f4e06f9cd76534746d0461c22b7f5" style="display:none">Info about the 'launchvehicleadapter' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter">../../../../10/subsystems/cdh/assemblies.html#launchvehicleadapter</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-launchvehicleadapter">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-launchvehicleinterfacemodule">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule">../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2b5d498732d1ffd910b4c43b8f50df35" class="dfn-panel" data-for="2b5d498732d1ffd910b4c43b8f50df35" id="infopanel-for-2b5d498732d1ffd910b4c43b8f50df35">
+   <span id="infopaneltitle-for-2b5d498732d1ffd910b4c43b8f50df35" style="display:none">Info about the 'launchvehicleinterfacemodule' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule">../../../../10/subsystems/cdh/assemblies.html#launchvehicleinterfacemodule</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-launchvehicleinterfacemodule">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-payloadstructuralinterface">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface">../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b1f32b54820f68516ea3d800cc60eefc" class="dfn-panel" data-for="b1f32b54820f68516ea3d800cc60eefc" id="infopanel-for-b1f32b54820f68516ea3d800cc60eefc">
+   <span id="infopaneltitle-for-b1f32b54820f68516ea3d800cc60eefc" style="display:none">Info about the 'payloadstructuralinterface' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface">../../../../10/subsystems/cdh/assemblies.html#payloadstructuralinterface</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-payloadstructuralinterface">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-pressuranttankmountingpanel">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d4aa3a718d3f7bbc34b10cd322667034" class="dfn-panel" data-for="d4aa3a718d3f7bbc34b10cd322667034" id="infopanel-for-d4aa3a718d3f7bbc34b10cd322667034">
+   <span id="infopaneltitle-for-d4aa3a718d3f7bbc34b10cd322667034" style="display:none">Info about the 'pressuranttankmountingpanel' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#pressuranttankmountingpanel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-pressuranttankmountingpanel">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-primaryflightcomputerunit">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit">../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f53ecce069b907a70526344ec4b1e56e" class="dfn-panel" data-for="f53ecce069b907a70526344ec4b1e56e" id="infopanel-for-f53ecce069b907a70526344ec4b1e56e">
+   <span id="infopaneltitle-for-f53ecce069b907a70526344ec4b1e56e" style="display:none">Info about the 'primaryflightcomputerunit' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit">../../../../10/subsystems/cdh/assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-primaryflightcomputerunit">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propellanttankmountingpanel">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c4f52123e87d25744f71f9dccdb73675" class="dfn-panel" data-for="c4f52123e87d25744f71f9dccdb73675" id="infopanel-for-c4f52123e87d25744f71f9dccdb73675">
+   <span id="infopaneltitle-for-c4f52123e87d25744f71f9dccdb73675" style="display:none">Info about the 'propellanttankmountingpanel' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel">../../../../10/subsystems/cdh/assemblies.html#propellanttankmountingpanel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propellanttankmountingpanel">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost1">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f000da970ebe9c0a7e0e9f9db2e37421" class="dfn-panel" data-for="f000da970ebe9c0a7e0e9f9db2e37421" id="infopanel-for-f000da970ebe9c0a7e0e9f9db2e37421">
+   <span id="infopaneltitle-for-f000da970ebe9c0a7e0e9f9db2e37421" style="display:none">Info about the 'propulsionstructurepost1' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost1">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost2">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-65bbd8080028780ee9b9483e4707dc98" class="dfn-panel" data-for="65bbd8080028780ee9b9483e4707dc98" id="infopanel-for-65bbd8080028780ee9b9483e4707dc98">
+   <span id="infopaneltitle-for-65bbd8080028780ee9b9483e4707dc98" style="display:none">Info about the 'propulsionstructurepost2' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost2">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost3">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1989f8d49242cb6836f9898fe42ddb73" class="dfn-panel" data-for="1989f8d49242cb6836f9898fe42ddb73" id="infopanel-for-1989f8d49242cb6836f9898fe42ddb73">
+   <span id="infopaneltitle-for-1989f8d49242cb6836f9898fe42ddb73" style="display:none">Info about the 'propulsionstructurepost3' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost3">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-propulsionstructurepost4">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f5a977b00e2e1ef8ee0f252660e115b7" class="dfn-panel" data-for="f5a977b00e2e1ef8ee0f252660e115b7" id="infopanel-for-f5a977b00e2e1ef8ee0f252660e115b7">
+   <span id="infopaneltitle-for-f5a977b00e2e1ef8ee0f252660e115b7" style="display:none">Info about the 'propulsionstructurepost4' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4">../../../../10/subsystems/cdh/assemblies.html#propulsionstructurepost4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propulsionstructurepost4">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-separationsystem">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#separationsystem">../../../../10/subsystems/cdh/assemblies.html#separationsystem</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e7f02a29038bf0ab3890192fc417d89c" class="dfn-panel" data-for="e7f02a29038bf0ab3890192fc417d89c" id="infopanel-for-e7f02a29038bf0ab3890192fc417d89c">
+   <span id="infopaneltitle-for-e7f02a29038bf0ab3890192fc417d89c" style="display:none">Info about the 'separationsystem' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#separationsystem">../../../../10/subsystems/cdh/assemblies.html#separationsystem</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-separationsystem">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel1">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel1">../../../../10/subsystems/cdh/assemblies.html#sidepanel1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-da9ec44f897a5c0aa5c80881627fb9d8" class="dfn-panel" data-for="da9ec44f897a5c0aa5c80881627fb9d8" id="infopanel-for-da9ec44f897a5c0aa5c80881627fb9d8">
+   <span id="infopaneltitle-for-da9ec44f897a5c0aa5c80881627fb9d8" style="display:none">Info about the 'sidepanel1' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel1">../../../../10/subsystems/cdh/assemblies.html#sidepanel1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel1">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel2">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel2">../../../../10/subsystems/cdh/assemblies.html#sidepanel2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bb741f74b1e6da845e4870df8f06726a" class="dfn-panel" data-for="bb741f74b1e6da845e4870df8f06726a" id="infopanel-for-bb741f74b1e6da845e4870df8f06726a">
+   <span id="infopaneltitle-for-bb741f74b1e6da845e4870df8f06726a" style="display:none">Info about the 'sidepanel2' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel2">../../../../10/subsystems/cdh/assemblies.html#sidepanel2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel2">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel3">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel3">../../../../10/subsystems/cdh/assemblies.html#sidepanel3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e545645c8c014cb862688aa2ee3e394a" class="dfn-panel" data-for="e545645c8c014cb862688aa2ee3e394a" id="infopanel-for-e545645c8c014cb862688aa2ee3e394a">
+   <span id="infopaneltitle-for-e545645c8c014cb862688aa2ee3e394a" style="display:none">Info about the 'sidepanel3' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel3">../../../../10/subsystems/cdh/assemblies.html#sidepanel3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel3">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel4">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel4">../../../../10/subsystems/cdh/assemblies.html#sidepanel4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-64d2315765c8af46902d9fee93bd091f" class="dfn-panel" data-for="64d2315765c8af46902d9fee93bd091f" id="infopanel-for-64d2315765c8af46902d9fee93bd091f">
+   <span id="infopaneltitle-for-64d2315765c8af46902d9fee93bd091f" style="display:none">Info about the 'sidepanel4' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel4">../../../../10/subsystems/cdh/assemblies.html#sidepanel4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel4">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel5">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel5">../../../../10/subsystems/cdh/assemblies.html#sidepanel5</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0b3597eab7b9547a37072e62055bbbbb" class="dfn-panel" data-for="0b3597eab7b9547a37072e62055bbbbb" id="infopanel-for-0b3597eab7b9547a37072e62055bbbbb">
+   <span id="infopaneltitle-for-0b3597eab7b9547a37072e62055bbbbb" style="display:none">Info about the 'sidepanel5' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel5">../../../../10/subsystems/cdh/assemblies.html#sidepanel5</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel5">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sidepanel6">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel6">../../../../10/subsystems/cdh/assemblies.html#sidepanel6</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-621495efe3748afa03a468a369b52eb4" class="dfn-panel" data-for="621495efe3748afa03a468a369b52eb4" id="infopanel-for-621495efe3748afa03a468a369b52eb4">
+   <span id="infopaneltitle-for-621495efe3748afa03a468a369b52eb4" style="display:none">Info about the 'sidepanel6' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#sidepanel6">../../../../10/subsystems/cdh/assemblies.html#sidepanel6</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sidepanel6">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost1">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost1">../../../../10/subsystems/cdh/assemblies.html#structurepost1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-755d9ca5187cf45f0a694ec7f76c21d8" class="dfn-panel" data-for="755d9ca5187cf45f0a694ec7f76c21d8" id="infopanel-for-755d9ca5187cf45f0a694ec7f76c21d8">
+   <span id="infopaneltitle-for-755d9ca5187cf45f0a694ec7f76c21d8" style="display:none">Info about the 'structurepost1' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost1">../../../../10/subsystems/cdh/assemblies.html#structurepost1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost1">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost2">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost2">../../../../10/subsystems/cdh/assemblies.html#structurepost2</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-551ae557db6335aefc021f55d1306228" class="dfn-panel" data-for="551ae557db6335aefc021f55d1306228" id="infopanel-for-551ae557db6335aefc021f55d1306228">
+   <span id="infopaneltitle-for-551ae557db6335aefc021f55d1306228" style="display:none">Info about the 'structurepost2' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost2">../../../../10/subsystems/cdh/assemblies.html#structurepost2</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost2">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost3">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost3">../../../../10/subsystems/cdh/assemblies.html#structurepost3</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2ae9ad6d62c81fcb7b90cd7fd1deb700" class="dfn-panel" data-for="2ae9ad6d62c81fcb7b90cd7fd1deb700" id="infopanel-for-2ae9ad6d62c81fcb7b90cd7fd1deb700">
+   <span id="infopaneltitle-for-2ae9ad6d62c81fcb7b90cd7fd1deb700" style="display:none">Info about the 'structurepost3' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost3">../../../../10/subsystems/cdh/assemblies.html#structurepost3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost3">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost4">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost4">../../../../10/subsystems/cdh/assemblies.html#structurepost4</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-160ea0e923eb58756810d4ddf8d950b5" class="dfn-panel" data-for="160ea0e923eb58756810d4ddf8d950b5" id="infopanel-for-160ea0e923eb58756810d4ddf8d950b5">
+   <span id="infopaneltitle-for-160ea0e923eb58756810d4ddf8d950b5" style="display:none">Info about the 'structurepost4' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost4">../../../../10/subsystems/cdh/assemblies.html#structurepost4</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost4">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost5">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost5">../../../../10/subsystems/cdh/assemblies.html#structurepost5</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d6cb4de008cb09d34d83f89065c8df6c" class="dfn-panel" data-for="d6cb4de008cb09d34d83f89065c8df6c" id="infopanel-for-d6cb4de008cb09d34d83f89065c8df6c">
+   <span id="infopaneltitle-for-d6cb4de008cb09d34d83f89065c8df6c" style="display:none">Info about the 'structurepost5' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost5">../../../../10/subsystems/cdh/assemblies.html#structurepost5</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost5">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structurepost6">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#structurepost6">../../../../10/subsystems/cdh/assemblies.html#structurepost6</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b96fe16e2f375db3e8308f5bfa756202" class="dfn-panel" data-for="b96fe16e2f375db3e8308f5bfa756202" id="infopanel-for-b96fe16e2f375db3e8308f5bfa756202">
+   <span id="infopaneltitle-for-b96fe16e2f375db3e8308f5bfa756202" style="display:none">Info about the 'structurepost6' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#structurepost6">../../../../10/subsystems/cdh/assemblies.html#structurepost6</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structurepost6">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-toppanel">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#toppanel">../../../../10/subsystems/cdh/assemblies.html#toppanel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f87b4f187c89ce479efacf75556a7238" class="dfn-panel" data-for="f87b4f187c89ce479efacf75556a7238" id="infopanel-for-f87b4f187c89ce479efacf75556a7238">
+   <span id="infopaneltitle-for-f87b4f187c89ce479efacf75556a7238" style="display:none">Info about the 'toppanel' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#toppanel">../../../../10/subsystems/cdh/assemblies.html#toppanel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-toppanel">3.1. CommandAndDataHandling</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-toppanelmodule">
-   <a href="../../../../10/subsystems/cdh/assemblies.html#toppanelmodule">../../../../10/subsystems/cdh/assemblies.html#toppanelmodule</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3c6374ad6bcfd65a76bfa0cbda4ceeef" class="dfn-panel" data-for="3c6374ad6bcfd65a76bfa0cbda4ceeef" id="infopanel-for-3c6374ad6bcfd65a76bfa0cbda4ceeef">
+   <span id="infopaneltitle-for-3c6374ad6bcfd65a76bfa0cbda4ceeef" style="display:none">Info about the 'toppanelmodule' external reference.</span><a href="../../../../10/subsystems/cdh/assemblies.html#toppanelmodule">../../../../10/subsystems/cdh/assemblies.html#toppanelmodule</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-toppanelmodule">3.1. CommandAndDataHandling</a>
    </ul>
@@ -2388,100 +2390,154 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-aggregates_1">aggregates_1</span>
-     <li><span class="dfn-paneled" id="term-for-hasidentifier">hasidentifier</span>
+     <li><span class="dfn-paneled" id="180d592e44b8b69ed7424effc953fd7c">aggregates_1</span>
+     <li><span class="dfn-paneled" id="22ea2507406567e18e424569909e32d1">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-subsystem">subsystem</span>
+     <li><span class="dfn-paneled" id="d9c8d3a8743f534bf20f2fde4daf4c1c">subsystem</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/10/SUBSYSTEMS/CDH/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-avionicsstacksection">avionicsstacksection</span>
-     <li><span class="dfn-paneled" id="term-for-baseplate">baseplate</span>
-     <li><span class="dfn-paneled" id="term-for-baseplatemodule">baseplatemodule</span>
-     <li><span class="dfn-paneled" id="term-for-launchvehicleadapter">launchvehicleadapter</span>
-     <li><span class="dfn-paneled" id="term-for-launchvehicleinterfacemodule">launchvehicleinterfacemodule</span>
-     <li><span class="dfn-paneled" id="term-for-payloadstructuralinterface">payloadstructuralinterface</span>
-     <li><span class="dfn-paneled" id="term-for-pressuranttankmountingpanel">pressuranttankmountingpanel</span>
-     <li><span class="dfn-paneled" id="term-for-primaryflightcomputerunit">primaryflightcomputerunit</span>
-     <li><span class="dfn-paneled" id="term-for-propellanttankmountingpanel">propellanttankmountingpanel</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost1">propulsionstructurepost1</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost2">propulsionstructurepost2</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost3">propulsionstructurepost3</span>
-     <li><span class="dfn-paneled" id="term-for-propulsionstructurepost4">propulsionstructurepost4</span>
-     <li><span class="dfn-paneled" id="term-for-separationsystem">separationsystem</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel1">sidepanel1</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel2">sidepanel2</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel3">sidepanel3</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel4">sidepanel4</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel5">sidepanel5</span>
-     <li><span class="dfn-paneled" id="term-for-sidepanel6">sidepanel6</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost1">structurepost1</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost2">structurepost2</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost3">structurepost3</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost4">structurepost4</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost5">structurepost5</span>
-     <li><span class="dfn-paneled" id="term-for-structurepost6">structurepost6</span>
-     <li><span class="dfn-paneled" id="term-for-toppanel">toppanel</span>
-     <li><span class="dfn-paneled" id="term-for-toppanelmodule">toppanelmodule</span>
+     <li><span class="dfn-paneled" id="6b7a6b6165b2a92f3e339efe6d581b6a">avionicsstacksection</span>
+     <li><span class="dfn-paneled" id="62b6c90fb73b6fecec6204eb03849d17">baseplate</span>
+     <li><span class="dfn-paneled" id="33cd02b2fe6f06be2520813485206902">baseplatemodule</span>
+     <li><span class="dfn-paneled" id="4e0f4e06f9cd76534746d0461c22b7f5">launchvehicleadapter</span>
+     <li><span class="dfn-paneled" id="2b5d498732d1ffd910b4c43b8f50df35">launchvehicleinterfacemodule</span>
+     <li><span class="dfn-paneled" id="b1f32b54820f68516ea3d800cc60eefc">payloadstructuralinterface</span>
+     <li><span class="dfn-paneled" id="d4aa3a718d3f7bbc34b10cd322667034">pressuranttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="f53ecce069b907a70526344ec4b1e56e">primaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="c4f52123e87d25744f71f9dccdb73675">propellanttankmountingpanel</span>
+     <li><span class="dfn-paneled" id="f000da970ebe9c0a7e0e9f9db2e37421">propulsionstructurepost1</span>
+     <li><span class="dfn-paneled" id="65bbd8080028780ee9b9483e4707dc98">propulsionstructurepost2</span>
+     <li><span class="dfn-paneled" id="1989f8d49242cb6836f9898fe42ddb73">propulsionstructurepost3</span>
+     <li><span class="dfn-paneled" id="f5a977b00e2e1ef8ee0f252660e115b7">propulsionstructurepost4</span>
+     <li><span class="dfn-paneled" id="e7f02a29038bf0ab3890192fc417d89c">separationsystem</span>
+     <li><span class="dfn-paneled" id="da9ec44f897a5c0aa5c80881627fb9d8">sidepanel1</span>
+     <li><span class="dfn-paneled" id="bb741f74b1e6da845e4870df8f06726a">sidepanel2</span>
+     <li><span class="dfn-paneled" id="e545645c8c014cb862688aa2ee3e394a">sidepanel3</span>
+     <li><span class="dfn-paneled" id="64d2315765c8af46902d9fee93bd091f">sidepanel4</span>
+     <li><span class="dfn-paneled" id="0b3597eab7b9547a37072e62055bbbbb">sidepanel5</span>
+     <li><span class="dfn-paneled" id="621495efe3748afa03a468a369b52eb4">sidepanel6</span>
+     <li><span class="dfn-paneled" id="755d9ca5187cf45f0a694ec7f76c21d8">structurepost1</span>
+     <li><span class="dfn-paneled" id="551ae557db6335aefc021f55d1306228">structurepost2</span>
+     <li><span class="dfn-paneled" id="2ae9ad6d62c81fcb7b90cd7fd1deb700">structurepost3</span>
+     <li><span class="dfn-paneled" id="160ea0e923eb58756810d4ddf8d950b5">structurepost4</span>
+     <li><span class="dfn-paneled" id="d6cb4de008cb09d34d83f89065c8df6c">structurepost5</span>
+     <li><span class="dfn-paneled" id="b96fe16e2f375db3e8308f5bfa756202">structurepost6</span>
+     <li><span class="dfn-paneled" id="f87b4f187c89ce479efacf75556a7238">toppanel</span>
+     <li><span class="dfn-paneled" id="3c6374ad6bcfd65a76bfa0cbda4ceeef">toppanelmodule</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

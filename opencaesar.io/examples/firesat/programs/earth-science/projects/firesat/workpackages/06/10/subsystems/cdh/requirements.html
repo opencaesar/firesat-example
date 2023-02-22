@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/requirements" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Command and Data Handling Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -4172,8 +4174,8 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#structuralqualificationfortoppanel">structuralqualificationfortoppanel</a><span>, in § 4.111</span>
    <li><a href="#supportabilityforprimaryflightcomputerunit">supportabilityforprimaryflightcomputerunit</a><span>, in § 4.112</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-refines_1">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" class="dfn-panel" data-for="a8e01b70e1346173e0b92f8d6c780423" id="infopanel-for-a8e01b70e1346173e0b92f8d6c780423">
+   <span id="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" style="display:none">Info about the 'refines_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-refines_1">4.1. EnvironmentForBasePlate</a>
     <li><a href="#ref-for-refines_1①">4.2. EnvironmentForLaunchVehicleAdapter</a>
@@ -4289,8 +4291,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-refines_1①①①">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-requirement">
-   <a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" class="dfn-panel" data-for="1a3cf5460c46a55bc29a42ffd9a8f7d5" id="infopanel-for-1a3cf5460c46a55bc29a42ffd9a8f7d5">
+   <span id="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" style="display:none">Info about the 'requirement' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-requirement">4.1. EnvironmentForBasePlate</a>
     <li><a href="#ref-for-requirement①">4.2. EnvironmentForLaunchVehicleAdapter</a>
@@ -4406,8 +4408,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-requirement①①①">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-environment">
-   <a href="../../../../../systems/spc/requirements/environmental.html#environment">../../../../../systems/spc/requirements/environmental.html#environment</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d9f0e2641e4e9da907d2994c0fdb317f" class="dfn-panel" data-for="d9f0e2641e4e9da907d2994c0fdb317f" id="infopanel-for-d9f0e2641e4e9da907d2994c0fdb317f">
+   <span id="infopaneltitle-for-d9f0e2641e4e9da907d2994c0fdb317f" style="display:none">Info about the 'environment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#environment">../../../../../systems/spc/requirements/environmental.html#environment</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-environment">4.1. EnvironmentForBasePlate</a>
     <li><a href="#ref-for-environment①">4.2. EnvironmentForLaunchVehicleAdapter</a>
@@ -4434,8 +4436,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-environment②②">4.23. EnvironmentForTopPanel</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-launchenvironment">
-   <a href="../../../../../systems/spc/requirements/environmental.html#launchenvironment">../../../../../systems/spc/requirements/environmental.html#launchenvironment</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2a2682222252867cdfb164bb4b5154ed" class="dfn-panel" data-for="2a2682222252867cdfb164bb4b5154ed" id="infopanel-for-2a2682222252867cdfb164bb4b5154ed">
+   <span id="infopaneltitle-for-2a2682222252867cdfb164bb4b5154ed" style="display:none">Info about the 'launchenvironment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#launchenvironment">../../../../../systems/spc/requirements/environmental.html#launchenvironment</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-launchenvironment">4.24. LaunchEnvironmentForBasePlate</a>
     <li><a href="#ref-for-launchenvironment①">4.25. LaunchEnvironmentForLaunchVehicleAdapter</a>
@@ -4462,8 +4464,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-launchenvironment②②">4.46. LaunchEnvironmentForTopPanel</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-spaceenvironment">
-   <a href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment">../../../../../systems/spc/requirements/environmental.html#spaceenvironment</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-1463707d37b668d4b5acfcbd9a22dcd0" class="dfn-panel" data-for="1463707d37b668d4b5acfcbd9a22dcd0" id="infopanel-for-1463707d37b668d4b5acfcbd9a22dcd0">
+   <span id="infopaneltitle-for-1463707d37b668d4b5acfcbd9a22dcd0" style="display:none">Info about the 'spaceenvironment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment">../../../../../systems/spc/requirements/environmental.html#spaceenvironment</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-spaceenvironment">4.49. SpaceEnvironmentForBasePlate</a>
     <li><a href="#ref-for-spaceenvironment①">4.50. SpaceEnvironmentForPayloadStructuralInterface</a>
@@ -4488,8 +4490,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-spaceenvironment②⓪">4.69. SpaceEnvironmentForTopPanel</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-spacevehiclenaturalfrequency">
-   <a href="../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-9e9ac15e8927953d953f95d094468bb3" class="dfn-panel" data-for="9e9ac15e8927953d953f95d094468bb3" id="infopanel-for-9e9ac15e8927953d953f95d094468bb3">
+   <span id="infopaneltitle-for-9e9ac15e8927953d953f95d094468bb3" style="display:none">Info about the 'spacevehiclenaturalfrequency' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-spacevehiclenaturalfrequency">4.70. SpaceVehicleNaturalFrequencyForBasePlate</a>
     <li><a href="#ref-for-spacevehiclenaturalfrequency①">4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface</a>
@@ -4514,8 +4516,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-spacevehiclenaturalfrequency②⓪">4.90. SpaceVehicleNaturalFrequencyForTopPanel</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structuralqualification">
-   <a href="../../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f1ed0fffba7284a479bd5c52c0d3d727" class="dfn-panel" data-for="f1ed0fffba7284a479bd5c52c0d3d727" id="infopanel-for-f1ed0fffba7284a479bd5c52c0d3d727">
+   <span id="infopaneltitle-for-f1ed0fffba7284a479bd5c52c0d3d727" style="display:none">Info about the 'structuralqualification' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structuralqualification">4.91. StructuralQualificationForBasePlate</a>
     <li><a href="#ref-for-structuralqualification①">4.92. StructuralQualificationForPayloadStructuralInterface</a>
@@ -4540,20 +4542,20 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-structuralqualification②⓪">4.111. StructuralQualificationForTopPanel</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-maintenance">
-   <a href="../../../../../systems/spc/requirements/logistical.html#maintenance">../../../../../systems/spc/requirements/logistical.html#maintenance</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2a456b727f13558a29bcb643ba48a87a" class="dfn-panel" data-for="2a456b727f13558a29bcb643ba48a87a" id="infopanel-for-2a456b727f13558a29bcb643ba48a87a">
+   <span id="infopaneltitle-for-2a456b727f13558a29bcb643ba48a87a" style="display:none">Info about the 'maintenance' external reference.</span><a href="../../../../../systems/spc/requirements/logistical.html#maintenance">../../../../../systems/spc/requirements/logistical.html#maintenance</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-maintenance">4.47. MaintenanceForPrimaryFlightComputerUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-supportability">
-   <a href="../../../../../systems/spc/requirements/logistical.html#supportability">../../../../../systems/spc/requirements/logistical.html#supportability</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e297a5a4dfeceec95fa8b208ec9d274a" class="dfn-panel" data-for="e297a5a4dfeceec95fa8b208ec9d274a" id="infopanel-for-e297a5a4dfeceec95fa8b208ec9d274a">
+   <span id="infopaneltitle-for-e297a5a4dfeceec95fa8b208ec9d274a" style="display:none">Info about the 'supportability' external reference.</span><a href="../../../../../systems/spc/requirements/logistical.html#supportability">../../../../../systems/spc/requirements/logistical.html#supportability</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-supportability">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-precedence">
-   <a href="../../../../../systems/spc/requirements/system.html#precedence">../../../../../systems/spc/requirements/system.html#precedence</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b1da2006eed08ab9c315624b518f3758" class="dfn-panel" data-for="b1da2006eed08ab9c315624b518f3758" id="infopanel-for-b1da2006eed08ab9c315624b518f3758">
+   <span id="infopaneltitle-for-b1da2006eed08ab9c315624b518f3758" style="display:none">Info about the 'precedence' external reference.</span><a href="../../../../../systems/spc/requirements/system.html#precedence">../../../../../systems/spc/requirements/system.html#precedence</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-precedence">4.48. PrecedenceForPrimaryFlightComputerUnit</a>
    </ul>
@@ -4563,83 +4565,137 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-refines_1">refines_1</span>
-     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
+     <li><span class="dfn-paneled" id="a8e01b70e1346173e0b92f8d6c780423">refines_1</span>
+     <li><span class="dfn-paneled" id="1a3cf5460c46a55bc29a42ffd9a8f7d5">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/ENVIRONMENTAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-environment">environment</span>
-     <li><span class="dfn-paneled" id="term-for-launchenvironment">launchenvironment</span>
-     <li><span class="dfn-paneled" id="term-for-spaceenvironment">spaceenvironment</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequency">spacevehiclenaturalfrequency</span>
-     <li><span class="dfn-paneled" id="term-for-structuralqualification">structuralqualification</span>
+     <li><span class="dfn-paneled" id="d9f0e2641e4e9da907d2994c0fdb317f">environment</span>
+     <li><span class="dfn-paneled" id="2a2682222252867cdfb164bb4b5154ed">launchenvironment</span>
+     <li><span class="dfn-paneled" id="1463707d37b668d4b5acfcbd9a22dcd0">spaceenvironment</span>
+     <li><span class="dfn-paneled" id="9e9ac15e8927953d953f95d094468bb3">spacevehiclenaturalfrequency</span>
+     <li><span class="dfn-paneled" id="f1ed0fffba7284a479bd5c52c0d3d727">structuralqualification</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/LOGISTICAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-maintenance">maintenance</span>
-     <li><span class="dfn-paneled" id="term-for-supportability">supportability</span>
+     <li><span class="dfn-paneled" id="2a456b727f13558a29bcb643ba48a87a">maintenance</span>
+     <li><span class="dfn-paneled" id="e297a5a4dfeceec95fa8b208ec9d274a">supportability</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/SYSTEM]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-precedence">precedence</span>
+     <li><span class="dfn-paneled" id="b1da2006eed08ab9c315624b518f3758">precedence</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

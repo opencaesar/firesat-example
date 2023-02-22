@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">FireSat Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2544,8 +2546,8 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#supply_power_24_7">supply_power_24_7</a><span>, in § 3.25</span>
    <li><a href="#transformsolarradiationsintoenergy">transformsolarradiationsintoenergy</a><span>, in § 3.26</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-function">
-   <a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-310a4f91d0dd53309d6ddcd2c02601b1" class="dfn-panel" data-for="310a4f91d0dd53309d6ddcd2c02601b1" id="infopanel-for-310a4f91d0dd53309d6ddcd2c02601b1">
+   <span id="infopaneltitle-for-310a4f91d0dd53309d6ddcd2c02601b1" style="display:none">Info about the 'function' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-function">3.1. ApplyCommands</a>
     <li><a href="#ref-for-function①">3.2. AttitudeAwareness</a>
@@ -2575,8 +2577,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-function②⑤">3.26. TransformSolarRadiationsIntoEnergy</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-invokes_1">
-   <a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-cc37775685917edfd13fdfa7ddfb783e" class="dfn-panel" data-for="cc37775685917edfd13fdfa7ddfb783e" id="infopanel-for-cc37775685917edfd13fdfa7ddfb783e">
+   <span id="infopaneltitle-for-cc37775685917edfd13fdfa7ddfb783e" style="display:none">Info about the 'invokes_1' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-invokes_1">3.1. ApplyCommands</a>
     <li><a href="#ref-for-invokes_1①">3.3. AvoidCollisions</a>
@@ -2592,155 +2594,155 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-invokes_1②⑥">3.25. Supply_Power_24_7</a> <a href="#ref-for-invokes_1②⑦">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-applycommands">
-   <a href="functions.html#applycommands">functions.html#applycommands</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-a3a1387dbe3158c3596bddb973d8c2e4" class="dfn-panel" data-for="a3a1387dbe3158c3596bddb973d8c2e4" id="infopanel-for-a3a1387dbe3158c3596bddb973d8c2e4">
+   <span id="infopaneltitle-for-a3a1387dbe3158c3596bddb973d8c2e4" style="display:none">Info about the 'applycommands' external reference.</span><a href="functions.html#applycommands">functions.html#applycommands</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-applycommands">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-attitudeawareness">
-   <a href="functions.html#attitudeawareness">functions.html#attitudeawareness</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-d290c44b19a6d26f583594e2db77b4f1" class="dfn-panel" data-for="d290c44b19a6d26f583594e2db77b4f1" id="infopanel-for-d290c44b19a6d26f583594e2db77b4f1">
+   <span id="infopaneltitle-for-d290c44b19a6d26f583594e2db77b4f1" style="display:none">Info about the 'attitudeawareness' external reference.</span><a href="functions.html#attitudeawareness">functions.html#attitudeawareness</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-attitudeawareness">3.6. ControlTrajectory</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-avoidcollisions">
-   <a href="functions.html#avoidcollisions">functions.html#avoidcollisions</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-fc7761375f0123ac57d0ae9a8de5ceca" class="dfn-panel" data-for="fc7761375f0123ac57d0ae9a8de5ceca" id="infopanel-for-fc7761375f0123ac57d0ae9a8de5ceca">
+   <span id="infopaneltitle-for-fc7761375f0123ac57d0ae9a8de5ceca" style="display:none">Info about the 'avoidcollisions' external reference.</span><a href="functions.html#avoidcollisions">functions.html#avoidcollisions</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-avoidcollisions">3.14. MonitorAndMaintainHealthAndsafety</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-communicate">
-   <a href="functions.html#communicate">functions.html#communicate</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-eee7a5c83943cfac408e8a46d884e2cd" class="dfn-panel" data-for="eee7a5c83943cfac408e8a46d884e2cd" id="infopanel-for-eee7a5c83943cfac408e8a46d884e2cd">
+   <span id="infopaneltitle-for-eee7a5c83943cfac408e8a46d884e2cd" style="display:none">Info about the 'communicate' external reference.</span><a href="functions.html#communicate">functions.html#communicate</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-communicate">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-communicate911downlinkwithregionalfieldoffices">
-   <a href="functions.html#communicate911downlinkwithregionalfieldoffices">functions.html#communicate911downlinkwithregionalfieldoffices</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-64795971064bbabd4d43ba5fb831ff36" class="dfn-panel" data-for="64795971064bbabd4d43ba5fb831ff36" id="infopanel-for-64795971064bbabd4d43ba5fb831ff36">
+   <span id="infopaneltitle-for-64795971064bbabd4d43ba5fb831ff36" style="display:none">Info about the 'communicate911downlinkwithregionalfieldoffices' external reference.</span><a href="functions.html#communicate911downlinkwithregionalfieldoffices">functions.html#communicate911downlinkwithregionalfieldoffices</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices">3.4. Communicate</a>
     <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices①">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-controltrajectory">
-   <a href="functions.html#controltrajectory">functions.html#controltrajectory</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b5b4e660200dd5fd9430a70470113f46" class="dfn-panel" data-for="b5b4e660200dd5fd9430a70470113f46" id="infopanel-for-b5b4e660200dd5fd9430a70470113f46">
+   <span id="infopaneltitle-for-b5b4e660200dd5fd9430a70470113f46" style="display:none">Info about the 'controltrajectory' external reference.</span><a href="functions.html#controltrajectory">functions.html#controltrajectory</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-controltrajectory">3.3. AvoidCollisions</a>
     <li><a href="#ref-for-controltrajectory①">3.19. ReachOperationalOrbit</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-deploymechanisms">
-   <a href="functions.html#deploymechanisms">functions.html#deploymechanisms</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-332cb99465301e53b64a5a1a70636643" class="dfn-panel" data-for="332cb99465301e53b64a5a1a70636643" id="infopanel-for-332cb99465301e53b64a5a1a70636643">
+   <span id="infopaneltitle-for-332cb99465301e53b64a5a1a70636643" style="display:none">Info about the 'deploymechanisms' external reference.</span><a href="functions.html#deploymechanisms">functions.html#deploymechanisms</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-deploymechanisms">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-detectnewwildfires">
-   <a href="functions.html#detectnewwildfires">functions.html#detectnewwildfires</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b72a99c60a72889fe51b0e077f75a520" class="dfn-panel" data-for="b72a99c60a72889fe51b0e077f75a520" id="infopanel-for-b72a99c60a72889fe51b0e077f75a520">
+   <span id="infopaneltitle-for-b72a99c60a72889fe51b0e077f75a520" style="display:none">Info about the 'detectnewwildfires' external reference.</span><a href="functions.html#detectnewwildfires">functions.html#detectnewwildfires</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-detectnewwildfires">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-generatetelemetry">
-   <a href="functions.html#generatetelemetry">functions.html#generatetelemetry</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0635d48ca893943f77a891510e0e5605" class="dfn-panel" data-for="0635d48ca893943f77a891510e0e5605" id="infopanel-for-0635d48ca893943f77a891510e0e5605">
+   <span id="infopaneltitle-for-0635d48ca893943f77a891510e0e5605" style="display:none">Info about the 'generatetelemetry' external reference.</span><a href="functions.html#generatetelemetry">functions.html#generatetelemetry</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-generatetelemetry">3.22. SendTelemetryToNOAAGroundStations</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-homogenizetemperature">
-   <a href="functions.html#homogenizetemperature">functions.html#homogenizetemperature</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-481f17eb91b7693328b6626beea63494" class="dfn-panel" data-for="481f17eb91b7693328b6626beea63494" id="infopanel-for-481f17eb91b7693328b6626beea63494">
+   <span id="infopaneltitle-for-481f17eb91b7693328b6626beea63494" style="display:none">Info about the 'homogenizetemperature' external reference.</span><a href="functions.html#homogenizetemperature">functions.html#homogenizetemperature</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-homogenizetemperature">3.13. MitigateFailures</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-insuremechanicalintegrity">
-   <a href="functions.html#insuremechanicalintegrity">functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-3d745ecfa56e599212114ab62eaff9bb" class="dfn-panel" data-for="3d745ecfa56e599212114ab62eaff9bb" id="infopanel-for-3d745ecfa56e599212114ab62eaff9bb">
+   <span id="infopaneltitle-for-3d745ecfa56e599212114ab62eaff9bb" style="display:none">Info about the 'insuremechanicalintegrity' external reference.</span><a href="functions.html#insuremechanicalintegrity">functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-insuremechanicalintegrity">3.12. Launch_SC</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-launch_sc">
-   <a href="functions.html#launch_sc">functions.html#launch_sc</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e7b76bd5be9c64216b9a0d91d0a4a3eb" class="dfn-panel" data-for="e7b76bd5be9c64216b9a0d91d0a4a3eb" id="infopanel-for-e7b76bd5be9c64216b9a0d91d0a4a3eb">
+   <span id="infopaneltitle-for-e7b76bd5be9c64216b9a0d91d0a4a3eb" style="display:none">Info about the 'launch_sc' external reference.</span><a href="functions.html#launch_sc">functions.html#launch_sc</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-launch_sc">3.21. Release_SC_From_LV</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-mitigatefailures">
-   <a href="functions.html#mitigatefailures">functions.html#mitigatefailures</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-50dfeb580104553648967683736a1a6d" class="dfn-panel" data-for="50dfeb580104553648967683736a1a6d" id="infopanel-for-50dfeb580104553648967683736a1a6d">
+   <span id="infopaneltitle-for-50dfeb580104553648967683736a1a6d" style="display:none">Info about the 'mitigatefailures' external reference.</span><a href="functions.html#mitigatefailures">functions.html#mitigatefailures</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-mitigatefailures">3.14. MonitorAndMaintainHealthAndsafety</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-monitorandmaintainhealthandsafety">
-   <a href="functions.html#monitorandmaintainhealthandsafety">functions.html#monitorandmaintainhealthandsafety</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-290a4c15823fbab794d41e2243c3d39c" class="dfn-panel" data-for="290a4c15823fbab794d41e2243c3d39c" id="infopanel-for-290a4c15823fbab794d41e2243c3d39c">
+   <span id="infopaneltitle-for-290a4c15823fbab794d41e2243c3d39c" style="display:none">Info about the 'monitorandmaintainhealthandsafety' external reference.</span><a href="functions.html#monitorandmaintainhealthandsafety">functions.html#monitorandmaintainhealthandsafety</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-monitorandmaintainhealthandsafety">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-monitorexistingwildfires_24_7">
-   <a href="functions.html#monitorexistingwildfires_24_7">functions.html#monitorexistingwildfires_24_7</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2b506e1a528b190d51bdaf822e56c326" class="dfn-panel" data-for="2b506e1a528b190d51bdaf822e56c326" id="infopanel-for-2b506e1a528b190d51bdaf822e56c326">
+   <span id="infopaneltitle-for-2b506e1a528b190d51bdaf822e56c326" style="display:none">Info about the 'monitorexistingwildfires_24_7' external reference.</span><a href="functions.html#monitorexistingwildfires_24_7">functions.html#monitorexistingwildfires_24_7</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-monitorexistingwildfires_24_7">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-positionawareness">
-   <a href="functions.html#positionawareness">functions.html#positionawareness</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-2c04d25545db2f24da7e76e192ff116e" class="dfn-panel" data-for="2c04d25545db2f24da7e76e192ff116e" id="infopanel-for-2c04d25545db2f24da7e76e192ff116e">
+   <span id="infopaneltitle-for-2c04d25545db2f24da7e76e192ff116e" style="display:none">Info about the 'positionawareness' external reference.</span><a href="functions.html#positionawareness">functions.html#positionawareness</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-positionawareness">3.6. ControlTrajectory</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-protectagainstradiations">
-   <a href="functions.html#protectagainstradiations">functions.html#protectagainstradiations</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-57d126fc94b4c9034ef3c35c80b0ef39" class="dfn-panel" data-for="57d126fc94b4c9034ef3c35c80b0ef39" id="infopanel-for-57d126fc94b4c9034ef3c35c80b0ef39">
+   <span id="infopaneltitle-for-57d126fc94b4c9034ef3c35c80b0ef39" style="display:none">Info about the 'protectagainstradiations' external reference.</span><a href="functions.html#protectagainstradiations">functions.html#protectagainstradiations</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-protectagainstradiations">3.13. MitigateFailures</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reachoperationalorbit">
-   <a href="functions.html#reachoperationalorbit">functions.html#reachoperationalorbit</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-399b72f0d78f0d5e238396355208088e" class="dfn-panel" data-for="399b72f0d78f0d5e238396355208088e" id="infopanel-for-399b72f0d78f0d5e238396355208088e">
+   <span id="infopaneltitle-for-399b72f0d78f0d5e238396355208088e" style="display:none">Info about the 'reachoperationalorbit' external reference.</span><a href="functions.html#reachoperationalorbit">functions.html#reachoperationalorbit</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reachoperationalorbit">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-receivetelecommandfromnoaagroundstations">
-   <a href="functions.html#receivetelecommandfromnoaagroundstations">functions.html#receivetelecommandfromnoaagroundstations</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-006daa2e22c9f2cf580d3e165266cf29" class="dfn-panel" data-for="006daa2e22c9f2cf580d3e165266cf29" id="infopanel-for-006daa2e22c9f2cf580d3e165266cf29">
+   <span id="infopaneltitle-for-006daa2e22c9f2cf580d3e165266cf29" style="display:none">Info about the 'receivetelecommandfromnoaagroundstations' external reference.</span><a href="functions.html#receivetelecommandfromnoaagroundstations">functions.html#receivetelecommandfromnoaagroundstations</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-receivetelecommandfromnoaagroundstations">3.1. ApplyCommands</a>
     <li><a href="#ref-for-receivetelecommandfromnoaagroundstations①">3.4. Communicate</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-release_sc_from_lv">
-   <a href="functions.html#release_sc_from_lv">functions.html#release_sc_from_lv</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-463ab5b00c1f0f71b19fe571a938c9ca" class="dfn-panel" data-for="463ab5b00c1f0f71b19fe571a938c9ca" id="infopanel-for-463ab5b00c1f0f71b19fe571a938c9ca">
+   <span id="infopaneltitle-for-463ab5b00c1f0f71b19fe571a938c9ca" style="display:none">Info about the 'release_sc_from_lv' external reference.</span><a href="functions.html#release_sc_from_lv">functions.html#release_sc_from_lv</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-release_sc_from_lv">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-sendtelemetrytonoaagroundstations">
-   <a href="functions.html#sendtelemetrytonoaagroundstations">functions.html#sendtelemetrytonoaagroundstations</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-62c8976ba945ae22f29e6623a2be4f62" class="dfn-panel" data-for="62c8976ba945ae22f29e6623a2be4f62" id="infopanel-for-62c8976ba945ae22f29e6623a2be4f62">
+   <span id="infopaneltitle-for-62c8976ba945ae22f29e6623a2be4f62" style="display:none">Info about the 'sendtelemetrytonoaagroundstations' external reference.</span><a href="functions.html#sendtelemetrytonoaagroundstations">functions.html#sendtelemetrytonoaagroundstations</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-sendtelemetrytonoaagroundstations">3.4. Communicate</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-storedatabetweentwotelemetries">
-   <a href="functions.html#storedatabetweentwotelemetries">functions.html#storedatabetweentwotelemetries</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8f14b1ce8fd103ca199381178d9ae4b4" class="dfn-panel" data-for="8f14b1ce8fd103ca199381178d9ae4b4" id="infopanel-for-8f14b1ce8fd103ca199381178d9ae4b4">
+   <span id="infopaneltitle-for-8f14b1ce8fd103ca199381178d9ae4b4" style="display:none">Info about the 'storedatabetweentwotelemetries' external reference.</span><a href="functions.html#storedatabetweentwotelemetries">functions.html#storedatabetweentwotelemetries</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-storedatabetweentwotelemetries">3.22. SendTelemetryToNOAAGroundStations</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-storeenergyduringeclipses">
-   <a href="functions.html#storeenergyduringeclipses">functions.html#storeenergyduringeclipses</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8cac911a82d66266b5dd53d5b33657a6" class="dfn-panel" data-for="8cac911a82d66266b5dd53d5b33657a6" id="infopanel-for-8cac911a82d66266b5dd53d5b33657a6">
+   <span id="infopaneltitle-for-8cac911a82d66266b5dd53d5b33657a6" style="display:none">Info about the 'storeenergyduringeclipses' external reference.</span><a href="functions.html#storeenergyduringeclipses">functions.html#storeenergyduringeclipses</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-storeenergyduringeclipses">3.25. Supply_Power_24_7</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-supply_power_24_7">
-   <a href="functions.html#supply_power_24_7">functions.html#supply_power_24_7</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-65d6b248bfee5f42383087eca76115a5" class="dfn-panel" data-for="65d6b248bfee5f42383087eca76115a5" id="infopanel-for-65d6b248bfee5f42383087eca76115a5">
+   <span id="infopaneltitle-for-65d6b248bfee5f42383087eca76115a5" style="display:none">Info about the 'supply_power_24_7' external reference.</span><a href="functions.html#supply_power_24_7">functions.html#supply_power_24_7</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-supply_power_24_7">3.16. PerformMission</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-transformsolarradiationsintoenergy">
-   <a href="functions.html#transformsolarradiationsintoenergy">functions.html#transformsolarradiationsintoenergy</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-38de4ea29e6cb178661e74e827f10e5a" class="dfn-panel" data-for="38de4ea29e6cb178661e74e827f10e5a" id="infopanel-for-38de4ea29e6cb178661e74e827f10e5a">
+   <span id="infopaneltitle-for-38de4ea29e6cb178661e74e827f10e5a" style="display:none">Info about the 'transformsolarradiationsintoenergy' external reference.</span><a href="functions.html#transformsolarradiationsintoenergy">functions.html#transformsolarradiationsintoenergy</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-transformsolarradiationsintoenergy">3.25. Supply_Power_24_7</a>
    </ul>
@@ -2750,92 +2752,146 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-function">function</span>
-     <li><span class="dfn-paneled" id="term-for-invokes_1">invokes_1</span>
+     <li><span class="dfn-paneled" id="310a4f91d0dd53309d6ddcd2c02601b1">function</span>
+     <li><span class="dfn-paneled" id="cc37775685917edfd13fdfa7ddfb783e">invokes_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/MISSIONS/FIRESAT/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-applycommands">applycommands</span>
-     <li><span class="dfn-paneled" id="term-for-attitudeawareness">attitudeawareness</span>
-     <li><span class="dfn-paneled" id="term-for-avoidcollisions">avoidcollisions</span>
-     <li><span class="dfn-paneled" id="term-for-communicate">communicate</span>
-     <li><span class="dfn-paneled" id="term-for-communicate911downlinkwithregionalfieldoffices">communicate911downlinkwithregionalfieldoffices</span>
-     <li><span class="dfn-paneled" id="term-for-controltrajectory">controltrajectory</span>
-     <li><span class="dfn-paneled" id="term-for-deploymechanisms">deploymechanisms</span>
-     <li><span class="dfn-paneled" id="term-for-detectnewwildfires">detectnewwildfires</span>
-     <li><span class="dfn-paneled" id="term-for-generatetelemetry">generatetelemetry</span>
-     <li><span class="dfn-paneled" id="term-for-homogenizetemperature">homogenizetemperature</span>
-     <li><span class="dfn-paneled" id="term-for-insuremechanicalintegrity">insuremechanicalintegrity</span>
-     <li><span class="dfn-paneled" id="term-for-launch_sc">launch_sc</span>
-     <li><span class="dfn-paneled" id="term-for-mitigatefailures">mitigatefailures</span>
-     <li><span class="dfn-paneled" id="term-for-monitorandmaintainhealthandsafety">monitorandmaintainhealthandsafety</span>
-     <li><span class="dfn-paneled" id="term-for-monitorexistingwildfires_24_7">monitorexistingwildfires_24_7</span>
-     <li><span class="dfn-paneled" id="term-for-positionawareness">positionawareness</span>
-     <li><span class="dfn-paneled" id="term-for-protectagainstradiations">protectagainstradiations</span>
-     <li><span class="dfn-paneled" id="term-for-reachoperationalorbit">reachoperationalorbit</span>
-     <li><span class="dfn-paneled" id="term-for-receivetelecommandfromnoaagroundstations">receivetelecommandfromnoaagroundstations</span>
-     <li><span class="dfn-paneled" id="term-for-release_sc_from_lv">release_sc_from_lv</span>
-     <li><span class="dfn-paneled" id="term-for-sendtelemetrytonoaagroundstations">sendtelemetrytonoaagroundstations</span>
-     <li><span class="dfn-paneled" id="term-for-storedatabetweentwotelemetries">storedatabetweentwotelemetries</span>
-     <li><span class="dfn-paneled" id="term-for-storeenergyduringeclipses">storeenergyduringeclipses</span>
-     <li><span class="dfn-paneled" id="term-for-supply_power_24_7">supply_power_24_7</span>
-     <li><span class="dfn-paneled" id="term-for-transformsolarradiationsintoenergy">transformsolarradiationsintoenergy</span>
+     <li><span class="dfn-paneled" id="a3a1387dbe3158c3596bddb973d8c2e4">applycommands</span>
+     <li><span class="dfn-paneled" id="d290c44b19a6d26f583594e2db77b4f1">attitudeawareness</span>
+     <li><span class="dfn-paneled" id="fc7761375f0123ac57d0ae9a8de5ceca">avoidcollisions</span>
+     <li><span class="dfn-paneled" id="eee7a5c83943cfac408e8a46d884e2cd">communicate</span>
+     <li><span class="dfn-paneled" id="64795971064bbabd4d43ba5fb831ff36">communicate911downlinkwithregionalfieldoffices</span>
+     <li><span class="dfn-paneled" id="b5b4e660200dd5fd9430a70470113f46">controltrajectory</span>
+     <li><span class="dfn-paneled" id="332cb99465301e53b64a5a1a70636643">deploymechanisms</span>
+     <li><span class="dfn-paneled" id="b72a99c60a72889fe51b0e077f75a520">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="0635d48ca893943f77a891510e0e5605">generatetelemetry</span>
+     <li><span class="dfn-paneled" id="481f17eb91b7693328b6626beea63494">homogenizetemperature</span>
+     <li><span class="dfn-paneled" id="3d745ecfa56e599212114ab62eaff9bb">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="e7b76bd5be9c64216b9a0d91d0a4a3eb">launch_sc</span>
+     <li><span class="dfn-paneled" id="50dfeb580104553648967683736a1a6d">mitigatefailures</span>
+     <li><span class="dfn-paneled" id="290a4c15823fbab794d41e2243c3d39c">monitorandmaintainhealthandsafety</span>
+     <li><span class="dfn-paneled" id="2b506e1a528b190d51bdaf822e56c326">monitorexistingwildfires_24_7</span>
+     <li><span class="dfn-paneled" id="2c04d25545db2f24da7e76e192ff116e">positionawareness</span>
+     <li><span class="dfn-paneled" id="57d126fc94b4c9034ef3c35c80b0ef39">protectagainstradiations</span>
+     <li><span class="dfn-paneled" id="399b72f0d78f0d5e238396355208088e">reachoperationalorbit</span>
+     <li><span class="dfn-paneled" id="006daa2e22c9f2cf580d3e165266cf29">receivetelecommandfromnoaagroundstations</span>
+     <li><span class="dfn-paneled" id="463ab5b00c1f0f71b19fe571a938c9ca">release_sc_from_lv</span>
+     <li><span class="dfn-paneled" id="62c8976ba945ae22f29e6623a2be4f62">sendtelemetrytonoaagroundstations</span>
+     <li><span class="dfn-paneled" id="8f14b1ce8fd103ca199381178d9ae4b4">storedatabetweentwotelemetries</span>
+     <li><span class="dfn-paneled" id="8cac911a82d66266b5dd53d5b33657a6">storeenergyduringeclipses</span>
+     <li><span class="dfn-paneled" id="65d6b248bfee5f42383087eca76115a5">supply_power_24_7</span>
+     <li><span class="dfn-paneled" id="38de4ea29e6cb178661e74e827f10e5a">transformsolarradiationsintoenergy</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>

@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 26e85e599, updated Thu Dec 8 15:29:31 2022 -0800" name="generator">
+  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements" rel="canonical">
-  <meta content="cdf43d410cfac76c33cedd34c5a5c8e8756c7f4c" name="document-revision">
+  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1506,7 +1506,6 @@ table.def dfn code {
 }
 </style>
 <style>/* style-autolinks */
-
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
     font-size: inherit;
@@ -1566,7 +1565,8 @@ pre .property::before, pre .property::after {
 
 [data-link-type=biblio] {
     white-space: pre;
-}</style>
+}
+</style>
 <style>/* style-colors */
 
 /* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
@@ -1675,9 +1675,9 @@ pre .property::before, pre .property::after {
     --outdated-shadow: red;
 
     --editedrec-bg: darkorange;
-}</style>
+}
+</style>
 <style>/* style-counters */
-
 body {
     counter-reset: example figure issue;
 }
@@ -1704,9 +1704,9 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
-}</style>
+}
+</style>
 <style>/* style-dfn-panel */
-
 :root {
     --dfnpanel-bg: #ddd;
     --dfnpanel-text: var(--text);
@@ -1714,10 +1714,10 @@ figcaption:not(.no-marker)::before {
 .dfn-panel {
     position: absolute;
     z-index: 35;
-    height: auto;
-    width: -webkit-fit-content;
-    width: fit-content;
+    width: 20em;
+    min-width: min-content;
     max-width: 300px;
+    height: auto;
     max-height: 500px;
     overflow: auto;
     padding: 0.5em 0.75em;
@@ -1725,6 +1725,7 @@ figcaption:not(.no-marker)::before {
     background: var(--dfnpanel-bg);
     color: var(--dfnpanel-text);
     border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
 }
 .dfn-panel:not(.on) { display: none; }
 .dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
@@ -1747,7 +1748,6 @@ figcaption:not(.no-marker)::before {
 .dfn-paneled { cursor: pointer; }
 </style>
 <style>/* style-issues */
-
 a[href].issue-return {
     float: right;
     float: inline-end;
@@ -1757,7 +1757,6 @@ a[href].issue-return {
 }
 </style>
 <style>/* style-md-lists */
-
 /* This is a weird hack for me not yet following the commonmark spec
    regarding paragraph and lists. */
 [data-md] > :first-child {
@@ -1765,7 +1764,8 @@ a[href].issue-return {
 }
 [data-md] > :last-child {
     margin-bottom: 0;
-}</style>
+}
+</style>
 <style>/* style-selflinks */
 
 :root {
@@ -1939,6 +1939,7 @@ dfn > a.self-link::before      { content: "#"; }
        which is quite common in practice... */
     img { background: white; }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --selflink-text: black;
@@ -1952,12 +1953,13 @@ dfn > a.self-link::before      { content: "#"; }
         --dfnpanel-bg: #222;
         --dfnpanel-text: var(--text);
     }
-}</style>
+}
+</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Spacecraft Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2022-12-17">17 December 2022</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2630,8 +2632,8 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#trainingandpersonelforspacecraftsystemsegment">trainingandpersonelforspacecraftsystemsegment</a><span>, in § 4.25</span>
    <li><a href="#transportationforspacecraftsystemsegment">transportationforspacecraftsystemsegment</a><span>, in § 4.26</span>
   </ul>
-  <aside class="dfn-panel" data-for="term-for-refines_1">
-   <a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0781a02be376e5053ff186efc0664d80" class="dfn-panel" data-for="0781a02be376e5053ff186efc0664d80" id="infopanel-for-0781a02be376e5053ff186efc0664d80">
+   <span id="infopaneltitle-for-0781a02be376e5053ff186efc0664d80" style="display:none">Info about the 'refines_1' external reference.</span><a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-refines_1">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
     <li><a href="#ref-for-refines_1①">4.2. AvailabilityForSpacecraftSystemSegment</a>
@@ -2661,8 +2663,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-refines_1②⑤">4.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-requirement">
-   <a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-489a32cc1cde2863bff72d6aaa9d8b17" class="dfn-panel" data-for="489a32cc1cde2863bff72d6aaa9d8b17" id="infopanel-for-489a32cc1cde2863bff72d6aaa9d8b17">
+   <span id="infopaneltitle-for-489a32cc1cde2863bff72d6aaa9d8b17" style="display:none">Info about the 'requirement' external reference.</span><a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-requirement">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
     <li><a href="#ref-for-requirement①">4.2. AvailabilityForSpacecraftSystemSegment</a>
@@ -2692,143 +2694,143 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#ref-for-requirement②⑤">4.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-qualificationofheritageflighthardware">
-   <a href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware">../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-9433d5c497de31e4e67ad9c824e25181" class="dfn-panel" data-for="9433d5c497de31e4e67ad9c824e25181" id="infopanel-for-9433d5c497de31e4e67ad9c824e25181">
+   <span id="infopaneltitle-for-9433d5c497de31e4e67ad9c824e25181" style="display:none">Info about the 'qualificationofheritageflighthardware' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware">../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-qualificationofheritageflighthardware">4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-spaceenvironmenteffectsonmaterialselection">
-   <a href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection">../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6c4ec46865279cd525cdf065716a7684" class="dfn-panel" data-for="6c4ec46865279cd525cdf065716a7684" id="infopanel-for-6c4ec46865279cd525cdf065716a7684">
+   <span id="infopaneltitle-for-6c4ec46865279cd525cdf065716a7684" style="display:none">Info about the 'spaceenvironmenteffectsonmaterialselection' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection">../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-spaceenvironmenteffectsonmaterialselection">4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-spacevehiclenaturalfrequency">
-   <a href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-311d1c9727a684a39623bc068fdde378" class="dfn-panel" data-for="311d1c9727a684a39623bc068fdde378" id="infopanel-for-311d1c9727a684a39623bc068fdde378">
+   <span id="infopaneltitle-for-311d1c9727a684a39623bc068fdde378" style="display:none">Info about the 'spacevehiclenaturalfrequency' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-spacevehiclenaturalfrequency">4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-structuralqualification">
-   <a href="../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e104effd7a1f8422b1e1832120c11952" class="dfn-panel" data-for="e104effd7a1f8422b1e1832120c11952" id="infopanel-for-e104effd7a1f8422b1e1832120c11952">
+   <span id="infopaneltitle-for-e104effd7a1f8422b1e1832120c11952" style="display:none">Info about the 'structuralqualification' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-structuralqualification">4.22. StructuralQualificationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-availability">
-   <a href="../../../../systems/spc/requirements/logistical.html#availability">../../../../systems/spc/requirements/logistical.html#availability</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f01c0c91528d77551aeec94fb1a4771b" class="dfn-panel" data-for="f01c0c91528d77551aeec94fb1a4771b" id="infopanel-for-f01c0c91528d77551aeec94fb1a4771b">
+   <span id="infopaneltitle-for-f01c0c91528d77551aeec94fb1a4771b" style="display:none">Info about the 'availability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#availability">../../../../systems/spc/requirements/logistical.html#availability</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-availability">4.2. AvailabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-facilities">
-   <a href="../../../../systems/spc/requirements/logistical.html#facilities">../../../../systems/spc/requirements/logistical.html#facilities</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bae38ebfb19033d017bdce3c8152aca0" class="dfn-panel" data-for="bae38ebfb19033d017bdce3c8152aca0" id="infopanel-for-bae38ebfb19033d017bdce3c8152aca0">
+   <span id="infopaneltitle-for-bae38ebfb19033d017bdce3c8152aca0" style="display:none">Info about the 'facilities' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#facilities">../../../../systems/spc/requirements/logistical.html#facilities</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-facilities">4.3. FacilitiesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-faultprotection">
-   <a href="../../../../systems/spc/requirements/logistical.html#faultprotection">../../../../systems/spc/requirements/logistical.html#faultprotection</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-51fd6289981aa7c628500c2b9f48e95f" class="dfn-panel" data-for="51fd6289981aa7c628500c2b9f48e95f" id="infopanel-for-51fd6289981aa7c628500c2b9f48e95f">
+   <span id="infopaneltitle-for-51fd6289981aa7c628500c2b9f48e95f" style="display:none">Info about the 'faultprotection' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#faultprotection">../../../../systems/spc/requirements/logistical.html#faultprotection</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-faultprotection">4.4. FaultProtectionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-maintainability">
-   <a href="../../../../systems/spc/requirements/logistical.html#maintainability">../../../../systems/spc/requirements/logistical.html#maintainability</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-fa3cd3fe1b5ceba5c11d374de5e37586" class="dfn-panel" data-for="fa3cd3fe1b5ceba5c11d374de5e37586" id="infopanel-for-fa3cd3fe1b5ceba5c11d374de5e37586">
+   <span id="infopaneltitle-for-fa3cd3fe1b5ceba5c11d374de5e37586" style="display:none">Info about the 'maintainability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#maintainability">../../../../systems/spc/requirements/logistical.html#maintainability</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-maintainability">4.5. MaintainabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-reliability">
-   <a href="../../../../systems/spc/requirements/logistical.html#reliability">../../../../systems/spc/requirements/logistical.html#reliability</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-8ff5ec05ebc9aaf0e51936e3acc35c3f" class="dfn-panel" data-for="8ff5ec05ebc9aaf0e51936e3acc35c3f" id="infopanel-for-8ff5ec05ebc9aaf0e51936e3acc35c3f">
+   <span id="infopaneltitle-for-8ff5ec05ebc9aaf0e51936e3acc35c3f" style="display:none">Info about the 'reliability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#reliability">../../../../systems/spc/requirements/logistical.html#reliability</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-reliability">4.16. ReliabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-supply">
-   <a href="../../../../systems/spc/requirements/logistical.html#supply">../../../../systems/spc/requirements/logistical.html#supply</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-f4ad104b085390564ab7d0f6f953f681" class="dfn-panel" data-for="f4ad104b085390564ab7d0f6f953f681" id="infopanel-for-f4ad104b085390564ab7d0f6f953f681">
+   <span id="infopaneltitle-for-f4ad104b085390564ab7d0f6f953f681" style="display:none">Info about the 'supply' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#supply">../../../../systems/spc/requirements/logistical.html#supply</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-supply">4.23. SupplyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-trainingandpersonel">
-   <a href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel">../../../../systems/spc/requirements/logistical.html#trainingandpersonel</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-5e7a95e8cc460d7e8c58972e5e73e256" class="dfn-panel" data-for="5e7a95e8cc460d7e8c58972e5e73e256" id="infopanel-for-5e7a95e8cc460d7e8c58972e5e73e256">
+   <span id="infopaneltitle-for-5e7a95e8cc460d7e8c58972e5e73e256" style="display:none">Info about the 'trainingandpersonel' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel">../../../../systems/spc/requirements/logistical.html#trainingandpersonel</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-trainingandpersonel">4.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-transportation">
-   <a href="../../../../systems/spc/requirements/logistical.html#transportation">../../../../systems/spc/requirements/logistical.html#transportation</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-50b70d7d0bc3ada0412e7994badde184" class="dfn-panel" data-for="50b70d7d0bc3ada0412e7994badde184" id="infopanel-for-50b70d7d0bc3ada0412e7994badde184">
+   <span id="infopaneltitle-for-50b70d7d0bc3ada0412e7994badde184" style="display:none">Info about the 'transportation' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#transportation">../../../../systems/spc/requirements/logistical.html#transportation</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-transportation">4.26. TransportationForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-minimumelevationangle">
-   <a href="../../../../systems/spc/requirements/operational.html#minimumelevationangle">../../../../systems/spc/requirements/operational.html#minimumelevationangle</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-ebef86a0298f88cc38658f7d95743a11" class="dfn-panel" data-for="ebef86a0298f88cc38658f7d95743a11" id="infopanel-for-ebef86a0298f88cc38658f7d95743a11">
+   <span id="infopaneltitle-for-ebef86a0298f88cc38658f7d95743a11" style="display:none">Info about the 'minimumelevationangle' external reference.</span><a href="../../../../systems/spc/requirements/operational.html#minimumelevationangle">../../../../systems/spc/requirements/operational.html#minimumelevationangle</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-minimumelevationangle">4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
     <li><a href="#ref-for-minimumelevationangle①">4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-orbitinclination">
-   <a href="../../../../systems/spc/requirements/operational.html#orbitinclination">../../../../systems/spc/requirements/operational.html#orbitinclination</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-6b69551c3cb9dcea6b4b3f6f75011104" class="dfn-panel" data-for="6b69551c3cb9dcea6b4b3f6f75011104" id="infopanel-for-6b69551c3cb9dcea6b4b3f6f75011104">
+   <span id="infopaneltitle-for-6b69551c3cb9dcea6b4b3f6f75011104" style="display:none">Info about the 'orbitinclination' external reference.</span><a href="../../../../systems/spc/requirements/operational.html#orbitinclination">../../../../systems/spc/requirements/operational.html#orbitinclination</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-orbitinclination">4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
     <li><a href="#ref-for-orbitinclination①">4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-timeerror">
-   <a href="../../../../systems/spc/requirements/performance.html#timeerror">../../../../systems/spc/requirements/performance.html#timeerror</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-bf06be055282770f333c3bea3b9589ef" class="dfn-panel" data-for="bf06be055282770f333c3bea3b9589ef" id="infopanel-for-bf06be055282770f333c3bea3b9589ef">
+   <span id="infopaneltitle-for-bf06be055282770f333c3bea3b9589ef" style="display:none">Info about the 'timeerror' external reference.</span><a href="../../../../systems/spc/requirements/performance.html#timeerror">../../../../systems/spc/requirements/performance.html#timeerror</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-timeerror">4.24. TimeErrorForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-maturityofnewtechnologies">
-   <a href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies">../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-810912e40737c90888ce2ae9eb07e88b" class="dfn-panel" data-for="810912e40737c90888ce2ae9eb07e88b" id="infopanel-for-810912e40737c90888ce2ae9eb07e88b">
+   <span id="infopaneltitle-for-810912e40737c90888ce2ae9eb07e88b" style="display:none">Info about the 'maturityofnewtechnologies' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies">../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-maturityofnewtechnologies">4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-numberofsatellites">
-   <a href="../../../../systems/spc/requirements/resource.html#numberofsatellites">../../../../systems/spc/requirements/resource.html#numberofsatellites</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-0b8d79acbb9c2516360a10643c98d06b" class="dfn-panel" data-for="0b8d79acbb9c2516360a10643c98d06b" id="infopanel-for-0b8d79acbb9c2516360a10643c98d06b">
+   <span id="infopaneltitle-for-0b8d79acbb9c2516360a10643c98d06b" style="display:none">Info about the 'numberofsatellites' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#numberofsatellites">../../../../systems/spc/requirements/resource.html#numberofsatellites</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-numberofsatellites">4.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-powerbudget">
-   <a href="../../../../systems/spc/requirements/resource.html#powerbudget">../../../../systems/spc/requirements/resource.html#powerbudget</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-c69079cfda196cec548f31d491931775" class="dfn-panel" data-for="c69079cfda196cec548f31d491931775" id="infopanel-for-c69079cfda196cec548f31d491931775">
+   <span id="infopaneltitle-for-c69079cfda196cec548f31d491931775" style="display:none">Info about the 'powerbudget' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#powerbudget">../../../../systems/spc/requirements/resource.html#powerbudget</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-powerbudget">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
     <li><a href="#ref-for-powerbudget①">4.13. PowerBudgetForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-spacevehiclemass">
-   <a href="../../../../systems/spc/requirements/resource.html#spacevehiclemass">../../../../systems/spc/requirements/resource.html#spacevehiclemass</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-60c55c4b87dfe2d14f4ae2b10db4569a" class="dfn-panel" data-for="60c55c4b87dfe2d14f4ae2b10db4569a" id="infopanel-for-60c55c4b87dfe2d14f4ae2b10db4569a">
+   <span id="infopaneltitle-for-60c55c4b87dfe2d14f4ae2b10db4569a" style="display:none">Info about the 'spacevehiclemass' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#spacevehiclemass">../../../../systems/spc/requirements/resource.html#spacevehiclemass</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-spacevehiclemass">4.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-manufacturability">
-   <a href="../../../../systems/spc/requirements/system.html#manufacturability">../../../../systems/spc/requirements/system.html#manufacturability</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-e16fc0624ac341de645fa37e60b2be67" class="dfn-panel" data-for="e16fc0624ac341de645fa37e60b2be67" id="infopanel-for-e16fc0624ac341de645fa37e60b2be67">
+   <span id="infopaneltitle-for-e16fc0624ac341de645fa37e60b2be67" style="display:none">Info about the 'manufacturability' external reference.</span><a href="../../../../systems/spc/requirements/system.html#manufacturability">../../../../systems/spc/requirements/system.html#manufacturability</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-manufacturability">4.6. ManufacturabilityForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-primeitemdefinition">
-   <a href="../../../../systems/spc/requirements/system.html#primeitemdefinition">../../../../systems/spc/requirements/system.html#primeitemdefinition</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-353713f1839459938715f7f609ebc48e" class="dfn-panel" data-for="353713f1839459938715f7f609ebc48e" id="infopanel-for-353713f1839459938715f7f609ebc48e">
+   <span id="infopaneltitle-for-353713f1839459938715f7f609ebc48e" style="display:none">Info about the 'primeitemdefinition' external reference.</span><a href="../../../../systems/spc/requirements/system.html#primeitemdefinition">../../../../systems/spc/requirements/system.html#primeitemdefinition</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-primeitemdefinition">4.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-securityandsafety">
-   <a href="../../../../systems/spc/requirements/system.html#securityandsafety">../../../../systems/spc/requirements/system.html#securityandsafety</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-b1136152500b077a1f833b838cde1b24" class="dfn-panel" data-for="b1136152500b077a1f833b838cde1b24" id="infopanel-for-b1136152500b077a1f833b838cde1b24">
+   <span id="infopaneltitle-for-b1136152500b077a1f833b838cde1b24" style="display:none">Info about the 'securityandsafety' external reference.</span><a href="../../../../systems/spc/requirements/system.html#securityandsafety">../../../../systems/spc/requirements/system.html#securityandsafety</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-securityandsafety">4.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="term-for-standardsample">
-   <a href="../../../../systems/spc/requirements/system.html#standardsample">../../../../systems/spc/requirements/system.html#standardsample</a><b>Referenced in:</b>
+  <aside aria-labelledby="infopaneltitle-for-cbd6a9411f777b7ef81ef543ff6991a2" class="dfn-panel" data-for="cbd6a9411f777b7ef81ef543ff6991a2" id="infopanel-for-cbd6a9411f777b7ef81ef543ff6991a2">
+   <span id="infopaneltitle-for-cbd6a9411f777b7ef81ef543ff6991a2" style="display:none">Info about the 'standardsample' external reference.</span><a href="../../../../systems/spc/requirements/system.html#standardsample">../../../../systems/spc/requirements/system.html#standardsample</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-standardsample">4.21. StandardSampleForSpacecraftSystemSegment</a>
    </ul>
@@ -2838,110 +2840,164 @@ dfn > a.self-link::before      { content: "#"; }
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-refines_1">refines_1</span>
-     <li><span class="dfn-paneled" id="term-for-requirement">requirement</span>
+     <li><span class="dfn-paneled" id="0781a02be376e5053ff186efc0664d80">refines_1</span>
+     <li><span class="dfn-paneled" id="489a32cc1cde2863bff72d6aaa9d8b17">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/ENVIRONMENTAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-qualificationofheritageflighthardware">qualificationofheritageflighthardware</span>
-     <li><span class="dfn-paneled" id="term-for-spaceenvironmenteffectsonmaterialselection">spaceenvironmenteffectsonmaterialselection</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclenaturalfrequency">spacevehiclenaturalfrequency</span>
-     <li><span class="dfn-paneled" id="term-for-structuralqualification">structuralqualification</span>
+     <li><span class="dfn-paneled" id="9433d5c497de31e4e67ad9c824e25181">qualificationofheritageflighthardware</span>
+     <li><span class="dfn-paneled" id="6c4ec46865279cd525cdf065716a7684">spaceenvironmenteffectsonmaterialselection</span>
+     <li><span class="dfn-paneled" id="311d1c9727a684a39623bc068fdde378">spacevehiclenaturalfrequency</span>
+     <li><span class="dfn-paneled" id="e104effd7a1f8422b1e1832120c11952">structuralqualification</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/LOGISTICAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-availability">availability</span>
-     <li><span class="dfn-paneled" id="term-for-facilities">facilities</span>
-     <li><span class="dfn-paneled" id="term-for-faultprotection">faultprotection</span>
-     <li><span class="dfn-paneled" id="term-for-maintainability">maintainability</span>
-     <li><span class="dfn-paneled" id="term-for-reliability">reliability</span>
-     <li><span class="dfn-paneled" id="term-for-supply">supply</span>
-     <li><span class="dfn-paneled" id="term-for-trainingandpersonel">trainingandpersonel</span>
-     <li><span class="dfn-paneled" id="term-for-transportation">transportation</span>
+     <li><span class="dfn-paneled" id="f01c0c91528d77551aeec94fb1a4771b">availability</span>
+     <li><span class="dfn-paneled" id="bae38ebfb19033d017bdce3c8152aca0">facilities</span>
+     <li><span class="dfn-paneled" id="51fd6289981aa7c628500c2b9f48e95f">faultprotection</span>
+     <li><span class="dfn-paneled" id="fa3cd3fe1b5ceba5c11d374de5e37586">maintainability</span>
+     <li><span class="dfn-paneled" id="8ff5ec05ebc9aaf0e51936e3acc35c3f">reliability</span>
+     <li><span class="dfn-paneled" id="f4ad104b085390564ab7d0f6f953f681">supply</span>
+     <li><span class="dfn-paneled" id="5e7a95e8cc460d7e8c58972e5e73e256">trainingandpersonel</span>
+     <li><span class="dfn-paneled" id="50b70d7d0bc3ada0412e7994badde184">transportation</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/OPERATIONAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-minimumelevationangle">minimumelevationangle</span>
-     <li><span class="dfn-paneled" id="term-for-orbitinclination">orbitinclination</span>
+     <li><span class="dfn-paneled" id="ebef86a0298f88cc38658f7d95743a11">minimumelevationangle</span>
+     <li><span class="dfn-paneled" id="6b69551c3cb9dcea6b4b3f6f75011104">orbitinclination</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/PERFORMANCE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-timeerror">timeerror</span>
+     <li><span class="dfn-paneled" id="bf06be055282770f333c3bea3b9589ef">timeerror</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/RESOURCE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-maturityofnewtechnologies">maturityofnewtechnologies</span>
-     <li><span class="dfn-paneled" id="term-for-numberofsatellites">numberofsatellites</span>
-     <li><span class="dfn-paneled" id="term-for-powerbudget">powerbudget</span>
-     <li><span class="dfn-paneled" id="term-for-spacevehiclemass">spacevehiclemass</span>
+     <li><span class="dfn-paneled" id="810912e40737c90888ce2ae9eb07e88b">maturityofnewtechnologies</span>
+     <li><span class="dfn-paneled" id="0b8d79acbb9c2516360a10643c98d06b">numberofsatellites</span>
+     <li><span class="dfn-paneled" id="c69079cfda196cec548f31d491931775">powerbudget</span>
+     <li><span class="dfn-paneled" id="60c55c4b87dfe2d14f4ae2b10db4569a">spacevehiclemass</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/SYSTEM]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="term-for-manufacturability">manufacturability</span>
-     <li><span class="dfn-paneled" id="term-for-primeitemdefinition">primeitemdefinition</span>
-     <li><span class="dfn-paneled" id="term-for-securityandsafety">securityandsafety</span>
-     <li><span class="dfn-paneled" id="term-for-standardsample">standardsample</span>
+     <li><span class="dfn-paneled" id="e16fc0624ac341de645fa37e60b2be67">manufacturability</span>
+     <li><span class="dfn-paneled" id="353713f1839459938715f7f609ebc48e">primeitemdefinition</span>
+     <li><span class="dfn-paneled" id="b1136152500b077a1f833b838cde1b24">securityandsafety</span>
+     <li><span class="dfn-paneled" id="cbd6a9411f777b7ef81ef543ff6991a2">standardsample</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
-
-document.body.addEventListener("click", function(e) {
-    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
-    // Find the dfn element or panel, if any, that was clicked on.
-    var el = e.target;
-    var target;
-    var hitALink = false;
-    while(el.parentElement) {
-        if(el.tagName == "A") {
-            // Clicking on a link in a <dfn> shouldn't summon the panel
-            hitALink = true;
-        }
-        if(el.classList.contains("dfn-paneled")) {
-            target = "dfn";
-            break;
-        }
-        if(el.classList.contains("dfn-panel")) {
-            target = "dfn-panel";
-            break;
-        }
-        el = el.parentElement;
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
     }
-    if(target != "dfn-panel") {
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
-        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
-            el.classList.remove("on");
-            el.classList.remove("activated");
-        });
-    }
-    if(target == "dfn" && !hitALink) {
-        // open the panel
-        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
-        if(dfnPanel) {
-            dfnPanel.classList.add("on");
-            var rect = el.getBoundingClientRect();
-            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
-            dfnPanel.style.top = window.scrollY + rect.top + "px";
-            var panelRect = dfnPanel.getBoundingClientRect();
-            var panelWidth = panelRect.right - panelRect.left;
-            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
-                // Reposition, because the panel is overflowing
-                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
-            }
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
-        }
-    } else if(target == "dfn-panel") {
-        // Switch it to "activated" state, which pins it.
-        el.classList.add("activated");
-        el.style.left = null;
-        el.style.top = null;
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
     }
 
-});
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>
