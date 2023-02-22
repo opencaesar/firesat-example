@@ -32,7 +32,7 @@ buildscript {
  * Bikeshed folder
  */
 ext {
-	bikeshed = 'build/bikeshed'
+    bikeshed = 'build/bikeshed'
 }
 
 /*
@@ -95,8 +95,8 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn:
  */
 import org.gradle.internal.os.OperatingSystem
 task generateDocs(dependsOn: omlToBikeshed) {
-	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
-	outputs.files(fileTree("$bikeshed").include('**/*.html'))
+    inputs.files(fileTree("$bikeshed").include('**/*.bs'))
+    outputs.files(fileTree("$bikeshed").include('**/*.html'))
     doLast {
         if (OperatingSystem.current().isWindows()) {
             exec { commandLine "$bikeshed/publish.bat" }
@@ -150,6 +150,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
  * A task to load an OWL catalog to a Fuseki dataset endpoint
  */
 task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
+    inputs.files(startFuseki.outputFolderPath) // rerun when fuseki restarts
     catalogPath = file('build/owl/catalog.xml')
     endpointURL = 'http://localhost:3030/firesat'
     fileExtensions = ['owl', 'ttl']
@@ -164,7 +165,7 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
 task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
-	inputs.files(owlLoad.inputs.files) // rerun when the dataset changes
+    inputs.files(owlLoad.inputs.files) // rerun when the dataset changes
     endpointURL = 'http://localhost:3030/firesat'
     queryPath = file('src/sparql')
     resultPath = file('build/results')
