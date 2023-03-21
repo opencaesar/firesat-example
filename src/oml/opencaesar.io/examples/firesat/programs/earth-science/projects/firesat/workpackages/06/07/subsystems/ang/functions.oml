@@ -13,133 +13,133 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	// Magnetometer
 
-	ref ci ang-assemblies:Magnetometer [
+	ref instance ang-assemblies:Magnetometer [
 		mission:performs AttitudeAwarenessByMagnetometer
 	]
 
-	ci AttitudeAwarenessByMagnetometer  : mission:Function [
+	instance AttitudeAwarenessByMagnetometer  : mission:Function [
 		project:realizes firesat-functions:AttitudeAwareness
 	]
 
 	// GPS Antenna
 
-	ri GPSAntennaPerformsPositionAwareness : mission:Performs [
+	relation instance GPSAntennaPerformsPositionAwareness : mission:Performs [
 		from ang-assemblies:GPSAntenna
 		to PositionAwarenessByGPSAntenna
 	]
 
-	ci PositionAwarenessByGPSAntenna  : mission:Function [
+	instance PositionAwarenessByGPSAntenna  : mission:Function [
 		project:realizes firesat-functions:PositionAwareness
 	]
 
 	// GPS Receiver Unit
 
-	ri GPSReceiverUnitPerformsPositionAwareness : mission:Performs [
+	relation instance GPSReceiverUnitPerformsPositionAwareness : mission:Performs [
 		from ang-assemblies:GPSReceiverUnit
 		to PositionAwarenessByGPSReceiverUnit
 	]
 
-	ci PositionAwarenessByGPSReceiverUnit  : mission:Function [
+	instance PositionAwarenessByGPSReceiverUnit  : mission:Function [
 		project:realizes firesat-functions:PositionAwareness
 	]
 
 	// ADCS Electronics Unit
 
-	ref ci ang-assemblies:ADCSElectronicsUnit [
+	ref instance ang-assemblies:ADCSElectronicsUnit [
 		mission:performs ControlTrajectoryByADCSElectronicsUnit
 	]
 
-	ci ControlTrajectoryByADCSElectronicsUnit  : mission:Function [
+	instance ControlTrajectoryByADCSElectronicsUnit  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Sun Sensor
 
-	ref ci ang-assemblies:SunSensor [
+	ref instance ang-assemblies:SunSensor [
 		mission:performs AttitudeAwarenessBySunSensor
 	]
 
-	ci AttitudeAwarenessBySunSensor  : mission:Function [
+	instance AttitudeAwarenessBySunSensor  : mission:Function [
 		project:realizes firesat-functions:AttitudeAwareness
 	]
 
 	// Earth Sensor
 
-	ref ci ang-assemblies:EarthSensor [
+	ref instance ang-assemblies:EarthSensor [
 		mission:performs AttitudeAwarenessByEarthSensor
 	]
 
-	ci AttitudeAwarenessByEarthSensor  : mission:Function [
+	instance AttitudeAwarenessByEarthSensor  : mission:Function [
 		project:realizes firesat-functions:AttitudeAwareness
 	]
 
 	// Reaction Wheel 1
 
-	ref ci ang-assemblies:ReactionWheel1 [
+	ref instance ang-assemblies:ReactionWheel1 [
 		mission:performs ControlTrajectoryByReactionWheel1
 	]
 
-	ci ControlTrajectoryByReactionWheel1  : mission:Function [
+	instance ControlTrajectoryByReactionWheel1  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Reaction Wheel 2
 
-	ref ci ang-assemblies:ReactionWheel2 [
+	ref instance ang-assemblies:ReactionWheel2 [
 		mission:performs ControlTrajectoryByReactionWheel2
 	]
 
-	ci ControlTrajectoryByReactionWheel2  : mission:Function [
+	instance ControlTrajectoryByReactionWheel2  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Reaction Wheel 3
 
-	ref ci ang-assemblies:ReactionWheel3 [
+	ref instance ang-assemblies:ReactionWheel3 [
 		mission:performs ControlTrajectoryByReactionWheel3
 	]
 
-	ci ControlTrajectoryByReactionWheel3  : mission:Function [
+	instance ControlTrajectoryByReactionWheel3  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Reaction Wheel 4
 
-	ref ci ang-assemblies:ReactionWheel4 [
+	ref instance ang-assemblies:ReactionWheel4 [
 		mission:performs ControlTrajectoryByReactionWheel4
 	]
 
-	ci ControlTrajectoryByReactionWheel4  : mission:Function [
+	instance ControlTrajectoryByReactionWheel4  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Magnetorquer 1
 
-	ref ci ang-assemblies:Magnetorquer1 [
+	ref instance ang-assemblies:Magnetorquer1 [
 		mission:performs ControlTrajectoryByMagnetorquer1
 	]
 
-	ci ControlTrajectoryByMagnetorquer1  : mission:Function [
+	instance ControlTrajectoryByMagnetorquer1  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Magnetorquer 2
 
-	ref ci ang-assemblies:Magnetorquer2 [
+	ref instance ang-assemblies:Magnetorquer2 [
 		mission:performs ControlTrajectoryByMagnetorquer2
 	]
 
-	ci ControlTrajectoryByMagnetorquer2  : mission:Function [
+	instance ControlTrajectoryByMagnetorquer2  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 
 	// Magnetorquer 3
 
-	ref ci ang-assemblies:Magnetorquer3 [
+	ref instance ang-assemblies:Magnetorquer3 [
 		mission:performs ControlTrajectoryByMagnetorquer3
 	]
 
-	ci ControlTrajectoryByMagnetorquer3  : mission:Function [
+	instance ControlTrajectoryByMagnetorquer3  : mission:Function [
 		project:realizes firesat-functions:ControlTrajectory
 	]
 

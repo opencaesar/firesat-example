@@ -13,30 +13,30 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	// Payload Module
 
-	ref ci pld-assemblies:PayloadModule [
+	ref instance pld-assemblies:PayloadModule [
 		mission:performs InsureMechanicalIntegrityByPayloadModule
 	]
 
-	ci InsureMechanicalIntegrityByPayloadModule  : mission:Function [
+	instance InsureMechanicalIntegrityByPayloadModule  : mission:Function [
 		project:realizes firesat-functions:InsureMechanicalIntegrity
 	]
 
 	// Sensor
 
-	ref ci pld-assemblies:Sensor [
+	ref instance pld-assemblies:Sensor [
 		mission:performs MonitorExistingWildfires_24_7BySensor
 	]
 	
-	ri SensorPerformsDetectNewWildfires : mission:Performs [
+	relation instance SensorPerformsDetectNewWildfires : mission:Performs [
 		from pld-assemblies:Sensor
 		to DetectNewWildfiresBySensor
 	]
 
-	ci MonitorExistingWildfires_24_7BySensor  : mission:Function [
+	instance MonitorExistingWildfires_24_7BySensor  : mission:Function [
 		project:realizes firesat-functions:MonitorExistingWildfires_24_7
 	]
 
-	ci DetectNewWildfiresBySensor  : mission:Function [
+	instance DetectNewWildfiresBySensor  : mission:Function [
 		project:realizes firesat-functions:DetectNewWildfires
 	]
 

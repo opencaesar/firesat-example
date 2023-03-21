@@ -14,23 +14,23 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	extends <http://opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
 
 	@rdfs:label "Power Budget"
-	ci PowerBudget : mission:Requirement [
+	instance PowerBudget : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 	]
 
 	@rdfs:label "Delta-V Budget"
-	ci DeltaVBudget : mission:Requirement [
+	instance DeltaVBudget : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 		mission:refines spc-logistical-reqs:EndOfLifeDisposal
 	]
 
 	@rdfs:label "Space Vehicle Mass"
-	ci SpaceVehicleMass : mission:Requirement [
+	instance SpaceVehicleMass : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 	]
 
 	@rdfs:label "Altitude Determination"
-	ci AltitudeDetermination : mission:Requirement [
+	instance AltitudeDetermination : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 		mission:refines firesat-functional-reqs:GeoLocation
 		mission:refines firesat-functional-reqs:Coverage
@@ -40,7 +40,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Orbit Determination"
-	ci OrbitDetermination : mission:Requirement [
+	instance OrbitDetermination : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 		mission:refines firesat-functional-reqs:GeoLocation
 		mission:refines firesat-functional-reqs:Persistence
@@ -50,10 +50,10 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 	]
 
 	@rdfs:label "Maturity of New Technologies"
-	ci MaturityOfNewTechnologies : mission:Requirement
+	instance MaturityOfNewTechnologies : mission:Requirement
 
 	@rdfs:label "Number of Satellites"
-	ci NumberOfSatellites : mission:Requirement [
+	instance NumberOfSatellites : mission:Requirement [
 		mission:refines firesat-stakeholder-reqs:LCCBudget
 		mission:refines firesat-functional-reqs:Coverage
 		mission:refines firesat-functional-reqs:Persistence

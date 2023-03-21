@@ -15,92 +15,92 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	// Receiver Unit
 
-	ref ci cmn-assemblies:ReceiverUnit [
+	ref instance cmn-assemblies:ReceiverUnit [
 		mission:isSpecifiedBy UplinkDownlinkHardwareForReceiverUnit
 		mission:isSpecifiedBy InteroperabilityForReceiverUnit
 	]
 
-	ci UplinkDownlinkHardwareForReceiverUnit : mission:Requirement [
+	instance UplinkDownlinkHardwareForReceiverUnit : mission:Requirement [
 		mission:refines spc-system-reqs:UplinkDownlinkHardware
 	]
 
-	ci InteroperabilityForReceiverUnit : mission:Requirement [
+	instance InteroperabilityForReceiverUnit : mission:Requirement [
 		mission:refines spc-system-reqs:Interoperability
 	]
 
 	// Transmit Whip Antenna
 
-	ref ci cmn-assemblies:TransmitWhipAntenna [
+	ref instance cmn-assemblies:TransmitWhipAntenna [
 		mission:isSpecifiedBy UplinkDownlinkHardwareForTransmitWhipAntenna
 		mission:isSpecifiedBy InteroperabilityForTransmitWhipAntenna
 		mission:isSpecifiedBy SupportabilityForTransmitWhipAntenna
 	]
 
-	ci UplinkDownlinkHardwareForTransmitWhipAntenna : mission:Requirement [
+	instance UplinkDownlinkHardwareForTransmitWhipAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:UplinkDownlinkHardware
 	]
 
-	ci InteroperabilityForTransmitWhipAntenna : mission:Requirement [
+	instance InteroperabilityForTransmitWhipAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:Interoperability
 	]
 
-	ci SupportabilityForTransmitWhipAntenna : mission:Requirement [
+	instance SupportabilityForTransmitWhipAntenna : mission:Requirement [
 		mission:refines spc-logistical-reqs:Supportability
 	]
 
 	// Receive Whip Antenna
 
-	ref ci cmn-assemblies:ReceiveWhipAntenna [
+	ref instance cmn-assemblies:ReceiveWhipAntenna [
 		mission:isSpecifiedBy UplinkDownlinkHardwareForReceiveWhipAntenna
 		mission:isSpecifiedBy InteroperabilityForReceiveWhipAntenna
 	]
 
-	ci UplinkDownlinkHardwareForReceiveWhipAntenna : mission:Requirement [
+	instance UplinkDownlinkHardwareForReceiveWhipAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:UplinkDownlinkHardware
 	]
 
-	ci InteroperabilityForReceiveWhipAntenna : mission:Requirement [
+	instance InteroperabilityForReceiveWhipAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:Interoperability
 	]
 
 	// Transmitter Unit
 
-	ref ci cmn-assemblies:TransmitterUnit [
+	ref instance cmn-assemblies:TransmitterUnit [
 		mission:isSpecifiedBy InteroperabilityForTransmitterUnit
 		mission:isSpecifiedBy SupportabilityForTransmitterUnit
 	]
 		
-	ref ri cmn-functions:TransmitterUnitPerformsGenerateTelemetry [
+	ref relation instance cmn-functions:TransmitterUnitPerformsGenerateTelemetry [
 		mission:isSpecifiedBy UplinkDownlinkHardwareForTransmitterUnit
 	]
 	
-	ci UplinkDownlinkHardwareForTransmitterUnit : mission:Requirement [
+	instance UplinkDownlinkHardwareForTransmitterUnit : mission:Requirement [
 		mission:refines spc-system-reqs:UplinkDownlinkHardware
 	]
 
-	ci InteroperabilityForTransmitterUnit : mission:Requirement [
+	instance InteroperabilityForTransmitterUnit : mission:Requirement [
 		mission:refines spc-system-reqs:Interoperability
 	]
 
-	ci SupportabilityForTransmitterUnit : mission:Requirement [
+	instance SupportabilityForTransmitterUnit : mission:Requirement [
 		mission:refines spc-logistical-reqs:Supportability
 	]
 
 	// Transmit Hi-Gain Antenna
 	
-	ref ci cmn-assemblies:TransmitHiGainAntenna [
+	ref instance cmn-assemblies:TransmitHiGainAntenna [
 		mission:isSpecifiedBy InteroperabilityForTransmitHiGainAntenna
 	]
 	
-	ref ri cmn-functions:TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices [
+	ref relation instance cmn-functions:TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices [
 		mission:isSpecifiedBy UplinkDownlinkHardwareForTransmitHiGainAntenna
 	]
 	
-	ci InteroperabilityForTransmitHiGainAntenna : mission:Requirement [
+	instance InteroperabilityForTransmitHiGainAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:Interoperability
 	]
 
-	ci UplinkDownlinkHardwareForTransmitHiGainAntenna : mission:Requirement [
+	instance UplinkDownlinkHardwareForTransmitHiGainAntenna : mission:Requirement [
 		mission:refines spc-system-reqs:UplinkDownlinkHardware
 	]
 

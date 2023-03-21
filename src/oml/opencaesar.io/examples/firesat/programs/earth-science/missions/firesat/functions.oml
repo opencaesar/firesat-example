@@ -8,7 +8,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/missio
 	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
 	
 	@rdfs:label "Perform Mission"
-	ci PerformMission : mission:Function [
+	instance PerformMission : mission:Function [
 		mission:invokes ReachOperationalOrbit
 		mission:invokes Communicate
 		mission:invokes Supply_Power_24_7
@@ -22,107 +22,107 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/missio
 	]
 
 	@rdfs:label "Reach Operational Orbit"
-	ci ReachOperationalOrbit : mission:Function [
+	instance ReachOperationalOrbit : mission:Function [
 		mission:invokes ControlTrajectory
 	]
 
 	@rdfs:label "Communicate"
-	ci Communicate : mission:Function [
+	instance Communicate : mission:Function [
 		mission:invokes ReceiveTelecommandFromNOAAGroundStations
 		mission:invokes Communicate911DownlinkWithRegionalFieldOffices
 		mission:invokes SendTelemetryToNOAAGroundStations
 	]
 
 	@rdfs:label "Supply Power 24/7"
-	ci Supply_Power_24_7 : mission:Function [
+	instance Supply_Power_24_7 : mission:Function [
 		mission:invokes TransformSolarRadiationsIntoEnergy
 		mission:invokes StoreEnergyDuringEclipses
 	]
 
 	@rdfs:label "Apply Commands"
-	ci ApplyCommands : mission:Function [
+	instance ApplyCommands : mission:Function [
 		mission:invokes ReceiveTelecommandFromNOAAGroundStations
 	]
 
 	@rdfs:label "Monitor and Maintain Health & Safety"
-	ci MonitorAndMaintainHealthAndsafety : mission:Function [
+	instance MonitorAndMaintainHealthAndsafety : mission:Function [
 		mission:invokes MitigateFailures
 		mission:invokes AvoidCollisions
 	]
 
 	@rdfs:label "Detect New Wildfires"
-	ci DetectNewWildfires : mission:Function
+	instance DetectNewWildfires : mission:Function
 
 	@rdfs:label "Monitor Existing Wildfires 24/7"
-	ci MonitorExistingWildfires_24_7 : mission:Function
+	instance MonitorExistingWildfires_24_7 : mission:Function
 
 	@rdfs:label "Communicate 911 Downlink With Regional Field Offices"
-	ci Communicate911DownlinkWithRegionalFieldOffices : mission:Function
+	instance Communicate911DownlinkWithRegionalFieldOffices : mission:Function
 
 	@rdfs:label "Release S/C from L/V"
-	ci Release_SC_From_LV : mission:Function [
+	instance Release_SC_From_LV : mission:Function [
 		mission:invokes Launch_SC
 	]
 
 	@rdfs:label "Deploy Mechanisms"
-	ci DeployMechanisms : mission:Function
+	instance DeployMechanisms : mission:Function
 
 	@rdfs:label "Control Trajectory"
-	ci ControlTrajectory : mission:Function [
+	instance ControlTrajectory : mission:Function [
 		mission:invokes AttitudeAwareness
 		mission:invokes PositionAwareness
 	]
 
 	@rdfs:label "Receive Telecommand Trom NOAA Ground Stations"
-	ci ReceiveTelecommandFromNOAAGroundStations : mission:Function
+	instance ReceiveTelecommandFromNOAAGroundStations : mission:Function
 
 	@rdfs:label "Send Telemetry NOAA Ground Stations"
-	ci SendTelemetryToNOAAGroundStations : mission:Function [
+	instance SendTelemetryToNOAAGroundStations : mission:Function [
 		mission:invokes StoreDataBetweenTwoTelemetries
 		mission:invokes GenerateTelemetry
 	]
 
 	@rdfs:label "Transform Solar Radiations Into Energy"
-	ci TransformSolarRadiationsIntoEnergy : mission:Function
+	instance TransformSolarRadiationsIntoEnergy : mission:Function
 
 	@rdfs:label "Store Energy During Eclipses"
-	ci StoreEnergyDuringEclipses : mission:Function
+	instance StoreEnergyDuringEclipses : mission:Function
 
 	@rdfs:label "Mitigate Failures"
-	ci MitigateFailures : mission:Function [
+	instance MitigateFailures : mission:Function [
 		mission:invokes HomogenizeTemperature
 		mission:invokes ProtectAgainstRadiations
 	]
 
 	@rdfs:label "Avoid Collisions"
-	ci AvoidCollisions : mission:Function [
+	instance AvoidCollisions : mission:Function [
 		mission:invokes ControlTrajectory
 	]
 
 	@rdfs:label "Launch S/C"
-	ci Launch_SC : mission:Function [
+	instance Launch_SC : mission:Function [
 		mission:invokes InsureMechanicalIntegrity
 	]
 
 	@rdfs:label "Attitude Awareness"
-	ci AttitudeAwareness : mission:Function
+	instance AttitudeAwareness : mission:Function
 
 	@rdfs:label "Position Awareness"
-	ci PositionAwareness : mission:Function
+	instance PositionAwareness : mission:Function
 
 	@rdfs:label "Store Data Between Two Telemetries"
-	ci StoreDataBetweenTwoTelemetries : mission:Function
+	instance StoreDataBetweenTwoTelemetries : mission:Function
 
 	@rdfs:label "Generate Telemetry"
-	ci GenerateTelemetry : mission:Function
+	instance GenerateTelemetry : mission:Function
 
 	@rdfs:label "Homogenize Temperature"
-	ci HomogenizeTemperature : mission:Function
+	instance HomogenizeTemperature : mission:Function
 
 	@rdfs:label "Protect Against Radiations"
-	ci ProtectAgainstRadiations : mission:Function
+	instance ProtectAgainstRadiations : mission:Function
 
 	@rdfs:label "Insure Mechanical Integrity"
-	ci InsureMechanicalIntegrity : mission:Function
+	instance InsureMechanicalIntegrity : mission:Function
 
 }
