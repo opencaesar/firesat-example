@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/masses" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Masses</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2516,204 +2522,101 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#propulsionmodulemasslimitconstraint">propulsionmodulemasslimitconstraint</a><span>, in § 4.14</span>
    <li><a href="#propulsionsystemcontrolunitmasslimitconstraint">propulsionsystemcontrolunitmasslimitconstraint</a><span>, in § 4.15</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-f069ec3dc0833c1071706e3d5d3aa418" class="dfn-panel" data-for="f069ec3dc0833c1071706e3d5d3aa418" id="infopanel-for-f069ec3dc0833c1071706e3d5d3aa418">
-   <span id="infopaneltitle-for-f069ec3dc0833c1071706e3d5d3aa418" style="display:none">Info about the 'characterizes_1' external reference.</span><a href="../../../../../../../../../../../../bipm.org/jcgm/vim4.html#characterizes_1">../../../../../../../../../../../../bipm.org/jcgm/vim4.html#characterizes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizes_1">4.1. ACSThruster1MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①">4.2. ACSThruster2MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1②">4.3. ACSThruster3MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1③">4.4. ACSThruster4MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1④">4.5. ACSThruster5MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1⑤">4.6. ACSThruster6MassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1⑥">4.7. BPPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1⑦">4.8. FillDrainValveUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1⑧">4.9. PMPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1⑨">4.10. PressurantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①⓪">4.11. PrimaryThrusterMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①①">4.12. PropellantHandlingSectionMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①②">4.13. PropellantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①③">4.14. PropulsionModuleMassLimitConstraint</a>
-    <li><a href="#ref-for-characterizes_1①④">4.15. PropulsionSystemControlUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1898dcc726bebdd4a23a8a9ba0c539b7" class="dfn-panel" data-for="1898dcc726bebdd4a23a8a9ba0c539b7" id="infopanel-for-1898dcc726bebdd4a23a8a9ba0c539b7">
-   <span id="infopaneltitle-for-1898dcc726bebdd4a23a8a9ba0c539b7" style="display:none">Info about the 'hasdoublenumber' external reference.</span><a href="../../../../../../../../../../../../bipm.org/jcgm/vim4.html#hasdoublenumber">../../../../../../../../../../../../bipm.org/jcgm/vim4.html#hasdoublenumber</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasdoublenumber">4.1. ACSThruster1MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①">4.2. ACSThruster2MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber②">4.3. ACSThruster3MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber③">4.4. ACSThruster4MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber④">4.5. ACSThruster5MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber⑤">4.6. ACSThruster6MassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber⑥">4.7. BPPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber⑦">4.8. FillDrainValveUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber⑧">4.9. PMPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber⑨">4.10. PressurantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①⓪">4.11. PrimaryThrusterMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①①">4.12. PropellantHandlingSectionMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①②">4.13. PropellantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①③">4.14. PropulsionModuleMassLimitConstraint</a>
-    <li><a href="#ref-for-hasdoublenumber①④">4.15. PropulsionSystemControlUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d564bbc12138efb86a639630402a5b9a" class="dfn-panel" data-for="d564bbc12138efb86a639630402a5b9a" id="infopanel-for-d564bbc12138efb86a639630402a5b9a">
-   <span id="infopaneltitle-for-d564bbc12138efb86a639630402a5b9a" style="display:none">Info about the 'masslimitconstraint' external reference.</span><a href="../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint">../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-masslimitconstraint">4.1. ACSThruster1MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①">4.2. ACSThruster2MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint②">4.3. ACSThruster3MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint③">4.4. ACSThruster4MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint④">4.5. ACSThruster5MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint⑤">4.6. ACSThruster6MassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint⑥">4.7. BPPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint⑦">4.8. FillDrainValveUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint⑧">4.9. PMPropellantLineUnitMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint⑨">4.10. PressurantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①⓪">4.11. PrimaryThrusterMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①①">4.12. PropellantHandlingSectionMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①②">4.13. PropellantTankMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①③">4.14. PropulsionModuleMassLimitConstraint</a>
-    <li><a href="#ref-for-masslimitconstraint①④">4.15. PropulsionSystemControlUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a5ed93f6665a0e76983ab9e72d687d31" class="dfn-panel" data-for="a5ed93f6665a0e76983ab9e72d687d31" id="infopanel-for-a5ed93f6665a0e76983ab9e72d687d31">
-   <span id="infopaneltitle-for-a5ed93f6665a0e76983ab9e72d687d31" style="display:none">Info about the 'acsthruster1' external reference.</span><a href="assemblies.html#acsthruster1">assemblies.html#acsthruster1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster1">4.1. ACSThruster1MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d0499825fc8a4bbd6f80819e74e753cf" class="dfn-panel" data-for="d0499825fc8a4bbd6f80819e74e753cf" id="infopanel-for-d0499825fc8a4bbd6f80819e74e753cf">
-   <span id="infopaneltitle-for-d0499825fc8a4bbd6f80819e74e753cf" style="display:none">Info about the 'acsthruster2' external reference.</span><a href="assemblies.html#acsthruster2">assemblies.html#acsthruster2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster2">4.2. ACSThruster2MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-85be0dab5ce0c8bc0d137dddcd952ef4" class="dfn-panel" data-for="85be0dab5ce0c8bc0d137dddcd952ef4" id="infopanel-for-85be0dab5ce0c8bc0d137dddcd952ef4">
-   <span id="infopaneltitle-for-85be0dab5ce0c8bc0d137dddcd952ef4" style="display:none">Info about the 'acsthruster3' external reference.</span><a href="assemblies.html#acsthruster3">assemblies.html#acsthruster3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster3">4.3. ACSThruster3MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3bf386064d346f433540572336094066" class="dfn-panel" data-for="3bf386064d346f433540572336094066" id="infopanel-for-3bf386064d346f433540572336094066">
-   <span id="infopaneltitle-for-3bf386064d346f433540572336094066" style="display:none">Info about the 'acsthruster4' external reference.</span><a href="assemblies.html#acsthruster4">assemblies.html#acsthruster4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster4">4.4. ACSThruster4MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bb97373d8a5825adc36e04d111035ca9" class="dfn-panel" data-for="bb97373d8a5825adc36e04d111035ca9" id="infopanel-for-bb97373d8a5825adc36e04d111035ca9">
-   <span id="infopaneltitle-for-bb97373d8a5825adc36e04d111035ca9" style="display:none">Info about the 'acsthruster5' external reference.</span><a href="assemblies.html#acsthruster5">assemblies.html#acsthruster5</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster5">4.5. ACSThruster5MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f927619932fefc5ba9ca1f80cf63f2ca" class="dfn-panel" data-for="f927619932fefc5ba9ca1f80cf63f2ca" id="infopanel-for-f927619932fefc5ba9ca1f80cf63f2ca">
-   <span id="infopaneltitle-for-f927619932fefc5ba9ca1f80cf63f2ca" style="display:none">Info about the 'acsthruster6' external reference.</span><a href="assemblies.html#acsthruster6">assemblies.html#acsthruster6</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster6">4.6. ACSThruster6MassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1a1f42537918ec75d384e358aa67de12" class="dfn-panel" data-for="1a1f42537918ec75d384e358aa67de12" id="infopanel-for-1a1f42537918ec75d384e358aa67de12">
-   <span id="infopaneltitle-for-1a1f42537918ec75d384e358aa67de12" style="display:none">Info about the 'bppropellantlineunit' external reference.</span><a href="assemblies.html#bppropellantlineunit">assemblies.html#bppropellantlineunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-bppropellantlineunit">4.7. BPPropellantLineUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-01cf3c80979fffba3ba444085543d0eb" class="dfn-panel" data-for="01cf3c80979fffba3ba444085543d0eb" id="infopanel-for-01cf3c80979fffba3ba444085543d0eb">
-   <span id="infopaneltitle-for-01cf3c80979fffba3ba444085543d0eb" style="display:none">Info about the 'filldrainvalveunit' external reference.</span><a href="assemblies.html#filldrainvalveunit">assemblies.html#filldrainvalveunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-filldrainvalveunit">4.8. FillDrainValveUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-755bf5a0bf4fecdf2a9b1ec3eec195fa" class="dfn-panel" data-for="755bf5a0bf4fecdf2a9b1ec3eec195fa" id="infopanel-for-755bf5a0bf4fecdf2a9b1ec3eec195fa">
-   <span id="infopaneltitle-for-755bf5a0bf4fecdf2a9b1ec3eec195fa" style="display:none">Info about the 'pmpropellantlineunit' external reference.</span><a href="assemblies.html#pmpropellantlineunit">assemblies.html#pmpropellantlineunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pmpropellantlineunit">4.9. PMPropellantLineUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7584cdc223d52c5ceebfd8608dc9495f" class="dfn-panel" data-for="7584cdc223d52c5ceebfd8608dc9495f" id="infopanel-for-7584cdc223d52c5ceebfd8608dc9495f">
-   <span id="infopaneltitle-for-7584cdc223d52c5ceebfd8608dc9495f" style="display:none">Info about the 'pressuranttank' external reference.</span><a href="assemblies.html#pressuranttank">assemblies.html#pressuranttank</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pressuranttank">4.10. PressurantTankMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bfeb188f6ab08ac6354eabc170c30869" class="dfn-panel" data-for="bfeb188f6ab08ac6354eabc170c30869" id="infopanel-for-bfeb188f6ab08ac6354eabc170c30869">
-   <span id="infopaneltitle-for-bfeb188f6ab08ac6354eabc170c30869" style="display:none">Info about the 'primarythruster' external reference.</span><a href="assemblies.html#primarythruster">assemblies.html#primarythruster</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-primarythruster">4.11. PrimaryThrusterMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-752dc58ac49ea090d5772616a577270f" class="dfn-panel" data-for="752dc58ac49ea090d5772616a577270f" id="infopanel-for-752dc58ac49ea090d5772616a577270f">
-   <span id="infopaneltitle-for-752dc58ac49ea090d5772616a577270f" style="display:none">Info about the 'propellanthandlingsection' external reference.</span><a href="assemblies.html#propellanthandlingsection">assemblies.html#propellanthandlingsection</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propellanthandlingsection">4.12. PropellantHandlingSectionMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dbf08845bee9c98b4fcb7ad550c37fae" class="dfn-panel" data-for="dbf08845bee9c98b4fcb7ad550c37fae" id="infopanel-for-dbf08845bee9c98b4fcb7ad550c37fae">
-   <span id="infopaneltitle-for-dbf08845bee9c98b4fcb7ad550c37fae" style="display:none">Info about the 'propellanttank' external reference.</span><a href="assemblies.html#propellanttank">assemblies.html#propellanttank</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propellanttank">4.13. PropellantTankMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7ecfd01a27a01c7d500d367d0362f360" class="dfn-panel" data-for="7ecfd01a27a01c7d500d367d0362f360" id="infopanel-for-7ecfd01a27a01c7d500d367d0362f360">
-   <span id="infopaneltitle-for-7ecfd01a27a01c7d500d367d0362f360" style="display:none">Info about the 'propulsionmodule' external reference.</span><a href="assemblies.html#propulsionmodule">assemblies.html#propulsionmodule</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propulsionmodule">4.14. PropulsionModuleMassLimitConstraint</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e508c02133d00daddb658b08815b6b5e" class="dfn-panel" data-for="e508c02133d00daddb658b08815b6b5e" id="infopanel-for-e508c02133d00daddb658b08815b6b5e">
-   <span id="infopaneltitle-for-e508c02133d00daddb658b08815b6b5e" style="display:none">Info about the 'propulsionsystemcontrolunit' external reference.</span><a href="assemblies.html#propulsionsystemcontrolunit">assemblies.html#propulsionsystemcontrolunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propulsionsystemcontrolunit">4.15. PropulsionSystemControlUnitMassLimitConstraint</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f069ec3dc0833c1071706e3d5d3aa418">characterizes_1</span>
-     <li><span class="dfn-paneled" id="1898dcc726bebdd4a23a8a9ba0c539b7">hasdoublenumber</span>
+     <li><span class="dfn-paneled" id="f37219be">characterizes_1</span>
+     <li><span class="dfn-paneled" id="92b37464">hasdoublenumber</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="d564bbc12138efb86a639630402a5b9a">masslimitconstraint</span>
+     <li><span class="dfn-paneled" id="3d407c4a">masslimitconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="a5ed93f6665a0e76983ab9e72d687d31">acsthruster1</span>
-     <li><span class="dfn-paneled" id="d0499825fc8a4bbd6f80819e74e753cf">acsthruster2</span>
-     <li><span class="dfn-paneled" id="85be0dab5ce0c8bc0d137dddcd952ef4">acsthruster3</span>
-     <li><span class="dfn-paneled" id="3bf386064d346f433540572336094066">acsthruster4</span>
-     <li><span class="dfn-paneled" id="bb97373d8a5825adc36e04d111035ca9">acsthruster5</span>
-     <li><span class="dfn-paneled" id="f927619932fefc5ba9ca1f80cf63f2ca">acsthruster6</span>
-     <li><span class="dfn-paneled" id="1a1f42537918ec75d384e358aa67de12">bppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="01cf3c80979fffba3ba444085543d0eb">filldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="755bf5a0bf4fecdf2a9b1ec3eec195fa">pmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="7584cdc223d52c5ceebfd8608dc9495f">pressuranttank</span>
-     <li><span class="dfn-paneled" id="bfeb188f6ab08ac6354eabc170c30869">primarythruster</span>
-     <li><span class="dfn-paneled" id="752dc58ac49ea090d5772616a577270f">propellanthandlingsection</span>
-     <li><span class="dfn-paneled" id="dbf08845bee9c98b4fcb7ad550c37fae">propellanttank</span>
-     <li><span class="dfn-paneled" id="7ecfd01a27a01c7d500d367d0362f360">propulsionmodule</span>
-     <li><span class="dfn-paneled" id="e508c02133d00daddb658b08815b6b5e">propulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="a8a17cba">acsthruster1</span>
+     <li><span class="dfn-paneled" id="c944f253">acsthruster2</span>
+     <li><span class="dfn-paneled" id="f055babf">acsthruster3</span>
+     <li><span class="dfn-paneled" id="11a3c3b0">acsthruster4</span>
+     <li><span class="dfn-paneled" id="15e2520e">acsthruster5</span>
+     <li><span class="dfn-paneled" id="e2706710">acsthruster6</span>
+     <li><span class="dfn-paneled" id="d2293240">bppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="92564d1b">filldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="41846b48">pmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="8d63d223">pressuranttank</span>
+     <li><span class="dfn-paneled" id="068b88ca">primarythruster</span>
+     <li><span class="dfn-paneled" id="24098a4d">propellanthandlingsection</span>
+     <li><span class="dfn-paneled" id="9ee105cf">propellanttank</span>
+     <li><span class="dfn-paneled" id="09a5c858">propulsionmodule</span>
+     <li><span class="dfn-paneled" id="11bbccc8">propulsionsystemcontrolunit</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2763,49 +2666,261 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['f37219be'] = {"dfnID": "f37219be", "url": "../../../../../../../../../../../../bipm.org/jcgm/vim4.html#characterizes_1", "dfnText": "characterizes_1", "refSections": [{"refs": [{"id": "ref-for-characterizes_1"}], "title": "4.1. ACSThruster1MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460"}], "title": "4.2. ACSThruster2MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2461"}], "title": "4.3. ACSThruster3MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2462"}], "title": "4.4. ACSThruster4MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2463"}], "title": "4.5. ACSThruster5MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2464"}], "title": "4.6. ACSThruster6MassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2465"}], "title": "4.7. BPPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2466"}], "title": "4.8. FillDrainValveUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2467"}], "title": "4.9. PMPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2468"}], "title": "4.10. PressurantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460\u24ea"}], "title": "4.11. PrimaryThrusterMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460\u2460"}], "title": "4.12. PropellantHandlingSectionMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460\u2461"}], "title": "4.13. PropellantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460\u2462"}], "title": "4.14. PropulsionModuleMassLimitConstraint"}, {"refs": [{"id": "ref-for-characterizes_1\u2460\u2463"}], "title": "4.15. PropulsionSystemControlUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['92b37464'] = {"dfnID": "92b37464", "url": "../../../../../../../../../../../../bipm.org/jcgm/vim4.html#hasdoublenumber", "dfnText": "hasdoublenumber", "refSections": [{"refs": [{"id": "ref-for-hasdoublenumber"}], "title": "4.1. ACSThruster1MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460"}], "title": "4.2. ACSThruster2MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2461"}], "title": "4.3. ACSThruster3MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2462"}], "title": "4.4. ACSThruster4MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2463"}], "title": "4.5. ACSThruster5MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2464"}], "title": "4.6. ACSThruster6MassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2465"}], "title": "4.7. BPPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2466"}], "title": "4.8. FillDrainValveUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2467"}], "title": "4.9. PMPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2468"}], "title": "4.10. PressurantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460\u24ea"}], "title": "4.11. PrimaryThrusterMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460\u2460"}], "title": "4.12. PropellantHandlingSectionMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460\u2461"}], "title": "4.13. PropellantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460\u2462"}], "title": "4.14. PropulsionModuleMassLimitConstraint"}, {"refs": [{"id": "ref-for-hasdoublenumber\u2460\u2463"}], "title": "4.15. PropulsionSystemControlUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['3d407c4a'] = {"dfnID": "3d407c4a", "url": "../../../../../../../../../disciplines/fse/fse.html#masslimitconstraint", "dfnText": "masslimitconstraint", "refSections": [{"refs": [{"id": "ref-for-masslimitconstraint"}], "title": "4.1. ACSThruster1MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460"}], "title": "4.2. ACSThruster2MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2461"}], "title": "4.3. ACSThruster3MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2462"}], "title": "4.4. ACSThruster4MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2463"}], "title": "4.5. ACSThruster5MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2464"}], "title": "4.6. ACSThruster6MassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2465"}], "title": "4.7. BPPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2466"}], "title": "4.8. FillDrainValveUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2467"}], "title": "4.9. PMPropellantLineUnitMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2468"}], "title": "4.10. PressurantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460\u24ea"}], "title": "4.11. PrimaryThrusterMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460\u2460"}], "title": "4.12. PropellantHandlingSectionMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460\u2461"}], "title": "4.13. PropellantTankMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460\u2462"}], "title": "4.14. PropulsionModuleMassLimitConstraint"}, {"refs": [{"id": "ref-for-masslimitconstraint\u2460\u2463"}], "title": "4.15. PropulsionSystemControlUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['a8a17cba'] = {"dfnID": "a8a17cba", "url": "assemblies.html#acsthruster1", "dfnText": "acsthruster1", "refSections": [{"refs": [{"id": "ref-for-acsthruster1"}], "title": "4.1. ACSThruster1MassLimitConstraint"}], "external": true};
+window.dfnpanelData['c944f253'] = {"dfnID": "c944f253", "url": "assemblies.html#acsthruster2", "dfnText": "acsthruster2", "refSections": [{"refs": [{"id": "ref-for-acsthruster2"}], "title": "4.2. ACSThruster2MassLimitConstraint"}], "external": true};
+window.dfnpanelData['f055babf'] = {"dfnID": "f055babf", "url": "assemblies.html#acsthruster3", "dfnText": "acsthruster3", "refSections": [{"refs": [{"id": "ref-for-acsthruster3"}], "title": "4.3. ACSThruster3MassLimitConstraint"}], "external": true};
+window.dfnpanelData['11a3c3b0'] = {"dfnID": "11a3c3b0", "url": "assemblies.html#acsthruster4", "dfnText": "acsthruster4", "refSections": [{"refs": [{"id": "ref-for-acsthruster4"}], "title": "4.4. ACSThruster4MassLimitConstraint"}], "external": true};
+window.dfnpanelData['15e2520e'] = {"dfnID": "15e2520e", "url": "assemblies.html#acsthruster5", "dfnText": "acsthruster5", "refSections": [{"refs": [{"id": "ref-for-acsthruster5"}], "title": "4.5. ACSThruster5MassLimitConstraint"}], "external": true};
+window.dfnpanelData['e2706710'] = {"dfnID": "e2706710", "url": "assemblies.html#acsthruster6", "dfnText": "acsthruster6", "refSections": [{"refs": [{"id": "ref-for-acsthruster6"}], "title": "4.6. ACSThruster6MassLimitConstraint"}], "external": true};
+window.dfnpanelData['d2293240'] = {"dfnID": "d2293240", "url": "assemblies.html#bppropellantlineunit", "dfnText": "bppropellantlineunit", "refSections": [{"refs": [{"id": "ref-for-bppropellantlineunit"}], "title": "4.7. BPPropellantLineUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['92564d1b'] = {"dfnID": "92564d1b", "url": "assemblies.html#filldrainvalveunit", "dfnText": "filldrainvalveunit", "refSections": [{"refs": [{"id": "ref-for-filldrainvalveunit"}], "title": "4.8. FillDrainValveUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['41846b48'] = {"dfnID": "41846b48", "url": "assemblies.html#pmpropellantlineunit", "dfnText": "pmpropellantlineunit", "refSections": [{"refs": [{"id": "ref-for-pmpropellantlineunit"}], "title": "4.9. PMPropellantLineUnitMassLimitConstraint"}], "external": true};
+window.dfnpanelData['8d63d223'] = {"dfnID": "8d63d223", "url": "assemblies.html#pressuranttank", "dfnText": "pressuranttank", "refSections": [{"refs": [{"id": "ref-for-pressuranttank"}], "title": "4.10. PressurantTankMassLimitConstraint"}], "external": true};
+window.dfnpanelData['068b88ca'] = {"dfnID": "068b88ca", "url": "assemblies.html#primarythruster", "dfnText": "primarythruster", "refSections": [{"refs": [{"id": "ref-for-primarythruster"}], "title": "4.11. PrimaryThrusterMassLimitConstraint"}], "external": true};
+window.dfnpanelData['24098a4d'] = {"dfnID": "24098a4d", "url": "assemblies.html#propellanthandlingsection", "dfnText": "propellanthandlingsection", "refSections": [{"refs": [{"id": "ref-for-propellanthandlingsection"}], "title": "4.12. PropellantHandlingSectionMassLimitConstraint"}], "external": true};
+window.dfnpanelData['9ee105cf'] = {"dfnID": "9ee105cf", "url": "assemblies.html#propellanttank", "dfnText": "propellanttank", "refSections": [{"refs": [{"id": "ref-for-propellanttank"}], "title": "4.13. PropellantTankMassLimitConstraint"}], "external": true};
+window.dfnpanelData['09a5c858'] = {"dfnID": "09a5c858", "url": "assemblies.html#propulsionmodule", "dfnText": "propulsionmodule", "refSections": [{"refs": [{"id": "ref-for-propulsionmodule"}], "title": "4.14. PropulsionModuleMassLimitConstraint"}], "external": true};
+window.dfnpanelData['11bbccc8'] = {"dfnID": "11bbccc8", "url": "assemblies.html#propulsionsystemcontrolunit", "dfnText": "propulsionsystemcontrolunit", "refSections": [{"refs": [{"id": "ref-for-propulsionsystemcontrolunit"}], "title": "4.15. PropulsionSystemControlUnitMassLimitConstraint"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

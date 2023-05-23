@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/firesat" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">FireSat Project</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2234,152 +2240,105 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#wp06alt">wp06alt</a><span>, in § 4.3</span>
    <li><a href="#wp07-incomplete">wp07-incomplete</a><span>, in § 4.4</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-ba54fb38025d6aaef294e26df0dff5fc" class="dfn-panel" data-for="ba54fb38025d6aaef294e26df0dff5fc" id="infopanel-for-ba54fb38025d6aaef294e26df0dff5fc">
-   <span id="infopaneltitle-for-ba54fb38025d6aaef294e26df0dff5fc" style="display:none">Info about the 'authorizes_1' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/project.html#authorizes_1">../../../../../../../imce.jpl.nasa.gov/foundation/project.html#authorizes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-authorizes_1">4.2. WP06</a> <a href="#ref-for-authorizes_1①">(2)</a> <a href="#ref-for-authorizes_1②">(3)</a> <a href="#ref-for-authorizes_1③">(4)</a> <a href="#ref-for-authorizes_1④">(5)</a> <a href="#ref-for-authorizes_1⑤">(6)</a> <a href="#ref-for-authorizes_1⑥">(7)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fe79e005d237c1a0bdc61b7ec3f2ebed" class="dfn-panel" data-for="fe79e005d237c1a0bdc61b7ec3f2ebed" id="infopanel-for-fe79e005d237c1a0bdc61b7ec3f2ebed">
-   <span id="infopaneltitle-for-fe79e005d237c1a0bdc61b7ec3f2ebed" style="display:none">Info about the 'isresponsibilityof' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof">../../../../../../../imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isresponsibilityof">4.1. WP05</a>
-    <li><a href="#ref-for-isresponsibilityof①">4.2. WP06</a>
-    <li><a href="#ref-for-isresponsibilityof②">4.3. WP06alt</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a5e5dc4aad500daf486d8548128e3fcf" class="dfn-panel" data-for="a5e5dc4aad500daf486d8548128e3fcf" id="infopanel-for-a5e5dc4aad500daf486d8548128e3fcf">
-   <span id="infopaneltitle-for-a5e5dc4aad500daf486d8548128e3fcf" style="display:none">Info about the 'supplies_1' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/project.html#supplies_1">../../../../../../../imce.jpl.nasa.gov/foundation/project.html#supplies_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supplies_1">4.1. WP05</a>
-    <li><a href="#ref-for-supplies_1①">4.2. WP06</a>
-    <li><a href="#ref-for-supplies_1②">4.3. WP06alt</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-36d47e27df24cf13849822447400eed1" class="dfn-panel" data-for="36d47e27df24cf13849822447400eed1" id="infopanel-for-36d47e27df24cf13849822447400eed1">
-   <span id="infopaneltitle-for-36d47e27df24cf13849822447400eed1" style="display:none">Info about the 'workpackage' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/project.html#workpackage">../../../../../../../imce.jpl.nasa.gov/foundation/project.html#workpackage</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-workpackage">4.1. WP05</a>
-    <li><a href="#ref-for-workpackage①">4.2. WP06</a>
-    <li><a href="#ref-for-workpackage②">4.3. WP06alt</a>
-    <li><a href="#ref-for-workpackage③">4.4. WP07-incomplete</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-75815bc60bc3e238075d8cfa3c6b62e1" class="dfn-panel" data-for="75815bc60bc3e238075d8cfa3c6b62e1" id="infopanel-for-75815bc60bc3e238075d8cfa3c6b62e1">
-   <span id="infopaneltitle-for-75815bc60bc3e238075d8cfa3c6b62e1" style="display:none">Info about the 'jpl' external reference.</span><a href="../../../../organizations/jpl.html#jpl">../../../../organizations/jpl.html#jpl</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-jpl">4.1. WP05</a>
-    <li><a href="#ref-for-jpl①">4.2. WP06</a>
-    <li><a href="#ref-for-jpl②">4.3. WP06alt</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-efbedb663ea1041b5534dd9e34ac00c3" class="dfn-panel" data-for="efbedb663ea1041b5534dd9e34ac00c3" id="infopanel-for-efbedb663ea1041b5534dd9e34ac00c3">
-   <span id="infopaneltitle-for-efbedb663ea1041b5534dd9e34ac00c3" style="display:none">Info about the 'payload' external reference.</span><a href="systems/pld/pld.html#payload">systems/pld/pld.html#payload</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-payload">4.1. WP05</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b19571b457d18eebb771725bfe8328dc" class="dfn-panel" data-for="b19571b457d18eebb771725bfe8328dc" id="infopanel-for-b19571b457d18eebb771725bfe8328dc">
-   <span id="infopaneltitle-for-b19571b457d18eebb771725bfe8328dc" style="display:none">Info about the 'spacecraft' external reference.</span><a href="systems/spc/spc.html#spacecraft">systems/spc/spc.html#spacecraft</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spacecraft">4.2. WP06</a>
-    <li><a href="#ref-for-spacecraft①">4.3. WP06alt</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-202310684a5f7b7cab60008197d67014" class="dfn-panel" data-for="202310684a5f7b7cab60008197d67014" id="infopanel-for-202310684a5f7b7cab60008197d67014">
-   <span id="infopaneltitle-for-202310684a5f7b7cab60008197d67014" style="display:none">Info about the 'wp06.04' external reference.</span><a href="workpackages/06/wp06.html#wp0604">workpackages/06/wp06.html#wp0604</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0604">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-92b658cfd16aa9915653563dcef820f4" class="dfn-panel" data-for="92b658cfd16aa9915653563dcef820f4" id="infopanel-for-92b658cfd16aa9915653563dcef820f4">
-   <span id="infopaneltitle-for-92b658cfd16aa9915653563dcef820f4" style="display:none">Info about the 'wp06.05' external reference.</span><a href="workpackages/06/wp06.html#wp0605">workpackages/06/wp06.html#wp0605</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0605">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8e8cd144cf63920aa87a3609676e93b3" class="dfn-panel" data-for="8e8cd144cf63920aa87a3609676e93b3" id="infopanel-for-8e8cd144cf63920aa87a3609676e93b3">
-   <span id="infopaneltitle-for-8e8cd144cf63920aa87a3609676e93b3" style="display:none">Info about the 'wp06.06' external reference.</span><a href="workpackages/06/wp06.html#wp0606">workpackages/06/wp06.html#wp0606</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0606">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-433a32682ba336ab6ccc9400eece815c" class="dfn-panel" data-for="433a32682ba336ab6ccc9400eece815c" id="infopanel-for-433a32682ba336ab6ccc9400eece815c">
-   <span id="infopaneltitle-for-433a32682ba336ab6ccc9400eece815c" style="display:none">Info about the 'wp06.07' external reference.</span><a href="workpackages/06/wp06.html#wp0607">workpackages/06/wp06.html#wp0607</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0607">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-38d109321f509fe6c61af777c999efc6" class="dfn-panel" data-for="38d109321f509fe6c61af777c999efc6" id="infopanel-for-38d109321f509fe6c61af777c999efc6">
-   <span id="infopaneltitle-for-38d109321f509fe6c61af777c999efc6" style="display:none">Info about the 'wp06.08' external reference.</span><a href="workpackages/06/wp06.html#wp0608">workpackages/06/wp06.html#wp0608</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0608">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c5d92fc37a8dedc7890a12db7d8bba0d" class="dfn-panel" data-for="c5d92fc37a8dedc7890a12db7d8bba0d" id="infopanel-for-c5d92fc37a8dedc7890a12db7d8bba0d">
-   <span id="infopaneltitle-for-c5d92fc37a8dedc7890a12db7d8bba0d" style="display:none">Info about the 'wp06.09' external reference.</span><a href="workpackages/06/wp06.html#wp0609">workpackages/06/wp06.html#wp0609</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0609">4.2. WP06</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ada0c00a39fb0f57d734e1fd3a9b97bf" class="dfn-panel" data-for="ada0c00a39fb0f57d734e1fd3a9b97bf" id="infopanel-for-ada0c00a39fb0f57d734e1fd3a9b97bf">
-   <span id="infopaneltitle-for-ada0c00a39fb0f57d734e1fd3a9b97bf" style="display:none">Info about the 'wp06.10' external reference.</span><a href="workpackages/06/wp06.html#wp0610">workpackages/06/wp06.html#wp0610</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-wp0610">4.2. WP06</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/PROJECT]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="ba54fb38025d6aaef294e26df0dff5fc">authorizes_1</span>
-     <li><span class="dfn-paneled" id="fe79e005d237c1a0bdc61b7ec3f2ebed">isresponsibilityof</span>
-     <li><span class="dfn-paneled" id="a5e5dc4aad500daf486d8548128e3fcf">supplies_1</span>
-     <li><span class="dfn-paneled" id="36d47e27df24cf13849822447400eed1">workpackage</span>
+     <li><span class="dfn-paneled" id="b38be98d">authorizes_1</span>
+     <li><span class="dfn-paneled" id="0b88120a">isresponsibilityof</span>
+     <li><span class="dfn-paneled" id="e1ab3a65">supplies_1</span>
+     <li><span class="dfn-paneled" id="30af85e8">workpackage</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/ORGANIZATIONS/JPL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="75815bc60bc3e238075d8cfa3c6b62e1">jpl</span>
+     <li><span class="dfn-paneled" id="271715f1">jpl</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/PLD/PLD]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="efbedb663ea1041b5534dd9e34ac00c3">payload</span>
+     <li><span class="dfn-paneled" id="4fcc4829">payload</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/SPC]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="b19571b457d18eebb771725bfe8328dc">spacecraft</span>
+     <li><span class="dfn-paneled" id="6c4d5274">spacecraft</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/WP06]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="202310684a5f7b7cab60008197d67014">wp06.04</span>
-     <li><span class="dfn-paneled" id="92b658cfd16aa9915653563dcef820f4">wp06.05</span>
-     <li><span class="dfn-paneled" id="8e8cd144cf63920aa87a3609676e93b3">wp06.06</span>
-     <li><span class="dfn-paneled" id="433a32682ba336ab6ccc9400eece815c">wp06.07</span>
-     <li><span class="dfn-paneled" id="38d109321f509fe6c61af777c999efc6">wp06.08</span>
-     <li><span class="dfn-paneled" id="c5d92fc37a8dedc7890a12db7d8bba0d">wp06.09</span>
-     <li><span class="dfn-paneled" id="ada0c00a39fb0f57d734e1fd3a9b97bf">wp06.10</span>
+     <li><span class="dfn-paneled" id="2bf3dd90">wp06.04</span>
+     <li><span class="dfn-paneled" id="02875d1d">wp06.05</span>
+     <li><span class="dfn-paneled" id="cbe4a151">wp06.06</span>
+     <li><span class="dfn-paneled" id="0255f13a">wp06.07</span>
+     <li><span class="dfn-paneled" id="609af43a">wp06.08</span>
+     <li><span class="dfn-paneled" id="b782ffe1">wp06.09</span>
+     <li><span class="dfn-paneled" id="dc1eef6c">wp06.10</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2429,49 +2388,257 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['b38be98d'] = {"dfnID": "b38be98d", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/project.html#authorizes_1", "dfnText": "authorizes_1", "refSections": [{"refs": [{"id": "ref-for-authorizes_1"}, {"id": "ref-for-authorizes_1\u2460"}, {"id": "ref-for-authorizes_1\u2461"}, {"id": "ref-for-authorizes_1\u2462"}, {"id": "ref-for-authorizes_1\u2463"}, {"id": "ref-for-authorizes_1\u2464"}, {"id": "ref-for-authorizes_1\u2465"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['0b88120a'] = {"dfnID": "0b88120a", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/project.html#isresponsibilityof", "dfnText": "isresponsibilityof", "refSections": [{"refs": [{"id": "ref-for-isresponsibilityof"}], "title": "4.1. WP05"}, {"refs": [{"id": "ref-for-isresponsibilityof\u2460"}], "title": "4.2. WP06"}, {"refs": [{"id": "ref-for-isresponsibilityof\u2461"}], "title": "4.3. WP06alt"}], "external": true};
+window.dfnpanelData['e1ab3a65'] = {"dfnID": "e1ab3a65", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/project.html#supplies_1", "dfnText": "supplies_1", "refSections": [{"refs": [{"id": "ref-for-supplies_1"}], "title": "4.1. WP05"}, {"refs": [{"id": "ref-for-supplies_1\u2460"}], "title": "4.2. WP06"}, {"refs": [{"id": "ref-for-supplies_1\u2461"}], "title": "4.3. WP06alt"}], "external": true};
+window.dfnpanelData['30af85e8'] = {"dfnID": "30af85e8", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/project.html#workpackage", "dfnText": "workpackage", "refSections": [{"refs": [{"id": "ref-for-workpackage"}], "title": "4.1. WP05"}, {"refs": [{"id": "ref-for-workpackage\u2460"}], "title": "4.2. WP06"}, {"refs": [{"id": "ref-for-workpackage\u2461"}], "title": "4.3. WP06alt"}, {"refs": [{"id": "ref-for-workpackage\u2462"}], "title": "4.4. WP07-incomplete"}], "external": true};
+window.dfnpanelData['271715f1'] = {"dfnID": "271715f1", "url": "../../../../organizations/jpl.html#jpl", "dfnText": "jpl", "refSections": [{"refs": [{"id": "ref-for-jpl"}], "title": "4.1. WP05"}, {"refs": [{"id": "ref-for-jpl\u2460"}], "title": "4.2. WP06"}, {"refs": [{"id": "ref-for-jpl\u2461"}], "title": "4.3. WP06alt"}], "external": true};
+window.dfnpanelData['4fcc4829'] = {"dfnID": "4fcc4829", "url": "systems/pld/pld.html#payload", "dfnText": "payload", "refSections": [{"refs": [{"id": "ref-for-payload"}], "title": "4.1. WP05"}], "external": true};
+window.dfnpanelData['6c4d5274'] = {"dfnID": "6c4d5274", "url": "systems/spc/spc.html#spacecraft", "dfnText": "spacecraft", "refSections": [{"refs": [{"id": "ref-for-spacecraft"}], "title": "4.2. WP06"}, {"refs": [{"id": "ref-for-spacecraft\u2460"}], "title": "4.3. WP06alt"}], "external": true};
+window.dfnpanelData['2bf3dd90'] = {"dfnID": "2bf3dd90", "url": "workpackages/06/wp06.html#wp0604", "dfnText": "wp06.04", "refSections": [{"refs": [{"id": "ref-for-wp0604"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['02875d1d'] = {"dfnID": "02875d1d", "url": "workpackages/06/wp06.html#wp0605", "dfnText": "wp06.05", "refSections": [{"refs": [{"id": "ref-for-wp0605"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['cbe4a151'] = {"dfnID": "cbe4a151", "url": "workpackages/06/wp06.html#wp0606", "dfnText": "wp06.06", "refSections": [{"refs": [{"id": "ref-for-wp0606"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['0255f13a'] = {"dfnID": "0255f13a", "url": "workpackages/06/wp06.html#wp0607", "dfnText": "wp06.07", "refSections": [{"refs": [{"id": "ref-for-wp0607"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['609af43a'] = {"dfnID": "609af43a", "url": "workpackages/06/wp06.html#wp0608", "dfnText": "wp06.08", "refSections": [{"refs": [{"id": "ref-for-wp0608"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['b782ffe1'] = {"dfnID": "b782ffe1", "url": "workpackages/06/wp06.html#wp0609", "dfnText": "wp06.09", "refSections": [{"refs": [{"id": "ref-for-wp0609"}], "title": "4.2. WP06"}], "external": true};
+window.dfnpanelData['dc1eef6c'] = {"dfnID": "dc1eef6c", "url": "workpackages/06/wp06.html#wp0610", "dfnText": "wp06.10", "refSections": [{"refs": [{"id": "ref-for-wp0610"}], "title": "4.2. WP06"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

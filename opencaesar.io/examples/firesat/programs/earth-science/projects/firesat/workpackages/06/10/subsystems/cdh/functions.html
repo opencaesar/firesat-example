@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/functions" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Command and Data Handling Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2765,239 +2771,110 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#release_sc_from_lvbyseparationsystem">release_sc_from_lvbyseparationsystem</a><span>, in § 4.31</span>
    <li><a href="#storedatabetweentwotelemetriesbyprimaryflightcomputerunit">storedatabetweentwotelemetriesbyprimaryflightcomputerunit</a><span>, in § 4.32</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-868096d7d082aae5d7dba71bd461b8da" class="dfn-panel" data-for="868096d7d082aae5d7dba71bd461b8da" id="infopanel-for-868096d7d082aae5d7dba71bd461b8da">
-   <span id="infopaneltitle-for-868096d7d082aae5d7dba71bd461b8da" style="display:none">Info about the 'function' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function">4.1. ApplyCommandsByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-function①">4.2. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-function②">4.3. GenerateTelemetryByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-function③">4.4. InsureMechanicalIntegrityByBasePlate</a>
-    <li><a href="#ref-for-function④">4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-function⑤">4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-function⑥">4.7. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
-    <li><a href="#ref-for-function⑦">4.8. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
-    <li><a href="#ref-for-function⑧">4.9. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
-    <li><a href="#ref-for-function⑨">4.10. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
-    <li><a href="#ref-for-function①⓪">4.11. InsureMechanicalIntegrityBySidePanel1</a>
-    <li><a href="#ref-for-function①①">4.12. InsureMechanicalIntegrityBySidePanel2</a>
-    <li><a href="#ref-for-function①②">4.13. InsureMechanicalIntegrityBySidePanel3</a>
-    <li><a href="#ref-for-function①③">4.14. InsureMechanicalIntegrityBySidePanel4</a>
-    <li><a href="#ref-for-function①④">4.15. InsureMechanicalIntegrityBySidePanel5</a>
-    <li><a href="#ref-for-function①⑤">4.16. InsureMechanicalIntegrityBySidePanel6</a>
-    <li><a href="#ref-for-function①⑥">4.17. InsureMechanicalIntegrityByStructurePost1</a>
-    <li><a href="#ref-for-function①⑦">4.18. InsureMechanicalIntegrityByStructurePost2</a>
-    <li><a href="#ref-for-function①⑧">4.19. InsureMechanicalIntegrityByStructurePost3</a>
-    <li><a href="#ref-for-function①⑨">4.20. InsureMechanicalIntegrityByStructurePost4</a>
-    <li><a href="#ref-for-function②⓪">4.21. InsureMechanicalIntegrityByStructurePost5</a>
-    <li><a href="#ref-for-function②①">4.22. InsureMechanicalIntegrityByStructurePost6</a>
-    <li><a href="#ref-for-function②②">4.23. InsureMechanicalIntegrityByTopPanel</a>
-    <li><a href="#ref-for-function②③">4.24. Launch_SCByLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-function②④">4.25. ProtectAgainstRadiationsBySidePanel1</a>
-    <li><a href="#ref-for-function②⑤">4.26. ProtectAgainstRadiationsBySidePanel2</a>
-    <li><a href="#ref-for-function②⑥">4.27. ProtectAgainstRadiationsBySidePanel3</a>
-    <li><a href="#ref-for-function②⑦">4.28. ProtectAgainstRadiationsBySidePanel4</a>
-    <li><a href="#ref-for-function②⑧">4.29. ProtectAgainstRadiationsBySidePanel5</a>
-    <li><a href="#ref-for-function②⑨">4.30. ProtectAgainstRadiationsBySidePanel6</a>
-    <li><a href="#ref-for-function③⓪">4.31. Release_SC_From_LVBySeparationSystem</a>
-    <li><a href="#ref-for-function③①">4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" class="dfn-panel" data-for="7ee331c96b0af3798fedbaa0edddb821" id="infopanel-for-7ee331c96b0af3798fedbaa0edddb821">
-   <span id="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" style="display:none">Info about the 'isspecifiedby' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isspecifiedby">5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-00456bdd7502212fcffe03f76177c3bc" class="dfn-panel" data-for="00456bdd7502212fcffe03f76177c3bc" id="infopanel-for-00456bdd7502212fcffe03f76177c3bc">
-   <span id="infopaneltitle-for-00456bdd7502212fcffe03f76177c3bc" style="display:none">Info about the 'performs' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs">5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-392712b19bab39bbf5dc2e13865c7314" class="dfn-panel" data-for="392712b19bab39bbf5dc2e13865c7314" id="infopanel-for-392712b19bab39bbf5dc2e13865c7314">
-   <span id="infopaneltitle-for-392712b19bab39bbf5dc2e13865c7314" style="display:none">Info about the 'realizes_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-realizes_1">4.1. ApplyCommandsByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-realizes_1①">4.2. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-realizes_1②">4.3. GenerateTelemetryByPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-realizes_1③">4.4. InsureMechanicalIntegrityByBasePlate</a>
-    <li><a href="#ref-for-realizes_1④">4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-realizes_1⑤">4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-realizes_1⑥">4.7. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
-    <li><a href="#ref-for-realizes_1⑦">4.8. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
-    <li><a href="#ref-for-realizes_1⑧">4.9. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
-    <li><a href="#ref-for-realizes_1⑨">4.10. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
-    <li><a href="#ref-for-realizes_1①⓪">4.11. InsureMechanicalIntegrityBySidePanel1</a>
-    <li><a href="#ref-for-realizes_1①①">4.12. InsureMechanicalIntegrityBySidePanel2</a>
-    <li><a href="#ref-for-realizes_1①②">4.13. InsureMechanicalIntegrityBySidePanel3</a>
-    <li><a href="#ref-for-realizes_1①③">4.14. InsureMechanicalIntegrityBySidePanel4</a>
-    <li><a href="#ref-for-realizes_1①④">4.15. InsureMechanicalIntegrityBySidePanel5</a>
-    <li><a href="#ref-for-realizes_1①⑤">4.16. InsureMechanicalIntegrityBySidePanel6</a>
-    <li><a href="#ref-for-realizes_1①⑥">4.17. InsureMechanicalIntegrityByStructurePost1</a>
-    <li><a href="#ref-for-realizes_1①⑦">4.18. InsureMechanicalIntegrityByStructurePost2</a>
-    <li><a href="#ref-for-realizes_1①⑧">4.19. InsureMechanicalIntegrityByStructurePost3</a>
-    <li><a href="#ref-for-realizes_1①⑨">4.20. InsureMechanicalIntegrityByStructurePost4</a>
-    <li><a href="#ref-for-realizes_1②⓪">4.21. InsureMechanicalIntegrityByStructurePost5</a>
-    <li><a href="#ref-for-realizes_1②①">4.22. InsureMechanicalIntegrityByStructurePost6</a>
-    <li><a href="#ref-for-realizes_1②②">4.23. InsureMechanicalIntegrityByTopPanel</a>
-    <li><a href="#ref-for-realizes_1②③">4.24. Launch_SCByLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-realizes_1②④">4.25. ProtectAgainstRadiationsBySidePanel1</a>
-    <li><a href="#ref-for-realizes_1②⑤">4.26. ProtectAgainstRadiationsBySidePanel2</a>
-    <li><a href="#ref-for-realizes_1②⑥">4.27. ProtectAgainstRadiationsBySidePanel3</a>
-    <li><a href="#ref-for-realizes_1②⑦">4.28. ProtectAgainstRadiationsBySidePanel4</a>
-    <li><a href="#ref-for-realizes_1②⑧">4.29. ProtectAgainstRadiationsBySidePanel5</a>
-    <li><a href="#ref-for-realizes_1②⑨">4.30. ProtectAgainstRadiationsBySidePanel6</a>
-    <li><a href="#ref-for-realizes_1③⓪">4.31. Release_SC_From_LVBySeparationSystem</a>
-    <li><a href="#ref-for-realizes_1③①">4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-859d105930beda16a40f7fca2186ff93" class="dfn-panel" data-for="859d105930beda16a40f7fca2186ff93" id="infopanel-for-859d105930beda16a40f7fca2186ff93">
-   <span id="infopaneltitle-for-859d105930beda16a40f7fca2186ff93" style="display:none">Info about the 'applycommands' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#applycommands">../../../../../../../missions/firesat/functions.html#applycommands</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-applycommands">4.1. ApplyCommandsByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-273333e43e659cc3f398adf35e77ee5c" class="dfn-panel" data-for="273333e43e659cc3f398adf35e77ee5c" id="infopanel-for-273333e43e659cc3f398adf35e77ee5c">
-   <span id="infopaneltitle-for-273333e43e659cc3f398adf35e77ee5c" style="display:none">Info about the 'detectnewwildfires' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#detectnewwildfires">../../../../../../../missions/firesat/functions.html#detectnewwildfires</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-detectnewwildfires">4.2. DetectNewWildfiresByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-25814c03ad9a9535ccd61cee536cba00" class="dfn-panel" data-for="25814c03ad9a9535ccd61cee536cba00" id="infopanel-for-25814c03ad9a9535ccd61cee536cba00">
-   <span id="infopaneltitle-for-25814c03ad9a9535ccd61cee536cba00" style="display:none">Info about the 'generatetelemetry' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#generatetelemetry">../../../../../../../missions/firesat/functions.html#generatetelemetry</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generatetelemetry">4.3. GenerateTelemetryByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2a32471db2fdca005d842af5139cb242" class="dfn-panel" data-for="2a32471db2fdca005d842af5139cb242" id="infopanel-for-2a32471db2fdca005d842af5139cb242">
-   <span id="infopaneltitle-for-2a32471db2fdca005d842af5139cb242" style="display:none">Info about the 'insuremechanicalintegrity' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity">../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-insuremechanicalintegrity">4.4. InsureMechanicalIntegrityByBasePlate</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①">4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-insuremechanicalintegrity②">4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-insuremechanicalintegrity③">4.7. InsureMechanicalIntegrityByPropulsionStructurePost1</a>
-    <li><a href="#ref-for-insuremechanicalintegrity④">4.8. InsureMechanicalIntegrityByPropulsionStructurePost2</a>
-    <li><a href="#ref-for-insuremechanicalintegrity⑤">4.9. InsureMechanicalIntegrityByPropulsionStructurePost3</a>
-    <li><a href="#ref-for-insuremechanicalintegrity⑥">4.10. InsureMechanicalIntegrityByPropulsionStructurePost4</a>
-    <li><a href="#ref-for-insuremechanicalintegrity⑦">4.11. InsureMechanicalIntegrityBySidePanel1</a>
-    <li><a href="#ref-for-insuremechanicalintegrity⑧">4.12. InsureMechanicalIntegrityBySidePanel2</a>
-    <li><a href="#ref-for-insuremechanicalintegrity⑨">4.13. InsureMechanicalIntegrityBySidePanel3</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⓪">4.14. InsureMechanicalIntegrityBySidePanel4</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①①">4.15. InsureMechanicalIntegrityBySidePanel5</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①②">4.16. InsureMechanicalIntegrityBySidePanel6</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①③">4.17. InsureMechanicalIntegrityByStructurePost1</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①④">4.18. InsureMechanicalIntegrityByStructurePost2</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⑤">4.19. InsureMechanicalIntegrityByStructurePost3</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⑥">4.20. InsureMechanicalIntegrityByStructurePost4</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⑦">4.21. InsureMechanicalIntegrityByStructurePost5</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⑧">4.22. InsureMechanicalIntegrityByStructurePost6</a>
-    <li><a href="#ref-for-insuremechanicalintegrity①⑨">4.23. InsureMechanicalIntegrityByTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a3b7fb4f332712d7a124a321d0344541" class="dfn-panel" data-for="a3b7fb4f332712d7a124a321d0344541" id="infopanel-for-a3b7fb4f332712d7a124a321d0344541">
-   <span id="infopaneltitle-for-a3b7fb4f332712d7a124a321d0344541" style="display:none">Info about the 'launch_sc' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#launch_sc">../../../../../../../missions/firesat/functions.html#launch_sc</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-launch_sc">4.24. Launch_SCByLaunchVehicleAdapter</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3cb8dfe213191508e5af198a033fd913" class="dfn-panel" data-for="3cb8dfe213191508e5af198a033fd913" id="infopanel-for-3cb8dfe213191508e5af198a033fd913">
-   <span id="infopaneltitle-for-3cb8dfe213191508e5af198a033fd913" style="display:none">Info about the 'protectagainstradiations' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#protectagainstradiations">../../../../../../../missions/firesat/functions.html#protectagainstradiations</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-protectagainstradiations">4.25. ProtectAgainstRadiationsBySidePanel1</a>
-    <li><a href="#ref-for-protectagainstradiations①">4.26. ProtectAgainstRadiationsBySidePanel2</a>
-    <li><a href="#ref-for-protectagainstradiations②">4.27. ProtectAgainstRadiationsBySidePanel3</a>
-    <li><a href="#ref-for-protectagainstradiations③">4.28. ProtectAgainstRadiationsBySidePanel4</a>
-    <li><a href="#ref-for-protectagainstradiations④">4.29. ProtectAgainstRadiationsBySidePanel5</a>
-    <li><a href="#ref-for-protectagainstradiations⑤">4.30. ProtectAgainstRadiationsBySidePanel6</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c599593ee20e9457901c819796628537" class="dfn-panel" data-for="c599593ee20e9457901c819796628537" id="infopanel-for-c599593ee20e9457901c819796628537">
-   <span id="infopaneltitle-for-c599593ee20e9457901c819796628537" style="display:none">Info about the 'release_sc_from_lv' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#release_sc_from_lv">../../../../../../../missions/firesat/functions.html#release_sc_from_lv</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-release_sc_from_lv">4.31. Release_SC_From_LVBySeparationSystem</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9411675388565d7b51abb6608bf367f8" class="dfn-panel" data-for="9411675388565d7b51abb6608bf367f8" id="infopanel-for-9411675388565d7b51abb6608bf367f8">
-   <span id="infopaneltitle-for-9411675388565d7b51abb6608bf367f8" style="display:none">Info about the 'storedatabetweentwotelemetries' external reference.</span><a href="../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries">../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-storedatabetweentwotelemetries">4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8cadcbf7f7df104ca142ee1a23d055a6" class="dfn-panel" data-for="8cadcbf7f7df104ca142ee1a23d055a6" id="infopanel-for-8cadcbf7f7df104ca142ee1a23d055a6">
-   <span id="infopaneltitle-for-8cadcbf7f7df104ca142ee1a23d055a6" style="display:none">Info about the 'incidentprocessing' external reference.</span><a href="../../../../../systems/spc/requirements/system.html#incidentprocessing">../../../../../systems/spc/requirements/system.html#incidentprocessing</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-incidentprocessing">5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c10edf2126edc3f094230c6e669d85ae" class="dfn-panel" data-for="c10edf2126edc3f094230c6e669d85ae" id="infopanel-for-c10edf2126edc3f094230c6e669d85ae">
-   <span id="infopaneltitle-for-c10edf2126edc3f094230c6e669d85ae" style="display:none">Info about the 'primaryflightcomputerunit' external reference.</span><a href="assemblies.html#primaryflightcomputerunit">assemblies.html#primaryflightcomputerunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-primaryflightcomputerunit">5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6862b49505aeecaa74e110d29387dae3" class="dfn-panel" data-for="6862b49505aeecaa74e110d29387dae3" id="infopanel-for-6862b49505aeecaa74e110d29387dae3">
-   <span id="infopaneltitle-for-6862b49505aeecaa74e110d29387dae3" style="display:none">Info about the 'detectnewwildfiresbyprimaryflightcomputerunit' external reference.</span><a href="functions.html#detectnewwildfiresbyprimaryflightcomputerunit">functions.html#detectnewwildfiresbyprimaryflightcomputerunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-detectnewwildfiresbyprimaryflightcomputerunit">5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="868096d7d082aae5d7dba71bd461b8da">function</span>
-     <li><span class="dfn-paneled" id="7ee331c96b0af3798fedbaa0edddb821">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="00456bdd7502212fcffe03f76177c3bc">performs</span>
+     <li><span class="dfn-paneled" id="b02c251e">function</span>
+     <li><span class="dfn-paneled" id="983fe943">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="c93ee289">performs</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/PROJECT]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="392712b19bab39bbf5dc2e13865c7314">realizes_1</span>
+     <li><span class="dfn-paneled" id="fc5ea917">realizes_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/MISSIONS/FIRESAT/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="859d105930beda16a40f7fca2186ff93">applycommands</span>
-     <li><span class="dfn-paneled" id="273333e43e659cc3f398adf35e77ee5c">detectnewwildfires</span>
-     <li><span class="dfn-paneled" id="25814c03ad9a9535ccd61cee536cba00">generatetelemetry</span>
-     <li><span class="dfn-paneled" id="2a32471db2fdca005d842af5139cb242">insuremechanicalintegrity</span>
-     <li><span class="dfn-paneled" id="a3b7fb4f332712d7a124a321d0344541">launch_sc</span>
-     <li><span class="dfn-paneled" id="3cb8dfe213191508e5af198a033fd913">protectagainstradiations</span>
-     <li><span class="dfn-paneled" id="c599593ee20e9457901c819796628537">release_sc_from_lv</span>
-     <li><span class="dfn-paneled" id="9411675388565d7b51abb6608bf367f8">storedatabetweentwotelemetries</span>
+     <li><span class="dfn-paneled" id="abbbe28e">applycommands</span>
+     <li><span class="dfn-paneled" id="624a0b70">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="d62bd713">generatetelemetry</span>
+     <li><span class="dfn-paneled" id="74b6e190">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="3394f99a">launch_sc</span>
+     <li><span class="dfn-paneled" id="44e517df">protectagainstradiations</span>
+     <li><span class="dfn-paneled" id="a77afc9b">release_sc_from_lv</span>
+     <li><span class="dfn-paneled" id="11df7c02">storedatabetweentwotelemetries</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/SYSTEM]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="8cadcbf7f7df104ca142ee1a23d055a6">incidentprocessing</span>
+     <li><span class="dfn-paneled" id="c37c036d">incidentprocessing</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/10/SUBSYSTEMS/CDH/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="c10edf2126edc3f094230c6e669d85ae">primaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="ef052212">primaryflightcomputerunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/10/SUBSYSTEMS/CDH/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="6862b49505aeecaa74e110d29387dae3">detectnewwildfiresbyprimaryflightcomputerunit</span>
+     <li><span class="dfn-paneled" id="5e253add">detectnewwildfiresbyprimaryflightcomputerunit</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -3047,49 +2924,258 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['b02c251e'] = {"dfnID": "b02c251e", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function", "dfnText": "function", "refSections": [{"refs": [{"id": "ref-for-function"}], "title": "4.1. ApplyCommandsByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-function\u2460"}], "title": "4.2. DetectNewWildfiresByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-function\u2461"}], "title": "4.3. GenerateTelemetryByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-function\u2462"}], "title": "4.4. InsureMechanicalIntegrityByBasePlate"}, {"refs": [{"id": "ref-for-function\u2463"}], "title": "4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-function\u2464"}], "title": "4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-function\u2465"}], "title": "4.7. InsureMechanicalIntegrityByPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-function\u2466"}], "title": "4.8. InsureMechanicalIntegrityByPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-function\u2467"}], "title": "4.9. InsureMechanicalIntegrityByPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-function\u2468"}], "title": "4.10. InsureMechanicalIntegrityByPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-function\u2460\u24ea"}], "title": "4.11. InsureMechanicalIntegrityBySidePanel1"}, {"refs": [{"id": "ref-for-function\u2460\u2460"}], "title": "4.12. InsureMechanicalIntegrityBySidePanel2"}, {"refs": [{"id": "ref-for-function\u2460\u2461"}], "title": "4.13. InsureMechanicalIntegrityBySidePanel3"}, {"refs": [{"id": "ref-for-function\u2460\u2462"}], "title": "4.14. InsureMechanicalIntegrityBySidePanel4"}, {"refs": [{"id": "ref-for-function\u2460\u2463"}], "title": "4.15. InsureMechanicalIntegrityBySidePanel5"}, {"refs": [{"id": "ref-for-function\u2460\u2464"}], "title": "4.16. InsureMechanicalIntegrityBySidePanel6"}, {"refs": [{"id": "ref-for-function\u2460\u2465"}], "title": "4.17. InsureMechanicalIntegrityByStructurePost1"}, {"refs": [{"id": "ref-for-function\u2460\u2466"}], "title": "4.18. InsureMechanicalIntegrityByStructurePost2"}, {"refs": [{"id": "ref-for-function\u2460\u2467"}], "title": "4.19. InsureMechanicalIntegrityByStructurePost3"}, {"refs": [{"id": "ref-for-function\u2460\u2468"}], "title": "4.20. InsureMechanicalIntegrityByStructurePost4"}, {"refs": [{"id": "ref-for-function\u2461\u24ea"}], "title": "4.21. InsureMechanicalIntegrityByStructurePost5"}, {"refs": [{"id": "ref-for-function\u2461\u2460"}], "title": "4.22. InsureMechanicalIntegrityByStructurePost6"}, {"refs": [{"id": "ref-for-function\u2461\u2461"}], "title": "4.23. InsureMechanicalIntegrityByTopPanel"}, {"refs": [{"id": "ref-for-function\u2461\u2462"}], "title": "4.24. Launch_SCByLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-function\u2461\u2463"}], "title": "4.25. ProtectAgainstRadiationsBySidePanel1"}, {"refs": [{"id": "ref-for-function\u2461\u2464"}], "title": "4.26. ProtectAgainstRadiationsBySidePanel2"}, {"refs": [{"id": "ref-for-function\u2461\u2465"}], "title": "4.27. ProtectAgainstRadiationsBySidePanel3"}, {"refs": [{"id": "ref-for-function\u2461\u2466"}], "title": "4.28. ProtectAgainstRadiationsBySidePanel4"}, {"refs": [{"id": "ref-for-function\u2461\u2467"}], "title": "4.29. ProtectAgainstRadiationsBySidePanel5"}, {"refs": [{"id": "ref-for-function\u2461\u2468"}], "title": "4.30. ProtectAgainstRadiationsBySidePanel6"}, {"refs": [{"id": "ref-for-function\u2462\u24ea"}], "title": "4.31. Release_SC_From_LVBySeparationSystem"}, {"refs": [{"id": "ref-for-function\u2462\u2460"}], "title": "4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['983fe943'] = {"dfnID": "983fe943", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby", "dfnText": "isspecifiedby", "refSections": [{"refs": [{"id": "ref-for-isspecifiedby"}], "title": "5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires"}], "external": true};
+window.dfnpanelData['c93ee289'] = {"dfnID": "c93ee289", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs", "dfnText": "performs", "refSections": [{"refs": [{"id": "ref-for-performs"}], "title": "5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires"}], "external": true};
+window.dfnpanelData['fc5ea917'] = {"dfnID": "fc5ea917", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/project.html#realizes_1", "dfnText": "realizes_1", "refSections": [{"refs": [{"id": "ref-for-realizes_1"}], "title": "4.1. ApplyCommandsByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-realizes_1\u2460"}], "title": "4.2. DetectNewWildfiresByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-realizes_1\u2461"}], "title": "4.3. GenerateTelemetryByPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-realizes_1\u2462"}], "title": "4.4. InsureMechanicalIntegrityByBasePlate"}, {"refs": [{"id": "ref-for-realizes_1\u2463"}], "title": "4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-realizes_1\u2464"}], "title": "4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-realizes_1\u2465"}], "title": "4.7. InsureMechanicalIntegrityByPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-realizes_1\u2466"}], "title": "4.8. InsureMechanicalIntegrityByPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-realizes_1\u2467"}], "title": "4.9. InsureMechanicalIntegrityByPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-realizes_1\u2468"}], "title": "4.10. InsureMechanicalIntegrityByPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u24ea"}], "title": "4.11. InsureMechanicalIntegrityBySidePanel1"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2460"}], "title": "4.12. InsureMechanicalIntegrityBySidePanel2"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2461"}], "title": "4.13. InsureMechanicalIntegrityBySidePanel3"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2462"}], "title": "4.14. InsureMechanicalIntegrityBySidePanel4"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2463"}], "title": "4.15. InsureMechanicalIntegrityBySidePanel5"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2464"}], "title": "4.16. InsureMechanicalIntegrityBySidePanel6"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2465"}], "title": "4.17. InsureMechanicalIntegrityByStructurePost1"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2466"}], "title": "4.18. InsureMechanicalIntegrityByStructurePost2"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2467"}], "title": "4.19. InsureMechanicalIntegrityByStructurePost3"}, {"refs": [{"id": "ref-for-realizes_1\u2460\u2468"}], "title": "4.20. InsureMechanicalIntegrityByStructurePost4"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u24ea"}], "title": "4.21. InsureMechanicalIntegrityByStructurePost5"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2460"}], "title": "4.22. InsureMechanicalIntegrityByStructurePost6"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2461"}], "title": "4.23. InsureMechanicalIntegrityByTopPanel"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2462"}], "title": "4.24. Launch_SCByLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2463"}], "title": "4.25. ProtectAgainstRadiationsBySidePanel1"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2464"}], "title": "4.26. ProtectAgainstRadiationsBySidePanel2"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2465"}], "title": "4.27. ProtectAgainstRadiationsBySidePanel3"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2466"}], "title": "4.28. ProtectAgainstRadiationsBySidePanel4"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2467"}], "title": "4.29. ProtectAgainstRadiationsBySidePanel5"}, {"refs": [{"id": "ref-for-realizes_1\u2461\u2468"}], "title": "4.30. ProtectAgainstRadiationsBySidePanel6"}, {"refs": [{"id": "ref-for-realizes_1\u2462\u24ea"}], "title": "4.31. Release_SC_From_LVBySeparationSystem"}, {"refs": [{"id": "ref-for-realizes_1\u2462\u2460"}], "title": "4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['abbbe28e'] = {"dfnID": "abbbe28e", "url": "../../../../../../../missions/firesat/functions.html#applycommands", "dfnText": "applycommands", "refSections": [{"refs": [{"id": "ref-for-applycommands"}], "title": "4.1. ApplyCommandsByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['624a0b70'] = {"dfnID": "624a0b70", "url": "../../../../../../../missions/firesat/functions.html#detectnewwildfires", "dfnText": "detectnewwildfires", "refSections": [{"refs": [{"id": "ref-for-detectnewwildfires"}], "title": "4.2. DetectNewWildfiresByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['d62bd713'] = {"dfnID": "d62bd713", "url": "../../../../../../../missions/firesat/functions.html#generatetelemetry", "dfnText": "generatetelemetry", "refSections": [{"refs": [{"id": "ref-for-generatetelemetry"}], "title": "4.3. GenerateTelemetryByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['74b6e190'] = {"dfnID": "74b6e190", "url": "../../../../../../../missions/firesat/functions.html#insuremechanicalintegrity", "dfnText": "insuremechanicalintegrity", "refSections": [{"refs": [{"id": "ref-for-insuremechanicalintegrity"}], "title": "4.4. InsureMechanicalIntegrityByBasePlate"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460"}], "title": "4.5. InsureMechanicalIntegrityByPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2461"}], "title": "4.6. InsureMechanicalIntegrityByPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2462"}], "title": "4.7. InsureMechanicalIntegrityByPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2463"}], "title": "4.8. InsureMechanicalIntegrityByPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2464"}], "title": "4.9. InsureMechanicalIntegrityByPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2465"}], "title": "4.10. InsureMechanicalIntegrityByPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2466"}], "title": "4.11. InsureMechanicalIntegrityBySidePanel1"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2467"}], "title": "4.12. InsureMechanicalIntegrityBySidePanel2"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2468"}], "title": "4.13. InsureMechanicalIntegrityBySidePanel3"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u24ea"}], "title": "4.14. InsureMechanicalIntegrityBySidePanel4"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2460"}], "title": "4.15. InsureMechanicalIntegrityBySidePanel5"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2461"}], "title": "4.16. InsureMechanicalIntegrityBySidePanel6"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2462"}], "title": "4.17. InsureMechanicalIntegrityByStructurePost1"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2463"}], "title": "4.18. InsureMechanicalIntegrityByStructurePost2"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2464"}], "title": "4.19. InsureMechanicalIntegrityByStructurePost3"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2465"}], "title": "4.20. InsureMechanicalIntegrityByStructurePost4"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2466"}], "title": "4.21. InsureMechanicalIntegrityByStructurePost5"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2467"}], "title": "4.22. InsureMechanicalIntegrityByStructurePost6"}, {"refs": [{"id": "ref-for-insuremechanicalintegrity\u2460\u2468"}], "title": "4.23. InsureMechanicalIntegrityByTopPanel"}], "external": true};
+window.dfnpanelData['3394f99a'] = {"dfnID": "3394f99a", "url": "../../../../../../../missions/firesat/functions.html#launch_sc", "dfnText": "launch_sc", "refSections": [{"refs": [{"id": "ref-for-launch_sc"}], "title": "4.24. Launch_SCByLaunchVehicleAdapter"}], "external": true};
+window.dfnpanelData['44e517df'] = {"dfnID": "44e517df", "url": "../../../../../../../missions/firesat/functions.html#protectagainstradiations", "dfnText": "protectagainstradiations", "refSections": [{"refs": [{"id": "ref-for-protectagainstradiations"}], "title": "4.25. ProtectAgainstRadiationsBySidePanel1"}, {"refs": [{"id": "ref-for-protectagainstradiations\u2460"}], "title": "4.26. ProtectAgainstRadiationsBySidePanel2"}, {"refs": [{"id": "ref-for-protectagainstradiations\u2461"}], "title": "4.27. ProtectAgainstRadiationsBySidePanel3"}, {"refs": [{"id": "ref-for-protectagainstradiations\u2462"}], "title": "4.28. ProtectAgainstRadiationsBySidePanel4"}, {"refs": [{"id": "ref-for-protectagainstradiations\u2463"}], "title": "4.29. ProtectAgainstRadiationsBySidePanel5"}, {"refs": [{"id": "ref-for-protectagainstradiations\u2464"}], "title": "4.30. ProtectAgainstRadiationsBySidePanel6"}], "external": true};
+window.dfnpanelData['a77afc9b'] = {"dfnID": "a77afc9b", "url": "../../../../../../../missions/firesat/functions.html#release_sc_from_lv", "dfnText": "release_sc_from_lv", "refSections": [{"refs": [{"id": "ref-for-release_sc_from_lv"}], "title": "4.31. Release_SC_From_LVBySeparationSystem"}], "external": true};
+window.dfnpanelData['11df7c02'] = {"dfnID": "11df7c02", "url": "../../../../../../../missions/firesat/functions.html#storedatabetweentwotelemetries", "dfnText": "storedatabetweentwotelemetries", "refSections": [{"refs": [{"id": "ref-for-storedatabetweentwotelemetries"}], "title": "4.32. StoreDataBetweenTwoTelemetriesByPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['c37c036d'] = {"dfnID": "c37c036d", "url": "../../../../../systems/spc/requirements/system.html#incidentprocessing", "dfnText": "incidentprocessing", "refSections": [{"refs": [{"id": "ref-for-incidentprocessing"}], "title": "5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires"}], "external": true};
+window.dfnpanelData['ef052212'] = {"dfnID": "ef052212", "url": "assemblies.html#primaryflightcomputerunit", "dfnText": "primaryflightcomputerunit", "refSections": [{"refs": [{"id": "ref-for-primaryflightcomputerunit"}], "title": "5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires"}], "external": true};
+window.dfnpanelData['5e253add'] = {"dfnID": "5e253add", "url": "functions.html#detectnewwildfiresbyprimaryflightcomputerunit", "dfnText": "detectnewwildfiresbyprimaryflightcomputerunit", "refSections": [{"refs": [{"id": "ref-for-detectnewwildfiresbyprimaryflightcomputerunit"}], "title": "5.1. PrimaryFlightComputerUnitPerformsDetectNewWildfires"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

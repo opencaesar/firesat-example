@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/missions/firesat/functions" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">FireSat Functions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2546,260 +2552,106 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#supply_power_24_7">supply_power_24_7</a><span>, in § 3.25</span>
    <li><a href="#transformsolarradiationsintoenergy">transformsolarradiationsintoenergy</a><span>, in § 3.26</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-310a4f91d0dd53309d6ddcd2c02601b1" class="dfn-panel" data-for="310a4f91d0dd53309d6ddcd2c02601b1" id="infopanel-for-310a4f91d0dd53309d6ddcd2c02601b1">
-   <span id="infopaneltitle-for-310a4f91d0dd53309d6ddcd2c02601b1" style="display:none">Info about the 'function' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function">3.1. ApplyCommands</a>
-    <li><a href="#ref-for-function①">3.2. AttitudeAwareness</a>
-    <li><a href="#ref-for-function②">3.3. AvoidCollisions</a>
-    <li><a href="#ref-for-function③">3.4. Communicate</a>
-    <li><a href="#ref-for-function④">3.5. Communicate911DownlinkWithRegionalFieldOffices</a>
-    <li><a href="#ref-for-function⑤">3.6. ControlTrajectory</a>
-    <li><a href="#ref-for-function⑥">3.7. DeployMechanisms</a>
-    <li><a href="#ref-for-function⑦">3.8. DetectNewWildfires</a>
-    <li><a href="#ref-for-function⑧">3.9. GenerateTelemetry</a>
-    <li><a href="#ref-for-function⑨">3.10. HomogenizeTemperature</a>
-    <li><a href="#ref-for-function①⓪">3.11. InsureMechanicalIntegrity</a>
-    <li><a href="#ref-for-function①①">3.12. Launch_SC</a>
-    <li><a href="#ref-for-function①②">3.13. MitigateFailures</a>
-    <li><a href="#ref-for-function①③">3.14. MonitorAndMaintainHealthAndsafety</a>
-    <li><a href="#ref-for-function①④">3.15. MonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-function①⑤">3.16. PerformMission</a>
-    <li><a href="#ref-for-function①⑥">3.17. PositionAwareness</a>
-    <li><a href="#ref-for-function①⑦">3.18. ProtectAgainstRadiations</a>
-    <li><a href="#ref-for-function①⑧">3.19. ReachOperationalOrbit</a>
-    <li><a href="#ref-for-function①⑨">3.20. ReceiveTelecommandFromNOAAGroundStations</a>
-    <li><a href="#ref-for-function②⓪">3.21. Release_SC_From_LV</a>
-    <li><a href="#ref-for-function②①">3.22. SendTelemetryToNOAAGroundStations</a>
-    <li><a href="#ref-for-function②②">3.23. StoreDataBetweenTwoTelemetries</a>
-    <li><a href="#ref-for-function②③">3.24. StoreEnergyDuringEclipses</a>
-    <li><a href="#ref-for-function②④">3.25. Supply_Power_24_7</a>
-    <li><a href="#ref-for-function②⑤">3.26. TransformSolarRadiationsIntoEnergy</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cc37775685917edfd13fdfa7ddfb783e" class="dfn-panel" data-for="cc37775685917edfd13fdfa7ddfb783e" id="infopanel-for-cc37775685917edfd13fdfa7ddfb783e">
-   <span id="infopaneltitle-for-cc37775685917edfd13fdfa7ddfb783e" style="display:none">Info about the 'invokes_1' external reference.</span><a href="../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1">../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-invokes_1">3.1. ApplyCommands</a>
-    <li><a href="#ref-for-invokes_1①">3.3. AvoidCollisions</a>
-    <li><a href="#ref-for-invokes_1②">3.4. Communicate</a> <a href="#ref-for-invokes_1③">(2)</a> <a href="#ref-for-invokes_1④">(3)</a>
-    <li><a href="#ref-for-invokes_1⑤">3.6. ControlTrajectory</a> <a href="#ref-for-invokes_1⑥">(2)</a>
-    <li><a href="#ref-for-invokes_1⑦">3.12. Launch_SC</a>
-    <li><a href="#ref-for-invokes_1⑧">3.13. MitigateFailures</a> <a href="#ref-for-invokes_1⑨">(2)</a>
-    <li><a href="#ref-for-invokes_1①⓪">3.14. MonitorAndMaintainHealthAndsafety</a> <a href="#ref-for-invokes_1①①">(2)</a>
-    <li><a href="#ref-for-invokes_1①②">3.16. PerformMission</a> <a href="#ref-for-invokes_1①③">(2)</a> <a href="#ref-for-invokes_1①④">(3)</a> <a href="#ref-for-invokes_1①⑤">(4)</a> <a href="#ref-for-invokes_1①⑥">(5)</a> <a href="#ref-for-invokes_1①⑦">(6)</a> <a href="#ref-for-invokes_1①⑧">(7)</a> <a href="#ref-for-invokes_1①⑨">(8)</a> <a href="#ref-for-invokes_1②⓪">(9)</a> <a href="#ref-for-invokes_1②①">(10)</a>
-    <li><a href="#ref-for-invokes_1②②">3.19. ReachOperationalOrbit</a>
-    <li><a href="#ref-for-invokes_1②③">3.21. Release_SC_From_LV</a>
-    <li><a href="#ref-for-invokes_1②④">3.22. SendTelemetryToNOAAGroundStations</a> <a href="#ref-for-invokes_1②⑤">(2)</a>
-    <li><a href="#ref-for-invokes_1②⑥">3.25. Supply_Power_24_7</a> <a href="#ref-for-invokes_1②⑦">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a3a1387dbe3158c3596bddb973d8c2e4" class="dfn-panel" data-for="a3a1387dbe3158c3596bddb973d8c2e4" id="infopanel-for-a3a1387dbe3158c3596bddb973d8c2e4">
-   <span id="infopaneltitle-for-a3a1387dbe3158c3596bddb973d8c2e4" style="display:none">Info about the 'applycommands' external reference.</span><a href="functions.html#applycommands">functions.html#applycommands</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-applycommands">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d290c44b19a6d26f583594e2db77b4f1" class="dfn-panel" data-for="d290c44b19a6d26f583594e2db77b4f1" id="infopanel-for-d290c44b19a6d26f583594e2db77b4f1">
-   <span id="infopaneltitle-for-d290c44b19a6d26f583594e2db77b4f1" style="display:none">Info about the 'attitudeawareness' external reference.</span><a href="functions.html#attitudeawareness">functions.html#attitudeawareness</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-attitudeawareness">3.6. ControlTrajectory</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fc7761375f0123ac57d0ae9a8de5ceca" class="dfn-panel" data-for="fc7761375f0123ac57d0ae9a8de5ceca" id="infopanel-for-fc7761375f0123ac57d0ae9a8de5ceca">
-   <span id="infopaneltitle-for-fc7761375f0123ac57d0ae9a8de5ceca" style="display:none">Info about the 'avoidcollisions' external reference.</span><a href="functions.html#avoidcollisions">functions.html#avoidcollisions</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-avoidcollisions">3.14. MonitorAndMaintainHealthAndsafety</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-eee7a5c83943cfac408e8a46d884e2cd" class="dfn-panel" data-for="eee7a5c83943cfac408e8a46d884e2cd" id="infopanel-for-eee7a5c83943cfac408e8a46d884e2cd">
-   <span id="infopaneltitle-for-eee7a5c83943cfac408e8a46d884e2cd" style="display:none">Info about the 'communicate' external reference.</span><a href="functions.html#communicate">functions.html#communicate</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-communicate">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-64795971064bbabd4d43ba5fb831ff36" class="dfn-panel" data-for="64795971064bbabd4d43ba5fb831ff36" id="infopanel-for-64795971064bbabd4d43ba5fb831ff36">
-   <span id="infopaneltitle-for-64795971064bbabd4d43ba5fb831ff36" style="display:none">Info about the 'communicate911downlinkwithregionalfieldoffices' external reference.</span><a href="functions.html#communicate911downlinkwithregionalfieldoffices">functions.html#communicate911downlinkwithregionalfieldoffices</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices">3.4. Communicate</a>
-    <li><a href="#ref-for-communicate911downlinkwithregionalfieldoffices①">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b5b4e660200dd5fd9430a70470113f46" class="dfn-panel" data-for="b5b4e660200dd5fd9430a70470113f46" id="infopanel-for-b5b4e660200dd5fd9430a70470113f46">
-   <span id="infopaneltitle-for-b5b4e660200dd5fd9430a70470113f46" style="display:none">Info about the 'controltrajectory' external reference.</span><a href="functions.html#controltrajectory">functions.html#controltrajectory</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectory">3.3. AvoidCollisions</a>
-    <li><a href="#ref-for-controltrajectory①">3.19. ReachOperationalOrbit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-332cb99465301e53b64a5a1a70636643" class="dfn-panel" data-for="332cb99465301e53b64a5a1a70636643" id="infopanel-for-332cb99465301e53b64a5a1a70636643">
-   <span id="infopaneltitle-for-332cb99465301e53b64a5a1a70636643" style="display:none">Info about the 'deploymechanisms' external reference.</span><a href="functions.html#deploymechanisms">functions.html#deploymechanisms</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deploymechanisms">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b72a99c60a72889fe51b0e077f75a520" class="dfn-panel" data-for="b72a99c60a72889fe51b0e077f75a520" id="infopanel-for-b72a99c60a72889fe51b0e077f75a520">
-   <span id="infopaneltitle-for-b72a99c60a72889fe51b0e077f75a520" style="display:none">Info about the 'detectnewwildfires' external reference.</span><a href="functions.html#detectnewwildfires">functions.html#detectnewwildfires</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-detectnewwildfires">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0635d48ca893943f77a891510e0e5605" class="dfn-panel" data-for="0635d48ca893943f77a891510e0e5605" id="infopanel-for-0635d48ca893943f77a891510e0e5605">
-   <span id="infopaneltitle-for-0635d48ca893943f77a891510e0e5605" style="display:none">Info about the 'generatetelemetry' external reference.</span><a href="functions.html#generatetelemetry">functions.html#generatetelemetry</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generatetelemetry">3.22. SendTelemetryToNOAAGroundStations</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-481f17eb91b7693328b6626beea63494" class="dfn-panel" data-for="481f17eb91b7693328b6626beea63494" id="infopanel-for-481f17eb91b7693328b6626beea63494">
-   <span id="infopaneltitle-for-481f17eb91b7693328b6626beea63494" style="display:none">Info about the 'homogenizetemperature' external reference.</span><a href="functions.html#homogenizetemperature">functions.html#homogenizetemperature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-homogenizetemperature">3.13. MitigateFailures</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3d745ecfa56e599212114ab62eaff9bb" class="dfn-panel" data-for="3d745ecfa56e599212114ab62eaff9bb" id="infopanel-for-3d745ecfa56e599212114ab62eaff9bb">
-   <span id="infopaneltitle-for-3d745ecfa56e599212114ab62eaff9bb" style="display:none">Info about the 'insuremechanicalintegrity' external reference.</span><a href="functions.html#insuremechanicalintegrity">functions.html#insuremechanicalintegrity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-insuremechanicalintegrity">3.12. Launch_SC</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e7b76bd5be9c64216b9a0d91d0a4a3eb" class="dfn-panel" data-for="e7b76bd5be9c64216b9a0d91d0a4a3eb" id="infopanel-for-e7b76bd5be9c64216b9a0d91d0a4a3eb">
-   <span id="infopaneltitle-for-e7b76bd5be9c64216b9a0d91d0a4a3eb" style="display:none">Info about the 'launch_sc' external reference.</span><a href="functions.html#launch_sc">functions.html#launch_sc</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-launch_sc">3.21. Release_SC_From_LV</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-50dfeb580104553648967683736a1a6d" class="dfn-panel" data-for="50dfeb580104553648967683736a1a6d" id="infopanel-for-50dfeb580104553648967683736a1a6d">
-   <span id="infopaneltitle-for-50dfeb580104553648967683736a1a6d" style="display:none">Info about the 'mitigatefailures' external reference.</span><a href="functions.html#mitigatefailures">functions.html#mitigatefailures</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mitigatefailures">3.14. MonitorAndMaintainHealthAndsafety</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-290a4c15823fbab794d41e2243c3d39c" class="dfn-panel" data-for="290a4c15823fbab794d41e2243c3d39c" id="infopanel-for-290a4c15823fbab794d41e2243c3d39c">
-   <span id="infopaneltitle-for-290a4c15823fbab794d41e2243c3d39c" style="display:none">Info about the 'monitorandmaintainhealthandsafety' external reference.</span><a href="functions.html#monitorandmaintainhealthandsafety">functions.html#monitorandmaintainhealthandsafety</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-monitorandmaintainhealthandsafety">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2b506e1a528b190d51bdaf822e56c326" class="dfn-panel" data-for="2b506e1a528b190d51bdaf822e56c326" id="infopanel-for-2b506e1a528b190d51bdaf822e56c326">
-   <span id="infopaneltitle-for-2b506e1a528b190d51bdaf822e56c326" style="display:none">Info about the 'monitorexistingwildfires_24_7' external reference.</span><a href="functions.html#monitorexistingwildfires_24_7">functions.html#monitorexistingwildfires_24_7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-monitorexistingwildfires_24_7">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2c04d25545db2f24da7e76e192ff116e" class="dfn-panel" data-for="2c04d25545db2f24da7e76e192ff116e" id="infopanel-for-2c04d25545db2f24da7e76e192ff116e">
-   <span id="infopaneltitle-for-2c04d25545db2f24da7e76e192ff116e" style="display:none">Info about the 'positionawareness' external reference.</span><a href="functions.html#positionawareness">functions.html#positionawareness</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-positionawareness">3.6. ControlTrajectory</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-57d126fc94b4c9034ef3c35c80b0ef39" class="dfn-panel" data-for="57d126fc94b4c9034ef3c35c80b0ef39" id="infopanel-for-57d126fc94b4c9034ef3c35c80b0ef39">
-   <span id="infopaneltitle-for-57d126fc94b4c9034ef3c35c80b0ef39" style="display:none">Info about the 'protectagainstradiations' external reference.</span><a href="functions.html#protectagainstradiations">functions.html#protectagainstradiations</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-protectagainstradiations">3.13. MitigateFailures</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-399b72f0d78f0d5e238396355208088e" class="dfn-panel" data-for="399b72f0d78f0d5e238396355208088e" id="infopanel-for-399b72f0d78f0d5e238396355208088e">
-   <span id="infopaneltitle-for-399b72f0d78f0d5e238396355208088e" style="display:none">Info about the 'reachoperationalorbit' external reference.</span><a href="functions.html#reachoperationalorbit">functions.html#reachoperationalorbit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reachoperationalorbit">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-006daa2e22c9f2cf580d3e165266cf29" class="dfn-panel" data-for="006daa2e22c9f2cf580d3e165266cf29" id="infopanel-for-006daa2e22c9f2cf580d3e165266cf29">
-   <span id="infopaneltitle-for-006daa2e22c9f2cf580d3e165266cf29" style="display:none">Info about the 'receivetelecommandfromnoaagroundstations' external reference.</span><a href="functions.html#receivetelecommandfromnoaagroundstations">functions.html#receivetelecommandfromnoaagroundstations</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-receivetelecommandfromnoaagroundstations">3.1. ApplyCommands</a>
-    <li><a href="#ref-for-receivetelecommandfromnoaagroundstations①">3.4. Communicate</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-463ab5b00c1f0f71b19fe571a938c9ca" class="dfn-panel" data-for="463ab5b00c1f0f71b19fe571a938c9ca" id="infopanel-for-463ab5b00c1f0f71b19fe571a938c9ca">
-   <span id="infopaneltitle-for-463ab5b00c1f0f71b19fe571a938c9ca" style="display:none">Info about the 'release_sc_from_lv' external reference.</span><a href="functions.html#release_sc_from_lv">functions.html#release_sc_from_lv</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-release_sc_from_lv">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-62c8976ba945ae22f29e6623a2be4f62" class="dfn-panel" data-for="62c8976ba945ae22f29e6623a2be4f62" id="infopanel-for-62c8976ba945ae22f29e6623a2be4f62">
-   <span id="infopaneltitle-for-62c8976ba945ae22f29e6623a2be4f62" style="display:none">Info about the 'sendtelemetrytonoaagroundstations' external reference.</span><a href="functions.html#sendtelemetrytonoaagroundstations">functions.html#sendtelemetrytonoaagroundstations</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-sendtelemetrytonoaagroundstations">3.4. Communicate</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8f14b1ce8fd103ca199381178d9ae4b4" class="dfn-panel" data-for="8f14b1ce8fd103ca199381178d9ae4b4" id="infopanel-for-8f14b1ce8fd103ca199381178d9ae4b4">
-   <span id="infopaneltitle-for-8f14b1ce8fd103ca199381178d9ae4b4" style="display:none">Info about the 'storedatabetweentwotelemetries' external reference.</span><a href="functions.html#storedatabetweentwotelemetries">functions.html#storedatabetweentwotelemetries</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-storedatabetweentwotelemetries">3.22. SendTelemetryToNOAAGroundStations</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8cac911a82d66266b5dd53d5b33657a6" class="dfn-panel" data-for="8cac911a82d66266b5dd53d5b33657a6" id="infopanel-for-8cac911a82d66266b5dd53d5b33657a6">
-   <span id="infopaneltitle-for-8cac911a82d66266b5dd53d5b33657a6" style="display:none">Info about the 'storeenergyduringeclipses' external reference.</span><a href="functions.html#storeenergyduringeclipses">functions.html#storeenergyduringeclipses</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-storeenergyduringeclipses">3.25. Supply_Power_24_7</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-65d6b248bfee5f42383087eca76115a5" class="dfn-panel" data-for="65d6b248bfee5f42383087eca76115a5" id="infopanel-for-65d6b248bfee5f42383087eca76115a5">
-   <span id="infopaneltitle-for-65d6b248bfee5f42383087eca76115a5" style="display:none">Info about the 'supply_power_24_7' external reference.</span><a href="functions.html#supply_power_24_7">functions.html#supply_power_24_7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supply_power_24_7">3.16. PerformMission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-38de4ea29e6cb178661e74e827f10e5a" class="dfn-panel" data-for="38de4ea29e6cb178661e74e827f10e5a" id="infopanel-for-38de4ea29e6cb178661e74e827f10e5a">
-   <span id="infopaneltitle-for-38de4ea29e6cb178661e74e827f10e5a" style="display:none">Info about the 'transformsolarradiationsintoenergy' external reference.</span><a href="functions.html#transformsolarradiationsintoenergy">functions.html#transformsolarradiationsintoenergy</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transformsolarradiationsintoenergy">3.25. Supply_Power_24_7</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="310a4f91d0dd53309d6ddcd2c02601b1">function</span>
-     <li><span class="dfn-paneled" id="cc37775685917edfd13fdfa7ddfb783e">invokes_1</span>
+     <li><span class="dfn-paneled" id="bdbdea0b">function</span>
+     <li><span class="dfn-paneled" id="e1532f7a">invokes_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/MISSIONS/FIRESAT/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="a3a1387dbe3158c3596bddb973d8c2e4">applycommands</span>
-     <li><span class="dfn-paneled" id="d290c44b19a6d26f583594e2db77b4f1">attitudeawareness</span>
-     <li><span class="dfn-paneled" id="fc7761375f0123ac57d0ae9a8de5ceca">avoidcollisions</span>
-     <li><span class="dfn-paneled" id="eee7a5c83943cfac408e8a46d884e2cd">communicate</span>
-     <li><span class="dfn-paneled" id="64795971064bbabd4d43ba5fb831ff36">communicate911downlinkwithregionalfieldoffices</span>
-     <li><span class="dfn-paneled" id="b5b4e660200dd5fd9430a70470113f46">controltrajectory</span>
-     <li><span class="dfn-paneled" id="332cb99465301e53b64a5a1a70636643">deploymechanisms</span>
-     <li><span class="dfn-paneled" id="b72a99c60a72889fe51b0e077f75a520">detectnewwildfires</span>
-     <li><span class="dfn-paneled" id="0635d48ca893943f77a891510e0e5605">generatetelemetry</span>
-     <li><span class="dfn-paneled" id="481f17eb91b7693328b6626beea63494">homogenizetemperature</span>
-     <li><span class="dfn-paneled" id="3d745ecfa56e599212114ab62eaff9bb">insuremechanicalintegrity</span>
-     <li><span class="dfn-paneled" id="e7b76bd5be9c64216b9a0d91d0a4a3eb">launch_sc</span>
-     <li><span class="dfn-paneled" id="50dfeb580104553648967683736a1a6d">mitigatefailures</span>
-     <li><span class="dfn-paneled" id="290a4c15823fbab794d41e2243c3d39c">monitorandmaintainhealthandsafety</span>
-     <li><span class="dfn-paneled" id="2b506e1a528b190d51bdaf822e56c326">monitorexistingwildfires_24_7</span>
-     <li><span class="dfn-paneled" id="2c04d25545db2f24da7e76e192ff116e">positionawareness</span>
-     <li><span class="dfn-paneled" id="57d126fc94b4c9034ef3c35c80b0ef39">protectagainstradiations</span>
-     <li><span class="dfn-paneled" id="399b72f0d78f0d5e238396355208088e">reachoperationalorbit</span>
-     <li><span class="dfn-paneled" id="006daa2e22c9f2cf580d3e165266cf29">receivetelecommandfromnoaagroundstations</span>
-     <li><span class="dfn-paneled" id="463ab5b00c1f0f71b19fe571a938c9ca">release_sc_from_lv</span>
-     <li><span class="dfn-paneled" id="62c8976ba945ae22f29e6623a2be4f62">sendtelemetrytonoaagroundstations</span>
-     <li><span class="dfn-paneled" id="8f14b1ce8fd103ca199381178d9ae4b4">storedatabetweentwotelemetries</span>
-     <li><span class="dfn-paneled" id="8cac911a82d66266b5dd53d5b33657a6">storeenergyduringeclipses</span>
-     <li><span class="dfn-paneled" id="65d6b248bfee5f42383087eca76115a5">supply_power_24_7</span>
-     <li><span class="dfn-paneled" id="38de4ea29e6cb178661e74e827f10e5a">transformsolarradiationsintoenergy</span>
+     <li><span class="dfn-paneled" id="80cdb0c5">applycommands</span>
+     <li><span class="dfn-paneled" id="ed7210b5">attitudeawareness</span>
+     <li><span class="dfn-paneled" id="c41d543f">avoidcollisions</span>
+     <li><span class="dfn-paneled" id="7624c567">communicate</span>
+     <li><span class="dfn-paneled" id="ffc59ed1">communicate911downlinkwithregionalfieldoffices</span>
+     <li><span class="dfn-paneled" id="fee9c4a8">controltrajectory</span>
+     <li><span class="dfn-paneled" id="54e88bc6">deploymechanisms</span>
+     <li><span class="dfn-paneled" id="0e2cc8c9">detectnewwildfires</span>
+     <li><span class="dfn-paneled" id="1777abd0">generatetelemetry</span>
+     <li><span class="dfn-paneled" id="00a469f1">homogenizetemperature</span>
+     <li><span class="dfn-paneled" id="2c513e0c">insuremechanicalintegrity</span>
+     <li><span class="dfn-paneled" id="e884c37e">launch_sc</span>
+     <li><span class="dfn-paneled" id="4577cdac">mitigatefailures</span>
+     <li><span class="dfn-paneled" id="4a12623b">monitorandmaintainhealthandsafety</span>
+     <li><span class="dfn-paneled" id="5a6382b8">monitorexistingwildfires_24_7</span>
+     <li><span class="dfn-paneled" id="be7adad5">positionawareness</span>
+     <li><span class="dfn-paneled" id="18a45b1f">protectagainstradiations</span>
+     <li><span class="dfn-paneled" id="1a278a06">reachoperationalorbit</span>
+     <li><span class="dfn-paneled" id="dc73847d">receivetelecommandfromnoaagroundstations</span>
+     <li><span class="dfn-paneled" id="0e1d60f4">release_sc_from_lv</span>
+     <li><span class="dfn-paneled" id="c92d5fdd">sendtelemetrytonoaagroundstations</span>
+     <li><span class="dfn-paneled" id="ecbe1c4f">storedatabetweentwotelemetries</span>
+     <li><span class="dfn-paneled" id="c25c875c">storeenergyduringeclipses</span>
+     <li><span class="dfn-paneled" id="2b76214f">supply_power_24_7</span>
+     <li><span class="dfn-paneled" id="ddf04924">transformsolarradiationsintoenergy</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2849,49 +2701,270 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['bdbdea0b'] = {"dfnID": "bdbdea0b", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#function", "dfnText": "function", "refSections": [{"refs": [{"id": "ref-for-function"}], "title": "3.1. ApplyCommands"}, {"refs": [{"id": "ref-for-function\u2460"}], "title": "3.2. AttitudeAwareness"}, {"refs": [{"id": "ref-for-function\u2461"}], "title": "3.3. AvoidCollisions"}, {"refs": [{"id": "ref-for-function\u2462"}], "title": "3.4. Communicate"}, {"refs": [{"id": "ref-for-function\u2463"}], "title": "3.5. Communicate911DownlinkWithRegionalFieldOffices"}, {"refs": [{"id": "ref-for-function\u2464"}], "title": "3.6. ControlTrajectory"}, {"refs": [{"id": "ref-for-function\u2465"}], "title": "3.7. DeployMechanisms"}, {"refs": [{"id": "ref-for-function\u2466"}], "title": "3.8. DetectNewWildfires"}, {"refs": [{"id": "ref-for-function\u2467"}], "title": "3.9. GenerateTelemetry"}, {"refs": [{"id": "ref-for-function\u2468"}], "title": "3.10. HomogenizeTemperature"}, {"refs": [{"id": "ref-for-function\u2460\u24ea"}], "title": "3.11. InsureMechanicalIntegrity"}, {"refs": [{"id": "ref-for-function\u2460\u2460"}], "title": "3.12. Launch_SC"}, {"refs": [{"id": "ref-for-function\u2460\u2461"}], "title": "3.13. MitigateFailures"}, {"refs": [{"id": "ref-for-function\u2460\u2462"}], "title": "3.14. MonitorAndMaintainHealthAndsafety"}, {"refs": [{"id": "ref-for-function\u2460\u2463"}], "title": "3.15. MonitorExistingWildfires_24_7"}, {"refs": [{"id": "ref-for-function\u2460\u2464"}], "title": "3.16. PerformMission"}, {"refs": [{"id": "ref-for-function\u2460\u2465"}], "title": "3.17. PositionAwareness"}, {"refs": [{"id": "ref-for-function\u2460\u2466"}], "title": "3.18. ProtectAgainstRadiations"}, {"refs": [{"id": "ref-for-function\u2460\u2467"}], "title": "3.19. ReachOperationalOrbit"}, {"refs": [{"id": "ref-for-function\u2460\u2468"}], "title": "3.20. ReceiveTelecommandFromNOAAGroundStations"}, {"refs": [{"id": "ref-for-function\u2461\u24ea"}], "title": "3.21. Release_SC_From_LV"}, {"refs": [{"id": "ref-for-function\u2461\u2460"}], "title": "3.22. SendTelemetryToNOAAGroundStations"}, {"refs": [{"id": "ref-for-function\u2461\u2461"}], "title": "3.23. StoreDataBetweenTwoTelemetries"}, {"refs": [{"id": "ref-for-function\u2461\u2462"}], "title": "3.24. StoreEnergyDuringEclipses"}, {"refs": [{"id": "ref-for-function\u2461\u2463"}], "title": "3.25. Supply_Power_24_7"}, {"refs": [{"id": "ref-for-function\u2461\u2464"}], "title": "3.26. TransformSolarRadiationsIntoEnergy"}], "external": true};
+window.dfnpanelData['e1532f7a'] = {"dfnID": "e1532f7a", "url": "../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#invokes_1", "dfnText": "invokes_1", "refSections": [{"refs": [{"id": "ref-for-invokes_1"}], "title": "3.1. ApplyCommands"}, {"refs": [{"id": "ref-for-invokes_1\u2460"}], "title": "3.3. AvoidCollisions"}, {"refs": [{"id": "ref-for-invokes_1\u2461"}, {"id": "ref-for-invokes_1\u2462"}, {"id": "ref-for-invokes_1\u2463"}], "title": "3.4. Communicate"}, {"refs": [{"id": "ref-for-invokes_1\u2464"}, {"id": "ref-for-invokes_1\u2465"}], "title": "3.6. ControlTrajectory"}, {"refs": [{"id": "ref-for-invokes_1\u2466"}], "title": "3.12. Launch_SC"}, {"refs": [{"id": "ref-for-invokes_1\u2467"}, {"id": "ref-for-invokes_1\u2468"}], "title": "3.13. MitigateFailures"}, {"refs": [{"id": "ref-for-invokes_1\u2460\u24ea"}, {"id": "ref-for-invokes_1\u2460\u2460"}], "title": "3.14. MonitorAndMaintainHealthAndsafety"}, {"refs": [{"id": "ref-for-invokes_1\u2460\u2461"}, {"id": "ref-for-invokes_1\u2460\u2462"}, {"id": "ref-for-invokes_1\u2460\u2463"}, {"id": "ref-for-invokes_1\u2460\u2464"}, {"id": "ref-for-invokes_1\u2460\u2465"}, {"id": "ref-for-invokes_1\u2460\u2466"}, {"id": "ref-for-invokes_1\u2460\u2467"}, {"id": "ref-for-invokes_1\u2460\u2468"}, {"id": "ref-for-invokes_1\u2461\u24ea"}, {"id": "ref-for-invokes_1\u2461\u2460"}], "title": "3.16. PerformMission"}, {"refs": [{"id": "ref-for-invokes_1\u2461\u2461"}], "title": "3.19. ReachOperationalOrbit"}, {"refs": [{"id": "ref-for-invokes_1\u2461\u2462"}], "title": "3.21. Release_SC_From_LV"}, {"refs": [{"id": "ref-for-invokes_1\u2461\u2463"}, {"id": "ref-for-invokes_1\u2461\u2464"}], "title": "3.22. SendTelemetryToNOAAGroundStations"}, {"refs": [{"id": "ref-for-invokes_1\u2461\u2465"}, {"id": "ref-for-invokes_1\u2461\u2466"}], "title": "3.25. Supply_Power_24_7"}], "external": true};
+window.dfnpanelData['80cdb0c5'] = {"dfnID": "80cdb0c5", "url": "functions.html#applycommands", "dfnText": "applycommands", "refSections": [{"refs": [{"id": "ref-for-applycommands"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['ed7210b5'] = {"dfnID": "ed7210b5", "url": "functions.html#attitudeawareness", "dfnText": "attitudeawareness", "refSections": [{"refs": [{"id": "ref-for-attitudeawareness"}], "title": "3.6. ControlTrajectory"}], "external": true};
+window.dfnpanelData['c41d543f'] = {"dfnID": "c41d543f", "url": "functions.html#avoidcollisions", "dfnText": "avoidcollisions", "refSections": [{"refs": [{"id": "ref-for-avoidcollisions"}], "title": "3.14. MonitorAndMaintainHealthAndsafety"}], "external": true};
+window.dfnpanelData['7624c567'] = {"dfnID": "7624c567", "url": "functions.html#communicate", "dfnText": "communicate", "refSections": [{"refs": [{"id": "ref-for-communicate"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['ffc59ed1'] = {"dfnID": "ffc59ed1", "url": "functions.html#communicate911downlinkwithregionalfieldoffices", "dfnText": "communicate911downlinkwithregionalfieldoffices", "refSections": [{"refs": [{"id": "ref-for-communicate911downlinkwithregionalfieldoffices"}], "title": "3.4. Communicate"}, {"refs": [{"id": "ref-for-communicate911downlinkwithregionalfieldoffices\u2460"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['fee9c4a8'] = {"dfnID": "fee9c4a8", "url": "functions.html#controltrajectory", "dfnText": "controltrajectory", "refSections": [{"refs": [{"id": "ref-for-controltrajectory"}], "title": "3.3. AvoidCollisions"}, {"refs": [{"id": "ref-for-controltrajectory\u2460"}], "title": "3.19. ReachOperationalOrbit"}], "external": true};
+window.dfnpanelData['54e88bc6'] = {"dfnID": "54e88bc6", "url": "functions.html#deploymechanisms", "dfnText": "deploymechanisms", "refSections": [{"refs": [{"id": "ref-for-deploymechanisms"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['0e2cc8c9'] = {"dfnID": "0e2cc8c9", "url": "functions.html#detectnewwildfires", "dfnText": "detectnewwildfires", "refSections": [{"refs": [{"id": "ref-for-detectnewwildfires"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['1777abd0'] = {"dfnID": "1777abd0", "url": "functions.html#generatetelemetry", "dfnText": "generatetelemetry", "refSections": [{"refs": [{"id": "ref-for-generatetelemetry"}], "title": "3.22. SendTelemetryToNOAAGroundStations"}], "external": true};
+window.dfnpanelData['00a469f1'] = {"dfnID": "00a469f1", "url": "functions.html#homogenizetemperature", "dfnText": "homogenizetemperature", "refSections": [{"refs": [{"id": "ref-for-homogenizetemperature"}], "title": "3.13. MitigateFailures"}], "external": true};
+window.dfnpanelData['2c513e0c'] = {"dfnID": "2c513e0c", "url": "functions.html#insuremechanicalintegrity", "dfnText": "insuremechanicalintegrity", "refSections": [{"refs": [{"id": "ref-for-insuremechanicalintegrity"}], "title": "3.12. Launch_SC"}], "external": true};
+window.dfnpanelData['e884c37e'] = {"dfnID": "e884c37e", "url": "functions.html#launch_sc", "dfnText": "launch_sc", "refSections": [{"refs": [{"id": "ref-for-launch_sc"}], "title": "3.21. Release_SC_From_LV"}], "external": true};
+window.dfnpanelData['4577cdac'] = {"dfnID": "4577cdac", "url": "functions.html#mitigatefailures", "dfnText": "mitigatefailures", "refSections": [{"refs": [{"id": "ref-for-mitigatefailures"}], "title": "3.14. MonitorAndMaintainHealthAndsafety"}], "external": true};
+window.dfnpanelData['4a12623b'] = {"dfnID": "4a12623b", "url": "functions.html#monitorandmaintainhealthandsafety", "dfnText": "monitorandmaintainhealthandsafety", "refSections": [{"refs": [{"id": "ref-for-monitorandmaintainhealthandsafety"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['5a6382b8'] = {"dfnID": "5a6382b8", "url": "functions.html#monitorexistingwildfires_24_7", "dfnText": "monitorexistingwildfires_24_7", "refSections": [{"refs": [{"id": "ref-for-monitorexistingwildfires_24_7"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['be7adad5'] = {"dfnID": "be7adad5", "url": "functions.html#positionawareness", "dfnText": "positionawareness", "refSections": [{"refs": [{"id": "ref-for-positionawareness"}], "title": "3.6. ControlTrajectory"}], "external": true};
+window.dfnpanelData['18a45b1f'] = {"dfnID": "18a45b1f", "url": "functions.html#protectagainstradiations", "dfnText": "protectagainstradiations", "refSections": [{"refs": [{"id": "ref-for-protectagainstradiations"}], "title": "3.13. MitigateFailures"}], "external": true};
+window.dfnpanelData['1a278a06'] = {"dfnID": "1a278a06", "url": "functions.html#reachoperationalorbit", "dfnText": "reachoperationalorbit", "refSections": [{"refs": [{"id": "ref-for-reachoperationalorbit"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['dc73847d'] = {"dfnID": "dc73847d", "url": "functions.html#receivetelecommandfromnoaagroundstations", "dfnText": "receivetelecommandfromnoaagroundstations", "refSections": [{"refs": [{"id": "ref-for-receivetelecommandfromnoaagroundstations"}], "title": "3.1. ApplyCommands"}, {"refs": [{"id": "ref-for-receivetelecommandfromnoaagroundstations\u2460"}], "title": "3.4. Communicate"}], "external": true};
+window.dfnpanelData['0e1d60f4'] = {"dfnID": "0e1d60f4", "url": "functions.html#release_sc_from_lv", "dfnText": "release_sc_from_lv", "refSections": [{"refs": [{"id": "ref-for-release_sc_from_lv"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['c92d5fdd'] = {"dfnID": "c92d5fdd", "url": "functions.html#sendtelemetrytonoaagroundstations", "dfnText": "sendtelemetrytonoaagroundstations", "refSections": [{"refs": [{"id": "ref-for-sendtelemetrytonoaagroundstations"}], "title": "3.4. Communicate"}], "external": true};
+window.dfnpanelData['ecbe1c4f'] = {"dfnID": "ecbe1c4f", "url": "functions.html#storedatabetweentwotelemetries", "dfnText": "storedatabetweentwotelemetries", "refSections": [{"refs": [{"id": "ref-for-storedatabetweentwotelemetries"}], "title": "3.22. SendTelemetryToNOAAGroundStations"}], "external": true};
+window.dfnpanelData['c25c875c'] = {"dfnID": "c25c875c", "url": "functions.html#storeenergyduringeclipses", "dfnText": "storeenergyduringeclipses", "refSections": [{"refs": [{"id": "ref-for-storeenergyduringeclipses"}], "title": "3.25. Supply_Power_24_7"}], "external": true};
+window.dfnpanelData['2b76214f'] = {"dfnID": "2b76214f", "url": "functions.html#supply_power_24_7", "dfnText": "supply_power_24_7", "refSections": [{"refs": [{"id": "ref-for-supply_power_24_7"}], "title": "3.16. PerformMission"}], "external": true};
+window.dfnpanelData['ddf04924'] = {"dfnID": "ddf04924", "url": "functions.html#transformsolarradiationsintoenergy", "dfnText": "transformsolarradiationsintoenergy", "refSections": [{"refs": [{"id": "ref-for-transformsolarradiationsintoenergy"}], "title": "3.25. Supply_Power_24_7"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/08/subsystems/prp/requirements" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2534,133 +2540,92 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#operabilityforacsthruster5">operabilityforacsthruster5</a><span>, in § 4.20</span>
    <li><a href="#operabilityforacsthruster6">operabilityforacsthruster6</a><span>, in § 4.21</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" class="dfn-panel" data-for="a8e01b70e1346173e0b92f8d6c780423" id="infopanel-for-a8e01b70e1346173e0b92f8d6c780423">
-   <span id="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" style="display:none">Info about the 'refines_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-refines_1">4.1. AltitudeForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-refines_1①">4.2. AltitudeForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-refines_1②">4.3. AltitudeForPressurantTank</a>
-    <li><a href="#ref-for-refines_1③">4.4. AltitudeForPrimaryThruster</a>
-    <li><a href="#ref-for-refines_1④">4.5. AltitudeForPropellantTank</a>
-    <li><a href="#ref-for-refines_1⑤">4.6. AltitudeForPropulsionModule</a>
-    <li><a href="#ref-for-refines_1⑥">4.7. AltitudeForPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-refines_1⑦">4.8. DeltaVBudgetForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-refines_1⑧">4.9. DeltaVBudgetForFillDrainValveUnit</a>
-    <li><a href="#ref-for-refines_1⑨">4.10. DeltaVBudgetForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-refines_1①⓪">4.11. DeltaVBudgetForPressurantTank</a>
-    <li><a href="#ref-for-refines_1①①">4.12. DeltaVBudgetForPrimaryThruster</a>
-    <li><a href="#ref-for-refines_1①②">4.13. DeltaVBudgetForPropellantTank</a>
-    <li><a href="#ref-for-refines_1①③">4.14. DeltaVBudgetForPropulsionModule</a>
-    <li><a href="#ref-for-refines_1①④">4.15. DeltaVBudgetForPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-refines_1①⑤">4.16. OperabilityForACSThruster1</a>
-    <li><a href="#ref-for-refines_1①⑥">4.17. OperabilityForACSThruster2</a>
-    <li><a href="#ref-for-refines_1①⑦">4.18. OperabilityForACSThruster3</a>
-    <li><a href="#ref-for-refines_1①⑧">4.19. OperabilityForACSThruster4</a>
-    <li><a href="#ref-for-refines_1①⑨">4.20. OperabilityForACSThruster5</a>
-    <li><a href="#ref-for-refines_1②⓪">4.21. OperabilityForACSThruster6</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" class="dfn-panel" data-for="1a3cf5460c46a55bc29a42ffd9a8f7d5" id="infopanel-for-1a3cf5460c46a55bc29a42ffd9a8f7d5">
-   <span id="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" style="display:none">Info about the 'requirement' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requirement">4.1. AltitudeForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-requirement①">4.2. AltitudeForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-requirement②">4.3. AltitudeForPressurantTank</a>
-    <li><a href="#ref-for-requirement③">4.4. AltitudeForPrimaryThruster</a>
-    <li><a href="#ref-for-requirement④">4.5. AltitudeForPropellantTank</a>
-    <li><a href="#ref-for-requirement⑤">4.6. AltitudeForPropulsionModule</a>
-    <li><a href="#ref-for-requirement⑥">4.7. AltitudeForPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-requirement⑦">4.8. DeltaVBudgetForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-requirement⑧">4.9. DeltaVBudgetForFillDrainValveUnit</a>
-    <li><a href="#ref-for-requirement⑨">4.10. DeltaVBudgetForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-requirement①⓪">4.11. DeltaVBudgetForPressurantTank</a>
-    <li><a href="#ref-for-requirement①①">4.12. DeltaVBudgetForPrimaryThruster</a>
-    <li><a href="#ref-for-requirement①②">4.13. DeltaVBudgetForPropellantTank</a>
-    <li><a href="#ref-for-requirement①③">4.14. DeltaVBudgetForPropulsionModule</a>
-    <li><a href="#ref-for-requirement①④">4.15. DeltaVBudgetForPropulsionSystemControlUnit</a>
-    <li><a href="#ref-for-requirement①⑤">4.16. OperabilityForACSThruster1</a>
-    <li><a href="#ref-for-requirement①⑥">4.17. OperabilityForACSThruster2</a>
-    <li><a href="#ref-for-requirement①⑦">4.18. OperabilityForACSThruster3</a>
-    <li><a href="#ref-for-requirement①⑧">4.19. OperabilityForACSThruster4</a>
-    <li><a href="#ref-for-requirement①⑨">4.20. OperabilityForACSThruster5</a>
-    <li><a href="#ref-for-requirement②⓪">4.21. OperabilityForACSThruster6</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cc41ed9e9a3a4e356fb37f519f022647" class="dfn-panel" data-for="cc41ed9e9a3a4e356fb37f519f022647" id="infopanel-for-cc41ed9e9a3a4e356fb37f519f022647">
-   <span id="infopaneltitle-for-cc41ed9e9a3a4e356fb37f519f022647" style="display:none">Info about the 'operability' external reference.</span><a href="../../../../../systems/spc/requirements/logistical.html#operability">../../../../../systems/spc/requirements/logistical.html#operability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operability">4.16. OperabilityForACSThruster1</a>
-    <li><a href="#ref-for-operability①">4.17. OperabilityForACSThruster2</a>
-    <li><a href="#ref-for-operability②">4.18. OperabilityForACSThruster3</a>
-    <li><a href="#ref-for-operability③">4.19. OperabilityForACSThruster4</a>
-    <li><a href="#ref-for-operability④">4.20. OperabilityForACSThruster5</a>
-    <li><a href="#ref-for-operability⑤">4.21. OperabilityForACSThruster6</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-72de88e0c3984f42b5cac965bcba7d03" class="dfn-panel" data-for="72de88e0c3984f42b5cac965bcba7d03" id="infopanel-for-72de88e0c3984f42b5cac965bcba7d03">
-   <span id="infopaneltitle-for-72de88e0c3984f42b5cac965bcba7d03" style="display:none">Info about the 'altitude' external reference.</span><a href="../../../../../systems/spc/requirements/operational.html#altitude">../../../../../systems/spc/requirements/operational.html#altitude</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-altitude">4.1. AltitudeForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-altitude①">4.2. AltitudeForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-altitude②">4.3. AltitudeForPressurantTank</a>
-    <li><a href="#ref-for-altitude③">4.4. AltitudeForPrimaryThruster</a>
-    <li><a href="#ref-for-altitude④">4.5. AltitudeForPropellantTank</a>
-    <li><a href="#ref-for-altitude⑤">4.6. AltitudeForPropulsionModule</a>
-    <li><a href="#ref-for-altitude⑥">4.7. AltitudeForPropulsionSystemControlUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-597e0fc59cda8a173a99aea8f00ab822" class="dfn-panel" data-for="597e0fc59cda8a173a99aea8f00ab822" id="infopanel-for-597e0fc59cda8a173a99aea8f00ab822">
-   <span id="infopaneltitle-for-597e0fc59cda8a173a99aea8f00ab822" style="display:none">Info about the 'deltavbudget' external reference.</span><a href="../../../../../systems/spc/requirements/resource.html#deltavbudget">../../../../../systems/spc/requirements/resource.html#deltavbudget</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deltavbudget">4.8. DeltaVBudgetForBPPropellantLineUnit</a>
-    <li><a href="#ref-for-deltavbudget①">4.9. DeltaVBudgetForFillDrainValveUnit</a>
-    <li><a href="#ref-for-deltavbudget②">4.10. DeltaVBudgetForPMPropellantLineUnit</a>
-    <li><a href="#ref-for-deltavbudget③">4.11. DeltaVBudgetForPressurantTank</a>
-    <li><a href="#ref-for-deltavbudget④">4.12. DeltaVBudgetForPrimaryThruster</a>
-    <li><a href="#ref-for-deltavbudget⑤">4.13. DeltaVBudgetForPropellantTank</a>
-    <li><a href="#ref-for-deltavbudget⑥">4.14. DeltaVBudgetForPropulsionModule</a>
-    <li><a href="#ref-for-deltavbudget⑦">4.15. DeltaVBudgetForPropulsionSystemControlUnit</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="a8e01b70e1346173e0b92f8d6c780423">refines_1</span>
-     <li><span class="dfn-paneled" id="1a3cf5460c46a55bc29a42ffd9a8f7d5">requirement</span>
+     <li><span class="dfn-paneled" id="e127d530">refines_1</span>
+     <li><span class="dfn-paneled" id="9c7354a4">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/LOGISTICAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="cc41ed9e9a3a4e356fb37f519f022647">operability</span>
+     <li><span class="dfn-paneled" id="249c55c7">operability</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/OPERATIONAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="72de88e0c3984f42b5cac965bcba7d03">altitude</span>
+     <li><span class="dfn-paneled" id="58a8d17e">altitude</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/RESOURCE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="597e0fc59cda8a173a99aea8f00ab822">deltavbudget</span>
+     <li><span class="dfn-paneled" id="c85fdfcf">deltavbudget</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2710,49 +2675,248 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['e127d530'] = {"dfnID": "e127d530", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1", "dfnText": "refines_1", "refSections": [{"refs": [{"id": "ref-for-refines_1"}], "title": "4.1. AltitudeForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-refines_1\u2460"}], "title": "4.2. AltitudeForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-refines_1\u2461"}], "title": "4.3. AltitudeForPressurantTank"}, {"refs": [{"id": "ref-for-refines_1\u2462"}], "title": "4.4. AltitudeForPrimaryThruster"}, {"refs": [{"id": "ref-for-refines_1\u2463"}], "title": "4.5. AltitudeForPropellantTank"}, {"refs": [{"id": "ref-for-refines_1\u2464"}], "title": "4.6. AltitudeForPropulsionModule"}, {"refs": [{"id": "ref-for-refines_1\u2465"}], "title": "4.7. AltitudeForPropulsionSystemControlUnit"}, {"refs": [{"id": "ref-for-refines_1\u2466"}], "title": "4.8. DeltaVBudgetForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-refines_1\u2467"}], "title": "4.9. DeltaVBudgetForFillDrainValveUnit"}, {"refs": [{"id": "ref-for-refines_1\u2468"}], "title": "4.10. DeltaVBudgetForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea"}], "title": "4.11. DeltaVBudgetForPressurantTank"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2460"}], "title": "4.12. DeltaVBudgetForPrimaryThruster"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2461"}], "title": "4.13. DeltaVBudgetForPropellantTank"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2462"}], "title": "4.14. DeltaVBudgetForPropulsionModule"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2463"}], "title": "4.15. DeltaVBudgetForPropulsionSystemControlUnit"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2464"}], "title": "4.16. OperabilityForACSThruster1"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2465"}], "title": "4.17. OperabilityForACSThruster2"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2466"}], "title": "4.18. OperabilityForACSThruster3"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2467"}], "title": "4.19. OperabilityForACSThruster4"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2468"}], "title": "4.20. OperabilityForACSThruster5"}, {"refs": [{"id": "ref-for-refines_1\u2461\u24ea"}], "title": "4.21. OperabilityForACSThruster6"}], "external": true};
+window.dfnpanelData['9c7354a4'] = {"dfnID": "9c7354a4", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement", "dfnText": "requirement", "refSections": [{"refs": [{"id": "ref-for-requirement"}], "title": "4.1. AltitudeForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-requirement\u2460"}], "title": "4.2. AltitudeForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-requirement\u2461"}], "title": "4.3. AltitudeForPressurantTank"}, {"refs": [{"id": "ref-for-requirement\u2462"}], "title": "4.4. AltitudeForPrimaryThruster"}, {"refs": [{"id": "ref-for-requirement\u2463"}], "title": "4.5. AltitudeForPropellantTank"}, {"refs": [{"id": "ref-for-requirement\u2464"}], "title": "4.6. AltitudeForPropulsionModule"}, {"refs": [{"id": "ref-for-requirement\u2465"}], "title": "4.7. AltitudeForPropulsionSystemControlUnit"}, {"refs": [{"id": "ref-for-requirement\u2466"}], "title": "4.8. DeltaVBudgetForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-requirement\u2467"}], "title": "4.9. DeltaVBudgetForFillDrainValveUnit"}, {"refs": [{"id": "ref-for-requirement\u2468"}], "title": "4.10. DeltaVBudgetForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea"}], "title": "4.11. DeltaVBudgetForPressurantTank"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460"}], "title": "4.12. DeltaVBudgetForPrimaryThruster"}, {"refs": [{"id": "ref-for-requirement\u2460\u2461"}], "title": "4.13. DeltaVBudgetForPropellantTank"}, {"refs": [{"id": "ref-for-requirement\u2460\u2462"}], "title": "4.14. DeltaVBudgetForPropulsionModule"}, {"refs": [{"id": "ref-for-requirement\u2460\u2463"}], "title": "4.15. DeltaVBudgetForPropulsionSystemControlUnit"}, {"refs": [{"id": "ref-for-requirement\u2460\u2464"}], "title": "4.16. OperabilityForACSThruster1"}, {"refs": [{"id": "ref-for-requirement\u2460\u2465"}], "title": "4.17. OperabilityForACSThruster2"}, {"refs": [{"id": "ref-for-requirement\u2460\u2466"}], "title": "4.18. OperabilityForACSThruster3"}, {"refs": [{"id": "ref-for-requirement\u2460\u2467"}], "title": "4.19. OperabilityForACSThruster4"}, {"refs": [{"id": "ref-for-requirement\u2460\u2468"}], "title": "4.20. OperabilityForACSThruster5"}, {"refs": [{"id": "ref-for-requirement\u2461\u24ea"}], "title": "4.21. OperabilityForACSThruster6"}], "external": true};
+window.dfnpanelData['249c55c7'] = {"dfnID": "249c55c7", "url": "../../../../../systems/spc/requirements/logistical.html#operability", "dfnText": "operability", "refSections": [{"refs": [{"id": "ref-for-operability"}], "title": "4.16. OperabilityForACSThruster1"}, {"refs": [{"id": "ref-for-operability\u2460"}], "title": "4.17. OperabilityForACSThruster2"}, {"refs": [{"id": "ref-for-operability\u2461"}], "title": "4.18. OperabilityForACSThruster3"}, {"refs": [{"id": "ref-for-operability\u2462"}], "title": "4.19. OperabilityForACSThruster4"}, {"refs": [{"id": "ref-for-operability\u2463"}], "title": "4.20. OperabilityForACSThruster5"}, {"refs": [{"id": "ref-for-operability\u2464"}], "title": "4.21. OperabilityForACSThruster6"}], "external": true};
+window.dfnpanelData['58a8d17e'] = {"dfnID": "58a8d17e", "url": "../../../../../systems/spc/requirements/operational.html#altitude", "dfnText": "altitude", "refSections": [{"refs": [{"id": "ref-for-altitude"}], "title": "4.1. AltitudeForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-altitude\u2460"}], "title": "4.2. AltitudeForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-altitude\u2461"}], "title": "4.3. AltitudeForPressurantTank"}, {"refs": [{"id": "ref-for-altitude\u2462"}], "title": "4.4. AltitudeForPrimaryThruster"}, {"refs": [{"id": "ref-for-altitude\u2463"}], "title": "4.5. AltitudeForPropellantTank"}, {"refs": [{"id": "ref-for-altitude\u2464"}], "title": "4.6. AltitudeForPropulsionModule"}, {"refs": [{"id": "ref-for-altitude\u2465"}], "title": "4.7. AltitudeForPropulsionSystemControlUnit"}], "external": true};
+window.dfnpanelData['c85fdfcf'] = {"dfnID": "c85fdfcf", "url": "../../../../../systems/spc/requirements/resource.html#deltavbudget", "dfnText": "deltavbudget", "refSections": [{"refs": [{"id": "ref-for-deltavbudget"}], "title": "4.8. DeltaVBudgetForBPPropellantLineUnit"}, {"refs": [{"id": "ref-for-deltavbudget\u2460"}], "title": "4.9. DeltaVBudgetForFillDrainValveUnit"}, {"refs": [{"id": "ref-for-deltavbudget\u2461"}], "title": "4.10. DeltaVBudgetForPMPropellantLineUnit"}, {"refs": [{"id": "ref-for-deltavbudget\u2462"}], "title": "4.11. DeltaVBudgetForPressurantTank"}, {"refs": [{"id": "ref-for-deltavbudget\u2463"}], "title": "4.12. DeltaVBudgetForPrimaryThruster"}, {"refs": [{"id": "ref-for-deltavbudget\u2464"}], "title": "4.13. DeltaVBudgetForPropellantTank"}, {"refs": [{"id": "ref-for-deltavbudget\u2465"}], "title": "4.14. DeltaVBudgetForPropulsionModule"}, {"refs": [{"id": "ref-for-deltavbudget\u2466"}], "title": "4.15. DeltaVBudgetForPropulsionSystemControlUnit"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

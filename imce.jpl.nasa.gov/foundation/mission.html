@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/imce.jpl.nasa.gov/foundation/mission" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Mission</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3163,1075 +3169,184 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#traverses_1">traverses_1</a><span>, in § 5.17</span>
    <li><a href="#traversingelement">traversingelement</a><span>, in § 3.4</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-bce274ab31401bd7cafa92b31fe16367" class="dfn-panel" data-for="bce274ab31401bd7cafa92b31fe16367" id="infopanel-for-bce274ab31401bd7cafa92b31fe16367">
-   <span id="infopaneltitle-for-bce274ab31401bd7cafa92b31fe16367" style="display:none">Info about the 'appliesduring_1' external reference.</span><a href="analysis.html#appliesduring_1">analysis.html#appliesduring_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-appliesduring_1">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-962849c0f378b6120e746962bb64daa5" class="dfn-panel" data-for="962849c0f378b6120e746962bb64daa5" id="infopanel-for-962849c0f378b6120e746962bb64daa5">
-   <span id="infopaneltitle-for-962849c0f378b6120e746962bb64daa5" style="display:none">Info about the 'characterizedelement' external reference.</span><a href="analysis.html#characterizedelement">analysis.html#characterizedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizedelement">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-17c9458d108baf1c9953e05b40ba7c0b" class="dfn-panel" data-for="17c9458d108baf1c9953e05b40ba7c0b" id="infopanel-for-17c9458d108baf1c9953e05b40ba7c0b">
-   <span id="infopaneltitle-for-17c9458d108baf1c9953e05b40ba7c0b" style="display:none">Info about the 'characterizes' external reference.</span><a href="analysis.html#characterizes">analysis.html#characterizes</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizes">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dc78e29f1d268c5eeeb130ab78c4e0c4" class="dfn-panel" data-for="dc78e29f1d268c5eeeb130ab78c4e0c4" id="infopanel-for-dc78e29f1d268c5eeeb130ab78c4e0c4">
-   <span id="infopaneltitle-for-dc78e29f1d268c5eeeb130ab78c4e0c4" style="display:none">Info about the 'constraint' external reference.</span><a href="analysis.html#constraint">analysis.html#constraint</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-constraint">4.13. Requirement</a> <a href="#ref-for-constraint①">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3a91fcacc8292e45899a1737c9476b50" class="dfn-panel" data-for="3a91fcacc8292e45899a1737c9476b50" id="infopanel-for-3a91fcacc8292e45899a1737c9476b50">
-   <span id="infopaneltitle-for-3a91fcacc8292e45899a1737c9476b50" style="display:none">Info about the 'forbids_1' external reference.</span><a href="analysis.html#forbids_1">analysis.html#forbids_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-forbids_1">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bd6bc675fd5883ba336fa75db391f350" class="dfn-panel" data-for="bd6bc675fd5883ba336fa75db391f350" id="infopanel-for-bd6bc675fd5883ba336fa75db391f350">
-   <span id="infopaneltitle-for-bd6bc675fd5883ba336fa75db391f350" style="display:none">Info about the 'requires_1' external reference.</span><a href="analysis.html#requires_1">analysis.html#requires_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requires_1">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ff40210cdc11544573fa0e0aad69a6b1" class="dfn-panel" data-for="ff40210cdc11544573fa0e0aad69a6b1" id="infopanel-for-ff40210cdc11544573fa0e0aad69a6b1">
-   <span id="infopaneltitle-for-ff40210cdc11544573fa0e0aad69a6b1" style="display:none">Info about the 'scenario' external reference.</span><a href="analysis.html#scenario">analysis.html#scenario</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-scenario">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-85c5ce890fc4e13b9e4e0c7ae8adda5a" class="dfn-panel" data-for="85c5ce890fc4e13b9e4e0c7ae8adda5a" id="infopanel-for-85c5ce890fc4e13b9e4e0c7ae8adda5a">
-   <span id="infopaneltitle-for-85c5ce890fc4e13b9e4e0c7ae8adda5a" style="display:none">Info about the 'aggregatedelement' external reference.</span><a href="base.html#aggregatedelement">base.html#aggregatedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-aggregatedelement">4.1. Component</a>
-    <li><a href="#ref-for-aggregatedelement①">4.2. Environment</a>
-    <li><a href="#ref-for-aggregatedelement②">4.11. Objective</a>
-    <li><a href="#ref-for-aggregatedelement③">4.12. Product</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4d5e9b4ccfd9de55da1f69e76d84f861" class="dfn-panel" data-for="4d5e9b4ccfd9de55da1f69e76d84f861" id="infopanel-for-4d5e9b4ccfd9de55da1f69e76d84f861">
-   <span id="infopaneltitle-for-4d5e9b4ccfd9de55da1f69e76d84f861" style="display:none">Info about the 'aggregates_1' external reference.</span><a href="base.html#aggregates_1">base.html#aggregates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-aggregates_1">4.1. Component</a>
-    <li><a href="#ref-for-aggregates_1①">4.2. Environment</a>
-    <li><a href="#ref-for-aggregates_1②">4.11. Objective</a>
-    <li><a href="#ref-for-aggregates_1③">4.12. Product</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-41d6ace6b4e832e216514d7dc2847f08" class="dfn-panel" data-for="41d6ace6b4e832e216514d7dc2847f08" id="infopanel-for-41d6ace6b4e832e216514d7dc2847f08">
-   <span id="infopaneltitle-for-41d6ace6b4e832e216514d7dc2847f08" style="display:none">Info about the 'containedelement' external reference.</span><a href="base.html#containedelement">base.html#containedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-containedelement">4.1. Component</a>
-    <li><a href="#ref-for-containedelement①">4.3. Flow</a>
-    <li><a href="#ref-for-containedelement②">4.6. Item</a>
-    <li><a href="#ref-for-containedelement③">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fcec9aca6dad4c6a03f7ecafa61c1ee4" class="dfn-panel" data-for="fcec9aca6dad4c6a03f7ecafa61c1ee4" id="infopanel-for-fcec9aca6dad4c6a03f7ecafa61c1ee4">
-   <span id="infopaneltitle-for-fcec9aca6dad4c6a03f7ecafa61c1ee4" style="display:none">Info about the 'container' external reference.</span><a href="base.html#container">base.html#container</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-container">4.1. Component</a>
-    <li><a href="#ref-for-container①">4.3. Flow</a>
-    <li><a href="#ref-for-container②">4.6. Item</a>
-    <li><a href="#ref-for-container③">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-95826a279ca7f9ef46052541cc43b2e3" class="dfn-panel" data-for="95826a279ca7f9ef46052541cc43b2e3" id="infopanel-for-95826a279ca7f9ef46052541cc43b2e3">
-   <span id="infopaneltitle-for-95826a279ca7f9ef46052541cc43b2e3" style="display:none">Info about the 'contains' external reference.</span><a href="base.html#contains">base.html#contains</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-contains">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-471605f32ab9de7b81115176d549e905" class="dfn-panel" data-for="471605f32ab9de7b81115176d549e905" id="infopanel-for-471605f32ab9de7b81115176d549e905">
-   <span id="infopaneltitle-for-471605f32ab9de7b81115176d549e905" style="display:none">Info about the 'contains_1' external reference.</span><a href="base.html#contains_1">base.html#contains_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-contains_1">4.1. Component</a>
-    <li><a href="#ref-for-contains_1①">4.3. Flow</a>
-    <li><a href="#ref-for-contains_1②">4.6. Item</a>
-    <li><a href="#ref-for-contains_1③">4.7. Junction</a>
-    <li><a href="#ref-for-contains_1④">4.8. MaterialItem</a>
-    <li><a href="#ref-for-contains_1⑤">4.9. Message</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-71442ea0ca42bb8505fbb31491316fd0" class="dfn-panel" data-for="71442ea0ca42bb8505fbb31491316fd0" id="infopanel-for-71442ea0ca42bb8505fbb31491316fd0">
-   <span id="infopaneltitle-for-71442ea0ca42bb8505fbb31491316fd0" style="display:none">Info about the 'identifiedelement' external reference.</span><a href="base.html#identifiedelement">base.html#identifiedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-identifiedelement">4.1. Component</a>
-    <li><a href="#ref-for-identifiedelement①">4.2. Environment</a>
-    <li><a href="#ref-for-identifiedelement②">4.3. Flow</a>
-    <li><a href="#ref-for-identifiedelement③">4.4. Function</a>
-    <li><a href="#ref-for-identifiedelement④">4.5. Interface</a>
-    <li><a href="#ref-for-identifiedelement⑤">4.6. Item</a>
-    <li><a href="#ref-for-identifiedelement⑥">4.7. Junction</a>
-    <li><a href="#ref-for-identifiedelement⑦">4.10. Mission</a>
-    <li><a href="#ref-for-identifiedelement⑧">4.11. Objective</a>
-    <li><a href="#ref-for-identifiedelement⑨">4.12. Product</a>
-    <li><a href="#ref-for-identifiedelement①⓪">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bbb02ec7a01d8375ef4ca4d4740d9239" class="dfn-panel" data-for="bbb02ec7a01d8375ef4ca4d4740d9239" id="infopanel-for-bbb02ec7a01d8375ef4ca4d4740d9239">
-   <span id="infopaneltitle-for-bbb02ec7a01d8375ef4ca4d4740d9239" style="display:none">Info about the 'isaggregatedin' external reference.</span><a href="base.html#isaggregatedin">base.html#isaggregatedin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isaggregatedin">4.1. Component</a>
-    <li><a href="#ref-for-isaggregatedin①">4.2. Environment</a>
-    <li><a href="#ref-for-isaggregatedin②">4.11. Objective</a>
-    <li><a href="#ref-for-isaggregatedin③">4.12. Product</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2f9a6154c895133e871e329ba39b3958" class="dfn-panel" data-for="2f9a6154c895133e871e329ba39b3958" id="infopanel-for-2f9a6154c895133e871e329ba39b3958">
-   <span id="infopaneltitle-for-2f9a6154c895133e871e329ba39b3958" style="display:none">Info about the 'iscontainedin' external reference.</span><a href="base.html#iscontainedin">base.html#iscontainedin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-iscontainedin">4.1. Component</a>
-    <li><a href="#ref-for-iscontainedin①">4.3. Flow</a>
-    <li><a href="#ref-for-iscontainedin②">4.6. Item</a>
-    <li><a href="#ref-for-iscontainedin③">4.7. Junction</a>
-    <li><a href="#ref-for-iscontainedin④">4.8. MaterialItem</a>
-    <li><a href="#ref-for-iscontainedin⑤">4.9. Message</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-23e554392aee58be196b1b5cc35919c0" class="dfn-panel" data-for="23e554392aee58be196b1b5cc35919c0" id="infopanel-for-23e554392aee58be196b1b5cc35919c0">
-   <span id="infopaneltitle-for-23e554392aee58be196b1b5cc35919c0" style="display:none">Info about the 'component' external reference.</span><a href="mission.html#component">mission.html#component</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-component">3.1. PerformingElement</a>
-    <li><a href="#ref-for-component①">3.2. PresentingElement</a>
-    <li><a href="#ref-for-component②">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-component⑤">4.1. Component</a> <a href="#ref-for-component⑥">(2)</a> <a href="#ref-for-component⑦">(3)</a> <a href="#ref-for-component⑧">(4)</a> <a href="#ref-for-component⑨">(5)</a> <a href="#ref-for-component①⓪">(6)</a>
-    <li><a href="#ref-for-component①②">4.2. Environment</a> <a href="#ref-for-component①③">(2)</a>
-    <li><a href="#ref-for-component①⑤">4.10. Mission</a>
-    <li><a href="#ref-for-component①⑦">5.1. Deploys</a>
-    <li><a href="#ref-for-component①⑨">5.2. Induces</a>
-    <li><a href="#ref-for-component②①">5.3. Influences</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d1a43cada5163faa8d071d9fb8ede0ec" class="dfn-panel" data-for="d1a43cada5163faa8d071d9fb8ede0ec" id="infopanel-for-d1a43cada5163faa8d071d9fb8ede0ec">
-   <span id="infopaneltitle-for-d1a43cada5163faa8d071d9fb8ede0ec" style="display:none">Info about the 'deploys_1' external reference.</span><a href="mission.html#deploys_1">mission.html#deploys_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deploys_1">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-906f0a07968a8d64c745d50fea450568" class="dfn-panel" data-for="906f0a07968a8d64c745d50fea450568" id="infopanel-for-906f0a07968a8d64c745d50fea450568">
-   <span id="infopaneltitle-for-906f0a07968a8d64c745d50fea450568" style="display:none">Info about the 'environment' external reference.</span><a href="mission.html#environment">mission.html#environment</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-environment">4.1. Component</a> <a href="#ref-for-environment①">(2)</a>
-    <li><a href="#ref-for-environment③">4.2. Environment</a> <a href="#ref-for-environment④">(2)</a>
-    <li><a href="#ref-for-environment⑥">5.2. Induces</a>
-    <li><a href="#ref-for-environment⑧">5.3. Influences</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9d29a5defd9d2e1dbc39a3ae46d21e18" class="dfn-panel" data-for="9d29a5defd9d2e1dbc39a3ae46d21e18" id="infopanel-for-9d29a5defd9d2e1dbc39a3ae46d21e18">
-   <span id="infopaneltitle-for-9d29a5defd9d2e1dbc39a3ae46d21e18" style="display:none">Info about the 'flow' external reference.</span><a href="mission.html#flow">mission.html#flow</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-flow">3.4. TraversingElement</a>
-    <li><a href="#ref-for-flow③">4.3. Flow</a> <a href="#ref-for-flow④">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-10a5da71069547343c2abec1cb5e4b6c" class="dfn-panel" data-for="10a5da71069547343c2abec1cb5e4b6c" id="infopanel-for-10a5da71069547343c2abec1cb5e4b6c">
-   <span id="infopaneltitle-for-10a5da71069547343c2abec1cb5e4b6c" style="display:none">Info about the 'function' external reference.</span><a href="mission.html#function">mission.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function①">3.1. PerformingElement</a>
-    <li><a href="#ref-for-function⑤">4.4. Function</a> <a href="#ref-for-function⑥">(2)</a> <a href="#ref-for-function⑦">(3)</a> <a href="#ref-for-function⑧">(4)</a>
-    <li><a href="#ref-for-function①④">5.4. Invokes</a> <a href="#ref-for-function①⑤">(2)</a>
-    <li><a href="#ref-for-function①⑦">5.8. Performs</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f3b8a30d9a91b8c550532845e459e2fe" class="dfn-panel" data-for="f3b8a30d9a91b8c550532845e459e2fe" id="infopanel-for-f3b8a30d9a91b8c550532845e459e2fe">
-   <span id="infopaneltitle-for-f3b8a30d9a91b8c550532845e459e2fe" style="display:none">Info about the 'hasrationale' external reference.</span><a href="mission.html#hasrationale">mission.html#hasrationale</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasrationale">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f61cf5ffc265b69a2d84cbfc7b0896b8" class="dfn-panel" data-for="f61cf5ffc265b69a2d84cbfc7b0896b8" id="infopanel-for-f61cf5ffc265b69a2d84cbfc7b0896b8">
-   <span id="infopaneltitle-for-f61cf5ffc265b69a2d84cbfc7b0896b8" style="display:none">Info about the 'induces_1' external reference.</span><a href="mission.html#induces_1">mission.html#induces_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-induces_1">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-25f26d5cd41a95660306607d0a7ef19b" class="dfn-panel" data-for="25f26d5cd41a95660306607d0a7ef19b" id="infopanel-for-25f26d5cd41a95660306607d0a7ef19b">
-   <span id="infopaneltitle-for-25f26d5cd41a95660306607d0a7ef19b" style="display:none">Info about the 'influences_1' external reference.</span><a href="mission.html#influences_1">mission.html#influences_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-influences_1">4.2. Environment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4ed0eefd7603c73167e834092a896df1" class="dfn-panel" data-for="4ed0eefd7603c73167e834092a896df1" id="infopanel-for-4ed0eefd7603c73167e834092a896df1">
-   <span id="infopaneltitle-for-4ed0eefd7603c73167e834092a896df1" style="display:none">Info about the 'interface' external reference.</span><a href="mission.html#interface">mission.html#interface</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-interface①">3.2. PresentingElement</a> <a href="#ref-for-interface②">(2)</a>
-    <li><a href="#ref-for-interface⑤">4.5. Interface</a> <a href="#ref-for-interface⑥">(2)</a>
-    <li><a href="#ref-for-interface⑧">4.7. Junction</a> <a href="#ref-for-interface⑨">(2)</a> <a href="#ref-for-interface①⓪">(3)</a>
-    <li><a href="#ref-for-interface①②">5.5. Joins</a>
-    <li><a href="#ref-for-interface①③">5.6. Joins1</a>
-    <li><a href="#ref-for-interface①④">5.7. Joins2</a>
-    <li><a href="#ref-for-interface①⑥">5.9. Presents</a>
-    <li><a href="#ref-for-interface①⑧">5.14. Transfers</a>
-    <li><a href="#ref-for-interface②⓪">5.15. TransfersIn</a>
-    <li><a href="#ref-for-interface②②">5.16. TransfersOut</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cfc0171b49cda735d921b6437db4507a" class="dfn-panel" data-for="cfc0171b49cda735d921b6437db4507a" id="infopanel-for-cfc0171b49cda735d921b6437db4507a">
-   <span id="infopaneltitle-for-cfc0171b49cda735d921b6437db4507a" style="display:none">Info about the 'invokes_1' external reference.</span><a href="mission.html#invokes_1">mission.html#invokes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-invokes_1">4.4. Function</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dd1e6032a664d987731e784eead4ec1d" class="dfn-panel" data-for="dd1e6032a664d987731e784eead4ec1d" id="infopanel-for-dd1e6032a664d987731e784eead4ec1d">
-   <span id="infopaneltitle-for-dd1e6032a664d987731e784eead4ec1d" style="display:none">Info about the 'isdeployedby' external reference.</span><a href="mission.html#isdeployedby">mission.html#isdeployedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isdeployedby">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c0c285e0e761536ac39474d876766098" class="dfn-panel" data-for="c0c285e0e761536ac39474d876766098" id="infopanel-for-c0c285e0e761536ac39474d876766098">
-   <span id="infopaneltitle-for-c0c285e0e761536ac39474d876766098" style="display:none">Info about the 'isinducedby' external reference.</span><a href="mission.html#isinducedby">mission.html#isinducedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isinducedby">4.2. Environment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ff33225f0441f6e87b401f25078dfa30" class="dfn-panel" data-for="ff33225f0441f6e87b401f25078dfa30" id="infopanel-for-ff33225f0441f6e87b401f25078dfa30">
-   <span id="infopaneltitle-for-ff33225f0441f6e87b401f25078dfa30" style="display:none">Info about the 'isinfluencedby' external reference.</span><a href="mission.html#isinfluencedby">mission.html#isinfluencedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isinfluencedby">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-01898ece18f2399851307a57794ba1aa" class="dfn-panel" data-for="01898ece18f2399851307a57794ba1aa" id="infopanel-for-01898ece18f2399851307a57794ba1aa">
-   <span id="infopaneltitle-for-01898ece18f2399851307a57794ba1aa" style="display:none">Info about the 'isinvokedby' external reference.</span><a href="mission.html#isinvokedby">mission.html#isinvokedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isinvokedby">4.4. Function</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7fe6e7faae82367e7898c9fe2b63e2ab" class="dfn-panel" data-for="7fe6e7faae82367e7898c9fe2b63e2ab" id="infopanel-for-7fe6e7faae82367e7898c9fe2b63e2ab">
-   <span id="infopaneltitle-for-7fe6e7faae82367e7898c9fe2b63e2ab" style="display:none">Info about the 'isjoinedin' external reference.</span><a href="mission.html#isjoinedin">mission.html#isjoinedin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isjoinedin">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ec24475db3ec1ad824b7aeb37eea704e" class="dfn-panel" data-for="ec24475db3ec1ad824b7aeb37eea704e" id="infopanel-for-ec24475db3ec1ad824b7aeb37eea704e">
-   <span id="infopaneltitle-for-ec24475db3ec1ad824b7aeb37eea704e" style="display:none">Info about the 'isjoinedin1' external reference.</span><a href="mission.html#isjoinedin1">mission.html#isjoinedin1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isjoinedin1">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-14e1549e9339e47c86bad9997079f8c2" class="dfn-panel" data-for="14e1549e9339e47c86bad9997079f8c2" id="infopanel-for-14e1549e9339e47c86bad9997079f8c2">
-   <span id="infopaneltitle-for-14e1549e9339e47c86bad9997079f8c2" style="display:none">Info about the 'isjoinedin2' external reference.</span><a href="mission.html#isjoinedin2">mission.html#isjoinedin2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isjoinedin2">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0151626620fe6bb9f8cd8da702fe994e" class="dfn-panel" data-for="0151626620fe6bb9f8cd8da702fe994e" id="infopanel-for-0151626620fe6bb9f8cd8da702fe994e">
-   <span id="infopaneltitle-for-0151626620fe6bb9f8cd8da702fe994e" style="display:none">Info about the 'isperformedby' external reference.</span><a href="mission.html#isperformedby">mission.html#isperformedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isperformedby">4.4. Function</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6ada4a1666237ab75123fc47504da2bd" class="dfn-panel" data-for="6ada4a1666237ab75123fc47504da2bd" id="infopanel-for-6ada4a1666237ab75123fc47504da2bd">
-   <span id="infopaneltitle-for-6ada4a1666237ab75123fc47504da2bd" style="display:none">Info about the 'ispresentedby' external reference.</span><a href="mission.html#ispresentedby">mission.html#ispresentedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ispresentedby">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-49d8c9a74cef35689798682f11767260" class="dfn-panel" data-for="49d8c9a74cef35689798682f11767260" id="infopanel-for-49d8c9a74cef35689798682f11767260">
-   <span id="infopaneltitle-for-49d8c9a74cef35689798682f11767260" style="display:none">Info about the 'isproducedby' external reference.</span><a href="mission.html#isproducedby">mission.html#isproducedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isproducedby">4.12. Product</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b2f122a3727170ed442c150f8cf0a930" class="dfn-panel" data-for="b2f122a3727170ed442c150f8cf0a930" id="infopanel-for-b2f122a3727170ed442c150f8cf0a930">
-   <span id="infopaneltitle-for-b2f122a3727170ed442c150f8cf0a930" style="display:none">Info about the 'ispursuedby' external reference.</span><a href="mission.html#ispursuedby">mission.html#ispursuedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ispursuedby">4.11. Objective</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a00f6b57d80efc54f8c0e1e3568fa80f" class="dfn-panel" data-for="a00f6b57d80efc54f8c0e1e3568fa80f" id="infopanel-for-a00f6b57d80efc54f8c0e1e3568fa80f">
-   <span id="infopaneltitle-for-a00f6b57d80efc54f8c0e1e3568fa80f" style="display:none">Info about the 'isrefinedby' external reference.</span><a href="mission.html#isrefinedby">mission.html#isrefinedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isrefinedby">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1b0c31f6bc2fccd4e9cad3c8dab243c4" class="dfn-panel" data-for="1b0c31f6bc2fccd4e9cad3c8dab243c4" id="infopanel-for-1b0c31f6bc2fccd4e9cad3c8dab243c4">
-   <span id="infopaneltitle-for-1b0c31f6bc2fccd4e9cad3c8dab243c4" style="display:none">Info about the 'isspecifiedby' external reference.</span><a href="mission.html#isspecifiedby">mission.html#isspecifiedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isspecifiedby①">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-16aa72c38ab1b0c41983e8db60a73640" class="dfn-panel" data-for="16aa72c38ab1b0c41983e8db60a73640" id="infopanel-for-16aa72c38ab1b0c41983e8db60a73640">
-   <span id="infopaneltitle-for-16aa72c38ab1b0c41983e8db60a73640" style="display:none">Info about the 'istraversedby' external reference.</span><a href="mission.html#istraversedby">mission.html#istraversedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-istraversedby">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-198bff0c2c8cc302d903ebe1b9f620ea" class="dfn-panel" data-for="198bff0c2c8cc302d903ebe1b9f620ea" id="infopanel-for-198bff0c2c8cc302d903ebe1b9f620ea">
-   <span id="infopaneltitle-for-198bff0c2c8cc302d903ebe1b9f620ea" style="display:none">Info about the 'item' external reference.</span><a href="mission.html#item">mission.html#item</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-item">3.4. TraversingElement</a>
-    <li><a href="#ref-for-item②">4.6. Item</a> <a href="#ref-for-item③">(2)</a>
-    <li><a href="#ref-for-item④">4.8. MaterialItem</a>
-    <li><a href="#ref-for-item⑤">4.9. Message</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e13124d8f691b5c16c07b6a19f37743a" class="dfn-panel" data-for="e13124d8f691b5c16c07b6a19f37743a" id="infopanel-for-e13124d8f691b5c16c07b6a19f37743a">
-   <span id="infopaneltitle-for-e13124d8f691b5c16c07b6a19f37743a" style="display:none">Info about the 'joins' external reference.</span><a href="mission.html#joins">mission.html#joins</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins②">5.6. Joins1</a>
-    <li><a href="#ref-for-joins④">5.7. Joins2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1f354ab9b0f5ed42e389653762a88f92" class="dfn-panel" data-for="1f354ab9b0f5ed42e389653762a88f92" id="infopanel-for-1f354ab9b0f5ed42e389653762a88f92">
-   <span id="infopaneltitle-for-1f354ab9b0f5ed42e389653762a88f92" style="display:none">Info about the 'joins1' external reference.</span><a href="mission.html#joins1">mission.html#joins1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins1">5.5. Joins</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9e4e98e085fb011b2c1c9e279887c52e" class="dfn-panel" data-for="9e4e98e085fb011b2c1c9e279887c52e" id="infopanel-for-9e4e98e085fb011b2c1c9e279887c52e">
-   <span id="infopaneltitle-for-9e4e98e085fb011b2c1c9e279887c52e" style="display:none">Info about the 'joins1_1' external reference.</span><a href="mission.html#joins1_1">mission.html#joins1_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins1_1">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bb720ec3128b3820788b1733eba3514a" class="dfn-panel" data-for="bb720ec3128b3820788b1733eba3514a" id="infopanel-for-bb720ec3128b3820788b1733eba3514a">
-   <span id="infopaneltitle-for-bb720ec3128b3820788b1733eba3514a" style="display:none">Info about the 'joins2' external reference.</span><a href="mission.html#joins2">mission.html#joins2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins2">5.5. Joins</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2229ed7dda1ea94860e5086ef2ab8571" class="dfn-panel" data-for="2229ed7dda1ea94860e5086ef2ab8571" id="infopanel-for-2229ed7dda1ea94860e5086ef2ab8571">
-   <span id="infopaneltitle-for-2229ed7dda1ea94860e5086ef2ab8571" style="display:none">Info about the 'joins2_1' external reference.</span><a href="mission.html#joins2_1">mission.html#joins2_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins2_1">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d5a0b58e6ea76e985b03710cdeef0096" class="dfn-panel" data-for="d5a0b58e6ea76e985b03710cdeef0096" id="infopanel-for-d5a0b58e6ea76e985b03710cdeef0096">
-   <span id="infopaneltitle-for-d5a0b58e6ea76e985b03710cdeef0096" style="display:none">Info about the 'joins_1' external reference.</span><a href="mission.html#joins_1">mission.html#joins_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins_1">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-87258eb586eec9c249a1f5867232db20" class="dfn-panel" data-for="87258eb586eec9c249a1f5867232db20" id="infopanel-for-87258eb586eec9c249a1f5867232db20">
-   <span id="infopaneltitle-for-87258eb586eec9c249a1f5867232db20" style="display:none">Info about the 'junction' external reference.</span><a href="mission.html#junction">mission.html#junction</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-junction">3.4. TraversingElement</a>
-    <li><a href="#ref-for-junction①">4.5. Interface</a> <a href="#ref-for-junction②">(2)</a> <a href="#ref-for-junction③">(3)</a>
-    <li><a href="#ref-for-junction⑤">4.7. Junction</a> <a href="#ref-for-junction⑥">(2)</a> <a href="#ref-for-junction⑦">(3)</a> <a href="#ref-for-junction⑧">(4)</a>
-    <li><a href="#ref-for-junction①⓪">5.5. Joins</a>
-    <li><a href="#ref-for-junction①②">5.6. Joins1</a>
-    <li><a href="#ref-for-junction①④">5.7. Joins2</a>
-    <li><a href="#ref-for-junction①⑥">5.17. Traverses</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-54069c7bdc2ba1190b9d111840e7206e" class="dfn-panel" data-for="54069c7bdc2ba1190b9d111840e7206e" id="infopanel-for-54069c7bdc2ba1190b9d111840e7206e">
-   <span id="infopaneltitle-for-54069c7bdc2ba1190b9d111840e7206e" style="display:none">Info about the 'materialitem' external reference.</span><a href="mission.html#materialitem">mission.html#materialitem</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-materialitem">4.6. Item</a>
-    <li><a href="#ref-for-materialitem③">4.8. MaterialItem</a> <a href="#ref-for-materialitem④">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5730133d12c8ca562bb58ddf221b27dd" class="dfn-panel" data-for="5730133d12c8ca562bb58ddf221b27dd" id="infopanel-for-5730133d12c8ca562bb58ddf221b27dd">
-   <span id="infopaneltitle-for-5730133d12c8ca562bb58ddf221b27dd" style="display:none">Info about the 'message' external reference.</span><a href="mission.html#message">mission.html#message</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-message">4.6. Item</a>
-    <li><a href="#ref-for-message③">4.9. Message</a> <a href="#ref-for-message④">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0d414592a0935380545e7ced7555eceb" class="dfn-panel" data-for="0d414592a0935380545e7ced7555eceb" id="infopanel-for-0d414592a0935380545e7ced7555eceb">
-   <span id="infopaneltitle-for-0d414592a0935380545e7ced7555eceb" style="display:none">Info about the 'mission' external reference.</span><a href="mission.html#mission">mission.html#mission</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mission">3.1. PerformingElement</a>
-    <li><a href="#ref-for-mission①">3.2. PresentingElement</a>
-    <li><a href="#ref-for-mission②">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-mission③">4.1. Component</a>
-    <li><a href="#ref-for-mission⑤">4.10. Mission</a> <a href="#ref-for-mission⑥">(2)</a>
-    <li><a href="#ref-for-mission⑦">4.11. Objective</a>
-    <li><a href="#ref-for-mission⑨">5.1. Deploys</a>
-    <li><a href="#ref-for-mission①①">5.11. Pursues</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dfb8f9dc0bca7ae83ad4b306bb54a69e" class="dfn-panel" data-for="dfb8f9dc0bca7ae83ad4b306bb54a69e" id="infopanel-for-dfb8f9dc0bca7ae83ad4b306bb54a69e">
-   <span id="infopaneltitle-for-dfb8f9dc0bca7ae83ad4b306bb54a69e" style="display:none">Info about the 'objective' external reference.</span><a href="mission.html#objective">mission.html#objective</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-objective①">4.10. Mission</a>
-    <li><a href="#ref-for-objective③">4.11. Objective</a> <a href="#ref-for-objective④">(2)</a>
-    <li><a href="#ref-for-objective⑥">5.11. Pursues</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0ce2eb022dac16a656d2aa4faa35476f" class="dfn-panel" data-for="0ce2eb022dac16a656d2aa4faa35476f" id="infopanel-for-0ce2eb022dac16a656d2aa4faa35476f">
-   <span id="infopaneltitle-for-0ce2eb022dac16a656d2aa4faa35476f" style="display:none">Info about the 'performingelement' external reference.</span><a href="mission.html#performingelement">mission.html#performingelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performingelement②">4.1. Component</a>
-    <li><a href="#ref-for-performingelement④">4.4. Function</a>
-    <li><a href="#ref-for-performingelement⑥">4.10. Mission</a>
-    <li><a href="#ref-for-performingelement⑦">4.12. Product</a>
-    <li><a href="#ref-for-performingelement⑨">5.8. Performs</a>
-    <li><a href="#ref-for-performingelement①①">5.10. Produces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ee03b23c81ee37368dc2208e150dace4" class="dfn-panel" data-for="ee03b23c81ee37368dc2208e150dace4" id="infopanel-for-ee03b23c81ee37368dc2208e150dace4">
-   <span id="infopaneltitle-for-ee03b23c81ee37368dc2208e150dace4" style="display:none">Info about the 'performs' external reference.</span><a href="mission.html#performs">mission.html#performs</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs②">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b98dfb0a3918cbdda8a95fd7283cf52a" class="dfn-panel" data-for="b98dfb0a3918cbdda8a95fd7283cf52a" id="infopanel-for-b98dfb0a3918cbdda8a95fd7283cf52a">
-   <span id="infopaneltitle-for-b98dfb0a3918cbdda8a95fd7283cf52a" style="display:none">Info about the 'performs_1' external reference.</span><a href="mission.html#performs_1">mission.html#performs_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs_1">3.1. PerformingElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e640c36dd23a1dd4cdb80c6ab45f42f8" class="dfn-panel" data-for="e640c36dd23a1dd4cdb80c6ab45f42f8" id="infopanel-for-e640c36dd23a1dd4cdb80c6ab45f42f8">
-   <span id="infopaneltitle-for-e640c36dd23a1dd4cdb80c6ab45f42f8" style="display:none">Info about the 'presentingelement' external reference.</span><a href="mission.html#presentingelement">mission.html#presentingelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presentingelement②">4.1. Component</a>
-    <li><a href="#ref-for-presentingelement⑤">4.5. Interface</a> <a href="#ref-for-presentingelement⑥">(2)</a>
-    <li><a href="#ref-for-presentingelement⑧">4.10. Mission</a>
-    <li><a href="#ref-for-presentingelement①⓪">5.9. Presents</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-987e96abe75846f97e10d24cbb387af1" class="dfn-panel" data-for="987e96abe75846f97e10d24cbb387af1" id="infopanel-for-987e96abe75846f97e10d24cbb387af1">
-   <span id="infopaneltitle-for-987e96abe75846f97e10d24cbb387af1" style="display:none">Info about the 'presents' external reference.</span><a href="mission.html#presents">mission.html#presents</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presents②">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8b67e7dcc32a403668b74eb9597ef413" class="dfn-panel" data-for="8b67e7dcc32a403668b74eb9597ef413" id="infopanel-for-8b67e7dcc32a403668b74eb9597ef413">
-   <span id="infopaneltitle-for-8b67e7dcc32a403668b74eb9597ef413" style="display:none">Info about the 'presents_1' external reference.</span><a href="mission.html#presents_1">mission.html#presents_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presents_1">3.2. PresentingElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f018653e0b6df0f537e0f84dbd0102e5" class="dfn-panel" data-for="f018653e0b6df0f537e0f84dbd0102e5" id="infopanel-for-f018653e0b6df0f537e0f84dbd0102e5">
-   <span id="infopaneltitle-for-f018653e0b6df0f537e0f84dbd0102e5" style="display:none">Info about the 'produces' external reference.</span><a href="mission.html#produces">mission.html#produces</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-produces">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-944e693caac9a871aa182d0cc0546ede" class="dfn-panel" data-for="944e693caac9a871aa182d0cc0546ede" id="infopanel-for-944e693caac9a871aa182d0cc0546ede">
-   <span id="infopaneltitle-for-944e693caac9a871aa182d0cc0546ede" style="display:none">Info about the 'produces_1' external reference.</span><a href="mission.html#produces_1">mission.html#produces_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-produces_1">3.1. PerformingElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-46614ceaec7195cc90242984170730a3" class="dfn-panel" data-for="46614ceaec7195cc90242984170730a3" id="infopanel-for-46614ceaec7195cc90242984170730a3">
-   <span id="infopaneltitle-for-46614ceaec7195cc90242984170730a3" style="display:none">Info about the 'product' external reference.</span><a href="mission.html#product">mission.html#product</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-product">3.1. PerformingElement</a>
-    <li><a href="#ref-for-product②">4.12. Product</a> <a href="#ref-for-product③">(2)</a>
-    <li><a href="#ref-for-product⑤">5.10. Produces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b13493fe6a30f5a1e21e77e81e6299da" class="dfn-panel" data-for="b13493fe6a30f5a1e21e77e81e6299da" id="infopanel-for-b13493fe6a30f5a1e21e77e81e6299da">
-   <span id="infopaneltitle-for-b13493fe6a30f5a1e21e77e81e6299da" style="display:none">Info about the 'pursues_1' external reference.</span><a href="mission.html#pursues_1">mission.html#pursues_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pursues_1">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-634d68d3b96b5ffdf999b5d79414449f" class="dfn-panel" data-for="634d68d3b96b5ffdf999b5d79414449f" id="infopanel-for-634d68d3b96b5ffdf999b5d79414449f">
-   <span id="infopaneltitle-for-634d68d3b96b5ffdf999b5d79414449f" style="display:none">Info about the 'refines_1' external reference.</span><a href="mission.html#refines_1">mission.html#refines_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-refines_1">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-089c76bb0d1df54e21fb89a1e832b50f" class="dfn-panel" data-for="089c76bb0d1df54e21fb89a1e832b50f" id="infopanel-for-089c76bb0d1df54e21fb89a1e832b50f">
-   <span id="infopaneltitle-for-089c76bb0d1df54e21fb89a1e832b50f" style="display:none">Info about the 'requirement' external reference.</span><a href="mission.html#requirement">mission.html#requirement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requirement①">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-requirement③">4.13. Requirement</a> <a href="#ref-for-requirement④">(2)</a>
-    <li><a href="#ref-for-requirement⑦">5.12. Refines</a> <a href="#ref-for-requirement⑧">(2)</a>
-    <li><a href="#ref-for-requirement①⓪">5.13. Specifies</a>
-    <li><a href="#ref-for-requirement①②">6.1. hasRationale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e22043d2a7672b558eb790d7028aa6b4" class="dfn-panel" data-for="e22043d2a7672b558eb790d7028aa6b4" id="infopanel-for-e22043d2a7672b558eb790d7028aa6b4">
-   <span id="infopaneltitle-for-e22043d2a7672b558eb790d7028aa6b4" style="display:none">Info about the 'specifiedelement' external reference.</span><a href="mission.html#specifiedelement">mission.html#specifiedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-specifiedelement②">4.1. Component</a>
-    <li><a href="#ref-for-specifiedelement③">4.10. Mission</a>
-    <li><a href="#ref-for-specifiedelement⑤">4.13. Requirement</a>
-    <li><a href="#ref-for-specifiedelement⑥">5.8. Performs</a>
-    <li><a href="#ref-for-specifiedelement⑦">5.9. Presents</a>
-    <li><a href="#ref-for-specifiedelement⑧">5.10. Produces</a>
-    <li><a href="#ref-for-specifiedelement①⓪">5.13. Specifies</a>
-    <li><a href="#ref-for-specifiedelement①①">5.15. TransfersIn</a>
-    <li><a href="#ref-for-specifiedelement①②">5.16. TransfersOut</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f5ade6cb455e3b17ed913c1040c80a36" class="dfn-panel" data-for="f5ade6cb455e3b17ed913c1040c80a36" id="infopanel-for-f5ade6cb455e3b17ed913c1040c80a36">
-   <span id="infopaneltitle-for-f5ade6cb455e3b17ed913c1040c80a36" style="display:none">Info about the 'specifies_1' external reference.</span><a href="mission.html#specifies_1">mission.html#specifies_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-specifies_1">4.13. Requirement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e971f629a26a4d04ec1d19ad79181cbc" class="dfn-panel" data-for="e971f629a26a4d04ec1d19ad79181cbc" id="infopanel-for-e971f629a26a4d04ec1d19ad79181cbc">
-   <span id="infopaneltitle-for-e971f629a26a4d04ec1d19ad79181cbc" style="display:none">Info about the 'transfers' external reference.</span><a href="mission.html#transfers">mission.html#transfers</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfers①">5.15. TransfersIn</a>
-    <li><a href="#ref-for-transfers②">5.16. TransfersOut</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-32421c46985b27bed9e5c0ba87df258b" class="dfn-panel" data-for="32421c46985b27bed9e5c0ba87df258b" id="infopanel-for-32421c46985b27bed9e5c0ba87df258b">
-   <span id="infopaneltitle-for-32421c46985b27bed9e5c0ba87df258b" style="display:none">Info about the 'transfers_1' external reference.</span><a href="mission.html#transfers_1">mission.html#transfers_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfers_1">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-98b4cb244ebfcd59f28e11838a78d1ac" class="dfn-panel" data-for="98b4cb244ebfcd59f28e11838a78d1ac" id="infopanel-for-98b4cb244ebfcd59f28e11838a78d1ac">
-   <span id="infopaneltitle-for-98b4cb244ebfcd59f28e11838a78d1ac" style="display:none">Info about the 'transfersin' external reference.</span><a href="mission.html#transfersin">mission.html#transfersin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersin">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-transfersin①">5.14. Transfers</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-29841ca65b2c55321657328b39b37498" class="dfn-panel" data-for="29841ca65b2c55321657328b39b37498" id="infopanel-for-29841ca65b2c55321657328b39b37498">
-   <span id="infopaneltitle-for-29841ca65b2c55321657328b39b37498" style="display:none">Info about the 'transfersin_1' external reference.</span><a href="mission.html#transfersin_1">mission.html#transfersin_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersin_1">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f543b75483d8d5421b89cac4d4373b67" class="dfn-panel" data-for="f543b75483d8d5421b89cac4d4373b67" id="infopanel-for-f543b75483d8d5421b89cac4d4373b67">
-   <span id="infopaneltitle-for-f543b75483d8d5421b89cac4d4373b67" style="display:none">Info about the 'transfersout' external reference.</span><a href="mission.html#transfersout">mission.html#transfersout</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersout">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-transfersout①">5.14. Transfers</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d034c970bf47a53a8facad19834ac850" class="dfn-panel" data-for="d034c970bf47a53a8facad19834ac850" id="infopanel-for-d034c970bf47a53a8facad19834ac850">
-   <span id="infopaneltitle-for-d034c970bf47a53a8facad19834ac850" style="display:none">Info about the 'transfersout_1' external reference.</span><a href="mission.html#transfersout_1">mission.html#transfersout_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersout_1">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3556777ef03fb51905cdfb3e5cada295" class="dfn-panel" data-for="3556777ef03fb51905cdfb3e5cada295" id="infopanel-for-3556777ef03fb51905cdfb3e5cada295">
-   <span id="infopaneltitle-for-3556777ef03fb51905cdfb3e5cada295" style="display:none">Info about the 'traverses_1' external reference.</span><a href="mission.html#traverses_1">mission.html#traverses_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-traverses_1">3.4. TraversingElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-44118103acf7cb0fecf9ad3bb6d0188e" class="dfn-panel" data-for="44118103acf7cb0fecf9ad3bb6d0188e" id="infopanel-for-44118103acf7cb0fecf9ad3bb6d0188e">
-   <span id="infopaneltitle-for-44118103acf7cb0fecf9ad3bb6d0188e" style="display:none">Info about the 'traversingelement' external reference.</span><a href="mission.html#traversingelement">mission.html#traversingelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-traversingelement②">4.3. Flow</a>
-    <li><a href="#ref-for-traversingelement③">4.5. Interface</a> <a href="#ref-for-traversingelement④">(2)</a> <a href="#ref-for-traversingelement⑤">(3)</a>
-    <li><a href="#ref-for-traversingelement⑥">4.6. Item</a>
-    <li><a href="#ref-for-traversingelement⑦">4.7. Junction</a>
-    <li><a href="#ref-for-traversingelement⑨">5.14. Transfers</a>
-    <li><a href="#ref-for-traversingelement①①">5.15. TransfersIn</a>
-    <li><a href="#ref-for-traversingelement①③">5.16. TransfersOut</a>
-    <li><a href="#ref-for-traversingelement①⑤">5.17. Traverses</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-042f5e6996c63ee7f5376e6c2cde406b" class="dfn-panel" data-for="042f5e6996c63ee7f5376e6c2cde406b" id="infopanel-for-042f5e6996c63ee7f5376e6c2cde406b">
-   <span id="infopaneltitle-for-042f5e6996c63ee7f5376e6c2cde406b" style="display:none">Info about the 'concern' external reference.</span><a href="project.html#concern">project.html#concern</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-concern">4.11. Objective</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e0e9589a34340294f82879f05d3ed074" class="dfn-panel" data-for="e0e9589a34340294f82879f05d3ed074" id="infopanel-for-e0e9589a34340294f82879f05d3ed074">
-   <span id="infopaneltitle-for-e0e9589a34340294f82879f05d3ed074" style="display:none">Info about the 'developedelement' external reference.</span><a href="project.html#developedelement">project.html#developedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-developedelement">4.1. Component</a>
-    <li><a href="#ref-for-developedelement①">4.5. Interface</a>
-    <li><a href="#ref-for-developedelement②">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-463ba3e4562c0247312113bdfeea34c2" class="dfn-panel" data-for="463ba3e4562c0247312113bdfeea34c2" id="infopanel-for-463ba3e4562c0247312113bdfeea34c2">
-   <span id="infopaneltitle-for-463ba3e4562c0247312113bdfeea34c2" style="display:none">Info about the 'isrealizedby' external reference.</span><a href="project.html#isrealizedby">project.html#isrealizedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isrealizedby">4.1. Component</a>
-    <li><a href="#ref-for-isrealizedby①">4.4. Function</a>
-    <li><a href="#ref-for-isrealizedby②">4.5. Interface</a>
-    <li><a href="#ref-for-isrealizedby③">4.7. Junction</a>
-    <li><a href="#ref-for-isrealizedby④">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-34718d9642073633e084a4f217b45d43" class="dfn-panel" data-for="34718d9642073633e084a4f217b45d43" id="infopanel-for-34718d9642073633e084a4f217b45d43">
-   <span id="infopaneltitle-for-34718d9642073633e084a4f217b45d43" style="display:none">Info about the 'issuppliedby' external reference.</span><a href="project.html#issuppliedby">project.html#issuppliedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-issuppliedby">4.1. Component</a>
-    <li><a href="#ref-for-issuppliedby①">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f7c5a078095e6f8874cd5eb245b22428" class="dfn-panel" data-for="f7c5a078095e6f8874cd5eb245b22428" id="infopanel-for-f7c5a078095e6f8874cd5eb245b22428">
-   <span id="infopaneltitle-for-f7c5a078095e6f8874cd5eb245b22428" style="display:none">Info about the 'project' external reference.</span><a href="project.html#project">project.html#project</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-project">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5d0d2f96dd262ba315190db24df4c050" class="dfn-panel" data-for="5d0d2f96dd262ba315190db24df4c050" id="infopanel-for-5d0d2f96dd262ba315190db24df4c050">
-   <span id="infopaneltitle-for-5d0d2f96dd262ba315190db24df4c050" style="display:none">Info about the 'realizedelement' external reference.</span><a href="project.html#realizedelement">project.html#realizedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-realizedelement">4.1. Component</a>
-    <li><a href="#ref-for-realizedelement①">4.4. Function</a>
-    <li><a href="#ref-for-realizedelement②">4.5. Interface</a>
-    <li><a href="#ref-for-realizedelement③">4.7. Junction</a>
-    <li><a href="#ref-for-realizedelement④">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a1f167774829cb2373954e73fa0aa150" class="dfn-panel" data-for="a1f167774829cb2373954e73fa0aa150" id="infopanel-for-a1f167774829cb2373954e73fa0aa150">
-   <span id="infopaneltitle-for-a1f167774829cb2373954e73fa0aa150" style="display:none">Info about the 'realizes_1' external reference.</span><a href="project.html#realizes_1">project.html#realizes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-realizes_1">4.1. Component</a>
-    <li><a href="#ref-for-realizes_1①">4.4. Function</a>
-    <li><a href="#ref-for-realizes_1②">4.5. Interface</a>
-    <li><a href="#ref-for-realizes_1③">4.7. Junction</a>
-    <li><a href="#ref-for-realizes_1④">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-62e08bf68de6b2573bfd8152392f27f6" class="dfn-panel" data-for="62e08bf68de6b2573bfd8152392f27f6" id="infopanel-for-62e08bf68de6b2573bfd8152392f27f6">
-   <span id="infopaneltitle-for-62e08bf68de6b2573bfd8152392f27f6" style="display:none">Info about the 'suppliedelement' external reference.</span><a href="project.html#suppliedelement">project.html#suppliedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-suppliedelement">4.1. Component</a>
-    <li><a href="#ref-for-suppliedelement①">4.10. Mission</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d67ea13492f904f3eb6444891cb3f0fb" class="dfn-panel" data-for="d67ea13492f904f3eb6444891cb3f0fb" id="infopanel-for-d67ea13492f904f3eb6444891cb3f0fb">
-   <span id="infopaneltitle-for-d67ea13492f904f3eb6444891cb3f0fb" style="display:none">Info about the 'workpackage' external reference.</span><a href="project.html#workpackage">project.html#workpackage</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-workpackage">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bce3b6ddcae81f84807b3f40b5828c1d" class="dfn-panel" data-for="bce3b6ddcae81f84807b3f40b5828c1d" id="infopanel-for-bce3b6ddcae81f84807b3f40b5828c1d">
-   <span id="infopaneltitle-for-bce3b6ddcae81f84807b3f40b5828c1d" style="display:none">Info about the 'assembly' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#assembly">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-assembly">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d8a317da59af930247415b46756893b3" class="dfn-panel" data-for="d8a317da59af930247415b46756893b3" id="infopanel-for-d8a317da59af930247415b46756893b3">
-   <span id="infopaneltitle-for-d8a317da59af930247415b46756893b3" style="display:none">Info about the 'endcircuit' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuit">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-endcircuit">4.5. Interface</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-32ab6104a263649186aa740d7614af2b" class="dfn-panel" data-for="32ab6104a263649186aa740d7614af2b" id="infopanel-for-32ab6104a263649186aa740d7614af2b">
-   <span id="infopaneltitle-for-32ab6104a263649186aa740d7614af2b" style="display:none">Info about the 'endcircuitpresentingelement' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuitpresentingelement">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuitpresentingelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-endcircuitpresentingelement">3.2. PresentingElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c2aecc869590ed619b49db67f7860163" class="dfn-panel" data-for="c2aecc869590ed619b49db67f7860163" id="infopanel-for-c2aecc869590ed619b49db67f7860163">
-   <span id="infopaneltitle-for-c2aecc869590ed619b49db67f7860163" style="display:none">Info about the 'function' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#function">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function⑨">4.7. Junction</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-398ad8bc83d8573bf3720805ab281495" class="dfn-panel" data-for="398ad8bc83d8573bf3720805ab281495" id="infopanel-for-398ad8bc83d8573bf3720805ab281495">
-   <span id="infopaneltitle-for-398ad8bc83d8573bf3720805ab281495" style="display:none">Info about the 'subsystem' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#subsystem">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-subsystem">4.1. Component</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" class="dfn-panel" data-for="b4ff35aa4e6e33fb0b8b711f7c7a5196" id="infopanel-for-b4ff35aa4e6e33fb0b8b711f7c7a5196">
-   <span id="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" style="display:none">Info about the 'string' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#string">../../www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-string">4.13. Requirement</a>
-    <li><a href="#ref-for-string①">6.1. hasRationale</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/ANALYSIS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="bce274ab31401bd7cafa92b31fe16367">appliesduring_1</span>
-     <li><span class="dfn-paneled" id="962849c0f378b6120e746962bb64daa5">characterizedelement</span>
-     <li><span class="dfn-paneled" id="17c9458d108baf1c9953e05b40ba7c0b">characterizes</span>
-     <li><span class="dfn-paneled" id="dc78e29f1d268c5eeeb130ab78c4e0c4">constraint</span>
-     <li><span class="dfn-paneled" id="3a91fcacc8292e45899a1737c9476b50">forbids_1</span>
-     <li><span class="dfn-paneled" id="bd6bc675fd5883ba336fa75db391f350">requires_1</span>
-     <li><span class="dfn-paneled" id="ff40210cdc11544573fa0e0aad69a6b1">scenario</span>
+     <li><span class="dfn-paneled" id="3d31f2f6">appliesduring_1</span>
+     <li><span class="dfn-paneled" id="8ef21237">characterizedelement</span>
+     <li><span class="dfn-paneled" id="314a1adb">characterizes</span>
+     <li><span class="dfn-paneled" id="c6cd4f78">constraint</span>
+     <li><span class="dfn-paneled" id="74e442b7">forbids_1</span>
+     <li><span class="dfn-paneled" id="1faa3679">requires_1</span>
+     <li><span class="dfn-paneled" id="bd66cca6">scenario</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="85c5ce890fc4e13b9e4e0c7ae8adda5a">aggregatedelement</span>
-     <li><span class="dfn-paneled" id="4d5e9b4ccfd9de55da1f69e76d84f861">aggregates_1</span>
-     <li><span class="dfn-paneled" id="41d6ace6b4e832e216514d7dc2847f08">containedelement</span>
-     <li><span class="dfn-paneled" id="fcec9aca6dad4c6a03f7ecafa61c1ee4">container</span>
-     <li><span class="dfn-paneled" id="95826a279ca7f9ef46052541cc43b2e3">contains</span>
-     <li><span class="dfn-paneled" id="471605f32ab9de7b81115176d549e905">contains_1</span>
-     <li><span class="dfn-paneled" id="71442ea0ca42bb8505fbb31491316fd0">identifiedelement</span>
-     <li><span class="dfn-paneled" id="bbb02ec7a01d8375ef4ca4d4740d9239">isaggregatedin</span>
-     <li><span class="dfn-paneled" id="2f9a6154c895133e871e329ba39b3958">iscontainedin</span>
+     <li><span class="dfn-paneled" id="093a85f5">aggregatedelement</span>
+     <li><span class="dfn-paneled" id="d85c14b3">aggregates_1</span>
+     <li><span class="dfn-paneled" id="b685e58c">containedelement</span>
+     <li><span class="dfn-paneled" id="56407881">container</span>
+     <li><span class="dfn-paneled" id="e7e82469">contains</span>
+     <li><span class="dfn-paneled" id="e7208caa">contains_1</span>
+     <li><span class="dfn-paneled" id="26073bd4">identifiedelement</span>
+     <li><span class="dfn-paneled" id="ec742b5f">isaggregatedin</span>
+     <li><span class="dfn-paneled" id="6700c317">iscontainedin</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="23e554392aee58be196b1b5cc35919c0">component</span>
-     <li><span class="dfn-paneled" id="d1a43cada5163faa8d071d9fb8ede0ec">deploys_1</span>
-     <li><span class="dfn-paneled" id="906f0a07968a8d64c745d50fea450568">environment</span>
-     <li><span class="dfn-paneled" id="9d29a5defd9d2e1dbc39a3ae46d21e18">flow</span>
-     <li><span class="dfn-paneled" id="10a5da71069547343c2abec1cb5e4b6c">function</span>
-     <li><span class="dfn-paneled" id="f3b8a30d9a91b8c550532845e459e2fe">hasrationale</span>
-     <li><span class="dfn-paneled" id="f61cf5ffc265b69a2d84cbfc7b0896b8">induces_1</span>
-     <li><span class="dfn-paneled" id="25f26d5cd41a95660306607d0a7ef19b">influences_1</span>
-     <li><span class="dfn-paneled" id="4ed0eefd7603c73167e834092a896df1">interface</span>
-     <li><span class="dfn-paneled" id="cfc0171b49cda735d921b6437db4507a">invokes_1</span>
-     <li><span class="dfn-paneled" id="dd1e6032a664d987731e784eead4ec1d">isdeployedby</span>
-     <li><span class="dfn-paneled" id="c0c285e0e761536ac39474d876766098">isinducedby</span>
-     <li><span class="dfn-paneled" id="ff33225f0441f6e87b401f25078dfa30">isinfluencedby</span>
-     <li><span class="dfn-paneled" id="01898ece18f2399851307a57794ba1aa">isinvokedby</span>
-     <li><span class="dfn-paneled" id="7fe6e7faae82367e7898c9fe2b63e2ab">isjoinedin</span>
-     <li><span class="dfn-paneled" id="ec24475db3ec1ad824b7aeb37eea704e">isjoinedin1</span>
-     <li><span class="dfn-paneled" id="14e1549e9339e47c86bad9997079f8c2">isjoinedin2</span>
-     <li><span class="dfn-paneled" id="0151626620fe6bb9f8cd8da702fe994e">isperformedby</span>
-     <li><span class="dfn-paneled" id="6ada4a1666237ab75123fc47504da2bd">ispresentedby</span>
-     <li><span class="dfn-paneled" id="49d8c9a74cef35689798682f11767260">isproducedby</span>
-     <li><span class="dfn-paneled" id="b2f122a3727170ed442c150f8cf0a930">ispursuedby</span>
-     <li><span class="dfn-paneled" id="a00f6b57d80efc54f8c0e1e3568fa80f">isrefinedby</span>
-     <li><span class="dfn-paneled" id="1b0c31f6bc2fccd4e9cad3c8dab243c4">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="16aa72c38ab1b0c41983e8db60a73640">istraversedby</span>
-     <li><span class="dfn-paneled" id="198bff0c2c8cc302d903ebe1b9f620ea">item</span>
-     <li><span class="dfn-paneled" id="e13124d8f691b5c16c07b6a19f37743a">joins</span>
-     <li><span class="dfn-paneled" id="1f354ab9b0f5ed42e389653762a88f92">joins1</span>
-     <li><span class="dfn-paneled" id="9e4e98e085fb011b2c1c9e279887c52e">joins1_1</span>
-     <li><span class="dfn-paneled" id="bb720ec3128b3820788b1733eba3514a">joins2</span>
-     <li><span class="dfn-paneled" id="2229ed7dda1ea94860e5086ef2ab8571">joins2_1</span>
-     <li><span class="dfn-paneled" id="d5a0b58e6ea76e985b03710cdeef0096">joins_1</span>
-     <li><span class="dfn-paneled" id="87258eb586eec9c249a1f5867232db20">junction</span>
-     <li><span class="dfn-paneled" id="54069c7bdc2ba1190b9d111840e7206e">materialitem</span>
-     <li><span class="dfn-paneled" id="5730133d12c8ca562bb58ddf221b27dd">message</span>
-     <li><span class="dfn-paneled" id="0d414592a0935380545e7ced7555eceb">mission</span>
-     <li><span class="dfn-paneled" id="dfb8f9dc0bca7ae83ad4b306bb54a69e">objective</span>
-     <li><span class="dfn-paneled" id="0ce2eb022dac16a656d2aa4faa35476f">performingelement</span>
-     <li><span class="dfn-paneled" id="ee03b23c81ee37368dc2208e150dace4">performs</span>
-     <li><span class="dfn-paneled" id="b98dfb0a3918cbdda8a95fd7283cf52a">performs_1</span>
-     <li><span class="dfn-paneled" id="e640c36dd23a1dd4cdb80c6ab45f42f8">presentingelement</span>
-     <li><span class="dfn-paneled" id="987e96abe75846f97e10d24cbb387af1">presents</span>
-     <li><span class="dfn-paneled" id="8b67e7dcc32a403668b74eb9597ef413">presents_1</span>
-     <li><span class="dfn-paneled" id="f018653e0b6df0f537e0f84dbd0102e5">produces</span>
-     <li><span class="dfn-paneled" id="944e693caac9a871aa182d0cc0546ede">produces_1</span>
-     <li><span class="dfn-paneled" id="46614ceaec7195cc90242984170730a3">product</span>
-     <li><span class="dfn-paneled" id="b13493fe6a30f5a1e21e77e81e6299da">pursues_1</span>
-     <li><span class="dfn-paneled" id="634d68d3b96b5ffdf999b5d79414449f">refines_1</span>
-     <li><span class="dfn-paneled" id="089c76bb0d1df54e21fb89a1e832b50f">requirement</span>
-     <li><span class="dfn-paneled" id="e22043d2a7672b558eb790d7028aa6b4">specifiedelement</span>
-     <li><span class="dfn-paneled" id="f5ade6cb455e3b17ed913c1040c80a36">specifies_1</span>
-     <li><span class="dfn-paneled" id="e971f629a26a4d04ec1d19ad79181cbc">transfers</span>
-     <li><span class="dfn-paneled" id="32421c46985b27bed9e5c0ba87df258b">transfers_1</span>
-     <li><span class="dfn-paneled" id="98b4cb244ebfcd59f28e11838a78d1ac">transfersin</span>
-     <li><span class="dfn-paneled" id="29841ca65b2c55321657328b39b37498">transfersin_1</span>
-     <li><span class="dfn-paneled" id="f543b75483d8d5421b89cac4d4373b67">transfersout</span>
-     <li><span class="dfn-paneled" id="d034c970bf47a53a8facad19834ac850">transfersout_1</span>
-     <li><span class="dfn-paneled" id="3556777ef03fb51905cdfb3e5cada295">traverses_1</span>
-     <li><span class="dfn-paneled" id="44118103acf7cb0fecf9ad3bb6d0188e">traversingelement</span>
+     <li><span class="dfn-paneled" id="146ca869">component</span>
+     <li><span class="dfn-paneled" id="9755afa4">deploys_1</span>
+     <li><span class="dfn-paneled" id="f3cd17bb">environment</span>
+     <li><span class="dfn-paneled" id="46a41e46">flow</span>
+     <li><span class="dfn-paneled" id="c7d2e1a3">function</span>
+     <li><span class="dfn-paneled" id="0cb39c02">hasrationale</span>
+     <li><span class="dfn-paneled" id="779c9acc">induces_1</span>
+     <li><span class="dfn-paneled" id="5a988125">influences_1</span>
+     <li><span class="dfn-paneled" id="eaef8baa">interface</span>
+     <li><span class="dfn-paneled" id="75bb4eaa">invokes_1</span>
+     <li><span class="dfn-paneled" id="25353058">isdeployedby</span>
+     <li><span class="dfn-paneled" id="c9269950">isinducedby</span>
+     <li><span class="dfn-paneled" id="e77f3169">isinfluencedby</span>
+     <li><span class="dfn-paneled" id="99edc556">isinvokedby</span>
+     <li><span class="dfn-paneled" id="abd052b0">isjoinedin</span>
+     <li><span class="dfn-paneled" id="21275a69">isjoinedin1</span>
+     <li><span class="dfn-paneled" id="5d3fe81d">isjoinedin2</span>
+     <li><span class="dfn-paneled" id="b67b6ad8">isperformedby</span>
+     <li><span class="dfn-paneled" id="ba095e2c">ispresentedby</span>
+     <li><span class="dfn-paneled" id="0d8d9be7">isproducedby</span>
+     <li><span class="dfn-paneled" id="a3699e69">ispursuedby</span>
+     <li><span class="dfn-paneled" id="7b91be3c">isrefinedby</span>
+     <li><span class="dfn-paneled" id="85fcba34">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="e9149990">istraversedby</span>
+     <li><span class="dfn-paneled" id="7bfa5910">item</span>
+     <li><span class="dfn-paneled" id="a4db41cc">joins</span>
+     <li><span class="dfn-paneled" id="0c45987d">joins1</span>
+     <li><span class="dfn-paneled" id="db71eb05">joins1_1</span>
+     <li><span class="dfn-paneled" id="133d70a2">joins2</span>
+     <li><span class="dfn-paneled" id="23e4d2ed">joins2_1</span>
+     <li><span class="dfn-paneled" id="4f3b562d">joins_1</span>
+     <li><span class="dfn-paneled" id="fa866439">junction</span>
+     <li><span class="dfn-paneled" id="86741aba">materialitem</span>
+     <li><span class="dfn-paneled" id="b0edbc8f">message</span>
+     <li><span class="dfn-paneled" id="031879d4">mission</span>
+     <li><span class="dfn-paneled" id="a16f391d">objective</span>
+     <li><span class="dfn-paneled" id="7ce806d6">performingelement</span>
+     <li><span class="dfn-paneled" id="4b749472">performs</span>
+     <li><span class="dfn-paneled" id="e9f50c1d">performs_1</span>
+     <li><span class="dfn-paneled" id="439b2625">presentingelement</span>
+     <li><span class="dfn-paneled" id="ca6829a4">presents</span>
+     <li><span class="dfn-paneled" id="298cc79a">presents_1</span>
+     <li><span class="dfn-paneled" id="caa14582">produces</span>
+     <li><span class="dfn-paneled" id="96d072db">produces_1</span>
+     <li><span class="dfn-paneled" id="f3805138">product</span>
+     <li><span class="dfn-paneled" id="15a454b7">pursues_1</span>
+     <li><span class="dfn-paneled" id="71f90e8a">refines_1</span>
+     <li><span class="dfn-paneled" id="0d7ad1dd">requirement</span>
+     <li><span class="dfn-paneled" id="31c6b47e">specifiedelement</span>
+     <li><span class="dfn-paneled" id="e5f316bc">specifies_1</span>
+     <li><span class="dfn-paneled" id="35520161">transfers</span>
+     <li><span class="dfn-paneled" id="ff20dd48">transfers_1</span>
+     <li><span class="dfn-paneled" id="b00e54b3">transfersin</span>
+     <li><span class="dfn-paneled" id="2547895d">transfersin_1</span>
+     <li><span class="dfn-paneled" id="05d075b6">transfersout</span>
+     <li><span class="dfn-paneled" id="aee7801f">transfersout_1</span>
+     <li><span class="dfn-paneled" id="96839d4b">traverses_1</span>
+     <li><span class="dfn-paneled" id="2516964e">traversingelement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/PROJECT]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="042f5e6996c63ee7f5376e6c2cde406b">concern</span>
-     <li><span class="dfn-paneled" id="e0e9589a34340294f82879f05d3ed074">developedelement</span>
-     <li><span class="dfn-paneled" id="463ba3e4562c0247312113bdfeea34c2">isrealizedby</span>
-     <li><span class="dfn-paneled" id="34718d9642073633e084a4f217b45d43">issuppliedby</span>
-     <li><span class="dfn-paneled" id="f7c5a078095e6f8874cd5eb245b22428">project</span>
-     <li><span class="dfn-paneled" id="5d0d2f96dd262ba315190db24df4c050">realizedelement</span>
-     <li><span class="dfn-paneled" id="a1f167774829cb2373954e73fa0aa150">realizes_1</span>
-     <li><span class="dfn-paneled" id="62e08bf68de6b2573bfd8152392f27f6">suppliedelement</span>
-     <li><span class="dfn-paneled" id="d67ea13492f904f3eb6444891cb3f0fb">workpackage</span>
+     <li><span class="dfn-paneled" id="a9158a2f">concern</span>
+     <li><span class="dfn-paneled" id="7cbe7ad5">developedelement</span>
+     <li><span class="dfn-paneled" id="aefdef5b">isrealizedby</span>
+     <li><span class="dfn-paneled" id="d0c39a0e">issuppliedby</span>
+     <li><span class="dfn-paneled" id="3a3590b7">project</span>
+     <li><span class="dfn-paneled" id="d1648367">realizedelement</span>
+     <li><span class="dfn-paneled" id="1aa8eea4">realizes_1</span>
+     <li><span class="dfn-paneled" id="23e2c799">suppliedelement</span>
+     <li><span class="dfn-paneled" id="87a0b64a">workpackage</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="bce3b6ddcae81f84807b3f40b5828c1d">assembly</span>
-     <li><span class="dfn-paneled" id="d8a317da59af930247415b46756893b3">endcircuit</span>
-     <li><span class="dfn-paneled" id="32ab6104a263649186aa740d7614af2b">endcircuitpresentingelement</span>
-     <li><span class="dfn-paneled" id="c2aecc869590ed619b49db67f7860163">function</span>
-     <li><span class="dfn-paneled" id="398ad8bc83d8573bf3720805ab281495">subsystem</span>
+     <li><span class="dfn-paneled" id="0f9f47d7">assembly</span>
+     <li><span class="dfn-paneled" id="73a7506b">endcircuit</span>
+     <li><span class="dfn-paneled" id="fefd7da5">endcircuitpresentingelement</span>
+     <li><span class="dfn-paneled" id="78d3327e">function</span>
+     <li><span class="dfn-paneled" id="3f2d4d50">subsystem</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://WWW.W3.ORG/2001/XMLSCHEMA]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="b4ff35aa4e6e33fb0b8b711f7c7a5196">string</span>
+     <li><span class="dfn-paneled" id="d5b2cf61">string</span>
     </ul>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-performingelement" class="dfn-panel" data-for="performingelement" id="infopanel-for-performingelement">
-   <span id="infopaneltitle-for-performingelement" style="display:none">Info about the 'PerformingElement' definition.</span><b><a href="#performingelement">#performingelement</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performingelement">3.1. PerformingElement</a> <a href="#ref-for-performingelement①">(2)</a>
-    <li><a href="#ref-for-performingelement③">4.4. Function</a>
-    <li><a href="#ref-for-performingelement⑤">4.10. Mission</a>
-    <li><a href="#ref-for-performingelement⑧">5.8. Performs</a>
-    <li><a href="#ref-for-performingelement①⓪">5.10. Produces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-presentingelement" class="dfn-panel" data-for="presentingelement" id="infopanel-for-presentingelement">
-   <span id="infopaneltitle-for-presentingelement" style="display:none">Info about the 'PresentingElement' definition.</span><b><a href="#presentingelement">#presentingelement</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presentingelement">3.2. PresentingElement</a> <a href="#ref-for-presentingelement①">(2)</a>
-    <li><a href="#ref-for-presentingelement③">4.5. Interface</a> <a href="#ref-for-presentingelement④">(2)</a>
-    <li><a href="#ref-for-presentingelement⑦">4.6. Item</a>
-    <li><a href="#ref-for-presentingelement⑨">5.9. Presents</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-specifiedelement" class="dfn-panel" data-for="specifiedelement" id="infopanel-for-specifiedelement">
-   <span id="infopaneltitle-for-specifiedelement" style="display:none">Info about the 'SpecifiedElement' definition.</span><b><a href="#specifiedelement">#specifiedelement</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-specifiedelement">3.3. SpecifiedElement</a> <a href="#ref-for-specifiedelement①">(2)</a>
-    <li><a href="#ref-for-specifiedelement④">4.13. Requirement</a>
-    <li><a href="#ref-for-specifiedelement⑨">5.13. Specifies</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-traversingelement" class="dfn-panel" data-for="traversingelement" id="infopanel-for-traversingelement">
-   <span id="infopaneltitle-for-traversingelement" style="display:none">Info about the 'TraversingElement' definition.</span><b><a href="#traversingelement">#traversingelement</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-traversingelement">3.4. TraversingElement</a> <a href="#ref-for-traversingelement①">(2)</a>
-    <li><a href="#ref-for-traversingelement⑧">5.14. Transfers</a>
-    <li><a href="#ref-for-traversingelement①⓪">5.15. TransfersIn</a>
-    <li><a href="#ref-for-traversingelement①②">5.16. TransfersOut</a>
-    <li><a href="#ref-for-traversingelement①④">5.17. Traverses</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-component" class="dfn-panel" data-for="component" id="infopanel-for-component">
-   <span id="infopaneltitle-for-component" style="display:none">Info about the 'Component' definition.</span><b><a href="#component">#component</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-component③">4.1. Component</a> <a href="#ref-for-component④">(2)</a>
-    <li><a href="#ref-for-component①①">4.2. Environment</a>
-    <li><a href="#ref-for-component①④">4.3. Flow</a>
-    <li><a href="#ref-for-component①⑥">5.1. Deploys</a>
-    <li><a href="#ref-for-component①⑧">5.2. Induces</a>
-    <li><a href="#ref-for-component②⓪">5.3. Influences</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-environment" class="dfn-panel" data-for="environment" id="infopanel-for-environment">
-   <span id="infopaneltitle-for-environment" style="display:none">Info about the 'Environment' definition.</span><b><a href="#environment">#environment</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-environment②">4.2. Environment</a>
-    <li><a href="#ref-for-environment⑤">5.2. Induces</a>
-    <li><a href="#ref-for-environment⑦">5.3. Influences</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-flow" class="dfn-panel" data-for="flow" id="infopanel-for-flow">
-   <span id="infopaneltitle-for-flow" style="display:none">Info about the 'Flow' definition.</span><b><a href="#flow">#flow</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-flow①">4.3. Flow</a> <a href="#ref-for-flow②">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-function" class="dfn-panel" data-for="function" id="infopanel-for-function">
-   <span id="infopaneltitle-for-function" style="display:none">Info about the 'Function' definition.</span><b><a href="#function">#function</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function">3.1. PerformingElement</a>
-    <li><a href="#ref-for-function②">4.1. Component</a>
-    <li><a href="#ref-for-function③">4.2. Environment</a>
-    <li><a href="#ref-for-function④">4.4. Function</a>
-    <li><a href="#ref-for-function①⓪">4.8. MaterialItem</a>
-    <li><a href="#ref-for-function①①">4.9. Message</a>
-    <li><a href="#ref-for-function①②">5.4. Invokes</a> <a href="#ref-for-function①③">(2)</a>
-    <li><a href="#ref-for-function①⑥">5.8. Performs</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-interface" class="dfn-panel" data-for="interface" id="infopanel-for-interface">
-   <span id="infopaneltitle-for-interface" style="display:none">Info about the 'Interface' definition.</span><b><a href="#interface">#interface</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-interface">3.2. PresentingElement</a>
-    <li><a href="#ref-for-interface③">3.4. TraversingElement</a>
-    <li><a href="#ref-for-interface④">4.5. Interface</a>
-    <li><a href="#ref-for-interface⑦">4.7. Junction</a>
-    <li><a href="#ref-for-interface①①">5.5. Joins</a>
-    <li><a href="#ref-for-interface①⑤">5.9. Presents</a>
-    <li><a href="#ref-for-interface①⑦">5.14. Transfers</a>
-    <li><a href="#ref-for-interface①⑨">5.15. TransfersIn</a>
-    <li><a href="#ref-for-interface②①">5.16. TransfersOut</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-item" class="dfn-panel" data-for="item" id="infopanel-for-item">
-   <span id="infopaneltitle-for-item" style="display:none">Info about the 'Item' definition.</span><b><a href="#item">#item</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-item①">4.6. Item</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-junction" class="dfn-panel" data-for="junction" id="infopanel-for-junction">
-   <span id="infopaneltitle-for-junction" style="display:none">Info about the 'Junction' definition.</span><b><a href="#junction">#junction</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-junction④">4.7. Junction</a>
-    <li><a href="#ref-for-junction⑨">5.5. Joins</a>
-    <li><a href="#ref-for-junction①①">5.6. Joins1</a>
-    <li><a href="#ref-for-junction①③">5.7. Joins2</a>
-    <li><a href="#ref-for-junction①⑤">5.17. Traverses</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-materialitem" class="dfn-panel" data-for="materialitem" id="infopanel-for-materialitem">
-   <span id="infopaneltitle-for-materialitem" style="display:none">Info about the 'MaterialItem' definition.</span><b><a href="#materialitem">#materialitem</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-materialitem①">4.8. MaterialItem</a> <a href="#ref-for-materialitem②">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-message" class="dfn-panel" data-for="message" id="infopanel-for-message">
-   <span id="infopaneltitle-for-message" style="display:none">Info about the 'Message' definition.</span><b><a href="#message">#message</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-message①">4.9. Message</a> <a href="#ref-for-message②">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-mission" class="dfn-panel" data-for="mission" id="infopanel-for-mission">
-   <span id="infopaneltitle-for-mission" style="display:none">Info about the 'Mission' definition.</span><b><a href="#mission">#mission</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mission④">4.10. Mission</a>
-    <li><a href="#ref-for-mission⑧">5.1. Deploys</a>
-    <li><a href="#ref-for-mission①⓪">5.11. Pursues</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-objective" class="dfn-panel" data-for="objective" id="infopanel-for-objective">
-   <span id="infopaneltitle-for-objective" style="display:none">Info about the 'Objective' definition.</span><b><a href="#objective">#objective</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-objective">4.10. Mission</a>
-    <li><a href="#ref-for-objective②">4.11. Objective</a>
-    <li><a href="#ref-for-objective⑤">5.11. Pursues</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-product" class="dfn-panel" data-for="product" id="infopanel-for-product">
-   <span id="infopaneltitle-for-product" style="display:none">Info about the 'Product' definition.</span><b><a href="#product">#product</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-product①">4.12. Product</a>
-    <li><a href="#ref-for-product④">5.10. Produces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-requirement" class="dfn-panel" data-for="requirement" id="infopanel-for-requirement">
-   <span id="infopaneltitle-for-requirement" style="display:none">Info about the 'Requirement' definition.</span><b><a href="#requirement">#requirement</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requirement">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-requirement②">4.13. Requirement</a>
-    <li><a href="#ref-for-requirement⑤">5.12. Refines</a> <a href="#ref-for-requirement⑥">(2)</a>
-    <li><a href="#ref-for-requirement⑨">5.13. Specifies</a>
-    <li><a href="#ref-for-requirement①①">6.1. hasRationale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-deploys" class="dfn-panel" data-for="deploys" id="infopanel-for-deploys">
-   <span id="infopaneltitle-for-deploys" style="display:none">Info about the 'Deploys' definition.</span><b><a href="#deploys">#deploys</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deploys">5.1. Deploys</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-induces" class="dfn-panel" data-for="induces" id="infopanel-for-induces">
-   <span id="infopaneltitle-for-induces" style="display:none">Info about the 'Induces' definition.</span><b><a href="#induces">#induces</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-induces">5.2. Induces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-influences" class="dfn-panel" data-for="influences" id="infopanel-for-influences">
-   <span id="infopaneltitle-for-influences" style="display:none">Info about the 'Influences' definition.</span><b><a href="#influences">#influences</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-influences">5.3. Influences</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-invokes" class="dfn-panel" data-for="invokes" id="infopanel-for-invokes">
-   <span id="infopaneltitle-for-invokes" style="display:none">Info about the 'Invokes' definition.</span><b><a href="#invokes">#invokes</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-invokes">5.4. Invokes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-joins" class="dfn-panel" data-for="joins" id="infopanel-for-joins">
-   <span id="infopaneltitle-for-joins" style="display:none">Info about the 'Joins' definition.</span><b><a href="#joins">#joins</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins">5.5. Joins</a>
-    <li><a href="#ref-for-joins①">5.6. Joins1</a>
-    <li><a href="#ref-for-joins③">5.7. Joins2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-joins1" class="dfn-panel" data-for="joins1" id="infopanel-for-joins1">
-   <span id="infopaneltitle-for-joins1" style="display:none">Info about the 'Joins1' definition.</span><b><a href="#joins1">#joins1</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins1①">5.6. Joins1</a>
-    <li><a href="#ref-for-joins1②">5.7. Joins2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-joins2" class="dfn-panel" data-for="joins2" id="infopanel-for-joins2">
-   <span id="infopaneltitle-for-joins2" style="display:none">Info about the 'Joins2' definition.</span><b><a href="#joins2">#joins2</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-joins2①">5.6. Joins1</a>
-    <li><a href="#ref-for-joins2②">5.7. Joins2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-performs" class="dfn-panel" data-for="performs" id="infopanel-for-performs">
-   <span id="infopaneltitle-for-performs" style="display:none">Info about the 'Performs' definition.</span><b><a href="#performs">#performs</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs">3.1. PerformingElement</a> <a href="#ref-for-performs①">(2)</a>
-    <li><a href="#ref-for-performs③">4.2. Environment</a>
-    <li><a href="#ref-for-performs④">5.8. Performs</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-presents" class="dfn-panel" data-for="presents" id="infopanel-for-presents">
-   <span id="infopaneltitle-for-presents" style="display:none">Info about the 'Presents' definition.</span><b><a href="#presents">#presents</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presents">3.2. PresentingElement</a> <a href="#ref-for-presents①">(2)</a>
-    <li><a href="#ref-for-presents③">5.9. Presents</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-produces" class="dfn-panel" data-for="produces" id="infopanel-for-produces">
-   <span id="infopaneltitle-for-produces" style="display:none">Info about the 'Produces' definition.</span><b><a href="#produces">#produces</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-produces①">5.10. Produces</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-pursues" class="dfn-panel" data-for="pursues" id="infopanel-for-pursues">
-   <span id="infopaneltitle-for-pursues" style="display:none">Info about the 'Pursues' definition.</span><b><a href="#pursues">#pursues</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pursues">4.10. Mission</a>
-    <li><a href="#ref-for-pursues①">5.11. Pursues</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-refines" class="dfn-panel" data-for="refines" id="infopanel-for-refines">
-   <span id="infopaneltitle-for-refines" style="display:none">Info about the 'Refines' definition.</span><b><a href="#refines">#refines</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-refines">5.12. Refines</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-specifies" class="dfn-panel" data-for="specifies" id="infopanel-for-specifies">
-   <span id="infopaneltitle-for-specifies" style="display:none">Info about the 'Specifies' definition.</span><b><a href="#specifies">#specifies</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-specifies">3.3. SpecifiedElement</a>
-    <li><a href="#ref-for-specifies①">5.13. Specifies</a>
-    <li><a href="#ref-for-specifies②">6.1. hasRationale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-isspecifiedby" class="dfn-panel" data-for="isspecifiedby" id="infopanel-for-isspecifiedby">
-   <span id="infopaneltitle-for-isspecifiedby" style="display:none">Info about the 'isSpecifiedBy' definition.</span><b><a href="#isspecifiedby">#isspecifiedby</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isspecifiedby">3.3. SpecifiedElement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-transfers" class="dfn-panel" data-for="transfers" id="infopanel-for-transfers">
-   <span id="infopaneltitle-for-transfers" style="display:none">Info about the 'Transfers' definition.</span><b><a href="#transfers">#transfers</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfers">5.14. Transfers</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-transfersin" class="dfn-panel" data-for="transfersin" id="infopanel-for-transfersin">
-   <span id="infopaneltitle-for-transfersin" style="display:none">Info about the 'TransfersIn' definition.</span><b><a href="#transfersin">#transfersin</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersin②">5.15. TransfersIn</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-transfersout" class="dfn-panel" data-for="transfersout" id="infopanel-for-transfersout">
-   <span id="infopaneltitle-for-transfersout" style="display:none">Info about the 'TransfersOut' definition.</span><b><a href="#transfersout">#transfersout</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transfersout②">5.16. TransfersOut</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-traverses" class="dfn-panel" data-for="traverses" id="infopanel-for-traverses">
-   <span id="infopaneltitle-for-traverses" style="display:none">Info about the 'Traverses' definition.</span><b><a href="#traverses">#traverses</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-traverses">3.4. TraversingElement</a> <a href="#ref-for-traverses①">(2)</a>
-    <li><a href="#ref-for-traverses②">5.17. Traverses</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-hasrationale" class="dfn-panel" data-for="hasrationale" id="infopanel-for-hasrationale">
-   <span id="infopaneltitle-for-hasrationale" style="display:none">Info about the 'hasRationale' definition.</span><b><a href="#hasrationale">#hasrationale</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasrationale①">6.1. hasRationale</a>
-   </ul>
-  </aside>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -4281,49 +3396,367 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['3d31f2f6'] = {"dfnID": "3d31f2f6", "url": "analysis.html#appliesduring_1", "dfnText": "appliesduring_1", "refSections": [{"refs": [{"id": "ref-for-appliesduring_1"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['8ef21237'] = {"dfnID": "8ef21237", "url": "analysis.html#characterizedelement", "dfnText": "characterizedelement", "refSections": [{"refs": [{"id": "ref-for-characterizedelement"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['314a1adb'] = {"dfnID": "314a1adb", "url": "analysis.html#characterizes", "dfnText": "characterizes", "refSections": [{"refs": [{"id": "ref-for-characterizes"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['c6cd4f78'] = {"dfnID": "c6cd4f78", "url": "analysis.html#constraint", "dfnText": "constraint", "refSections": [{"refs": [{"id": "ref-for-constraint"}, {"id": "ref-for-constraint\u2460"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['74e442b7'] = {"dfnID": "74e442b7", "url": "analysis.html#forbids_1", "dfnText": "forbids_1", "refSections": [{"refs": [{"id": "ref-for-forbids_1"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['1faa3679'] = {"dfnID": "1faa3679", "url": "analysis.html#requires_1", "dfnText": "requires_1", "refSections": [{"refs": [{"id": "ref-for-requires_1"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['bd66cca6'] = {"dfnID": "bd66cca6", "url": "analysis.html#scenario", "dfnText": "scenario", "refSections": [{"refs": [{"id": "ref-for-scenario"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['093a85f5'] = {"dfnID": "093a85f5", "url": "base.html#aggregatedelement", "dfnText": "aggregatedelement", "refSections": [{"refs": [{"id": "ref-for-aggregatedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-aggregatedelement\u2460"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-aggregatedelement\u2461"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-aggregatedelement\u2462"}], "title": "4.12. Product"}], "external": true};
+window.dfnpanelData['d85c14b3'] = {"dfnID": "d85c14b3", "url": "base.html#aggregates_1", "dfnText": "aggregates_1", "refSections": [{"refs": [{"id": "ref-for-aggregates_1"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-aggregates_1\u2460"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-aggregates_1\u2461"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-aggregates_1\u2462"}], "title": "4.12. Product"}], "external": true};
+window.dfnpanelData['b685e58c'] = {"dfnID": "b685e58c", "url": "base.html#containedelement", "dfnText": "containedelement", "refSections": [{"refs": [{"id": "ref-for-containedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-containedelement\u2460"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-containedelement\u2461"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-containedelement\u2462"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['56407881'] = {"dfnID": "56407881", "url": "base.html#container", "dfnText": "container", "refSections": [{"refs": [{"id": "ref-for-container"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-container\u2460"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-container\u2461"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-container\u2462"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['e7e82469'] = {"dfnID": "e7e82469", "url": "base.html#contains", "dfnText": "contains", "refSections": [{"refs": [{"id": "ref-for-contains"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['e7208caa'] = {"dfnID": "e7208caa", "url": "base.html#contains_1", "dfnText": "contains_1", "refSections": [{"refs": [{"id": "ref-for-contains_1"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-contains_1\u2460"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-contains_1\u2461"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-contains_1\u2462"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-contains_1\u2463"}], "title": "4.8. MaterialItem"}, {"refs": [{"id": "ref-for-contains_1\u2464"}], "title": "4.9. Message"}], "external": true};
+window.dfnpanelData['26073bd4'] = {"dfnID": "26073bd4", "url": "base.html#identifiedelement", "dfnText": "identifiedelement", "refSections": [{"refs": [{"id": "ref-for-identifiedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-identifiedelement\u2460"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-identifiedelement\u2461"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-identifiedelement\u2462"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-identifiedelement\u2463"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-identifiedelement\u2464"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-identifiedelement\u2465"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-identifiedelement\u2466"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-identifiedelement\u2467"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-identifiedelement\u2468"}], "title": "4.12. Product"}, {"refs": [{"id": "ref-for-identifiedelement\u2460\u24ea"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['ec742b5f'] = {"dfnID": "ec742b5f", "url": "base.html#isaggregatedin", "dfnText": "isaggregatedin", "refSections": [{"refs": [{"id": "ref-for-isaggregatedin"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-isaggregatedin\u2460"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-isaggregatedin\u2461"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-isaggregatedin\u2462"}], "title": "4.12. Product"}], "external": true};
+window.dfnpanelData['6700c317'] = {"dfnID": "6700c317", "url": "base.html#iscontainedin", "dfnText": "iscontainedin", "refSections": [{"refs": [{"id": "ref-for-iscontainedin"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-iscontainedin\u2460"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-iscontainedin\u2461"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-iscontainedin\u2462"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-iscontainedin\u2463"}], "title": "4.8. MaterialItem"}, {"refs": [{"id": "ref-for-iscontainedin\u2464"}], "title": "4.9. Message"}], "external": true};
+window.dfnpanelData['146ca869'] = {"dfnID": "146ca869", "url": "mission.html#component", "dfnText": "component", "refSections": [{"refs": [{"id": "ref-for-component"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-component\u2460"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-component\u2461"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-component\u2464"}, {"id": "ref-for-component\u2465"}, {"id": "ref-for-component\u2466"}, {"id": "ref-for-component\u2467"}, {"id": "ref-for-component\u2468"}, {"id": "ref-for-component\u2460\u24ea"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-component\u2460\u2461"}, {"id": "ref-for-component\u2460\u2462"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-component\u2460\u2464"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-component\u2460\u2466"}], "title": "5.1. Deploys"}, {"refs": [{"id": "ref-for-component\u2460\u2468"}], "title": "5.2. Induces"}, {"refs": [{"id": "ref-for-component\u2461\u2460"}], "title": "5.3. Influences"}], "external": true};
+window.dfnpanelData['9755afa4'] = {"dfnID": "9755afa4", "url": "mission.html#deploys_1", "dfnText": "deploys_1", "refSections": [{"refs": [{"id": "ref-for-deploys_1"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['f3cd17bb'] = {"dfnID": "f3cd17bb", "url": "mission.html#environment", "dfnText": "environment", "refSections": [{"refs": [{"id": "ref-for-environment"}, {"id": "ref-for-environment\u2460"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-environment\u2462"}, {"id": "ref-for-environment\u2463"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-environment\u2465"}], "title": "5.2. Induces"}, {"refs": [{"id": "ref-for-environment\u2467"}], "title": "5.3. Influences"}], "external": true};
+window.dfnpanelData['46a41e46'] = {"dfnID": "46a41e46", "url": "mission.html#flow", "dfnText": "flow", "refSections": [{"refs": [{"id": "ref-for-flow"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-flow\u2462"}, {"id": "ref-for-flow\u2463"}], "title": "4.3. Flow"}], "external": true};
+window.dfnpanelData['c7d2e1a3'] = {"dfnID": "c7d2e1a3", "url": "mission.html#function", "dfnText": "function", "refSections": [{"refs": [{"id": "ref-for-function\u2460"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-function\u2464"}, {"id": "ref-for-function\u2465"}, {"id": "ref-for-function\u2466"}, {"id": "ref-for-function\u2467"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-function\u2460\u2463"}, {"id": "ref-for-function\u2460\u2464"}], "title": "5.4. Invokes"}, {"refs": [{"id": "ref-for-function\u2460\u2466"}], "title": "5.8. Performs"}], "external": true};
+window.dfnpanelData['0cb39c02'] = {"dfnID": "0cb39c02", "url": "mission.html#hasrationale", "dfnText": "hasrationale", "refSections": [{"refs": [{"id": "ref-for-hasrationale"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['779c9acc'] = {"dfnID": "779c9acc", "url": "mission.html#induces_1", "dfnText": "induces_1", "refSections": [{"refs": [{"id": "ref-for-induces_1"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['5a988125'] = {"dfnID": "5a988125", "url": "mission.html#influences_1", "dfnText": "influences_1", "refSections": [{"refs": [{"id": "ref-for-influences_1"}], "title": "4.2. Environment"}], "external": true};
+window.dfnpanelData['eaef8baa'] = {"dfnID": "eaef8baa", "url": "mission.html#interface", "dfnText": "interface", "refSections": [{"refs": [{"id": "ref-for-interface\u2460"}, {"id": "ref-for-interface\u2461"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-interface\u2464"}, {"id": "ref-for-interface\u2465"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-interface\u2467"}, {"id": "ref-for-interface\u2468"}, {"id": "ref-for-interface\u2460\u24ea"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-interface\u2460\u2461"}], "title": "5.5. Joins"}, {"refs": [{"id": "ref-for-interface\u2460\u2462"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-interface\u2460\u2463"}], "title": "5.7. Joins2"}, {"refs": [{"id": "ref-for-interface\u2460\u2465"}], "title": "5.9. Presents"}, {"refs": [{"id": "ref-for-interface\u2460\u2467"}], "title": "5.14. Transfers"}, {"refs": [{"id": "ref-for-interface\u2461\u24ea"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-interface\u2461\u2461"}], "title": "5.16. TransfersOut"}], "external": true};
+window.dfnpanelData['75bb4eaa'] = {"dfnID": "75bb4eaa", "url": "mission.html#invokes_1", "dfnText": "invokes_1", "refSections": [{"refs": [{"id": "ref-for-invokes_1"}], "title": "4.4. Function"}], "external": true};
+window.dfnpanelData['25353058'] = {"dfnID": "25353058", "url": "mission.html#isdeployedby", "dfnText": "isdeployedby", "refSections": [{"refs": [{"id": "ref-for-isdeployedby"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['c9269950'] = {"dfnID": "c9269950", "url": "mission.html#isinducedby", "dfnText": "isinducedby", "refSections": [{"refs": [{"id": "ref-for-isinducedby"}], "title": "4.2. Environment"}], "external": true};
+window.dfnpanelData['e77f3169'] = {"dfnID": "e77f3169", "url": "mission.html#isinfluencedby", "dfnText": "isinfluencedby", "refSections": [{"refs": [{"id": "ref-for-isinfluencedby"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['99edc556'] = {"dfnID": "99edc556", "url": "mission.html#isinvokedby", "dfnText": "isinvokedby", "refSections": [{"refs": [{"id": "ref-for-isinvokedby"}], "title": "4.4. Function"}], "external": true};
+window.dfnpanelData['abd052b0'] = {"dfnID": "abd052b0", "url": "mission.html#isjoinedin", "dfnText": "isjoinedin", "refSections": [{"refs": [{"id": "ref-for-isjoinedin"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['21275a69'] = {"dfnID": "21275a69", "url": "mission.html#isjoinedin1", "dfnText": "isjoinedin1", "refSections": [{"refs": [{"id": "ref-for-isjoinedin1"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['5d3fe81d'] = {"dfnID": "5d3fe81d", "url": "mission.html#isjoinedin2", "dfnText": "isjoinedin2", "refSections": [{"refs": [{"id": "ref-for-isjoinedin2"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['b67b6ad8'] = {"dfnID": "b67b6ad8", "url": "mission.html#isperformedby", "dfnText": "isperformedby", "refSections": [{"refs": [{"id": "ref-for-isperformedby"}], "title": "4.4. Function"}], "external": true};
+window.dfnpanelData['ba095e2c'] = {"dfnID": "ba095e2c", "url": "mission.html#ispresentedby", "dfnText": "ispresentedby", "refSections": [{"refs": [{"id": "ref-for-ispresentedby"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['0d8d9be7'] = {"dfnID": "0d8d9be7", "url": "mission.html#isproducedby", "dfnText": "isproducedby", "refSections": [{"refs": [{"id": "ref-for-isproducedby"}], "title": "4.12. Product"}], "external": true};
+window.dfnpanelData['a3699e69'] = {"dfnID": "a3699e69", "url": "mission.html#ispursuedby", "dfnText": "ispursuedby", "refSections": [{"refs": [{"id": "ref-for-ispursuedby"}], "title": "4.11. Objective"}], "external": true};
+window.dfnpanelData['7b91be3c'] = {"dfnID": "7b91be3c", "url": "mission.html#isrefinedby", "dfnText": "isrefinedby", "refSections": [{"refs": [{"id": "ref-for-isrefinedby"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['85fcba34'] = {"dfnID": "85fcba34", "url": "mission.html#isspecifiedby", "dfnText": "isspecifiedby", "refSections": [{"refs": [{"id": "ref-for-isspecifiedby\u2460"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['e9149990'] = {"dfnID": "e9149990", "url": "mission.html#istraversedby", "dfnText": "istraversedby", "refSections": [{"refs": [{"id": "ref-for-istraversedby"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['7bfa5910'] = {"dfnID": "7bfa5910", "url": "mission.html#item", "dfnText": "item", "refSections": [{"refs": [{"id": "ref-for-item"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-item\u2461"}, {"id": "ref-for-item\u2462"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-item\u2463"}], "title": "4.8. MaterialItem"}, {"refs": [{"id": "ref-for-item\u2464"}], "title": "4.9. Message"}], "external": true};
+window.dfnpanelData['a4db41cc'] = {"dfnID": "a4db41cc", "url": "mission.html#joins", "dfnText": "joins", "refSections": [{"refs": [{"id": "ref-for-joins\u2461"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-joins\u2463"}], "title": "5.7. Joins2"}], "external": true};
+window.dfnpanelData['0c45987d'] = {"dfnID": "0c45987d", "url": "mission.html#joins1", "dfnText": "joins1", "refSections": [{"refs": [{"id": "ref-for-joins1"}], "title": "5.5. Joins"}], "external": true};
+window.dfnpanelData['db71eb05'] = {"dfnID": "db71eb05", "url": "mission.html#joins1_1", "dfnText": "joins1_1", "refSections": [{"refs": [{"id": "ref-for-joins1_1"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['133d70a2'] = {"dfnID": "133d70a2", "url": "mission.html#joins2", "dfnText": "joins2", "refSections": [{"refs": [{"id": "ref-for-joins2"}], "title": "5.5. Joins"}], "external": true};
+window.dfnpanelData['23e4d2ed'] = {"dfnID": "23e4d2ed", "url": "mission.html#joins2_1", "dfnText": "joins2_1", "refSections": [{"refs": [{"id": "ref-for-joins2_1"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['4f3b562d'] = {"dfnID": "4f3b562d", "url": "mission.html#joins_1", "dfnText": "joins_1", "refSections": [{"refs": [{"id": "ref-for-joins_1"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['fa866439'] = {"dfnID": "fa866439", "url": "mission.html#junction", "dfnText": "junction", "refSections": [{"refs": [{"id": "ref-for-junction"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-junction\u2460"}, {"id": "ref-for-junction\u2461"}, {"id": "ref-for-junction\u2462"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-junction\u2464"}, {"id": "ref-for-junction\u2465"}, {"id": "ref-for-junction\u2466"}, {"id": "ref-for-junction\u2467"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-junction\u2460\u24ea"}], "title": "5.5. Joins"}, {"refs": [{"id": "ref-for-junction\u2460\u2461"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-junction\u2460\u2463"}], "title": "5.7. Joins2"}, {"refs": [{"id": "ref-for-junction\u2460\u2465"}], "title": "5.17. Traverses"}], "external": true};
+window.dfnpanelData['86741aba'] = {"dfnID": "86741aba", "url": "mission.html#materialitem", "dfnText": "materialitem", "refSections": [{"refs": [{"id": "ref-for-materialitem"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-materialitem\u2462"}, {"id": "ref-for-materialitem\u2463"}], "title": "4.8. MaterialItem"}], "external": true};
+window.dfnpanelData['b0edbc8f'] = {"dfnID": "b0edbc8f", "url": "mission.html#message", "dfnText": "message", "refSections": [{"refs": [{"id": "ref-for-message"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-message\u2462"}, {"id": "ref-for-message\u2463"}], "title": "4.9. Message"}], "external": true};
+window.dfnpanelData['031879d4'] = {"dfnID": "031879d4", "url": "mission.html#mission", "dfnText": "mission", "refSections": [{"refs": [{"id": "ref-for-mission"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-mission\u2460"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-mission\u2461"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-mission\u2462"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-mission\u2464"}, {"id": "ref-for-mission\u2465"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-mission\u2466"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-mission\u2468"}], "title": "5.1. Deploys"}, {"refs": [{"id": "ref-for-mission\u2460\u2460"}], "title": "5.11. Pursues"}], "external": true};
+window.dfnpanelData['a16f391d'] = {"dfnID": "a16f391d", "url": "mission.html#objective", "dfnText": "objective", "refSections": [{"refs": [{"id": "ref-for-objective\u2460"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-objective\u2462"}, {"id": "ref-for-objective\u2463"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-objective\u2465"}], "title": "5.11. Pursues"}], "external": true};
+window.dfnpanelData['7ce806d6'] = {"dfnID": "7ce806d6", "url": "mission.html#performingelement", "dfnText": "performingelement", "refSections": [{"refs": [{"id": "ref-for-performingelement\u2461"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-performingelement\u2463"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-performingelement\u2465"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-performingelement\u2466"}], "title": "4.12. Product"}, {"refs": [{"id": "ref-for-performingelement\u2468"}], "title": "5.8. Performs"}, {"refs": [{"id": "ref-for-performingelement\u2460\u2460"}], "title": "5.10. Produces"}], "external": true};
+window.dfnpanelData['4b749472'] = {"dfnID": "4b749472", "url": "mission.html#performs", "dfnText": "performs", "refSections": [{"refs": [{"id": "ref-for-performs\u2461"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['e9f50c1d'] = {"dfnID": "e9f50c1d", "url": "mission.html#performs_1", "dfnText": "performs_1", "refSections": [{"refs": [{"id": "ref-for-performs_1"}], "title": "3.1. PerformingElement"}], "external": true};
+window.dfnpanelData['439b2625'] = {"dfnID": "439b2625", "url": "mission.html#presentingelement", "dfnText": "presentingelement", "refSections": [{"refs": [{"id": "ref-for-presentingelement\u2461"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-presentingelement\u2464"}, {"id": "ref-for-presentingelement\u2465"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-presentingelement\u2467"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-presentingelement\u2460\u24ea"}], "title": "5.9. Presents"}], "external": true};
+window.dfnpanelData['ca6829a4'] = {"dfnID": "ca6829a4", "url": "mission.html#presents", "dfnText": "presents", "refSections": [{"refs": [{"id": "ref-for-presents\u2461"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['298cc79a'] = {"dfnID": "298cc79a", "url": "mission.html#presents_1", "dfnText": "presents_1", "refSections": [{"refs": [{"id": "ref-for-presents_1"}], "title": "3.2. PresentingElement"}], "external": true};
+window.dfnpanelData['caa14582'] = {"dfnID": "caa14582", "url": "mission.html#produces", "dfnText": "produces", "refSections": [{"refs": [{"id": "ref-for-produces"}], "title": "3.3. SpecifiedElement"}], "external": true};
+window.dfnpanelData['96d072db'] = {"dfnID": "96d072db", "url": "mission.html#produces_1", "dfnText": "produces_1", "refSections": [{"refs": [{"id": "ref-for-produces_1"}], "title": "3.1. PerformingElement"}], "external": true};
+window.dfnpanelData['f3805138'] = {"dfnID": "f3805138", "url": "mission.html#product", "dfnText": "product", "refSections": [{"refs": [{"id": "ref-for-product"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-product\u2461"}, {"id": "ref-for-product\u2462"}], "title": "4.12. Product"}, {"refs": [{"id": "ref-for-product\u2464"}], "title": "5.10. Produces"}], "external": true};
+window.dfnpanelData['15a454b7'] = {"dfnID": "15a454b7", "url": "mission.html#pursues_1", "dfnText": "pursues_1", "refSections": [{"refs": [{"id": "ref-for-pursues_1"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['71f90e8a'] = {"dfnID": "71f90e8a", "url": "mission.html#refines_1", "dfnText": "refines_1", "refSections": [{"refs": [{"id": "ref-for-refines_1"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['0d7ad1dd'] = {"dfnID": "0d7ad1dd", "url": "mission.html#requirement", "dfnText": "requirement", "refSections": [{"refs": [{"id": "ref-for-requirement\u2460"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-requirement\u2462"}, {"id": "ref-for-requirement\u2463"}], "title": "4.13. Requirement"}, {"refs": [{"id": "ref-for-requirement\u2466"}, {"id": "ref-for-requirement\u2467"}], "title": "5.12. Refines"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea"}], "title": "5.13. Specifies"}, {"refs": [{"id": "ref-for-requirement\u2460\u2461"}], "title": "6.1. hasRationale"}], "external": true};
+window.dfnpanelData['31c6b47e'] = {"dfnID": "31c6b47e", "url": "mission.html#specifiedelement", "dfnText": "specifiedelement", "refSections": [{"refs": [{"id": "ref-for-specifiedelement\u2461"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-specifiedelement\u2462"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-specifiedelement\u2464"}], "title": "4.13. Requirement"}, {"refs": [{"id": "ref-for-specifiedelement\u2465"}], "title": "5.8. Performs"}, {"refs": [{"id": "ref-for-specifiedelement\u2466"}], "title": "5.9. Presents"}, {"refs": [{"id": "ref-for-specifiedelement\u2467"}], "title": "5.10. Produces"}, {"refs": [{"id": "ref-for-specifiedelement\u2460\u24ea"}], "title": "5.13. Specifies"}, {"refs": [{"id": "ref-for-specifiedelement\u2460\u2460"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-specifiedelement\u2460\u2461"}], "title": "5.16. TransfersOut"}], "external": true};
+window.dfnpanelData['e5f316bc'] = {"dfnID": "e5f316bc", "url": "mission.html#specifies_1", "dfnText": "specifies_1", "refSections": [{"refs": [{"id": "ref-for-specifies_1"}], "title": "4.13. Requirement"}], "external": true};
+window.dfnpanelData['35520161'] = {"dfnID": "35520161", "url": "mission.html#transfers", "dfnText": "transfers", "refSections": [{"refs": [{"id": "ref-for-transfers\u2460"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-transfers\u2461"}], "title": "5.16. TransfersOut"}], "external": true};
+window.dfnpanelData['ff20dd48'] = {"dfnID": "ff20dd48", "url": "mission.html#transfers_1", "dfnText": "transfers_1", "refSections": [{"refs": [{"id": "ref-for-transfers_1"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['b00e54b3'] = {"dfnID": "b00e54b3", "url": "mission.html#transfersin", "dfnText": "transfersin", "refSections": [{"refs": [{"id": "ref-for-transfersin"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-transfersin\u2460"}], "title": "5.14. Transfers"}], "external": true};
+window.dfnpanelData['2547895d'] = {"dfnID": "2547895d", "url": "mission.html#transfersin_1", "dfnText": "transfersin_1", "refSections": [{"refs": [{"id": "ref-for-transfersin_1"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['05d075b6'] = {"dfnID": "05d075b6", "url": "mission.html#transfersout", "dfnText": "transfersout", "refSections": [{"refs": [{"id": "ref-for-transfersout"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-transfersout\u2460"}], "title": "5.14. Transfers"}], "external": true};
+window.dfnpanelData['aee7801f'] = {"dfnID": "aee7801f", "url": "mission.html#transfersout_1", "dfnText": "transfersout_1", "refSections": [{"refs": [{"id": "ref-for-transfersout_1"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['96839d4b'] = {"dfnID": "96839d4b", "url": "mission.html#traverses_1", "dfnText": "traverses_1", "refSections": [{"refs": [{"id": "ref-for-traverses_1"}], "title": "3.4. TraversingElement"}], "external": true};
+window.dfnpanelData['2516964e'] = {"dfnID": "2516964e", "url": "mission.html#traversingelement", "dfnText": "traversingelement", "refSections": [{"refs": [{"id": "ref-for-traversingelement\u2461"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-traversingelement\u2462"}, {"id": "ref-for-traversingelement\u2463"}, {"id": "ref-for-traversingelement\u2464"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-traversingelement\u2465"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-traversingelement\u2466"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-traversingelement\u2468"}], "title": "5.14. Transfers"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u2460"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u2462"}], "title": "5.16. TransfersOut"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u2464"}], "title": "5.17. Traverses"}], "external": true};
+window.dfnpanelData['a9158a2f'] = {"dfnID": "a9158a2f", "url": "project.html#concern", "dfnText": "concern", "refSections": [{"refs": [{"id": "ref-for-concern"}], "title": "4.11. Objective"}], "external": true};
+window.dfnpanelData['7cbe7ad5'] = {"dfnID": "7cbe7ad5", "url": "project.html#developedelement", "dfnText": "developedelement", "refSections": [{"refs": [{"id": "ref-for-developedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-developedelement\u2460"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-developedelement\u2461"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['aefdef5b'] = {"dfnID": "aefdef5b", "url": "project.html#isrealizedby", "dfnText": "isrealizedby", "refSections": [{"refs": [{"id": "ref-for-isrealizedby"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-isrealizedby\u2460"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-isrealizedby\u2461"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-isrealizedby\u2462"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-isrealizedby\u2463"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['d0c39a0e'] = {"dfnID": "d0c39a0e", "url": "project.html#issuppliedby", "dfnText": "issuppliedby", "refSections": [{"refs": [{"id": "ref-for-issuppliedby"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-issuppliedby\u2460"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['3a3590b7'] = {"dfnID": "3a3590b7", "url": "project.html#project", "dfnText": "project", "refSections": [{"refs": [{"id": "ref-for-project"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['d1648367'] = {"dfnID": "d1648367", "url": "project.html#realizedelement", "dfnText": "realizedelement", "refSections": [{"refs": [{"id": "ref-for-realizedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-realizedelement\u2460"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-realizedelement\u2461"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-realizedelement\u2462"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-realizedelement\u2463"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['1aa8eea4'] = {"dfnID": "1aa8eea4", "url": "project.html#realizes_1", "dfnText": "realizes_1", "refSections": [{"refs": [{"id": "ref-for-realizes_1"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-realizes_1\u2460"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-realizes_1\u2461"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-realizes_1\u2462"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-realizes_1\u2463"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['23e2c799'] = {"dfnID": "23e2c799", "url": "project.html#suppliedelement", "dfnText": "suppliedelement", "refSections": [{"refs": [{"id": "ref-for-suppliedelement"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-suppliedelement\u2460"}], "title": "4.10. Mission"}], "external": true};
+window.dfnpanelData['87a0b64a'] = {"dfnID": "87a0b64a", "url": "project.html#workpackage", "dfnText": "workpackage", "refSections": [{"refs": [{"id": "ref-for-workpackage"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['0f9f47d7'] = {"dfnID": "0f9f47d7", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#assembly", "dfnText": "assembly", "refSections": [{"refs": [{"id": "ref-for-assembly"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['73a7506b'] = {"dfnID": "73a7506b", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuit", "dfnText": "endcircuit", "refSections": [{"refs": [{"id": "ref-for-endcircuit"}], "title": "4.5. Interface"}], "external": true};
+window.dfnpanelData['fefd7da5'] = {"dfnID": "fefd7da5", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#endcircuitpresentingelement", "dfnText": "endcircuitpresentingelement", "refSections": [{"refs": [{"id": "ref-for-endcircuitpresentingelement"}], "title": "3.2. PresentingElement"}], "external": true};
+window.dfnpanelData['78d3327e'] = {"dfnID": "78d3327e", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#function", "dfnText": "function", "refSections": [{"refs": [{"id": "ref-for-function\u2468"}], "title": "4.7. Junction"}], "external": true};
+window.dfnpanelData['3f2d4d50'] = {"dfnID": "3f2d4d50", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#subsystem", "dfnText": "subsystem", "refSections": [{"refs": [{"id": "ref-for-subsystem"}], "title": "4.1. Component"}], "external": true};
+window.dfnpanelData['d5b2cf61'] = {"dfnID": "d5b2cf61", "url": "../../www.w3.org/2001/XMLSchema.html#string", "dfnText": "string", "refSections": [{"refs": [{"id": "ref-for-string"}], "title": "4.13. Requirement"}, {"refs": [{"id": "ref-for-string\u2460"}], "title": "6.1. hasRationale"}], "external": true};
+window.dfnpanelData['performingelement'] = {"dfnID": "performingelement", "url": "#performingelement", "dfnText": "PerformingElement", "refSections": [{"refs": [{"id": "ref-for-performingelement"}, {"id": "ref-for-performingelement\u2460"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-performingelement\u2462"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-performingelement\u2464"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-performingelement\u2467"}], "title": "5.8. Performs"}, {"refs": [{"id": "ref-for-performingelement\u2460\u24ea"}], "title": "5.10. Produces"}], "external": false};
+window.dfnpanelData['presentingelement'] = {"dfnID": "presentingelement", "url": "#presentingelement", "dfnText": "PresentingElement", "refSections": [{"refs": [{"id": "ref-for-presentingelement"}, {"id": "ref-for-presentingelement\u2460"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-presentingelement\u2462"}, {"id": "ref-for-presentingelement\u2463"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-presentingelement\u2466"}], "title": "4.6. Item"}, {"refs": [{"id": "ref-for-presentingelement\u2468"}], "title": "5.9. Presents"}], "external": false};
+window.dfnpanelData['specifiedelement'] = {"dfnID": "specifiedelement", "url": "#specifiedelement", "dfnText": "SpecifiedElement", "refSections": [{"refs": [{"id": "ref-for-specifiedelement"}, {"id": "ref-for-specifiedelement\u2460"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-specifiedelement\u2463"}], "title": "4.13. Requirement"}, {"refs": [{"id": "ref-for-specifiedelement\u2468"}], "title": "5.13. Specifies"}], "external": false};
+window.dfnpanelData['traversingelement'] = {"dfnID": "traversingelement", "url": "#traversingelement", "dfnText": "TraversingElement", "refSections": [{"refs": [{"id": "ref-for-traversingelement"}, {"id": "ref-for-traversingelement\u2460"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-traversingelement\u2467"}], "title": "5.14. Transfers"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u24ea"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u2461"}], "title": "5.16. TransfersOut"}, {"refs": [{"id": "ref-for-traversingelement\u2460\u2463"}], "title": "5.17. Traverses"}], "external": false};
+window.dfnpanelData['component'] = {"dfnID": "component", "url": "#component", "dfnText": "Component", "refSections": [{"refs": [{"id": "ref-for-component\u2462"}, {"id": "ref-for-component\u2463"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-component\u2460\u2460"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-component\u2460\u2463"}], "title": "4.3. Flow"}, {"refs": [{"id": "ref-for-component\u2460\u2465"}], "title": "5.1. Deploys"}, {"refs": [{"id": "ref-for-component\u2460\u2467"}], "title": "5.2. Induces"}, {"refs": [{"id": "ref-for-component\u2461\u24ea"}], "title": "5.3. Influences"}], "external": false};
+window.dfnpanelData['environment'] = {"dfnID": "environment", "url": "#environment", "dfnText": "Environment", "refSections": [{"refs": [{"id": "ref-for-environment\u2461"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-environment\u2464"}], "title": "5.2. Induces"}, {"refs": [{"id": "ref-for-environment\u2466"}], "title": "5.3. Influences"}], "external": false};
+window.dfnpanelData['flow'] = {"dfnID": "flow", "url": "#flow", "dfnText": "Flow", "refSections": [{"refs": [{"id": "ref-for-flow\u2460"}, {"id": "ref-for-flow\u2461"}], "title": "4.3. Flow"}], "external": false};
+window.dfnpanelData['function'] = {"dfnID": "function", "url": "#function", "dfnText": "Function", "refSections": [{"refs": [{"id": "ref-for-function"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-function\u2461"}], "title": "4.1. Component"}, {"refs": [{"id": "ref-for-function\u2462"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-function\u2463"}], "title": "4.4. Function"}, {"refs": [{"id": "ref-for-function\u2460\u24ea"}], "title": "4.8. MaterialItem"}, {"refs": [{"id": "ref-for-function\u2460\u2460"}], "title": "4.9. Message"}, {"refs": [{"id": "ref-for-function\u2460\u2461"}, {"id": "ref-for-function\u2460\u2462"}], "title": "5.4. Invokes"}, {"refs": [{"id": "ref-for-function\u2460\u2465"}], "title": "5.8. Performs"}], "external": false};
+window.dfnpanelData['interface'] = {"dfnID": "interface", "url": "#interface", "dfnText": "Interface", "refSections": [{"refs": [{"id": "ref-for-interface"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-interface\u2462"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-interface\u2463"}], "title": "4.5. Interface"}, {"refs": [{"id": "ref-for-interface\u2466"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-interface\u2460\u2460"}], "title": "5.5. Joins"}, {"refs": [{"id": "ref-for-interface\u2460\u2464"}], "title": "5.9. Presents"}, {"refs": [{"id": "ref-for-interface\u2460\u2466"}], "title": "5.14. Transfers"}, {"refs": [{"id": "ref-for-interface\u2460\u2468"}], "title": "5.15. TransfersIn"}, {"refs": [{"id": "ref-for-interface\u2461\u2460"}], "title": "5.16. TransfersOut"}], "external": false};
+window.dfnpanelData['item'] = {"dfnID": "item", "url": "#item", "dfnText": "Item", "refSections": [{"refs": [{"id": "ref-for-item\u2460"}], "title": "4.6. Item"}], "external": false};
+window.dfnpanelData['junction'] = {"dfnID": "junction", "url": "#junction", "dfnText": "Junction", "refSections": [{"refs": [{"id": "ref-for-junction\u2463"}], "title": "4.7. Junction"}, {"refs": [{"id": "ref-for-junction\u2468"}], "title": "5.5. Joins"}, {"refs": [{"id": "ref-for-junction\u2460\u2460"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-junction\u2460\u2462"}], "title": "5.7. Joins2"}, {"refs": [{"id": "ref-for-junction\u2460\u2464"}], "title": "5.17. Traverses"}], "external": false};
+window.dfnpanelData['materialitem'] = {"dfnID": "materialitem", "url": "#materialitem", "dfnText": "MaterialItem", "refSections": [{"refs": [{"id": "ref-for-materialitem\u2460"}, {"id": "ref-for-materialitem\u2461"}], "title": "4.8. MaterialItem"}], "external": false};
+window.dfnpanelData['message'] = {"dfnID": "message", "url": "#message", "dfnText": "Message", "refSections": [{"refs": [{"id": "ref-for-message\u2460"}, {"id": "ref-for-message\u2461"}], "title": "4.9. Message"}], "external": false};
+window.dfnpanelData['mission'] = {"dfnID": "mission", "url": "#mission", "dfnText": "Mission", "refSections": [{"refs": [{"id": "ref-for-mission\u2463"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-mission\u2467"}], "title": "5.1. Deploys"}, {"refs": [{"id": "ref-for-mission\u2460\u24ea"}], "title": "5.11. Pursues"}], "external": false};
+window.dfnpanelData['objective'] = {"dfnID": "objective", "url": "#objective", "dfnText": "Objective", "refSections": [{"refs": [{"id": "ref-for-objective"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-objective\u2461"}], "title": "4.11. Objective"}, {"refs": [{"id": "ref-for-objective\u2464"}], "title": "5.11. Pursues"}], "external": false};
+window.dfnpanelData['product'] = {"dfnID": "product", "url": "#product", "dfnText": "Product", "refSections": [{"refs": [{"id": "ref-for-product\u2460"}], "title": "4.12. Product"}, {"refs": [{"id": "ref-for-product\u2463"}], "title": "5.10. Produces"}], "external": false};
+window.dfnpanelData['requirement'] = {"dfnID": "requirement", "url": "#requirement", "dfnText": "Requirement", "refSections": [{"refs": [{"id": "ref-for-requirement"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-requirement\u2461"}], "title": "4.13. Requirement"}, {"refs": [{"id": "ref-for-requirement\u2464"}, {"id": "ref-for-requirement\u2465"}], "title": "5.12. Refines"}, {"refs": [{"id": "ref-for-requirement\u2468"}], "title": "5.13. Specifies"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460"}], "title": "6.1. hasRationale"}], "external": false};
+window.dfnpanelData['deploys'] = {"dfnID": "deploys", "url": "#deploys", "dfnText": "Deploys", "refSections": [{"refs": [{"id": "ref-for-deploys"}], "title": "5.1. Deploys"}], "external": false};
+window.dfnpanelData['induces'] = {"dfnID": "induces", "url": "#induces", "dfnText": "Induces", "refSections": [{"refs": [{"id": "ref-for-induces"}], "title": "5.2. Induces"}], "external": false};
+window.dfnpanelData['influences'] = {"dfnID": "influences", "url": "#influences", "dfnText": "Influences", "refSections": [{"refs": [{"id": "ref-for-influences"}], "title": "5.3. Influences"}], "external": false};
+window.dfnpanelData['invokes'] = {"dfnID": "invokes", "url": "#invokes", "dfnText": "Invokes", "refSections": [{"refs": [{"id": "ref-for-invokes"}], "title": "5.4. Invokes"}], "external": false};
+window.dfnpanelData['joins'] = {"dfnID": "joins", "url": "#joins", "dfnText": "Joins", "refSections": [{"refs": [{"id": "ref-for-joins"}], "title": "5.5. Joins"}, {"refs": [{"id": "ref-for-joins\u2460"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-joins\u2462"}], "title": "5.7. Joins2"}], "external": false};
+window.dfnpanelData['joins1'] = {"dfnID": "joins1", "url": "#joins1", "dfnText": "Joins1", "refSections": [{"refs": [{"id": "ref-for-joins1\u2460"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-joins1\u2461"}], "title": "5.7. Joins2"}], "external": false};
+window.dfnpanelData['joins2'] = {"dfnID": "joins2", "url": "#joins2", "dfnText": "Joins2", "refSections": [{"refs": [{"id": "ref-for-joins2\u2460"}], "title": "5.6. Joins1"}, {"refs": [{"id": "ref-for-joins2\u2461"}], "title": "5.7. Joins2"}], "external": false};
+window.dfnpanelData['performs'] = {"dfnID": "performs", "url": "#performs", "dfnText": "Performs", "refSections": [{"refs": [{"id": "ref-for-performs"}, {"id": "ref-for-performs\u2460"}], "title": "3.1. PerformingElement"}, {"refs": [{"id": "ref-for-performs\u2462"}], "title": "4.2. Environment"}, {"refs": [{"id": "ref-for-performs\u2463"}], "title": "5.8. Performs"}], "external": false};
+window.dfnpanelData['presents'] = {"dfnID": "presents", "url": "#presents", "dfnText": "Presents", "refSections": [{"refs": [{"id": "ref-for-presents"}, {"id": "ref-for-presents\u2460"}], "title": "3.2. PresentingElement"}, {"refs": [{"id": "ref-for-presents\u2462"}], "title": "5.9. Presents"}], "external": false};
+window.dfnpanelData['produces'] = {"dfnID": "produces", "url": "#produces", "dfnText": "Produces", "refSections": [{"refs": [{"id": "ref-for-produces\u2460"}], "title": "5.10. Produces"}], "external": false};
+window.dfnpanelData['pursues'] = {"dfnID": "pursues", "url": "#pursues", "dfnText": "Pursues", "refSections": [{"refs": [{"id": "ref-for-pursues"}], "title": "4.10. Mission"}, {"refs": [{"id": "ref-for-pursues\u2460"}], "title": "5.11. Pursues"}], "external": false};
+window.dfnpanelData['refines'] = {"dfnID": "refines", "url": "#refines", "dfnText": "Refines", "refSections": [{"refs": [{"id": "ref-for-refines"}], "title": "5.12. Refines"}], "external": false};
+window.dfnpanelData['specifies'] = {"dfnID": "specifies", "url": "#specifies", "dfnText": "Specifies", "refSections": [{"refs": [{"id": "ref-for-specifies"}], "title": "3.3. SpecifiedElement"}, {"refs": [{"id": "ref-for-specifies\u2460"}], "title": "5.13. Specifies"}, {"refs": [{"id": "ref-for-specifies\u2461"}], "title": "6.1. hasRationale"}], "external": false};
+window.dfnpanelData['isspecifiedby'] = {"dfnID": "isspecifiedby", "url": "#isspecifiedby", "dfnText": "isSpecifiedBy", "refSections": [{"refs": [{"id": "ref-for-isspecifiedby"}], "title": "3.3. SpecifiedElement"}], "external": false};
+window.dfnpanelData['transfers'] = {"dfnID": "transfers", "url": "#transfers", "dfnText": "Transfers", "refSections": [{"refs": [{"id": "ref-for-transfers"}], "title": "5.14. Transfers"}], "external": false};
+window.dfnpanelData['transfersin'] = {"dfnID": "transfersin", "url": "#transfersin", "dfnText": "TransfersIn", "refSections": [{"refs": [{"id": "ref-for-transfersin\u2461"}], "title": "5.15. TransfersIn"}], "external": false};
+window.dfnpanelData['transfersout'] = {"dfnID": "transfersout", "url": "#transfersout", "dfnText": "TransfersOut", "refSections": [{"refs": [{"id": "ref-for-transfersout\u2461"}], "title": "5.16. TransfersOut"}], "external": false};
+window.dfnpanelData['traverses'] = {"dfnID": "traverses", "url": "#traverses", "dfnText": "Traverses", "refSections": [{"refs": [{"id": "ref-for-traverses"}, {"id": "ref-for-traverses\u2460"}], "title": "3.4. TraversingElement"}, {"refs": [{"id": "ref-for-traverses\u2461"}], "title": "5.17. Traverses"}], "external": false};
+window.dfnpanelData['hasrationale'] = {"dfnID": "hasrationale", "url": "#hasrationale", "dfnText": "hasRationale", "refSections": [{"refs": [{"id": "ref-for-hasrationale\u2460"}], "title": "6.1. hasRationale"}], "external": false};</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/10/subsystems/cdh/requirements" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Command and Data Handling Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -4174,436 +4180,97 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#structuralqualificationfortoppanel">structuralqualificationfortoppanel</a><span>, in § 4.111</span>
    <li><a href="#supportabilityforprimaryflightcomputerunit">supportabilityforprimaryflightcomputerunit</a><span>, in § 4.112</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" class="dfn-panel" data-for="a8e01b70e1346173e0b92f8d6c780423" id="infopanel-for-a8e01b70e1346173e0b92f8d6c780423">
-   <span id="infopaneltitle-for-a8e01b70e1346173e0b92f8d6c780423" style="display:none">Info about the 'refines_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-refines_1">4.1. EnvironmentForBasePlate</a>
-    <li><a href="#ref-for-refines_1①">4.2. EnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-refines_1②">4.3. EnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-refines_1③">4.4. EnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1④">4.5. EnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑤">4.6. EnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑥">4.7. EnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑦">4.8. EnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑧">4.9. EnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑨">4.10. EnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-refines_1①⓪">4.11. EnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-refines_1①①">4.12. EnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-refines_1①②">4.13. EnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-refines_1①③">4.14. EnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-refines_1①④">4.15. EnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-refines_1①⑤">4.16. EnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-refines_1①⑥">4.17. EnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-refines_1①⑦">4.18. EnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-refines_1①⑧">4.19. EnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-refines_1①⑨">4.20. EnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-refines_1②⓪">4.21. EnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-refines_1②①">4.22. EnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-refines_1②②">4.23. EnvironmentForTopPanel</a>
-    <li><a href="#ref-for-refines_1②③">4.24. LaunchEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-refines_1②④">4.25. LaunchEnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-refines_1②⑤">4.26. LaunchEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-refines_1②⑥">4.27. LaunchEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1②⑦">4.28. LaunchEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1②⑧">4.29. LaunchEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-refines_1②⑨">4.30. LaunchEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-refines_1③⓪">4.31. LaunchEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-refines_1③①">4.32. LaunchEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-refines_1③②">4.33. LaunchEnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-refines_1③③">4.34. LaunchEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-refines_1③④">4.35. LaunchEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-refines_1③⑤">4.36. LaunchEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-refines_1③⑥">4.37. LaunchEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-refines_1③⑦">4.38. LaunchEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-refines_1③⑧">4.39. LaunchEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-refines_1③⑨">4.40. LaunchEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-refines_1④⓪">4.41. LaunchEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-refines_1④①">4.42. LaunchEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-refines_1④②">4.43. LaunchEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-refines_1④③">4.44. LaunchEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-refines_1④④">4.45. LaunchEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-refines_1④⑤">4.46. LaunchEnvironmentForTopPanel</a>
-    <li><a href="#ref-for-refines_1④⑥">4.47. MaintenanceForPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-refines_1④⑦">4.48. PrecedenceForPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-refines_1④⑧">4.49. SpaceEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-refines_1④⑨">4.50. SpaceEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-refines_1⑤⓪">4.51. SpaceEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑤①">4.52. SpaceEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑤②">4.53. SpaceEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑤③">4.54. SpaceEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑤④">4.55. SpaceEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑤⑤">4.56. SpaceEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑤⑥">4.57. SpaceEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-refines_1⑤⑦">4.58. SpaceEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-refines_1⑤⑧">4.59. SpaceEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-refines_1⑤⑨">4.60. SpaceEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-refines_1⑥⓪">4.61. SpaceEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-refines_1⑥①">4.62. SpaceEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-refines_1⑥②">4.63. SpaceEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑥③">4.64. SpaceEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑥④">4.65. SpaceEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑥⑤">4.66. SpaceEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑥⑥">4.67. SpaceEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-refines_1⑥⑦">4.68. SpaceEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-refines_1⑥⑧">4.69. SpaceEnvironmentForTopPanel</a>
-    <li><a href="#ref-for-refines_1⑥⑨">4.70. SpaceVehicleNaturalFrequencyForBasePlate</a>
-    <li><a href="#ref-for-refines_1⑦⓪">4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-refines_1⑦①">4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑦②">4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑦③">4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑦④">4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑦⑤">4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑦⑥">4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑦⑦">4.78. SpaceVehicleNaturalFrequencyForSidePanel1</a>
-    <li><a href="#ref-for-refines_1⑦⑧">4.79. SpaceVehicleNaturalFrequencyForSidePanel2</a>
-    <li><a href="#ref-for-refines_1⑦⑨">4.80. SpaceVehicleNaturalFrequencyForSidePanel3</a>
-    <li><a href="#ref-for-refines_1⑧⓪">4.81. SpaceVehicleNaturalFrequencyForSidePanel4</a>
-    <li><a href="#ref-for-refines_1⑧①">4.82. SpaceVehicleNaturalFrequencyForSidePanel5</a>
-    <li><a href="#ref-for-refines_1⑧②">4.83. SpaceVehicleNaturalFrequencyForSidePanel6</a>
-    <li><a href="#ref-for-refines_1⑧③">4.84. SpaceVehicleNaturalFrequencyForStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑧④">4.85. SpaceVehicleNaturalFrequencyForStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑧⑤">4.86. SpaceVehicleNaturalFrequencyForStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑧⑥">4.87. SpaceVehicleNaturalFrequencyForStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑧⑦">4.88. SpaceVehicleNaturalFrequencyForStructurePost5</a>
-    <li><a href="#ref-for-refines_1⑧⑧">4.89. SpaceVehicleNaturalFrequencyForStructurePost6</a>
-    <li><a href="#ref-for-refines_1⑧⑨">4.90. SpaceVehicleNaturalFrequencyForTopPanel</a>
-    <li><a href="#ref-for-refines_1⑨⓪">4.91. StructuralQualificationForBasePlate</a>
-    <li><a href="#ref-for-refines_1⑨①">4.92. StructuralQualificationForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-refines_1⑨②">4.93. StructuralQualificationForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑨③">4.94. StructuralQualificationForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-refines_1⑨④">4.95. StructuralQualificationForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-refines_1⑨⑤">4.96. StructuralQualificationForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-refines_1⑨⑥">4.97. StructuralQualificationForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-refines_1⑨⑦">4.98. StructuralQualificationForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-refines_1⑨⑧">4.99. StructuralQualificationForSidePanel1</a>
-    <li><a href="#ref-for-refines_1⑨⑨">4.100. StructuralQualificationForSidePanel2</a>
-    <li><a href="#ref-for-refines_1①⓪⓪">4.101. StructuralQualificationForSidePanel3</a>
-    <li><a href="#ref-for-refines_1①⓪①">4.102. StructuralQualificationForSidePanel4</a>
-    <li><a href="#ref-for-refines_1①⓪②">4.103. StructuralQualificationForSidePanel5</a>
-    <li><a href="#ref-for-refines_1①⓪③">4.104. StructuralQualificationForSidePanel6</a>
-    <li><a href="#ref-for-refines_1①⓪④">4.105. StructuralQualificationForStructurePost1</a>
-    <li><a href="#ref-for-refines_1①⓪⑤">4.106. StructuralQualificationForStructurePost2</a>
-    <li><a href="#ref-for-refines_1①⓪⑥">4.107. StructuralQualificationForStructurePost3</a>
-    <li><a href="#ref-for-refines_1①⓪⑦">4.108. StructuralQualificationForStructurePost4</a>
-    <li><a href="#ref-for-refines_1①⓪⑧">4.109. StructuralQualificationForStructurePost5</a>
-    <li><a href="#ref-for-refines_1①⓪⑨">4.110. StructuralQualificationForStructurePost6</a>
-    <li><a href="#ref-for-refines_1①①⓪">4.111. StructuralQualificationForTopPanel</a>
-    <li><a href="#ref-for-refines_1①①①">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" class="dfn-panel" data-for="1a3cf5460c46a55bc29a42ffd9a8f7d5" id="infopanel-for-1a3cf5460c46a55bc29a42ffd9a8f7d5">
-   <span id="infopaneltitle-for-1a3cf5460c46a55bc29a42ffd9a8f7d5" style="display:none">Info about the 'requirement' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requirement">4.1. EnvironmentForBasePlate</a>
-    <li><a href="#ref-for-requirement①">4.2. EnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-requirement②">4.3. EnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-requirement③">4.4. EnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement④">4.5. EnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑤">4.6. EnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-requirement⑥">4.7. EnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-requirement⑦">4.8. EnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-requirement⑧">4.9. EnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-requirement⑨">4.10. EnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-requirement①⓪">4.11. EnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-requirement①①">4.12. EnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-requirement①②">4.13. EnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-requirement①③">4.14. EnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-requirement①④">4.15. EnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-requirement①⑤">4.16. EnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-requirement①⑥">4.17. EnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-requirement①⑦">4.18. EnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-requirement①⑧">4.19. EnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-requirement①⑨">4.20. EnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-requirement②⓪">4.21. EnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-requirement②①">4.22. EnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-requirement②②">4.23. EnvironmentForTopPanel</a>
-    <li><a href="#ref-for-requirement②③">4.24. LaunchEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-requirement②④">4.25. LaunchEnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-requirement②⑤">4.26. LaunchEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-requirement②⑥">4.27. LaunchEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement②⑦">4.28. LaunchEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement②⑧">4.29. LaunchEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-requirement②⑨">4.30. LaunchEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-requirement③⓪">4.31. LaunchEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-requirement③①">4.32. LaunchEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-requirement③②">4.33. LaunchEnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-requirement③③">4.34. LaunchEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-requirement③④">4.35. LaunchEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-requirement③⑤">4.36. LaunchEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-requirement③⑥">4.37. LaunchEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-requirement③⑦">4.38. LaunchEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-requirement③⑧">4.39. LaunchEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-requirement③⑨">4.40. LaunchEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-requirement④⓪">4.41. LaunchEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-requirement④①">4.42. LaunchEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-requirement④②">4.43. LaunchEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-requirement④③">4.44. LaunchEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-requirement④④">4.45. LaunchEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-requirement④⑤">4.46. LaunchEnvironmentForTopPanel</a>
-    <li><a href="#ref-for-requirement④⑥">4.47. MaintenanceForPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-requirement④⑦">4.48. PrecedenceForPrimaryFlightComputerUnit</a>
-    <li><a href="#ref-for-requirement④⑧">4.49. SpaceEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-requirement④⑨">4.50. SpaceEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-requirement⑤⓪">4.51. SpaceEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑤①">4.52. SpaceEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑤②">4.53. SpaceEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-requirement⑤③">4.54. SpaceEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-requirement⑤④">4.55. SpaceEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-requirement⑤⑤">4.56. SpaceEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-requirement⑤⑥">4.57. SpaceEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-requirement⑤⑦">4.58. SpaceEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-requirement⑤⑧">4.59. SpaceEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-requirement⑤⑨">4.60. SpaceEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-requirement⑥⓪">4.61. SpaceEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-requirement⑥①">4.62. SpaceEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-requirement⑥②">4.63. SpaceEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-requirement⑥③">4.64. SpaceEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-requirement⑥④">4.65. SpaceEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-requirement⑥⑤">4.66. SpaceEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-requirement⑥⑥">4.67. SpaceEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-requirement⑥⑦">4.68. SpaceEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-requirement⑥⑧">4.69. SpaceEnvironmentForTopPanel</a>
-    <li><a href="#ref-for-requirement⑥⑨">4.70. SpaceVehicleNaturalFrequencyForBasePlate</a>
-    <li><a href="#ref-for-requirement⑦⓪">4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-requirement⑦①">4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑦②">4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑦③">4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-requirement⑦④">4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-requirement⑦⑤">4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-requirement⑦⑥">4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-requirement⑦⑦">4.78. SpaceVehicleNaturalFrequencyForSidePanel1</a>
-    <li><a href="#ref-for-requirement⑦⑧">4.79. SpaceVehicleNaturalFrequencyForSidePanel2</a>
-    <li><a href="#ref-for-requirement⑦⑨">4.80. SpaceVehicleNaturalFrequencyForSidePanel3</a>
-    <li><a href="#ref-for-requirement⑧⓪">4.81. SpaceVehicleNaturalFrequencyForSidePanel4</a>
-    <li><a href="#ref-for-requirement⑧①">4.82. SpaceVehicleNaturalFrequencyForSidePanel5</a>
-    <li><a href="#ref-for-requirement⑧②">4.83. SpaceVehicleNaturalFrequencyForSidePanel6</a>
-    <li><a href="#ref-for-requirement⑧③">4.84. SpaceVehicleNaturalFrequencyForStructurePost1</a>
-    <li><a href="#ref-for-requirement⑧④">4.85. SpaceVehicleNaturalFrequencyForStructurePost2</a>
-    <li><a href="#ref-for-requirement⑧⑤">4.86. SpaceVehicleNaturalFrequencyForStructurePost3</a>
-    <li><a href="#ref-for-requirement⑧⑥">4.87. SpaceVehicleNaturalFrequencyForStructurePost4</a>
-    <li><a href="#ref-for-requirement⑧⑦">4.88. SpaceVehicleNaturalFrequencyForStructurePost5</a>
-    <li><a href="#ref-for-requirement⑧⑧">4.89. SpaceVehicleNaturalFrequencyForStructurePost6</a>
-    <li><a href="#ref-for-requirement⑧⑨">4.90. SpaceVehicleNaturalFrequencyForTopPanel</a>
-    <li><a href="#ref-for-requirement⑨⓪">4.91. StructuralQualificationForBasePlate</a>
-    <li><a href="#ref-for-requirement⑨①">4.92. StructuralQualificationForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-requirement⑨②">4.93. StructuralQualificationForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑨③">4.94. StructuralQualificationForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-requirement⑨④">4.95. StructuralQualificationForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-requirement⑨⑤">4.96. StructuralQualificationForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-requirement⑨⑥">4.97. StructuralQualificationForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-requirement⑨⑦">4.98. StructuralQualificationForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-requirement⑨⑧">4.99. StructuralQualificationForSidePanel1</a>
-    <li><a href="#ref-for-requirement⑨⑨">4.100. StructuralQualificationForSidePanel2</a>
-    <li><a href="#ref-for-requirement①⓪⓪">4.101. StructuralQualificationForSidePanel3</a>
-    <li><a href="#ref-for-requirement①⓪①">4.102. StructuralQualificationForSidePanel4</a>
-    <li><a href="#ref-for-requirement①⓪②">4.103. StructuralQualificationForSidePanel5</a>
-    <li><a href="#ref-for-requirement①⓪③">4.104. StructuralQualificationForSidePanel6</a>
-    <li><a href="#ref-for-requirement①⓪④">4.105. StructuralQualificationForStructurePost1</a>
-    <li><a href="#ref-for-requirement①⓪⑤">4.106. StructuralQualificationForStructurePost2</a>
-    <li><a href="#ref-for-requirement①⓪⑥">4.107. StructuralQualificationForStructurePost3</a>
-    <li><a href="#ref-for-requirement①⓪⑦">4.108. StructuralQualificationForStructurePost4</a>
-    <li><a href="#ref-for-requirement①⓪⑧">4.109. StructuralQualificationForStructurePost5</a>
-    <li><a href="#ref-for-requirement①⓪⑨">4.110. StructuralQualificationForStructurePost6</a>
-    <li><a href="#ref-for-requirement①①⓪">4.111. StructuralQualificationForTopPanel</a>
-    <li><a href="#ref-for-requirement①①①">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d9f0e2641e4e9da907d2994c0fdb317f" class="dfn-panel" data-for="d9f0e2641e4e9da907d2994c0fdb317f" id="infopanel-for-d9f0e2641e4e9da907d2994c0fdb317f">
-   <span id="infopaneltitle-for-d9f0e2641e4e9da907d2994c0fdb317f" style="display:none">Info about the 'environment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#environment">../../../../../systems/spc/requirements/environmental.html#environment</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-environment">4.1. EnvironmentForBasePlate</a>
-    <li><a href="#ref-for-environment①">4.2. EnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-environment②">4.3. EnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-environment③">4.4. EnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-environment④">4.5. EnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-environment⑤">4.6. EnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-environment⑥">4.7. EnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-environment⑦">4.8. EnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-environment⑧">4.9. EnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-environment⑨">4.10. EnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-environment①⓪">4.11. EnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-environment①①">4.12. EnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-environment①②">4.13. EnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-environment①③">4.14. EnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-environment①④">4.15. EnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-environment①⑤">4.16. EnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-environment①⑥">4.17. EnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-environment①⑦">4.18. EnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-environment①⑧">4.19. EnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-environment①⑨">4.20. EnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-environment②⓪">4.21. EnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-environment②①">4.22. EnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-environment②②">4.23. EnvironmentForTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2a2682222252867cdfb164bb4b5154ed" class="dfn-panel" data-for="2a2682222252867cdfb164bb4b5154ed" id="infopanel-for-2a2682222252867cdfb164bb4b5154ed">
-   <span id="infopaneltitle-for-2a2682222252867cdfb164bb4b5154ed" style="display:none">Info about the 'launchenvironment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#launchenvironment">../../../../../systems/spc/requirements/environmental.html#launchenvironment</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-launchenvironment">4.24. LaunchEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-launchenvironment①">4.25. LaunchEnvironmentForLaunchVehicleAdapter</a>
-    <li><a href="#ref-for-launchenvironment②">4.26. LaunchEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-launchenvironment③">4.27. LaunchEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-launchenvironment④">4.28. LaunchEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-launchenvironment⑤">4.29. LaunchEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-launchenvironment⑥">4.30. LaunchEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-launchenvironment⑦">4.31. LaunchEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-launchenvironment⑧">4.32. LaunchEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-launchenvironment⑨">4.33. LaunchEnvironmentForSeparationSystem</a>
-    <li><a href="#ref-for-launchenvironment①⓪">4.34. LaunchEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-launchenvironment①①">4.35. LaunchEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-launchenvironment①②">4.36. LaunchEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-launchenvironment①③">4.37. LaunchEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-launchenvironment①④">4.38. LaunchEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-launchenvironment①⑤">4.39. LaunchEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-launchenvironment①⑥">4.40. LaunchEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-launchenvironment①⑦">4.41. LaunchEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-launchenvironment①⑧">4.42. LaunchEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-launchenvironment①⑨">4.43. LaunchEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-launchenvironment②⓪">4.44. LaunchEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-launchenvironment②①">4.45. LaunchEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-launchenvironment②②">4.46. LaunchEnvironmentForTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1463707d37b668d4b5acfcbd9a22dcd0" class="dfn-panel" data-for="1463707d37b668d4b5acfcbd9a22dcd0" id="infopanel-for-1463707d37b668d4b5acfcbd9a22dcd0">
-   <span id="infopaneltitle-for-1463707d37b668d4b5acfcbd9a22dcd0" style="display:none">Info about the 'spaceenvironment' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#spaceenvironment">../../../../../systems/spc/requirements/environmental.html#spaceenvironment</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironment">4.49. SpaceEnvironmentForBasePlate</a>
-    <li><a href="#ref-for-spaceenvironment①">4.50. SpaceEnvironmentForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-spaceenvironment②">4.51. SpaceEnvironmentForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-spaceenvironment③">4.52. SpaceEnvironmentForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-spaceenvironment④">4.53. SpaceEnvironmentForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-spaceenvironment⑤">4.54. SpaceEnvironmentForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-spaceenvironment⑥">4.55. SpaceEnvironmentForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-spaceenvironment⑦">4.56. SpaceEnvironmentForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-spaceenvironment⑧">4.57. SpaceEnvironmentForSidePanel1</a>
-    <li><a href="#ref-for-spaceenvironment⑨">4.58. SpaceEnvironmentForSidePanel2</a>
-    <li><a href="#ref-for-spaceenvironment①⓪">4.59. SpaceEnvironmentForSidePanel3</a>
-    <li><a href="#ref-for-spaceenvironment①①">4.60. SpaceEnvironmentForSidePanel4</a>
-    <li><a href="#ref-for-spaceenvironment①②">4.61. SpaceEnvironmentForSidePanel5</a>
-    <li><a href="#ref-for-spaceenvironment①③">4.62. SpaceEnvironmentForSidePanel6</a>
-    <li><a href="#ref-for-spaceenvironment①④">4.63. SpaceEnvironmentForStructurePost1</a>
-    <li><a href="#ref-for-spaceenvironment①⑤">4.64. SpaceEnvironmentForStructurePost2</a>
-    <li><a href="#ref-for-spaceenvironment①⑥">4.65. SpaceEnvironmentForStructurePost3</a>
-    <li><a href="#ref-for-spaceenvironment①⑦">4.66. SpaceEnvironmentForStructurePost4</a>
-    <li><a href="#ref-for-spaceenvironment①⑧">4.67. SpaceEnvironmentForStructurePost5</a>
-    <li><a href="#ref-for-spaceenvironment①⑨">4.68. SpaceEnvironmentForStructurePost6</a>
-    <li><a href="#ref-for-spaceenvironment②⓪">4.69. SpaceEnvironmentForTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9e9ac15e8927953d953f95d094468bb3" class="dfn-panel" data-for="9e9ac15e8927953d953f95d094468bb3" id="infopanel-for-9e9ac15e8927953d953f95d094468bb3">
-   <span id="infopaneltitle-for-9e9ac15e8927953d953f95d094468bb3" style="display:none">Info about the 'spacevehiclenaturalfrequency' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency">4.70. SpaceVehicleNaturalFrequencyForBasePlate</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①">4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency②">4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency③">4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency④">4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency⑤">4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency⑥">4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency⑦">4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency⑧">4.78. SpaceVehicleNaturalFrequencyForSidePanel1</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency⑨">4.79. SpaceVehicleNaturalFrequencyForSidePanel2</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⓪">4.80. SpaceVehicleNaturalFrequencyForSidePanel3</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①①">4.81. SpaceVehicleNaturalFrequencyForSidePanel4</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①②">4.82. SpaceVehicleNaturalFrequencyForSidePanel5</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①③">4.83. SpaceVehicleNaturalFrequencyForSidePanel6</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①④">4.84. SpaceVehicleNaturalFrequencyForStructurePost1</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⑤">4.85. SpaceVehicleNaturalFrequencyForStructurePost2</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⑥">4.86. SpaceVehicleNaturalFrequencyForStructurePost3</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⑦">4.87. SpaceVehicleNaturalFrequencyForStructurePost4</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⑧">4.88. SpaceVehicleNaturalFrequencyForStructurePost5</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency①⑨">4.89. SpaceVehicleNaturalFrequencyForStructurePost6</a>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency②⓪">4.90. SpaceVehicleNaturalFrequencyForTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f1ed0fffba7284a479bd5c52c0d3d727" class="dfn-panel" data-for="f1ed0fffba7284a479bd5c52c0d3d727" id="infopanel-for-f1ed0fffba7284a479bd5c52c0d3d727">
-   <span id="infopaneltitle-for-f1ed0fffba7284a479bd5c52c0d3d727" style="display:none">Info about the 'structuralqualification' external reference.</span><a href="../../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-structuralqualification">4.91. StructuralQualificationForBasePlate</a>
-    <li><a href="#ref-for-structuralqualification①">4.92. StructuralQualificationForPayloadStructuralInterface</a>
-    <li><a href="#ref-for-structuralqualification②">4.93. StructuralQualificationForPressurantTankMountingPanel</a>
-    <li><a href="#ref-for-structuralqualification③">4.94. StructuralQualificationForPropellantTankMountingPanel</a>
-    <li><a href="#ref-for-structuralqualification④">4.95. StructuralQualificationForPropulsionStructurePost1</a>
-    <li><a href="#ref-for-structuralqualification⑤">4.96. StructuralQualificationForPropulsionStructurePost2</a>
-    <li><a href="#ref-for-structuralqualification⑥">4.97. StructuralQualificationForPropulsionStructurePost3</a>
-    <li><a href="#ref-for-structuralqualification⑦">4.98. StructuralQualificationForPropulsionStructurePost4</a>
-    <li><a href="#ref-for-structuralqualification⑧">4.99. StructuralQualificationForSidePanel1</a>
-    <li><a href="#ref-for-structuralqualification⑨">4.100. StructuralQualificationForSidePanel2</a>
-    <li><a href="#ref-for-structuralqualification①⓪">4.101. StructuralQualificationForSidePanel3</a>
-    <li><a href="#ref-for-structuralqualification①①">4.102. StructuralQualificationForSidePanel4</a>
-    <li><a href="#ref-for-structuralqualification①②">4.103. StructuralQualificationForSidePanel5</a>
-    <li><a href="#ref-for-structuralqualification①③">4.104. StructuralQualificationForSidePanel6</a>
-    <li><a href="#ref-for-structuralqualification①④">4.105. StructuralQualificationForStructurePost1</a>
-    <li><a href="#ref-for-structuralqualification①⑤">4.106. StructuralQualificationForStructurePost2</a>
-    <li><a href="#ref-for-structuralqualification①⑥">4.107. StructuralQualificationForStructurePost3</a>
-    <li><a href="#ref-for-structuralqualification①⑦">4.108. StructuralQualificationForStructurePost4</a>
-    <li><a href="#ref-for-structuralqualification①⑧">4.109. StructuralQualificationForStructurePost5</a>
-    <li><a href="#ref-for-structuralqualification①⑨">4.110. StructuralQualificationForStructurePost6</a>
-    <li><a href="#ref-for-structuralqualification②⓪">4.111. StructuralQualificationForTopPanel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2a456b727f13558a29bcb643ba48a87a" class="dfn-panel" data-for="2a456b727f13558a29bcb643ba48a87a" id="infopanel-for-2a456b727f13558a29bcb643ba48a87a">
-   <span id="infopaneltitle-for-2a456b727f13558a29bcb643ba48a87a" style="display:none">Info about the 'maintenance' external reference.</span><a href="../../../../../systems/spc/requirements/logistical.html#maintenance">../../../../../systems/spc/requirements/logistical.html#maintenance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-maintenance">4.47. MaintenanceForPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e297a5a4dfeceec95fa8b208ec9d274a" class="dfn-panel" data-for="e297a5a4dfeceec95fa8b208ec9d274a" id="infopanel-for-e297a5a4dfeceec95fa8b208ec9d274a">
-   <span id="infopaneltitle-for-e297a5a4dfeceec95fa8b208ec9d274a" style="display:none">Info about the 'supportability' external reference.</span><a href="../../../../../systems/spc/requirements/logistical.html#supportability">../../../../../systems/spc/requirements/logistical.html#supportability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supportability">4.112. SupportabilityForPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1da2006eed08ab9c315624b518f3758" class="dfn-panel" data-for="b1da2006eed08ab9c315624b518f3758" id="infopanel-for-b1da2006eed08ab9c315624b518f3758">
-   <span id="infopaneltitle-for-b1da2006eed08ab9c315624b518f3758" style="display:none">Info about the 'precedence' external reference.</span><a href="../../../../../systems/spc/requirements/system.html#precedence">../../../../../systems/spc/requirements/system.html#precedence</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-precedence">4.48. PrecedenceForPrimaryFlightComputerUnit</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="a8e01b70e1346173e0b92f8d6c780423">refines_1</span>
-     <li><span class="dfn-paneled" id="1a3cf5460c46a55bc29a42ffd9a8f7d5">requirement</span>
+     <li><span class="dfn-paneled" id="e127d530">refines_1</span>
+     <li><span class="dfn-paneled" id="9c7354a4">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/ENVIRONMENTAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="d9f0e2641e4e9da907d2994c0fdb317f">environment</span>
-     <li><span class="dfn-paneled" id="2a2682222252867cdfb164bb4b5154ed">launchenvironment</span>
-     <li><span class="dfn-paneled" id="1463707d37b668d4b5acfcbd9a22dcd0">spaceenvironment</span>
-     <li><span class="dfn-paneled" id="9e9ac15e8927953d953f95d094468bb3">spacevehiclenaturalfrequency</span>
-     <li><span class="dfn-paneled" id="f1ed0fffba7284a479bd5c52c0d3d727">structuralqualification</span>
+     <li><span class="dfn-paneled" id="d8544066">environment</span>
+     <li><span class="dfn-paneled" id="5519afa8">launchenvironment</span>
+     <li><span class="dfn-paneled" id="296a944c">spaceenvironment</span>
+     <li><span class="dfn-paneled" id="0a8acf9f">spacevehiclenaturalfrequency</span>
+     <li><span class="dfn-paneled" id="57ad5c50">structuralqualification</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/LOGISTICAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="2a456b727f13558a29bcb643ba48a87a">maintenance</span>
-     <li><span class="dfn-paneled" id="e297a5a4dfeceec95fa8b208ec9d274a">supportability</span>
+     <li><span class="dfn-paneled" id="248b9766">maintenance</span>
+     <li><span class="dfn-paneled" id="041b65d1">supportability</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/SYSTEM]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="b1da2006eed08ab9c315624b518f3758">precedence</span>
+     <li><span class="dfn-paneled" id="8dd3de2a">precedence</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -4653,49 +4320,253 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['e127d530'] = {"dfnID": "e127d530", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1", "dfnText": "refines_1", "refSections": [{"refs": [{"id": "ref-for-refines_1"}], "title": "4.1. EnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-refines_1\u2460"}], "title": "4.2. EnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-refines_1\u2461"}], "title": "4.3. EnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-refines_1\u2462"}], "title": "4.4. EnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2463"}], "title": "4.5. EnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2464"}], "title": "4.6. EnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2465"}], "title": "4.7. EnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2466"}], "title": "4.8. EnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2467"}], "title": "4.9. EnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2468"}], "title": "4.10. EnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea"}], "title": "4.11. EnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2460"}], "title": "4.12. EnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2461"}], "title": "4.13. EnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2462"}], "title": "4.14. EnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2463"}], "title": "4.15. EnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2464"}], "title": "4.16. EnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2465"}], "title": "4.17. EnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2466"}], "title": "4.18. EnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2467"}], "title": "4.19. EnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2468"}], "title": "4.20. EnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2461\u24ea"}], "title": "4.21. EnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2460"}], "title": "4.22. EnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2461"}], "title": "4.23. EnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2462"}], "title": "4.24. LaunchEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2463"}], "title": "4.25. LaunchEnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2464"}], "title": "4.26. LaunchEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2465"}], "title": "4.27. LaunchEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2466"}], "title": "4.28. LaunchEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2467"}], "title": "4.29. LaunchEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2468"}], "title": "4.30. LaunchEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2462\u24ea"}], "title": "4.31. LaunchEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2460"}], "title": "4.32. LaunchEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2461"}], "title": "4.33. LaunchEnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2462"}], "title": "4.34. LaunchEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2463"}], "title": "4.35. LaunchEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2464"}], "title": "4.36. LaunchEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2465"}], "title": "4.37. LaunchEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2466"}], "title": "4.38. LaunchEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2467"}], "title": "4.39. LaunchEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-refines_1\u2462\u2468"}], "title": "4.40. LaunchEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2463\u24ea"}], "title": "4.41. LaunchEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2460"}], "title": "4.42. LaunchEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2461"}], "title": "4.43. LaunchEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2462"}], "title": "4.44. LaunchEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2463"}], "title": "4.45. LaunchEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2464"}], "title": "4.46. LaunchEnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2465"}], "title": "4.47. MaintenanceForPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2466"}], "title": "4.48. PrecedenceForPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2467"}], "title": "4.49. SpaceEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-refines_1\u2463\u2468"}], "title": "4.50. SpaceEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-refines_1\u2464\u24ea"}], "title": "4.51. SpaceEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2460"}], "title": "4.52. SpaceEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2461"}], "title": "4.53. SpaceEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2462"}], "title": "4.54. SpaceEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2463"}], "title": "4.55. SpaceEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2464"}], "title": "4.56. SpaceEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2465"}], "title": "4.57. SpaceEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2466"}], "title": "4.58. SpaceEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2467"}], "title": "4.59. SpaceEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-refines_1\u2464\u2468"}], "title": "4.60. SpaceEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-refines_1\u2465\u24ea"}], "title": "4.61. SpaceEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2460"}], "title": "4.62. SpaceEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2461"}], "title": "4.63. SpaceEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2462"}], "title": "4.64. SpaceEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2463"}], "title": "4.65. SpaceEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2464"}], "title": "4.66. SpaceEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2465"}], "title": "4.67. SpaceEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2466"}], "title": "4.68. SpaceEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2467"}], "title": "4.69. SpaceEnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-refines_1\u2465\u2468"}], "title": "4.70. SpaceVehicleNaturalFrequencyForBasePlate"}, {"refs": [{"id": "ref-for-refines_1\u2466\u24ea"}], "title": "4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2460"}], "title": "4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2461"}], "title": "4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2462"}], "title": "4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2463"}], "title": "4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2464"}], "title": "4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2465"}], "title": "4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2466"}], "title": "4.78. SpaceVehicleNaturalFrequencyForSidePanel1"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2467"}], "title": "4.79. SpaceVehicleNaturalFrequencyForSidePanel2"}, {"refs": [{"id": "ref-for-refines_1\u2466\u2468"}], "title": "4.80. SpaceVehicleNaturalFrequencyForSidePanel3"}, {"refs": [{"id": "ref-for-refines_1\u2467\u24ea"}], "title": "4.81. SpaceVehicleNaturalFrequencyForSidePanel4"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2460"}], "title": "4.82. SpaceVehicleNaturalFrequencyForSidePanel5"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2461"}], "title": "4.83. SpaceVehicleNaturalFrequencyForSidePanel6"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2462"}], "title": "4.84. SpaceVehicleNaturalFrequencyForStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2463"}], "title": "4.85. SpaceVehicleNaturalFrequencyForStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2464"}], "title": "4.86. SpaceVehicleNaturalFrequencyForStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2465"}], "title": "4.87. SpaceVehicleNaturalFrequencyForStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2466"}], "title": "4.88. SpaceVehicleNaturalFrequencyForStructurePost5"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2467"}], "title": "4.89. SpaceVehicleNaturalFrequencyForStructurePost6"}, {"refs": [{"id": "ref-for-refines_1\u2467\u2468"}], "title": "4.90. SpaceVehicleNaturalFrequencyForTopPanel"}, {"refs": [{"id": "ref-for-refines_1\u2468\u24ea"}], "title": "4.91. StructuralQualificationForBasePlate"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2460"}], "title": "4.92. StructuralQualificationForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2461"}], "title": "4.93. StructuralQualificationForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2462"}], "title": "4.94. StructuralQualificationForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2463"}], "title": "4.95. StructuralQualificationForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2464"}], "title": "4.96. StructuralQualificationForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2465"}], "title": "4.97. StructuralQualificationForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2466"}], "title": "4.98. StructuralQualificationForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2467"}], "title": "4.99. StructuralQualificationForSidePanel1"}, {"refs": [{"id": "ref-for-refines_1\u2468\u2468"}], "title": "4.100. StructuralQualificationForSidePanel2"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u24ea"}], "title": "4.101. StructuralQualificationForSidePanel3"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2460"}], "title": "4.102. StructuralQualificationForSidePanel4"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2461"}], "title": "4.103. StructuralQualificationForSidePanel5"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2462"}], "title": "4.104. StructuralQualificationForSidePanel6"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2463"}], "title": "4.105. StructuralQualificationForStructurePost1"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2464"}], "title": "4.106. StructuralQualificationForStructurePost2"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2465"}], "title": "4.107. StructuralQualificationForStructurePost3"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2466"}], "title": "4.108. StructuralQualificationForStructurePost4"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2467"}], "title": "4.109. StructuralQualificationForStructurePost5"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea\u2468"}], "title": "4.110. StructuralQualificationForStructurePost6"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2460\u24ea"}], "title": "4.111. StructuralQualificationForTopPanel"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2460\u2460"}], "title": "4.112. SupportabilityForPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['9c7354a4'] = {"dfnID": "9c7354a4", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement", "dfnText": "requirement", "refSections": [{"refs": [{"id": "ref-for-requirement"}], "title": "4.1. EnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-requirement\u2460"}], "title": "4.2. EnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-requirement\u2461"}], "title": "4.3. EnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-requirement\u2462"}], "title": "4.4. EnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2463"}], "title": "4.5. EnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2464"}], "title": "4.6. EnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2465"}], "title": "4.7. EnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2466"}], "title": "4.8. EnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2467"}], "title": "4.9. EnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2468"}], "title": "4.10. EnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea"}], "title": "4.11. EnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460"}], "title": "4.12. EnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-requirement\u2460\u2461"}], "title": "4.13. EnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-requirement\u2460\u2462"}], "title": "4.14. EnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-requirement\u2460\u2463"}], "title": "4.15. EnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-requirement\u2460\u2464"}], "title": "4.16. EnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-requirement\u2460\u2465"}], "title": "4.17. EnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2460\u2466"}], "title": "4.18. EnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2460\u2467"}], "title": "4.19. EnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2460\u2468"}], "title": "4.20. EnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2461\u24ea"}], "title": "4.21. EnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-requirement\u2461\u2460"}], "title": "4.22. EnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-requirement\u2461\u2461"}], "title": "4.23. EnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-requirement\u2461\u2462"}], "title": "4.24. LaunchEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-requirement\u2461\u2463"}], "title": "4.25. LaunchEnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-requirement\u2461\u2464"}], "title": "4.26. LaunchEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-requirement\u2461\u2465"}], "title": "4.27. LaunchEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2461\u2466"}], "title": "4.28. LaunchEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2461\u2467"}], "title": "4.29. LaunchEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2461\u2468"}], "title": "4.30. LaunchEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2462\u24ea"}], "title": "4.31. LaunchEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2462\u2460"}], "title": "4.32. LaunchEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2462\u2461"}], "title": "4.33. LaunchEnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-requirement\u2462\u2462"}], "title": "4.34. LaunchEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-requirement\u2462\u2463"}], "title": "4.35. LaunchEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-requirement\u2462\u2464"}], "title": "4.36. LaunchEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-requirement\u2462\u2465"}], "title": "4.37. LaunchEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-requirement\u2462\u2466"}], "title": "4.38. LaunchEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-requirement\u2462\u2467"}], "title": "4.39. LaunchEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-requirement\u2462\u2468"}], "title": "4.40. LaunchEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2463\u24ea"}], "title": "4.41. LaunchEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2463\u2460"}], "title": "4.42. LaunchEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2463\u2461"}], "title": "4.43. LaunchEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2463\u2462"}], "title": "4.44. LaunchEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-requirement\u2463\u2463"}], "title": "4.45. LaunchEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-requirement\u2463\u2464"}], "title": "4.46. LaunchEnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-requirement\u2463\u2465"}], "title": "4.47. MaintenanceForPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-requirement\u2463\u2466"}], "title": "4.48. PrecedenceForPrimaryFlightComputerUnit"}, {"refs": [{"id": "ref-for-requirement\u2463\u2467"}], "title": "4.49. SpaceEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-requirement\u2463\u2468"}], "title": "4.50. SpaceEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-requirement\u2464\u24ea"}], "title": "4.51. SpaceEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2464\u2460"}], "title": "4.52. SpaceEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2464\u2461"}], "title": "4.53. SpaceEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2464\u2462"}], "title": "4.54. SpaceEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2464\u2463"}], "title": "4.55. SpaceEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2464\u2464"}], "title": "4.56. SpaceEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2464\u2465"}], "title": "4.57. SpaceEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-requirement\u2464\u2466"}], "title": "4.58. SpaceEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-requirement\u2464\u2467"}], "title": "4.59. SpaceEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-requirement\u2464\u2468"}], "title": "4.60. SpaceEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-requirement\u2465\u24ea"}], "title": "4.61. SpaceEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-requirement\u2465\u2460"}], "title": "4.62. SpaceEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-requirement\u2465\u2461"}], "title": "4.63. SpaceEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2465\u2462"}], "title": "4.64. SpaceEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2465\u2463"}], "title": "4.65. SpaceEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2465\u2464"}], "title": "4.66. SpaceEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2465\u2465"}], "title": "4.67. SpaceEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-requirement\u2465\u2466"}], "title": "4.68. SpaceEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-requirement\u2465\u2467"}], "title": "4.69. SpaceEnvironmentForTopPanel"}, {"refs": [{"id": "ref-for-requirement\u2465\u2468"}], "title": "4.70. SpaceVehicleNaturalFrequencyForBasePlate"}, {"refs": [{"id": "ref-for-requirement\u2466\u24ea"}], "title": "4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-requirement\u2466\u2460"}], "title": "4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2466\u2461"}], "title": "4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2466\u2462"}], "title": "4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2466\u2463"}], "title": "4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2466\u2464"}], "title": "4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2466\u2465"}], "title": "4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2466\u2466"}], "title": "4.78. SpaceVehicleNaturalFrequencyForSidePanel1"}, {"refs": [{"id": "ref-for-requirement\u2466\u2467"}], "title": "4.79. SpaceVehicleNaturalFrequencyForSidePanel2"}, {"refs": [{"id": "ref-for-requirement\u2466\u2468"}], "title": "4.80. SpaceVehicleNaturalFrequencyForSidePanel3"}, {"refs": [{"id": "ref-for-requirement\u2467\u24ea"}], "title": "4.81. SpaceVehicleNaturalFrequencyForSidePanel4"}, {"refs": [{"id": "ref-for-requirement\u2467\u2460"}], "title": "4.82. SpaceVehicleNaturalFrequencyForSidePanel5"}, {"refs": [{"id": "ref-for-requirement\u2467\u2461"}], "title": "4.83. SpaceVehicleNaturalFrequencyForSidePanel6"}, {"refs": [{"id": "ref-for-requirement\u2467\u2462"}], "title": "4.84. SpaceVehicleNaturalFrequencyForStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2467\u2463"}], "title": "4.85. SpaceVehicleNaturalFrequencyForStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2467\u2464"}], "title": "4.86. SpaceVehicleNaturalFrequencyForStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2467\u2465"}], "title": "4.87. SpaceVehicleNaturalFrequencyForStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2467\u2466"}], "title": "4.88. SpaceVehicleNaturalFrequencyForStructurePost5"}, {"refs": [{"id": "ref-for-requirement\u2467\u2467"}], "title": "4.89. SpaceVehicleNaturalFrequencyForStructurePost6"}, {"refs": [{"id": "ref-for-requirement\u2467\u2468"}], "title": "4.90. SpaceVehicleNaturalFrequencyForTopPanel"}, {"refs": [{"id": "ref-for-requirement\u2468\u24ea"}], "title": "4.91. StructuralQualificationForBasePlate"}, {"refs": [{"id": "ref-for-requirement\u2468\u2460"}], "title": "4.92. StructuralQualificationForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-requirement\u2468\u2461"}], "title": "4.93. StructuralQualificationForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2468\u2462"}], "title": "4.94. StructuralQualificationForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-requirement\u2468\u2463"}], "title": "4.95. StructuralQualificationForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2468\u2464"}], "title": "4.96. StructuralQualificationForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2468\u2465"}], "title": "4.97. StructuralQualificationForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2468\u2466"}], "title": "4.98. StructuralQualificationForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2468\u2467"}], "title": "4.99. StructuralQualificationForSidePanel1"}, {"refs": [{"id": "ref-for-requirement\u2468\u2468"}], "title": "4.100. StructuralQualificationForSidePanel2"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u24ea"}], "title": "4.101. StructuralQualificationForSidePanel3"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2460"}], "title": "4.102. StructuralQualificationForSidePanel4"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2461"}], "title": "4.103. StructuralQualificationForSidePanel5"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2462"}], "title": "4.104. StructuralQualificationForSidePanel6"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2463"}], "title": "4.105. StructuralQualificationForStructurePost1"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2464"}], "title": "4.106. StructuralQualificationForStructurePost2"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2465"}], "title": "4.107. StructuralQualificationForStructurePost3"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2466"}], "title": "4.108. StructuralQualificationForStructurePost4"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2467"}], "title": "4.109. StructuralQualificationForStructurePost5"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea\u2468"}], "title": "4.110. StructuralQualificationForStructurePost6"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460\u24ea"}], "title": "4.111. StructuralQualificationForTopPanel"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460\u2460"}], "title": "4.112. SupportabilityForPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['d8544066'] = {"dfnID": "d8544066", "url": "../../../../../systems/spc/requirements/environmental.html#environment", "dfnText": "environment", "refSections": [{"refs": [{"id": "ref-for-environment"}], "title": "4.1. EnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-environment\u2460"}], "title": "4.2. EnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-environment\u2461"}], "title": "4.3. EnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-environment\u2462"}], "title": "4.4. EnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-environment\u2463"}], "title": "4.5. EnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-environment\u2464"}], "title": "4.6. EnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-environment\u2465"}], "title": "4.7. EnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-environment\u2466"}], "title": "4.8. EnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-environment\u2467"}], "title": "4.9. EnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-environment\u2468"}], "title": "4.10. EnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-environment\u2460\u24ea"}], "title": "4.11. EnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-environment\u2460\u2460"}], "title": "4.12. EnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-environment\u2460\u2461"}], "title": "4.13. EnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-environment\u2460\u2462"}], "title": "4.14. EnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-environment\u2460\u2463"}], "title": "4.15. EnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-environment\u2460\u2464"}], "title": "4.16. EnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-environment\u2460\u2465"}], "title": "4.17. EnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-environment\u2460\u2466"}], "title": "4.18. EnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-environment\u2460\u2467"}], "title": "4.19. EnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-environment\u2460\u2468"}], "title": "4.20. EnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-environment\u2461\u24ea"}], "title": "4.21. EnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-environment\u2461\u2460"}], "title": "4.22. EnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-environment\u2461\u2461"}], "title": "4.23. EnvironmentForTopPanel"}], "external": true};
+window.dfnpanelData['5519afa8'] = {"dfnID": "5519afa8", "url": "../../../../../systems/spc/requirements/environmental.html#launchenvironment", "dfnText": "launchenvironment", "refSections": [{"refs": [{"id": "ref-for-launchenvironment"}], "title": "4.24. LaunchEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-launchenvironment\u2460"}], "title": "4.25. LaunchEnvironmentForLaunchVehicleAdapter"}, {"refs": [{"id": "ref-for-launchenvironment\u2461"}], "title": "4.26. LaunchEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-launchenvironment\u2462"}], "title": "4.27. LaunchEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-launchenvironment\u2463"}], "title": "4.28. LaunchEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-launchenvironment\u2464"}], "title": "4.29. LaunchEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-launchenvironment\u2465"}], "title": "4.30. LaunchEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-launchenvironment\u2466"}], "title": "4.31. LaunchEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-launchenvironment\u2467"}], "title": "4.32. LaunchEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-launchenvironment\u2468"}], "title": "4.33. LaunchEnvironmentForSeparationSystem"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u24ea"}], "title": "4.34. LaunchEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2460"}], "title": "4.35. LaunchEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2461"}], "title": "4.36. LaunchEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2462"}], "title": "4.37. LaunchEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2463"}], "title": "4.38. LaunchEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2464"}], "title": "4.39. LaunchEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2465"}], "title": "4.40. LaunchEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2466"}], "title": "4.41. LaunchEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2467"}], "title": "4.42. LaunchEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-launchenvironment\u2460\u2468"}], "title": "4.43. LaunchEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-launchenvironment\u2461\u24ea"}], "title": "4.44. LaunchEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-launchenvironment\u2461\u2460"}], "title": "4.45. LaunchEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-launchenvironment\u2461\u2461"}], "title": "4.46. LaunchEnvironmentForTopPanel"}], "external": true};
+window.dfnpanelData['296a944c'] = {"dfnID": "296a944c", "url": "../../../../../systems/spc/requirements/environmental.html#spaceenvironment", "dfnText": "spaceenvironment", "refSections": [{"refs": [{"id": "ref-for-spaceenvironment"}], "title": "4.49. SpaceEnvironmentForBasePlate"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460"}], "title": "4.50. SpaceEnvironmentForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-spaceenvironment\u2461"}], "title": "4.51. SpaceEnvironmentForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-spaceenvironment\u2462"}], "title": "4.52. SpaceEnvironmentForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-spaceenvironment\u2463"}], "title": "4.53. SpaceEnvironmentForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-spaceenvironment\u2464"}], "title": "4.54. SpaceEnvironmentForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-spaceenvironment\u2465"}], "title": "4.55. SpaceEnvironmentForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-spaceenvironment\u2466"}], "title": "4.56. SpaceEnvironmentForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-spaceenvironment\u2467"}], "title": "4.57. SpaceEnvironmentForSidePanel1"}, {"refs": [{"id": "ref-for-spaceenvironment\u2468"}], "title": "4.58. SpaceEnvironmentForSidePanel2"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u24ea"}], "title": "4.59. SpaceEnvironmentForSidePanel3"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2460"}], "title": "4.60. SpaceEnvironmentForSidePanel4"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2461"}], "title": "4.61. SpaceEnvironmentForSidePanel5"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2462"}], "title": "4.62. SpaceEnvironmentForSidePanel6"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2463"}], "title": "4.63. SpaceEnvironmentForStructurePost1"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2464"}], "title": "4.64. SpaceEnvironmentForStructurePost2"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2465"}], "title": "4.65. SpaceEnvironmentForStructurePost3"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2466"}], "title": "4.66. SpaceEnvironmentForStructurePost4"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2467"}], "title": "4.67. SpaceEnvironmentForStructurePost5"}, {"refs": [{"id": "ref-for-spaceenvironment\u2460\u2468"}], "title": "4.68. SpaceEnvironmentForStructurePost6"}, {"refs": [{"id": "ref-for-spaceenvironment\u2461\u24ea"}], "title": "4.69. SpaceEnvironmentForTopPanel"}], "external": true};
+window.dfnpanelData['0a8acf9f'] = {"dfnID": "0a8acf9f", "url": "../../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency", "dfnText": "spacevehiclenaturalfrequency", "refSections": [{"refs": [{"id": "ref-for-spacevehiclenaturalfrequency"}], "title": "4.70. SpaceVehicleNaturalFrequencyForBasePlate"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460"}], "title": "4.71. SpaceVehicleNaturalFrequencyForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2461"}], "title": "4.72. SpaceVehicleNaturalFrequencyForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2462"}], "title": "4.73. SpaceVehicleNaturalFrequencyForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2463"}], "title": "4.74. SpaceVehicleNaturalFrequencyForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2464"}], "title": "4.75. SpaceVehicleNaturalFrequencyForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2465"}], "title": "4.76. SpaceVehicleNaturalFrequencyForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2466"}], "title": "4.77. SpaceVehicleNaturalFrequencyForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2467"}], "title": "4.78. SpaceVehicleNaturalFrequencyForSidePanel1"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2468"}], "title": "4.79. SpaceVehicleNaturalFrequencyForSidePanel2"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u24ea"}], "title": "4.80. SpaceVehicleNaturalFrequencyForSidePanel3"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2460"}], "title": "4.81. SpaceVehicleNaturalFrequencyForSidePanel4"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2461"}], "title": "4.82. SpaceVehicleNaturalFrequencyForSidePanel5"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2462"}], "title": "4.83. SpaceVehicleNaturalFrequencyForSidePanel6"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2463"}], "title": "4.84. SpaceVehicleNaturalFrequencyForStructurePost1"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2464"}], "title": "4.85. SpaceVehicleNaturalFrequencyForStructurePost2"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2465"}], "title": "4.86. SpaceVehicleNaturalFrequencyForStructurePost3"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2466"}], "title": "4.87. SpaceVehicleNaturalFrequencyForStructurePost4"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2467"}], "title": "4.88. SpaceVehicleNaturalFrequencyForStructurePost5"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2460\u2468"}], "title": "4.89. SpaceVehicleNaturalFrequencyForStructurePost6"}, {"refs": [{"id": "ref-for-spacevehiclenaturalfrequency\u2461\u24ea"}], "title": "4.90. SpaceVehicleNaturalFrequencyForTopPanel"}], "external": true};
+window.dfnpanelData['57ad5c50'] = {"dfnID": "57ad5c50", "url": "../../../../../systems/spc/requirements/environmental.html#structuralqualification", "dfnText": "structuralqualification", "refSections": [{"refs": [{"id": "ref-for-structuralqualification"}], "title": "4.91. StructuralQualificationForBasePlate"}, {"refs": [{"id": "ref-for-structuralqualification\u2460"}], "title": "4.92. StructuralQualificationForPayloadStructuralInterface"}, {"refs": [{"id": "ref-for-structuralqualification\u2461"}], "title": "4.93. StructuralQualificationForPressurantTankMountingPanel"}, {"refs": [{"id": "ref-for-structuralqualification\u2462"}], "title": "4.94. StructuralQualificationForPropellantTankMountingPanel"}, {"refs": [{"id": "ref-for-structuralqualification\u2463"}], "title": "4.95. StructuralQualificationForPropulsionStructurePost1"}, {"refs": [{"id": "ref-for-structuralqualification\u2464"}], "title": "4.96. StructuralQualificationForPropulsionStructurePost2"}, {"refs": [{"id": "ref-for-structuralqualification\u2465"}], "title": "4.97. StructuralQualificationForPropulsionStructurePost3"}, {"refs": [{"id": "ref-for-structuralqualification\u2466"}], "title": "4.98. StructuralQualificationForPropulsionStructurePost4"}, {"refs": [{"id": "ref-for-structuralqualification\u2467"}], "title": "4.99. StructuralQualificationForSidePanel1"}, {"refs": [{"id": "ref-for-structuralqualification\u2468"}], "title": "4.100. StructuralQualificationForSidePanel2"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u24ea"}], "title": "4.101. StructuralQualificationForSidePanel3"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2460"}], "title": "4.102. StructuralQualificationForSidePanel4"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2461"}], "title": "4.103. StructuralQualificationForSidePanel5"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2462"}], "title": "4.104. StructuralQualificationForSidePanel6"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2463"}], "title": "4.105. StructuralQualificationForStructurePost1"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2464"}], "title": "4.106. StructuralQualificationForStructurePost2"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2465"}], "title": "4.107. StructuralQualificationForStructurePost3"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2466"}], "title": "4.108. StructuralQualificationForStructurePost4"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2467"}], "title": "4.109. StructuralQualificationForStructurePost5"}, {"refs": [{"id": "ref-for-structuralqualification\u2460\u2468"}], "title": "4.110. StructuralQualificationForStructurePost6"}, {"refs": [{"id": "ref-for-structuralqualification\u2461\u24ea"}], "title": "4.111. StructuralQualificationForTopPanel"}], "external": true};
+window.dfnpanelData['248b9766'] = {"dfnID": "248b9766", "url": "../../../../../systems/spc/requirements/logistical.html#maintenance", "dfnText": "maintenance", "refSections": [{"refs": [{"id": "ref-for-maintenance"}], "title": "4.47. MaintenanceForPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['041b65d1'] = {"dfnID": "041b65d1", "url": "../../../../../systems/spc/requirements/logistical.html#supportability", "dfnText": "supportability", "refSections": [{"refs": [{"id": "ref-for-supportability"}], "title": "4.112. SupportabilityForPrimaryFlightComputerUnit"}], "external": true};
+window.dfnpanelData['8dd3de2a'] = {"dfnID": "8dd3de2a", "url": "../../../../../systems/spc/requirements/system.html#precedence", "dfnText": "precedence", "refSections": [{"refs": [{"id": "ref-for-precedence"}], "title": "4.48. PrecedenceForPrimaryFlightComputerUnit"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

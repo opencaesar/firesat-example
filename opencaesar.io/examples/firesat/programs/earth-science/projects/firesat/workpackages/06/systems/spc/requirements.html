@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/requirements" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Spacecraft Requirements</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2632,280 +2638,124 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#trainingandpersonelforspacecraftsystemsegment">trainingandpersonelforspacecraftsystemsegment</a><span>, in § 4.25</span>
    <li><a href="#transportationforspacecraftsystemsegment">transportationforspacecraftsystemsegment</a><span>, in § 4.26</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-0781a02be376e5053ff186efc0664d80" class="dfn-panel" data-for="0781a02be376e5053ff186efc0664d80" id="infopanel-for-0781a02be376e5053ff186efc0664d80">
-   <span id="infopaneltitle-for-0781a02be376e5053ff186efc0664d80" style="display:none">Info about the 'refines_1' external reference.</span><a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-refines_1">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①">4.2. AvailabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②">4.3. FacilitiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1③">4.4. FaultProtectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1④">4.5. MaintainabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1⑤">4.6. ManufacturabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1⑥">4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1⑦">4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-refines_1⑧">4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-refines_1⑨">4.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⓪">4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-refines_1①①">4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-refines_1①②">4.13. PowerBudgetForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①③">4.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①④">4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⑤">4.16. ReliabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⑥">4.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⑦">4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⑧">4.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1①⑨">4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②⓪">4.21. StandardSampleForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②①">4.22. StructuralQualificationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②②">4.23. SupplyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②③">4.24. TimeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②④">4.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-refines_1②⑤">4.26. TransportationForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-489a32cc1cde2863bff72d6aaa9d8b17" class="dfn-panel" data-for="489a32cc1cde2863bff72d6aaa9d8b17" id="infopanel-for-489a32cc1cde2863bff72d6aaa9d8b17">
-   <span id="infopaneltitle-for-489a32cc1cde2863bff72d6aaa9d8b17" style="display:none">Info about the 'requirement' external reference.</span><a href="../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement">../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-requirement">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①">4.2. AvailabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②">4.3. FacilitiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement③">4.4. FaultProtectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement④">4.5. MaintainabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑤">4.6. ManufacturabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑥">4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement⑦">4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-requirement⑧">4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-requirement⑨">4.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⓪">4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-requirement①①">4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-    <li><a href="#ref-for-requirement①②">4.13. PowerBudgetForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①③">4.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①④">4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑤">4.16. ReliabilityForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑥">4.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑦">4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑧">4.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement①⑨">4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②⓪">4.21. StandardSampleForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②①">4.22. StructuralQualificationForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②②">4.23. SupplyForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②③">4.24. TimeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②④">4.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-requirement②⑤">4.26. TransportationForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9433d5c497de31e4e67ad9c824e25181" class="dfn-panel" data-for="9433d5c497de31e4e67ad9c824e25181" id="infopanel-for-9433d5c497de31e4e67ad9c824e25181">
-   <span id="infopaneltitle-for-9433d5c497de31e4e67ad9c824e25181" style="display:none">Info about the 'qualificationofheritageflighthardware' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware">../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-qualificationofheritageflighthardware">4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6c4ec46865279cd525cdf065716a7684" class="dfn-panel" data-for="6c4ec46865279cd525cdf065716a7684" id="infopanel-for-6c4ec46865279cd525cdf065716a7684">
-   <span id="infopaneltitle-for-6c4ec46865279cd525cdf065716a7684" style="display:none">Info about the 'spaceenvironmenteffectsonmaterialselection' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection">../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironmenteffectsonmaterialselection">4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-311d1c9727a684a39623bc068fdde378" class="dfn-panel" data-for="311d1c9727a684a39623bc068fdde378" id="infopanel-for-311d1c9727a684a39623bc068fdde378">
-   <span id="infopaneltitle-for-311d1c9727a684a39623bc068fdde378" style="display:none">Info about the 'spacevehiclenaturalfrequency' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency">../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spacevehiclenaturalfrequency">4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e104effd7a1f8422b1e1832120c11952" class="dfn-panel" data-for="e104effd7a1f8422b1e1832120c11952" id="infopanel-for-e104effd7a1f8422b1e1832120c11952">
-   <span id="infopaneltitle-for-e104effd7a1f8422b1e1832120c11952" style="display:none">Info about the 'structuralqualification' external reference.</span><a href="../../../../systems/spc/requirements/environmental.html#structuralqualification">../../../../systems/spc/requirements/environmental.html#structuralqualification</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-structuralqualification">4.22. StructuralQualificationForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f01c0c91528d77551aeec94fb1a4771b" class="dfn-panel" data-for="f01c0c91528d77551aeec94fb1a4771b" id="infopanel-for-f01c0c91528d77551aeec94fb1a4771b">
-   <span id="infopaneltitle-for-f01c0c91528d77551aeec94fb1a4771b" style="display:none">Info about the 'availability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#availability">../../../../systems/spc/requirements/logistical.html#availability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-availability">4.2. AvailabilityForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bae38ebfb19033d017bdce3c8152aca0" class="dfn-panel" data-for="bae38ebfb19033d017bdce3c8152aca0" id="infopanel-for-bae38ebfb19033d017bdce3c8152aca0">
-   <span id="infopaneltitle-for-bae38ebfb19033d017bdce3c8152aca0" style="display:none">Info about the 'facilities' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#facilities">../../../../systems/spc/requirements/logistical.html#facilities</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-facilities">4.3. FacilitiesForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-51fd6289981aa7c628500c2b9f48e95f" class="dfn-panel" data-for="51fd6289981aa7c628500c2b9f48e95f" id="infopanel-for-51fd6289981aa7c628500c2b9f48e95f">
-   <span id="infopaneltitle-for-51fd6289981aa7c628500c2b9f48e95f" style="display:none">Info about the 'faultprotection' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#faultprotection">../../../../systems/spc/requirements/logistical.html#faultprotection</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-faultprotection">4.4. FaultProtectionForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fa3cd3fe1b5ceba5c11d374de5e37586" class="dfn-panel" data-for="fa3cd3fe1b5ceba5c11d374de5e37586" id="infopanel-for-fa3cd3fe1b5ceba5c11d374de5e37586">
-   <span id="infopaneltitle-for-fa3cd3fe1b5ceba5c11d374de5e37586" style="display:none">Info about the 'maintainability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#maintainability">../../../../systems/spc/requirements/logistical.html#maintainability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-maintainability">4.5. MaintainabilityForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8ff5ec05ebc9aaf0e51936e3acc35c3f" class="dfn-panel" data-for="8ff5ec05ebc9aaf0e51936e3acc35c3f" id="infopanel-for-8ff5ec05ebc9aaf0e51936e3acc35c3f">
-   <span id="infopaneltitle-for-8ff5ec05ebc9aaf0e51936e3acc35c3f" style="display:none">Info about the 'reliability' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#reliability">../../../../systems/spc/requirements/logistical.html#reliability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reliability">4.16. ReliabilityForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f4ad104b085390564ab7d0f6f953f681" class="dfn-panel" data-for="f4ad104b085390564ab7d0f6f953f681" id="infopanel-for-f4ad104b085390564ab7d0f6f953f681">
-   <span id="infopaneltitle-for-f4ad104b085390564ab7d0f6f953f681" style="display:none">Info about the 'supply' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#supply">../../../../systems/spc/requirements/logistical.html#supply</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supply">4.23. SupplyForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5e7a95e8cc460d7e8c58972e5e73e256" class="dfn-panel" data-for="5e7a95e8cc460d7e8c58972e5e73e256" id="infopanel-for-5e7a95e8cc460d7e8c58972e5e73e256">
-   <span id="infopaneltitle-for-5e7a95e8cc460d7e8c58972e5e73e256" style="display:none">Info about the 'trainingandpersonel' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#trainingandpersonel">../../../../systems/spc/requirements/logistical.html#trainingandpersonel</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-trainingandpersonel">4.25. TrainingAndPersonelForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-50b70d7d0bc3ada0412e7994badde184" class="dfn-panel" data-for="50b70d7d0bc3ada0412e7994badde184" id="infopanel-for-50b70d7d0bc3ada0412e7994badde184">
-   <span id="infopaneltitle-for-50b70d7d0bc3ada0412e7994badde184" style="display:none">Info about the 'transportation' external reference.</span><a href="../../../../systems/spc/requirements/logistical.html#transportation">../../../../systems/spc/requirements/logistical.html#transportation</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transportation">4.26. TransportationForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ebef86a0298f88cc38658f7d95743a11" class="dfn-panel" data-for="ebef86a0298f88cc38658f7d95743a11" id="infopanel-for-ebef86a0298f88cc38658f7d95743a11">
-   <span id="infopaneltitle-for-ebef86a0298f88cc38658f7d95743a11" style="display:none">Info about the 'minimumelevationangle' external reference.</span><a href="../../../../systems/spc/requirements/operational.html#minimumelevationangle">../../../../systems/spc/requirements/operational.html#minimumelevationangle</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-minimumelevationangle">4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-minimumelevationangle①">4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6b69551c3cb9dcea6b4b3f6f75011104" class="dfn-panel" data-for="6b69551c3cb9dcea6b4b3f6f75011104" id="infopanel-for-6b69551c3cb9dcea6b4b3f6f75011104">
-   <span id="infopaneltitle-for-6b69551c3cb9dcea6b4b3f6f75011104" style="display:none">Info about the 'orbitinclination' external reference.</span><a href="../../../../systems/spc/requirements/operational.html#orbitinclination">../../../../systems/spc/requirements/operational.html#orbitinclination</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-orbitinclination">4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires</a>
-    <li><a href="#ref-for-orbitinclination①">4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bf06be055282770f333c3bea3b9589ef" class="dfn-panel" data-for="bf06be055282770f333c3bea3b9589ef" id="infopanel-for-bf06be055282770f333c3bea3b9589ef">
-   <span id="infopaneltitle-for-bf06be055282770f333c3bea3b9589ef" style="display:none">Info about the 'timeerror' external reference.</span><a href="../../../../systems/spc/requirements/performance.html#timeerror">../../../../systems/spc/requirements/performance.html#timeerror</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-timeerror">4.24. TimeErrorForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-810912e40737c90888ce2ae9eb07e88b" class="dfn-panel" data-for="810912e40737c90888ce2ae9eb07e88b" id="infopanel-for-810912e40737c90888ce2ae9eb07e88b">
-   <span id="infopaneltitle-for-810912e40737c90888ce2ae9eb07e88b" style="display:none">Info about the 'maturityofnewtechnologies' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies">../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-maturityofnewtechnologies">4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0b8d79acbb9c2516360a10643c98d06b" class="dfn-panel" data-for="0b8d79acbb9c2516360a10643c98d06b" id="infopanel-for-0b8d79acbb9c2516360a10643c98d06b">
-   <span id="infopaneltitle-for-0b8d79acbb9c2516360a10643c98d06b" style="display:none">Info about the 'numberofsatellites' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#numberofsatellites">../../../../systems/spc/requirements/resource.html#numberofsatellites</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-numberofsatellites">4.10. NumberOfSatellitesForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c69079cfda196cec548f31d491931775" class="dfn-panel" data-for="c69079cfda196cec548f31d491931775" id="infopanel-for-c69079cfda196cec548f31d491931775">
-   <span id="infopaneltitle-for-c69079cfda196cec548f31d491931775" style="display:none">Info about the 'powerbudget' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#powerbudget">../../../../systems/spc/requirements/resource.html#powerbudget</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-powerbudget">4.1. AltitudeErrorForSpacecraftSystemSegment</a>
-    <li><a href="#ref-for-powerbudget①">4.13. PowerBudgetForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-60c55c4b87dfe2d14f4ae2b10db4569a" class="dfn-panel" data-for="60c55c4b87dfe2d14f4ae2b10db4569a" id="infopanel-for-60c55c4b87dfe2d14f4ae2b10db4569a">
-   <span id="infopaneltitle-for-60c55c4b87dfe2d14f4ae2b10db4569a" style="display:none">Info about the 'spacevehiclemass' external reference.</span><a href="../../../../systems/spc/requirements/resource.html#spacevehiclemass">../../../../systems/spc/requirements/resource.html#spacevehiclemass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spacevehiclemass">4.19. SpaceVehicleMassForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e16fc0624ac341de645fa37e60b2be67" class="dfn-panel" data-for="e16fc0624ac341de645fa37e60b2be67" id="infopanel-for-e16fc0624ac341de645fa37e60b2be67">
-   <span id="infopaneltitle-for-e16fc0624ac341de645fa37e60b2be67" style="display:none">Info about the 'manufacturability' external reference.</span><a href="../../../../systems/spc/requirements/system.html#manufacturability">../../../../systems/spc/requirements/system.html#manufacturability</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-manufacturability">4.6. ManufacturabilityForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-353713f1839459938715f7f609ebc48e" class="dfn-panel" data-for="353713f1839459938715f7f609ebc48e" id="infopanel-for-353713f1839459938715f7f609ebc48e">
-   <span id="infopaneltitle-for-353713f1839459938715f7f609ebc48e" style="display:none">Info about the 'primeitemdefinition' external reference.</span><a href="../../../../systems/spc/requirements/system.html#primeitemdefinition">../../../../systems/spc/requirements/system.html#primeitemdefinition</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-primeitemdefinition">4.14. PrimeItemDefinitionForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1136152500b077a1f833b838cde1b24" class="dfn-panel" data-for="b1136152500b077a1f833b838cde1b24" id="infopanel-for-b1136152500b077a1f833b838cde1b24">
-   <span id="infopaneltitle-for-b1136152500b077a1f833b838cde1b24" style="display:none">Info about the 'securityandsafety' external reference.</span><a href="../../../../systems/spc/requirements/system.html#securityandsafety">../../../../systems/spc/requirements/system.html#securityandsafety</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-securityandsafety">4.17. SecurityAndSafetyForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cbd6a9411f777b7ef81ef543ff6991a2" class="dfn-panel" data-for="cbd6a9411f777b7ef81ef543ff6991a2" id="infopanel-for-cbd6a9411f777b7ef81ef543ff6991a2">
-   <span id="infopaneltitle-for-cbd6a9411f777b7ef81ef543ff6991a2" style="display:none">Info about the 'standardsample' external reference.</span><a href="../../../../systems/spc/requirements/system.html#standardsample">../../../../systems/spc/requirements/system.html#standardsample</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-standardsample">4.21. StandardSampleForSpacecraftSystemSegment</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="0781a02be376e5053ff186efc0664d80">refines_1</span>
-     <li><span class="dfn-paneled" id="489a32cc1cde2863bff72d6aaa9d8b17">requirement</span>
+     <li><span class="dfn-paneled" id="7638b54c">refines_1</span>
+     <li><span class="dfn-paneled" id="45c7dd20">requirement</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/ENVIRONMENTAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="9433d5c497de31e4e67ad9c824e25181">qualificationofheritageflighthardware</span>
-     <li><span class="dfn-paneled" id="6c4ec46865279cd525cdf065716a7684">spaceenvironmenteffectsonmaterialselection</span>
-     <li><span class="dfn-paneled" id="311d1c9727a684a39623bc068fdde378">spacevehiclenaturalfrequency</span>
-     <li><span class="dfn-paneled" id="e104effd7a1f8422b1e1832120c11952">structuralqualification</span>
+     <li><span class="dfn-paneled" id="114523a4">qualificationofheritageflighthardware</span>
+     <li><span class="dfn-paneled" id="3bb457a9">spaceenvironmenteffectsonmaterialselection</span>
+     <li><span class="dfn-paneled" id="21820854">spacevehiclenaturalfrequency</span>
+     <li><span class="dfn-paneled" id="bcef34d1">structuralqualification</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/LOGISTICAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f01c0c91528d77551aeec94fb1a4771b">availability</span>
-     <li><span class="dfn-paneled" id="bae38ebfb19033d017bdce3c8152aca0">facilities</span>
-     <li><span class="dfn-paneled" id="51fd6289981aa7c628500c2b9f48e95f">faultprotection</span>
-     <li><span class="dfn-paneled" id="fa3cd3fe1b5ceba5c11d374de5e37586">maintainability</span>
-     <li><span class="dfn-paneled" id="8ff5ec05ebc9aaf0e51936e3acc35c3f">reliability</span>
-     <li><span class="dfn-paneled" id="f4ad104b085390564ab7d0f6f953f681">supply</span>
-     <li><span class="dfn-paneled" id="5e7a95e8cc460d7e8c58972e5e73e256">trainingandpersonel</span>
-     <li><span class="dfn-paneled" id="50b70d7d0bc3ada0412e7994badde184">transportation</span>
+     <li><span class="dfn-paneled" id="955fa024">availability</span>
+     <li><span class="dfn-paneled" id="6aadc5fc">facilities</span>
+     <li><span class="dfn-paneled" id="98d3694c">faultprotection</span>
+     <li><span class="dfn-paneled" id="6e423769">maintainability</span>
+     <li><span class="dfn-paneled" id="66fa09cd">reliability</span>
+     <li><span class="dfn-paneled" id="4c4ca3c4">supply</span>
+     <li><span class="dfn-paneled" id="b6e41ee4">trainingandpersonel</span>
+     <li><span class="dfn-paneled" id="05eb3e3c">transportation</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/OPERATIONAL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="ebef86a0298f88cc38658f7d95743a11">minimumelevationangle</span>
-     <li><span class="dfn-paneled" id="6b69551c3cb9dcea6b4b3f6f75011104">orbitinclination</span>
+     <li><span class="dfn-paneled" id="8a6c5406">minimumelevationangle</span>
+     <li><span class="dfn-paneled" id="af01b0dc">orbitinclination</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/PERFORMANCE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="bf06be055282770f333c3bea3b9589ef">timeerror</span>
+     <li><span class="dfn-paneled" id="73148d1a">timeerror</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/RESOURCE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="810912e40737c90888ce2ae9eb07e88b">maturityofnewtechnologies</span>
-     <li><span class="dfn-paneled" id="0b8d79acbb9c2516360a10643c98d06b">numberofsatellites</span>
-     <li><span class="dfn-paneled" id="c69079cfda196cec548f31d491931775">powerbudget</span>
-     <li><span class="dfn-paneled" id="60c55c4b87dfe2d14f4ae2b10db4569a">spacevehiclemass</span>
+     <li><span class="dfn-paneled" id="7efa783f">maturityofnewtechnologies</span>
+     <li><span class="dfn-paneled" id="bb378530">numberofsatellites</span>
+     <li><span class="dfn-paneled" id="9f252cb0">powerbudget</span>
+     <li><span class="dfn-paneled" id="af512abd">spacevehiclemass</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/SYSTEMS/SPC/REQUIREMENTS/SYSTEM]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="e16fc0624ac341de645fa37e60b2be67">manufacturability</span>
-     <li><span class="dfn-paneled" id="353713f1839459938715f7f609ebc48e">primeitemdefinition</span>
-     <li><span class="dfn-paneled" id="b1136152500b077a1f833b838cde1b24">securityandsafety</span>
-     <li><span class="dfn-paneled" id="cbd6a9411f777b7ef81ef543ff6991a2">standardsample</span>
+     <li><span class="dfn-paneled" id="5c5f4e62">manufacturability</span>
+     <li><span class="dfn-paneled" id="4e8f6143">primeitemdefinition</span>
+     <li><span class="dfn-paneled" id="77f7e7c3">securityandsafety</span>
+     <li><span class="dfn-paneled" id="a73fa3bf">standardsample</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2955,49 +2805,268 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['7638b54c'] = {"dfnID": "7638b54c", "url": "../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#refines_1", "dfnText": "refines_1", "refSections": [{"refs": [{"id": "ref-for-refines_1"}], "title": "4.1. AltitudeErrorForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460"}], "title": "4.2. AvailabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461"}], "title": "4.3. FacilitiesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2462"}], "title": "4.4. FaultProtectionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2463"}], "title": "4.5. MaintainabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2464"}], "title": "4.6. ManufacturabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2465"}], "title": "4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2466"}], "title": "4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-refines_1\u2467"}], "title": "4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}, {"refs": [{"id": "ref-for-refines_1\u2468"}], "title": "4.10. NumberOfSatellitesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u24ea"}], "title": "4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2460"}], "title": "4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2461"}], "title": "4.13. PowerBudgetForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2462"}], "title": "4.14. PrimeItemDefinitionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2463"}], "title": "4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2464"}], "title": "4.16. ReliabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2465"}], "title": "4.17. SecurityAndSafetyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2466"}], "title": "4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2467"}], "title": "4.19. SpaceVehicleMassForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2460\u2468"}], "title": "4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u24ea"}], "title": "4.21. StandardSampleForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2460"}], "title": "4.22. StructuralQualificationForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2461"}], "title": "4.23. SupplyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2462"}], "title": "4.24. TimeErrorForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2463"}], "title": "4.25. TrainingAndPersonelForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-refines_1\u2461\u2464"}], "title": "4.26. TransportationForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['45c7dd20'] = {"dfnID": "45c7dd20", "url": "../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#requirement", "dfnText": "requirement", "refSections": [{"refs": [{"id": "ref-for-requirement"}], "title": "4.1. AltitudeErrorForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460"}], "title": "4.2. AvailabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461"}], "title": "4.3. FacilitiesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2462"}], "title": "4.4. FaultProtectionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2463"}], "title": "4.5. MaintainabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2464"}], "title": "4.6. ManufacturabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2465"}], "title": "4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2466"}], "title": "4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-requirement\u2467"}], "title": "4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}, {"refs": [{"id": "ref-for-requirement\u2468"}], "title": "4.10. NumberOfSatellitesForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u24ea"}], "title": "4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-requirement\u2460\u2460"}], "title": "4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}, {"refs": [{"id": "ref-for-requirement\u2460\u2461"}], "title": "4.13. PowerBudgetForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2462"}], "title": "4.14. PrimeItemDefinitionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2463"}], "title": "4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2464"}], "title": "4.16. ReliabilityForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2465"}], "title": "4.17. SecurityAndSafetyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2466"}], "title": "4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2467"}], "title": "4.19. SpaceVehicleMassForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2460\u2468"}], "title": "4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u24ea"}], "title": "4.21. StandardSampleForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u2460"}], "title": "4.22. StructuralQualificationForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u2461"}], "title": "4.23. SupplyForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u2462"}], "title": "4.24. TimeErrorForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u2463"}], "title": "4.25. TrainingAndPersonelForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-requirement\u2461\u2464"}], "title": "4.26. TransportationForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['114523a4'] = {"dfnID": "114523a4", "url": "../../../../systems/spc/requirements/environmental.html#qualificationofheritageflighthardware", "dfnText": "qualificationofheritageflighthardware", "refSections": [{"refs": [{"id": "ref-for-qualificationofheritageflighthardware"}], "title": "4.15. QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['3bb457a9'] = {"dfnID": "3bb457a9", "url": "../../../../systems/spc/requirements/environmental.html#spaceenvironmenteffectsonmaterialselection", "dfnText": "spaceenvironmenteffectsonmaterialselection", "refSections": [{"refs": [{"id": "ref-for-spaceenvironmenteffectsonmaterialselection"}], "title": "4.18. SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['21820854'] = {"dfnID": "21820854", "url": "../../../../systems/spc/requirements/environmental.html#spacevehiclenaturalfrequency", "dfnText": "spacevehiclenaturalfrequency", "refSections": [{"refs": [{"id": "ref-for-spacevehiclenaturalfrequency"}], "title": "4.20. SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['bcef34d1'] = {"dfnID": "bcef34d1", "url": "../../../../systems/spc/requirements/environmental.html#structuralqualification", "dfnText": "structuralqualification", "refSections": [{"refs": [{"id": "ref-for-structuralqualification"}], "title": "4.22. StructuralQualificationForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['955fa024'] = {"dfnID": "955fa024", "url": "../../../../systems/spc/requirements/logistical.html#availability", "dfnText": "availability", "refSections": [{"refs": [{"id": "ref-for-availability"}], "title": "4.2. AvailabilityForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['6aadc5fc'] = {"dfnID": "6aadc5fc", "url": "../../../../systems/spc/requirements/logistical.html#facilities", "dfnText": "facilities", "refSections": [{"refs": [{"id": "ref-for-facilities"}], "title": "4.3. FacilitiesForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['98d3694c'] = {"dfnID": "98d3694c", "url": "../../../../systems/spc/requirements/logistical.html#faultprotection", "dfnText": "faultprotection", "refSections": [{"refs": [{"id": "ref-for-faultprotection"}], "title": "4.4. FaultProtectionForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['6e423769'] = {"dfnID": "6e423769", "url": "../../../../systems/spc/requirements/logistical.html#maintainability", "dfnText": "maintainability", "refSections": [{"refs": [{"id": "ref-for-maintainability"}], "title": "4.5. MaintainabilityForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['66fa09cd'] = {"dfnID": "66fa09cd", "url": "../../../../systems/spc/requirements/logistical.html#reliability", "dfnText": "reliability", "refSections": [{"refs": [{"id": "ref-for-reliability"}], "title": "4.16. ReliabilityForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['4c4ca3c4'] = {"dfnID": "4c4ca3c4", "url": "../../../../systems/spc/requirements/logistical.html#supply", "dfnText": "supply", "refSections": [{"refs": [{"id": "ref-for-supply"}], "title": "4.23. SupplyForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['b6e41ee4'] = {"dfnID": "b6e41ee4", "url": "../../../../systems/spc/requirements/logistical.html#trainingandpersonel", "dfnText": "trainingandpersonel", "refSections": [{"refs": [{"id": "ref-for-trainingandpersonel"}], "title": "4.25. TrainingAndPersonelForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['05eb3e3c'] = {"dfnID": "05eb3e3c", "url": "../../../../systems/spc/requirements/logistical.html#transportation", "dfnText": "transportation", "refSections": [{"refs": [{"id": "ref-for-transportation"}], "title": "4.26. TransportationForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['8a6c5406'] = {"dfnID": "8a6c5406", "url": "../../../../systems/spc/requirements/operational.html#minimumelevationangle", "dfnText": "minimumelevationangle", "refSections": [{"refs": [{"id": "ref-for-minimumelevationangle"}], "title": "4.8. MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-minimumelevationangle\u2460"}], "title": "4.9. MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}], "external": true};
+window.dfnpanelData['af01b0dc'] = {"dfnID": "af01b0dc", "url": "../../../../systems/spc/requirements/operational.html#orbitinclination", "dfnText": "orbitinclination", "refSections": [{"refs": [{"id": "ref-for-orbitinclination"}], "title": "4.11. OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires"}, {"refs": [{"id": "ref-for-orbitinclination\u2460"}], "title": "4.12. OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7"}], "external": true};
+window.dfnpanelData['73148d1a'] = {"dfnID": "73148d1a", "url": "../../../../systems/spc/requirements/performance.html#timeerror", "dfnText": "timeerror", "refSections": [{"refs": [{"id": "ref-for-timeerror"}], "title": "4.24. TimeErrorForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['7efa783f'] = {"dfnID": "7efa783f", "url": "../../../../systems/spc/requirements/resource.html#maturityofnewtechnologies", "dfnText": "maturityofnewtechnologies", "refSections": [{"refs": [{"id": "ref-for-maturityofnewtechnologies"}], "title": "4.7. MaturityOfNewTechnologiesForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['bb378530'] = {"dfnID": "bb378530", "url": "../../../../systems/spc/requirements/resource.html#numberofsatellites", "dfnText": "numberofsatellites", "refSections": [{"refs": [{"id": "ref-for-numberofsatellites"}], "title": "4.10. NumberOfSatellitesForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['9f252cb0'] = {"dfnID": "9f252cb0", "url": "../../../../systems/spc/requirements/resource.html#powerbudget", "dfnText": "powerbudget", "refSections": [{"refs": [{"id": "ref-for-powerbudget"}], "title": "4.1. AltitudeErrorForSpacecraftSystemSegment"}, {"refs": [{"id": "ref-for-powerbudget\u2460"}], "title": "4.13. PowerBudgetForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['af512abd'] = {"dfnID": "af512abd", "url": "../../../../systems/spc/requirements/resource.html#spacevehiclemass", "dfnText": "spacevehiclemass", "refSections": [{"refs": [{"id": "ref-for-spacevehiclemass"}], "title": "4.19. SpaceVehicleMassForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['5c5f4e62'] = {"dfnID": "5c5f4e62", "url": "../../../../systems/spc/requirements/system.html#manufacturability", "dfnText": "manufacturability", "refSections": [{"refs": [{"id": "ref-for-manufacturability"}], "title": "4.6. ManufacturabilityForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['4e8f6143'] = {"dfnID": "4e8f6143", "url": "../../../../systems/spc/requirements/system.html#primeitemdefinition", "dfnText": "primeitemdefinition", "refSections": [{"refs": [{"id": "ref-for-primeitemdefinition"}], "title": "4.14. PrimeItemDefinitionForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['77f7e7c3'] = {"dfnID": "77f7e7c3", "url": "../../../../systems/spc/requirements/system.html#securityandsafety", "dfnText": "securityandsafety", "refSections": [{"refs": [{"id": "ref-for-securityandsafety"}], "title": "4.17. SecurityAndSafetyForSpacecraftSystemSegment"}], "external": true};
+window.dfnpanelData['a73fa3bf'] = {"dfnID": "a73fa3bf", "url": "../../../../systems/spc/requirements/system.html#standardsample", "dfnText": "standardsample", "refSections": [{"refs": [{"id": "ref-for-standardsample"}], "title": "4.21. StandardSampleForSpacecraftSystemSegment"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

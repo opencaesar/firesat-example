@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/iso.org/iso-80000-4.1" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ISO-80000-4.1 mass</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2306,134 +2312,96 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#si7-kilogram">si7-kilogram</a><span>, in § 5.3</span>
    <li><a href="#si8-kilogram">si8-kilogram</a><span>, in § 5.4</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-d007e47929d2675c97fec877558871f4" class="dfn-panel" data-for="d007e47929d2675c97fec877558871f4" id="infopanel-for-d007e47929d2675c97fec877558871f4">
-   <span id="infopaneltitle-for-d007e47929d2675c97fec877558871f4" style="display:none">Info about the 'dimensionsymbol' external reference.</span><a href="../bipm.org/jcgm/vim4.html#dimensionsymbol">../bipm.org/jcgm/vim4.html#dimensionsymbol</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dimensionsymbol">5.1. ISQ7-mass</a>
-    <li><a href="#ref-for-dimensionsymbol①">5.2. ISQ8-mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" class="dfn-panel" data-for="3fd81ec3b18efe04a5bebacb4dfcb16c" id="infopanel-for-3fd81ec3b18efe04a5bebacb4dfcb16c">
-   <span id="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" style="display:none">Info about the 'generalunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#generalunitaryquantity">../bipm.org/jcgm/vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalunitaryquantity">4.2. mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" class="dfn-panel" data-for="a55dc4183806d00f57769dd51a14d8b6" id="infopanel-for-a55dc4183806d00f57769dd51a14d8b6">
-   <span id="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" style="display:none">Info about the 'id' external reference.</span><a href="../bipm.org/jcgm/vim4.html#id">../bipm.org/jcgm/vim4.html#id</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-id">4.1. kilogram</a>
-    <li><a href="#ref-for-id①">4.2. mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" class="dfn-panel" data-for="68276dbf72f7e9ff6b765618f7aa5401" id="infopanel-for-68276dbf72f7e9ff6b765618f7aa5401">
-   <span id="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" style="display:none">Info about the 'instantiates_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#instantiates_1">../bipm.org/jcgm/vim4.html#instantiates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-instantiates_1">4.1. kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-814d86a4a7aa7f652a0e78216b702153" class="dfn-panel" data-for="814d86a4a7aa7f652a0e78216b702153" id="infopanel-for-814d86a4a7aa7f652a0e78216b702153">
-   <span id="infopaneltitle-for-814d86a4a7aa7f652a0e78216b702153" style="display:none">Info about the 'systemhasbaseunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasbaseunit">../bipm.org/jcgm/vim4.html#systemhasbaseunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunit">5.3. SI7-kilogram</a>
-    <li><a href="#ref-for-systemhasbaseunit①">5.4. SI8-kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4a590646a89c576ea361371d8e0eb7c3" class="dfn-panel" data-for="4a590646a89c576ea361371d8e0eb7c3" id="infopanel-for-4a590646a89c576ea361371d8e0eb7c3">
-   <span id="infopaneltitle-for-4a590646a89c576ea361371d8e0eb7c3" style="display:none">Info about the 'systemhasbaseunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity">5.1. ISQ7-mass</a>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity①">5.2. ISQ8-mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" class="dfn-panel" data-for="b6481b11251901b497f35d832c27d2e1" id="infopanel-for-b6481b11251901b497f35d832c27d2e1">
-   <span id="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" style="display:none">Info about the 'unprefixedmeasurementunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit">../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unprefixedmeasurementunit">4.1. kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" class="dfn-panel" data-for="b1dc043e5efbcc452c05318f2f52f1e4" id="infopanel-for-b1dc043e5efbcc452c05318f2f52f1e4">
-   <span id="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" style="display:none">Info about the 'isq7' external reference.</span><a href="iso-80000-1.html#isq7">iso-80000-1.html#isq7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7">5.1. ISQ7-mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" class="dfn-panel" data-for="f257f9f007741c509006e6756479b3ef" id="infopanel-for-f257f9f007741c509006e6756479b3ef">
-   <span id="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" style="display:none">Info about the 'isq8' external reference.</span><a href="iso-80000-1.html#isq8">iso-80000-1.html#isq8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8">5.2. ISQ8-mass</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" class="dfn-panel" data-for="d005e23d5d949663f3cf9e786bc3d9a0" id="infopanel-for-d005e23d5d949663f3cf9e786bc3d9a0">
-   <span id="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" style="display:none">Info about the 'si7' external reference.</span><a href="iso-80000-1.html#si7">iso-80000-1.html#si7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7">5.3. SI7-kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" class="dfn-panel" data-for="c84ea8907660487a2bffadf8ad295cac" id="infopanel-for-c84ea8907660487a2bffadf8ad295cac">
-   <span id="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" style="display:none">Info about the 'si8' external reference.</span><a href="iso-80000-1.html#si8">iso-80000-1.html#si8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8">5.4. SI8-kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e02366311a8425b7dd2b64433cd71d60" class="dfn-panel" data-for="e02366311a8425b7dd2b64433cd71d60" id="infopanel-for-e02366311a8425b7dd2b64433cd71d60">
-   <span id="infopaneltitle-for-e02366311a8425b7dd2b64433cd71d60" style="display:none">Info about the 'kilogram' external reference.</span><a href="iso-80000-4.1.html#kilogram">iso-80000-4.1.html#kilogram</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kilogram">5.3. SI7-kilogram</a>
-    <li><a href="#ref-for-kilogram①">5.4. SI8-kilogram</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e02c80e5f8e176bc074fa928f862ecd8" class="dfn-panel" data-for="e02c80e5f8e176bc074fa928f862ecd8" id="infopanel-for-e02c80e5f8e176bc074fa928f862ecd8">
-   <span id="infopaneltitle-for-e02c80e5f8e176bc074fa928f862ecd8" style="display:none">Info about the 'mass' external reference.</span><a href="iso-80000-4.1.html#mass">iso-80000-4.1.html#mass</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-mass">4.1. kilogram</a>
-    <li><a href="#ref-for-mass①">5.1. ISQ7-mass</a>
-    <li><a href="#ref-for-mass②">5.2. ISQ8-mass</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="d007e47929d2675c97fec877558871f4">dimensionsymbol</span>
-     <li><span class="dfn-paneled" id="3fd81ec3b18efe04a5bebacb4dfcb16c">generalunitaryquantity</span>
-     <li><span class="dfn-paneled" id="a55dc4183806d00f57769dd51a14d8b6">id</span>
-     <li><span class="dfn-paneled" id="68276dbf72f7e9ff6b765618f7aa5401">instantiates_1</span>
-     <li><span class="dfn-paneled" id="814d86a4a7aa7f652a0e78216b702153">systemhasbaseunit</span>
-     <li><span class="dfn-paneled" id="4a590646a89c576ea361371d8e0eb7c3">systemhasbaseunitaryquantity</span>
-     <li><span class="dfn-paneled" id="b6481b11251901b497f35d832c27d2e1">unprefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="d83736fc">dimensionsymbol</span>
+     <li><span class="dfn-paneled" id="2d12e8b3">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="22cc0d19">id</span>
+     <li><span class="dfn-paneled" id="b963c60b">instantiates_1</span>
+     <li><span class="dfn-paneled" id="7c7e5b23">systemhasbaseunit</span>
+     <li><span class="dfn-paneled" id="1e17c61a">systemhasbaseunitaryquantity</span>
+     <li><span class="dfn-paneled" id="dd43b8fd">unprefixedmeasurementunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="b1dc043e5efbcc452c05318f2f52f1e4">isq7</span>
-     <li><span class="dfn-paneled" id="f257f9f007741c509006e6756479b3ef">isq8</span>
-     <li><span class="dfn-paneled" id="d005e23d5d949663f3cf9e786bc3d9a0">si7</span>
-     <li><span class="dfn-paneled" id="c84ea8907660487a2bffadf8ad295cac">si8</span>
+     <li><span class="dfn-paneled" id="a137317b">isq7</span>
+     <li><span class="dfn-paneled" id="a0d8ea7b">isq8</span>
+     <li><span class="dfn-paneled" id="418bb73d">si7</span>
+     <li><span class="dfn-paneled" id="4b1230ac">si8</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-4.1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="e02366311a8425b7dd2b64433cd71d60">kilogram</span>
-     <li><span class="dfn-paneled" id="e02c80e5f8e176bc074fa928f862ecd8">mass</span>
+     <li><span class="dfn-paneled" id="12e608dd">kilogram</span>
+     <li><span class="dfn-paneled" id="ce0da439">mass</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2483,49 +2451,256 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['d83736fc'] = {"dfnID": "d83736fc", "url": "../bipm.org/jcgm/vim4.html#dimensionsymbol", "dfnText": "dimensionsymbol", "refSections": [{"refs": [{"id": "ref-for-dimensionsymbol"}], "title": "5.1. ISQ7-mass"}, {"refs": [{"id": "ref-for-dimensionsymbol\u2460"}], "title": "5.2. ISQ8-mass"}], "external": true};
+window.dfnpanelData['2d12e8b3'] = {"dfnID": "2d12e8b3", "url": "../bipm.org/jcgm/vim4.html#generalunitaryquantity", "dfnText": "generalunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-generalunitaryquantity"}], "title": "4.2. mass"}], "external": true};
+window.dfnpanelData['22cc0d19'] = {"dfnID": "22cc0d19", "url": "../bipm.org/jcgm/vim4.html#id", "dfnText": "id", "refSections": [{"refs": [{"id": "ref-for-id"}], "title": "4.1. kilogram"}, {"refs": [{"id": "ref-for-id\u2460"}], "title": "4.2. mass"}], "external": true};
+window.dfnpanelData['b963c60b'] = {"dfnID": "b963c60b", "url": "../bipm.org/jcgm/vim4.html#instantiates_1", "dfnText": "instantiates_1", "refSections": [{"refs": [{"id": "ref-for-instantiates_1"}], "title": "4.1. kilogram"}], "external": true};
+window.dfnpanelData['7c7e5b23'] = {"dfnID": "7c7e5b23", "url": "../bipm.org/jcgm/vim4.html#systemhasbaseunit", "dfnText": "systemhasbaseunit", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunit"}], "title": "5.3. SI7-kilogram"}, {"refs": [{"id": "ref-for-systemhasbaseunit\u2460"}], "title": "5.4. SI8-kilogram"}], "external": true};
+window.dfnpanelData['1e17c61a'] = {"dfnID": "1e17c61a", "url": "../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity", "dfnText": "systemhasbaseunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunitaryquantity"}], "title": "5.1. ISQ7-mass"}, {"refs": [{"id": "ref-for-systemhasbaseunitaryquantity\u2460"}], "title": "5.2. ISQ8-mass"}], "external": true};
+window.dfnpanelData['dd43b8fd'] = {"dfnID": "dd43b8fd", "url": "../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit", "dfnText": "unprefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-unprefixedmeasurementunit"}], "title": "4.1. kilogram"}], "external": true};
+window.dfnpanelData['a137317b'] = {"dfnID": "a137317b", "url": "iso-80000-1.html#isq7", "dfnText": "isq7", "refSections": [{"refs": [{"id": "ref-for-isq7"}], "title": "5.1. ISQ7-mass"}], "external": true};
+window.dfnpanelData['a0d8ea7b'] = {"dfnID": "a0d8ea7b", "url": "iso-80000-1.html#isq8", "dfnText": "isq8", "refSections": [{"refs": [{"id": "ref-for-isq8"}], "title": "5.2. ISQ8-mass"}], "external": true};
+window.dfnpanelData['418bb73d'] = {"dfnID": "418bb73d", "url": "iso-80000-1.html#si7", "dfnText": "si7", "refSections": [{"refs": [{"id": "ref-for-si7"}], "title": "5.3. SI7-kilogram"}], "external": true};
+window.dfnpanelData['4b1230ac'] = {"dfnID": "4b1230ac", "url": "iso-80000-1.html#si8", "dfnText": "si8", "refSections": [{"refs": [{"id": "ref-for-si8"}], "title": "5.4. SI8-kilogram"}], "external": true};
+window.dfnpanelData['12e608dd'] = {"dfnID": "12e608dd", "url": "iso-80000-4.1.html#kilogram", "dfnText": "kilogram", "refSections": [{"refs": [{"id": "ref-for-kilogram"}], "title": "5.3. SI7-kilogram"}, {"refs": [{"id": "ref-for-kilogram\u2460"}], "title": "5.4. SI8-kilogram"}], "external": true};
+window.dfnpanelData['ce0da439'] = {"dfnID": "ce0da439", "url": "iso-80000-4.1.html#mass", "dfnText": "mass", "refSections": [{"refs": [{"id": "ref-for-mass"}], "title": "4.1. kilogram"}, {"refs": [{"id": "ref-for-mass\u2460"}], "title": "5.1. ISQ7-mass"}, {"refs": [{"id": "ref-for-mass\u2461"}], "title": "5.2. ISQ8-mass"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/07/subsystems/ang/assemblies" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ADCS and GNC Assemblies</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2490,399 +2496,137 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#reactionwheel4">reactionwheel4</a><span>, in § 4.12</span>
    <li><a href="#sunsensor">sunsensor</a><span>, in § 4.13</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" class="dfn-panel" data-for="1311b9980aaaac9d07f4c3a25606bff4" id="infopanel-for-1311b9980aaaac9d07f4c3a25606bff4">
-   <span id="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasidentifier">4.1. ADCSElectronicsUnit</a>
-    <li><a href="#ref-for-hasidentifier①">4.2. EarthSensor</a>
-    <li><a href="#ref-for-hasidentifier②">4.3. GPSAntenna</a>
-    <li><a href="#ref-for-hasidentifier③">4.4. GPSReceiverUnit</a>
-    <li><a href="#ref-for-hasidentifier④">4.5. Magnetometer</a>
-    <li><a href="#ref-for-hasidentifier⑤">4.6. Magnetorquer1</a>
-    <li><a href="#ref-for-hasidentifier⑥">4.7. Magnetorquer2</a>
-    <li><a href="#ref-for-hasidentifier⑦">4.8. Magnetorquer3</a>
-    <li><a href="#ref-for-hasidentifier⑧">4.9. ReactionWheel1</a>
-    <li><a href="#ref-for-hasidentifier⑨">4.10. ReactionWheel2</a>
-    <li><a href="#ref-for-hasidentifier①⓪">4.11. ReactionWheel3</a>
-    <li><a href="#ref-for-hasidentifier①①">4.12. ReactionWheel4</a>
-    <li><a href="#ref-for-hasidentifier①②">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" class="dfn-panel" data-for="7ee331c96b0af3798fedbaa0edddb821" id="infopanel-for-7ee331c96b0af3798fedbaa0edddb821">
-   <span id="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" style="display:none">Info about the 'isspecifiedby' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isspecifiedby">4.1. ADCSElectronicsUnit</a> <a href="#ref-for-isspecifiedby①">(2)</a>
-    <li><a href="#ref-for-isspecifiedby②">4.2. EarthSensor</a>
-    <li><a href="#ref-for-isspecifiedby③">4.3. GPSAntenna</a>
-    <li><a href="#ref-for-isspecifiedby④">4.5. Magnetometer</a>
-    <li><a href="#ref-for-isspecifiedby⑤">4.6. Magnetorquer1</a>
-    <li><a href="#ref-for-isspecifiedby⑥">4.7. Magnetorquer2</a>
-    <li><a href="#ref-for-isspecifiedby⑦">4.8. Magnetorquer3</a>
-    <li><a href="#ref-for-isspecifiedby⑧">4.9. ReactionWheel1</a>
-    <li><a href="#ref-for-isspecifiedby⑨">4.10. ReactionWheel2</a>
-    <li><a href="#ref-for-isspecifiedby①⓪">4.11. ReactionWheel3</a>
-    <li><a href="#ref-for-isspecifiedby①①">4.12. ReactionWheel4</a>
-    <li><a href="#ref-for-isspecifiedby①②">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" class="dfn-panel" data-for="70c4176574de9e523fb260c500cca5a2" id="infopanel-for-70c4176574de9e523fb260c500cca5a2">
-   <span id="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" style="display:none">Info about the 'performs_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs_1">4.1. ADCSElectronicsUnit</a>
-    <li><a href="#ref-for-performs_1①">4.2. EarthSensor</a>
-    <li><a href="#ref-for-performs_1②">4.5. Magnetometer</a>
-    <li><a href="#ref-for-performs_1③">4.6. Magnetorquer1</a>
-    <li><a href="#ref-for-performs_1④">4.7. Magnetorquer2</a>
-    <li><a href="#ref-for-performs_1⑤">4.8. Magnetorquer3</a>
-    <li><a href="#ref-for-performs_1⑥">4.9. ReactionWheel1</a>
-    <li><a href="#ref-for-performs_1⑦">4.10. ReactionWheel2</a>
-    <li><a href="#ref-for-performs_1⑧">4.11. ReactionWheel3</a>
-    <li><a href="#ref-for-performs_1⑨">4.12. ReactionWheel4</a>
-    <li><a href="#ref-for-performs_1①⓪">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" class="dfn-panel" data-for="aea8174c6de59b1354b2a15091cfbd9e" id="infopanel-for-aea8174c6de59b1354b2a15091cfbd9e">
-   <span id="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" style="display:none">Info about the 'presents_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presents_1">4.1. ADCSElectronicsUnit</a>
-    <li><a href="#ref-for-presents_1①">4.2. EarthSensor</a>
-    <li><a href="#ref-for-presents_1②">4.3. GPSAntenna</a>
-    <li><a href="#ref-for-presents_1③">4.4. GPSReceiverUnit</a>
-    <li><a href="#ref-for-presents_1④">4.5. Magnetometer</a>
-    <li><a href="#ref-for-presents_1⑤">4.6. Magnetorquer1</a>
-    <li><a href="#ref-for-presents_1⑥">4.7. Magnetorquer2</a>
-    <li><a href="#ref-for-presents_1⑦">4.8. Magnetorquer3</a>
-    <li><a href="#ref-for-presents_1⑧">4.9. ReactionWheel1</a>
-    <li><a href="#ref-for-presents_1⑨">4.10. ReactionWheel2</a>
-    <li><a href="#ref-for-presents_1①⓪">4.11. ReactionWheel3</a>
-    <li><a href="#ref-for-presents_1①①">4.12. ReactionWheel4</a>
-    <li><a href="#ref-for-presents_1①②">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" class="dfn-panel" data-for="f668f73c4df2daa6968c666b6f01a6bc" id="infopanel-for-f668f73c4df2daa6968c666b6f01a6bc">
-   <span id="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" style="display:none">Info about the 'assembly' external reference.</span><a href="../../../../../../../../../disciplines/fse/fse.html#assembly">../../../../../../../../../disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-assembly">4.1. ADCSElectronicsUnit</a>
-    <li><a href="#ref-for-assembly①">4.2. EarthSensor</a>
-    <li><a href="#ref-for-assembly②">4.3. GPSAntenna</a>
-    <li><a href="#ref-for-assembly③">4.4. GPSReceiverUnit</a>
-    <li><a href="#ref-for-assembly④">4.5. Magnetometer</a>
-    <li><a href="#ref-for-assembly⑤">4.6. Magnetorquer1</a>
-    <li><a href="#ref-for-assembly⑥">4.7. Magnetorquer2</a>
-    <li><a href="#ref-for-assembly⑦">4.8. Magnetorquer3</a>
-    <li><a href="#ref-for-assembly⑧">4.9. ReactionWheel1</a>
-    <li><a href="#ref-for-assembly⑨">4.10. ReactionWheel2</a>
-    <li><a href="#ref-for-assembly①⓪">4.11. ReactionWheel3</a>
-    <li><a href="#ref-for-assembly①①">4.12. ReactionWheel4</a>
-    <li><a href="#ref-for-assembly①②">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-382310b23f26aa0ebf965282acfd485c" class="dfn-panel" data-for="382310b23f26aa0ebf965282acfd485c" id="infopanel-for-382310b23f26aa0ebf965282acfd485c">
-   <span id="infopaneltitle-for-382310b23f26aa0ebf965282acfd485c" style="display:none">Info about the 'adcselectronicsunitpowerin' external reference.</span><a href="endcircuits.html#adcselectronicsunitpowerin">endcircuits.html#adcselectronicsunitpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-adcselectronicsunitpowerin">4.1. ADCSElectronicsUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-204a504d6dc6a1cf9f6e26e6bad7190a" class="dfn-panel" data-for="204a504d6dc6a1cf9f6e26e6bad7190a" id="infopanel-for-204a504d6dc6a1cf9f6e26e6bad7190a">
-   <span id="infopaneltitle-for-204a504d6dc6a1cf9f6e26e6bad7190a" style="display:none">Info about the 'earthsensorpowerin' external reference.</span><a href="endcircuits.html#earthsensorpowerin">endcircuits.html#earthsensorpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-earthsensorpowerin">4.2. EarthSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2019e69b755d3af4bab437cc0ea3490e" class="dfn-panel" data-for="2019e69b755d3af4bab437cc0ea3490e" id="infopanel-for-2019e69b755d3af4bab437cc0ea3490e">
-   <span id="infopaneltitle-for-2019e69b755d3af4bab437cc0ea3490e" style="display:none">Info about the 'gpsantennapowerin' external reference.</span><a href="endcircuits.html#gpsantennapowerin">endcircuits.html#gpsantennapowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gpsantennapowerin">4.3. GPSAntenna</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-69658f3de39500c51bb5f90b6a55ccee" class="dfn-panel" data-for="69658f3de39500c51bb5f90b6a55ccee" id="infopanel-for-69658f3de39500c51bb5f90b6a55ccee">
-   <span id="infopaneltitle-for-69658f3de39500c51bb5f90b6a55ccee" style="display:none">Info about the 'gpsreceiverunitpowerin' external reference.</span><a href="endcircuits.html#gpsreceiverunitpowerin">endcircuits.html#gpsreceiverunitpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gpsreceiverunitpowerin">4.4. GPSReceiverUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5eb85900092fb03b2dd85d673f13df71" class="dfn-panel" data-for="5eb85900092fb03b2dd85d673f13df71" id="infopanel-for-5eb85900092fb03b2dd85d673f13df71">
-   <span id="infopaneltitle-for-5eb85900092fb03b2dd85d673f13df71" style="display:none">Info about the 'magnetometerpowerin' external reference.</span><a href="endcircuits.html#magnetometerpowerin">endcircuits.html#magnetometerpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetometerpowerin">4.5. Magnetometer</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6dfce8fe1a3d2cf741e02ffa12a612f4" class="dfn-panel" data-for="6dfce8fe1a3d2cf741e02ffa12a612f4" id="infopanel-for-6dfce8fe1a3d2cf741e02ffa12a612f4">
-   <span id="infopaneltitle-for-6dfce8fe1a3d2cf741e02ffa12a612f4" style="display:none">Info about the 'magnetorquer1powerin' external reference.</span><a href="endcircuits.html#magnetorquer1powerin">endcircuits.html#magnetorquer1powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer1powerin">4.6. Magnetorquer1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-08f26b9f24f6f82fdf7fd8fa95e5c192" class="dfn-panel" data-for="08f26b9f24f6f82fdf7fd8fa95e5c192" id="infopanel-for-08f26b9f24f6f82fdf7fd8fa95e5c192">
-   <span id="infopaneltitle-for-08f26b9f24f6f82fdf7fd8fa95e5c192" style="display:none">Info about the 'magnetorquer2powerin' external reference.</span><a href="endcircuits.html#magnetorquer2powerin">endcircuits.html#magnetorquer2powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer2powerin">4.7. Magnetorquer2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dbb7ce426143e18a8355e96b4b2d350b" class="dfn-panel" data-for="dbb7ce426143e18a8355e96b4b2d350b" id="infopanel-for-dbb7ce426143e18a8355e96b4b2d350b">
-   <span id="infopaneltitle-for-dbb7ce426143e18a8355e96b4b2d350b" style="display:none">Info about the 'magnetorquer3powerin' external reference.</span><a href="endcircuits.html#magnetorquer3powerin">endcircuits.html#magnetorquer3powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-magnetorquer3powerin">4.8. Magnetorquer3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c7fa4bea6a886b457713757ac6a2533a" class="dfn-panel" data-for="c7fa4bea6a886b457713757ac6a2533a" id="infopanel-for-c7fa4bea6a886b457713757ac6a2533a">
-   <span id="infopaneltitle-for-c7fa4bea6a886b457713757ac6a2533a" style="display:none">Info about the 'reactionwheel1powerin' external reference.</span><a href="endcircuits.html#reactionwheel1powerin">endcircuits.html#reactionwheel1powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel1powerin">4.9. ReactionWheel1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6c6bacff799bc2ea0422d06fd960f84d" class="dfn-panel" data-for="6c6bacff799bc2ea0422d06fd960f84d" id="infopanel-for-6c6bacff799bc2ea0422d06fd960f84d">
-   <span id="infopaneltitle-for-6c6bacff799bc2ea0422d06fd960f84d" style="display:none">Info about the 'reactionwheel2powerin' external reference.</span><a href="endcircuits.html#reactionwheel2powerin">endcircuits.html#reactionwheel2powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel2powerin">4.10. ReactionWheel2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8d3b7e16828982fb738bcf6e2cf1438c" class="dfn-panel" data-for="8d3b7e16828982fb738bcf6e2cf1438c" id="infopanel-for-8d3b7e16828982fb738bcf6e2cf1438c">
-   <span id="infopaneltitle-for-8d3b7e16828982fb738bcf6e2cf1438c" style="display:none">Info about the 'reactionwheel3powerin' external reference.</span><a href="endcircuits.html#reactionwheel3powerin">endcircuits.html#reactionwheel3powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel3powerin">4.11. ReactionWheel3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-40dc69380cf76eaa11ac31e8f0af0bfa" class="dfn-panel" data-for="40dc69380cf76eaa11ac31e8f0af0bfa" id="infopanel-for-40dc69380cf76eaa11ac31e8f0af0bfa">
-   <span id="infopaneltitle-for-40dc69380cf76eaa11ac31e8f0af0bfa" style="display:none">Info about the 'reactionwheel4powerin' external reference.</span><a href="endcircuits.html#reactionwheel4powerin">endcircuits.html#reactionwheel4powerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-reactionwheel4powerin">4.12. ReactionWheel4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e3b196b2cef213ac26d2713bdeb4ea27" class="dfn-panel" data-for="e3b196b2cef213ac26d2713bdeb4ea27" id="infopanel-for-e3b196b2cef213ac26d2713bdeb4ea27">
-   <span id="infopaneltitle-for-e3b196b2cef213ac26d2713bdeb4ea27" style="display:none">Info about the 'sunsensorpowerin' external reference.</span><a href="endcircuits.html#sunsensorpowerin">endcircuits.html#sunsensorpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-sunsensorpowerin">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6bd6c087fa02e53f44d44be4205786a2" class="dfn-panel" data-for="6bd6c087fa02e53f44d44be4205786a2" id="infopanel-for-6bd6c087fa02e53f44d44be4205786a2">
-   <span id="infopaneltitle-for-6bd6c087fa02e53f44d44be4205786a2" style="display:none">Info about the 'attitudeawarenessbyearthsensor' external reference.</span><a href="functions.html#attitudeawarenessbyearthsensor">functions.html#attitudeawarenessbyearthsensor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-attitudeawarenessbyearthsensor">4.2. EarthSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-29ec62e443d83fdeb26ec6bbae553712" class="dfn-panel" data-for="29ec62e443d83fdeb26ec6bbae553712" id="infopanel-for-29ec62e443d83fdeb26ec6bbae553712">
-   <span id="infopaneltitle-for-29ec62e443d83fdeb26ec6bbae553712" style="display:none">Info about the 'attitudeawarenessbymagnetometer' external reference.</span><a href="functions.html#attitudeawarenessbymagnetometer">functions.html#attitudeawarenessbymagnetometer</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-attitudeawarenessbymagnetometer">4.5. Magnetometer</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2ee34e01e46969000fa1106af2618ecf" class="dfn-panel" data-for="2ee34e01e46969000fa1106af2618ecf" id="infopanel-for-2ee34e01e46969000fa1106af2618ecf">
-   <span id="infopaneltitle-for-2ee34e01e46969000fa1106af2618ecf" style="display:none">Info about the 'attitudeawarenessbysunsensor' external reference.</span><a href="functions.html#attitudeawarenessbysunsensor">functions.html#attitudeawarenessbysunsensor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-attitudeawarenessbysunsensor">4.13. SunSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7fbebf2e4b24afabf02ec3ad4235fce0" class="dfn-panel" data-for="7fbebf2e4b24afabf02ec3ad4235fce0" id="infopanel-for-7fbebf2e4b24afabf02ec3ad4235fce0">
-   <span id="infopaneltitle-for-7fbebf2e4b24afabf02ec3ad4235fce0" style="display:none">Info about the 'controltrajectorybyadcselectronicsunit' external reference.</span><a href="functions.html#controltrajectorybyadcselectronicsunit">functions.html#controltrajectorybyadcselectronicsunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybyadcselectronicsunit">4.1. ADCSElectronicsUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-06cd569288dc72e7c004b94021ad6d0c" class="dfn-panel" data-for="06cd569288dc72e7c004b94021ad6d0c" id="infopanel-for-06cd569288dc72e7c004b94021ad6d0c">
-   <span id="infopaneltitle-for-06cd569288dc72e7c004b94021ad6d0c" style="display:none">Info about the 'controltrajectorybymagnetorquer1' external reference.</span><a href="functions.html#controltrajectorybymagnetorquer1">functions.html#controltrajectorybymagnetorquer1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybymagnetorquer1">4.6. Magnetorquer1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-23a912b260fb736a53bab25a84374810" class="dfn-panel" data-for="23a912b260fb736a53bab25a84374810" id="infopanel-for-23a912b260fb736a53bab25a84374810">
-   <span id="infopaneltitle-for-23a912b260fb736a53bab25a84374810" style="display:none">Info about the 'controltrajectorybymagnetorquer2' external reference.</span><a href="functions.html#controltrajectorybymagnetorquer2">functions.html#controltrajectorybymagnetorquer2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybymagnetorquer2">4.7. Magnetorquer2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d1705237857c5ca4d40a40eef1c9eee3" class="dfn-panel" data-for="d1705237857c5ca4d40a40eef1c9eee3" id="infopanel-for-d1705237857c5ca4d40a40eef1c9eee3">
-   <span id="infopaneltitle-for-d1705237857c5ca4d40a40eef1c9eee3" style="display:none">Info about the 'controltrajectorybymagnetorquer3' external reference.</span><a href="functions.html#controltrajectorybymagnetorquer3">functions.html#controltrajectorybymagnetorquer3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybymagnetorquer3">4.8. Magnetorquer3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6b7f3b6dee3d013a5a78caec68e06979" class="dfn-panel" data-for="6b7f3b6dee3d013a5a78caec68e06979" id="infopanel-for-6b7f3b6dee3d013a5a78caec68e06979">
-   <span id="infopaneltitle-for-6b7f3b6dee3d013a5a78caec68e06979" style="display:none">Info about the 'controltrajectorybyreactionwheel1' external reference.</span><a href="functions.html#controltrajectorybyreactionwheel1">functions.html#controltrajectorybyreactionwheel1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybyreactionwheel1">4.9. ReactionWheel1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8a9add56337f395ff72a7e1ec81aa3ab" class="dfn-panel" data-for="8a9add56337f395ff72a7e1ec81aa3ab" id="infopanel-for-8a9add56337f395ff72a7e1ec81aa3ab">
-   <span id="infopaneltitle-for-8a9add56337f395ff72a7e1ec81aa3ab" style="display:none">Info about the 'controltrajectorybyreactionwheel2' external reference.</span><a href="functions.html#controltrajectorybyreactionwheel2">functions.html#controltrajectorybyreactionwheel2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybyreactionwheel2">4.10. ReactionWheel2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8040e3919494ce9317b29d5b2e2c48c8" class="dfn-panel" data-for="8040e3919494ce9317b29d5b2e2c48c8" id="infopanel-for-8040e3919494ce9317b29d5b2e2c48c8">
-   <span id="infopaneltitle-for-8040e3919494ce9317b29d5b2e2c48c8" style="display:none">Info about the 'controltrajectorybyreactionwheel3' external reference.</span><a href="functions.html#controltrajectorybyreactionwheel3">functions.html#controltrajectorybyreactionwheel3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybyreactionwheel3">4.11. ReactionWheel3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d7229ca4a92df9ef66bbbf3e87fd9791" class="dfn-panel" data-for="d7229ca4a92df9ef66bbbf3e87fd9791" id="infopanel-for-d7229ca4a92df9ef66bbbf3e87fd9791">
-   <span id="infopaneltitle-for-d7229ca4a92df9ef66bbbf3e87fd9791" style="display:none">Info about the 'controltrajectorybyreactionwheel4' external reference.</span><a href="functions.html#controltrajectorybyreactionwheel4">functions.html#controltrajectorybyreactionwheel4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-controltrajectorybyreactionwheel4">4.12. ReactionWheel4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9d654100a71fe2db6ee4dda9d2873ad5" class="dfn-panel" data-for="9d654100a71fe2db6ee4dda9d2873ad5" id="infopanel-for-9d654100a71fe2db6ee4dda9d2873ad5">
-   <span id="infopaneltitle-for-9d654100a71fe2db6ee4dda9d2873ad5" style="display:none">Info about the 'maintenanceforadcselectronicsunit' external reference.</span><a href="requirements.html#maintenanceforadcselectronicsunit">requirements.html#maintenanceforadcselectronicsunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-maintenanceforadcselectronicsunit">4.1. ADCSElectronicsUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ff75da97c66ac279e96c2fe51bb7de56" class="dfn-panel" data-for="ff75da97c66ac279e96c2fe51bb7de56" id="infopanel-for-ff75da97c66ac279e96c2fe51bb7de56">
-   <span id="infopaneltitle-for-ff75da97c66ac279e96c2fe51bb7de56" style="display:none">Info about the 'operabilityforadcselectronicsunit' external reference.</span><a href="requirements.html#operabilityforadcselectronicsunit">requirements.html#operabilityforadcselectronicsunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforadcselectronicsunit">4.1. ADCSElectronicsUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ebccdf1db58243aa581223b9322b3563" class="dfn-panel" data-for="ebccdf1db58243aa581223b9322b3563" id="infopanel-for-ebccdf1db58243aa581223b9322b3563">
-   <span id="infopaneltitle-for-ebccdf1db58243aa581223b9322b3563" style="display:none">Info about the 'operabilityforearthsensor' external reference.</span><a href="requirements.html#operabilityforearthsensor">requirements.html#operabilityforearthsensor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforearthsensor">4.2. EarthSensor</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5275e3145ae589a61c01f04af04ed974" class="dfn-panel" data-for="5275e3145ae589a61c01f04af04ed974" id="infopanel-for-5275e3145ae589a61c01f04af04ed974">
-   <span id="infopaneltitle-for-5275e3145ae589a61c01f04af04ed974" style="display:none">Info about the 'operabilityforgpsantenna' external reference.</span><a href="requirements.html#operabilityforgpsantenna">requirements.html#operabilityforgpsantenna</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforgpsantenna">4.3. GPSAntenna</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-85825a8f6c464d4ea730c45f0b84bc18" class="dfn-panel" data-for="85825a8f6c464d4ea730c45f0b84bc18" id="infopanel-for-85825a8f6c464d4ea730c45f0b84bc18">
-   <span id="infopaneltitle-for-85825a8f6c464d4ea730c45f0b84bc18" style="display:none">Info about the 'operabilityformagnetometer' external reference.</span><a href="requirements.html#operabilityformagnetometer">requirements.html#operabilityformagnetometer</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityformagnetometer">4.5. Magnetometer</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5a4e66c938fb2242f65114c33962df9c" class="dfn-panel" data-for="5a4e66c938fb2242f65114c33962df9c" id="infopanel-for-5a4e66c938fb2242f65114c33962df9c">
-   <span id="infopaneltitle-for-5a4e66c938fb2242f65114c33962df9c" style="display:none">Info about the 'operabilityformagnetorquer1' external reference.</span><a href="requirements.html#operabilityformagnetorquer1">requirements.html#operabilityformagnetorquer1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityformagnetorquer1">4.6. Magnetorquer1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5406025c4faf110a58bc481de4347c18" class="dfn-panel" data-for="5406025c4faf110a58bc481de4347c18" id="infopanel-for-5406025c4faf110a58bc481de4347c18">
-   <span id="infopaneltitle-for-5406025c4faf110a58bc481de4347c18" style="display:none">Info about the 'operabilityformagnetorquer2' external reference.</span><a href="requirements.html#operabilityformagnetorquer2">requirements.html#operabilityformagnetorquer2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityformagnetorquer2">4.7. Magnetorquer2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c80c626e5044278d65799fe1d21a3f35" class="dfn-panel" data-for="c80c626e5044278d65799fe1d21a3f35" id="infopanel-for-c80c626e5044278d65799fe1d21a3f35">
-   <span id="infopaneltitle-for-c80c626e5044278d65799fe1d21a3f35" style="display:none">Info about the 'operabilityformagnetorquer3' external reference.</span><a href="requirements.html#operabilityformagnetorquer3">requirements.html#operabilityformagnetorquer3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityformagnetorquer3">4.8. Magnetorquer3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0c6bd3142ce715968e0d76ad7ca9096e" class="dfn-panel" data-for="0c6bd3142ce715968e0d76ad7ca9096e" id="infopanel-for-0c6bd3142ce715968e0d76ad7ca9096e">
-   <span id="infopaneltitle-for-0c6bd3142ce715968e0d76ad7ca9096e" style="display:none">Info about the 'operabilityforreactionwheel1' external reference.</span><a href="requirements.html#operabilityforreactionwheel1">requirements.html#operabilityforreactionwheel1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforreactionwheel1">4.9. ReactionWheel1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f7e9a7662569b3da0de480924de5c500" class="dfn-panel" data-for="f7e9a7662569b3da0de480924de5c500" id="infopanel-for-f7e9a7662569b3da0de480924de5c500">
-   <span id="infopaneltitle-for-f7e9a7662569b3da0de480924de5c500" style="display:none">Info about the 'operabilityforreactionwheel2' external reference.</span><a href="requirements.html#operabilityforreactionwheel2">requirements.html#operabilityforreactionwheel2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforreactionwheel2">4.10. ReactionWheel2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e3f9135640081aee487979ebba6615f3" class="dfn-panel" data-for="e3f9135640081aee487979ebba6615f3" id="infopanel-for-e3f9135640081aee487979ebba6615f3">
-   <span id="infopaneltitle-for-e3f9135640081aee487979ebba6615f3" style="display:none">Info about the 'operabilityforreactionwheel3' external reference.</span><a href="requirements.html#operabilityforreactionwheel3">requirements.html#operabilityforreactionwheel3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforreactionwheel3">4.11. ReactionWheel3</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d50d3948d8634b54738473f94f5e3b87" class="dfn-panel" data-for="d50d3948d8634b54738473f94f5e3b87" id="infopanel-for-d50d3948d8634b54738473f94f5e3b87">
-   <span id="infopaneltitle-for-d50d3948d8634b54738473f94f5e3b87" style="display:none">Info about the 'operabilityforreactionwheel4' external reference.</span><a href="requirements.html#operabilityforreactionwheel4">requirements.html#operabilityforreactionwheel4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforreactionwheel4">4.12. ReactionWheel4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ab4e5925cc9dbd3e2c5435270ce0e460" class="dfn-panel" data-for="ab4e5925cc9dbd3e2c5435270ce0e460" id="infopanel-for-ab4e5925cc9dbd3e2c5435270ce0e460">
-   <span id="infopaneltitle-for-ab4e5925cc9dbd3e2c5435270ce0e460" style="display:none">Info about the 'operabilityforsunsensor' external reference.</span><a href="requirements.html#operabilityforsunsensor">requirements.html#operabilityforsunsensor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-operabilityforsunsensor">4.13. SunSensor</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="1311b9980aaaac9d07f4c3a25606bff4">hasidentifier</span>
+     <li><span class="dfn-paneled" id="08a84326">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="7ee331c96b0af3798fedbaa0edddb821">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="70c4176574de9e523fb260c500cca5a2">performs_1</span>
-     <li><span class="dfn-paneled" id="aea8174c6de59b1354b2a15091cfbd9e">presents_1</span>
+     <li><span class="dfn-paneled" id="983fe943">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="1130b7a0">performs_1</span>
+     <li><span class="dfn-paneled" id="6361257d">presents_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f668f73c4df2daa6968c666b6f01a6bc">assembly</span>
+     <li><span class="dfn-paneled" id="cc0718bd">assembly</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/07/SUBSYSTEMS/ANG/ENDCIRCUITS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="382310b23f26aa0ebf965282acfd485c">adcselectronicsunitpowerin</span>
-     <li><span class="dfn-paneled" id="204a504d6dc6a1cf9f6e26e6bad7190a">earthsensorpowerin</span>
-     <li><span class="dfn-paneled" id="2019e69b755d3af4bab437cc0ea3490e">gpsantennapowerin</span>
-     <li><span class="dfn-paneled" id="69658f3de39500c51bb5f90b6a55ccee">gpsreceiverunitpowerin</span>
-     <li><span class="dfn-paneled" id="5eb85900092fb03b2dd85d673f13df71">magnetometerpowerin</span>
-     <li><span class="dfn-paneled" id="6dfce8fe1a3d2cf741e02ffa12a612f4">magnetorquer1powerin</span>
-     <li><span class="dfn-paneled" id="08f26b9f24f6f82fdf7fd8fa95e5c192">magnetorquer2powerin</span>
-     <li><span class="dfn-paneled" id="dbb7ce426143e18a8355e96b4b2d350b">magnetorquer3powerin</span>
-     <li><span class="dfn-paneled" id="c7fa4bea6a886b457713757ac6a2533a">reactionwheel1powerin</span>
-     <li><span class="dfn-paneled" id="6c6bacff799bc2ea0422d06fd960f84d">reactionwheel2powerin</span>
-     <li><span class="dfn-paneled" id="8d3b7e16828982fb738bcf6e2cf1438c">reactionwheel3powerin</span>
-     <li><span class="dfn-paneled" id="40dc69380cf76eaa11ac31e8f0af0bfa">reactionwheel4powerin</span>
-     <li><span class="dfn-paneled" id="e3b196b2cef213ac26d2713bdeb4ea27">sunsensorpowerin</span>
+     <li><span class="dfn-paneled" id="a1049df6">adcselectronicsunitpowerin</span>
+     <li><span class="dfn-paneled" id="a0710a2e">earthsensorpowerin</span>
+     <li><span class="dfn-paneled" id="0f373919">gpsantennapowerin</span>
+     <li><span class="dfn-paneled" id="40500932">gpsreceiverunitpowerin</span>
+     <li><span class="dfn-paneled" id="3073d783">magnetometerpowerin</span>
+     <li><span class="dfn-paneled" id="7321af2e">magnetorquer1powerin</span>
+     <li><span class="dfn-paneled" id="faae03bb">magnetorquer2powerin</span>
+     <li><span class="dfn-paneled" id="abe35ea1">magnetorquer3powerin</span>
+     <li><span class="dfn-paneled" id="3f321f1d">reactionwheel1powerin</span>
+     <li><span class="dfn-paneled" id="4df28ed2">reactionwheel2powerin</span>
+     <li><span class="dfn-paneled" id="27d62f29">reactionwheel3powerin</span>
+     <li><span class="dfn-paneled" id="c90bfa36">reactionwheel4powerin</span>
+     <li><span class="dfn-paneled" id="d8a95bf1">sunsensorpowerin</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/07/SUBSYSTEMS/ANG/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="6bd6c087fa02e53f44d44be4205786a2">attitudeawarenessbyearthsensor</span>
-     <li><span class="dfn-paneled" id="29ec62e443d83fdeb26ec6bbae553712">attitudeawarenessbymagnetometer</span>
-     <li><span class="dfn-paneled" id="2ee34e01e46969000fa1106af2618ecf">attitudeawarenessbysunsensor</span>
-     <li><span class="dfn-paneled" id="7fbebf2e4b24afabf02ec3ad4235fce0">controltrajectorybyadcselectronicsunit</span>
-     <li><span class="dfn-paneled" id="06cd569288dc72e7c004b94021ad6d0c">controltrajectorybymagnetorquer1</span>
-     <li><span class="dfn-paneled" id="23a912b260fb736a53bab25a84374810">controltrajectorybymagnetorquer2</span>
-     <li><span class="dfn-paneled" id="d1705237857c5ca4d40a40eef1c9eee3">controltrajectorybymagnetorquer3</span>
-     <li><span class="dfn-paneled" id="6b7f3b6dee3d013a5a78caec68e06979">controltrajectorybyreactionwheel1</span>
-     <li><span class="dfn-paneled" id="8a9add56337f395ff72a7e1ec81aa3ab">controltrajectorybyreactionwheel2</span>
-     <li><span class="dfn-paneled" id="8040e3919494ce9317b29d5b2e2c48c8">controltrajectorybyreactionwheel3</span>
-     <li><span class="dfn-paneled" id="d7229ca4a92df9ef66bbbf3e87fd9791">controltrajectorybyreactionwheel4</span>
+     <li><span class="dfn-paneled" id="a3830030">attitudeawarenessbyearthsensor</span>
+     <li><span class="dfn-paneled" id="e20076e1">attitudeawarenessbymagnetometer</span>
+     <li><span class="dfn-paneled" id="26daa303">attitudeawarenessbysunsensor</span>
+     <li><span class="dfn-paneled" id="ee360359">controltrajectorybyadcselectronicsunit</span>
+     <li><span class="dfn-paneled" id="b58d4ae5">controltrajectorybymagnetorquer1</span>
+     <li><span class="dfn-paneled" id="de2f550c">controltrajectorybymagnetorquer2</span>
+     <li><span class="dfn-paneled" id="4e33db17">controltrajectorybymagnetorquer3</span>
+     <li><span class="dfn-paneled" id="c28deee9">controltrajectorybyreactionwheel1</span>
+     <li><span class="dfn-paneled" id="48b4400b">controltrajectorybyreactionwheel2</span>
+     <li><span class="dfn-paneled" id="addb2347">controltrajectorybyreactionwheel3</span>
+     <li><span class="dfn-paneled" id="5701213b">controltrajectorybyreactionwheel4</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/07/SUBSYSTEMS/ANG/REQUIREMENTS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="9d654100a71fe2db6ee4dda9d2873ad5">maintenanceforadcselectronicsunit</span>
-     <li><span class="dfn-paneled" id="ff75da97c66ac279e96c2fe51bb7de56">operabilityforadcselectronicsunit</span>
-     <li><span class="dfn-paneled" id="ebccdf1db58243aa581223b9322b3563">operabilityforearthsensor</span>
-     <li><span class="dfn-paneled" id="5275e3145ae589a61c01f04af04ed974">operabilityforgpsantenna</span>
-     <li><span class="dfn-paneled" id="85825a8f6c464d4ea730c45f0b84bc18">operabilityformagnetometer</span>
-     <li><span class="dfn-paneled" id="5a4e66c938fb2242f65114c33962df9c">operabilityformagnetorquer1</span>
-     <li><span class="dfn-paneled" id="5406025c4faf110a58bc481de4347c18">operabilityformagnetorquer2</span>
-     <li><span class="dfn-paneled" id="c80c626e5044278d65799fe1d21a3f35">operabilityformagnetorquer3</span>
-     <li><span class="dfn-paneled" id="0c6bd3142ce715968e0d76ad7ca9096e">operabilityforreactionwheel1</span>
-     <li><span class="dfn-paneled" id="f7e9a7662569b3da0de480924de5c500">operabilityforreactionwheel2</span>
-     <li><span class="dfn-paneled" id="e3f9135640081aee487979ebba6615f3">operabilityforreactionwheel3</span>
-     <li><span class="dfn-paneled" id="d50d3948d8634b54738473f94f5e3b87">operabilityforreactionwheel4</span>
-     <li><span class="dfn-paneled" id="ab4e5925cc9dbd3e2c5435270ce0e460">operabilityforsunsensor</span>
+     <li><span class="dfn-paneled" id="45846bd0">maintenanceforadcselectronicsunit</span>
+     <li><span class="dfn-paneled" id="5c349951">operabilityforadcselectronicsunit</span>
+     <li><span class="dfn-paneled" id="56d2aa16">operabilityforearthsensor</span>
+     <li><span class="dfn-paneled" id="508137e8">operabilityforgpsantenna</span>
+     <li><span class="dfn-paneled" id="d625fed3">operabilityformagnetometer</span>
+     <li><span class="dfn-paneled" id="a10b4d30">operabilityformagnetorquer1</span>
+     <li><span class="dfn-paneled" id="60417b05">operabilityformagnetorquer2</span>
+     <li><span class="dfn-paneled" id="bb9a20ff">operabilityformagnetorquer3</span>
+     <li><span class="dfn-paneled" id="fafb06fb">operabilityforreactionwheel1</span>
+     <li><span class="dfn-paneled" id="cbed52d9">operabilityforreactionwheel2</span>
+     <li><span class="dfn-paneled" id="500a4091">operabilityforreactionwheel3</span>
+     <li><span class="dfn-paneled" id="cde1cb1e">operabilityforreactionwheel4</span>
+     <li><span class="dfn-paneled" id="1a4bd66e">operabilityforsunsensor</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2932,49 +2676,285 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['08a84326'] = {"dfnID": "08a84326", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier", "dfnText": "hasidentifier", "refSections": [{"refs": [{"id": "ref-for-hasidentifier"}], "title": "4.1. ADCSElectronicsUnit"}, {"refs": [{"id": "ref-for-hasidentifier\u2460"}], "title": "4.2. EarthSensor"}, {"refs": [{"id": "ref-for-hasidentifier\u2461"}], "title": "4.3. GPSAntenna"}, {"refs": [{"id": "ref-for-hasidentifier\u2462"}], "title": "4.4. GPSReceiverUnit"}, {"refs": [{"id": "ref-for-hasidentifier\u2463"}], "title": "4.5. Magnetometer"}, {"refs": [{"id": "ref-for-hasidentifier\u2464"}], "title": "4.6. Magnetorquer1"}, {"refs": [{"id": "ref-for-hasidentifier\u2465"}], "title": "4.7. Magnetorquer2"}, {"refs": [{"id": "ref-for-hasidentifier\u2466"}], "title": "4.8. Magnetorquer3"}, {"refs": [{"id": "ref-for-hasidentifier\u2467"}], "title": "4.9. ReactionWheel1"}, {"refs": [{"id": "ref-for-hasidentifier\u2468"}], "title": "4.10. ReactionWheel2"}, {"refs": [{"id": "ref-for-hasidentifier\u2460\u24ea"}], "title": "4.11. ReactionWheel3"}, {"refs": [{"id": "ref-for-hasidentifier\u2460\u2460"}], "title": "4.12. ReactionWheel4"}, {"refs": [{"id": "ref-for-hasidentifier\u2460\u2461"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['983fe943'] = {"dfnID": "983fe943", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby", "dfnText": "isspecifiedby", "refSections": [{"refs": [{"id": "ref-for-isspecifiedby"}, {"id": "ref-for-isspecifiedby\u2460"}], "title": "4.1. ADCSElectronicsUnit"}, {"refs": [{"id": "ref-for-isspecifiedby\u2461"}], "title": "4.2. EarthSensor"}, {"refs": [{"id": "ref-for-isspecifiedby\u2462"}], "title": "4.3. GPSAntenna"}, {"refs": [{"id": "ref-for-isspecifiedby\u2463"}], "title": "4.5. Magnetometer"}, {"refs": [{"id": "ref-for-isspecifiedby\u2464"}], "title": "4.6. Magnetorquer1"}, {"refs": [{"id": "ref-for-isspecifiedby\u2465"}], "title": "4.7. Magnetorquer2"}, {"refs": [{"id": "ref-for-isspecifiedby\u2466"}], "title": "4.8. Magnetorquer3"}, {"refs": [{"id": "ref-for-isspecifiedby\u2467"}], "title": "4.9. ReactionWheel1"}, {"refs": [{"id": "ref-for-isspecifiedby\u2468"}], "title": "4.10. ReactionWheel2"}, {"refs": [{"id": "ref-for-isspecifiedby\u2460\u24ea"}], "title": "4.11. ReactionWheel3"}, {"refs": [{"id": "ref-for-isspecifiedby\u2460\u2460"}], "title": "4.12. ReactionWheel4"}, {"refs": [{"id": "ref-for-isspecifiedby\u2460\u2461"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['1130b7a0'] = {"dfnID": "1130b7a0", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1", "dfnText": "performs_1", "refSections": [{"refs": [{"id": "ref-for-performs_1"}], "title": "4.1. ADCSElectronicsUnit"}, {"refs": [{"id": "ref-for-performs_1\u2460"}], "title": "4.2. EarthSensor"}, {"refs": [{"id": "ref-for-performs_1\u2461"}], "title": "4.5. Magnetometer"}, {"refs": [{"id": "ref-for-performs_1\u2462"}], "title": "4.6. Magnetorquer1"}, {"refs": [{"id": "ref-for-performs_1\u2463"}], "title": "4.7. Magnetorquer2"}, {"refs": [{"id": "ref-for-performs_1\u2464"}], "title": "4.8. Magnetorquer3"}, {"refs": [{"id": "ref-for-performs_1\u2465"}], "title": "4.9. ReactionWheel1"}, {"refs": [{"id": "ref-for-performs_1\u2466"}], "title": "4.10. ReactionWheel2"}, {"refs": [{"id": "ref-for-performs_1\u2467"}], "title": "4.11. ReactionWheel3"}, {"refs": [{"id": "ref-for-performs_1\u2468"}], "title": "4.12. ReactionWheel4"}, {"refs": [{"id": "ref-for-performs_1\u2460\u24ea"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['6361257d'] = {"dfnID": "6361257d", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1", "dfnText": "presents_1", "refSections": [{"refs": [{"id": "ref-for-presents_1"}], "title": "4.1. ADCSElectronicsUnit"}, {"refs": [{"id": "ref-for-presents_1\u2460"}], "title": "4.2. EarthSensor"}, {"refs": [{"id": "ref-for-presents_1\u2461"}], "title": "4.3. GPSAntenna"}, {"refs": [{"id": "ref-for-presents_1\u2462"}], "title": "4.4. GPSReceiverUnit"}, {"refs": [{"id": "ref-for-presents_1\u2463"}], "title": "4.5. Magnetometer"}, {"refs": [{"id": "ref-for-presents_1\u2464"}], "title": "4.6. Magnetorquer1"}, {"refs": [{"id": "ref-for-presents_1\u2465"}], "title": "4.7. Magnetorquer2"}, {"refs": [{"id": "ref-for-presents_1\u2466"}], "title": "4.8. Magnetorquer3"}, {"refs": [{"id": "ref-for-presents_1\u2467"}], "title": "4.9. ReactionWheel1"}, {"refs": [{"id": "ref-for-presents_1\u2468"}], "title": "4.10. ReactionWheel2"}, {"refs": [{"id": "ref-for-presents_1\u2460\u24ea"}], "title": "4.11. ReactionWheel3"}, {"refs": [{"id": "ref-for-presents_1\u2460\u2460"}], "title": "4.12. ReactionWheel4"}, {"refs": [{"id": "ref-for-presents_1\u2460\u2461"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['cc0718bd'] = {"dfnID": "cc0718bd", "url": "../../../../../../../../../disciplines/fse/fse.html#assembly", "dfnText": "assembly", "refSections": [{"refs": [{"id": "ref-for-assembly"}], "title": "4.1. ADCSElectronicsUnit"}, {"refs": [{"id": "ref-for-assembly\u2460"}], "title": "4.2. EarthSensor"}, {"refs": [{"id": "ref-for-assembly\u2461"}], "title": "4.3. GPSAntenna"}, {"refs": [{"id": "ref-for-assembly\u2462"}], "title": "4.4. GPSReceiverUnit"}, {"refs": [{"id": "ref-for-assembly\u2463"}], "title": "4.5. Magnetometer"}, {"refs": [{"id": "ref-for-assembly\u2464"}], "title": "4.6. Magnetorquer1"}, {"refs": [{"id": "ref-for-assembly\u2465"}], "title": "4.7. Magnetorquer2"}, {"refs": [{"id": "ref-for-assembly\u2466"}], "title": "4.8. Magnetorquer3"}, {"refs": [{"id": "ref-for-assembly\u2467"}], "title": "4.9. ReactionWheel1"}, {"refs": [{"id": "ref-for-assembly\u2468"}], "title": "4.10. ReactionWheel2"}, {"refs": [{"id": "ref-for-assembly\u2460\u24ea"}], "title": "4.11. ReactionWheel3"}, {"refs": [{"id": "ref-for-assembly\u2460\u2460"}], "title": "4.12. ReactionWheel4"}, {"refs": [{"id": "ref-for-assembly\u2460\u2461"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['a1049df6'] = {"dfnID": "a1049df6", "url": "endcircuits.html#adcselectronicsunitpowerin", "dfnText": "adcselectronicsunitpowerin", "refSections": [{"refs": [{"id": "ref-for-adcselectronicsunitpowerin"}], "title": "4.1. ADCSElectronicsUnit"}], "external": true};
+window.dfnpanelData['a0710a2e'] = {"dfnID": "a0710a2e", "url": "endcircuits.html#earthsensorpowerin", "dfnText": "earthsensorpowerin", "refSections": [{"refs": [{"id": "ref-for-earthsensorpowerin"}], "title": "4.2. EarthSensor"}], "external": true};
+window.dfnpanelData['0f373919'] = {"dfnID": "0f373919", "url": "endcircuits.html#gpsantennapowerin", "dfnText": "gpsantennapowerin", "refSections": [{"refs": [{"id": "ref-for-gpsantennapowerin"}], "title": "4.3. GPSAntenna"}], "external": true};
+window.dfnpanelData['40500932'] = {"dfnID": "40500932", "url": "endcircuits.html#gpsreceiverunitpowerin", "dfnText": "gpsreceiverunitpowerin", "refSections": [{"refs": [{"id": "ref-for-gpsreceiverunitpowerin"}], "title": "4.4. GPSReceiverUnit"}], "external": true};
+window.dfnpanelData['3073d783'] = {"dfnID": "3073d783", "url": "endcircuits.html#magnetometerpowerin", "dfnText": "magnetometerpowerin", "refSections": [{"refs": [{"id": "ref-for-magnetometerpowerin"}], "title": "4.5. Magnetometer"}], "external": true};
+window.dfnpanelData['7321af2e'] = {"dfnID": "7321af2e", "url": "endcircuits.html#magnetorquer1powerin", "dfnText": "magnetorquer1powerin", "refSections": [{"refs": [{"id": "ref-for-magnetorquer1powerin"}], "title": "4.6. Magnetorquer1"}], "external": true};
+window.dfnpanelData['faae03bb'] = {"dfnID": "faae03bb", "url": "endcircuits.html#magnetorquer2powerin", "dfnText": "magnetorquer2powerin", "refSections": [{"refs": [{"id": "ref-for-magnetorquer2powerin"}], "title": "4.7. Magnetorquer2"}], "external": true};
+window.dfnpanelData['abe35ea1'] = {"dfnID": "abe35ea1", "url": "endcircuits.html#magnetorquer3powerin", "dfnText": "magnetorquer3powerin", "refSections": [{"refs": [{"id": "ref-for-magnetorquer3powerin"}], "title": "4.8. Magnetorquer3"}], "external": true};
+window.dfnpanelData['3f321f1d'] = {"dfnID": "3f321f1d", "url": "endcircuits.html#reactionwheel1powerin", "dfnText": "reactionwheel1powerin", "refSections": [{"refs": [{"id": "ref-for-reactionwheel1powerin"}], "title": "4.9. ReactionWheel1"}], "external": true};
+window.dfnpanelData['4df28ed2'] = {"dfnID": "4df28ed2", "url": "endcircuits.html#reactionwheel2powerin", "dfnText": "reactionwheel2powerin", "refSections": [{"refs": [{"id": "ref-for-reactionwheel2powerin"}], "title": "4.10. ReactionWheel2"}], "external": true};
+window.dfnpanelData['27d62f29'] = {"dfnID": "27d62f29", "url": "endcircuits.html#reactionwheel3powerin", "dfnText": "reactionwheel3powerin", "refSections": [{"refs": [{"id": "ref-for-reactionwheel3powerin"}], "title": "4.11. ReactionWheel3"}], "external": true};
+window.dfnpanelData['c90bfa36'] = {"dfnID": "c90bfa36", "url": "endcircuits.html#reactionwheel4powerin", "dfnText": "reactionwheel4powerin", "refSections": [{"refs": [{"id": "ref-for-reactionwheel4powerin"}], "title": "4.12. ReactionWheel4"}], "external": true};
+window.dfnpanelData['d8a95bf1'] = {"dfnID": "d8a95bf1", "url": "endcircuits.html#sunsensorpowerin", "dfnText": "sunsensorpowerin", "refSections": [{"refs": [{"id": "ref-for-sunsensorpowerin"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['a3830030'] = {"dfnID": "a3830030", "url": "functions.html#attitudeawarenessbyearthsensor", "dfnText": "attitudeawarenessbyearthsensor", "refSections": [{"refs": [{"id": "ref-for-attitudeawarenessbyearthsensor"}], "title": "4.2. EarthSensor"}], "external": true};
+window.dfnpanelData['e20076e1'] = {"dfnID": "e20076e1", "url": "functions.html#attitudeawarenessbymagnetometer", "dfnText": "attitudeawarenessbymagnetometer", "refSections": [{"refs": [{"id": "ref-for-attitudeawarenessbymagnetometer"}], "title": "4.5. Magnetometer"}], "external": true};
+window.dfnpanelData['26daa303'] = {"dfnID": "26daa303", "url": "functions.html#attitudeawarenessbysunsensor", "dfnText": "attitudeawarenessbysunsensor", "refSections": [{"refs": [{"id": "ref-for-attitudeawarenessbysunsensor"}], "title": "4.13. SunSensor"}], "external": true};
+window.dfnpanelData['ee360359'] = {"dfnID": "ee360359", "url": "functions.html#controltrajectorybyadcselectronicsunit", "dfnText": "controltrajectorybyadcselectronicsunit", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybyadcselectronicsunit"}], "title": "4.1. ADCSElectronicsUnit"}], "external": true};
+window.dfnpanelData['b58d4ae5'] = {"dfnID": "b58d4ae5", "url": "functions.html#controltrajectorybymagnetorquer1", "dfnText": "controltrajectorybymagnetorquer1", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybymagnetorquer1"}], "title": "4.6. Magnetorquer1"}], "external": true};
+window.dfnpanelData['de2f550c'] = {"dfnID": "de2f550c", "url": "functions.html#controltrajectorybymagnetorquer2", "dfnText": "controltrajectorybymagnetorquer2", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybymagnetorquer2"}], "title": "4.7. Magnetorquer2"}], "external": true};
+window.dfnpanelData['4e33db17'] = {"dfnID": "4e33db17", "url": "functions.html#controltrajectorybymagnetorquer3", "dfnText": "controltrajectorybymagnetorquer3", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybymagnetorquer3"}], "title": "4.8. Magnetorquer3"}], "external": true};
+window.dfnpanelData['c28deee9'] = {"dfnID": "c28deee9", "url": "functions.html#controltrajectorybyreactionwheel1", "dfnText": "controltrajectorybyreactionwheel1", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybyreactionwheel1"}], "title": "4.9. ReactionWheel1"}], "external": true};
+window.dfnpanelData['48b4400b'] = {"dfnID": "48b4400b", "url": "functions.html#controltrajectorybyreactionwheel2", "dfnText": "controltrajectorybyreactionwheel2", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybyreactionwheel2"}], "title": "4.10. ReactionWheel2"}], "external": true};
+window.dfnpanelData['addb2347'] = {"dfnID": "addb2347", "url": "functions.html#controltrajectorybyreactionwheel3", "dfnText": "controltrajectorybyreactionwheel3", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybyreactionwheel3"}], "title": "4.11. ReactionWheel3"}], "external": true};
+window.dfnpanelData['5701213b'] = {"dfnID": "5701213b", "url": "functions.html#controltrajectorybyreactionwheel4", "dfnText": "controltrajectorybyreactionwheel4", "refSections": [{"refs": [{"id": "ref-for-controltrajectorybyreactionwheel4"}], "title": "4.12. ReactionWheel4"}], "external": true};
+window.dfnpanelData['45846bd0'] = {"dfnID": "45846bd0", "url": "requirements.html#maintenanceforadcselectronicsunit", "dfnText": "maintenanceforadcselectronicsunit", "refSections": [{"refs": [{"id": "ref-for-maintenanceforadcselectronicsunit"}], "title": "4.1. ADCSElectronicsUnit"}], "external": true};
+window.dfnpanelData['5c349951'] = {"dfnID": "5c349951", "url": "requirements.html#operabilityforadcselectronicsunit", "dfnText": "operabilityforadcselectronicsunit", "refSections": [{"refs": [{"id": "ref-for-operabilityforadcselectronicsunit"}], "title": "4.1. ADCSElectronicsUnit"}], "external": true};
+window.dfnpanelData['56d2aa16'] = {"dfnID": "56d2aa16", "url": "requirements.html#operabilityforearthsensor", "dfnText": "operabilityforearthsensor", "refSections": [{"refs": [{"id": "ref-for-operabilityforearthsensor"}], "title": "4.2. EarthSensor"}], "external": true};
+window.dfnpanelData['508137e8'] = {"dfnID": "508137e8", "url": "requirements.html#operabilityforgpsantenna", "dfnText": "operabilityforgpsantenna", "refSections": [{"refs": [{"id": "ref-for-operabilityforgpsantenna"}], "title": "4.3. GPSAntenna"}], "external": true};
+window.dfnpanelData['d625fed3'] = {"dfnID": "d625fed3", "url": "requirements.html#operabilityformagnetometer", "dfnText": "operabilityformagnetometer", "refSections": [{"refs": [{"id": "ref-for-operabilityformagnetometer"}], "title": "4.5. Magnetometer"}], "external": true};
+window.dfnpanelData['a10b4d30'] = {"dfnID": "a10b4d30", "url": "requirements.html#operabilityformagnetorquer1", "dfnText": "operabilityformagnetorquer1", "refSections": [{"refs": [{"id": "ref-for-operabilityformagnetorquer1"}], "title": "4.6. Magnetorquer1"}], "external": true};
+window.dfnpanelData['60417b05'] = {"dfnID": "60417b05", "url": "requirements.html#operabilityformagnetorquer2", "dfnText": "operabilityformagnetorquer2", "refSections": [{"refs": [{"id": "ref-for-operabilityformagnetorquer2"}], "title": "4.7. Magnetorquer2"}], "external": true};
+window.dfnpanelData['bb9a20ff'] = {"dfnID": "bb9a20ff", "url": "requirements.html#operabilityformagnetorquer3", "dfnText": "operabilityformagnetorquer3", "refSections": [{"refs": [{"id": "ref-for-operabilityformagnetorquer3"}], "title": "4.8. Magnetorquer3"}], "external": true};
+window.dfnpanelData['fafb06fb'] = {"dfnID": "fafb06fb", "url": "requirements.html#operabilityforreactionwheel1", "dfnText": "operabilityforreactionwheel1", "refSections": [{"refs": [{"id": "ref-for-operabilityforreactionwheel1"}], "title": "4.9. ReactionWheel1"}], "external": true};
+window.dfnpanelData['cbed52d9'] = {"dfnID": "cbed52d9", "url": "requirements.html#operabilityforreactionwheel2", "dfnText": "operabilityforreactionwheel2", "refSections": [{"refs": [{"id": "ref-for-operabilityforreactionwheel2"}], "title": "4.10. ReactionWheel2"}], "external": true};
+window.dfnpanelData['500a4091'] = {"dfnID": "500a4091", "url": "requirements.html#operabilityforreactionwheel3", "dfnText": "operabilityforreactionwheel3", "refSections": [{"refs": [{"id": "ref-for-operabilityforreactionwheel3"}], "title": "4.11. ReactionWheel3"}], "external": true};
+window.dfnpanelData['cde1cb1e'] = {"dfnID": "cde1cb1e", "url": "requirements.html#operabilityforreactionwheel4", "dfnText": "operabilityforreactionwheel4", "refSections": [{"refs": [{"id": "ref-for-operabilityforreactionwheel4"}], "title": "4.12. ReactionWheel4"}], "external": true};
+window.dfnpanelData['1a4bd66e'] = {"dfnID": "1a4bd66e", "url": "requirements.html#operabilityforsunsensor", "dfnText": "operabilityforsunsensor", "refSections": [{"refs": [{"id": "ref-for-operabilityforsunsensor"}], "title": "4.13. SunSensor"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

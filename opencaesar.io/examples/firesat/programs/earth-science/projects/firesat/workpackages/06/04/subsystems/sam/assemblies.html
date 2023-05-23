@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/04/subsystems/sam/assemblies" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Structures and Mechanisms Assemblies</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2268,252 +2274,122 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#solararraywithsada1">solararraywithsada1</a><span>, in § 4.3</span>
    <li><a href="#solararraywithsada2">solararraywithsada2</a><span>, in § 4.4</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" class="dfn-panel" data-for="1311b9980aaaac9d07f4c3a25606bff4" id="infopanel-for-1311b9980aaaac9d07f4c3a25606bff4">
-   <span id="infopaneltitle-for-1311b9980aaaac9d07f4c3a25606bff4" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasidentifier">4.1. EPSRegulatorsAndConvertersUnit</a>
-    <li><a href="#ref-for-hasidentifier①">4.2. PowerControlUnit</a>
-    <li><a href="#ref-for-hasidentifier②">4.3. SolarArrayWithSADA1</a>
-    <li><a href="#ref-for-hasidentifier③">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" class="dfn-panel" data-for="7ee331c96b0af3798fedbaa0edddb821" id="infopanel-for-7ee331c96b0af3798fedbaa0edddb821">
-   <span id="infopaneltitle-for-7ee331c96b0af3798fedbaa0edddb821" style="display:none">Info about the 'isspecifiedby' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isspecifiedby">4.1. EPSRegulatorsAndConvertersUnit</a>
-    <li><a href="#ref-for-isspecifiedby①">4.2. PowerControlUnit</a>
-    <li><a href="#ref-for-isspecifiedby②">4.3. SolarArrayWithSADA1</a>
-    <li><a href="#ref-for-isspecifiedby③">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" class="dfn-panel" data-for="70c4176574de9e523fb260c500cca5a2" id="infopanel-for-70c4176574de9e523fb260c500cca5a2">
-   <span id="infopaneltitle-for-70c4176574de9e523fb260c500cca5a2" style="display:none">Info about the 'performs_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs_1">4.1. EPSRegulatorsAndConvertersUnit</a>
-    <li><a href="#ref-for-performs_1①">4.2. PowerControlUnit</a>
-    <li><a href="#ref-for-performs_1②">4.3. SolarArrayWithSADA1</a> <a href="#ref-for-performs_1③">(2)</a>
-    <li><a href="#ref-for-performs_1④">4.4. SolarArrayWithSADA2</a> <a href="#ref-for-performs_1⑤">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" class="dfn-panel" data-for="aea8174c6de59b1354b2a15091cfbd9e" id="infopanel-for-aea8174c6de59b1354b2a15091cfbd9e">
-   <span id="infopaneltitle-for-aea8174c6de59b1354b2a15091cfbd9e" style="display:none">Info about the 'presents_1' external reference.</span><a href="../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1">../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-presents_1">4.1. EPSRegulatorsAndConvertersUnit</a> <a href="#ref-for-presents_1①">(2)</a> <a href="#ref-for-presents_1②">(3)</a> <a href="#ref-for-presents_1③">(4)</a> <a href="#ref-for-presents_1④">(5)</a> <a href="#ref-for-presents_1⑤">(6)</a> <a href="#ref-for-presents_1⑥">(7)</a> <a href="#ref-for-presents_1⑦">(8)</a> <a href="#ref-for-presents_1⑧">(9)</a>
-    <li><a href="#ref-for-presents_1⑨">4.2. PowerControlUnit</a>
-    <li><a href="#ref-for-presents_1①⓪">4.3. SolarArrayWithSADA1</a>
-    <li><a href="#ref-for-presents_1①①">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" class="dfn-panel" data-for="f668f73c4df2daa6968c666b6f01a6bc" id="infopanel-for-f668f73c4df2daa6968c666b6f01a6bc">
-   <span id="infopaneltitle-for-f668f73c4df2daa6968c666b6f01a6bc" style="display:none">Info about the 'assembly' external reference.</span><a href="../../../../../../../../../disciplines/fse/fse.html#assembly">../../../../../../../../../disciplines/fse/fse.html#assembly</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-assembly">4.1. EPSRegulatorsAndConvertersUnit</a>
-    <li><a href="#ref-for-assembly①">4.2. PowerControlUnit</a>
-    <li><a href="#ref-for-assembly②">4.3. SolarArrayWithSADA1</a>
-    <li><a href="#ref-for-assembly③">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5bbebf657bfea0322291167922637c7c" class="dfn-panel" data-for="5bbebf657bfea0322291167922637c7c" id="infopanel-for-5bbebf657bfea0322291167922637c7c">
-   <span id="infopaneltitle-for-5bbebf657bfea0322291167922637c7c" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerin1' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerin1">endcircuits.html#epsregulatorsandconvertersunitpowerin1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerin1">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-efd4f9080b55405d3817fdddd9489354" class="dfn-panel" data-for="efd4f9080b55405d3817fdddd9489354" id="infopanel-for-efd4f9080b55405d3817fdddd9489354">
-   <span id="infopaneltitle-for-efd4f9080b55405d3817fdddd9489354" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerin2' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerin2">endcircuits.html#epsregulatorsandconvertersunitpowerin2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerin2">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-100d320c042c5ae070f4ac17bd0fc4b3" class="dfn-panel" data-for="100d320c042c5ae070f4ac17bd0fc4b3" id="infopanel-for-100d320c042c5ae070f4ac17bd0fc4b3">
-   <span id="infopaneltitle-for-100d320c042c5ae070f4ac17bd0fc4b3" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout3' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout3">endcircuits.html#epsregulatorsandconvertersunitpowerout3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout3">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cb9869161895631d4f5f1d993eff8e7d" class="dfn-panel" data-for="cb9869161895631d4f5f1d993eff8e7d" id="infopanel-for-cb9869161895631d4f5f1d993eff8e7d">
-   <span id="infopaneltitle-for-cb9869161895631d4f5f1d993eff8e7d" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout4' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout4">endcircuits.html#epsregulatorsandconvertersunitpowerout4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout4">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5a8f4d0df96a7750782c78f46ee3448f" class="dfn-panel" data-for="5a8f4d0df96a7750782c78f46ee3448f" id="infopanel-for-5a8f4d0df96a7750782c78f46ee3448f">
-   <span id="infopaneltitle-for-5a8f4d0df96a7750782c78f46ee3448f" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout5' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout5">endcircuits.html#epsregulatorsandconvertersunitpowerout5</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout5">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e9841a382d7dbd09916596b90aed775e" class="dfn-panel" data-for="e9841a382d7dbd09916596b90aed775e" id="infopanel-for-e9841a382d7dbd09916596b90aed775e">
-   <span id="infopaneltitle-for-e9841a382d7dbd09916596b90aed775e" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout6' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout6">endcircuits.html#epsregulatorsandconvertersunitpowerout6</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout6">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-825e201da82158620008ec407de8cf18" class="dfn-panel" data-for="825e201da82158620008ec407de8cf18" id="infopanel-for-825e201da82158620008ec407de8cf18">
-   <span id="infopaneltitle-for-825e201da82158620008ec407de8cf18" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout7' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout7">endcircuits.html#epsregulatorsandconvertersunitpowerout7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout7">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6da4bd680059938648260b63b5dd8f4e" class="dfn-panel" data-for="6da4bd680059938648260b63b5dd8f4e" id="infopanel-for-6da4bd680059938648260b63b5dd8f4e">
-   <span id="infopaneltitle-for-6da4bd680059938648260b63b5dd8f4e" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout8' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout8">endcircuits.html#epsregulatorsandconvertersunitpowerout8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout8">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-38c2636e4047fc3564ee01616cf57f57" class="dfn-panel" data-for="38c2636e4047fc3564ee01616cf57f57" id="infopanel-for-38c2636e4047fc3564ee01616cf57f57">
-   <span id="infopaneltitle-for-38c2636e4047fc3564ee01616cf57f57" style="display:none">Info about the 'epsregulatorsandconvertersunitpowerout9' external reference.</span><a href="endcircuits.html#epsregulatorsandconvertersunitpowerout9">endcircuits.html#epsregulatorsandconvertersunitpowerout9</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-epsregulatorsandconvertersunitpowerout9">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8b9047d80f604abeac0170ab2c4b9548" class="dfn-panel" data-for="8b9047d80f604abeac0170ab2c4b9548" id="infopanel-for-8b9047d80f604abeac0170ab2c4b9548">
-   <span id="infopaneltitle-for-8b9047d80f604abeac0170ab2c4b9548" style="display:none">Info about the 'powercontrolunitpowerin' external reference.</span><a href="endcircuits.html#powercontrolunitpowerin">endcircuits.html#powercontrolunitpowerin</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-powercontrolunitpowerin">4.2. PowerControlUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f11bd5989d4d329b16ce5f78588d01b8" class="dfn-panel" data-for="f11bd5989d4d329b16ce5f78588d01b8" id="infopanel-for-f11bd5989d4d329b16ce5f78588d01b8">
-   <span id="infopaneltitle-for-f11bd5989d4d329b16ce5f78588d01b8" style="display:none">Info about the 'solararraywithsada1powerout' external reference.</span><a href="endcircuits.html#solararraywithsada1powerout">endcircuits.html#solararraywithsada1powerout</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-solararraywithsada1powerout">4.3. SolarArrayWithSADA1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d4ba11237709188b76f4615fe80465fc" class="dfn-panel" data-for="d4ba11237709188b76f4615fe80465fc" id="infopanel-for-d4ba11237709188b76f4615fe80465fc">
-   <span id="infopaneltitle-for-d4ba11237709188b76f4615fe80465fc" style="display:none">Info about the 'solararraywithsada2powerout' external reference.</span><a href="endcircuits.html#solararraywithsada2powerout">endcircuits.html#solararraywithsada2powerout</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-solararraywithsada2powerout">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-354cd67e1e7299e12cd9703ba9916c50" class="dfn-panel" data-for="354cd67e1e7299e12cd9703ba9916c50" id="infopanel-for-354cd67e1e7299e12cd9703ba9916c50">
-   <span id="infopaneltitle-for-354cd67e1e7299e12cd9703ba9916c50" style="display:none">Info about the 'deploymechanismsbysolararraywithsada1' external reference.</span><a href="functions.html#deploymechanismsbysolararraywithsada1">functions.html#deploymechanismsbysolararraywithsada1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deploymechanismsbysolararraywithsada1">4.3. SolarArrayWithSADA1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3776c1137c2c9bf89753c0964349b02a" class="dfn-panel" data-for="3776c1137c2c9bf89753c0964349b02a" id="infopanel-for-3776c1137c2c9bf89753c0964349b02a">
-   <span id="infopaneltitle-for-3776c1137c2c9bf89753c0964349b02a" style="display:none">Info about the 'deploymechanismsbysolararraywithsada2' external reference.</span><a href="functions.html#deploymechanismsbysolararraywithsada2">functions.html#deploymechanismsbysolararraywithsada2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deploymechanismsbysolararraywithsada2">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a91a3825dd7c8da0da931028264ded36" class="dfn-panel" data-for="a91a3825dd7c8da0da931028264ded36" id="infopanel-for-a91a3825dd7c8da0da931028264ded36">
-   <span id="infopaneltitle-for-a91a3825dd7c8da0da931028264ded36" style="display:none">Info about the 'supply_power_24_7byepsregulatorsandconvertersunit' external reference.</span><a href="functions.html#supply_power_24_7byepsregulatorsandconvertersunit">functions.html#supply_power_24_7byepsregulatorsandconvertersunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supply_power_24_7byepsregulatorsandconvertersunit">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2e2e5b76a66b4f47fe5c48ffa7c15990" class="dfn-panel" data-for="2e2e5b76a66b4f47fe5c48ffa7c15990" id="infopanel-for-2e2e5b76a66b4f47fe5c48ffa7c15990">
-   <span id="infopaneltitle-for-2e2e5b76a66b4f47fe5c48ffa7c15990" style="display:none">Info about the 'supply_power_24_7bypowercontrolunit' external reference.</span><a href="functions.html#supply_power_24_7bypowercontrolunit">functions.html#supply_power_24_7bypowercontrolunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-supply_power_24_7bypowercontrolunit">4.2. PowerControlUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e7d5ef60bd3d4a754c1067e2d7d4cbe6" class="dfn-panel" data-for="e7d5ef60bd3d4a754c1067e2d7d4cbe6" id="infopanel-for-e7d5ef60bd3d4a754c1067e2d7d4cbe6">
-   <span id="infopaneltitle-for-e7d5ef60bd3d4a754c1067e2d7d4cbe6" style="display:none">Info about the 'transformsolarradiationsintoenergybysolararraywithsada1' external reference.</span><a href="functions.html#transformsolarradiationsintoenergybysolararraywithsada1">functions.html#transformsolarradiationsintoenergybysolararraywithsada1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transformsolarradiationsintoenergybysolararraywithsada1">4.3. SolarArrayWithSADA1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-22b4eda97c8e0cfac2b42b88bbf486f4" class="dfn-panel" data-for="22b4eda97c8e0cfac2b42b88bbf486f4" id="infopanel-for-22b4eda97c8e0cfac2b42b88bbf486f4">
-   <span id="infopaneltitle-for-22b4eda97c8e0cfac2b42b88bbf486f4" style="display:none">Info about the 'transformsolarradiationsintoenergybysolararraywithsada2' external reference.</span><a href="functions.html#transformsolarradiationsintoenergybysolararraywithsada2">functions.html#transformsolarradiationsintoenergybysolararraywithsada2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-transformsolarradiationsintoenergybysolararraywithsada2">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-eea8d75e71da03962fa3a0b4e34fe150" class="dfn-panel" data-for="eea8d75e71da03962fa3a0b4e34fe150" id="infopanel-for-eea8d75e71da03962fa3a0b4e34fe150">
-   <span id="infopaneltitle-for-eea8d75e71da03962fa3a0b4e34fe150" style="display:none">Info about the 'spaceenvironmentforepsregulatorsandconvertersunit' external reference.</span><a href="requirements.html#spaceenvironmentforepsregulatorsandconvertersunit">requirements.html#spaceenvironmentforepsregulatorsandconvertersunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironmentforepsregulatorsandconvertersunit">4.1. EPSRegulatorsAndConvertersUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-939e4ab5832b0dd7a3daa8b4b7f27d70" class="dfn-panel" data-for="939e4ab5832b0dd7a3daa8b4b7f27d70" id="infopanel-for-939e4ab5832b0dd7a3daa8b4b7f27d70">
-   <span id="infopaneltitle-for-939e4ab5832b0dd7a3daa8b4b7f27d70" style="display:none">Info about the 'spaceenvironmentforpowercontrolunit' external reference.</span><a href="requirements.html#spaceenvironmentforpowercontrolunit">requirements.html#spaceenvironmentforpowercontrolunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironmentforpowercontrolunit">4.2. PowerControlUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-39f08cc4e929e341c10b72dc7f88b705" class="dfn-panel" data-for="39f08cc4e929e341c10b72dc7f88b705" id="infopanel-for-39f08cc4e929e341c10b72dc7f88b705">
-   <span id="infopaneltitle-for-39f08cc4e929e341c10b72dc7f88b705" style="display:none">Info about the 'spaceenvironmentforsolararraywithsada1' external reference.</span><a href="requirements.html#spaceenvironmentforsolararraywithsada1">requirements.html#spaceenvironmentforsolararraywithsada1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironmentforsolararraywithsada1">4.3. SolarArrayWithSADA1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3bf5c5d429e02e769a2964fe7a26bf69" class="dfn-panel" data-for="3bf5c5d429e02e769a2964fe7a26bf69" id="infopanel-for-3bf5c5d429e02e769a2964fe7a26bf69">
-   <span id="infopaneltitle-for-3bf5c5d429e02e769a2964fe7a26bf69" style="display:none">Info about the 'spaceenvironmentforsolararraywithsada2' external reference.</span><a href="requirements.html#spaceenvironmentforsolararraywithsada2">requirements.html#spaceenvironmentforsolararraywithsada2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-spaceenvironmentforsolararraywithsada2">4.4. SolarArrayWithSADA2</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="1311b9980aaaac9d07f4c3a25606bff4">hasidentifier</span>
+     <li><span class="dfn-paneled" id="08a84326">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/MISSION]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="7ee331c96b0af3798fedbaa0edddb821">isspecifiedby</span>
-     <li><span class="dfn-paneled" id="70c4176574de9e523fb260c500cca5a2">performs_1</span>
-     <li><span class="dfn-paneled" id="aea8174c6de59b1354b2a15091cfbd9e">presents_1</span>
+     <li><span class="dfn-paneled" id="983fe943">isspecifiedby</span>
+     <li><span class="dfn-paneled" id="1130b7a0">performs_1</span>
+     <li><span class="dfn-paneled" id="6361257d">presents_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f668f73c4df2daa6968c666b6f01a6bc">assembly</span>
+     <li><span class="dfn-paneled" id="cc0718bd">assembly</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/04/SUBSYSTEMS/SAM/ENDCIRCUITS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="5bbebf657bfea0322291167922637c7c">epsregulatorsandconvertersunitpowerin1</span>
-     <li><span class="dfn-paneled" id="efd4f9080b55405d3817fdddd9489354">epsregulatorsandconvertersunitpowerin2</span>
-     <li><span class="dfn-paneled" id="100d320c042c5ae070f4ac17bd0fc4b3">epsregulatorsandconvertersunitpowerout3</span>
-     <li><span class="dfn-paneled" id="cb9869161895631d4f5f1d993eff8e7d">epsregulatorsandconvertersunitpowerout4</span>
-     <li><span class="dfn-paneled" id="5a8f4d0df96a7750782c78f46ee3448f">epsregulatorsandconvertersunitpowerout5</span>
-     <li><span class="dfn-paneled" id="e9841a382d7dbd09916596b90aed775e">epsregulatorsandconvertersunitpowerout6</span>
-     <li><span class="dfn-paneled" id="825e201da82158620008ec407de8cf18">epsregulatorsandconvertersunitpowerout7</span>
-     <li><span class="dfn-paneled" id="6da4bd680059938648260b63b5dd8f4e">epsregulatorsandconvertersunitpowerout8</span>
-     <li><span class="dfn-paneled" id="38c2636e4047fc3564ee01616cf57f57">epsregulatorsandconvertersunitpowerout9</span>
-     <li><span class="dfn-paneled" id="8b9047d80f604abeac0170ab2c4b9548">powercontrolunitpowerin</span>
-     <li><span class="dfn-paneled" id="f11bd5989d4d329b16ce5f78588d01b8">solararraywithsada1powerout</span>
-     <li><span class="dfn-paneled" id="d4ba11237709188b76f4615fe80465fc">solararraywithsada2powerout</span>
+     <li><span class="dfn-paneled" id="9ac3b9fd">epsregulatorsandconvertersunitpowerin1</span>
+     <li><span class="dfn-paneled" id="be4b2394">epsregulatorsandconvertersunitpowerin2</span>
+     <li><span class="dfn-paneled" id="3d94bf54">epsregulatorsandconvertersunitpowerout3</span>
+     <li><span class="dfn-paneled" id="47849e42">epsregulatorsandconvertersunitpowerout4</span>
+     <li><span class="dfn-paneled" id="331be78d">epsregulatorsandconvertersunitpowerout5</span>
+     <li><span class="dfn-paneled" id="0adb8805">epsregulatorsandconvertersunitpowerout6</span>
+     <li><span class="dfn-paneled" id="27b49405">epsregulatorsandconvertersunitpowerout7</span>
+     <li><span class="dfn-paneled" id="ec445c87">epsregulatorsandconvertersunitpowerout8</span>
+     <li><span class="dfn-paneled" id="54fbdecc">epsregulatorsandconvertersunitpowerout9</span>
+     <li><span class="dfn-paneled" id="8283adf9">powercontrolunitpowerin</span>
+     <li><span class="dfn-paneled" id="e03a0222">solararraywithsada1powerout</span>
+     <li><span class="dfn-paneled" id="5a36995c">solararraywithsada2powerout</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/04/SUBSYSTEMS/SAM/FUNCTIONS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="354cd67e1e7299e12cd9703ba9916c50">deploymechanismsbysolararraywithsada1</span>
-     <li><span class="dfn-paneled" id="3776c1137c2c9bf89753c0964349b02a">deploymechanismsbysolararraywithsada2</span>
-     <li><span class="dfn-paneled" id="a91a3825dd7c8da0da931028264ded36">supply_power_24_7byepsregulatorsandconvertersunit</span>
-     <li><span class="dfn-paneled" id="2e2e5b76a66b4f47fe5c48ffa7c15990">supply_power_24_7bypowercontrolunit</span>
-     <li><span class="dfn-paneled" id="e7d5ef60bd3d4a754c1067e2d7d4cbe6">transformsolarradiationsintoenergybysolararraywithsada1</span>
-     <li><span class="dfn-paneled" id="22b4eda97c8e0cfac2b42b88bbf486f4">transformsolarradiationsintoenergybysolararraywithsada2</span>
+     <li><span class="dfn-paneled" id="d8211787">deploymechanismsbysolararraywithsada1</span>
+     <li><span class="dfn-paneled" id="e9ec5438">deploymechanismsbysolararraywithsada2</span>
+     <li><span class="dfn-paneled" id="a7761388">supply_power_24_7byepsregulatorsandconvertersunit</span>
+     <li><span class="dfn-paneled" id="88e7fa06">supply_power_24_7bypowercontrolunit</span>
+     <li><span class="dfn-paneled" id="fe00d211">transformsolarradiationsintoenergybysolararraywithsada1</span>
+     <li><span class="dfn-paneled" id="8a2f0373">transformsolarradiationsintoenergybysolararraywithsada2</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/04/SUBSYSTEMS/SAM/REQUIREMENTS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="eea8d75e71da03962fa3a0b4e34fe150">spaceenvironmentforepsregulatorsandconvertersunit</span>
-     <li><span class="dfn-paneled" id="939e4ab5832b0dd7a3daa8b4b7f27d70">spaceenvironmentforpowercontrolunit</span>
-     <li><span class="dfn-paneled" id="39f08cc4e929e341c10b72dc7f88b705">spaceenvironmentforsolararraywithsada1</span>
-     <li><span class="dfn-paneled" id="3bf5c5d429e02e769a2964fe7a26bf69">spaceenvironmentforsolararraywithsada2</span>
+     <li><span class="dfn-paneled" id="3d054aa0">spaceenvironmentforepsregulatorsandconvertersunit</span>
+     <li><span class="dfn-paneled" id="b2575940">spaceenvironmentforpowercontrolunit</span>
+     <li><span class="dfn-paneled" id="23727566">spaceenvironmentforsolararraywithsada1</span>
+     <li><span class="dfn-paneled" id="51011c1c">spaceenvironmentforsolararraywithsada2</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2563,49 +2439,270 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['08a84326'] = {"dfnID": "08a84326", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier", "dfnText": "hasidentifier", "refSections": [{"refs": [{"id": "ref-for-hasidentifier"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}, {"refs": [{"id": "ref-for-hasidentifier\u2460"}], "title": "4.2. PowerControlUnit"}, {"refs": [{"id": "ref-for-hasidentifier\u2461"}], "title": "4.3. SolarArrayWithSADA1"}, {"refs": [{"id": "ref-for-hasidentifier\u2462"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['983fe943'] = {"dfnID": "983fe943", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#isspecifiedby", "dfnText": "isspecifiedby", "refSections": [{"refs": [{"id": "ref-for-isspecifiedby"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}, {"refs": [{"id": "ref-for-isspecifiedby\u2460"}], "title": "4.2. PowerControlUnit"}, {"refs": [{"id": "ref-for-isspecifiedby\u2461"}], "title": "4.3. SolarArrayWithSADA1"}, {"refs": [{"id": "ref-for-isspecifiedby\u2462"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['1130b7a0'] = {"dfnID": "1130b7a0", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#performs_1", "dfnText": "performs_1", "refSections": [{"refs": [{"id": "ref-for-performs_1"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}, {"refs": [{"id": "ref-for-performs_1\u2460"}], "title": "4.2. PowerControlUnit"}, {"refs": [{"id": "ref-for-performs_1\u2461"}, {"id": "ref-for-performs_1\u2462"}], "title": "4.3. SolarArrayWithSADA1"}, {"refs": [{"id": "ref-for-performs_1\u2463"}, {"id": "ref-for-performs_1\u2464"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['6361257d'] = {"dfnID": "6361257d", "url": "../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/mission.html#presents_1", "dfnText": "presents_1", "refSections": [{"refs": [{"id": "ref-for-presents_1"}, {"id": "ref-for-presents_1\u2460"}, {"id": "ref-for-presents_1\u2461"}, {"id": "ref-for-presents_1\u2462"}, {"id": "ref-for-presents_1\u2463"}, {"id": "ref-for-presents_1\u2464"}, {"id": "ref-for-presents_1\u2465"}, {"id": "ref-for-presents_1\u2466"}, {"id": "ref-for-presents_1\u2467"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}, {"refs": [{"id": "ref-for-presents_1\u2468"}], "title": "4.2. PowerControlUnit"}, {"refs": [{"id": "ref-for-presents_1\u2460\u24ea"}], "title": "4.3. SolarArrayWithSADA1"}, {"refs": [{"id": "ref-for-presents_1\u2460\u2460"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['cc0718bd'] = {"dfnID": "cc0718bd", "url": "../../../../../../../../../disciplines/fse/fse.html#assembly", "dfnText": "assembly", "refSections": [{"refs": [{"id": "ref-for-assembly"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}, {"refs": [{"id": "ref-for-assembly\u2460"}], "title": "4.2. PowerControlUnit"}, {"refs": [{"id": "ref-for-assembly\u2461"}], "title": "4.3. SolarArrayWithSADA1"}, {"refs": [{"id": "ref-for-assembly\u2462"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['9ac3b9fd'] = {"dfnID": "9ac3b9fd", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerin1", "dfnText": "epsregulatorsandconvertersunitpowerin1", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerin1"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['be4b2394'] = {"dfnID": "be4b2394", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerin2", "dfnText": "epsregulatorsandconvertersunitpowerin2", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerin2"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['3d94bf54'] = {"dfnID": "3d94bf54", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout3", "dfnText": "epsregulatorsandconvertersunitpowerout3", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout3"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['47849e42'] = {"dfnID": "47849e42", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout4", "dfnText": "epsregulatorsandconvertersunitpowerout4", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout4"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['331be78d'] = {"dfnID": "331be78d", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout5", "dfnText": "epsregulatorsandconvertersunitpowerout5", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout5"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['0adb8805'] = {"dfnID": "0adb8805", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout6", "dfnText": "epsregulatorsandconvertersunitpowerout6", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout6"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['27b49405'] = {"dfnID": "27b49405", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout7", "dfnText": "epsregulatorsandconvertersunitpowerout7", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout7"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['ec445c87'] = {"dfnID": "ec445c87", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout8", "dfnText": "epsregulatorsandconvertersunitpowerout8", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout8"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['54fbdecc'] = {"dfnID": "54fbdecc", "url": "endcircuits.html#epsregulatorsandconvertersunitpowerout9", "dfnText": "epsregulatorsandconvertersunitpowerout9", "refSections": [{"refs": [{"id": "ref-for-epsregulatorsandconvertersunitpowerout9"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['8283adf9'] = {"dfnID": "8283adf9", "url": "endcircuits.html#powercontrolunitpowerin", "dfnText": "powercontrolunitpowerin", "refSections": [{"refs": [{"id": "ref-for-powercontrolunitpowerin"}], "title": "4.2. PowerControlUnit"}], "external": true};
+window.dfnpanelData['e03a0222'] = {"dfnID": "e03a0222", "url": "endcircuits.html#solararraywithsada1powerout", "dfnText": "solararraywithsada1powerout", "refSections": [{"refs": [{"id": "ref-for-solararraywithsada1powerout"}], "title": "4.3. SolarArrayWithSADA1"}], "external": true};
+window.dfnpanelData['5a36995c'] = {"dfnID": "5a36995c", "url": "endcircuits.html#solararraywithsada2powerout", "dfnText": "solararraywithsada2powerout", "refSections": [{"refs": [{"id": "ref-for-solararraywithsada2powerout"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['d8211787'] = {"dfnID": "d8211787", "url": "functions.html#deploymechanismsbysolararraywithsada1", "dfnText": "deploymechanismsbysolararraywithsada1", "refSections": [{"refs": [{"id": "ref-for-deploymechanismsbysolararraywithsada1"}], "title": "4.3. SolarArrayWithSADA1"}], "external": true};
+window.dfnpanelData['e9ec5438'] = {"dfnID": "e9ec5438", "url": "functions.html#deploymechanismsbysolararraywithsada2", "dfnText": "deploymechanismsbysolararraywithsada2", "refSections": [{"refs": [{"id": "ref-for-deploymechanismsbysolararraywithsada2"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['a7761388'] = {"dfnID": "a7761388", "url": "functions.html#supply_power_24_7byepsregulatorsandconvertersunit", "dfnText": "supply_power_24_7byepsregulatorsandconvertersunit", "refSections": [{"refs": [{"id": "ref-for-supply_power_24_7byepsregulatorsandconvertersunit"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['88e7fa06'] = {"dfnID": "88e7fa06", "url": "functions.html#supply_power_24_7bypowercontrolunit", "dfnText": "supply_power_24_7bypowercontrolunit", "refSections": [{"refs": [{"id": "ref-for-supply_power_24_7bypowercontrolunit"}], "title": "4.2. PowerControlUnit"}], "external": true};
+window.dfnpanelData['fe00d211'] = {"dfnID": "fe00d211", "url": "functions.html#transformsolarradiationsintoenergybysolararraywithsada1", "dfnText": "transformsolarradiationsintoenergybysolararraywithsada1", "refSections": [{"refs": [{"id": "ref-for-transformsolarradiationsintoenergybysolararraywithsada1"}], "title": "4.3. SolarArrayWithSADA1"}], "external": true};
+window.dfnpanelData['8a2f0373'] = {"dfnID": "8a2f0373", "url": "functions.html#transformsolarradiationsintoenergybysolararraywithsada2", "dfnText": "transformsolarradiationsintoenergybysolararraywithsada2", "refSections": [{"refs": [{"id": "ref-for-transformsolarradiationsintoenergybysolararraywithsada2"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+window.dfnpanelData['3d054aa0'] = {"dfnID": "3d054aa0", "url": "requirements.html#spaceenvironmentforepsregulatorsandconvertersunit", "dfnText": "spaceenvironmentforepsregulatorsandconvertersunit", "refSections": [{"refs": [{"id": "ref-for-spaceenvironmentforepsregulatorsandconvertersunit"}], "title": "4.1. EPSRegulatorsAndConvertersUnit"}], "external": true};
+window.dfnpanelData['b2575940'] = {"dfnID": "b2575940", "url": "requirements.html#spaceenvironmentforpowercontrolunit", "dfnText": "spaceenvironmentforpowercontrolunit", "refSections": [{"refs": [{"id": "ref-for-spaceenvironmentforpowercontrolunit"}], "title": "4.2. PowerControlUnit"}], "external": true};
+window.dfnpanelData['23727566'] = {"dfnID": "23727566", "url": "requirements.html#spaceenvironmentforsolararraywithsada1", "dfnText": "spaceenvironmentforsolararraywithsada1", "refSections": [{"refs": [{"id": "ref-for-spaceenvironmentforsolararraywithsada1"}], "title": "4.3. SolarArrayWithSADA1"}], "external": true};
+window.dfnpanelData['51011c1c'] = {"dfnID": "51011c1c", "url": "requirements.html#spaceenvironmentforsolararraywithsada2", "dfnText": "spaceenvironmentforsolararraywithsada2", "refSections": [{"refs": [{"id": "ref-for-spaceenvironmentforsolararraywithsada2"}], "title": "4.4. SolarArrayWithSADA2"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

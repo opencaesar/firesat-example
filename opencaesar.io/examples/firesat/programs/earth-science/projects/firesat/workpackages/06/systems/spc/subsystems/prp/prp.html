@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/opencaesar.io/examples/firesat/programs/earth-science/projects/firesat/workpackages/06/systems/spc/subsystems/prp/prp" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">Propulsion</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2186,162 +2192,101 @@ dfn > a.self-link::before      { content: "#"; }
   <ul class="index">
    <li><a href="#propulsion">propulsion</a><span>, in § 3.1</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" class="dfn-panel" data-for="180d592e44b8b69ed7424effc953fd7c" id="infopanel-for-180d592e44b8b69ed7424effc953fd7c">
-   <span id="infopaneltitle-for-180d592e44b8b69ed7424effc953fd7c" style="display:none">Info about the 'aggregates_1' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-aggregates_1">3.1. Propulsion</a> <a href="#ref-for-aggregates_1①">(2)</a> <a href="#ref-for-aggregates_1②">(3)</a> <a href="#ref-for-aggregates_1③">(4)</a> <a href="#ref-for-aggregates_1④">(5)</a> <a href="#ref-for-aggregates_1⑤">(6)</a> <a href="#ref-for-aggregates_1⑥">(7)</a> <a href="#ref-for-aggregates_1⑦">(8)</a> <a href="#ref-for-aggregates_1⑧">(9)</a> <a href="#ref-for-aggregates_1⑨">(10)</a> <a href="#ref-for-aggregates_1①⓪">(11)</a> <a href="#ref-for-aggregates_1①①">(12)</a> <a href="#ref-for-aggregates_1①②">(13)</a> <a href="#ref-for-aggregates_1①③">(14)</a> <a href="#ref-for-aggregates_1①④">(15)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-22ea2507406567e18e424569909e32d1" class="dfn-panel" data-for="22ea2507406567e18e424569909e32d1" id="infopanel-for-22ea2507406567e18e424569909e32d1">
-   <span id="infopaneltitle-for-22ea2507406567e18e424569909e32d1" style="display:none">Info about the 'hasidentifier' external reference.</span><a href="../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier">../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasidentifier">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" class="dfn-panel" data-for="d9c8d3a8743f534bf20f2fde4daf4c1c" id="infopanel-for-d9c8d3a8743f534bf20f2fde4daf4c1c">
-   <span id="infopaneltitle-for-d9c8d3a8743f534bf20f2fde4daf4c1c" style="display:none">Info about the 'subsystem' external reference.</span><a href="../../../../../../../../../../disciplines/fse/fse.html#subsystem">../../../../../../../../../../disciplines/fse/fse.html#subsystem</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-subsystem">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-77c456f2c015b79a95e7b86b49b4468d" class="dfn-panel" data-for="77c456f2c015b79a95e7b86b49b4468d" id="infopanel-for-77c456f2c015b79a95e7b86b49b4468d">
-   <span id="infopaneltitle-for-77c456f2c015b79a95e7b86b49b4468d" style="display:none">Info about the 'acsthruster1' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster1">../../../../08/subsystems/prp/assemblies.html#acsthruster1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster1">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a3e3c5868075a14f92f9f404236ac037" class="dfn-panel" data-for="a3e3c5868075a14f92f9f404236ac037" id="infopanel-for-a3e3c5868075a14f92f9f404236ac037">
-   <span id="infopaneltitle-for-a3e3c5868075a14f92f9f404236ac037" style="display:none">Info about the 'acsthruster2' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster2">../../../../08/subsystems/prp/assemblies.html#acsthruster2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster2">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-77c784717663966423fd11956074da57" class="dfn-panel" data-for="77c784717663966423fd11956074da57" id="infopanel-for-77c784717663966423fd11956074da57">
-   <span id="infopaneltitle-for-77c784717663966423fd11956074da57" style="display:none">Info about the 'acsthruster3' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster3">../../../../08/subsystems/prp/assemblies.html#acsthruster3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster3">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-326682a049d04da5049fdb73259f11d6" class="dfn-panel" data-for="326682a049d04da5049fdb73259f11d6" id="infopanel-for-326682a049d04da5049fdb73259f11d6">
-   <span id="infopaneltitle-for-326682a049d04da5049fdb73259f11d6" style="display:none">Info about the 'acsthruster4' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster4">../../../../08/subsystems/prp/assemblies.html#acsthruster4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster4">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-259f307153d5a714dfed9aee20a6b1ba" class="dfn-panel" data-for="259f307153d5a714dfed9aee20a6b1ba" id="infopanel-for-259f307153d5a714dfed9aee20a6b1ba">
-   <span id="infopaneltitle-for-259f307153d5a714dfed9aee20a6b1ba" style="display:none">Info about the 'acsthruster5' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster5">../../../../08/subsystems/prp/assemblies.html#acsthruster5</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster5">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b09d5bece6b335fb25712153a622cfda" class="dfn-panel" data-for="b09d5bece6b335fb25712153a622cfda" id="infopanel-for-b09d5bece6b335fb25712153a622cfda">
-   <span id="infopaneltitle-for-b09d5bece6b335fb25712153a622cfda" style="display:none">Info about the 'acsthruster6' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#acsthruster6">../../../../08/subsystems/prp/assemblies.html#acsthruster6</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-acsthruster6">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5256603c9896809f2c5a0f936d8d5bc9" class="dfn-panel" data-for="5256603c9896809f2c5a0f936d8d5bc9" id="infopanel-for-5256603c9896809f2c5a0f936d8d5bc9">
-   <span id="infopaneltitle-for-5256603c9896809f2c5a0f936d8d5bc9" style="display:none">Info about the 'bppropellantlineunit' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#bppropellantlineunit">../../../../08/subsystems/prp/assemblies.html#bppropellantlineunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-bppropellantlineunit">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-41d7e7b263ff86029a57ecb5fd039d3c" class="dfn-panel" data-for="41d7e7b263ff86029a57ecb5fd039d3c" id="infopanel-for-41d7e7b263ff86029a57ecb5fd039d3c">
-   <span id="infopaneltitle-for-41d7e7b263ff86029a57ecb5fd039d3c" style="display:none">Info about the 'filldrainvalveunit' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#filldrainvalveunit">../../../../08/subsystems/prp/assemblies.html#filldrainvalveunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-filldrainvalveunit">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f84aab38a10d9db2bd2f82ce2bc07361" class="dfn-panel" data-for="f84aab38a10d9db2bd2f82ce2bc07361" id="infopanel-for-f84aab38a10d9db2bd2f82ce2bc07361">
-   <span id="infopaneltitle-for-f84aab38a10d9db2bd2f82ce2bc07361" style="display:none">Info about the 'pmpropellantlineunit' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#pmpropellantlineunit">../../../../08/subsystems/prp/assemblies.html#pmpropellantlineunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pmpropellantlineunit">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-63e23ebaea4ea7eadffcf68a94dd7174" class="dfn-panel" data-for="63e23ebaea4ea7eadffcf68a94dd7174" id="infopanel-for-63e23ebaea4ea7eadffcf68a94dd7174">
-   <span id="infopaneltitle-for-63e23ebaea4ea7eadffcf68a94dd7174" style="display:none">Info about the 'pressuranttank' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#pressuranttank">../../../../08/subsystems/prp/assemblies.html#pressuranttank</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-pressuranttank">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-865c9abdda56ecadc96d084b485487bf" class="dfn-panel" data-for="865c9abdda56ecadc96d084b485487bf" id="infopanel-for-865c9abdda56ecadc96d084b485487bf">
-   <span id="infopaneltitle-for-865c9abdda56ecadc96d084b485487bf" style="display:none">Info about the 'primarythruster' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#primarythruster">../../../../08/subsystems/prp/assemblies.html#primarythruster</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-primarythruster">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b9f69066fcf3106aa06fbfe03d27d381" class="dfn-panel" data-for="b9f69066fcf3106aa06fbfe03d27d381" id="infopanel-for-b9f69066fcf3106aa06fbfe03d27d381">
-   <span id="infopaneltitle-for-b9f69066fcf3106aa06fbfe03d27d381" style="display:none">Info about the 'propellanthandlingsection' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#propellanthandlingsection">../../../../08/subsystems/prp/assemblies.html#propellanthandlingsection</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propellanthandlingsection">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5fef00790916245dda72fd7cd0c21f11" class="dfn-panel" data-for="5fef00790916245dda72fd7cd0c21f11" id="infopanel-for-5fef00790916245dda72fd7cd0c21f11">
-   <span id="infopaneltitle-for-5fef00790916245dda72fd7cd0c21f11" style="display:none">Info about the 'propellanttank' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#propellanttank">../../../../08/subsystems/prp/assemblies.html#propellanttank</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propellanttank">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a944b95b3cf98a356ed2bce8f931397f" class="dfn-panel" data-for="a944b95b3cf98a356ed2bce8f931397f" id="infopanel-for-a944b95b3cf98a356ed2bce8f931397f">
-   <span id="infopaneltitle-for-a944b95b3cf98a356ed2bce8f931397f" style="display:none">Info about the 'propulsionmodule' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#propulsionmodule">../../../../08/subsystems/prp/assemblies.html#propulsionmodule</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propulsionmodule">3.1. Propulsion</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a9292837522d9a94fef3ec49317692b2" class="dfn-panel" data-for="a9292837522d9a94fef3ec49317692b2" id="infopanel-for-a9292837522d9a94fef3ec49317692b2">
-   <span id="infopaneltitle-for-a9292837522d9a94fef3ec49317692b2" style="display:none">Info about the 'propulsionsystemcontrolunit' external reference.</span><a href="../../../../08/subsystems/prp/assemblies.html#propulsionsystemcontrolunit">../../../../08/subsystems/prp/assemblies.html#propulsionsystemcontrolunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-propulsionsystemcontrolunit">3.1. Propulsion</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/BASE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="180d592e44b8b69ed7424effc953fd7c">aggregates_1</span>
-     <li><span class="dfn-paneled" id="22ea2507406567e18e424569909e32d1">hasidentifier</span>
+     <li><span class="dfn-paneled" id="e518cd52">aggregates_1</span>
+     <li><span class="dfn-paneled" id="90aff6aa">hasidentifier</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="d9c8d3a8743f534bf20f2fde4daf4c1c">subsystem</span>
+     <li><span class="dfn-paneled" id="618abc28">subsystem</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/PROGRAMS/EARTH-SCIENCE/PROJECTS/FIRESAT/WORKPACKAGES/06/08/SUBSYSTEMS/PRP/ASSEMBLIES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="77c456f2c015b79a95e7b86b49b4468d">acsthruster1</span>
-     <li><span class="dfn-paneled" id="a3e3c5868075a14f92f9f404236ac037">acsthruster2</span>
-     <li><span class="dfn-paneled" id="77c784717663966423fd11956074da57">acsthruster3</span>
-     <li><span class="dfn-paneled" id="326682a049d04da5049fdb73259f11d6">acsthruster4</span>
-     <li><span class="dfn-paneled" id="259f307153d5a714dfed9aee20a6b1ba">acsthruster5</span>
-     <li><span class="dfn-paneled" id="b09d5bece6b335fb25712153a622cfda">acsthruster6</span>
-     <li><span class="dfn-paneled" id="5256603c9896809f2c5a0f936d8d5bc9">bppropellantlineunit</span>
-     <li><span class="dfn-paneled" id="41d7e7b263ff86029a57ecb5fd039d3c">filldrainvalveunit</span>
-     <li><span class="dfn-paneled" id="f84aab38a10d9db2bd2f82ce2bc07361">pmpropellantlineunit</span>
-     <li><span class="dfn-paneled" id="63e23ebaea4ea7eadffcf68a94dd7174">pressuranttank</span>
-     <li><span class="dfn-paneled" id="865c9abdda56ecadc96d084b485487bf">primarythruster</span>
-     <li><span class="dfn-paneled" id="b9f69066fcf3106aa06fbfe03d27d381">propellanthandlingsection</span>
-     <li><span class="dfn-paneled" id="5fef00790916245dda72fd7cd0c21f11">propellanttank</span>
-     <li><span class="dfn-paneled" id="a944b95b3cf98a356ed2bce8f931397f">propulsionmodule</span>
-     <li><span class="dfn-paneled" id="a9292837522d9a94fef3ec49317692b2">propulsionsystemcontrolunit</span>
+     <li><span class="dfn-paneled" id="17b94d0e">acsthruster1</span>
+     <li><span class="dfn-paneled" id="96521cb1">acsthruster2</span>
+     <li><span class="dfn-paneled" id="2e1519ed">acsthruster3</span>
+     <li><span class="dfn-paneled" id="e7b6554c">acsthruster4</span>
+     <li><span class="dfn-paneled" id="ea1caeef">acsthruster5</span>
+     <li><span class="dfn-paneled" id="941c4771">acsthruster6</span>
+     <li><span class="dfn-paneled" id="d95d21b6">bppropellantlineunit</span>
+     <li><span class="dfn-paneled" id="432aa36e">filldrainvalveunit</span>
+     <li><span class="dfn-paneled" id="5744b93e">pmpropellantlineunit</span>
+     <li><span class="dfn-paneled" id="58fdff1b">pressuranttank</span>
+     <li><span class="dfn-paneled" id="9704d1bd">primarythruster</span>
+     <li><span class="dfn-paneled" id="638845ee">propellanthandlingsection</span>
+     <li><span class="dfn-paneled" id="212fa14b">propellanttank</span>
+     <li><span class="dfn-paneled" id="877b18fd">propulsionmodule</span>
+     <li><span class="dfn-paneled" id="fe8baa2e">propulsionsystemcontrolunit</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2391,49 +2336,261 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['e518cd52'] = {"dfnID": "e518cd52", "url": "../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#aggregates_1", "dfnText": "aggregates_1", "refSections": [{"refs": [{"id": "ref-for-aggregates_1"}, {"id": "ref-for-aggregates_1\u2460"}, {"id": "ref-for-aggregates_1\u2461"}, {"id": "ref-for-aggregates_1\u2462"}, {"id": "ref-for-aggregates_1\u2463"}, {"id": "ref-for-aggregates_1\u2464"}, {"id": "ref-for-aggregates_1\u2465"}, {"id": "ref-for-aggregates_1\u2466"}, {"id": "ref-for-aggregates_1\u2467"}, {"id": "ref-for-aggregates_1\u2468"}, {"id": "ref-for-aggregates_1\u2460\u24ea"}, {"id": "ref-for-aggregates_1\u2460\u2460"}, {"id": "ref-for-aggregates_1\u2460\u2461"}, {"id": "ref-for-aggregates_1\u2460\u2462"}, {"id": "ref-for-aggregates_1\u2460\u2463"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['90aff6aa'] = {"dfnID": "90aff6aa", "url": "../../../../../../../../../../../../../imce.jpl.nasa.gov/foundation/base.html#hasidentifier", "dfnText": "hasidentifier", "refSections": [{"refs": [{"id": "ref-for-hasidentifier"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['618abc28'] = {"dfnID": "618abc28", "url": "../../../../../../../../../../disciplines/fse/fse.html#subsystem", "dfnText": "subsystem", "refSections": [{"refs": [{"id": "ref-for-subsystem"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['17b94d0e'] = {"dfnID": "17b94d0e", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster1", "dfnText": "acsthruster1", "refSections": [{"refs": [{"id": "ref-for-acsthruster1"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['96521cb1'] = {"dfnID": "96521cb1", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster2", "dfnText": "acsthruster2", "refSections": [{"refs": [{"id": "ref-for-acsthruster2"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['2e1519ed'] = {"dfnID": "2e1519ed", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster3", "dfnText": "acsthruster3", "refSections": [{"refs": [{"id": "ref-for-acsthruster3"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['e7b6554c'] = {"dfnID": "e7b6554c", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster4", "dfnText": "acsthruster4", "refSections": [{"refs": [{"id": "ref-for-acsthruster4"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['ea1caeef'] = {"dfnID": "ea1caeef", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster5", "dfnText": "acsthruster5", "refSections": [{"refs": [{"id": "ref-for-acsthruster5"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['941c4771'] = {"dfnID": "941c4771", "url": "../../../../08/subsystems/prp/assemblies.html#acsthruster6", "dfnText": "acsthruster6", "refSections": [{"refs": [{"id": "ref-for-acsthruster6"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['d95d21b6'] = {"dfnID": "d95d21b6", "url": "../../../../08/subsystems/prp/assemblies.html#bppropellantlineunit", "dfnText": "bppropellantlineunit", "refSections": [{"refs": [{"id": "ref-for-bppropellantlineunit"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['432aa36e'] = {"dfnID": "432aa36e", "url": "../../../../08/subsystems/prp/assemblies.html#filldrainvalveunit", "dfnText": "filldrainvalveunit", "refSections": [{"refs": [{"id": "ref-for-filldrainvalveunit"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['5744b93e'] = {"dfnID": "5744b93e", "url": "../../../../08/subsystems/prp/assemblies.html#pmpropellantlineunit", "dfnText": "pmpropellantlineunit", "refSections": [{"refs": [{"id": "ref-for-pmpropellantlineunit"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['58fdff1b'] = {"dfnID": "58fdff1b", "url": "../../../../08/subsystems/prp/assemblies.html#pressuranttank", "dfnText": "pressuranttank", "refSections": [{"refs": [{"id": "ref-for-pressuranttank"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['9704d1bd'] = {"dfnID": "9704d1bd", "url": "../../../../08/subsystems/prp/assemblies.html#primarythruster", "dfnText": "primarythruster", "refSections": [{"refs": [{"id": "ref-for-primarythruster"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['638845ee'] = {"dfnID": "638845ee", "url": "../../../../08/subsystems/prp/assemblies.html#propellanthandlingsection", "dfnText": "propellanthandlingsection", "refSections": [{"refs": [{"id": "ref-for-propellanthandlingsection"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['212fa14b'] = {"dfnID": "212fa14b", "url": "../../../../08/subsystems/prp/assemblies.html#propellanttank", "dfnText": "propellanttank", "refSections": [{"refs": [{"id": "ref-for-propellanttank"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['877b18fd'] = {"dfnID": "877b18fd", "url": "../../../../08/subsystems/prp/assemblies.html#propulsionmodule", "dfnText": "propulsionmodule", "refSections": [{"refs": [{"id": "ref-for-propulsionmodule"}], "title": "3.1. Propulsion"}], "external": true};
+window.dfnpanelData['fe8baa2e'] = {"dfnID": "fe8baa2e", "url": "../../../../08/subsystems/prp/assemblies.html#propulsionsystemcontrolunit", "dfnText": "propulsionsystemcontrolunit", "refSections": [{"refs": [{"id": "ref-for-propulsionsystemcontrolunit"}], "title": "3.1. Propulsion"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

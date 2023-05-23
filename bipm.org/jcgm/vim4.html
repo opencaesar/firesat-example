@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/firesat-example/bipm.org/jcgm/vim4" rel="canonical">
-  <meta content="bcf62fd64c3a68689e3de832cd5a1a9b87c9138d" name="document-revision">
+  <meta content="3c81c7c9f7cc0a1ef69dcf29864614e10c47935a" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">OML formalization of VIM4 Committee Draft 11 January 2021</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3785,880 +3791,186 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#yieldsmeasurementuncertainty">yieldsmeasurementuncertainty</a><span>, in § 5.28</span>
    <li><a href="#yieldsmeasurementuncertainty_1">yieldsmeasurementuncertainty_1</a><span>, in § 5.28</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-2fd8e46a3c152bdad84621accb051832" class="dfn-panel" data-for="2fd8e46a3c152bdad84621accb051832" id="infopanel-for-2fd8e46a3c152bdad84621accb051832">
-   <span id="infopaneltitle-for-2fd8e46a3c152bdad84621accb051832" style="display:none">Info about the 'characterizes_1' external reference.</span><a href="vim4.html#characterizes_1">vim4.html#characterizes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizes_1">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-characterizes_1①">4.7. InherentOrdinalQuantity</a>
-    <li><a href="#ref-for-characterizes_1②">4.8. InherentUnitaryQuantity</a>
-    <li><a href="#ref-for-characterizes_1③">4.17. MeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-16ec6e78f17319a04b66919f0cd36fe4" class="dfn-panel" data-for="16ec6e78f17319a04b66919f0cd36fe4" id="infopanel-for-16ec6e78f17319a04b66919f0cd36fe4">
-   <span id="infopaneltitle-for-16ec6e78f17319a04b66919f0cd36fe4" style="display:none">Info about the 'describes_1' external reference.</span><a href="vim4.html#describes_1">vim4.html#describes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-describes_1">4.14. MeasurementProcedure</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8053a6fdaa47e95366c4727d4146e289" class="dfn-panel" data-for="8053a6fdaa47e95366c4727d4146e289" id="infopanel-for-8053a6fdaa47e95366c4727d4146e289">
-   <span id="infopaneltitle-for-8053a6fdaa47e95366c4727d4146e289" style="display:none">Info about the 'dimensionsymbol' external reference.</span><a href="vim4.html#dimensionsymbol">vim4.html#dimensionsymbol</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dimensionsymbol">5.20. SystemHasBaseUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-148c617d27112e11771b3c85f01470f1" class="dfn-panel" data-for="148c617d27112e11771b3c85f01470f1" id="infopanel-for-148c617d27112e11771b3c85f01470f1">
-   <span id="infopaneltitle-for-148c617d27112e11771b3c85f01470f1" style="display:none">Info about the 'exponent' external reference.</span><a href="vim4.html#exponent">vim4.html#exponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-exponent">3.9. RationalExponent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-62f2bc52ad84a38507659562830a3087" class="dfn-panel" data-for="62f2bc52ad84a38507659562830a3087" id="infopanel-for-62f2bc52ad84a38507659562830a3087">
-   <span id="infopaneltitle-for-62f2bc52ad84a38507659562830a3087" style="display:none">Info about the 'generalnominalproperty' external reference.</span><a href="vim4.html#generalnominalproperty">vim4.html#generalnominalproperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalnominalproperty">3.1. GeneralProperty</a>
-    <li><a href="#ref-for-generalnominalproperty①">4.4. IndividualNominalProperty</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0999016f22fdf0510de9add8f32c7c0e" class="dfn-panel" data-for="0999016f22fdf0510de9add8f32c7c0e" id="infopanel-for-0999016f22fdf0510de9add8f32c7c0e">
-   <span id="infopaneltitle-for-0999016f22fdf0510de9add8f32c7c0e" style="display:none">Info about the 'generalordinalquantity' external reference.</span><a href="vim4.html#generalordinalquantity">vim4.html#generalordinalquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalordinalquantity">3.2. GeneralQuantity</a>
-    <li><a href="#ref-for-generalordinalquantity①">4.5. IndividualOrdinalQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7b045413d96bf01aedaadc1b11731b2f" class="dfn-panel" data-for="7b045413d96bf01aedaadc1b11731b2f" id="infopanel-for-7b045413d96bf01aedaadc1b11731b2f">
-   <span id="infopaneltitle-for-7b045413d96bf01aedaadc1b11731b2f" style="display:none">Info about the 'generalproperty' external reference.</span><a href="vim4.html#generalproperty">vim4.html#generalproperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalproperty">3.2. GeneralQuantity</a>
-    <li><a href="#ref-for-generalproperty①">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-generalproperty②">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-generalproperty③">4.1. GeneralNominalProperty</a>
-    <li><a href="#ref-for-generalproperty④">5.11. Instantiates</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3d81b9b51ce42bceba0a8ace208a50b4" class="dfn-panel" data-for="3d81b9b51ce42bceba0a8ace208a50b4" id="infopanel-for-3d81b9b51ce42bceba0a8ace208a50b4">
-   <span id="infopaneltitle-for-3d81b9b51ce42bceba0a8ace208a50b4" style="display:none">Info about the 'generalquantity' external reference.</span><a href="vim4.html#generalquantity">vim4.html#generalquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalquantity">3.1. GeneralProperty</a>
-    <li><a href="#ref-for-generalquantity①">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-generalquantity②">4.2. GeneralOrdinalQuantity</a>
-    <li><a href="#ref-for-generalquantity③">4.3. GeneralUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e47010a288fb26a766a8848595065102" class="dfn-panel" data-for="e47010a288fb26a766a8848595065102" id="infopanel-for-e47010a288fb26a766a8848595065102">
-   <span id="infopaneltitle-for-e47010a288fb26a766a8848595065102" style="display:none">Info about the 'generalunitaryquantity' external reference.</span><a href="vim4.html#generalunitaryquantity">vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalunitaryquantity">3.2. GeneralQuantity</a>
-    <li><a href="#ref-for-generalunitaryquantity①">4.3. GeneralUnitaryQuantity</a>
-    <li><a href="#ref-for-generalunitaryquantity②">4.6. IndividualUnitaryQuantity</a>
-    <li><a href="#ref-for-generalunitaryquantity③">4.23. SystemOfQuantities</a> <a href="#ref-for-generalunitaryquantity④">(2)</a> <a href="#ref-for-generalunitaryquantity⑤">(3)</a>
-    <li><a href="#ref-for-generalunitaryquantity⑥">5.18. Specializes</a> <a href="#ref-for-generalunitaryquantity⑦">(2)</a>
-    <li><a href="#ref-for-generalunitaryquantity⑧">5.20. SystemHasBaseUnitaryQuantity</a>
-    <li><a href="#ref-for-generalunitaryquantity⑨">5.22. SystemHasDerivedUnitaryQuantity</a>
-    <li><a href="#ref-for-generalunitaryquantity①⓪">5.24. SystemHasUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6c6b9bb31251ca8dcf8ea355cff6c48a" class="dfn-panel" data-for="6c6b9bb31251ca8dcf8ea355cff6c48a" id="infopanel-for-6c6b9bb31251ca8dcf8ea355cff6c48a">
-   <span id="infopaneltitle-for-6c6b9bb31251ca8dcf8ea355cff6c48a" style="display:none">Info about the 'given_1' external reference.</span><a href="vim4.html#given_1">vim4.html#given_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-given_1">4.24. SystemOfUnits</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b85c80ed91030d824f0e6b5ad22c4edc" class="dfn-panel" data-for="b85c80ed91030d824f0e6b5ad22c4edc" id="infopanel-for-b85c80ed91030d824f0e6b5ad22c4edc">
-   <span id="infopaneltitle-for-b85c80ed91030d824f0e6b5ad22c4edc" style="display:none">Info about the 'hascoherence' external reference.</span><a href="vim4.html#hascoherence">vim4.html#hascoherence</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hascoherence">4.24. SystemOfUnits</a>
-    <li><a href="#ref-for-hascoherence①">5.21. SystemHasDerivedUnit</a>
-    <li><a href="#ref-for-hascoherence②">6.5. isCoherent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-82229430b886fed6d0b4146966e662ae" class="dfn-panel" data-for="82229430b886fed6d0b4146966e662ae" id="infopanel-for-82229430b886fed6d0b4146966e662ae">
-   <span id="infopaneltitle-for-82229430b886fed6d0b4146966e662ae" style="display:none">Info about the 'hasdoublenumber' external reference.</span><a href="vim4.html#hasdoublenumber">vim4.html#hasdoublenumber</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasdoublenumber">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6d6c3af3e61f35f0c07fe79048b8c5a5" class="dfn-panel" data-for="6d6c3af3e61f35f0c07fe79048b8c5a5" id="infopanel-for-6d6c3af3e61f35f0c07fe79048b8c5a5">
-   <span id="infopaneltitle-for-6d6c3af3e61f35f0c07fe79048b8c5a5" style="display:none">Info about the 'hasinput_1' external reference.</span><a href="vim4.html#hasinput_1">vim4.html#hasinput_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasinput_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a45b446dc9ae1dd7ff4eeaacdb860375" class="dfn-panel" data-for="a45b446dc9ae1dd7ff4eeaacdb860375" id="infopanel-for-a45b446dc9ae1dd7ff4eeaacdb860375">
-   <span id="infopaneltitle-for-a45b446dc9ae1dd7ff4eeaacdb860375" style="display:none">Info about the 'hasmultiple_1' external reference.</span><a href="vim4.html#hasmultiple_1">vim4.html#hasmultiple_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasmultiple_1">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-hasmultiple_1①">4.21. PrefixedMeasurementUnit</a>
-    <li><a href="#ref-for-hasmultiple_1②">4.27. UnprefixedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4f8769e28bca5a4ad06faa1e521421b6" class="dfn-panel" data-for="4f8769e28bca5a4ad06faa1e521421b6" id="infopanel-for-4f8769e28bca5a4ad06faa1e521421b6">
-   <span id="infopaneltitle-for-4f8769e28bca5a4ad06faa1e521421b6" style="display:none">Info about the 'haspowerofunitaryquantityfactor' external reference.</span><a href="vim4.html#haspowerofunitaryquantityfactor">vim4.html#haspowerofunitaryquantityfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor">3.9. RationalExponent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dbb7016bbfda9a91eb5dbefc9dd8b3ae" class="dfn-panel" data-for="dbb7016bbfda9a91eb5dbefc9dd8b3ae" id="infopanel-for-dbb7016bbfda9a91eb5dbefc9dd8b3ae">
-   <span id="infopaneltitle-for-dbb7016bbfda9a91eb5dbefc9dd8b3ae" style="display:none">Info about the 'haspowerofunitaryquantityfactor_1' external reference.</span><a href="vim4.html#haspowerofunitaryquantityfactor_1">vim4.html#haspowerofunitaryquantityfactor_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor_1">5.22. SystemHasDerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0c3f3a6edd07ce9106c46fb81019b1a6" class="dfn-panel" data-for="0c3f3a6edd07ce9106c46fb81019b1a6" id="infopanel-for-0c3f3a6edd07ce9106c46fb81019b1a6">
-   <span id="infopaneltitle-for-0c3f3a6edd07ce9106c46fb81019b1a6" style="display:none">Info about the 'haspowerofunitfactor' external reference.</span><a href="vim4.html#haspowerofunitfactor">vim4.html#haspowerofunitfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitfactor">3.9. RationalExponent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a3f460cfb90b2cb9b40521d25467d33f" class="dfn-panel" data-for="a3f460cfb90b2cb9b40521d25467d33f" id="infopanel-for-a3f460cfb90b2cb9b40521d25467d33f">
-   <span id="infopaneltitle-for-a3f460cfb90b2cb9b40521d25467d33f" style="display:none">Info about the 'haspowerofunitfactor_1' external reference.</span><a href="vim4.html#haspowerofunitfactor_1">vim4.html#haspowerofunitfactor_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitfactor_1">5.21. SystemHasDerivedUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cbf9f3bd27bee1256a391c69da391c4b" class="dfn-panel" data-for="cbf9f3bd27bee1256a391c69da391c4b" id="infopanel-for-cbf9f3bd27bee1256a391c69da391c4b">
-   <span id="infopaneltitle-for-cbf9f3bd27bee1256a391c69da391c4b" style="display:none">Info about the 'hasquantitydimensionfactor' external reference.</span><a href="vim4.html#hasquantitydimensionfactor">vim4.html#hasquantitydimensionfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasquantitydimensionfactor">3.9. RationalExponent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-eb856a533d269788b903fdab217312ab" class="dfn-panel" data-for="eb856a533d269788b903fdab217312ab" id="infopanel-for-eb856a533d269788b903fdab217312ab">
-   <span id="infopaneltitle-for-eb856a533d269788b903fdab217312ab" style="display:none">Info about the 'hasquantitydimensionfactor_1' external reference.</span><a href="vim4.html#hasquantitydimensionfactor_1">vim4.html#hasquantitydimensionfactor_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasquantitydimensionfactor_1">5.24. SystemHasUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-040f2740b9811d0af01b6db4e8c3987c" class="dfn-panel" data-for="040f2740b9811d0af01b6db4e8c3987c" id="infopanel-for-040f2740b9811d0af01b6db4e8c3987c">
-   <span id="infopaneltitle-for-040f2740b9811d0af01b6db4e8c3987c" style="display:none">Info about the 'id' external reference.</span><a href="vim4.html#id">vim4.html#id</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-id">3.4. IdentifiedElement</a> <a href="#ref-for-id①">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-66e08dc62b7355d07f3411d5aa37fea8" class="dfn-panel" data-for="66e08dc62b7355d07f3411d5aa37fea8" id="infopanel-for-66e08dc62b7355d07f3411d5aa37fea8">
-   <span id="infopaneltitle-for-66e08dc62b7355d07f3411d5aa37fea8" style="display:none">Info about the 'identifiedelement' external reference.</span><a href="vim4.html#identifiedelement">vim4.html#identifiedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-identifiedelement">3.1. GeneralProperty</a>
-    <li><a href="#ref-for-identifiedelement①">3.8. QuantityValue</a>
-    <li><a href="#ref-for-identifiedelement②">4.10. Measurement</a>
-    <li><a href="#ref-for-identifiedelement③">4.11. MeasurementMethod</a>
-    <li><a href="#ref-for-identifiedelement④">4.12. MeasurementModel</a>
-    <li><a href="#ref-for-identifiedelement⑤">4.13. MeasurementPrinciple</a>
-    <li><a href="#ref-for-identifiedelement⑥">4.14. MeasurementProcedure</a>
-    <li><a href="#ref-for-identifiedelement⑦">4.15. MeasurementScale</a>
-    <li><a href="#ref-for-identifiedelement⑧">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-identifiedelement⑨">4.18. Multiple</a>
-    <li><a href="#ref-for-identifiedelement①⓪">4.23. SystemOfQuantities</a>
-    <li><a href="#ref-for-identifiedelement①①">4.24. SystemOfUnits</a>
-    <li><a href="#ref-for-identifiedelement①②">6.4. id</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-65e23fcb3e8b05fadf04c44c399d9b69" class="dfn-panel" data-for="65e23fcb3e8b05fadf04c44c399d9b69" id="infopanel-for-65e23fcb3e8b05fadf04c44c399d9b69">
-   <span id="infopaneltitle-for-65e23fcb3e8b05fadf04c44c399d9b69" style="display:none">Info about the 'includes' external reference.</span><a href="vim4.html#includes">vim4.html#includes</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-includes">6.10. ordinalPosition</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c7ae4002392d80b1eedce4efbf4faaf5" class="dfn-panel" data-for="c7ae4002392d80b1eedce4efbf4faaf5" id="infopanel-for-c7ae4002392d80b1eedce4efbf4faaf5">
-   <span id="infopaneltitle-for-c7ae4002392d80b1eedce4efbf4faaf5" style="display:none">Info about the 'includes_1' external reference.</span><a href="vim4.html#includes_1">vim4.html#includes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-includes_1">4.15. MeasurementScale</a>
-    <li><a href="#ref-for-includes_1①">4.20. OrdinalScale</a>
-    <li><a href="#ref-for-includes_1②">4.22. ReferenceSet</a>
-    <li><a href="#ref-for-includes_1③">4.26. UnitaryScale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ccff232f89d565d8ce400ca15f97de18" class="dfn-panel" data-for="ccff232f89d565d8ce400ca15f97de18" id="infopanel-for-ccff232f89d565d8ce400ca15f97de18">
-   <span id="infopaneltitle-for-ccff232f89d565d8ce400ca15f97de18" style="display:none">Info about the 'individualnominalproperty' external reference.</span><a href="vim4.html#individualnominalproperty">vim4.html#individualnominalproperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-individualnominalproperty">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-individualnominalproperty①">4.22. ReferenceSet</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fec8e532b1123e86c0562522c4bc1613" class="dfn-panel" data-for="fec8e532b1123e86c0562522c4bc1613" id="infopanel-for-fec8e532b1123e86c0562522c4bc1613">
-   <span id="infopaneltitle-for-fec8e532b1123e86c0562522c4bc1613" style="display:none">Info about the 'individualordinalquantity' external reference.</span><a href="vim4.html#individualordinalquantity">vim4.html#individualordinalquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-individualordinalquantity">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-individualordinalquantity①">4.7. InherentOrdinalQuantity</a>
-    <li><a href="#ref-for-individualordinalquantity②">4.19. OrdinalQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4c6a0b61f1cdd20953e8656667fcc8cf" class="dfn-panel" data-for="4c6a0b61f1cdd20953e8656667fcc8cf" id="infopanel-for-4c6a0b61f1cdd20953e8656667fcc8cf">
-   <span id="infopaneltitle-for-4c6a0b61f1cdd20953e8656667fcc8cf" style="display:none">Info about the 'individualproperty' external reference.</span><a href="vim4.html#individualproperty">vim4.html#individualproperty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-individualproperty">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-individualproperty①">4.4. IndividualNominalProperty</a>
-    <li><a href="#ref-for-individualproperty②">4.15. MeasurementScale</a>
-    <li><a href="#ref-for-individualproperty③">5.1. Characterizes</a>
-    <li><a href="#ref-for-individualproperty④">5.10. Includes</a>
-    <li><a href="#ref-for-individualproperty⑤">5.11. Instantiates</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d4fb8fab0fd271be4579ae8b4171fb96" class="dfn-panel" data-for="d4fb8fab0fd271be4579ae8b4171fb96" id="infopanel-for-d4fb8fab0fd271be4579ae8b4171fb96">
-   <span id="infopaneltitle-for-d4fb8fab0fd271be4579ae8b4171fb96" style="display:none">Info about the 'individualquantity' external reference.</span><a href="vim4.html#individualquantity">vim4.html#individualquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-individualquantity">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-individualquantity①">3.8. QuantityValue</a> <a href="#ref-for-individualquantity②">(2)</a>
-    <li><a href="#ref-for-individualquantity③">4.5. IndividualOrdinalQuantity</a>
-    <li><a href="#ref-for-individualquantity④">4.6. IndividualUnitaryQuantity</a>
-    <li><a href="#ref-for-individualquantity⑤">4.12. MeasurementModel</a> <a href="#ref-for-individualquantity⑥">(2)</a> <a href="#ref-for-individualquantity⑦">(3)</a> <a href="#ref-for-individualquantity⑧">(4)</a>
-    <li><a href="#ref-for-individualquantity⑨">5.4. HasInput</a>
-    <li><a href="#ref-for-individualquantity①⓪">5.12. IsAttributedTo</a>
-    <li><a href="#ref-for-individualquantity①①">5.14. IsInfluencedBy</a>
-    <li><a href="#ref-for-individualquantity①②">5.16. Measures</a>
-    <li><a href="#ref-for-individualquantity①③">5.25. UsesCorrection</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d03914b30ff170f68b181c3ef049d558" class="dfn-panel" data-for="d03914b30ff170f68b181c3ef049d558" id="infopanel-for-d03914b30ff170f68b181c3ef049d558">
-   <span id="infopaneltitle-for-d03914b30ff170f68b181c3ef049d558" style="display:none">Info about the 'individualunitaryquantity' external reference.</span><a href="vim4.html#individualunitaryquantity">vim4.html#individualunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-individualunitaryquantity">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-individualunitaryquantity①">4.8. InherentUnitaryQuantity</a>
-    <li><a href="#ref-for-individualunitaryquantity②">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-individualunitaryquantity③">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2915790b04f59236dec47b74a45b81b0" class="dfn-panel" data-for="2915790b04f59236dec47b74a45b81b0" id="infopanel-for-2915790b04f59236dec47b74a45b81b0">
-   <span id="infopaneltitle-for-2915790b04f59236dec47b74a45b81b0" style="display:none">Info about the 'inherentordinalquantity' external reference.</span><a href="vim4.html#inherentordinalquantity">vim4.html#inherentordinalquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-inherentordinalquantity">4.5. IndividualOrdinalQuantity</a>
-    <li><a href="#ref-for-inherentordinalquantity①">4.19. OrdinalQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-de40a0b96a2c5875bcd704290fb996ff" class="dfn-panel" data-for="de40a0b96a2c5875bcd704290fb996ff" id="infopanel-for-de40a0b96a2c5875bcd704290fb996ff">
-   <span id="infopaneltitle-for-de40a0b96a2c5875bcd704290fb996ff" style="display:none">Info about the 'inherentunitaryquantity' external reference.</span><a href="vim4.html#inherentunitaryquantity">vim4.html#inherentunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-inherentunitaryquantity">4.6. IndividualUnitaryQuantity</a>
-    <li><a href="#ref-for-inherentunitaryquantity①">4.9. InherentUnitaryQuantityValue</a>
-    <li><a href="#ref-for-inherentunitaryquantity②">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-03c72f663e6dcd1ea42039f4619b67d9" class="dfn-panel" data-for="03c72f663e6dcd1ea42039f4619b67d9" id="infopanel-for-03c72f663e6dcd1ea42039f4619b67d9">
-   <span id="infopaneltitle-for-03c72f663e6dcd1ea42039f4619b67d9" style="display:none">Info about the 'inherentunitaryquantityvalue' external reference.</span><a href="vim4.html#inherentunitaryquantityvalue">vim4.html#inherentunitaryquantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-inherentunitaryquantityvalue">4.8. InherentUnitaryQuantity</a>
-    <li><a href="#ref-for-inherentunitaryquantityvalue①">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-af8297977d8ed6d6814d5447472a7273" class="dfn-panel" data-for="af8297977d8ed6d6814d5447472a7273" id="infopanel-for-af8297977d8ed6d6814d5447472a7273">
-   <span id="infopaneltitle-for-af8297977d8ed6d6814d5447472a7273" style="display:none">Info about the 'instantiates_1' external reference.</span><a href="vim4.html#instantiates_1">vim4.html#instantiates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-instantiates_1">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-instantiates_1①">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-instantiates_1②">4.4. IndividualNominalProperty</a>
-    <li><a href="#ref-for-instantiates_1③">4.5. IndividualOrdinalQuantity</a>
-    <li><a href="#ref-for-instantiates_1④">4.6. IndividualUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7b0b67d3d15b3baf11c23fc3abb3c20e" class="dfn-panel" data-for="7b0b67d3d15b3baf11c23fc3abb3c20e" id="infopanel-for-7b0b67d3d15b3baf11c23fc3abb3c20e">
-   <span id="infopaneltitle-for-7b0b67d3d15b3baf11c23fc3abb3c20e" style="display:none">Info about the 'isattributedto_1' external reference.</span><a href="vim4.html#isattributedto_1">vim4.html#isattributedto_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isattributedto_1">3.8. QuantityValue</a>
-    <li><a href="#ref-for-isattributedto_1①">4.19. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-isattributedto_1②">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3ad191fb62512a1e4522b87035440761" class="dfn-panel" data-for="3ad191fb62512a1e4522b87035440761" id="infopanel-for-3ad191fb62512a1e4522b87035440761">
-   <span id="infopaneltitle-for-3ad191fb62512a1e4522b87035440761" style="display:none">Info about the 'isbasedon_1' external reference.</span><a href="vim4.html#isbasedon_1">vim4.html#isbasedon_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isbasedon_1">4.14. MeasurementProcedure</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0bcf1cac5af3766d9cf8f325ad8c5aa5" class="dfn-panel" data-for="0bcf1cac5af3766d9cf8f325ad8c5aa5" id="infopanel-for-0bcf1cac5af3766d9cf8f325ad8c5aa5">
-   <span id="infopaneltitle-for-0bcf1cac5af3766d9cf8f325ad8c5aa5" style="display:none">Info about the 'iscoherent' external reference.</span><a href="vim4.html#iscoherent">vim4.html#iscoherent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-iscoherent">3.3. HasCoherence</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8e5e1ee44a595e633d61edd00e00fddd" class="dfn-panel" data-for="8e5e1ee44a595e633d61edd00e00fddd" id="infopanel-for-8e5e1ee44a595e633d61edd00e00fddd">
-   <span id="infopaneltitle-for-8e5e1ee44a595e633d61edd00e00fddd" style="display:none">Info about the 'isdimensionless' external reference.</span><a href="vim4.html#isdimensionless">vim4.html#isdimensionless</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isdimensionless">5.22. SystemHasDerivedUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c19c518d49fb8b3bb40644f149ab9f97" class="dfn-panel" data-for="c19c518d49fb8b3bb40644f149ab9f97" id="infopanel-for-c19c518d49fb8b3bb40644f149ab9f97">
-   <span id="infopaneltitle-for-c19c518d49fb8b3bb40644f149ab9f97" style="display:none">Info about the 'isinfluencedby_1' external reference.</span><a href="vim4.html#isinfluencedby_1">vim4.html#isinfluencedby_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isinfluencedby_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-cea3caecf7dc2121e2ec3b8b018badc7" class="dfn-panel" data-for="cea3caecf7dc2121e2ec3b8b018badc7" id="infopanel-for-cea3caecf7dc2121e2ec3b8b018badc7">
-   <span id="infopaneltitle-for-cea3caecf7dc2121e2ec3b8b018badc7" style="display:none">Info about the 'ismultipleof_1' external reference.</span><a href="vim4.html#ismultipleof_1">vim4.html#ismultipleof_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ismultipleof_1">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-ismultipleof_1①">4.21. PrefixedMeasurementUnit</a>
-    <li><a href="#ref-for-ismultipleof_1②">4.27. UnprefixedMeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6c22c3464f4f4173333d53cfe9f03af7" class="dfn-panel" data-for="6c22c3464f4f4173333d53cfe9f03af7" id="infopanel-for-6c22c3464f4f4173333d53cfe9f03af7">
-   <span id="infopaneltitle-for-6c22c3464f4f4173333d53cfe9f03af7" style="display:none">Info about the 'isoffsystemunit' external reference.</span><a href="vim4.html#isoffsystemunit">vim4.html#isoffsystemunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isoffsystemunit">5.21. SystemHasDerivedUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1b94455c1429f8d025166eaa9fed949d" class="dfn-panel" data-for="1b94455c1429f8d025166eaa9fed949d" id="infopanel-for-1b94455c1429f8d025166eaa9fed949d">
-   <span id="infopaneltitle-for-1b94455c1429f8d025166eaa9fed949d" style="display:none">Info about the 'isreferencevalue' external reference.</span><a href="vim4.html#isreferencevalue">vim4.html#isreferencevalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isreferencevalue">3.8. QuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2d5c9efea3f7a7708daf9a296cb989ff" class="dfn-panel" data-for="2d5c9efea3f7a7708daf9a296cb989ff" id="infopanel-for-2d5c9efea3f7a7708daf9a296cb989ff">
-   <span id="infopaneltitle-for-2d5c9efea3f7a7708daf9a296cb989ff" style="display:none">Info about the 'istruevalue' external reference.</span><a href="vim4.html#istruevalue">vim4.html#istruevalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-istruevalue">3.8. QuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-339c9403f04b070b351cceba6d316e85" class="dfn-panel" data-for="339c9403f04b070b351cceba6d316e85" id="infopanel-for-339c9403f04b070b351cceba6d316e85">
-   <span id="infopaneltitle-for-339c9403f04b070b351cceba6d316e85" style="display:none">Info about the 'measurement' external reference.</span><a href="vim4.html#measurement">vim4.html#measurement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurement">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurement①">4.14. MeasurementProcedure</a>
-    <li><a href="#ref-for-measurement②">5.2. Describes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c254f9664675c177a8ed0f96dbf9667d" class="dfn-panel" data-for="c254f9664675c177a8ed0f96dbf9667d" id="infopanel-for-c254f9664675c177a8ed0f96dbf9667d">
-   <span id="infopaneltitle-for-c254f9664675c177a8ed0f96dbf9667d" style="display:none">Info about the 'measurementmethod' external reference.</span><a href="vim4.html#measurementmethod">vim4.html#measurementmethod</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementmethod">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementmethod①">4.14. MeasurementProcedure</a>
-    <li><a href="#ref-for-measurementmethod②">5.26. UsesOperationsOf</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d89e08e010016c3e2e22eedcd51a5fbd" class="dfn-panel" data-for="d89e08e010016c3e2e22eedcd51a5fbd" id="infopanel-for-d89e08e010016c3e2e22eedcd51a5fbd">
-   <span id="infopaneltitle-for-d89e08e010016c3e2e22eedcd51a5fbd" style="display:none">Info about the 'measurementmodel' external reference.</span><a href="vim4.html#measurementmodel">vim4.html#measurementmodel</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementmodel">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementmodel①">4.14. MeasurementProcedure</a>
-    <li><a href="#ref-for-measurementmodel②">5.4. HasInput</a>
-    <li><a href="#ref-for-measurementmodel③">5.13. IsBasedOn</a>
-    <li><a href="#ref-for-measurementmodel④">5.14. IsInfluencedBy</a>
-    <li><a href="#ref-for-measurementmodel⑤">5.16. Measures</a>
-    <li><a href="#ref-for-measurementmodel⑥">5.25. UsesCorrection</a>
-    <li><a href="#ref-for-measurementmodel⑦">5.27. YieldsMeasuredValue</a>
-    <li><a href="#ref-for-measurementmodel⑧">5.28. YieldsMeasurementUncertainty</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-35b3b1bf63ee3ce52043ef9cb53d70b9" class="dfn-panel" data-for="35b3b1bf63ee3ce52043ef9cb53d70b9" id="infopanel-for-35b3b1bf63ee3ce52043ef9cb53d70b9">
-   <span id="infopaneltitle-for-35b3b1bf63ee3ce52043ef9cb53d70b9" style="display:none">Info about the 'measurementprinciple' external reference.</span><a href="vim4.html#measurementprinciple">vim4.html#measurementprinciple</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementprinciple">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementprinciple①">4.14. MeasurementProcedure</a>
-    <li><a href="#ref-for-measurementprinciple②">5.17. Per</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-20e026f2804c6b3fb767e642ad3c548e" class="dfn-panel" data-for="20e026f2804c6b3fb767e642ad3c548e" id="infopanel-for-20e026f2804c6b3fb767e642ad3c548e">
-   <span id="infopaneltitle-for-20e026f2804c6b3fb767e642ad3c548e" style="display:none">Info about the 'measurementprocedure' external reference.</span><a href="vim4.html#measurementprocedure">vim4.html#measurementprocedure</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementprocedure">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementprocedure①">5.2. Describes</a>
-    <li><a href="#ref-for-measurementprocedure②">5.13. IsBasedOn</a>
-    <li><a href="#ref-for-measurementprocedure③">5.17. Per</a>
-    <li><a href="#ref-for-measurementprocedure④">5.26. UsesOperationsOf</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-336f54206534357ad16e9ffa117417c6" class="dfn-panel" data-for="336f54206534357ad16e9ffa117417c6" id="infopanel-for-336f54206534357ad16e9ffa117417c6">
-   <span id="infopaneltitle-for-336f54206534357ad16e9ffa117417c6" style="display:none">Info about the 'measurementscale' external reference.</span><a href="vim4.html#measurementscale">vim4.html#measurementscale</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementscale">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementscale①">4.20. OrdinalScale</a>
-    <li><a href="#ref-for-measurementscale②">4.22. ReferenceSet</a>
-    <li><a href="#ref-for-measurementscale③">4.26. UnitaryScale</a>
-    <li><a href="#ref-for-measurementscale④">5.10. Includes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ce8c1b3380a2d2437486ed2eb8656df6" class="dfn-panel" data-for="ce8c1b3380a2d2437486ed2eb8656df6" id="infopanel-for-ce8c1b3380a2d2437486ed2eb8656df6">
-   <span id="infopaneltitle-for-ce8c1b3380a2d2437486ed2eb8656df6" style="display:none">Info about the 'measurementuncertainty' external reference.</span><a href="vim4.html#measurementuncertainty">vim4.html#measurementuncertainty</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementuncertainty">4.12. MeasurementModel</a>
-    <li><a href="#ref-for-measurementuncertainty①">5.28. YieldsMeasurementUncertainty</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7d1ad24abc39581f8438fbadbfabb5f2" class="dfn-panel" data-for="7d1ad24abc39581f8438fbadbfabb5f2" id="infopanel-for-7d1ad24abc39581f8438fbadbfabb5f2">
-   <span id="infopaneltitle-for-7d1ad24abc39581f8438fbadbfabb5f2" style="display:none">Info about the 'measurementunit' external reference.</span><a href="vim4.html#measurementunit">vim4.html#measurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measurementunit">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-measurementunit①">4.6. IndividualUnitaryQuantity</a>
-    <li><a href="#ref-for-measurementunit②">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-measurementunit③">4.21. PrefixedMeasurementUnit</a> <a href="#ref-for-measurementunit④">(2)</a>
-    <li><a href="#ref-for-measurementunit⑤">4.24. SystemOfUnits</a> <a href="#ref-for-measurementunit⑥">(2)</a> <a href="#ref-for-measurementunit⑦">(3)</a>
-    <li><a href="#ref-for-measurementunit⑧">4.25. UnitaryQuantityValue</a>
-    <li><a href="#ref-for-measurementunit⑨">4.27. UnprefixedMeasurementUnit</a> <a href="#ref-for-measurementunit①⓪">(2)</a>
-    <li><a href="#ref-for-measurementunit①①">5.5. HasMultiple</a>
-    <li><a href="#ref-for-measurementunit①②">5.9. HasUnit</a>
-    <li><a href="#ref-for-measurementunit①③">5.15. IsMultipleOf</a> <a href="#ref-for-measurementunit①④">(2)</a>
-    <li><a href="#ref-for-measurementunit①⑤">5.19. SystemHasBaseUnit</a>
-    <li><a href="#ref-for-measurementunit①⑥">5.21. SystemHasDerivedUnit</a>
-    <li><a href="#ref-for-measurementunit①⑦">5.23. SystemHasUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3ccb76d5cba49008316c209a434982dd" class="dfn-panel" data-for="3ccb76d5cba49008316c209a434982dd" id="infopanel-for-3ccb76d5cba49008316c209a434982dd">
-   <span id="infopaneltitle-for-3ccb76d5cba49008316c209a434982dd" style="display:none">Info about the 'measures_1' external reference.</span><a href="vim4.html#measures_1">vim4.html#measures_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-measures_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-992ac86e0a44db903df386be74c20987" class="dfn-panel" data-for="992ac86e0a44db903df386be74c20987" id="infopanel-for-992ac86e0a44db903df386be74c20987">
-   <span id="infopaneltitle-for-992ac86e0a44db903df386be74c20987" style="display:none">Info about the 'multiple' external reference.</span><a href="vim4.html#multiple">vim4.html#multiple</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-multiple">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-multiple①">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-multiple②">4.21. PrefixedMeasurementUnit</a>
-    <li><a href="#ref-for-multiple③">4.27. UnprefixedMeasurementUnit</a>
-    <li><a href="#ref-for-multiple④">5.5. HasMultiple</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d04f81fe1cdb9338db9ade3508dc77e4" class="dfn-panel" data-for="d04f81fe1cdb9338db9ade3508dc77e4" id="infopanel-for-d04f81fe1cdb9338db9ade3508dc77e4">
-   <span id="infopaneltitle-for-d04f81fe1cdb9338db9ade3508dc77e4" style="display:none">Info about the 'object' external reference.</span><a href="vim4.html#object">vim4.html#object</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-object">3.5. IndividualProperty</a>
-    <li><a href="#ref-for-object①">4.7. InherentOrdinalQuantity</a>
-    <li><a href="#ref-for-object②">4.8. InherentUnitaryQuantity</a>
-    <li><a href="#ref-for-object③">4.17. MeasurementUnit</a>
-    <li><a href="#ref-for-object④">5.1. Characterizes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b8298741c970bac369acbca5e859e620" class="dfn-panel" data-for="b8298741c970bac369acbca5e859e620" id="infopanel-for-b8298741c970bac369acbca5e859e620">
-   <span id="infopaneltitle-for-b8298741c970bac369acbca5e859e620" style="display:none">Info about the 'ordinalposition' external reference.</span><a href="vim4.html#ordinalposition">vim4.html#ordinalposition</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ordinalposition">5.10. Includes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e3dfb7afdffd7aba958ae1b3a576d6e2" class="dfn-panel" data-for="e3dfb7afdffd7aba958ae1b3a576d6e2" id="infopanel-for-e3dfb7afdffd7aba958ae1b3a576d6e2">
-   <span id="infopaneltitle-for-e3dfb7afdffd7aba958ae1b3a576d6e2" style="display:none">Info about the 'ordinalquantityvalue' external reference.</span><a href="vim4.html#ordinalquantityvalue">vim4.html#ordinalquantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ordinalquantityvalue">3.8. QuantityValue</a>
-    <li><a href="#ref-for-ordinalquantityvalue①">4.5. IndividualOrdinalQuantity</a>
-    <li><a href="#ref-for-ordinalquantityvalue②">4.20. OrdinalScale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b30787b0df22bbfdcc2f22b9ab385e65" class="dfn-panel" data-for="b30787b0df22bbfdcc2f22b9ab385e65" id="infopanel-for-b30787b0df22bbfdcc2f22b9ab385e65">
-   <span id="infopaneltitle-for-b30787b0df22bbfdcc2f22b9ab385e65" style="display:none">Info about the 'ordinalscale' external reference.</span><a href="vim4.html#ordinalscale">vim4.html#ordinalscale</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ordinalscale">4.15. MeasurementScale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2aad11429c67844c25e1c4a23a10e6f3" class="dfn-panel" data-for="2aad11429c67844c25e1c4a23a10e6f3" id="infopanel-for-2aad11429c67844c25e1c4a23a10e6f3">
-   <span id="infopaneltitle-for-2aad11429c67844c25e1c4a23a10e6f3" style="display:none">Info about the 'per_1' external reference.</span><a href="vim4.html#per_1">vim4.html#per_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-per_1">4.14. MeasurementProcedure</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4070a55ea64e2ece0d0bd31594b71efb" class="dfn-panel" data-for="4070a55ea64e2ece0d0bd31594b71efb" id="infopanel-for-4070a55ea64e2ece0d0bd31594b71efb">
-   <span id="infopaneltitle-for-4070a55ea64e2ece0d0bd31594b71efb" style="display:none">Info about the 'prefixedmeasurementunit' external reference.</span><a href="vim4.html#prefixedmeasurementunit">vim4.html#prefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-prefixedmeasurementunit">4.17. MeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-27a3ba92d44da1346b36bc7829874a4b" class="dfn-panel" data-for="27a3ba92d44da1346b36bc7829874a4b" id="infopanel-for-27a3ba92d44da1346b36bc7829874a4b">
-   <span id="infopaneltitle-for-27a3ba92d44da1346b36bc7829874a4b" style="display:none">Info about the 'quantityvalue' external reference.</span><a href="vim4.html#quantityvalue">vim4.html#quantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-quantityvalue">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-quantityvalue①">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-quantityvalue②">4.12. MeasurementModel</a>
-    <li><a href="#ref-for-quantityvalue③">4.19. OrdinalQuantityValue</a>
-    <li><a href="#ref-for-quantityvalue④">4.25. UnitaryQuantityValue</a>
-    <li><a href="#ref-for-quantityvalue⑤">5.12. IsAttributedTo</a>
-    <li><a href="#ref-for-quantityvalue⑥">5.27. YieldsMeasuredValue</a>
-    <li><a href="#ref-for-quantityvalue⑦">6.8. isReferenceValue</a>
-    <li><a href="#ref-for-quantityvalue⑧">6.9. isTrueValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-89837f205e0d173fc3301f38dcc032de" class="dfn-panel" data-for="89837f205e0d173fc3301f38dcc032de" id="infopanel-for-89837f205e0d173fc3301f38dcc032de">
-   <span id="infopaneltitle-for-89837f205e0d173fc3301f38dcc032de" style="display:none">Info about the 'rationalexponent' external reference.</span><a href="vim4.html#rationalexponent">vim4.html#rationalexponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-rationalexponent">5.6. HasPowerOfUnitFactor</a>
-    <li><a href="#ref-for-rationalexponent①">5.7. HasPowerOfUnitaryQuantityFactor</a>
-    <li><a href="#ref-for-rationalexponent②">5.8. HasQuantityDimensionFactor</a>
-    <li><a href="#ref-for-rationalexponent③">6.2. exponent</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-33d49b87366763c099177becc97bcc79" class="dfn-panel" data-for="33d49b87366763c099177becc97bcc79" id="infopanel-for-33d49b87366763c099177becc97bcc79">
-   <span id="infopaneltitle-for-33d49b87366763c099177becc97bcc79" style="display:none">Info about the 'referenceset' external reference.</span><a href="vim4.html#referenceset">vim4.html#referenceset</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-referenceset">4.15. MeasurementScale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dafb4b98803dd1459a430e52a3467095" class="dfn-panel" data-for="dafb4b98803dd1459a430e52a3467095" id="infopanel-for-dafb4b98803dd1459a430e52a3467095">
-   <span id="infopaneltitle-for-dafb4b98803dd1459a430e52a3467095" style="display:none">Info about the 'specializes_1' external reference.</span><a href="vim4.html#specializes_1">vim4.html#specializes_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-specializes_1">4.3. GeneralUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-af409369fac8fb9f360afe052c6fc0b8" class="dfn-panel" data-for="af409369fac8fb9f360afe052c6fc0b8" id="infopanel-for-af409369fac8fb9f360afe052c6fc0b8">
-   <span id="infopaneltitle-for-af409369fac8fb9f360afe052c6fc0b8" style="display:none">Info about the 'systemhasbaseunit' external reference.</span><a href="vim4.html#systemhasbaseunit">vim4.html#systemhasbaseunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunit">5.23. SystemHasUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ce0ce801e0c0d6a390f9aa94a25690ca" class="dfn-panel" data-for="ce0ce801e0c0d6a390f9aa94a25690ca" id="infopanel-for-ce0ce801e0c0d6a390f9aa94a25690ca">
-   <span id="infopaneltitle-for-ce0ce801e0c0d6a390f9aa94a25690ca" style="display:none">Info about the 'systemhasbaseunit_1' external reference.</span><a href="vim4.html#systemhasbaseunit_1">vim4.html#systemhasbaseunit_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunit_1">4.24. SystemOfUnits</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ade16d49dbb6b69a10dd8988f8a46d1f" class="dfn-panel" data-for="ade16d49dbb6b69a10dd8988f8a46d1f" id="infopanel-for-ade16d49dbb6b69a10dd8988f8a46d1f">
-   <span id="infopaneltitle-for-ade16d49dbb6b69a10dd8988f8a46d1f" style="display:none">Info about the 'systemhasbaseunitaryquantity' external reference.</span><a href="vim4.html#systemhasbaseunitaryquantity">vim4.html#systemhasbaseunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity">5.8. HasQuantityDimensionFactor</a>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity①">5.24. SystemHasUnitaryQuantity</a> <a href="#ref-for-systemhasbaseunitaryquantity②">(2)</a>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity③">6.1. dimensionSymbol</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a265e35aa4cd1e961d1fe360a7db6caf" class="dfn-panel" data-for="a265e35aa4cd1e961d1fe360a7db6caf" id="infopanel-for-a265e35aa4cd1e961d1fe360a7db6caf">
-   <span id="infopaneltitle-for-a265e35aa4cd1e961d1fe360a7db6caf" style="display:none">Info about the 'systemhasbaseunitaryquantity_1' external reference.</span><a href="vim4.html#systemhasbaseunitaryquantity_1">vim4.html#systemhasbaseunitaryquantity_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity_1">4.23. SystemOfQuantities</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-df867c6ebaaeb0259534ef2a8f674af7" class="dfn-panel" data-for="df867c6ebaaeb0259534ef2a8f674af7" id="infopanel-for-df867c6ebaaeb0259534ef2a8f674af7">
-   <span id="infopaneltitle-for-df867c6ebaaeb0259534ef2a8f674af7" style="display:none">Info about the 'systemhasderivedunit' external reference.</span><a href="vim4.html#systemhasderivedunit">vim4.html#systemhasderivedunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunit">3.3. HasCoherence</a>
-    <li><a href="#ref-for-systemhasderivedunit①">5.6. HasPowerOfUnitFactor</a>
-    <li><a href="#ref-for-systemhasderivedunit②">5.23. SystemHasUnit</a>
-    <li><a href="#ref-for-systemhasderivedunit③">6.7. isOffSystemUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ea5e8360d708f8bbb1095d03adf0d2a2" class="dfn-panel" data-for="ea5e8360d708f8bbb1095d03adf0d2a2" id="infopanel-for-ea5e8360d708f8bbb1095d03adf0d2a2">
-   <span id="infopaneltitle-for-ea5e8360d708f8bbb1095d03adf0d2a2" style="display:none">Info about the 'systemhasderivedunit_1' external reference.</span><a href="vim4.html#systemhasderivedunit_1">vim4.html#systemhasderivedunit_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunit_1">4.24. SystemOfUnits</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-af9f757c71cea5fc4647d982a78e66da" class="dfn-panel" data-for="af9f757c71cea5fc4647d982a78e66da" id="infopanel-for-af9f757c71cea5fc4647d982a78e66da">
-   <span id="infopaneltitle-for-af9f757c71cea5fc4647d982a78e66da" style="display:none">Info about the 'systemhasderivedunitaryquantity' external reference.</span><a href="vim4.html#systemhasderivedunitaryquantity">vim4.html#systemhasderivedunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity">5.7. HasPowerOfUnitaryQuantityFactor</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①">5.24. SystemHasUnitaryQuantity</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②">6.6. isDimensionless</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e0911c15469e2601a0604d340d8c1703" class="dfn-panel" data-for="e0911c15469e2601a0604d340d8c1703" id="infopanel-for-e0911c15469e2601a0604d340d8c1703">
-   <span id="infopaneltitle-for-e0911c15469e2601a0604d340d8c1703" style="display:none">Info about the 'systemhasderivedunitaryquantity_1' external reference.</span><a href="vim4.html#systemhasderivedunitaryquantity_1">vim4.html#systemhasderivedunitaryquantity_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity_1">4.23. SystemOfQuantities</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4ee07d51d299ca92fceb241710e8e610" class="dfn-panel" data-for="4ee07d51d299ca92fceb241710e8e610" id="infopanel-for-4ee07d51d299ca92fceb241710e8e610">
-   <span id="infopaneltitle-for-4ee07d51d299ca92fceb241710e8e610" style="display:none">Info about the 'systemhasunit' external reference.</span><a href="vim4.html#systemhasunit">vim4.html#systemhasunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasunit">5.6. HasPowerOfUnitFactor</a>
-    <li><a href="#ref-for-systemhasunit①">5.19. SystemHasBaseUnit</a>
-    <li><a href="#ref-for-systemhasunit②">5.21. SystemHasDerivedUnit</a> <a href="#ref-for-systemhasunit③">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-835ac46d95580efa3767e7f4fe549fae" class="dfn-panel" data-for="835ac46d95580efa3767e7f4fe549fae" id="infopanel-for-835ac46d95580efa3767e7f4fe549fae">
-   <span id="infopaneltitle-for-835ac46d95580efa3767e7f4fe549fae" style="display:none">Info about the 'systemhasunit_1' external reference.</span><a href="vim4.html#systemhasunit_1">vim4.html#systemhasunit_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasunit_1">4.24. SystemOfUnits</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-be72605eb9dbebc8b93ea349ac0e170f" class="dfn-panel" data-for="be72605eb9dbebc8b93ea349ac0e170f" id="infopanel-for-be72605eb9dbebc8b93ea349ac0e170f">
-   <span id="infopaneltitle-for-be72605eb9dbebc8b93ea349ac0e170f" style="display:none">Info about the 'systemhasunitaryquantity' external reference.</span><a href="vim4.html#systemhasunitaryquantity">vim4.html#systemhasunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasunitaryquantity">5.7. HasPowerOfUnitaryQuantityFactor</a>
-    <li><a href="#ref-for-systemhasunitaryquantity①">5.8. HasQuantityDimensionFactor</a>
-    <li><a href="#ref-for-systemhasunitaryquantity②">5.20. SystemHasBaseUnitaryQuantity</a>
-    <li><a href="#ref-for-systemhasunitaryquantity③">5.22. SystemHasDerivedUnitaryQuantity</a> <a href="#ref-for-systemhasunitaryquantity④">(2)</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d7b036dd980842ac25f2561294edf6f3" class="dfn-panel" data-for="d7b036dd980842ac25f2561294edf6f3" id="infopanel-for-d7b036dd980842ac25f2561294edf6f3">
-   <span id="infopaneltitle-for-d7b036dd980842ac25f2561294edf6f3" style="display:none">Info about the 'systemhasunitaryquantity_1' external reference.</span><a href="vim4.html#systemhasunitaryquantity_1">vim4.html#systemhasunitaryquantity_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasunitaryquantity_1">4.23. SystemOfQuantities</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9ea844975205b9d2f964de1a412c92ac" class="dfn-panel" data-for="9ea844975205b9d2f964de1a412c92ac" id="infopanel-for-9ea844975205b9d2f964de1a412c92ac">
-   <span id="infopaneltitle-for-9ea844975205b9d2f964de1a412c92ac" style="display:none">Info about the 'systemofquantities' external reference.</span><a href="vim4.html#systemofquantities">vim4.html#systemofquantities</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemofquantities">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-systemofquantities①">4.24. SystemOfUnits</a>
-    <li><a href="#ref-for-systemofquantities②">5.3. Given</a>
-    <li><a href="#ref-for-systemofquantities③">5.20. SystemHasBaseUnitaryQuantity</a>
-    <li><a href="#ref-for-systemofquantities④">5.22. SystemHasDerivedUnitaryQuantity</a>
-    <li><a href="#ref-for-systemofquantities⑤">5.24. SystemHasUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e9f4c8797f73bbd65274cc79affa5068" class="dfn-panel" data-for="e9f4c8797f73bbd65274cc79affa5068" id="infopanel-for-e9f4c8797f73bbd65274cc79affa5068">
-   <span id="infopaneltitle-for-e9f4c8797f73bbd65274cc79affa5068" style="display:none">Info about the 'systemofunits' external reference.</span><a href="vim4.html#systemofunits">vim4.html#systemofunits</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemofunits">3.3. HasCoherence</a>
-    <li><a href="#ref-for-systemofunits①">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-systemofunits②">5.3. Given</a>
-    <li><a href="#ref-for-systemofunits③">5.19. SystemHasBaseUnit</a>
-    <li><a href="#ref-for-systemofunits④">5.21. SystemHasDerivedUnit</a>
-    <li><a href="#ref-for-systemofunits⑤">5.23. SystemHasUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5dd3f55e7b596d7833c28484122cc867" class="dfn-panel" data-for="5dd3f55e7b596d7833c28484122cc867" id="infopanel-for-5dd3f55e7b596d7833c28484122cc867">
-   <span id="infopaneltitle-for-5dd3f55e7b596d7833c28484122cc867" style="display:none">Info about the 'unit' external reference.</span><a href="vim4.html#unit">vim4.html#unit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unit">4.25. UnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-266fbec9f378edd60690754bd4db6400" class="dfn-panel" data-for="266fbec9f378edd60690754bd4db6400" id="infopanel-for-266fbec9f378edd60690754bd4db6400">
-   <span id="infopaneltitle-for-266fbec9f378edd60690754bd4db6400" style="display:none">Info about the 'unitaryquantityvalue' external reference.</span><a href="vim4.html#unitaryquantityvalue">vim4.html#unitaryquantityvalue</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitaryquantityvalue">3.8. QuantityValue</a>
-    <li><a href="#ref-for-unitaryquantityvalue①">4.6. IndividualUnitaryQuantity</a>
-    <li><a href="#ref-for-unitaryquantityvalue②">4.9. InherentUnitaryQuantityValue</a>
-    <li><a href="#ref-for-unitaryquantityvalue③">4.26. UnitaryScale</a>
-    <li><a href="#ref-for-unitaryquantityvalue④">5.9. HasUnit</a>
-    <li><a href="#ref-for-unitaryquantityvalue⑤">6.3. hasDoubleNumber</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-411d47988fc9f9d52910a8401a5a5cc4" class="dfn-panel" data-for="411d47988fc9f9d52910a8401a5a5cc4" id="infopanel-for-411d47988fc9f9d52910a8401a5a5cc4">
-   <span id="infopaneltitle-for-411d47988fc9f9d52910a8401a5a5cc4" style="display:none">Info about the 'unitaryscale' external reference.</span><a href="vim4.html#unitaryscale">vim4.html#unitaryscale</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unitaryscale">4.15. MeasurementScale</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2bef5a6daaf666582713977d5f0e95c0" class="dfn-panel" data-for="2bef5a6daaf666582713977d5f0e95c0" id="infopanel-for-2bef5a6daaf666582713977d5f0e95c0">
-   <span id="infopaneltitle-for-2bef5a6daaf666582713977d5f0e95c0" style="display:none">Info about the 'unprefixedmeasurementunit' external reference.</span><a href="vim4.html#unprefixedmeasurementunit">vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unprefixedmeasurementunit">4.17. MeasurementUnit</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6dcf88da37d1edd678977e5aa8b2c770" class="dfn-panel" data-for="6dcf88da37d1edd678977e5aa8b2c770" id="infopanel-for-6dcf88da37d1edd678977e5aa8b2c770">
-   <span id="infopaneltitle-for-6dcf88da37d1edd678977e5aa8b2c770" style="display:none">Info about the 'usescorrection_1' external reference.</span><a href="vim4.html#usescorrection_1">vim4.html#usescorrection_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-usescorrection_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-06e65b79bfb00667dd89a1e005f49c82" class="dfn-panel" data-for="06e65b79bfb00667dd89a1e005f49c82" id="infopanel-for-06e65b79bfb00667dd89a1e005f49c82">
-   <span id="infopaneltitle-for-06e65b79bfb00667dd89a1e005f49c82" style="display:none">Info about the 'usesoperationsof_1' external reference.</span><a href="vim4.html#usesoperationsof_1">vim4.html#usesoperationsof_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-usesoperationsof_1">4.14. MeasurementProcedure</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-40e68b69e71402a2b2b763da5095d8e9" class="dfn-panel" data-for="40e68b69e71402a2b2b763da5095d8e9" id="infopanel-for-40e68b69e71402a2b2b763da5095d8e9">
-   <span id="infopaneltitle-for-40e68b69e71402a2b2b763da5095d8e9" style="display:none">Info about the 'yieldsmeasuredvalue_1' external reference.</span><a href="vim4.html#yieldsmeasuredvalue_1">vim4.html#yieldsmeasuredvalue_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-yieldsmeasuredvalue_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6a6762d815d4b6a8dabd0c043ca3ca99" class="dfn-panel" data-for="6a6762d815d4b6a8dabd0c043ca3ca99" id="infopanel-for-6a6762d815d4b6a8dabd0c043ca3ca99">
-   <span id="infopaneltitle-for-6a6762d815d4b6a8dabd0c043ca3ca99" style="display:none">Info about the 'yieldsmeasurementuncertainty_1' external reference.</span><a href="vim4.html#yieldsmeasurementuncertainty_1">vim4.html#yieldsmeasurementuncertainty_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-yieldsmeasurementuncertainty_1">4.12. MeasurementModel</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6512c2e37abb4a806d3c94235e35a466" class="dfn-panel" data-for="6512c2e37abb4a806d3c94235e35a466" id="infopanel-for-6512c2e37abb4a806d3c94235e35a466">
-   <span id="infopaneltitle-for-6512c2e37abb4a806d3c94235e35a466" style="display:none">Info about the 'analyzedelement' external reference.</span><a href="../../imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement">../../imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-analyzedelement">3.8. QuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a9f77f98ef60fda06f6484d53270c764" class="dfn-panel" data-for="a9f77f98ef60fda06f6484d53270c764" id="infopanel-for-a9f77f98ef60fda06f6484d53270c764">
-   <span id="infopaneltitle-for-a9f77f98ef60fda06f6484d53270c764" style="display:none">Info about the 'characterization' external reference.</span><a href="../../imce.jpl.nasa.gov/foundation/analysis.html#characterization">../../imce.jpl.nasa.gov/foundation/analysis.html#characterization</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterization">4.4. IndividualNominalProperty</a>
-    <li><a href="#ref-for-characterization①">4.5. IndividualOrdinalQuantity</a>
-    <li><a href="#ref-for-characterization②">4.6. IndividualUnitaryQuantity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-43294d87645ceafd1c67caef19ff7d94" class="dfn-panel" data-for="43294d87645ceafd1c67caef19ff7d94" id="infopanel-for-43294d87645ceafd1c67caef19ff7d94">
-   <span id="infopaneltitle-for-43294d87645ceafd1c67caef19ff7d94" style="display:none">Info about the 'characterizedelement' external reference.</span><a href="../../imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement">../../imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizedelement">3.6. IndividualQuantity</a>
-    <li><a href="#ref-for-characterizedelement①">3.7. Object</a>
-    <li><a href="#ref-for-characterizedelement②">4.4. IndividualNominalProperty</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8c2df11324009e7f9005327927ffcc83" class="dfn-panel" data-for="8c2df11324009e7f9005327927ffcc83" id="infopanel-for-8c2df11324009e7f9005327927ffcc83">
-   <span id="infopaneltitle-for-8c2df11324009e7f9005327927ffcc83" style="display:none">Info about the 'characterizes' external reference.</span><a href="../../imce.jpl.nasa.gov/foundation/analysis.html#characterizes">../../imce.jpl.nasa.gov/foundation/analysis.html#characterizes</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-characterizes">5.1. Characterizes</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c4bfd1dacd92eb61e3aa34ac9c22a67b" class="dfn-panel" data-for="c4bfd1dacd92eb61e3aa34ac9c22a67b" id="infopanel-for-c4bfd1dacd92eb61e3aa34ac9c22a67b">
-   <span id="infopaneltitle-for-c4bfd1dacd92eb61e3aa34ac9c22a67b" style="display:none">Info about the 'massconstrainedelement' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstrainedelement">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstrainedelement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massconstrainedelement">3.7. Object</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-10181bbfcb0eb56c8ffce47ef23328a0" class="dfn-panel" data-for="10181bbfcb0eb56c8ffce47ef23328a0" id="infopanel-for-10181bbfcb0eb56c8ffce47ef23328a0">
-   <span id="infopaneltitle-for-10181bbfcb0eb56c8ffce47ef23328a0" style="display:none">Info about the 'massconstraint' external reference.</span><a href="../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint">../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massconstraint">4.9. InherentUnitaryQuantityValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7021b3979d304ea2ee41b20ddddfdcde" class="dfn-panel" data-for="7021b3979d304ea2ee41b20ddddfdcde" id="infopanel-for-7021b3979d304ea2ee41b20ddddfdcde">
-   <span id="infopaneltitle-for-7021b3979d304ea2ee41b20ddddfdcde" style="display:none">Info about the 'boolean' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#boolean">../../www.w3.org/2001/XMLSchema.html#boolean</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-boolean">3.3. HasCoherence</a>
-    <li><a href="#ref-for-boolean①">3.8. QuantityValue</a> <a href="#ref-for-boolean②">(2)</a>
-    <li><a href="#ref-for-boolean③">5.21. SystemHasDerivedUnit</a>
-    <li><a href="#ref-for-boolean④">5.22. SystemHasDerivedUnitaryQuantity</a>
-    <li><a href="#ref-for-boolean⑤">6.5. isCoherent</a>
-    <li><a href="#ref-for-boolean⑥">6.6. isDimensionless</a>
-    <li><a href="#ref-for-boolean⑦">6.7. isOffSystemUnit</a>
-    <li><a href="#ref-for-boolean⑧">6.8. isReferenceValue</a>
-    <li><a href="#ref-for-boolean⑨">6.9. isTrueValue</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4657e71cdbad5f9a7c85643521f0b69e" class="dfn-panel" data-for="4657e71cdbad5f9a7c85643521f0b69e" id="infopanel-for-4657e71cdbad5f9a7c85643521f0b69e">
-   <span id="infopaneltitle-for-4657e71cdbad5f9a7c85643521f0b69e" style="display:none">Info about the 'double' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#double">../../www.w3.org/2001/XMLSchema.html#double</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-double">4.25. UnitaryQuantityValue</a>
-    <li><a href="#ref-for-double①">6.3. hasDoubleNumber</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-457173a9797e6681978203b06b54a230" class="dfn-panel" data-for="457173a9797e6681978203b06b54a230" id="infopanel-for-457173a9797e6681978203b06b54a230">
-   <span id="infopaneltitle-for-457173a9797e6681978203b06b54a230" style="display:none">Info about the 'positiveinteger' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#positiveinteger">../../www.w3.org/2001/XMLSchema.html#positiveinteger</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-positiveinteger">5.10. Includes</a>
-    <li><a href="#ref-for-positiveinteger①">6.10. ordinalPosition</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" class="dfn-panel" data-for="b4ff35aa4e6e33fb0b8b711f7c7a5196" id="infopanel-for-b4ff35aa4e6e33fb0b8b711f7c7a5196">
-   <span id="infopaneltitle-for-b4ff35aa4e6e33fb0b8b711f7c7a5196" style="display:none">Info about the 'string' external reference.</span><a href="../../www.w3.org/2001/XMLSchema.html#string">../../www.w3.org/2001/XMLSchema.html#string</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-string">3.4. IdentifiedElement</a>
-    <li><a href="#ref-for-string①">5.20. SystemHasBaseUnitaryQuantity</a>
-    <li><a href="#ref-for-string②">6.1. dimensionSymbol</a>
-    <li><a href="#ref-for-string③">6.4. id</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-47661be71e9ef4339d63115c832525e0" class="dfn-panel" data-for="47661be71e9ef4339d63115c832525e0" id="infopanel-for-47661be71e9ef4339d63115c832525e0">
-   <span id="infopaneltitle-for-47661be71e9ef4339d63115c832525e0" style="display:none">Info about the 'rational' external reference.</span><a href="../../www.w3.org/2002/07/owl.html#rational">../../www.w3.org/2002/07/owl.html#rational</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-rational">3.9. RationalExponent</a>
-    <li><a href="#ref-for-rational①">6.2. exponent</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="2fd8e46a3c152bdad84621accb051832">characterizes_1</span>
-     <li><span class="dfn-paneled" id="16ec6e78f17319a04b66919f0cd36fe4">describes_1</span>
-     <li><span class="dfn-paneled" id="8053a6fdaa47e95366c4727d4146e289">dimensionsymbol</span>
-     <li><span class="dfn-paneled" id="148c617d27112e11771b3c85f01470f1">exponent</span>
-     <li><span class="dfn-paneled" id="62f2bc52ad84a38507659562830a3087">generalnominalproperty</span>
-     <li><span class="dfn-paneled" id="0999016f22fdf0510de9add8f32c7c0e">generalordinalquantity</span>
-     <li><span class="dfn-paneled" id="7b045413d96bf01aedaadc1b11731b2f">generalproperty</span>
-     <li><span class="dfn-paneled" id="3d81b9b51ce42bceba0a8ace208a50b4">generalquantity</span>
-     <li><span class="dfn-paneled" id="e47010a288fb26a766a8848595065102">generalunitaryquantity</span>
-     <li><span class="dfn-paneled" id="6c6b9bb31251ca8dcf8ea355cff6c48a">given_1</span>
-     <li><span class="dfn-paneled" id="b85c80ed91030d824f0e6b5ad22c4edc">hascoherence</span>
-     <li><span class="dfn-paneled" id="82229430b886fed6d0b4146966e662ae">hasdoublenumber</span>
-     <li><span class="dfn-paneled" id="6d6c3af3e61f35f0c07fe79048b8c5a5">hasinput_1</span>
-     <li><span class="dfn-paneled" id="a45b446dc9ae1dd7ff4eeaacdb860375">hasmultiple_1</span>
-     <li><span class="dfn-paneled" id="4f8769e28bca5a4ad06faa1e521421b6">haspowerofunitaryquantityfactor</span>
-     <li><span class="dfn-paneled" id="dbb7016bbfda9a91eb5dbefc9dd8b3ae">haspowerofunitaryquantityfactor_1</span>
-     <li><span class="dfn-paneled" id="0c3f3a6edd07ce9106c46fb81019b1a6">haspowerofunitfactor</span>
-     <li><span class="dfn-paneled" id="a3f460cfb90b2cb9b40521d25467d33f">haspowerofunitfactor_1</span>
-     <li><span class="dfn-paneled" id="cbf9f3bd27bee1256a391c69da391c4b">hasquantitydimensionfactor</span>
-     <li><span class="dfn-paneled" id="eb856a533d269788b903fdab217312ab">hasquantitydimensionfactor_1</span>
-     <li><span class="dfn-paneled" id="040f2740b9811d0af01b6db4e8c3987c">id</span>
-     <li><span class="dfn-paneled" id="66e08dc62b7355d07f3411d5aa37fea8">identifiedelement</span>
-     <li><span class="dfn-paneled" id="65e23fcb3e8b05fadf04c44c399d9b69">includes</span>
-     <li><span class="dfn-paneled" id="c7ae4002392d80b1eedce4efbf4faaf5">includes_1</span>
-     <li><span class="dfn-paneled" id="ccff232f89d565d8ce400ca15f97de18">individualnominalproperty</span>
-     <li><span class="dfn-paneled" id="fec8e532b1123e86c0562522c4bc1613">individualordinalquantity</span>
-     <li><span class="dfn-paneled" id="4c6a0b61f1cdd20953e8656667fcc8cf">individualproperty</span>
-     <li><span class="dfn-paneled" id="d4fb8fab0fd271be4579ae8b4171fb96">individualquantity</span>
-     <li><span class="dfn-paneled" id="d03914b30ff170f68b181c3ef049d558">individualunitaryquantity</span>
-     <li><span class="dfn-paneled" id="2915790b04f59236dec47b74a45b81b0">inherentordinalquantity</span>
-     <li><span class="dfn-paneled" id="de40a0b96a2c5875bcd704290fb996ff">inherentunitaryquantity</span>
-     <li><span class="dfn-paneled" id="03c72f663e6dcd1ea42039f4619b67d9">inherentunitaryquantityvalue</span>
-     <li><span class="dfn-paneled" id="af8297977d8ed6d6814d5447472a7273">instantiates_1</span>
-     <li><span class="dfn-paneled" id="7b0b67d3d15b3baf11c23fc3abb3c20e">isattributedto_1</span>
-     <li><span class="dfn-paneled" id="3ad191fb62512a1e4522b87035440761">isbasedon_1</span>
-     <li><span class="dfn-paneled" id="0bcf1cac5af3766d9cf8f325ad8c5aa5">iscoherent</span>
-     <li><span class="dfn-paneled" id="8e5e1ee44a595e633d61edd00e00fddd">isdimensionless</span>
-     <li><span class="dfn-paneled" id="c19c518d49fb8b3bb40644f149ab9f97">isinfluencedby_1</span>
-     <li><span class="dfn-paneled" id="cea3caecf7dc2121e2ec3b8b018badc7">ismultipleof_1</span>
-     <li><span class="dfn-paneled" id="6c22c3464f4f4173333d53cfe9f03af7">isoffsystemunit</span>
-     <li><span class="dfn-paneled" id="1b94455c1429f8d025166eaa9fed949d">isreferencevalue</span>
-     <li><span class="dfn-paneled" id="2d5c9efea3f7a7708daf9a296cb989ff">istruevalue</span>
-     <li><span class="dfn-paneled" id="339c9403f04b070b351cceba6d316e85">measurement</span>
-     <li><span class="dfn-paneled" id="c254f9664675c177a8ed0f96dbf9667d">measurementmethod</span>
-     <li><span class="dfn-paneled" id="d89e08e010016c3e2e22eedcd51a5fbd">measurementmodel</span>
-     <li><span class="dfn-paneled" id="35b3b1bf63ee3ce52043ef9cb53d70b9">measurementprinciple</span>
-     <li><span class="dfn-paneled" id="20e026f2804c6b3fb767e642ad3c548e">measurementprocedure</span>
-     <li><span class="dfn-paneled" id="336f54206534357ad16e9ffa117417c6">measurementscale</span>
-     <li><span class="dfn-paneled" id="ce8c1b3380a2d2437486ed2eb8656df6">measurementuncertainty</span>
-     <li><span class="dfn-paneled" id="7d1ad24abc39581f8438fbadbfabb5f2">measurementunit</span>
-     <li><span class="dfn-paneled" id="3ccb76d5cba49008316c209a434982dd">measures_1</span>
-     <li><span class="dfn-paneled" id="992ac86e0a44db903df386be74c20987">multiple</span>
-     <li><span class="dfn-paneled" id="d04f81fe1cdb9338db9ade3508dc77e4">object</span>
-     <li><span class="dfn-paneled" id="b8298741c970bac369acbca5e859e620">ordinalposition</span>
-     <li><span class="dfn-paneled" id="e3dfb7afdffd7aba958ae1b3a576d6e2">ordinalquantityvalue</span>
-     <li><span class="dfn-paneled" id="b30787b0df22bbfdcc2f22b9ab385e65">ordinalscale</span>
-     <li><span class="dfn-paneled" id="2aad11429c67844c25e1c4a23a10e6f3">per_1</span>
-     <li><span class="dfn-paneled" id="4070a55ea64e2ece0d0bd31594b71efb">prefixedmeasurementunit</span>
-     <li><span class="dfn-paneled" id="27a3ba92d44da1346b36bc7829874a4b">quantityvalue</span>
-     <li><span class="dfn-paneled" id="89837f205e0d173fc3301f38dcc032de">rationalexponent</span>
-     <li><span class="dfn-paneled" id="33d49b87366763c099177becc97bcc79">referenceset</span>
-     <li><span class="dfn-paneled" id="dafb4b98803dd1459a430e52a3467095">specializes_1</span>
-     <li><span class="dfn-paneled" id="af409369fac8fb9f360afe052c6fc0b8">systemhasbaseunit</span>
-     <li><span class="dfn-paneled" id="ce0ce801e0c0d6a390f9aa94a25690ca">systemhasbaseunit_1</span>
-     <li><span class="dfn-paneled" id="ade16d49dbb6b69a10dd8988f8a46d1f">systemhasbaseunitaryquantity</span>
-     <li><span class="dfn-paneled" id="a265e35aa4cd1e961d1fe360a7db6caf">systemhasbaseunitaryquantity_1</span>
-     <li><span class="dfn-paneled" id="df867c6ebaaeb0259534ef2a8f674af7">systemhasderivedunit</span>
-     <li><span class="dfn-paneled" id="ea5e8360d708f8bbb1095d03adf0d2a2">systemhasderivedunit_1</span>
-     <li><span class="dfn-paneled" id="af9f757c71cea5fc4647d982a78e66da">systemhasderivedunitaryquantity</span>
-     <li><span class="dfn-paneled" id="e0911c15469e2601a0604d340d8c1703">systemhasderivedunitaryquantity_1</span>
-     <li><span class="dfn-paneled" id="4ee07d51d299ca92fceb241710e8e610">systemhasunit</span>
-     <li><span class="dfn-paneled" id="835ac46d95580efa3767e7f4fe549fae">systemhasunit_1</span>
-     <li><span class="dfn-paneled" id="be72605eb9dbebc8b93ea349ac0e170f">systemhasunitaryquantity</span>
-     <li><span class="dfn-paneled" id="d7b036dd980842ac25f2561294edf6f3">systemhasunitaryquantity_1</span>
-     <li><span class="dfn-paneled" id="9ea844975205b9d2f964de1a412c92ac">systemofquantities</span>
-     <li><span class="dfn-paneled" id="e9f4c8797f73bbd65274cc79affa5068">systemofunits</span>
-     <li><span class="dfn-paneled" id="5dd3f55e7b596d7833c28484122cc867">unit</span>
-     <li><span class="dfn-paneled" id="266fbec9f378edd60690754bd4db6400">unitaryquantityvalue</span>
-     <li><span class="dfn-paneled" id="411d47988fc9f9d52910a8401a5a5cc4">unitaryscale</span>
-     <li><span class="dfn-paneled" id="2bef5a6daaf666582713977d5f0e95c0">unprefixedmeasurementunit</span>
-     <li><span class="dfn-paneled" id="6dcf88da37d1edd678977e5aa8b2c770">usescorrection_1</span>
-     <li><span class="dfn-paneled" id="06e65b79bfb00667dd89a1e005f49c82">usesoperationsof_1</span>
-     <li><span class="dfn-paneled" id="40e68b69e71402a2b2b763da5095d8e9">yieldsmeasuredvalue_1</span>
-     <li><span class="dfn-paneled" id="6a6762d815d4b6a8dabd0c043ca3ca99">yieldsmeasurementuncertainty_1</span>
+     <li><span class="dfn-paneled" id="b41e8dc6">characterizes_1</span>
+     <li><span class="dfn-paneled" id="4816afed">describes_1</span>
+     <li><span class="dfn-paneled" id="18452de8">dimensionsymbol</span>
+     <li><span class="dfn-paneled" id="dfa6dba7">exponent</span>
+     <li><span class="dfn-paneled" id="6491bec8">generalnominalproperty</span>
+     <li><span class="dfn-paneled" id="f11b8f4e">generalordinalquantity</span>
+     <li><span class="dfn-paneled" id="7260563c">generalproperty</span>
+     <li><span class="dfn-paneled" id="ab79f6d2">generalquantity</span>
+     <li><span class="dfn-paneled" id="501626ba">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="47c2ca8f">given_1</span>
+     <li><span class="dfn-paneled" id="28e52092">hascoherence</span>
+     <li><span class="dfn-paneled" id="038d19bb">hasdoublenumber</span>
+     <li><span class="dfn-paneled" id="4949722e">hasinput_1</span>
+     <li><span class="dfn-paneled" id="35bc23ea">hasmultiple_1</span>
+     <li><span class="dfn-paneled" id="5662aef3">haspowerofunitaryquantityfactor</span>
+     <li><span class="dfn-paneled" id="cb982eb0">haspowerofunitaryquantityfactor_1</span>
+     <li><span class="dfn-paneled" id="12df69f8">haspowerofunitfactor</span>
+     <li><span class="dfn-paneled" id="67a74d7a">haspowerofunitfactor_1</span>
+     <li><span class="dfn-paneled" id="dc828729">hasquantitydimensionfactor</span>
+     <li><span class="dfn-paneled" id="428ae623">hasquantitydimensionfactor_1</span>
+     <li><span class="dfn-paneled" id="04867387">id</span>
+     <li><span class="dfn-paneled" id="0915725d">identifiedelement</span>
+     <li><span class="dfn-paneled" id="5a4e1722">includes</span>
+     <li><span class="dfn-paneled" id="b3f6c03b">includes_1</span>
+     <li><span class="dfn-paneled" id="54dc3f13">individualnominalproperty</span>
+     <li><span class="dfn-paneled" id="dbab633d">individualordinalquantity</span>
+     <li><span class="dfn-paneled" id="1b8ecc28">individualproperty</span>
+     <li><span class="dfn-paneled" id="ea1248b0">individualquantity</span>
+     <li><span class="dfn-paneled" id="562ff7df">individualunitaryquantity</span>
+     <li><span class="dfn-paneled" id="1ca84b0b">inherentordinalquantity</span>
+     <li><span class="dfn-paneled" id="413d6237">inherentunitaryquantity</span>
+     <li><span class="dfn-paneled" id="cf887593">inherentunitaryquantityvalue</span>
+     <li><span class="dfn-paneled" id="4339b5dc">instantiates_1</span>
+     <li><span class="dfn-paneled" id="0391bf42">isattributedto_1</span>
+     <li><span class="dfn-paneled" id="4f28b07e">isbasedon_1</span>
+     <li><span class="dfn-paneled" id="b45a4128">iscoherent</span>
+     <li><span class="dfn-paneled" id="41897fa8">isdimensionless</span>
+     <li><span class="dfn-paneled" id="d90f5ae8">isinfluencedby_1</span>
+     <li><span class="dfn-paneled" id="80cb8798">ismultipleof_1</span>
+     <li><span class="dfn-paneled" id="4b7fc03a">isoffsystemunit</span>
+     <li><span class="dfn-paneled" id="36a83bdb">isreferencevalue</span>
+     <li><span class="dfn-paneled" id="778d14f5">istruevalue</span>
+     <li><span class="dfn-paneled" id="3f5ae951">measurement</span>
+     <li><span class="dfn-paneled" id="11763efe">measurementmethod</span>
+     <li><span class="dfn-paneled" id="9ec28dec">measurementmodel</span>
+     <li><span class="dfn-paneled" id="2f302ccf">measurementprinciple</span>
+     <li><span class="dfn-paneled" id="022b5173">measurementprocedure</span>
+     <li><span class="dfn-paneled" id="fbe32737">measurementscale</span>
+     <li><span class="dfn-paneled" id="d2384830">measurementuncertainty</span>
+     <li><span class="dfn-paneled" id="01fcf406">measurementunit</span>
+     <li><span class="dfn-paneled" id="66bed051">measures_1</span>
+     <li><span class="dfn-paneled" id="2eebfe5e">multiple</span>
+     <li><span class="dfn-paneled" id="a915b265">object</span>
+     <li><span class="dfn-paneled" id="0275c00c">ordinalposition</span>
+     <li><span class="dfn-paneled" id="65dd70b8">ordinalquantityvalue</span>
+     <li><span class="dfn-paneled" id="93abe734">ordinalscale</span>
+     <li><span class="dfn-paneled" id="01d85ba8">per_1</span>
+     <li><span class="dfn-paneled" id="4607c01f">prefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="8e07200d">quantityvalue</span>
+     <li><span class="dfn-paneled" id="904c9d46">rationalexponent</span>
+     <li><span class="dfn-paneled" id="4de3095c">referenceset</span>
+     <li><span class="dfn-paneled" id="52d1b7ee">specializes_1</span>
+     <li><span class="dfn-paneled" id="904dc0d2">systemhasbaseunit</span>
+     <li><span class="dfn-paneled" id="9b8818df">systemhasbaseunit_1</span>
+     <li><span class="dfn-paneled" id="70940125">systemhasbaseunitaryquantity</span>
+     <li><span class="dfn-paneled" id="6d7b62f5">systemhasbaseunitaryquantity_1</span>
+     <li><span class="dfn-paneled" id="ffef2046">systemhasderivedunit</span>
+     <li><span class="dfn-paneled" id="2b5433a2">systemhasderivedunit_1</span>
+     <li><span class="dfn-paneled" id="b89082c9">systemhasderivedunitaryquantity</span>
+     <li><span class="dfn-paneled" id="a67603a7">systemhasderivedunitaryquantity_1</span>
+     <li><span class="dfn-paneled" id="301ea021">systemhasunit</span>
+     <li><span class="dfn-paneled" id="1640f822">systemhasunit_1</span>
+     <li><span class="dfn-paneled" id="9cc9e3b0">systemhasunitaryquantity</span>
+     <li><span class="dfn-paneled" id="afd2d25c">systemhasunitaryquantity_1</span>
+     <li><span class="dfn-paneled" id="f74209f7">systemofquantities</span>
+     <li><span class="dfn-paneled" id="8c5138e0">systemofunits</span>
+     <li><span class="dfn-paneled" id="2937f483">unit</span>
+     <li><span class="dfn-paneled" id="729c4b4e">unitaryquantityvalue</span>
+     <li><span class="dfn-paneled" id="d3e38882">unitaryscale</span>
+     <li><span class="dfn-paneled" id="b78f56cb">unprefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="30f7aa3b">usescorrection_1</span>
+     <li><span class="dfn-paneled" id="409c5fc0">usesoperationsof_1</span>
+     <li><span class="dfn-paneled" id="c7d2ddb1">yieldsmeasuredvalue_1</span>
+     <li><span class="dfn-paneled" id="9a6499c3">yieldsmeasurementuncertainty_1</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://IMCE.JPL.NASA.GOV/FOUNDATION/ANALYSIS]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="6512c2e37abb4a806d3c94235e35a466">analyzedelement</span>
-     <li><span class="dfn-paneled" id="a9f77f98ef60fda06f6484d53270c764">characterization</span>
-     <li><span class="dfn-paneled" id="43294d87645ceafd1c67caef19ff7d94">characterizedelement</span>
-     <li><span class="dfn-paneled" id="8c2df11324009e7f9005327927ffcc83">characterizes</span>
+     <li><span class="dfn-paneled" id="96274d58">analyzedelement</span>
+     <li><span class="dfn-paneled" id="e50d9694">characterization</span>
+     <li><span class="dfn-paneled" id="e6572b00">characterizedelement</span>
+     <li><span class="dfn-paneled" id="7fb9072a">characterizes</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://OPENCAESAR.IO/EXAMPLES/FIRESAT/DISCIPLINES/FSE/FSE]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="c4bfd1dacd92eb61e3aa34ac9c22a67b">massconstrainedelement</span>
-     <li><span class="dfn-paneled" id="10181bbfcb0eb56c8ffce47ef23328a0">massconstraint</span>
+     <li><span class="dfn-paneled" id="480ad650">massconstrainedelement</span>
+     <li><span class="dfn-paneled" id="014c8de3">massconstraint</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://WWW.W3.ORG/2001/XMLSCHEMA]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="7021b3979d304ea2ee41b20ddddfdcde">boolean</span>
-     <li><span class="dfn-paneled" id="4657e71cdbad5f9a7c85643521f0b69e">double</span>
-     <li><span class="dfn-paneled" id="457173a9797e6681978203b06b54a230">positiveinteger</span>
-     <li><span class="dfn-paneled" id="b4ff35aa4e6e33fb0b8b711f7c7a5196">string</span>
+     <li><span class="dfn-paneled" id="a26aa0ef">boolean</span>
+     <li><span class="dfn-paneled" id="4a464789">double</span>
+     <li><span class="dfn-paneled" id="a3c16d2f">positiveinteger</span>
+     <li><span class="dfn-paneled" id="d5b2cf61">string</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://WWW.W3.ORG/2002/07/OWL]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="47661be71e9ef4339d63115c832525e0">rational</span>
+     <li><span class="dfn-paneled" id="903efbec">rational</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -4708,49 +4020,338 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['b41e8dc6'] = {"dfnID": "b41e8dc6", "url": "vim4.html#characterizes_1", "dfnText": "characterizes_1", "refSections": [{"refs": [{"id": "ref-for-characterizes_1"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-characterizes_1\u2460"}], "title": "4.7. InherentOrdinalQuantity"}, {"refs": [{"id": "ref-for-characterizes_1\u2461"}], "title": "4.8. InherentUnitaryQuantity"}, {"refs": [{"id": "ref-for-characterizes_1\u2462"}], "title": "4.17. MeasurementUnit"}], "external": true};
+window.dfnpanelData['4816afed'] = {"dfnID": "4816afed", "url": "vim4.html#describes_1", "dfnText": "describes_1", "refSections": [{"refs": [{"id": "ref-for-describes_1"}], "title": "4.14. MeasurementProcedure"}], "external": true};
+window.dfnpanelData['18452de8'] = {"dfnID": "18452de8", "url": "vim4.html#dimensionsymbol", "dfnText": "dimensionsymbol", "refSections": [{"refs": [{"id": "ref-for-dimensionsymbol"}], "title": "5.20. SystemHasBaseUnitaryQuantity"}], "external": true};
+window.dfnpanelData['dfa6dba7'] = {"dfnID": "dfa6dba7", "url": "vim4.html#exponent", "dfnText": "exponent", "refSections": [{"refs": [{"id": "ref-for-exponent"}], "title": "3.9. RationalExponent"}], "external": true};
+window.dfnpanelData['6491bec8'] = {"dfnID": "6491bec8", "url": "vim4.html#generalnominalproperty", "dfnText": "generalnominalproperty", "refSections": [{"refs": [{"id": "ref-for-generalnominalproperty"}], "title": "3.1. GeneralProperty"}, {"refs": [{"id": "ref-for-generalnominalproperty\u2460"}], "title": "4.4. IndividualNominalProperty"}], "external": true};
+window.dfnpanelData['f11b8f4e'] = {"dfnID": "f11b8f4e", "url": "vim4.html#generalordinalquantity", "dfnText": "generalordinalquantity", "refSections": [{"refs": [{"id": "ref-for-generalordinalquantity"}], "title": "3.2. GeneralQuantity"}, {"refs": [{"id": "ref-for-generalordinalquantity\u2460"}], "title": "4.5. IndividualOrdinalQuantity"}], "external": true};
+window.dfnpanelData['7260563c'] = {"dfnID": "7260563c", "url": "vim4.html#generalproperty", "dfnText": "generalproperty", "refSections": [{"refs": [{"id": "ref-for-generalproperty"}], "title": "3.2. GeneralQuantity"}, {"refs": [{"id": "ref-for-generalproperty\u2460"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-generalproperty\u2461"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-generalproperty\u2462"}], "title": "4.1. GeneralNominalProperty"}, {"refs": [{"id": "ref-for-generalproperty\u2463"}], "title": "5.11. Instantiates"}], "external": true};
+window.dfnpanelData['ab79f6d2'] = {"dfnID": "ab79f6d2", "url": "vim4.html#generalquantity", "dfnText": "generalquantity", "refSections": [{"refs": [{"id": "ref-for-generalquantity"}], "title": "3.1. GeneralProperty"}, {"refs": [{"id": "ref-for-generalquantity\u2460"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-generalquantity\u2461"}], "title": "4.2. GeneralOrdinalQuantity"}, {"refs": [{"id": "ref-for-generalquantity\u2462"}], "title": "4.3. GeneralUnitaryQuantity"}], "external": true};
+window.dfnpanelData['501626ba'] = {"dfnID": "501626ba", "url": "vim4.html#generalunitaryquantity", "dfnText": "generalunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-generalunitaryquantity"}], "title": "3.2. GeneralQuantity"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460"}], "title": "4.3. GeneralUnitaryQuantity"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2461"}], "title": "4.6. IndividualUnitaryQuantity"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2462"}, {"id": "ref-for-generalunitaryquantity\u2463"}, {"id": "ref-for-generalunitaryquantity\u2464"}], "title": "4.23. SystemOfQuantities"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2465"}, {"id": "ref-for-generalunitaryquantity\u2466"}], "title": "5.18. Specializes"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2467"}], "title": "5.20. SystemHasBaseUnitaryQuantity"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2468"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460\u24ea"}], "title": "5.24. SystemHasUnitaryQuantity"}], "external": true};
+window.dfnpanelData['47c2ca8f'] = {"dfnID": "47c2ca8f", "url": "vim4.html#given_1", "dfnText": "given_1", "refSections": [{"refs": [{"id": "ref-for-given_1"}], "title": "4.24. SystemOfUnits"}], "external": true};
+window.dfnpanelData['28e52092'] = {"dfnID": "28e52092", "url": "vim4.html#hascoherence", "dfnText": "hascoherence", "refSections": [{"refs": [{"id": "ref-for-hascoherence"}], "title": "4.24. SystemOfUnits"}, {"refs": [{"id": "ref-for-hascoherence\u2460"}], "title": "5.21. SystemHasDerivedUnit"}, {"refs": [{"id": "ref-for-hascoherence\u2461"}], "title": "6.5. isCoherent"}], "external": true};
+window.dfnpanelData['038d19bb'] = {"dfnID": "038d19bb", "url": "vim4.html#hasdoublenumber", "dfnText": "hasdoublenumber", "refSections": [{"refs": [{"id": "ref-for-hasdoublenumber"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['4949722e'] = {"dfnID": "4949722e", "url": "vim4.html#hasinput_1", "dfnText": "hasinput_1", "refSections": [{"refs": [{"id": "ref-for-hasinput_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['35bc23ea'] = {"dfnID": "35bc23ea", "url": "vim4.html#hasmultiple_1", "dfnText": "hasmultiple_1", "refSections": [{"refs": [{"id": "ref-for-hasmultiple_1"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-hasmultiple_1\u2460"}], "title": "4.21. PrefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-hasmultiple_1\u2461"}], "title": "4.27. UnprefixedMeasurementUnit"}], "external": true};
+window.dfnpanelData['5662aef3'] = {"dfnID": "5662aef3", "url": "vim4.html#haspowerofunitaryquantityfactor", "dfnText": "haspowerofunitaryquantityfactor", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor"}], "title": "3.9. RationalExponent"}], "external": true};
+window.dfnpanelData['cb982eb0'] = {"dfnID": "cb982eb0", "url": "vim4.html#haspowerofunitaryquantityfactor_1", "dfnText": "haspowerofunitaryquantityfactor_1", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor_1"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}], "external": true};
+window.dfnpanelData['12df69f8'] = {"dfnID": "12df69f8", "url": "vim4.html#haspowerofunitfactor", "dfnText": "haspowerofunitfactor", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitfactor"}], "title": "3.9. RationalExponent"}], "external": true};
+window.dfnpanelData['67a74d7a'] = {"dfnID": "67a74d7a", "url": "vim4.html#haspowerofunitfactor_1", "dfnText": "haspowerofunitfactor_1", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitfactor_1"}], "title": "5.21. SystemHasDerivedUnit"}], "external": true};
+window.dfnpanelData['dc828729'] = {"dfnID": "dc828729", "url": "vim4.html#hasquantitydimensionfactor", "dfnText": "hasquantitydimensionfactor", "refSections": [{"refs": [{"id": "ref-for-hasquantitydimensionfactor"}], "title": "3.9. RationalExponent"}], "external": true};
+window.dfnpanelData['428ae623'] = {"dfnID": "428ae623", "url": "vim4.html#hasquantitydimensionfactor_1", "dfnText": "hasquantitydimensionfactor_1", "refSections": [{"refs": [{"id": "ref-for-hasquantitydimensionfactor_1"}], "title": "5.24. SystemHasUnitaryQuantity"}], "external": true};
+window.dfnpanelData['04867387'] = {"dfnID": "04867387", "url": "vim4.html#id", "dfnText": "id", "refSections": [{"refs": [{"id": "ref-for-id"}, {"id": "ref-for-id\u2460"}], "title": "3.4. IdentifiedElement"}], "external": true};
+window.dfnpanelData['0915725d'] = {"dfnID": "0915725d", "url": "vim4.html#identifiedelement", "dfnText": "identifiedelement", "refSections": [{"refs": [{"id": "ref-for-identifiedelement"}], "title": "3.1. GeneralProperty"}, {"refs": [{"id": "ref-for-identifiedelement\u2460"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-identifiedelement\u2461"}], "title": "4.10. Measurement"}, {"refs": [{"id": "ref-for-identifiedelement\u2462"}], "title": "4.11. MeasurementMethod"}, {"refs": [{"id": "ref-for-identifiedelement\u2463"}], "title": "4.12. MeasurementModel"}, {"refs": [{"id": "ref-for-identifiedelement\u2464"}], "title": "4.13. MeasurementPrinciple"}, {"refs": [{"id": "ref-for-identifiedelement\u2465"}], "title": "4.14. MeasurementProcedure"}, {"refs": [{"id": "ref-for-identifiedelement\u2466"}], "title": "4.15. MeasurementScale"}, {"refs": [{"id": "ref-for-identifiedelement\u2467"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-identifiedelement\u2468"}], "title": "4.18. Multiple"}, {"refs": [{"id": "ref-for-identifiedelement\u2460\u24ea"}], "title": "4.23. SystemOfQuantities"}, {"refs": [{"id": "ref-for-identifiedelement\u2460\u2460"}], "title": "4.24. SystemOfUnits"}, {"refs": [{"id": "ref-for-identifiedelement\u2460\u2461"}], "title": "6.4. id"}], "external": true};
+window.dfnpanelData['5a4e1722'] = {"dfnID": "5a4e1722", "url": "vim4.html#includes", "dfnText": "includes", "refSections": [{"refs": [{"id": "ref-for-includes"}], "title": "6.10. ordinalPosition"}], "external": true};
+window.dfnpanelData['b3f6c03b'] = {"dfnID": "b3f6c03b", "url": "vim4.html#includes_1", "dfnText": "includes_1", "refSections": [{"refs": [{"id": "ref-for-includes_1"}], "title": "4.15. MeasurementScale"}, {"refs": [{"id": "ref-for-includes_1\u2460"}], "title": "4.20. OrdinalScale"}, {"refs": [{"id": "ref-for-includes_1\u2461"}], "title": "4.22. ReferenceSet"}, {"refs": [{"id": "ref-for-includes_1\u2462"}], "title": "4.26. UnitaryScale"}], "external": true};
+window.dfnpanelData['54dc3f13'] = {"dfnID": "54dc3f13", "url": "vim4.html#individualnominalproperty", "dfnText": "individualnominalproperty", "refSections": [{"refs": [{"id": "ref-for-individualnominalproperty"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-individualnominalproperty\u2460"}], "title": "4.22. ReferenceSet"}], "external": true};
+window.dfnpanelData['dbab633d'] = {"dfnID": "dbab633d", "url": "vim4.html#individualordinalquantity", "dfnText": "individualordinalquantity", "refSections": [{"refs": [{"id": "ref-for-individualordinalquantity"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-individualordinalquantity\u2460"}], "title": "4.7. InherentOrdinalQuantity"}, {"refs": [{"id": "ref-for-individualordinalquantity\u2461"}], "title": "4.19. OrdinalQuantityValue"}], "external": true};
+window.dfnpanelData['1b8ecc28'] = {"dfnID": "1b8ecc28", "url": "vim4.html#individualproperty", "dfnText": "individualproperty", "refSections": [{"refs": [{"id": "ref-for-individualproperty"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-individualproperty\u2460"}], "title": "4.4. IndividualNominalProperty"}, {"refs": [{"id": "ref-for-individualproperty\u2461"}], "title": "4.15. MeasurementScale"}, {"refs": [{"id": "ref-for-individualproperty\u2462"}], "title": "5.1. Characterizes"}, {"refs": [{"id": "ref-for-individualproperty\u2463"}], "title": "5.10. Includes"}, {"refs": [{"id": "ref-for-individualproperty\u2464"}], "title": "5.11. Instantiates"}], "external": true};
+window.dfnpanelData['ea1248b0'] = {"dfnID": "ea1248b0", "url": "vim4.html#individualquantity", "dfnText": "individualquantity", "refSections": [{"refs": [{"id": "ref-for-individualquantity"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-individualquantity\u2460"}, {"id": "ref-for-individualquantity\u2461"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-individualquantity\u2462"}], "title": "4.5. IndividualOrdinalQuantity"}, {"refs": [{"id": "ref-for-individualquantity\u2463"}], "title": "4.6. IndividualUnitaryQuantity"}, {"refs": [{"id": "ref-for-individualquantity\u2464"}, {"id": "ref-for-individualquantity\u2465"}, {"id": "ref-for-individualquantity\u2466"}, {"id": "ref-for-individualquantity\u2467"}], "title": "4.12. MeasurementModel"}, {"refs": [{"id": "ref-for-individualquantity\u2468"}], "title": "5.4. HasInput"}, {"refs": [{"id": "ref-for-individualquantity\u2460\u24ea"}], "title": "5.12. IsAttributedTo"}, {"refs": [{"id": "ref-for-individualquantity\u2460\u2460"}], "title": "5.14. IsInfluencedBy"}, {"refs": [{"id": "ref-for-individualquantity\u2460\u2461"}], "title": "5.16. Measures"}, {"refs": [{"id": "ref-for-individualquantity\u2460\u2462"}], "title": "5.25. UsesCorrection"}], "external": true};
+window.dfnpanelData['562ff7df'] = {"dfnID": "562ff7df", "url": "vim4.html#individualunitaryquantity", "dfnText": "individualunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-individualunitaryquantity"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-individualunitaryquantity\u2460"}], "title": "4.8. InherentUnitaryQuantity"}, {"refs": [{"id": "ref-for-individualunitaryquantity\u2461"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-individualunitaryquantity\u2462"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['1ca84b0b'] = {"dfnID": "1ca84b0b", "url": "vim4.html#inherentordinalquantity", "dfnText": "inherentordinalquantity", "refSections": [{"refs": [{"id": "ref-for-inherentordinalquantity"}], "title": "4.5. IndividualOrdinalQuantity"}, {"refs": [{"id": "ref-for-inherentordinalquantity\u2460"}], "title": "4.19. OrdinalQuantityValue"}], "external": true};
+window.dfnpanelData['413d6237'] = {"dfnID": "413d6237", "url": "vim4.html#inherentunitaryquantity", "dfnText": "inherentunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-inherentunitaryquantity"}], "title": "4.6. IndividualUnitaryQuantity"}, {"refs": [{"id": "ref-for-inherentunitaryquantity\u2460"}], "title": "4.9. InherentUnitaryQuantityValue"}, {"refs": [{"id": "ref-for-inherentunitaryquantity\u2461"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['cf887593'] = {"dfnID": "cf887593", "url": "vim4.html#inherentunitaryquantityvalue", "dfnText": "inherentunitaryquantityvalue", "refSections": [{"refs": [{"id": "ref-for-inherentunitaryquantityvalue"}], "title": "4.8. InherentUnitaryQuantity"}, {"refs": [{"id": "ref-for-inherentunitaryquantityvalue\u2460"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['4339b5dc'] = {"dfnID": "4339b5dc", "url": "vim4.html#instantiates_1", "dfnText": "instantiates_1", "refSections": [{"refs": [{"id": "ref-for-instantiates_1"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-instantiates_1\u2460"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-instantiates_1\u2461"}], "title": "4.4. IndividualNominalProperty"}, {"refs": [{"id": "ref-for-instantiates_1\u2462"}], "title": "4.5. IndividualOrdinalQuantity"}, {"refs": [{"id": "ref-for-instantiates_1\u2463"}], "title": "4.6. IndividualUnitaryQuantity"}], "external": true};
+window.dfnpanelData['0391bf42'] = {"dfnID": "0391bf42", "url": "vim4.html#isattributedto_1", "dfnText": "isattributedto_1", "refSections": [{"refs": [{"id": "ref-for-isattributedto_1"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-isattributedto_1\u2460"}], "title": "4.19. OrdinalQuantityValue"}, {"refs": [{"id": "ref-for-isattributedto_1\u2461"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['4f28b07e'] = {"dfnID": "4f28b07e", "url": "vim4.html#isbasedon_1", "dfnText": "isbasedon_1", "refSections": [{"refs": [{"id": "ref-for-isbasedon_1"}], "title": "4.14. MeasurementProcedure"}], "external": true};
+window.dfnpanelData['b45a4128'] = {"dfnID": "b45a4128", "url": "vim4.html#iscoherent", "dfnText": "iscoherent", "refSections": [{"refs": [{"id": "ref-for-iscoherent"}], "title": "3.3. HasCoherence"}], "external": true};
+window.dfnpanelData['41897fa8'] = {"dfnID": "41897fa8", "url": "vim4.html#isdimensionless", "dfnText": "isdimensionless", "refSections": [{"refs": [{"id": "ref-for-isdimensionless"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}], "external": true};
+window.dfnpanelData['d90f5ae8'] = {"dfnID": "d90f5ae8", "url": "vim4.html#isinfluencedby_1", "dfnText": "isinfluencedby_1", "refSections": [{"refs": [{"id": "ref-for-isinfluencedby_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['80cb8798'] = {"dfnID": "80cb8798", "url": "vim4.html#ismultipleof_1", "dfnText": "ismultipleof_1", "refSections": [{"refs": [{"id": "ref-for-ismultipleof_1"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-ismultipleof_1\u2460"}], "title": "4.21. PrefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-ismultipleof_1\u2461"}], "title": "4.27. UnprefixedMeasurementUnit"}], "external": true};
+window.dfnpanelData['4b7fc03a'] = {"dfnID": "4b7fc03a", "url": "vim4.html#isoffsystemunit", "dfnText": "isoffsystemunit", "refSections": [{"refs": [{"id": "ref-for-isoffsystemunit"}], "title": "5.21. SystemHasDerivedUnit"}], "external": true};
+window.dfnpanelData['36a83bdb'] = {"dfnID": "36a83bdb", "url": "vim4.html#isreferencevalue", "dfnText": "isreferencevalue", "refSections": [{"refs": [{"id": "ref-for-isreferencevalue"}], "title": "3.8. QuantityValue"}], "external": true};
+window.dfnpanelData['778d14f5'] = {"dfnID": "778d14f5", "url": "vim4.html#istruevalue", "dfnText": "istruevalue", "refSections": [{"refs": [{"id": "ref-for-istruevalue"}], "title": "3.8. QuantityValue"}], "external": true};
+window.dfnpanelData['3f5ae951'] = {"dfnID": "3f5ae951", "url": "vim4.html#measurement", "dfnText": "measurement", "refSections": [{"refs": [{"id": "ref-for-measurement"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurement\u2460"}], "title": "4.14. MeasurementProcedure"}, {"refs": [{"id": "ref-for-measurement\u2461"}], "title": "5.2. Describes"}], "external": true};
+window.dfnpanelData['11763efe'] = {"dfnID": "11763efe", "url": "vim4.html#measurementmethod", "dfnText": "measurementmethod", "refSections": [{"refs": [{"id": "ref-for-measurementmethod"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementmethod\u2460"}], "title": "4.14. MeasurementProcedure"}, {"refs": [{"id": "ref-for-measurementmethod\u2461"}], "title": "5.26. UsesOperationsOf"}], "external": true};
+window.dfnpanelData['9ec28dec'] = {"dfnID": "9ec28dec", "url": "vim4.html#measurementmodel", "dfnText": "measurementmodel", "refSections": [{"refs": [{"id": "ref-for-measurementmodel"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementmodel\u2460"}], "title": "4.14. MeasurementProcedure"}, {"refs": [{"id": "ref-for-measurementmodel\u2461"}], "title": "5.4. HasInput"}, {"refs": [{"id": "ref-for-measurementmodel\u2462"}], "title": "5.13. IsBasedOn"}, {"refs": [{"id": "ref-for-measurementmodel\u2463"}], "title": "5.14. IsInfluencedBy"}, {"refs": [{"id": "ref-for-measurementmodel\u2464"}], "title": "5.16. Measures"}, {"refs": [{"id": "ref-for-measurementmodel\u2465"}], "title": "5.25. UsesCorrection"}, {"refs": [{"id": "ref-for-measurementmodel\u2466"}], "title": "5.27. YieldsMeasuredValue"}, {"refs": [{"id": "ref-for-measurementmodel\u2467"}], "title": "5.28. YieldsMeasurementUncertainty"}], "external": true};
+window.dfnpanelData['2f302ccf'] = {"dfnID": "2f302ccf", "url": "vim4.html#measurementprinciple", "dfnText": "measurementprinciple", "refSections": [{"refs": [{"id": "ref-for-measurementprinciple"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementprinciple\u2460"}], "title": "4.14. MeasurementProcedure"}, {"refs": [{"id": "ref-for-measurementprinciple\u2461"}], "title": "5.17. Per"}], "external": true};
+window.dfnpanelData['022b5173'] = {"dfnID": "022b5173", "url": "vim4.html#measurementprocedure", "dfnText": "measurementprocedure", "refSections": [{"refs": [{"id": "ref-for-measurementprocedure"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementprocedure\u2460"}], "title": "5.2. Describes"}, {"refs": [{"id": "ref-for-measurementprocedure\u2461"}], "title": "5.13. IsBasedOn"}, {"refs": [{"id": "ref-for-measurementprocedure\u2462"}], "title": "5.17. Per"}, {"refs": [{"id": "ref-for-measurementprocedure\u2463"}], "title": "5.26. UsesOperationsOf"}], "external": true};
+window.dfnpanelData['fbe32737'] = {"dfnID": "fbe32737", "url": "vim4.html#measurementscale", "dfnText": "measurementscale", "refSections": [{"refs": [{"id": "ref-for-measurementscale"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementscale\u2460"}], "title": "4.20. OrdinalScale"}, {"refs": [{"id": "ref-for-measurementscale\u2461"}], "title": "4.22. ReferenceSet"}, {"refs": [{"id": "ref-for-measurementscale\u2462"}], "title": "4.26. UnitaryScale"}, {"refs": [{"id": "ref-for-measurementscale\u2463"}], "title": "5.10. Includes"}], "external": true};
+window.dfnpanelData['d2384830'] = {"dfnID": "d2384830", "url": "vim4.html#measurementuncertainty", "dfnText": "measurementuncertainty", "refSections": [{"refs": [{"id": "ref-for-measurementuncertainty"}], "title": "4.12. MeasurementModel"}, {"refs": [{"id": "ref-for-measurementuncertainty\u2460"}], "title": "5.28. YieldsMeasurementUncertainty"}], "external": true};
+window.dfnpanelData['01fcf406'] = {"dfnID": "01fcf406", "url": "vim4.html#measurementunit", "dfnText": "measurementunit", "refSections": [{"refs": [{"id": "ref-for-measurementunit"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-measurementunit\u2460"}], "title": "4.6. IndividualUnitaryQuantity"}, {"refs": [{"id": "ref-for-measurementunit\u2461"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2462"}, {"id": "ref-for-measurementunit\u2463"}], "title": "4.21. PrefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2464"}, {"id": "ref-for-measurementunit\u2465"}, {"id": "ref-for-measurementunit\u2466"}], "title": "4.24. SystemOfUnits"}, {"refs": [{"id": "ref-for-measurementunit\u2467"}], "title": "4.25. UnitaryQuantityValue"}, {"refs": [{"id": "ref-for-measurementunit\u2468"}, {"id": "ref-for-measurementunit\u2460\u24ea"}], "title": "4.27. UnprefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2460"}], "title": "5.5. HasMultiple"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2461"}], "title": "5.9. HasUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2462"}, {"id": "ref-for-measurementunit\u2460\u2463"}], "title": "5.15. IsMultipleOf"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2464"}], "title": "5.19. SystemHasBaseUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2465"}], "title": "5.21. SystemHasDerivedUnit"}, {"refs": [{"id": "ref-for-measurementunit\u2460\u2466"}], "title": "5.23. SystemHasUnit"}], "external": true};
+window.dfnpanelData['66bed051'] = {"dfnID": "66bed051", "url": "vim4.html#measures_1", "dfnText": "measures_1", "refSections": [{"refs": [{"id": "ref-for-measures_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['2eebfe5e'] = {"dfnID": "2eebfe5e", "url": "vim4.html#multiple", "dfnText": "multiple", "refSections": [{"refs": [{"id": "ref-for-multiple"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-multiple\u2460"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-multiple\u2461"}], "title": "4.21. PrefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-multiple\u2462"}], "title": "4.27. UnprefixedMeasurementUnit"}, {"refs": [{"id": "ref-for-multiple\u2463"}], "title": "5.5. HasMultiple"}], "external": true};
+window.dfnpanelData['a915b265'] = {"dfnID": "a915b265", "url": "vim4.html#object", "dfnText": "object", "refSections": [{"refs": [{"id": "ref-for-object"}], "title": "3.5. IndividualProperty"}, {"refs": [{"id": "ref-for-object\u2460"}], "title": "4.7. InherentOrdinalQuantity"}, {"refs": [{"id": "ref-for-object\u2461"}], "title": "4.8. InherentUnitaryQuantity"}, {"refs": [{"id": "ref-for-object\u2462"}], "title": "4.17. MeasurementUnit"}, {"refs": [{"id": "ref-for-object\u2463"}], "title": "5.1. Characterizes"}], "external": true};
+window.dfnpanelData['0275c00c'] = {"dfnID": "0275c00c", "url": "vim4.html#ordinalposition", "dfnText": "ordinalposition", "refSections": [{"refs": [{"id": "ref-for-ordinalposition"}], "title": "5.10. Includes"}], "external": true};
+window.dfnpanelData['65dd70b8'] = {"dfnID": "65dd70b8", "url": "vim4.html#ordinalquantityvalue", "dfnText": "ordinalquantityvalue", "refSections": [{"refs": [{"id": "ref-for-ordinalquantityvalue"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-ordinalquantityvalue\u2460"}], "title": "4.5. IndividualOrdinalQuantity"}, {"refs": [{"id": "ref-for-ordinalquantityvalue\u2461"}], "title": "4.20. OrdinalScale"}], "external": true};
+window.dfnpanelData['93abe734'] = {"dfnID": "93abe734", "url": "vim4.html#ordinalscale", "dfnText": "ordinalscale", "refSections": [{"refs": [{"id": "ref-for-ordinalscale"}], "title": "4.15. MeasurementScale"}], "external": true};
+window.dfnpanelData['01d85ba8'] = {"dfnID": "01d85ba8", "url": "vim4.html#per_1", "dfnText": "per_1", "refSections": [{"refs": [{"id": "ref-for-per_1"}], "title": "4.14. MeasurementProcedure"}], "external": true};
+window.dfnpanelData['4607c01f'] = {"dfnID": "4607c01f", "url": "vim4.html#prefixedmeasurementunit", "dfnText": "prefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-prefixedmeasurementunit"}], "title": "4.17. MeasurementUnit"}], "external": true};
+window.dfnpanelData['8e07200d'] = {"dfnID": "8e07200d", "url": "vim4.html#quantityvalue", "dfnText": "quantityvalue", "refSections": [{"refs": [{"id": "ref-for-quantityvalue"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-quantityvalue\u2460"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-quantityvalue\u2461"}], "title": "4.12. MeasurementModel"}, {"refs": [{"id": "ref-for-quantityvalue\u2462"}], "title": "4.19. OrdinalQuantityValue"}, {"refs": [{"id": "ref-for-quantityvalue\u2463"}], "title": "4.25. UnitaryQuantityValue"}, {"refs": [{"id": "ref-for-quantityvalue\u2464"}], "title": "5.12. IsAttributedTo"}, {"refs": [{"id": "ref-for-quantityvalue\u2465"}], "title": "5.27. YieldsMeasuredValue"}, {"refs": [{"id": "ref-for-quantityvalue\u2466"}], "title": "6.8. isReferenceValue"}, {"refs": [{"id": "ref-for-quantityvalue\u2467"}], "title": "6.9. isTrueValue"}], "external": true};
+window.dfnpanelData['904c9d46'] = {"dfnID": "904c9d46", "url": "vim4.html#rationalexponent", "dfnText": "rationalexponent", "refSections": [{"refs": [{"id": "ref-for-rationalexponent"}], "title": "5.6. HasPowerOfUnitFactor"}, {"refs": [{"id": "ref-for-rationalexponent\u2460"}], "title": "5.7. HasPowerOfUnitaryQuantityFactor"}, {"refs": [{"id": "ref-for-rationalexponent\u2461"}], "title": "5.8. HasQuantityDimensionFactor"}, {"refs": [{"id": "ref-for-rationalexponent\u2462"}], "title": "6.2. exponent"}], "external": true};
+window.dfnpanelData['4de3095c'] = {"dfnID": "4de3095c", "url": "vim4.html#referenceset", "dfnText": "referenceset", "refSections": [{"refs": [{"id": "ref-for-referenceset"}], "title": "4.15. MeasurementScale"}], "external": true};
+window.dfnpanelData['52d1b7ee'] = {"dfnID": "52d1b7ee", "url": "vim4.html#specializes_1", "dfnText": "specializes_1", "refSections": [{"refs": [{"id": "ref-for-specializes_1"}], "title": "4.3. GeneralUnitaryQuantity"}], "external": true};
+window.dfnpanelData['904dc0d2'] = {"dfnID": "904dc0d2", "url": "vim4.html#systemhasbaseunit", "dfnText": "systemhasbaseunit", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunit"}], "title": "5.23. SystemHasUnit"}], "external": true};
+window.dfnpanelData['9b8818df'] = {"dfnID": "9b8818df", "url": "vim4.html#systemhasbaseunit_1", "dfnText": "systemhasbaseunit_1", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunit_1"}], "title": "4.24. SystemOfUnits"}], "external": true};
+window.dfnpanelData['70940125'] = {"dfnID": "70940125", "url": "vim4.html#systemhasbaseunitaryquantity", "dfnText": "systemhasbaseunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunitaryquantity"}], "title": "5.8. HasQuantityDimensionFactor"}, {"refs": [{"id": "ref-for-systemhasbaseunitaryquantity\u2460"}, {"id": "ref-for-systemhasbaseunitaryquantity\u2461"}], "title": "5.24. SystemHasUnitaryQuantity"}, {"refs": [{"id": "ref-for-systemhasbaseunitaryquantity\u2462"}], "title": "6.1. dimensionSymbol"}], "external": true};
+window.dfnpanelData['6d7b62f5'] = {"dfnID": "6d7b62f5", "url": "vim4.html#systemhasbaseunitaryquantity_1", "dfnText": "systemhasbaseunitaryquantity_1", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunitaryquantity_1"}], "title": "4.23. SystemOfQuantities"}], "external": true};
+window.dfnpanelData['ffef2046'] = {"dfnID": "ffef2046", "url": "vim4.html#systemhasderivedunit", "dfnText": "systemhasderivedunit", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunit"}], "title": "3.3. HasCoherence"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2460"}], "title": "5.6. HasPowerOfUnitFactor"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2461"}], "title": "5.23. SystemHasUnit"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2462"}], "title": "6.7. isOffSystemUnit"}], "external": true};
+window.dfnpanelData['2b5433a2'] = {"dfnID": "2b5433a2", "url": "vim4.html#systemhasderivedunit_1", "dfnText": "systemhasderivedunit_1", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunit_1"}], "title": "4.24. SystemOfUnits"}], "external": true};
+window.dfnpanelData['b89082c9'] = {"dfnID": "b89082c9", "url": "vim4.html#systemhasderivedunitaryquantity", "dfnText": "systemhasderivedunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunitaryquantity"}], "title": "5.7. HasPowerOfUnitaryQuantityFactor"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460"}], "title": "5.24. SystemHasUnitaryQuantity"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461"}], "title": "6.6. isDimensionless"}], "external": true};
+window.dfnpanelData['a67603a7'] = {"dfnID": "a67603a7", "url": "vim4.html#systemhasderivedunitaryquantity_1", "dfnText": "systemhasderivedunitaryquantity_1", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunitaryquantity_1"}], "title": "4.23. SystemOfQuantities"}], "external": true};
+window.dfnpanelData['301ea021'] = {"dfnID": "301ea021", "url": "vim4.html#systemhasunit", "dfnText": "systemhasunit", "refSections": [{"refs": [{"id": "ref-for-systemhasunit"}], "title": "5.6. HasPowerOfUnitFactor"}, {"refs": [{"id": "ref-for-systemhasunit\u2460"}], "title": "5.19. SystemHasBaseUnit"}, {"refs": [{"id": "ref-for-systemhasunit\u2461"}, {"id": "ref-for-systemhasunit\u2462"}], "title": "5.21. SystemHasDerivedUnit"}], "external": true};
+window.dfnpanelData['1640f822'] = {"dfnID": "1640f822", "url": "vim4.html#systemhasunit_1", "dfnText": "systemhasunit_1", "refSections": [{"refs": [{"id": "ref-for-systemhasunit_1"}], "title": "4.24. SystemOfUnits"}], "external": true};
+window.dfnpanelData['9cc9e3b0'] = {"dfnID": "9cc9e3b0", "url": "vim4.html#systemhasunitaryquantity", "dfnText": "systemhasunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasunitaryquantity"}], "title": "5.7. HasPowerOfUnitaryQuantityFactor"}, {"refs": [{"id": "ref-for-systemhasunitaryquantity\u2460"}], "title": "5.8. HasQuantityDimensionFactor"}, {"refs": [{"id": "ref-for-systemhasunitaryquantity\u2461"}], "title": "5.20. SystemHasBaseUnitaryQuantity"}, {"refs": [{"id": "ref-for-systemhasunitaryquantity\u2462"}, {"id": "ref-for-systemhasunitaryquantity\u2463"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}], "external": true};
+window.dfnpanelData['afd2d25c'] = {"dfnID": "afd2d25c", "url": "vim4.html#systemhasunitaryquantity_1", "dfnText": "systemhasunitaryquantity_1", "refSections": [{"refs": [{"id": "ref-for-systemhasunitaryquantity_1"}], "title": "4.23. SystemOfQuantities"}], "external": true};
+window.dfnpanelData['f74209f7'] = {"dfnID": "f74209f7", "url": "vim4.html#systemofquantities", "dfnText": "systemofquantities", "refSections": [{"refs": [{"id": "ref-for-systemofquantities"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-systemofquantities\u2460"}], "title": "4.24. SystemOfUnits"}, {"refs": [{"id": "ref-for-systemofquantities\u2461"}], "title": "5.3. Given"}, {"refs": [{"id": "ref-for-systemofquantities\u2462"}], "title": "5.20. SystemHasBaseUnitaryQuantity"}, {"refs": [{"id": "ref-for-systemofquantities\u2463"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}, {"refs": [{"id": "ref-for-systemofquantities\u2464"}], "title": "5.24. SystemHasUnitaryQuantity"}], "external": true};
+window.dfnpanelData['8c5138e0'] = {"dfnID": "8c5138e0", "url": "vim4.html#systemofunits", "dfnText": "systemofunits", "refSections": [{"refs": [{"id": "ref-for-systemofunits"}], "title": "3.3. HasCoherence"}, {"refs": [{"id": "ref-for-systemofunits\u2460"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-systemofunits\u2461"}], "title": "5.3. Given"}, {"refs": [{"id": "ref-for-systemofunits\u2462"}], "title": "5.19. SystemHasBaseUnit"}, {"refs": [{"id": "ref-for-systemofunits\u2463"}], "title": "5.21. SystemHasDerivedUnit"}, {"refs": [{"id": "ref-for-systemofunits\u2464"}], "title": "5.23. SystemHasUnit"}], "external": true};
+window.dfnpanelData['2937f483'] = {"dfnID": "2937f483", "url": "vim4.html#unit", "dfnText": "unit", "refSections": [{"refs": [{"id": "ref-for-unit"}], "title": "4.25. UnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['729c4b4e'] = {"dfnID": "729c4b4e", "url": "vim4.html#unitaryquantityvalue", "dfnText": "unitaryquantityvalue", "refSections": [{"refs": [{"id": "ref-for-unitaryquantityvalue"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-unitaryquantityvalue\u2460"}], "title": "4.6. IndividualUnitaryQuantity"}, {"refs": [{"id": "ref-for-unitaryquantityvalue\u2461"}], "title": "4.9. InherentUnitaryQuantityValue"}, {"refs": [{"id": "ref-for-unitaryquantityvalue\u2462"}], "title": "4.26. UnitaryScale"}, {"refs": [{"id": "ref-for-unitaryquantityvalue\u2463"}], "title": "5.9. HasUnit"}, {"refs": [{"id": "ref-for-unitaryquantityvalue\u2464"}], "title": "6.3. hasDoubleNumber"}], "external": true};
+window.dfnpanelData['d3e38882'] = {"dfnID": "d3e38882", "url": "vim4.html#unitaryscale", "dfnText": "unitaryscale", "refSections": [{"refs": [{"id": "ref-for-unitaryscale"}], "title": "4.15. MeasurementScale"}], "external": true};
+window.dfnpanelData['b78f56cb'] = {"dfnID": "b78f56cb", "url": "vim4.html#unprefixedmeasurementunit", "dfnText": "unprefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-unprefixedmeasurementunit"}], "title": "4.17. MeasurementUnit"}], "external": true};
+window.dfnpanelData['30f7aa3b'] = {"dfnID": "30f7aa3b", "url": "vim4.html#usescorrection_1", "dfnText": "usescorrection_1", "refSections": [{"refs": [{"id": "ref-for-usescorrection_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['409c5fc0'] = {"dfnID": "409c5fc0", "url": "vim4.html#usesoperationsof_1", "dfnText": "usesoperationsof_1", "refSections": [{"refs": [{"id": "ref-for-usesoperationsof_1"}], "title": "4.14. MeasurementProcedure"}], "external": true};
+window.dfnpanelData['c7d2ddb1'] = {"dfnID": "c7d2ddb1", "url": "vim4.html#yieldsmeasuredvalue_1", "dfnText": "yieldsmeasuredvalue_1", "refSections": [{"refs": [{"id": "ref-for-yieldsmeasuredvalue_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['9a6499c3'] = {"dfnID": "9a6499c3", "url": "vim4.html#yieldsmeasurementuncertainty_1", "dfnText": "yieldsmeasurementuncertainty_1", "refSections": [{"refs": [{"id": "ref-for-yieldsmeasurementuncertainty_1"}], "title": "4.12. MeasurementModel"}], "external": true};
+window.dfnpanelData['96274d58'] = {"dfnID": "96274d58", "url": "../../imce.jpl.nasa.gov/foundation/analysis.html#analyzedelement", "dfnText": "analyzedelement", "refSections": [{"refs": [{"id": "ref-for-analyzedelement"}], "title": "3.8. QuantityValue"}], "external": true};
+window.dfnpanelData['e50d9694'] = {"dfnID": "e50d9694", "url": "../../imce.jpl.nasa.gov/foundation/analysis.html#characterization", "dfnText": "characterization", "refSections": [{"refs": [{"id": "ref-for-characterization"}], "title": "4.4. IndividualNominalProperty"}, {"refs": [{"id": "ref-for-characterization\u2460"}], "title": "4.5. IndividualOrdinalQuantity"}, {"refs": [{"id": "ref-for-characterization\u2461"}], "title": "4.6. IndividualUnitaryQuantity"}], "external": true};
+window.dfnpanelData['e6572b00'] = {"dfnID": "e6572b00", "url": "../../imce.jpl.nasa.gov/foundation/analysis.html#characterizedelement", "dfnText": "characterizedelement", "refSections": [{"refs": [{"id": "ref-for-characterizedelement"}], "title": "3.6. IndividualQuantity"}, {"refs": [{"id": "ref-for-characterizedelement\u2460"}], "title": "3.7. Object"}, {"refs": [{"id": "ref-for-characterizedelement\u2461"}], "title": "4.4. IndividualNominalProperty"}], "external": true};
+window.dfnpanelData['7fb9072a'] = {"dfnID": "7fb9072a", "url": "../../imce.jpl.nasa.gov/foundation/analysis.html#characterizes", "dfnText": "characterizes", "refSections": [{"refs": [{"id": "ref-for-characterizes"}], "title": "5.1. Characterizes"}], "external": true};
+window.dfnpanelData['480ad650'] = {"dfnID": "480ad650", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstrainedelement", "dfnText": "massconstrainedelement", "refSections": [{"refs": [{"id": "ref-for-massconstrainedelement"}], "title": "3.7. Object"}], "external": true};
+window.dfnpanelData['014c8de3'] = {"dfnID": "014c8de3", "url": "../../opencaesar.io/examples/firesat/disciplines/fse/fse.html#massconstraint", "dfnText": "massconstraint", "refSections": [{"refs": [{"id": "ref-for-massconstraint"}], "title": "4.9. InherentUnitaryQuantityValue"}], "external": true};
+window.dfnpanelData['a26aa0ef'] = {"dfnID": "a26aa0ef", "url": "../../www.w3.org/2001/XMLSchema.html#boolean", "dfnText": "boolean", "refSections": [{"refs": [{"id": "ref-for-boolean"}], "title": "3.3. HasCoherence"}, {"refs": [{"id": "ref-for-boolean\u2460"}, {"id": "ref-for-boolean\u2461"}], "title": "3.8. QuantityValue"}, {"refs": [{"id": "ref-for-boolean\u2462"}], "title": "5.21. SystemHasDerivedUnit"}, {"refs": [{"id": "ref-for-boolean\u2463"}], "title": "5.22. SystemHasDerivedUnitaryQuantity"}, {"refs": [{"id": "ref-for-boolean\u2464"}], "title": "6.5. isCoherent"}, {"refs": [{"id": "ref-for-boolean\u2465"}], "title": "6.6. isDimensionless"}, {"refs": [{"id": "ref-for-boolean\u2466"}], "title": "6.7. isOffSystemUnit"}, {"refs": [{"id": "ref-for-boolean\u2467"}], "title": "6.8. isReferenceValue"}, {"refs": [{"id": "ref-for-boolean\u2468"}], "title": "6.9. isTrueValue"}], "external": true};
+window.dfnpanelData['4a464789'] = {"dfnID": "4a464789", "url": "../../www.w3.org/2001/XMLSchema.html#double", "dfnText": "double", "refSections": [{"refs": [{"id": "ref-for-double"}], "title": "4.25. UnitaryQuantityValue"}, {"refs": [{"id": "ref-for-double\u2460"}], "title": "6.3. hasDoubleNumber"}], "external": true};
+window.dfnpanelData['a3c16d2f'] = {"dfnID": "a3c16d2f", "url": "../../www.w3.org/2001/XMLSchema.html#positiveinteger", "dfnText": "positiveinteger", "refSections": [{"refs": [{"id": "ref-for-positiveinteger"}], "title": "5.10. Includes"}, {"refs": [{"id": "ref-for-positiveinteger\u2460"}], "title": "6.10. ordinalPosition"}], "external": true};
+window.dfnpanelData['d5b2cf61'] = {"dfnID": "d5b2cf61", "url": "../../www.w3.org/2001/XMLSchema.html#string", "dfnText": "string", "refSections": [{"refs": [{"id": "ref-for-string"}], "title": "3.4. IdentifiedElement"}, {"refs": [{"id": "ref-for-string\u2460"}], "title": "5.20. SystemHasBaseUnitaryQuantity"}, {"refs": [{"id": "ref-for-string\u2461"}], "title": "6.1. dimensionSymbol"}, {"refs": [{"id": "ref-for-string\u2462"}], "title": "6.4. id"}], "external": true};
+window.dfnpanelData['903efbec'] = {"dfnID": "903efbec", "url": "../../www.w3.org/2002/07/owl.html#rational", "dfnText": "rational", "refSections": [{"refs": [{"id": "ref-for-rational"}], "title": "3.9. RationalExponent"}, {"refs": [{"id": "ref-for-rational\u2460"}], "title": "6.2. exponent"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>
