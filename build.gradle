@@ -98,13 +98,13 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
  * A task to generate documentation for the OWL catalog
  */
 task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: owlReason) {
-    // OML catalog
+    // OWL catalog
     inputCatalogPath = file('build/owl/catalog.xml')
-    // OML catalog title
+    // OWL catalog title
     inputCatalogTitle = project.title
-    // OML catalog version
+    // OWL catalog version
     inputCatalogVersion = project.version
-    // Input Ontology Iris
+    // OWL Ontology Iris
     inputOntologyIris = [ "$rootIri/classes", "$rootIri/properties",  "$rootIri/individuals" ]
     // Output folder
     outputFolderPath = file('build/doc')
