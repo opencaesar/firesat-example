@@ -26,8 +26,8 @@ cd ..
 # Clean out existing contents
 rm -rf publish/**/* || exit 0
 
-cd ${SCRIPT_PATH}/../build/bikeshed
-find . -name '*.html' -exec cp --parents {} ${SCRIPT_PATH}/publish/ \;
+cd ${SCRIPT_PATH}/../build/doc
+find . -name '*' -exec cp --parents {} ${SCRIPT_PATH}/publish/ \;
 cd ${SCRIPT_PATH}
 
 # Now let's go have some fun with the cloned repo

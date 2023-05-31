@@ -14,30 +14,30 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/missio
 	// FireSat Mission
 	
 	@rdfs:label "FireSat Mission"
-	ci FireSatMission : mission:Mission [
+	instance FireSatMission : mission:Mission [
 		mission:pursues ForestFireDetection
 		mission:deploys spc-assemblies:SpacecraftSystemSegment
 	]
 
 	@rdfs:label "Forest Fire Detection"
 	@rdfs:comment "Reduce impact of forest fires on recreation and commerce in the United States"
-	ci ForestFireDetection : mission:Objective
+	instance ForestFireDetection : mission:Objective
 
 	@rdfs:label "US Forest Service"
-	ci USForestService : project:Stakeholder [
+	instance USForestService : project:Stakeholder [
 		project:represents ForestFireDetection
 	]
 
 	@rdfs:label "Endoatmosphere"
-	ci Endoatmosphere : mission:Environment
+	instance Endoatmosphere : mission:Environment
 
 	@rdfs:label "Space debris"
-	ci SpaceDebris : mission:Environment
+	instance SpaceDebris : mission:Environment
 
 	@rdfs:label "Sun"
-	ci Sun : mission:Environment
+	instance Sun : mission:Environment
 
 	@rdfs:label "Stars"
-	ci Stars : mission:Environment
+	instance Stars : mission:Environment
 
 } 

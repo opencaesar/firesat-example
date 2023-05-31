@@ -13,71 +13,71 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	// Transmitter Unit
  
-	ri TransmitterUnitPerformsGenerateTelemetry : mission:Performs [
+	relation instance TransmitterUnitPerformsGenerateTelemetry : mission:Performs [
 		from cmn-assemblies:TransmitterUnit
 		to GenerateTelemetryByTransmitterUnit
 	]
 	
-	ci GenerateTelemetryByTransmitterUnit : mission:Function [
+	instance GenerateTelemetryByTransmitterUnit : mission:Function [
 		project:realizes firesat-functions:GenerateTelemetry
 	]
 
 	// Receiver Unit
 
-	ref ci cmn-assemblies:ReceiverUnit [
+	ref instance cmn-assemblies:ReceiverUnit [
 		mission:performs ApplyCommandsByReceiverUnit
 	]
 
-	ci ApplyCommandsByReceiverUnit : mission:Function [
+	instance ApplyCommandsByReceiverUnit : mission:Function [
 		project:realizes firesat-functions:ApplyCommands
 	]
 
 	// Transmit Whip Antenna
 
-	ref ci cmn-assemblies:TransmitWhipAntenna [
+	ref instance cmn-assemblies:TransmitWhipAntenna [
 		mission:performs SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna
 		mission:performs DeployMechanismsByTransmitWhipAntenna
 	]
 
-	ci SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna : mission:Function [
+	instance SendTelemetryToNOAAGroundStationsByTransmitWhipAntenna : mission:Function [
 		project:realizes firesat-functions:SendTelemetryToNOAAGroundStations
 	]
 
-	ci DeployMechanismsByTransmitWhipAntenna : mission:Function [
+	instance DeployMechanismsByTransmitWhipAntenna : mission:Function [
 		project:realizes firesat-functions:DeployMechanisms
 	]
 
 	// Transmit Hi-Gain Antenna
 
-	ref ci cmn-assemblies:TransmitHiGainAntenna [
+	ref instance cmn-assemblies:TransmitHiGainAntenna [
 		mission:performs DeployMechanismsByTransmitHiGainAntenna
 	]
 
-	ri TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices : mission:Performs [
+	relation instance TransmitHiGainAntennaPerformsCommunicate911DownlinkWithRegionalFieldOffices : mission:Performs [
 		from cmn-assemblies:TransmitHiGainAntenna
 		to Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna
 	]
 
-	ci DeployMechanismsByTransmitHiGainAntenna : mission:Function [
+	instance DeployMechanismsByTransmitHiGainAntenna : mission:Function [
 		project:realizes firesat-functions:DeployMechanisms
 	]
 
-	ci Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna : mission:Function [
+	instance Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna : mission:Function [
 		project:realizes firesat-functions:Communicate911DownlinkWithRegionalFieldOffices
 	]
 
 	// Receive Whip Antenna
 
-	ref ci cmn-assemblies:ReceiveWhipAntenna [
+	ref instance cmn-assemblies:ReceiveWhipAntenna [
 		mission:performs DeployMechanismsByReceiveWhipAntenna
 		mission:performs Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna
 	]	
 
-	ci DeployMechanismsByReceiveWhipAntenna : mission:Function [
+	instance DeployMechanismsByReceiveWhipAntenna : mission:Function [
 		project:realizes firesat-functions:DeployMechanisms
 	]
 
-	ci Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna : mission:Function [
+	instance Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna : mission:Function [
 		project:realizes firesat-functions:Communicate911DownlinkWithRegionalFieldOffices
 	]
 

@@ -13,7 +13,7 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 
 	// Sensor Requirements
 
-	ref ci pld-assemblies:Sensor [
+	ref instance pld-assemblies:Sensor [
 		mission:isSpecifiedBy ApertureSizeForSensor
 		mission:isSpecifiedBy SpectralResolutionForSensor
 		mission:isSpecifiedBy FORForSensor
@@ -21,31 +21,31 @@ description <http://opencaesar.io/examples/firesat/programs/earth-science/projec
 		mission:isSpecifiedBy WavelenghtRangeForSensor
 	]
 
-	ref ri pld-functions:SensorPerformsDetectNewWildfires [
+	ref relation instance pld-functions:SensorPerformsDetectNewWildfires [
 		mission:isSpecifiedBy SensingRangeForSensor
 	]
 
-	ci ApertureSizeForSensor : mission:Requirement [
+	instance ApertureSizeForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:ApertureSize
 	]
 
-	ci SpectralResolutionForSensor : mission:Requirement [
+	instance SpectralResolutionForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:SpectralResolution
 	]
 
-	ci FORForSensor : mission:Requirement [
+	instance FORForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:FOR
 	]
 
-	ci SpatialResolutionForSensor : mission:Requirement [
+	instance SpatialResolutionForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:SpatialResolution
 	]
 
-	ci WavelenghtRangeForSensor : mission:Requirement [
+	instance WavelenghtRangeForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:WavelenghtRange
 	]
 
-	ci SensingRangeForSensor : mission:Requirement [
+	instance SensingRangeForSensor : mission:Requirement [
 		mission:refines pld-system-reqs:SensingRange
 	]
 

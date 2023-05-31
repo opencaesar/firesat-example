@@ -17,50 +17,50 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 
 	// The terms
 
-	aspect EndCircuitPresentingElement :> mission:PresentingElement
+	aspect EndCircuitPresentingElement < mission:PresentingElement
 
-	aspect MassConstrainedElement :> vim4:Object
+	aspect MassConstrainedElement < vim4:Object
 
-	ref concept project:WorkPackage :> MassConstrainedElement
+	ref concept project:WorkPackage < MassConstrainedElement
 
-	concept Subsystem :> mission:Component, MassConstrainedElement [
+	concept Subsystem < mission:Component, MassConstrainedElement [
 		restricts all relation base:aggregates to Assembly
 	]
 	
-	concept Assembly :> mission:Component, MassConstrainedElement, EndCircuitPresentingElement [
+	concept Assembly < mission:Component, MassConstrainedElement, EndCircuitPresentingElement [
 		restricts all relation base:isAggregatedIn to Subsystem
 	]
 
-	concept EndCircuit :> mission:Interface [
+	concept EndCircuit < mission:Interface [
 		restricts all relation mission:isJoinedIn to Function
 		restricts all relation mission:isPresentedBy to EndCircuitPresentingElement
 	]
 
-	concept PowerEndCircuit :> EndCircuit
+	concept PowerEndCircuit < EndCircuit
 
-	concept PowerIn :> PowerEndCircuit
+	concept PowerIn < PowerEndCircuit
 
-	concept PowerOut :> PowerEndCircuit
+	concept PowerOut < PowerEndCircuit
 
-	concept Function :> mission:Junction [
+	concept Function < mission:Junction [
 		restricts all relation mission:joins to EndCircuit
 	]
 
-	concept PowerFunction :> Function [
+	concept PowerFunction < Function [
 		restricts scalar property hasEndCircuitType to "Power"
 		restricts all relation mission:joins to PowerEndCircuit
 		
 	]
 
-	concept MassConstraint :> vim4:InherentUnitaryQuantityValue [
+	concept MassConstraint < vim4:InherentUnitaryQuantityValue [
 		restricts all relation vim4:characterizes to MassConstrainedElement
     	restricts relation vim4:instantiates to iso-80000-4.1:mass
     	restricts relation vim4:unit to iso-80000-4.1:kilogram
 	]
 
-	concept MassAllocationConstraint :> MassConstraint
+	concept MassAllocationConstraint < MassConstraint
 
-	concept MassLimitConstraint :> MassConstraint
+	concept MassLimitConstraint < MassConstraint
 
 	relation entity ConnectsAssembly [
 		from Function
@@ -70,33 +70,33 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 		irreflexive
 	]
 
-	relation entity ConnectsAssembly1 :> ConnectsAssembly [
+	relation entity ConnectsAssembly1 [
 		from Function
 		to Assembly
 		forward connectsAssembly1
 		asymmetric
 		irreflexive
-	]
+	] < ConnectsAssembly
 
-	relation entity ConnectsAssembly2 :> ConnectsAssembly [
+	relation entity ConnectsAssembly2 [
 		from Function
 		to Assembly
 		forward connectsAssembly2
 		asymmetric
 		irreflexive
+	] < ConnectsAssembly 
+
+	scalar EndCircuitDirection [
+		oneOf "in"^^xsd:string,
+			"inout"^^xsd:string,
+			"out"^^xsd:string
 	]
 
-	enumerated scalar EndCircuitDirection :> xsd:string [
-		"in"^^xsd:string,
-		"inout"^^xsd:string,
-		"out"^^xsd:string
-	]
-
-	enumerated scalar FunctionDirection :> xsd:string [
-		"1to2"^^xsd:string,
-		"2to1"^^xsd:string,
-		"Bidirectional"^^xsd:string,
-		"Undefined"^^xsd:string
+	scalar FunctionDirection [
+		oneOf "1to2"^^xsd:string,
+			"2to1"^^xsd:string,
+			"Bidirectional"^^xsd:string,
+			"Undefined"^^xsd:string
 	]
 
 	scalar property hasFunctionDirection [

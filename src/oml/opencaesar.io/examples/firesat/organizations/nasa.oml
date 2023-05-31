@@ -8,45 +8,45 @@ description <http://opencaesar.io/examples/firesat/organizations/nasa#> as nasa 
 	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
 
 	@rdfs:label "NASA"
-	ci NASA : project:Organization
+	instance NASA : project:Organization
 
 	@rdfs:label "Project Manager"
-	ci ProjectManager : project:Role
+	instance ProjectManager : project:Role
 
 	@rdfs:label "System architect"
-	ci SystemArchitect : project:Role
+	instance SystemArchitect : project:Role
 
 	@rdfs:label "System engineer"
-	ci SystemEngineer : project:Role
+	instance SystemEngineer : project:Role
 
 	@rdfs:label "John A."
-	ci JohnA : project:Person [
+	instance JohnA : project:Person [
 		project:belongsTo NASA
 		project:hasRole ProjectManager
 	]
 
 	@rdfs:label "Bob F."
-	ci BobF : project:Person [
+	instance BobF : project:Person [
 		project:belongsTo NASA
 		project:hasRole SystemArchitect
 	]
 
 	@rdfs:label "Harry P."
-	ci HarryP : project:Person [
+	instance HarryP : project:Person [
 		project:belongsTo NASA
 		project:hasRole SystemEngineer
 		project:hasRole SystemArchitect
 	]
 
 	@rdfs:label "Luke S."
-	ci LukeS : project:Person [
+	instance LukeS : project:Person [
 		project:belongsTo NASA
 		project:hasRole SystemArchitect
 		project:hasRole SystemEngineer
 	]
 
 	@rdfs:label "Paul N."
-	ci PaulN : project:Person [
+	instance PaulN : project:Person [
 		project:belongsTo NASA
 		project:hasRole SystemEngineer
 		project:hasRole SystemArchitect

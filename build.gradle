@@ -4,7 +4,7 @@
 ext.title = "FireSat Example"
 description='The FireSat example project'
 group = 'io.opencaesar.ontologies'
-version = '3.1.0'
+version = '4.0.0'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
@@ -17,36 +17,23 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.opencaesar.owl:owl-fuseki-gradle:1.+'
-        classpath 'io.opencaesar.owl:owl-shacl-fuseki-gradle:1.+'
-        classpath 'io.opencaesar.owl:owl-query-gradle:1.+'
-        classpath 'io.opencaesar.owl:owl-load-gradle:1.+'
-        classpath 'io.opencaesar.owl:owl-reason-gradle:1.+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.+'
-        classpath 'io.opencaesar.oml:oml-merge-gradle:1.+'
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.+'
+        classpath 'io.opencaesar.owl:owl-fuseki-gradle:2.+'
+        classpath 'io.opencaesar.owl:owl-shacl-fuseki-gradle:2.+'
+        classpath 'io.opencaesar.owl:owl-query-gradle:2.+'
+        classpath 'io.opencaesar.owl:owl-load-gradle:2.+'
+        classpath 'io.opencaesar.owl:owl-reason-gradle:2.+'
+        classpath 'io.opencaesar.owl:owl-doc-gradle:2.+'
+        classpath 'io.opencaesar.oml:oml-merge-gradle:2.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:2.+'
     }
 }
 
-/*
- * Bikeshed folder
- */
+// Dataset-specific variables
 ext {
-    bikeshed = 'build/bikeshed'
-}
-
-/*
- * Dependency versions
- */
-ext { 
-    imceVersion = '3.+'
-}
-
-/*
- * The configuration of OML dependencies
- */
-configurations {
-    oml
+    // Name of dataset (matches one used in .fuseki.ttl file)
+    dataset = 'firesat'
+    // Root ontology IRI of the dataset
+    rootIri = 'http://opencaesar.io/examples/firesat/bundle'
 }
 
 /*
@@ -58,10 +45,17 @@ repositories {
 }
 
 /*
+ * The configuration of OML dependencies
+ */
+configurations {
+    oml
+}
+
+/*
  * The OML dependencies
  */
 dependencies {
-    oml "io.opencaesar.ontologies:imce-vocabularies:$imceVersion"
+    oml "io.opencaesar.ontologies:imce-vocabularies:4.+"
 }
 
 /*
@@ -70,40 +64,6 @@ dependencies {
 task downloadDependencies(type:io.opencaesar.oml.merge.OmlMergeTask) {
     inputZipPaths = configurations.oml.files
     outputCatalogFolder = file('build/oml')
-}
-
-/*
- * A task to generate Bikeshed specification for the OML catalog
- */
-task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, dependsOn: downloadDependencies) {
-    // OML catalog
-    inputCatalogPath = file('catalog.xml')
-    // OML catalog title
-    inputCatalogTitle = project.title
-    // OML catalog version
-    inputCatalogVersion = project.version
-    // Input Ontology Iri
-    rootOntologyIri = 'http://opencaesar.io/examples/firesat/bundle'
-    // OWL folder
-    outputFolderPath = file("$bikeshed")
-    // Publish URL
-    publishUrl = 'https://opencaesar.github.io/firesat-example'
-}
-
-/*
- * A task to generate the model documentation in HTML
- */
-import org.gradle.internal.os.OperatingSystem
-task generateDocs(dependsOn: omlToBikeshed) {
-    inputs.files(fileTree("$bikeshed").include('**/*.bs'))
-    outputs.files(fileTree("$bikeshed").include('**/*.html'))
-    doLast {
-        if (OperatingSystem.current().isWindows()) {
-            exec { commandLine "$bikeshed/publish.bat" }
-        } else {
-            exec { commandLine "$bikeshed/publish.sh" }
-        }
-    }
 }
 
 /*
@@ -126,23 +86,37 @@ task owlReason(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl)
     inputOntologyIri = 'http://opencaesar.io/examples/firesat/bundle'
     // Entailment statements to generate and the ontologies to persist them in
     specs = [
-        'http://opencaesar.io/examples/firesat/bundle/classes = ALL_SUBCLASS',
-        'http://opencaesar.io/examples/firesat/bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-        'http://opencaesar.io/examples/firesat/bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+        "$rootIri/classes = ALL_SUBCLASS",
+        "$rootIri/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY",
+        "$rootIri/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS"
     ]
     // Junit error report
     reportPath = file('build/reports/reasoning.xml')
 }
 
 /*
- * Start and stop the Fuseki server
+ * A task to generate documentation for the OWL catalog
+ */
+task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: owlReason) {
+    // OWL catalog
+    inputCatalogPath = file('build/owl/catalog.xml')
+    // OWL catalog title
+    inputCatalogTitle = project.title
+    // OWL catalog version
+    inputCatalogVersion = project.version
+    // OWL Ontology Iris
+    inputOntologyIris = [ "$rootIri/classes", "$rootIri/properties",  "$rootIri/individuals" ]
+    // Output folder
+    outputFolderPath = file('build/doc')
+    // Output case sensitivie path
+    outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
+}
+
+/*
+ * Start the Fuseki server
  */
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask) {
     configurationPath = file('.fuseki.ttl')
-    outputFolderPath = file('.fuseki')
-}
-
-task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
     outputFolderPath = file('.fuseki')
 }
 
@@ -152,13 +126,9 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
 task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: owlReason) {
     inputs.files(startFuseki.outputFolderPath) // rerun when fuseki restarts
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = 'http://localhost:3030/firesat'
+    endpointURL = "http://localhost:3030/$dataset"
     fileExtensions = ['owl', 'ttl']
-    iris = [
-        'http://opencaesar.io/examples/firesat/bundle/classes',
-        'http://opencaesar.io/examples/firesat/bundle/properties',
-        'http://opencaesar.io/examples/firesat/bundle/individuals'
-    ]
+    iris = [ "$rootIri/classes", "$rootIri/properties",  "$rootIri/individuals" ]
 }
 
 /*
@@ -175,9 +145,18 @@ task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, dependsOn: owlLoad) {
  * A task to run a set of SHACL validation rules on a Fuseki dataset endpoint
  */
 task owlShacl(type:io.opencaesar.owl.shacl.fuseki.OwlShaclFusekiTask, dependsOn: owlLoad) {
+    inputs.files(owlLoad.inputs.files) // rerun when the dataset changes
     endpointURL = 'http://localhost:3030/firesat'
     queryPath = file('src/shacl')
     resultPath = file('build/reports')
+}
+
+/*
+ * Stop the Fuseki server
+ */
+task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask) {
+	mustRunAfter owlQuery, owlLoad, owlShacl
+    outputFolderPath = file('.fuseki')
 }
 
 /*
