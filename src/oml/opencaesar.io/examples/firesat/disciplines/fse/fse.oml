@@ -24,16 +24,16 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 	ref concept project:WorkPackage < MassConstrainedElement
 
 	concept Subsystem < mission:Component, MassConstrainedElement [
-		restricts all relation base:aggregates to Assembly
+		restricts all base:aggregates to Assembly
 	]
 	
 	concept Assembly < mission:Component, MassConstrainedElement, EndCircuitPresentingElement [
-		restricts all relation base:isAggregatedIn to Subsystem
+		restricts all base:isAggregatedIn to Subsystem
 	]
 
 	concept EndCircuit < mission:Interface [
-		restricts all relation mission:isJoinedIn to Function
-		restricts all relation mission:isPresentedBy to EndCircuitPresentingElement
+		restricts all mission:isJoinedIn to Function
+		restricts all mission:isPresentedBy to EndCircuitPresentingElement
 	]
 
 	concept PowerEndCircuit < EndCircuit
@@ -43,19 +43,19 @@ vocabulary <http://opencaesar.io/examples/firesat/disciplines/fse/fse#> as fse {
 	concept PowerOut < PowerEndCircuit
 
 	concept Function < mission:Junction [
-		restricts all relation mission:joins to EndCircuit
+		restricts all mission:joins to EndCircuit
 	]
 
 	concept PowerFunction < Function [
-		restricts scalar property hasEndCircuitType to "Power"
-		restricts all relation mission:joins to PowerEndCircuit
+		restricts hasEndCircuitType to "Power"
+		restricts all mission:joins to PowerEndCircuit
 		
 	]
 
 	concept MassConstraint < vim4:InherentUnitaryQuantityValue [
-		restricts all relation vim4:characterizes to MassConstrainedElement
-    	restricts relation vim4:instantiates to iso-80000-4.1:mass
-    	restricts relation vim4:unit to iso-80000-4.1:kilogram
+		restricts all vim4:characterizes to MassConstrainedElement
+    	restricts vim4:instantiates to iso-80000-4.1:mass
+    	restricts vim4:unit to iso-80000-4.1:kilogram
 	]
 
 	concept MassAllocationConstraint < MassConstraint
