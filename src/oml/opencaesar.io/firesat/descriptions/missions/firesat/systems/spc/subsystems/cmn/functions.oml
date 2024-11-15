@@ -1,0 +1,96 @@
+@dc:title "Communications Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/functions#> as cmn-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/assemblies#> as cmn-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Transmitter Unit
+ 
+	relation instance PerformsGenerateTelemetry : mission:Performs [
+		from cmn-assemblies:TransmitterUnit
+		to GenerateTelemetry
+	]
+	
+	instance GenerateTelemetry : mission:Function [
+		project:realizes firesat-functions:GenerateTelemetry
+	]
+
+	// Receiver Unit
+
+	relation instance PerformsApplyCommands : mission:Performs [
+		from cmn-assemblies:ReceiverUnit
+		to ApplyCommands
+	]
+
+	instance ApplyCommands : mission:Function [
+		project:realizes firesat-functions:ApplyCommands
+	]
+
+	// Transmit Whip Antenna
+
+	relation instance PerformsSendTelemetryToNOAAGroundStations : mission:Performs [
+		from cmn-assemblies:TransmitWhipAntenna
+		to SendTelemetryToNOAAGroundStations
+	]
+
+	instance SendTelemetryToNOAAGroundStations : mission:Function [
+		project:realizes firesat-functions:SendTelemetryToNOAAGroundStations
+	]
+
+	relation instance PerformsDeployMechanismsByTransmitWhipAntenna : mission:Performs [
+		from cmn-assemblies:TransmitWhipAntenna
+		to DeployMechanismsByTransmitWhipAntenna
+	]
+
+	instance DeployMechanismsByTransmitWhipAntenna : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+	// Transmit Hi-Gain Antenna
+
+	relation instance PerformsDeployMechanismsByTransmitHiGainAntenna : mission:Performs [
+		from cmn-assemblies:TransmitHiGainAntenna
+		to DeployMechanismsByTransmitHiGainAntenna
+	]
+
+	instance DeployMechanismsByTransmitHiGainAntenna : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+	relation instance PerformsCommunicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna : mission:Performs [
+		from cmn-assemblies:TransmitHiGainAntenna
+		to Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna
+	]
+
+	instance Communicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna : mission:Function [
+		project:realizes firesat-functions:Communicate911DownlinkWithRegionalFieldOffices
+	]
+
+	// Receive Whip Antenna
+
+	relation instance PerformsDeployMechanismsByReceiveWhipAntenna : mission:Performs [
+		from cmn-assemblies:ReceiveWhipAntenna
+		to DeployMechanismsByReceiveWhipAntenna
+	]
+
+	instance DeployMechanismsByReceiveWhipAntenna : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+	relation instance PerformsCommunicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna : mission:Performs [
+		from cmn-assemblies:ReceiveWhipAntenna
+		to Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna
+	]
+
+	instance Communicate911DownlinkWithRegionalFieldOfficesByReceiveWhipAntenna : mission:Function [
+		project:realizes firesat-functions:Communicate911DownlinkWithRegionalFieldOffices
+	]
+
+}

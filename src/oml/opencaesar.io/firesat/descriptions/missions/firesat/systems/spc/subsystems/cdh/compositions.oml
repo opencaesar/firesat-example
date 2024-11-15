@@ -1,0 +1,42 @@
+@dc:title "Command and Data Handling Compositions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/compositions#> as cdh-compositions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/assemblies#> as cdh-assemblies
+
+	// Top Panel Module Compositions
+
+	ref instance cdh-assemblies:TopPanelModule [
+		base:contains cdh-assemblies:TopPanel
+		base:contains cdh-assemblies:StructurePost1
+		base:contains cdh-assemblies:StructurePost2
+		base:contains cdh-assemblies:StructurePost3
+		base:contains cdh-assemblies:StructurePost4
+		base:contains cdh-assemblies:StructurePost5
+		base:contains cdh-assemblies:StructurePost6
+	]
+
+	// Base Plate Module Compositions
+
+	ref instance cdh-assemblies:BasePlateModule [
+		base:contains cdh-assemblies:AvionicsStackSection
+		base:contains cdh-assemblies:BasePlate
+	]
+	
+	// Avionics Stack Section Compositions
+
+	ref instance cdh-assemblies:AvionicsStackSection [
+		base:contains cdh-assemblies:PrimaryFlightComputerUnit
+	]
+	
+	// Launch Vehicle Interface Module Compositions
+
+	ref instance cdh-assemblies:LaunchVehicleInterfaceModule [
+		base:contains cdh-assemblies:LaunchVehicleAdapter
+		base:contains cdh-assemblies:SeparationSystem
+	]
+
+}

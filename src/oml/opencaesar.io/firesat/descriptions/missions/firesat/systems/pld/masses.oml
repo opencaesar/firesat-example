@@ -1,0 +1,42 @@
+@dc:title "Payload Masses"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/masses#> as pld-masses {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+	uses <http://bipm.org/jcgm/vim4#> as vim4
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld#> as pld
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	// Payload Mass
+	
+	@rdfs:label "Payload Mass Limit Constraint"
+	instance PayloadMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "28.1"^^xsd:double
+		vim4:characterizes pld:Payload
+	]
+
+	// Payload Module Mass
+
+	@rdfs:label "Payload Module Mass Limit Constraint"
+	instance PayloadModuleMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "0.6"^^xsd:double
+		vim4:characterizes pld-assemblies:PayloadModule
+	]
+	
+	// Sensor Mass
+
+	@rdfs:label "Sensor Mass Limit Constraint"
+	instance SensorMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "28.1"^^xsd:double
+		vim4:characterizes pld-assemblies:Sensor
+	]
+	
+}

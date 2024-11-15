@@ -1,0 +1,54 @@
+@dc:title "Communications Assemblies"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/assemblies#> as cmn-assemblies {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn#> as cmn
+
+	// Transmitter Unit
+
+	@rdfs:label "Transmitter Unit"
+	instance TransmitterUnit : fse:Assembly [
+		base:hasIdentifier "516400"
+		base:isAggregatedIn cmn:Communications
+	]
+
+	// Receiver Unit
+
+	@rdfs:label "Receiver Unit"
+	instance ReceiverUnit : fse:Assembly [
+		base:hasIdentifier "516500"
+		base:isAggregatedIn cmn:Communications
+	]
+
+	// Transmit Whip Antenna
+
+	@rdfs:label "Transmit Whip Antenna"
+	instance TransmitWhipAntenna : fse:Assembly [
+		base:hasIdentifier "553000"
+		base:isAggregatedIn cmn:Communications
+	]
+
+	// Transmit Hi-Gain Antenna
+
+	@rdfs:label "Transmit Hi-Gain Antenna"
+	instance TransmitHiGainAntenna : fse:Assembly [
+		base:hasIdentifier "554000"
+		base:isAggregatedIn cmn:Communications
+	]
+
+	// Receive Whip Antenna
+
+	@rdfs:label "Receive Whip Antenna"
+	instance ReceiveWhipAntenna : fse:Assembly [
+		base:hasIdentifier "555000"
+		base:isAggregatedIn cmn:Communications
+	]	
+
+}

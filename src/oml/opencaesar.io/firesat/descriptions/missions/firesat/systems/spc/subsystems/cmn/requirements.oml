@@ -1,0 +1,70 @@
+@dc:title "Communications Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/requirements#> as cmn-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/system#> as spc-system-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	// Receiver Unit
+
+	instance UplinkDownlinkHardwareForReceiverUnit : mission:Requirement [
+		mission:refines spc-system-reqs:UplinkDownlinkHardware
+	]
+
+	instance InteroperabilityForReceiverUnit : mission:Requirement [
+		mission:refines spc-system-reqs:Interoperability
+	]
+
+	// Transmit Whip Antenna
+
+	instance UplinkDownlinkHardwareForTransmitWhipAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:UplinkDownlinkHardware
+	]
+
+	instance InteroperabilityForTransmitWhipAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:Interoperability
+	]
+
+	instance SupportabilityForTransmitWhipAntenna : mission:Requirement [
+		mission:refines spc-logistical-reqs:Supportability
+	]
+
+	// Receive Whip Antenna
+
+	instance UplinkDownlinkHardwareForReceiveWhipAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:UplinkDownlinkHardware
+	]
+
+	instance InteroperabilityForReceiveWhipAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:Interoperability
+	]
+
+	// Transmitter Unit
+
+	instance UplinkDownlinkHardwareForTransmitterUnit : mission:Requirement [
+		mission:refines spc-system-reqs:UplinkDownlinkHardware
+	]
+
+	instance InteroperabilityForTransmitterUnit : mission:Requirement [
+		mission:refines spc-system-reqs:Interoperability
+	]
+
+	instance SupportabilityForTransmitterUnit : mission:Requirement [
+		mission:refines spc-logistical-reqs:Supportability
+	]
+
+	// Transmit Hi-Gain Antenna
+	
+	instance InteroperabilityForTransmitHiGainAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:Interoperability
+	]
+
+	instance UplinkDownlinkHardwareForTransmitHiGainAntenna : mission:Requirement [
+		mission:refines spc-system-reqs:UplinkDownlinkHardware
+	]
+
+}

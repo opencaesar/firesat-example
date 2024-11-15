@@ -1,0 +1,157 @@
+@dc:title "ADCS and GNC Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/functions#> as ang-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/assemblies#> as ang-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Magnetometer
+
+	relation instance PerformsAttitudeAwareness : mission:Performs [
+		from ang-assemblies:Magnetometer
+		to AttitudeAwareness
+	]
+
+	instance AttitudeAwareness  : mission:Function [
+		project:realizes firesat-functions:AttitudeAwareness
+	]
+
+	// GPS Antenna
+
+	relation instance PerformsPositionAwarenessByGPSAntenna : mission:Performs [
+		from ang-assemblies:GPSAntenna
+		to PositionAwarenessByGPSAntenna
+	]
+
+	instance PositionAwarenessByGPSAntenna  : mission:Function [
+		project:realizes firesat-functions:PositionAwareness
+	]
+
+	// GPS Receiver Unit
+
+	relation instance PerformsPositionAwarenessByGPSReceiverUnit : mission:Performs [
+		from ang-assemblies:GPSReceiverUnit
+		to PositionAwarenessByGPSReceiverUnit
+	]
+
+	instance PositionAwarenessByGPSReceiverUnit  : mission:Function [
+		project:realizes firesat-functions:PositionAwareness
+	]
+
+	// ADCS Electronics Unit
+
+	relation instance PerformsControlTrajectory : mission:Performs [
+		from ang-assemblies:ADCSElectronicsUnit
+		to ControlTrajectory
+	]
+
+	instance ControlTrajectory  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Sun Sensor
+
+	relation instance PerformsAttitudeAwarenessBySunSensor : mission:Performs [
+		from ang-assemblies:SunSensor
+		to AttitudeAwarenessBySunSensor
+	]
+
+	instance AttitudeAwarenessBySunSensor  : mission:Function [
+		project:realizes firesat-functions:AttitudeAwareness
+	]
+
+	// Earth Sensor
+
+	relation instance PerformsAttitudeAwarenessByEarthSensor : mission:Performs [
+		from ang-assemblies:EarthSensor
+		to AttitudeAwarenessByEarthSensor
+	]
+
+	instance AttitudeAwarenessByEarthSensor  : mission:Function [
+		project:realizes firesat-functions:AttitudeAwareness
+	]
+
+	// Reaction Wheel 1
+
+	relation instance PerformsControlTrajectoryByReactionWheel1 : mission:Performs [
+		from ang-assemblies:ReactionWheel1
+		to ControlTrajectoryByReactionWheel1
+	]
+
+	instance ControlTrajectoryByReactionWheel1  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 2
+
+	relation instance PerformsControlTrajectoryByReactionWheel2 : mission:Performs [
+		from ang-assemblies:ReactionWheel2
+		to ControlTrajectoryByReactionWheel2
+	]
+
+	instance ControlTrajectoryByReactionWheel2  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 3
+
+	relation instance PerformsControlTrajectoryByReactionWheel3 : mission:Performs [
+		from ang-assemblies:ReactionWheel3
+		to ControlTrajectoryByReactionWheel3
+	]
+
+	instance ControlTrajectoryByReactionWheel3  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Reaction Wheel 4
+
+	relation instance PerformsControlTrajectoryByReactionWheel4 : mission:Performs [
+		from ang-assemblies:ReactionWheel4
+		to ControlTrajectoryByReactionWheel4
+	]
+
+	instance ControlTrajectoryByReactionWheel4  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 1
+
+	relation instance PerformsControlTrajectoryByMagnetorquer1 : mission:Performs [
+		from ang-assemblies:Magnetorquer1
+		to ControlTrajectoryByMagnetorquer1
+	]
+
+	instance ControlTrajectoryByMagnetorquer1  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 2
+
+	relation instance PerformsControlTrajectoryByMagnetorquer2 : mission:Performs [
+		from ang-assemblies:Magnetorquer2
+		to ControlTrajectoryByMagnetorquer2
+	]
+
+	instance ControlTrajectoryByMagnetorquer2  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Magnetorquer 3
+
+	relation instance PerformsControlTrajectoryByMagnetorquer3 : mission:Performs [
+		from ang-assemblies:Magnetorquer3
+		to ControlTrajectoryByMagnetorquer3
+	]
+
+	instance ControlTrajectoryByMagnetorquer3  : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+}

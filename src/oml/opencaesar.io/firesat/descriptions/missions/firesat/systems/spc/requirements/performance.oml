@@ -1,0 +1,22 @@
+@dc:title "Spacecraft Performance Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/performance#> as spc-performance-reqs {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/functional#> as firesat-functional-reqs
+
+	@rdfs:label "Time Error"
+	instance TimeError : mission:Requirement [
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+	@rdfs:label "Altitude Error"
+	instance AltitudeError : mission:Requirement [
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+}

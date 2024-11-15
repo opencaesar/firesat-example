@@ -1,0 +1,219 @@
+@dc:title "Spacecraft Junctions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/junctions#> as spc-junctions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/endcircuits#> as sam-endcircuits
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/endcircuits#> as eps-endcircuits
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/endcircuits#> as ang-endcircuits
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/endcircuits#> as prp-endcircuits
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/endcircuits#> as cmn-endcircuits
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/endcircuits#> as cdh-endcircuits
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/assemblies#> as eps-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/assemblies#> as sam-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/assemblies#> as ang-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/assemblies#> as prp-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/assemblies#> as cmn-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/assemblies#> as cdh-assemblies
+
+	// 3000 to 5000 Power Function
+
+	@rdfs:label "Power 3000 to 5000"
+	instance 3000To5000Power : fse:PowerFunction [
+		base:hasIdentifier "3000-5000-001"
+		fse:hasFunctionDirection "1to2"
+		
+		fse:connectsAssembly1 eps-assemblies:BatteryPack1
+		mission:joins1 eps-endcircuits:BatteryPack1PowerOut
+
+		fse:connectsAssembly1 eps-assemblies:BatteryPack2
+		mission:joins1 eps-endcircuits:BatteryPack2PowerOut
+
+		fse:connectsAssembly1 eps-assemblies:BatteryPack3
+		mission:joins1 eps-endcircuits:BatteryPack3PowerOut
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerIn1
+	]
+
+	// 5000 to 2000 Power Function
+
+	@rdfs:label "Power 5000 to 2000"
+	instance 5000To2000Power : fse:PowerFunction [
+		base:hasIdentifier "2000-5000-001"
+		fse:hasFunctionDirection "2to1"
+
+		fse:connectsAssembly1 ang-assemblies:Magnetometer
+		mission:joins1 ang-endcircuits:MagnetometerPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:GPSAntenna
+		mission:joins1 ang-endcircuits:GPSAntennaPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:GPSReceiverUnit
+		mission:joins1 ang-endcircuits:GPSReceiverUnitPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:ADCSElectronicsUnit
+		mission:joins1 ang-endcircuits:ADCSElectronicsUnitPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:SunSensor
+		mission:joins1 ang-endcircuits:SunSensorPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:EarthSensor
+		mission:joins1 ang-endcircuits:EarthSensorPowerIn
+
+		fse:connectsAssembly1 ang-assemblies:ReactionWheel1
+		mission:joins1 ang-endcircuits:ReactionWheel1PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:ReactionWheel2
+		mission:joins1 ang-endcircuits:ReactionWheel2PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:ReactionWheel3
+		mission:joins1 ang-endcircuits:ReactionWheel3PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:ReactionWheel4
+		mission:joins1 ang-endcircuits:ReactionWheel4PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:Magnetorquer1
+		mission:joins1 ang-endcircuits:Magnetorquer1PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:Magnetorquer2
+		mission:joins1 ang-endcircuits:Magnetorquer2PowerIn
+
+		fse:connectsAssembly1 ang-assemblies:Magnetorquer3
+		mission:joins1 ang-endcircuits:Magnetorquer3PowerIn
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut4
+	]
+
+	// 5000 to 3000 Power Function
+
+	@rdfs:label "Power 5000 to 3000"
+	instance 5000To3000Power : fse:PowerFunction [
+		base:hasIdentifier "3000-5000-002"
+		fse:hasFunctionDirection "2to1"
+
+		fse:connectsAssembly1 eps-assemblies:BatteryPack1
+		mission:joins1 eps-endcircuits:BatteryPack1PowerIn
+
+		fse:connectsAssembly1 eps-assemblies:BatteryPack2
+		mission:joins1 eps-endcircuits:BatteryPack2PowerIn
+
+		fse:connectsAssembly1 eps-assemblies:BatteryPack3
+		mission:joins1 eps-endcircuits:BatteryPack3PowerIn
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut3
+	]
+
+	// 5000 to 4000 Power Function
+
+	@rdfs:label "Power 5000 to 4000"
+	instance 5000To4000Power : fse:PowerFunction [
+		base:hasIdentifier "4000-5000-001"
+		fse:hasFunctionDirection "2to1"
+
+		fse:connectsAssembly1 prp-assemblies:PropellantHandlingSection
+		mission:joins1 prp-endcircuits:PropellantHandlingSectionPowerIn
+
+		fse:connectsAssembly1 prp-assemblies:PropulsionSystemControlUnit
+		mission:joins1 prp-endcircuits:PropulsionSystemControlUnitPowerIn
+
+		fse:connectsAssembly1 prp-assemblies:FillDrainValveUnit
+		mission:joins1 prp-endcircuits:FillDrainValveUnitPowerIn
+
+		fse:connectsAssembly1 prp-assemblies:PropulsionModule
+		mission:joins1 prp-endcircuits:PropulsionModulePowerIn
+
+		fse:connectsAssembly1 prp-assemblies:ACSThruster1
+		
+		fse:connectsAssembly1 prp-assemblies:ACSThruster2
+		
+		fse:connectsAssembly1 prp-assemblies:ACSThruster3
+		
+		fse:connectsAssembly1 prp-assemblies:ACSThruster4
+		
+		fse:connectsAssembly1 prp-assemblies:ACSThruster5
+		
+		fse:connectsAssembly1 prp-assemblies:ACSThruster6
+
+		fse:connectsAssembly1 prp-assemblies:PrimaryThruster
+
+		fse:connectsAssembly1 prp-assemblies:BPPropellantLineUnit
+
+		fse:connectsAssembly1 prp-assemblies:PMPropellantLineUnit
+
+		fse:connectsAssembly1 prp-assemblies:PropellantTank
+
+		fse:connectsAssembly1 prp-assemblies:PressurantTank
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut6
+	]
+
+	// 5000 to 6000 Power Function
+
+	@rdfs:label "Power 5000 to 6000"
+	instance 5000To6000Power : fse:PowerFunction [
+		base:hasIdentifier "5000-6000-001"
+		fse:hasFunctionDirection "1to2"
+		
+		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins1 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut8
+
+		fse:connectsAssembly2 cmn-assemblies:TransmitterUnit
+		mission:joins2 cmn-endcircuits:TransmitterUnitPowerIn
+
+		fse:connectsAssembly2 cmn-assemblies:ReceiverUnit
+		mission:joins2 cmn-endcircuits:ReceiverUnitPowerIn
+
+		fse:connectsAssembly2 cmn-assemblies:TransmitWhipAntenna
+		mission:joins2 cmn-endcircuits:TransmitWhipAntennaPowerIn
+
+		fse:connectsAssembly2 cmn-assemblies:TransmitHiGainAntenna
+		mission:joins2 cmn-endcircuits:TransmitHiGainAntennaPowerIn
+
+		fse:connectsAssembly2 cmn-assemblies:ReceiveWhipAntenna
+		mission:joins2 cmn-endcircuits:ReceiveWhipAntennaPowerIn
+	]
+
+	// 5000 to 7000 Power Function
+
+	@rdfs:label "Power 5000 to 7000"
+	instance 5000To7000Power : fse:PowerFunction [
+		base:hasAlternateName "5000-7000-001"
+		fse:hasFunctionDirection "1to2"
+
+		fse:connectsAssembly1 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins1 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut9
+
+		fse:connectsAssembly2 cdh-assemblies:PrimaryFlightComputerUnit
+		mission:joins2 cdh-endcircuits:PrimaryFlightComputerUnitPowerIn
+
+		fse:connectsAssembly2 cdh-assemblies:LaunchVehicleInterfaceModule
+		mission:joins2 cdh-endcircuits:LaunchVehicleInterfaceModulePowerIn
+
+		fse:connectsAssembly2 cdh-assemblies:SeparationSystem
+		mission:joins2 cdh-endcircuits:SeparationSystemPowerIn
+	]
+
+}

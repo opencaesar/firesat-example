@@ -1,0 +1,157 @@
+@dc:title "Propulsion Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/functions#> as prp-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/assemblies#> as prp-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Propulsion System Control Unit
+
+	relation instance PerformsControlTrajectory : mission:Performs [
+		from prp-assemblies:PropulsionSystemControlUnit
+		to ControlTrajectory
+	]
+
+	instance ControlTrajectory : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Primary Thruster
+
+	relation instance PerformsLaunch_SC : mission:Performs [
+		from prp-assemblies:PrimaryThruster
+		to Launch_SC
+	]
+
+	instance Launch_SC : mission:Function [
+		project:realizes firesat-functions:Launch_SC
+	]
+
+	// ACS Thruster 1
+
+	relation instance PerformsControlTrajectoryByACSThruster1 : mission:Performs [
+		from prp-assemblies:ACSThruster1
+		to ControlTrajectoryByACSThruster1
+	]
+
+	instance ControlTrajectoryByACSThruster1 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 2
+
+	relation instance PerformsControlTrajectoryByACSThruster2 : mission:Performs [
+		from prp-assemblies:ACSThruster2
+		to ControlTrajectoryByACSThruster2
+	]
+
+	instance ControlTrajectoryByACSThruster2 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 3
+
+	relation instance PerformsControlTrajectoryByACSThruster3 : mission:Performs [
+		from prp-assemblies:ACSThruster3
+		to ControlTrajectoryByACSThruster3
+	]
+
+	instance ControlTrajectoryByACSThruster3 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 4
+
+	relation instance PerformsControlTrajectoryByACSThruster4 : mission:Performs [
+		from prp-assemblies:ACSThruster4
+		to ControlTrajectoryByACSThruster4
+	]
+
+	instance ControlTrajectoryByACSThruster4 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 5
+
+	relation instance PerformsControlTrajectoryByACSThruster5 : mission:Performs [
+		from prp-assemblies:ACSThruster5
+		to ControlTrajectoryByACSThruster5
+	]
+
+	instance ControlTrajectoryByACSThruster5 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// ACS Thruster 6
+
+	relation instance PerformsControlTrajectoryByACSThruster6 : mission:Performs [
+		from prp-assemblies:ACSThruster6
+		to ControlTrajectoryByACSThruster6
+	]
+
+	instance ControlTrajectoryByACSThruster6 : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// FillDrain Valve Unit
+
+	relation instance PerformsControlTrajectoryByFillDrainValveUnit : mission:Performs [
+		from prp-assemblies:FillDrainValveUnit
+		to ControlTrajectoryByFillDrainValveUnit
+	]
+
+	instance ControlTrajectoryByFillDrainValveUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// BP Propellant Line Unit
+
+	relation instance PerformsControlTrajectoryByBPPropellantLineUnit : mission:Performs [
+		from prp-assemblies:BPPropellantLineUnit
+		to ControlTrajectoryByBPPropellantLineUnit
+	]
+
+	instance ControlTrajectoryByBPPropellantLineUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Propellant Tank
+
+	relation instance PerformsControlTrajectoryByPropellantTank : mission:Performs [
+		from prp-assemblies:PropellantTank
+		to ControlTrajectoryByPropellantTank
+	]
+
+	instance ControlTrajectoryByPropellantTank : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// Pressurant Tank
+
+	relation instance PerformsControlTrajectoryByPressurantTank : mission:Performs [
+		from prp-assemblies:PressurantTank
+		to ControlTrajectoryByPressurantTank
+	]
+
+	instance ControlTrajectoryByPressurantTank : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+	// PM Propellant Line Unit
+
+	relation instance PerformsControlTrajectoryByPMPropellantLineUnit : mission:Performs [
+		from prp-assemblies:PMPropellantLineUnit
+		to ControlTrajectoryByPMPropellantLineUnit
+	]
+
+	instance ControlTrajectoryByPMPropellantLineUnit : mission:Function [
+		project:realizes firesat-functions:ControlTrajectory
+	]
+
+}

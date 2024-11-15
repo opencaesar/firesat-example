@@ -1,0 +1,36 @@
+@dc:title "Structures and Mechanisms Specifications"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/specifications#> as sam-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/assemblies#> as sam-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/requirements#> as sam-requirements
+
+	// Solar Array With SADA 1
+ 
+	ref instance sam-assemblies:SolarArrayWithSADA1 [
+		mission:isSpecifiedBy sam-requirements:SpaceEnvironmentForSolarArrayWithSADA1
+	]
+	
+	// Solar Array With SADA 2
+
+	ref instance sam-assemblies:SolarArrayWithSADA2[
+		mission:isSpecifiedBy sam-requirements:SpaceEnvironmentForSolarArrayWithSADA2
+	]
+
+	// Power Control Unit
+
+	ref instance sam-assemblies:PowerControlUnit [
+		mission:isSpecifiedBy sam-requirements:SpaceEnvironmentForPowerControlUnit
+	]
+	
+	// EPS Regulators And Converters Unit
+
+	ref instance sam-assemblies:EPSRegulatorsAndConvertersUnit [
+		mission:isSpecifiedBy sam-requirements:SpaceEnvironmentForEPSRegulatorsAndConvertersUnit
+	]
+
+}

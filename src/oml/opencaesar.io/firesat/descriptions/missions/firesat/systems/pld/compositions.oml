@@ -1,0 +1,16 @@
+@dc:title "Payload Compositions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/compositions#> as pld-compositions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	// Payload Module Compositions
+
+	ref instance pld-assemblies:PayloadModule [
+		base:contains pld-assemblies:Sensor
+	]
+
+}

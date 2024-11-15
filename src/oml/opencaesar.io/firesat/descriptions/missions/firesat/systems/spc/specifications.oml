@@ -1,0 +1,51 @@
+@dc:title "Spacecraft Specifications"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/specifications#> as spc-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/assemblies#> as spc-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/functions#> as spc-functions
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/functional#> as spc-functional
+
+	// Spacecraft System Segment
+
+	ref instance spc-assemblies:SpacecraftSystemSegment [
+		mission:isSpecifiedBy spc-functional:PrimeItemDefinitionForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:StandardSampleForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:ManufacturabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:SecurityAndSafetyForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:StructuralQualificationForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:SupplyForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:FaultProtectionForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:AvailabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:TransportationForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:FacilitiesForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:TrainingAndPersonelForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:ReliabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:MaintainabilityForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:TimeErrorForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:AltitudeErrorForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:PowerBudgetForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:SpaceVehicleMassForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:MaturityOfNewTechnologiesForSpacecraftSystemSegment
+		mission:isSpecifiedBy spc-functional:NumberOfSatellitesForSpacecraftSystemSegment
+	]
+	
+	ref relation instance spc-functions:PerformsDetectNewWildfires [
+		mission:isSpecifiedBy spc-functional:OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires
+		mission:isSpecifiedBy spc-functional:MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires
+	]
+
+	ref relation instance spc-functions:PerformsMonitorExistingWildfires_24_7 [
+		mission:isSpecifiedBy spc-functional:OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7
+		mission:isSpecifiedBy spc-functional:MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7
+	]
+
+}

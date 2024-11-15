@@ -1,0 +1,57 @@
+@dc:title "Communications Specifications"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/specifications#> as cmn-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/assemblies#> as cmn-assemblies
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/functions#> as cmn-functions
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/requirements#> as cmn-requirements
+
+	// Receiver Unit
+
+	ref instance cmn-assemblies:ReceiverUnit [
+		mission:isSpecifiedBy cmn-requirements:UplinkDownlinkHardwareForReceiverUnit
+		mission:isSpecifiedBy cmn-requirements:InteroperabilityForReceiverUnit
+	]
+
+	// Transmit Whip Antenna
+
+	ref instance cmn-assemblies:TransmitWhipAntenna [
+		mission:isSpecifiedBy cmn-requirements:UplinkDownlinkHardwareForTransmitWhipAntenna
+		mission:isSpecifiedBy cmn-requirements:InteroperabilityForTransmitWhipAntenna
+		mission:isSpecifiedBy cmn-requirements:SupportabilityForTransmitWhipAntenna
+	]
+
+	// Receive Whip Antenna
+
+	ref instance cmn-assemblies:ReceiveWhipAntenna [
+		mission:isSpecifiedBy cmn-requirements:UplinkDownlinkHardwareForReceiveWhipAntenna
+		mission:isSpecifiedBy cmn-requirements:InteroperabilityForReceiveWhipAntenna
+	]
+
+	// Transmitter Unit
+
+	ref instance cmn-assemblies:TransmitterUnit [
+		mission:isSpecifiedBy cmn-requirements:InteroperabilityForTransmitterUnit
+		mission:isSpecifiedBy cmn-requirements:SupportabilityForTransmitterUnit
+	]
+		
+	ref relation instance cmn-functions:PerformsGenerateTelemetry [
+		mission:isSpecifiedBy cmn-requirements:UplinkDownlinkHardwareForTransmitterUnit
+	]
+	
+	// Transmit Hi-Gain Antenna
+	
+	ref instance cmn-assemblies:TransmitHiGainAntenna [
+		mission:isSpecifiedBy cmn-requirements:InteroperabilityForTransmitHiGainAntenna
+	]
+	
+	ref relation instance cmn-functions:PerformsCommunicate911DownlinkWithRegionalFieldOfficesByTransmitHiGainAntenna [
+		mission:isSpecifiedBy cmn-requirements:UplinkDownlinkHardwareForTransmitHiGainAntenna
+	]
+	
+}

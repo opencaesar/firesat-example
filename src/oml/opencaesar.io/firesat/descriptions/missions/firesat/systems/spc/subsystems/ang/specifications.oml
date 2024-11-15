@@ -1,0 +1,103 @@
+@dc:title "ADCS and GNC Specifications"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/specifications#> as ang-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/functions#> as ang-functions
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/resource#> as spc-resource-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/assemblies#> as ang-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/requirements#> as ang-requirements
+
+	// GPS Antenna
+
+	ref instance ang-assemblies:GPSAntenna [
+		mission:isSpecifiedBy ang-requirements:OperabilityForGPSAntenna
+	]
+
+	ref relation instance ang-functions:PerformsPositionAwarenessByGPSAntenna [
+		mission:isSpecifiedBy ang-requirements:AltitudeDeterminationForGPSAntenna
+		mission:isSpecifiedBy ang-requirements:OrbitDeterminationForGPSAntenna
+	]
+
+	// GPS Receiver Unit
+
+	ref relation instance ang-functions:PerformsPositionAwarenessByGPSReceiverUnit [
+		mission:isSpecifiedBy ang-requirements:AltitudeDeterminationForGPSReceiverUnit
+		mission:isSpecifiedBy ang-requirements:OrbitDeterminationForGPSReceiverUnit
+	]
+
+	// ADCS Electronics Unit
+
+	ref instance ang-assemblies:ADCSElectronicsUnit [
+		mission:isSpecifiedBy ang-requirements:MaintenanceForADCSElectronicsUnit
+		mission:isSpecifiedBy ang-requirements:OperabilityForADCSElectronicsUnit
+	]
+	
+	// Magnetometer
+
+	ref instance ang-assemblies:Magnetometer [
+		mission:isSpecifiedBy ang-requirements:OperabilityForMagnetometer
+	]
+	
+	// Magnetorquer 1
+
+	ref instance ang-assemblies:Magnetorquer1 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForMagnetorquer1
+	]
+	
+	// Magnetorquer 2
+
+	ref instance ang-assemblies:Magnetorquer2 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForMagnetorquer2
+	]
+	
+	// Magnetorquer 3
+
+	ref instance ang-assemblies:Magnetorquer3 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForMagnetorquer3
+	]
+	
+	// Reaction Wheel 1
+
+	ref instance ang-assemblies:ReactionWheel1 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForReactionWheel1
+	]
+	
+	// Reaction Wheel 2
+
+	ref instance ang-assemblies:ReactionWheel2 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForReactionWheel2
+	]
+	
+	// Reaction Wheel 3
+
+	ref instance ang-assemblies:ReactionWheel3 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForReactionWheel3
+	]
+	
+	// Reaction Wheel 4
+
+	ref instance ang-assemblies:ReactionWheel4 [
+		mission:isSpecifiedBy ang-requirements:OperabilityForReactionWheel4
+	]
+
+	// Sun Sensor
+
+	ref instance ang-assemblies:SunSensor [
+		mission:isSpecifiedBy ang-requirements:OperabilityForSunSensor
+	]
+	
+	// Earth Sensor
+
+	ref instance ang-assemblies:EarthSensor [
+		mission:isSpecifiedBy ang-requirements:OperabilityForEarthSensor
+	]
+
+}

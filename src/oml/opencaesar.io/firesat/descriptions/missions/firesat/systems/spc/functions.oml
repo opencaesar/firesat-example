@@ -1,0 +1,45 @@
+@dc:title "Spacecraft Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/functions#> as spc-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat#> as firesat-mission
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/assemblies#> as spc-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Spacecraft System Segment
+
+	relation instance PerformsPerformMission : mission:Performs [
+		from spc-assemblies:SpacecraftSystemSegment
+		to PerformMission
+	]
+
+	instance PerformMission : mission:Function [
+		project:realizes firesat-functions:PerformMission
+	]
+
+	relation instance PerformsDetectNewWildfires : mission:Performs [
+		from spc-assemblies:SpacecraftSystemSegment
+		to DetectNewWildfires
+	]
+
+	instance DetectNewWildfires : mission:Function [
+		project:realizes firesat-functions:DetectNewWildfires
+	]
+
+	relation instance PerformsMonitorExistingWildfires_24_7 : mission:Performs [
+		from spc-assemblies:SpacecraftSystemSegment
+		to MonitorExistingWildfires_24_7
+	]
+
+	instance MonitorExistingWildfires_24_7 : mission:Function [
+		project:realizes firesat-functions:MonitorExistingWildfires_24_7
+	]
+
+}

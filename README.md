@@ -12,75 +12,83 @@ This is a description of a FireSat project expressed in [OML](https://github.com
   git clone https://github.com/opencaesar/firesat-example.git
   cd firesat-example
 ```
-## Prerequisites
-
-- You need JDK 11 installed in the environment
-
-- if you run 'generateDocs', you also need [Bikeshed](https://tabatkins.github.io/bikeshed/#install-final) installed in the environment
-
-## Quick Start
-Run the following
-```
-./gradlew clean
-./gradlew startFuseki
-./gradlew owlQuery
-./gradlew stopFuseki
-``` 
-Inspect results of query in folder: `build/results` 
-
 ## Build
-Equivalent to owlReason task
+
+Check the consistency of the dataset
+
 ```
 ./gradlew build
 ```
 
 ## Generate Docs
+
+Generate documentation from dataset
+
 ```
 ./gradlew generateDocs
 ```
 
-## Run OWL Reasoner
+## Start Fuseki Server
+
+Start the Fuseki triple store
+
 ```
-./gradlew owlReason
+./gradlew startFuseki
 ```
 
-## Load to Fuseki Dataset
-```
-./gradlew owlLoad
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below)  
+Navigate to http://localhost:3030
 
+Verify you see a dataset: `firesat`
+
+## Stop Fuseki Server
+
+Stop the Fuseki triple store
+
+```
+./gradlew stopFuseki
+```
+
+## Load Dataset to Fuseki
+
+Load the dataset to Fuseki server
+
+```
+./gradlew load
+```
+
+Navigate to http://localhost:3030/#/dataset/firesat/info
+
+Click on `count triples in all graphs` and observe the triple counts
 
 ## Run SPARQL Queries
-```
-./gradlew owlQuery
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below)  
 
-Results will be in the folder 'build/results'
+Run the SPARQL queries
 
+```
+./gradlew query
+```
+
+Inspect the results at `build/results/firesat`
 
 ## Run SHACL Rules
-```
-./gradlew owlShacl
-```
-Pre-req: A Fuseki server with a firesat dataset must be running at http://localhost:3030/firesat (see Start Fuseki Server below) 
+Run the SHACL rules
 
+```
+./gradlew validate
+```
+
+Inspect the results at `build/logs/firesat`
 
 ## Publish to Maven Local
+
+Publish the OML dataset as an archive in the local maven repo
+
 ```
 ./gradlew publishToMavenLocal
 ```
 
-## Start Headless Fuseki Server
-```
-./gradlew startFuseki
-```
-> You need to run this once at the start before running any action involving Fuseki
+Inspect the OML archive
 
-## Stop Headless Fuseki Server
 ```
-./gradlew stopFuseki
+ls ~/.m2/repository/io/opencaesar/firesat-example
 ```
-> You need to run this once at the end after you are done running actions involving Fuseki
-

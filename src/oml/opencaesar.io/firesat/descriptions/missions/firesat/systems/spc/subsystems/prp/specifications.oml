@@ -1,0 +1,103 @@
+@dc:title "Propulsion Specifications"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/specifications#> as prp-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/assemblies#> as prp-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/requirements#> as prp-requirements
+
+	// Propellant Tank
+
+	ref instance prp-assemblies:PropellantTank [
+		mission:isSpecifiedBy prp-requirements:AltitudeForPropellantTank
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPropellantTank
+	]
+	
+	// Pressurant Tank
+
+	ref instance prp-assemblies:PressurantTank[
+		mission:isSpecifiedBy prp-requirements:AltitudeForPressurantTank
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPressurantTank
+	]
+
+	// ACS Thruster 1
+
+	ref instance prp-assemblies:ACSThruster1 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster1
+	]
+	
+	// ACS Thruster 2
+
+	ref instance prp-assemblies:ACSThruster2 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster2
+	]
+	
+	// ACS Thruster 3
+
+	ref instance prp-assemblies:ACSThruster3 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster3
+	]
+	
+	// ACS Thruster 4
+
+	ref instance prp-assemblies:ACSThruster4 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster4
+	]
+	
+	// ACS Thruster 5
+
+	ref instance prp-assemblies:ACSThruster5 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster5
+	]
+	
+	// ACS Thruster 6
+
+	ref instance prp-assemblies:ACSThruster6 [
+		mission:isSpecifiedBy prp-requirements:OperabilityForACSThruster6
+	]
+		
+	// Primary Thruster
+
+	ref instance prp-assemblies:PrimaryThruster [
+		mission:isSpecifiedBy prp-requirements:AltitudeForPrimaryThruster
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPrimaryThruster
+	]
+
+	// Propulsion System Control Unit
+
+	ref instance prp-assemblies:PropulsionSystemControlUnit [
+		mission:isSpecifiedBy prp-requirements:AltitudeForPropulsionSystemControlUnit
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPropulsionSystemControlUnit
+	]
+
+	// Propulsion Module
+
+	ref instance prp-assemblies:PropulsionModule [
+		mission:isSpecifiedBy prp-requirements:AltitudeForPropulsionModule
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPropulsionModule
+	]
+
+	// PM Propellant Line Unit
+
+	ref instance prp-assemblies:PMPropellantLineUnit [
+		mission:isSpecifiedBy prp-requirements:AltitudeForPMPropellantLineUnit
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForPMPropellantLineUnit
+	]
+
+	// BP Propellant Line Unit
+
+	ref instance prp-assemblies:BPPropellantLineUnit [
+		mission:isSpecifiedBy prp-requirements:AltitudeForBPPropellantLineUnit
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForBPPropellantLineUnit
+	]
+	
+	// :Fill Drain Valve Unit
+
+	ref instance prp-assemblies:FillDrainValveUnit [
+		mission:isSpecifiedBy prp-requirements:DeltaVBudgetForFillDrainValveUnit
+	]
+
+}

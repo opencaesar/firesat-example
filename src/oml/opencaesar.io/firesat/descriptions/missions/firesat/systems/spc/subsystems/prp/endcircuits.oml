@@ -1,0 +1,48 @@
+@dc:title "Propulsion Endcircuits"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/endcircuits#> as prp-endcircuits {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse 
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/assemblies#> as prp-assemblies
+
+	// Propulsion System Control Unit End Circuits
+
+	@rdfs:label "Propulsion System Control Unit Power In"
+	instance PropulsionSystemControlUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy prp-assemblies:PropulsionSystemControlUnit
+	]
+
+	// Propellant Handling Section End Circuits
+
+	@rdfs:label "Propellant Handling Section Power In"
+	instance PropellantHandlingSectionPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy prp-assemblies:PropellantHandlingSection
+	]
+
+	// Fill Drain Valve Unit End Circuits
+
+	@rdfs:label "Fill Drain Valve Unit Power In"
+	instance FillDrainValveUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy prp-assemblies:FillDrainValveUnit
+	]
+
+	// Propulsion Module End Circuits
+
+	@rdfs:label "Propulsion Module Power In"
+	instance PropulsionModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy prp-assemblies:PropulsionModule
+	]
+
+}

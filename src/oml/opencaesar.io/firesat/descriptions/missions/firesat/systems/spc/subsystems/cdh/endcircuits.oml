@@ -1,0 +1,48 @@
+@dc:title "Command and Data Handling Endcircuits"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/endcircuits#> as cdh-endcircuits {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse 
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh/assemblies#> as cdh-assemblies
+
+	// Avionics Stack Section End Circuits
+
+	@rdfs:label "Avionics Stack Section Power In"
+	instance AvionicsStackSectionPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cdh-assemblies:AvionicsStackSection
+	]
+
+	// Primary Flight Computer Unit End Circuits
+
+	@rdfs:label "Primary Flight Computer Unit Power In"
+	instance PrimaryFlightComputerUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cdh-assemblies:PrimaryFlightComputerUnit
+	]
+
+	// Launch Vehicle Interface Module End Circuits
+
+	@rdfs:label "Launch Vehicle Interface Module Power In"
+	instance LaunchVehicleInterfaceModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cdh-assemblies:LaunchVehicleInterfaceModule
+	]
+
+	// Separation System End Circuits
+
+	@rdfs:label "Separation System Power In"
+	instance SeparationSystemPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cdh-assemblies:SeparationSystem
+	]
+
+}

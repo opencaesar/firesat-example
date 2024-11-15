@@ -1,0 +1,16 @@
+project:
+   title: FireSat Example # set this
+   description: The FireSat example project # set this
+   group: io.opencaesar
+   version: 1.0.0
+
+dependencies:
+   - io.opencaesar.ontologies:imce-vocabularies:5.+
+
+datasets:
+   firesat:
+      iri: http://opencaesar.io/firesat/descriptions/bundle # root ontology
+      url: http://localhost:3030/firesat # matches name in .oml/fuseki.ttl
+      sources: [ 'src/oml' ]
+      queries: src/sparql
+      validations: src/shacl

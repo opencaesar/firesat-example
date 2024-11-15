@@ -1,0 +1,32 @@
+@dc:title "Payload Endcircuits"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/endcircuits#> as pld-endcircuits {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse 
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	// Payload Module End Circuits
+
+	@rdfs:label "Payload Module Power In"
+	instance PayloadModulePowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy pld-assemblies:PayloadModule
+	]
+
+	// Sensor End Circuits
+
+	@rdfs:label "Sensor Power In"
+	instance SensorPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy pld-assemblies:Sensor
+	]
+
+}

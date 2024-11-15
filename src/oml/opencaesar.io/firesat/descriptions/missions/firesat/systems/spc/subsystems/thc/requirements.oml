@@ -1,0 +1,16 @@
+@dc:title "Thermal Control Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/thc/requirements#> as thc-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/environmental#> as spc-environmental-reqs
+
+	// Thermal Blankets
+ 
+	instance SpaceEnvironmentForThermalBlankets : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+}

@@ -1,0 +1,128 @@
+@dc:title "FireSat Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+	
+	@rdfs:label "Perform Mission"
+	instance PerformMission : mission:Function [
+		mission:invokes ReachOperationalOrbit
+		mission:invokes Communicate
+		mission:invokes Supply_Power_24_7
+		mission:invokes ApplyCommands
+		mission:invokes MonitorAndMaintainHealthAndsafety
+		mission:invokes DetectNewWildfires
+		mission:invokes MonitorExistingWildfires_24_7
+		mission:invokes Communicate911DownlinkWithRegionalFieldOffices
+		mission:invokes Release_SC_From_LV
+		mission:invokes DeployMechanisms
+	]
+
+	@rdfs:label "Reach Operational Orbit"
+	instance ReachOperationalOrbit : mission:Function [
+		mission:invokes ControlTrajectory
+	]
+
+	@rdfs:label "Communicate"
+	instance Communicate : mission:Function [
+		mission:invokes ReceiveTelecommandFromNOAAGroundStations
+		mission:invokes Communicate911DownlinkWithRegionalFieldOffices
+		mission:invokes SendTelemetryToNOAAGroundStations
+	]
+
+	@rdfs:label "Supply Power 24/7"
+	instance Supply_Power_24_7 : mission:Function [
+		mission:invokes TransformSolarRadiationsIntoEnergy
+		mission:invokes StoreEnergyDuringEclipses
+	]
+
+	@rdfs:label "Apply Commands"
+	instance ApplyCommands : mission:Function [
+		mission:invokes ReceiveTelecommandFromNOAAGroundStations
+	]
+
+	@rdfs:label "Monitor and Maintain Health & Safety"
+	instance MonitorAndMaintainHealthAndsafety : mission:Function [
+		mission:invokes MitigateFailures
+		mission:invokes AvoidCollisions
+	]
+
+	@rdfs:label "Detect New Wildfires"
+	instance DetectNewWildfires : mission:Function
+
+	@rdfs:label "Monitor Existing Wildfires 24/7"
+	instance MonitorExistingWildfires_24_7 : mission:Function
+
+	@rdfs:label "Communicate 911 Downlink With Regional Field Offices"
+	instance Communicate911DownlinkWithRegionalFieldOffices : mission:Function
+
+	@rdfs:label "Release S/C from L/V"
+	instance Release_SC_From_LV : mission:Function [
+		mission:invokes Launch_SC
+	]
+
+	@rdfs:label "Deploy Mechanisms"
+	instance DeployMechanisms : mission:Function
+
+	@rdfs:label "Control Trajectory"
+	instance ControlTrajectory : mission:Function [
+		mission:invokes AttitudeAwareness
+		mission:invokes PositionAwareness
+	]
+
+	@rdfs:label "Receive Telecommand Trom NOAA Ground Stations"
+	instance ReceiveTelecommandFromNOAAGroundStations : mission:Function
+
+	@rdfs:label "Send Telemetry NOAA Ground Stations"
+	instance SendTelemetryToNOAAGroundStations : mission:Function [
+		mission:invokes StoreDataBetweenTwoTelemetries
+		mission:invokes GenerateTelemetry
+	]
+
+	@rdfs:label "Transform Solar Radiations Into Energy"
+	instance TransformSolarRadiationsIntoEnergy : mission:Function
+
+	@rdfs:label "Store Energy During Eclipses"
+	instance StoreEnergyDuringEclipses : mission:Function
+
+	@rdfs:label "Mitigate Failures"
+	instance MitigateFailures : mission:Function [
+		mission:invokes HomogenizeTemperature
+		mission:invokes ProtectAgainstRadiations
+	]
+
+	@rdfs:label "Avoid Collisions"
+	instance AvoidCollisions : mission:Function [
+		mission:invokes ControlTrajectory
+	]
+
+	@rdfs:label "Launch S/C"
+	instance Launch_SC : mission:Function [
+		mission:invokes InsureMechanicalIntegrity
+	]
+
+	@rdfs:label "Attitude Awareness"
+	instance AttitudeAwareness : mission:Function
+
+	@rdfs:label "Position Awareness"
+	instance PositionAwareness : mission:Function
+
+	@rdfs:label "Store Data Between Two Telemetries"
+	instance StoreDataBetweenTwoTelemetries : mission:Function
+
+	@rdfs:label "Generate Telemetry"
+	instance GenerateTelemetry : mission:Function
+
+	@rdfs:label "Homogenize Temperature"
+	instance HomogenizeTemperature : mission:Function
+
+	@rdfs:label "Protect Against Radiations"
+	instance ProtectAgainstRadiations : mission:Function
+
+	@rdfs:label "Insure Mechanical Integrity"
+	instance InsureMechanicalIntegrity : mission:Function
+
+}

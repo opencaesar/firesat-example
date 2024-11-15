@@ -1,0 +1,34 @@
+@dc:title "Structures and Mechanisms Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/requirements#> as sam-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/environmental#> as spc-environmental-reqs
+
+	// Solar Array With SADA 1
+ 
+	instance SpaceEnvironmentForSolarArrayWithSADA1 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+	// Solar Array With SADA 2
+
+	instance SpaceEnvironmentForSolarArrayWithSADA2 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+	// Power Control Unit
+
+	instance SpaceEnvironmentForPowerControlUnit : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+	// EPS Regulators And Converters Unit
+
+	instance SpaceEnvironmentForEPSRegulatorsAndConvertersUnit : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+}

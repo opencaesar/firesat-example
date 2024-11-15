@@ -1,0 +1,39 @@
+@dc:title "FireSat Junctions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/junctions#> as firesat-junctions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse 
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/endcircuits#> as pld-endcircuits
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/endcircuits#> as sam-endcircuits
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/assemblies#> as sam-assemblies
+
+	// 5000 to 1000 Power Function
+
+	@rdfs:label "5000 to 1000 Power"
+	instance 5000To1000Power : fse:PowerFunction [
+		base:hasIdentifier "1000-5000-001"
+		fse:hasFunctionDirection "2to1"
+
+		fse:connectsAssembly1 pld-assemblies:PayloadModule
+		mission:joins1 pld-endcircuits:PayloadModulePowerIn
+		
+		fse:connectsAssembly1 pld-assemblies:Sensor
+		mission:joins1 pld-endcircuits:SensorPowerIn
+
+		fse:connectsAssembly2 sam-assemblies:EPSRegulatorsAndConvertersUnit
+		mission:joins2 sam-endcircuits:EPSRegulatorsAndConvertersUnitPowerOut3
+	]
+	
+}

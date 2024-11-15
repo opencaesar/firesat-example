@@ -1,0 +1,38 @@
+@dc:title "Spacecraft Operational Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/operational#> as spc-operational-reqs {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/stakeholder#> as firesat-stakeholder-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/functional#> as firesat-functional-reqs
+
+	@rdfs:label "Orbit Inclination"
+	instance OrbitInclination : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:GeoLocation
+		mission:refines firesat-functional-reqs:Coverage
+	]
+
+	@rdfs:label "Altitude"
+	instance Altitude : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+	@rdfs:label "Minimum Elevation Angle"
+	instance MinimumElevationAngle : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+}

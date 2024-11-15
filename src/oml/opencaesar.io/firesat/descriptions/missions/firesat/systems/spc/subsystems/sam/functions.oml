@@ -1,0 +1,76 @@
+@dc:title "Structures and Mechanisms Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/functions#> as sam-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/assemblies#> as sam-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions// Power Control Unit
+	
+	// Power Control Unit
+
+	relation instance PerformsSupply_Power_24_7ByPowerControlUnit : mission:Performs [
+		from sam-assemblies:PowerControlUnit
+		to Supply_Power_24_7ByPowerControlUnit
+	]
+
+	instance Supply_Power_24_7ByPowerControlUnit : mission:Function [
+		project:realizes firesat-functions:Supply_Power_24_7
+	]
+
+	// EPS Regulators And Converters Unit
+
+	relation instance PerformsSupply_Power_24_7ByEPSRegulatorsAndConvertersUnit : mission:Performs [
+		from sam-assemblies:EPSRegulatorsAndConvertersUnit
+		to Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit
+	]
+
+	instance Supply_Power_24_7ByEPSRegulatorsAndConvertersUnit : mission:Function [
+		project:realizes firesat-functions:Supply_Power_24_7
+	]
+
+	// Solar Array With SADA 1
+
+	relation instance PerformsTransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1 : mission:Performs [
+		from sam-assemblies:SolarArrayWithSADA1
+		to TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1
+	]
+
+	instance TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA1 : mission:Function [
+		project:realizes firesat-functions:TransformSolarRadiationsIntoEnergy
+	]
+
+	relation instance PerformDeployMechanismsBySolarArrayWithSADA1 : mission:Performs [
+		from sam-assemblies:SolarArrayWithSADA1
+		to DeployMechanismsBySolarArrayWithSADA1
+	]
+
+	instance DeployMechanismsBySolarArrayWithSADA1 : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+	// Solar Array With SADA 2
+
+	relation instance PerformsTransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2 : mission:Performs [
+		from sam-assemblies:SolarArrayWithSADA2
+		to TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2
+	]
+
+	instance TransformSolarRadiationsIntoEnergyBySolarArrayWithSADA2 : mission:Function [
+		project:realizes firesat-functions:TransformSolarRadiationsIntoEnergy
+	]
+
+	relation instance PerformsDeployMechanismsBySolarArrayWithSADA2 : mission:Performs [
+		from sam-assemblies:SolarArrayWithSADA2
+		to DeployMechanismsBySolarArrayWithSADA2
+	]
+
+	instance DeployMechanismsBySolarArrayWithSADA2 : mission:Function [
+		project:realizes firesat-functions:DeployMechanisms
+	]
+
+}

@@ -1,0 +1,46 @@
+@dc:title "Structures and Mechanisms Assemblies"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam/assemblies#> as sam-assemblies {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam#> as sam
+
+	// Power Control Unit
+
+	@rdfs:label "Power Control Unit"
+	instance PowerControlUnit : fse:Assembly [
+		base:hasIdentifier "516100"
+		base:isAggregatedIn sam:StructuresAndMechanisms
+	]
+
+	// EPS Regulators And Converters Unit
+
+	@rdfs:label "EPS Regulators and Converters Unit"
+	instance EPSRegulatorsAndConvertersUnit : fse:Assembly [
+		base:hasIdentifier "516200"
+		base:isAggregatedIn sam:StructuresAndMechanisms
+	]
+
+	// Solar Array With SADA 1
+
+	@rdfs:label "Solar Array with SADA 1"
+	instance SolarArrayWithSADA1 : fse:Assembly [
+		base:hasIdentifier "580000-1"
+		base:isAggregatedIn sam:StructuresAndMechanisms
+	]
+
+	// Solar Array With SADA 2
+
+	@rdfs:label "Solar Array with SADA 2"
+	instance SolarArrayWithSADA2 : fse:Assembly [
+		base:hasIdentifier "580000-2"
+		base:isAggregatedIn sam:StructuresAndMechanisms
+	]
+
+}

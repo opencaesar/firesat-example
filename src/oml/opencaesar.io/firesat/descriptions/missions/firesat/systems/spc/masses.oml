@@ -1,0 +1,34 @@
+@dc:title "Spacecraft Masses"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/masses#> as spc-masses {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+	uses <http://bipm.org/jcgm/vim4#> as vim4
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc#> as spc
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/assemblies#> as spc-assemblies
+
+	// Spacecraft Mass
+
+	@rdfs:label "Spacecraft Mass Limit Constraint"
+	instance PayloadMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "235.1"^^xsd:double
+		vim4:characterizes spc:Spacecraft
+	]
+
+	// Spacecraft System Segment Mass
+
+	@rdfs:label "Spacecraft System Segment Mass Limit Constraint"
+	instance SpacecraftSystemSegmentMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "0.6"^^xsd:double
+		vim4:characterizes spc-assemblies:SpacecraftSystemSegment
+	]
+
+}

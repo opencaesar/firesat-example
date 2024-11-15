@@ -1,0 +1,47 @@
+@dc:title "Electric Power System Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/functions#> as eps-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/assemblies#> as eps-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Battery Pack 1
+
+	relation instance PerformsStoreEnergyDuringEclipsesByBatteryPack1 : mission:Performs [
+		from eps-assemblies:BatteryPack1
+		to StoreEnergyDuringEclipsesByBatteryPack1
+	]
+
+	instance StoreEnergyDuringEclipsesByBatteryPack1 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
+	]
+
+	// Battery Pack 2
+
+	relation instance PerformsStoreEnergyDuringEclipsesByBatteryPack2 : mission:Performs [
+		from eps-assemblies:BatteryPack2
+		to StoreEnergyDuringEclipsesByBatteryPack2
+	]
+
+	instance StoreEnergyDuringEclipsesByBatteryPack2 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
+	]
+
+	// Battery Pack 3
+
+	relation instance PerformsStoreEnergyDuringEclipsesByBatteryPack3 : mission:Performs [
+		from eps-assemblies:BatteryPack3
+		to StoreEnergyDuringEclipsesByBatteryPack3
+	]
+
+	instance StoreEnergyDuringEclipsesByBatteryPack3 : mission:Function [
+		project:realizes firesat-functions:StoreEnergyDuringEclipses
+	]
+
+}

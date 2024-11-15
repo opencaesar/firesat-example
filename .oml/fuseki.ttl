@@ -1,0 +1,24 @@
+PREFIX :        <#>
+PREFIX fuseki:  <http://jena.apache.org/fuseki#>
+PREFIX tdb:     <http://jena.hpl.hp.com/2008/tdb#>
+
+#############################################################################
+
+:service a                              fuseki:Service ;
+    fuseki:name                         "firesat" ; # matches name in ./oml/fuseki.ttl
+    fuseki:dataset                      :dataset ;
+    fuseki:serviceReadWriteGraphStore 	"data" ;
+    fuseki:serviceReadGraphStore        "get" ;
+    fuseki:endpoint                     [ fuseki:operation fuseki:query ; ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:query ; fuseki:name "sparql" ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:query ; fuseki:name "query" ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:shacl ; ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:shacl ; fuseki:name "shacl" ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:update ; ];
+    fuseki:endpoint                     [ fuseki:operation fuseki:update ; fuseki:name "update" ];
+	.
+
+:dataset a tdb:DatasetTDB ;
+  tdb:location "--mem--" ;
+  tdb:unionDefaultGraph true ;
+	.

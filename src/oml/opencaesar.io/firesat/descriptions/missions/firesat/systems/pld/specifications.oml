@@ -1,0 +1,30 @@
+@dc:title "Payload Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/specifications#> as pld-specifications {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/functions#> as pld-functions
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/requirements/system#> as pld-system-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/requirements/functional#> as pld-functional
+
+	// Sensor Requirements
+
+	ref instance pld-assemblies:Sensor [
+		mission:isSpecifiedBy pld-functional:ApertureSizeForSensor
+		mission:isSpecifiedBy pld-functional:SpectralResolutionForSensor
+		mission:isSpecifiedBy pld-functional:FORForSensor
+		mission:isSpecifiedBy pld-functional:SpatialResolutionForSensor
+		mission:isSpecifiedBy pld-functional:WavelenghtRangeForSensor
+	]
+
+	ref relation instance pld-functions:PerformsDetectNewWildfires [
+		mission:isSpecifiedBy pld-functional:SensingRangeForSensor
+	]
+
+}

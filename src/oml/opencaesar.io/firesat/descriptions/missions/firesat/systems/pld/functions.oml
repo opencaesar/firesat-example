@@ -1,0 +1,47 @@
+@dc:title "Payload Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/functions#> as pld-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld/assemblies#> as pld-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Payload Module
+
+	relation instance PerformsInsureMechanicalIntegrity : mission:Performs [
+		from pld-assemblies:PayloadModule
+		to InsureMechanicalIntegrity
+	]
+
+	instance InsureMechanicalIntegrity  : mission:Function [
+		project:realizes firesat-functions:InsureMechanicalIntegrity
+		mission:isPerformedBy pld-assemblies:PayloadModule
+	]
+
+	// Sensor
+
+	relation instance PerformsMonitorExistingWildfires_24_7 : mission:Performs [
+		from pld-assemblies:Sensor
+		to MonitorExistingWildfires_24_7
+	]
+
+	instance MonitorExistingWildfires_24_7  : mission:Function [
+		project:realizes firesat-functions:MonitorExistingWildfires_24_7
+		mission:isPerformedBy pld-assemblies:Sensor
+	]
+
+	relation instance PerformsDetectNewWildfires : mission:Performs [
+		from pld-assemblies:Sensor
+		to DetectNewWildfires
+	]
+
+	instance DetectNewWildfires  : mission:Function [
+		project:realizes firesat-functions:DetectNewWildfires
+	]
+
+}

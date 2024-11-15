@@ -1,0 +1,60 @@
+@dc:title "Spacecraft Logistical Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/stakeholder#> as firesat-stakeholder-reqs
+
+	@rdfs:label "Supply"
+	instance Supply : mission:Requirement
+
+	@rdfs:label "End of Life Disposal"
+	instance EndOfLifeDisposal : mission:Requirement
+
+	@rdfs:label "Fault Protection"
+	instance FaultProtection : mission:Requirement
+
+	@rdfs:label "Availability"
+	instance Availability : mission:Requirement
+
+	@rdfs:label "Transportation"
+	instance Transportation : mission:Requirement
+
+	@rdfs:label "Facilities"
+	instance Facilities : mission:Requirement
+
+	@rdfs:label "Training and Personel"
+	instance TrainingAndPersonel : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
+
+	@rdfs:label "Maintenance"
+	instance Maintenance : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+	]
+
+	@rdfs:label "Reliability"
+	instance Reliability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+	]
+
+	@rdfs:label "Maintainability"
+	instance Maintainability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
+
+	@rdfs:label "Operability"
+	instance Operability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
+
+	@rdfs:label "Supportability"
+	instance Supportability : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:InitialFullOperationalCapability
+	]
+	
+}

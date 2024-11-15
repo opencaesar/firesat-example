@@ -1,0 +1,105 @@
+@dc:title "ADCS and GNC Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang/requirements#> as ang-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/resource#> as spc-resource-reqs
+
+	// GPS Antenna
+
+	instance OperabilityForGPSAntenna : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	instance AltitudeDeterminationForGPSAntenna : mission:Requirement [
+		mission:refines spc-resource-reqs:AltitudeDetermination
+	]
+
+	instance OrbitDeterminationForGPSAntenna : mission:Requirement [
+		mission:refines spc-resource-reqs:OrbitDetermination
+	]
+
+	// GPS Receiver Unit
+
+	instance AltitudeDeterminationForGPSReceiverUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:AltitudeDetermination
+	]
+
+	instance OrbitDeterminationForGPSReceiverUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:OrbitDetermination
+	]
+
+	// ADCS Electronics Unit
+
+	instance MaintenanceForADCSElectronicsUnit : mission:Requirement [
+		mission:refines spc-logistical-reqs:Maintenance
+	]
+
+	instance OperabilityForADCSElectronicsUnit : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetometer
+	
+	instance OperabilityForMagnetometer : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 1
+
+	instance OperabilityForMagnetorquer1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 2
+
+	instance OperabilityForMagnetorquer2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Magnetorquer 3
+	instance OperabilityForMagnetorquer3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 1
+
+	instance OperabilityForReactionWheel1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 2
+
+	instance OperabilityForReactionWheel2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 3
+
+	instance OperabilityForReactionWheel3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Reaction Wheel 4
+
+	instance OperabilityForReactionWheel4 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Sun Sensor
+
+	instance OperabilityForSunSensor : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Earth Sensor
+
+	instance OperabilityForEarthSensor : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+}

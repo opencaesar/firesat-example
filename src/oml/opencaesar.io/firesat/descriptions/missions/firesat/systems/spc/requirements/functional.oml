@@ -1,0 +1,124 @@
+@dc:title "Spacecraft Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/functional#> as spc-functional {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/system#> as spc-system-reqs
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/environmental#> as spc-environmental-reqs
+	
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/operational#> as spc-operational-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/performance#> as spc-performance-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/resource#> as spc-resource-reqs
+
+	instance PrimeItemDefinitionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:PrimeItemDefinition
+	]
+
+	instance StandardSampleForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:StandardSample
+	]
+
+	instance ManufacturabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:Manufacturability
+	]
+
+	instance SecurityAndSafetyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-system-reqs:SecurityAndSafety
+	]
+
+	instance QualificationOfHeritageFlightHardwareForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:QualificationOfHeritageFlightHardware
+	]
+
+	instance StructuralQualificationForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:StructuralQualification
+	]
+
+	instance SpaceEnvironmentEffectsOnMaterialSelectionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironmentEffectsOnMaterialSelection
+	]
+
+	instance SpaceVehicleNaturalFrequencyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceVehicleNaturalFrequency
+	]
+
+	instance SupplyForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Supply
+	]
+
+	instance FaultProtectionForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:FaultProtection
+	]
+
+	instance AvailabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Availability
+	]
+
+	instance TransportationForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Transportation
+	]
+
+	instance FacilitiesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Facilities
+	]
+
+	instance TrainingAndPersonelForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:TrainingAndPersonel
+	]
+
+	instance ReliabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Reliability
+	]
+
+	instance MaintainabilityForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-logistical-reqs:Maintainability
+	]
+
+	instance TimeErrorForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-performance-reqs:TimeError
+	]
+
+	instance AltitudeErrorForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:PowerBudget
+	]
+
+	instance PowerBudgetForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:PowerBudget
+	]
+
+	instance SpaceVehicleMassForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:SpaceVehicleMass
+	]
+
+	instance MaturityOfNewTechnologiesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:MaturityOfNewTechnologies
+	]
+
+	instance NumberOfSatellitesForSpacecraftSystemSegment : mission:Requirement [
+		mission:refines spc-resource-reqs:NumberOfSatellites
+	]
+
+	instance OrbitInclinationForSpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Requirement [
+		mission:refines spc-operational-reqs:OrbitInclination
+	]
+
+	instance MinimumElevationAngleForSpacecraftSystemSegmentPerformsDetectNewWildfires : mission:Requirement [
+		mission:refines spc-operational-reqs:MinimumElevationAngle
+	]
+
+	instance OrbitInclinationForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Requirement [
+		mission:refines spc-operational-reqs:OrbitInclination
+	]
+
+	instance MinimumElevationAngleForSpacecraftSystemSegmentPerformsMonitorExistingWildfires_24_7 : mission:Requirement [
+		mission:refines spc-operational-reqs:MinimumElevationAngle
+	]
+
+}

@@ -1,0 +1,126 @@
+@dc:title "Propulsion Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp/requirements#> as prp-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/operational#> as spc-operational-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/resource#> as spc-resource-reqs
+
+	// Propellant Tank
+
+	instance AltitudeForPropellantTank : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPropellantTank : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Pressurant Tank
+
+	instance AltitudeForPressurantTank : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPressurantTank : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// ACS Thruster 1
+
+	instance OperabilityForACSThruster1 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 2
+
+	instance OperabilityForACSThruster2 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 3
+
+	instance OperabilityForACSThruster3 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 4
+
+	instance OperabilityForACSThruster4 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 5
+
+	instance OperabilityForACSThruster5 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// ACS Thruster 6
+
+	instance OperabilityForACSThruster6 : mission:Requirement [
+		mission:refines spc-logistical-reqs:Operability
+	]
+
+	// Primary Thruster
+
+	instance AltitudeForPrimaryThruster : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPrimaryThruster : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Propulsion System Control Unit
+
+	instance AltitudeForPropulsionSystemControlUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPropulsionSystemControlUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// Propulsion Module
+
+	instance AltitudeForPropulsionModule : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPropulsionModule : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// PM Propellant Line Unit
+
+	instance AltitudeForPMPropellantLineUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForPMPropellantLineUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// BP Propellant Line Unit
+
+	instance AltitudeForBPPropellantLineUnit : mission:Requirement [
+		mission:refines spc-operational-reqs:Altitude
+	]
+
+	instance DeltaVBudgetForBPPropellantLineUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+	// :Fill Drain Valve Unit
+
+	instance DeltaVBudgetForFillDrainValveUnit : mission:Requirement [
+		mission:refines spc-resource-reqs:DeltaVBudget
+	]
+
+}

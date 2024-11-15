@@ -1,0 +1,30 @@
+@dc:title "Spacecraft Assemblies"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/assemblies#> as spc-assemblies {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+	
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat#> as firesat-mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc#> as spc
+
+	// Spacecraft System Segment
+
+	@rdfs:label "Spacecraft System Segment"
+	instance SpacecraftSystemSegment : fse:Assembly [
+		base:hasIdentifier "500000"
+		base:isAggregatedIn spc:Spacecraft
+		mission:isInfluencedBy firesat-mission:Endoatmosphere
+		mission:isInfluencedBy firesat-mission:SpaceDebris
+		mission:isInfluencedBy firesat-mission:Stars
+		mission:isInfluencedBy firesat-mission:Sun
+	]
+
+}

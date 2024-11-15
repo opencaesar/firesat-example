@@ -1,0 +1,63 @@
+@dc:title "Spacecraft Resource Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/resource#> as spc-resource-reqs {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/stakeholder#> as firesat-stakeholder-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/requirements/functional#> as firesat-functional-reqs
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/logistical#> as spc-logistical-reqs
+
+	@rdfs:label "Power Budget"
+	instance PowerBudget : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+	]
+
+	@rdfs:label "Delta-V Budget"
+	instance DeltaVBudget : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines spc-logistical-reqs:EndOfLifeDisposal
+	]
+
+	@rdfs:label "Space Vehicle Mass"
+	instance SpaceVehicleMass : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+	]
+
+	@rdfs:label "Altitude Determination"
+	instance AltitudeDetermination : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:GeoLocation
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:TimeAllocationForFireGeoLocation
+		mission:refines firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
+	]
+
+	@rdfs:label "Orbit Determination"
+	instance OrbitDetermination : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:GeoLocation
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:TimeAllocationForOrbitAndAltitudeDetermination
+		mission:refines firesat-functional-reqs:TimeAllocationForFireGeoLocation
+	]
+
+	@rdfs:label "Maturity of New Technologies"
+	instance MaturityOfNewTechnologies : mission:Requirement
+
+	@rdfs:label "Number of Satellites"
+	instance NumberOfSatellites : mission:Requirement [
+		mission:refines firesat-stakeholder-reqs:LCCBudget
+		mission:refines firesat-functional-reqs:Coverage
+		mission:refines firesat-functional-reqs:Persistence
+		mission:refines firesat-functional-reqs:GeoLocation
+	]
+
+}

@@ -1,0 +1,28 @@
+@dc:title "Electric Power System Requirements"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/requirements#> as eps-requirements {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/requirements/environmental#> as spc-environmental-reqs
+
+	// Battery Pack 1 Requirements
+ 	
+	instance SpaceEnvironmentForBatteryPack1 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+	// Battery Pack 2 Requirements
+
+	instance SpaceEnvironmentForBatteryPack2 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+	// Battery Pack 3 Requirements
+
+	instance SpaceEnvironmentForBatteryPack3 : mission:Requirement [
+		mission:refines spc-environmental-reqs:SpaceEnvironment
+	]
+
+}

@@ -1,0 +1,50 @@
+@dc:title "Electric Power System Masses"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/masses#> as eps-masses {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs 
+
+	uses <http://bipm.org/jcgm/vim4#> as vim4
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps#> as eps
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps/assemblies#> as eps-assemblies
+
+	// Electric Power System Mass
+
+	@rdfs:label "Electric Power System Mass Limit Constraint"
+	instance EPSMassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "9.31"^^xsd:double
+		vim4:characterizes eps:ElectricPowerSystem
+	]
+
+	// Battery Pack 1 Mass
+
+	@rdfs:label "Battery Pack 1 Mass Limit Constraint"
+	instance BatteryPack1MassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "3.103"^^xsd:double
+		vim4:characterizes eps-assemblies:BatteryPack1
+	]
+
+	// Battery Pack 2 Mass
+
+	@rdfs:label "Battery Pack 2 Mass Limit Constraint"
+	instance BatteryPack2MassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "3.103"^^xsd:double
+		vim4:characterizes eps-assemblies:BatteryPack2
+	]
+
+	// Battery Pack 3 Mass
+
+	@rdfs:label "Thermal Blankets Mass Limit Constraint"
+	instance BatteryPack3MassLimitConstraint : fse:MassLimitConstraint [
+		vim4:hasDoubleNumber "3.103"^^xsd:double
+		vim4:characterizes eps-assemblies:BatteryPack3
+	]
+
+}

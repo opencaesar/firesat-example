@@ -1,0 +1,56 @@
+@dc:title "Communications Endcircuits"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/endcircuits#> as cmn-endcircuits {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/base#> as base
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://opencaesar.io/firesat/vocabularies/fse#> as fse 
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn/assemblies#> as cmn-assemblies
+
+	// Transmitter Unit End Circuits
+
+	@rdfs:label "Transmitter Unit Power In"
+	instance TransmitterUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cmn-assemblies:TransmitterUnit
+	]
+
+	// Receiver Unit End Circuits
+
+	@rdfs:label "Receiver Unit Power In"
+	instance ReceiverUnitPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cmn-assemblies:ReceiverUnit
+	]
+
+	// Transmit Whip Antenna Circuits
+
+	@rdfs:label "Transmit Whip Antenna Power In"
+	instance TransmitWhipAntennaPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cmn-assemblies:TransmitWhipAntenna
+	]
+
+	// Transmit Hi-Gain Antenna Circuits
+
+	@rdfs:label "Transmit Hi-Gain Antenna Power In"
+	instance TransmitHiGainAntennaPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cmn-assemblies:TransmitHiGainAntenna
+	]
+
+	// Receive Whip Antenna Circuits
+
+	@rdfs:label "Receive Whip Antenna Power In"
+	instance ReceiveWhipAntennaPowerIn : fse:PowerIn [
+		base:hasIdentifier "1"
+		mission:isPresentedBy cmn-assemblies:ReceiveWhipAntenna
+	]
+
+}

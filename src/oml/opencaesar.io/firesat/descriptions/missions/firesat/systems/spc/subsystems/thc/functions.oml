@@ -1,0 +1,25 @@
+@dc:title "Thermal Control Functions"
+description <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/thc/functions#> as thc-functions {
+
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://imce.jpl.nasa.gov/foundation/mission#> as mission
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/thc/assemblies#> as thc-assemblies
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/functions#> as firesat-functions
+
+	// Thermal Blankets
+
+	relation instance PerformsHomogenizeTemperature : mission:Performs [
+		from thc-assemblies:ThermalBlankets
+		to HomogenizeTemperature
+	]
+
+	instance HomogenizeTemperature : mission:Function [
+		project:realizes firesat-functions:HomogenizeTemperature
+	]
+
+}

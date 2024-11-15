@@ -1,0 +1,136 @@
+@dc:title "FireSat Project"
+description <http://opencaesar.io/firesat/descriptions/programs/earth-science/projects/firesat#> as firesat-project {
+	
+	uses <http://purl.org/dc/elements/1.1/> as dc
+
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+	uses <http://imce.jpl.nasa.gov/foundation/project#> as project
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/jpl#> as jpl
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/boeing#> as boeing
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/raytheon#> as raytheon
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/nasa#> as nasa
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/northrop-grumman#> as ng
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/lockheed-martin#> as lm
+
+	extends <http://opencaesar.io/firesat/descriptions/organizations/curtiss-wright#> as cw
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat#> as firesat-mission
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/pld#> as pld
+		
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc#> as spc
+
+	extends <http://opencaesar.io/firesat/descriptions/programs/earth-science#> as earth-science-program
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/sam#> as sam
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/thc#> as thc
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/eps#> as eps
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/ang#> as ang
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/prp#> as prp
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cmn#> as cmn
+
+	extends <http://opencaesar.io/firesat/descriptions/missions/firesat/systems/spc/subsystems/cdh#> as cdh
+
+	// FireSat Project
+
+	@rdfs:label "FireSat Project"
+	instance FireSatProject : project:Project [
+		project:supplies firesat-mission:FireSatMission
+		project:isResponsibilityOf nasa:NASA
+		project:isAuthorizedBy earth-science-program:EarthScienceProgram
+	]
+		
+	// WP05 Work Package
+
+	@rdfs:label "WP05"
+	instance WP05 : project:WorkPackage [
+		project:supplies pld:Payload
+		project:isResponsibilityOf jpl:JPL
+		project:isAuthorizedBy FireSatProject
+	]
+
+	// WP06 Work Package
+
+	@rdfs:label "WP06"
+	instance WP06 : project:WorkPackage [
+		project:supplies spc:Spacecraft
+		project:isResponsibilityOf jpl:JPL
+		project:isAuthorizedBy FireSatProject
+	]
+	
+	// WP06.04 Work Package
+
+	@rdfs:label "WP06.04"
+	instance WP06.04 : project:WorkPackage [
+		project:supplies sam:StructuresAndMechanisms
+		project:isResponsibilityOf boeing:Boeing
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.05 Work Package
+
+	@rdfs:label "WP06.05"
+	instance WP06.05 : project:WorkPackage [
+		project:supplies thc:ThermalControl
+		project:isResponsibilityOf boeing:Boeing
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.06 Work Package
+
+	@rdfs:label "WP06.06"
+	instance WP06.06 : project:WorkPackage [
+		project:supplies eps:ElectricPowerSystem
+		project:isResponsibilityOf raytheon:Raytheon
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.07 Work Package
+
+	@rdfs:label "WP06.07"
+	instance WP06.07 : project:WorkPackage [
+		project:supplies ang:ADCSAndGNC
+		project:isResponsibilityOf ng:NorthropGrumman
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.08 Work Package
+
+	@rdfs:label "WP06.08"
+	instance WP06.08 : project:WorkPackage [
+		project:supplies prp:Propulsion
+		project:isResponsibilityOf lm:LockheedMartin
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.09 Work Package
+
+	@rdfs:label "WP06.09"
+	instance WP06.09 : project:WorkPackage [
+		project:supplies cmn:Communications
+		project:isResponsibilityOf boeing:Boeing
+		project:isAuthorizedBy WP06
+	]
+
+	// WP06.10 Work Package
+
+	@rdfs:label "WP06.10"
+	instance WP06.10 : project:WorkPackage [
+		project:supplies cdh:CommandAndDataHandling
+		project:isResponsibilityOf cw:CurtissWright
+		project:isAuthorizedBy WP06
+	]
+
+} 
