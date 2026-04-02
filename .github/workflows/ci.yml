@@ -15,10 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: 'gradle'
 
@@ -32,7 +32,7 @@ jobs:
       run: ./gradlew generateDocs
 
     - name: Publish Docs
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v4
       with:
         path: build/docs
 
@@ -50,5 +50,5 @@ jobs:
     steps:
       - name: Deploy Spec
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
         

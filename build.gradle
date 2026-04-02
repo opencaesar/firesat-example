@@ -271,6 +271,16 @@ publishing {
 			}
 		}
 	}
+    repositories {
+        maven {
+            name = 'ossrh-staging-api'
+            url = "https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"          
+            credentials {
+                username = project.findProperty('ossrhUsername')
+                password = project.findProperty('ossrhPassword')
+            }
+        }
+    }
 }
 
 signing {
@@ -279,10 +289,6 @@ signing {
 	def pgpSigningPassword = findProperty('pgpSigningPassword')
 	useInMemoryPgpKeys(pgpSigningKey, pgpSigningPassword)
 	sign publishing.publications.maven
-}
-
-gradle.taskGraph.whenReady { taskGraph ->
-	signMavenPublication.onlyIf { taskGraph.allTasks.any{it.name == 'publishMavenPublicationToSonatypeRepository'} }
 }
 
 /*
